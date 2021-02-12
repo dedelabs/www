@@ -1,0 +1,27 @@
+{
+  "name": "exex.is",
+  "version": "1.0.0",
+  "description": "Exploring experiences website",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html --open",
+    "clean": "rm -rf dist/*",
+    "build:parcel": "parcel build src/index.html --out-dir docs --no-minify --no-source-maps --public-url ./",
+    "build": "npm run clean && npm run build:parcel"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/exex-is/site.git"
+  },
+  "keywords": [],
+  "author": "Codrops",
+  "license": "MIT",
+  "homepage": "https://exex.is",
+  "bugs": {
+    "url": "https://github.com/exex-is/site/issues"
+  },
+  "dependencies": {
+    "gsap": "^3.2.4",
+    "parcel-bundler": "^1.12.4"
+  }
+}
