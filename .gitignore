@@ -1,4 +1,7 @@
 /node_modules
 /.cache
+<<<<<<< HEAD
 /dist
+=======
+>>>>>>> 28b0c7c33f8afac0b7108146f5d00903a52bded9
 package-lock.json
