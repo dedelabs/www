@@ -1,0 +1,5 @@
+languages:
+  - name: English
+    label: en
+  - name: Italiano
+    label: it

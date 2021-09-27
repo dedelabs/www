@@ -4,6 +4,9 @@ import resolve from '@rollup/plugin-node-resolve';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
+import json from '@rollup/plugin-json';
+import yaml from 'js-yaml';
+import fs  from 'fs';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -17,6 +20,8 @@ function serve() {
 	return {
 		writeBundle() {
 			if (server) return;
+			const yamlDatas = yaml.load(fs.readFileSync('./src/data.yml', 'utf8'));
+			fs.writeFileSync('./src/_data.json', JSON.stringify(yamlDatas));
 			server = require('child_process').spawn('npm', ['run', 'start', '--', '--dev'], {
 				stdio: ['ignore', 'inherit', 'inherit'],
 				shell: true
@@ -37,6 +42,7 @@ export default {
 		file: 'public/build/bundle.js'
 	},
 	plugins: [
+		json(),
 		svelte({
 			compilerOptions: {
 				// enable run-time checks when not in production
