@@ -1,0 +1,108 @@
+*
+  box-sizing: border-box
+
+html, body
+  height: 100%
+  background-color: var(--main_bg_color)
+
+html
+  +rem-html-reset(0.9)
+
+  +at-breakpoint(desk)
+    +rem-html-reset(1)
+
+body
+  +body-font-family
+  -webkit-text-size-adjust: 100%
+  height: 100%
+  line-height: 1.5
+  color: var(--base_body_color)
+  text-rendering: optimizeLegibility
+
+a
+  color: var(--base_body_color)
+  text-decoration: underline
+
+ul, ol, blockquote
+  padding-left: 0
+  margin: 0
+
+li
+  list-style-type: none
+
+h1, h2, h3, h4, h5, h6, hgroup,
+ul, ol, dd, p, figure, pre, table,
+fieldset, hr, form
+  margin: 0
+
+h1, h2, h3, h4, h5, h6
+  font-size: inherit
+  +heading-font-family
+
+#{$all-text-inputs}, textarea
+  display: block
+  box-sizing: border-box
+  width: 100%
+  padding: 10px
+  border: 1px solid $border_color
+  -webkit-appearance: none
+  border-radius: 0
+  background-image: none
+  transition: border 0.2s $material-ease
+  font-size: $base-font-size
+
+  &[disabled]
+    opacity: 0.9
+
+*:focus
+  outline: 0
+
+input[type=number]::-ms-tooltip
+  display: none
+
+input[type=number]
+  -moz-appearance: textfield
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button
+  -webkit-appearance: none
+  margin: 0
+
+button, input[type="submit"]
+  background-image: none
+  border-radius: 0
+
+#{$all-text-inputs-hover}, textarea:hover
+  border_color: darken($border_color, 10%)
+
+#{$all-text-inputs-focus}, textarea:focus
+  border_color: var(--base_body_color)
+
+input[type="date"]
+  height: 2.35rem
+
+input[type="checkbox"]
+  display: inline-block
+  margin-right: 0.4em
+
+pre, code
+  +monospaced-font-family
+
+hr
+  color: $border_color
+  border: none
+  border-bottom-width: 1px
+  border-bottom-style: solid
+
+table
+  table-layout: fixed
+
+th, td
+  text-align: left
+
+img
+  max-width: 100%
+
+legend
+  color: var(--alt_body_color)
+  +heading-font-family

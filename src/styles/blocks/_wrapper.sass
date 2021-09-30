@@ -1,0 +1,12 @@
+@use "sass:math"
+
+.wrapper
+  +wrap
+.wrapper--inner
+  +wrap
+  width: 80vw
+  +at-breakpoint('lap')
+    width: 67vw
+  +at-breakpoint('desk')
+    width: math.div($wrap-width * 8, 12)
+

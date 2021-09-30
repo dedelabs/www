@@ -4,8 +4,10 @@ import resolve from '@rollup/plugin-node-resolve';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import css from 'rollup-plugin-css-only';
+import scss from "rollup-plugin-scss";
 import json from '@rollup/plugin-json';
 import yaml from 'js-yaml';
+import autoPreprocess from 'svelte-preprocess';
 import fs  from 'fs';
 
 const production = !process.env.ROLLUP_WATCH;
@@ -19,9 +21,9 @@ function serve() {
 
 	return {
 		writeBundle() {
-			if (server) return;
 			const yamlDatas = yaml.load(fs.readFileSync('./src/data.yml', 'utf8'));
 			fs.writeFileSync('./src/_data.json', JSON.stringify(yamlDatas));
+			if (server) return;
 			server = require('child_process').spawn('npm', ['run', 'start', '--', '--dev'], {
 				stdio: ['ignore', 'inherit', 'inherit'],
 				shell: true
@@ -39,7 +41,7 @@ export default {
 		sourcemap: true,
 		format: 'iife',
 		name: 'app',
-		file: 'public/build/bundle.js'
+		file: 'public/build/bundle.js',
 	},
 	plugins: [
 		json(),
@@ -47,8 +49,16 @@ export default {
 			compilerOptions: {
 				// enable run-time checks when not in production
 				dev: !production
-			}
+			},
+			preprocess: autoPreprocess()
 		}),
+		scss({
+			output: 'public/app.css',
+			outputStyle: 'compressed',
+			indentedSyntax: true,
+			sass: require('sass'),
+			watch: ['src/styles', 'src/styles/blocks', 'src/styles/formats', 'src/styles/functions', 'src/styles/mixins', 'src/styles/variables']
+    }),
 		// we'll extract any component CSS out into
 		// a separate file - better for performance
 		css({ output: 'bundle.css' }),
@@ -70,13 +80,14 @@ export default {
 
 		// Watch the `public` directory and refresh the
 		// browser on changes when not in production
-		!production && livereload('public'),
+		!production && livereload('src'),
 
 		// If we're building for production (npm run build
 		// instead of npm run dev), minify
 		production && terser()
 	],
 	watch: {
-		clearScreen: false
+		clearScreen: false,
+		exclude: 'src/_data.json'
 	}
 };

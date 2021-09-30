@@ -1,30 +1,20 @@
 <script>
-	export let name;
+	import data from './_data.json';
+
+	import BlockWithImage from './components/BlockWithImage.svelte';
+	import Bubbles from './components/Bubbles.svelte';
+	import Hero from './components/Hero.svelte';
+	import Slider from './components/Slider.svelte';
+	import Cards from './components/Cards.svelte';
+
+	// Hardcoded before routing
+	$: components = data.pages.filter((p) => p.name == 'Home')[0].components;
+
+	$: colors = data.colorPalette;
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	{#each components as component}
+		<svelte:component this={eval(component.type)} {...component} colors="{colors}" />
+	{/each}
 </main>
-
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
-</style>

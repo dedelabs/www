@@ -1,5 +1,85 @@
 languages:
-  - name: English
+  en:
+    name: English
     label: en
-  - name: Italiano
+    default: true
+  it:
+    name: Italiano
     label: it
+    default: false
+colorPalette:
+  - "#6A72DC"
+  - "#60C971"
+pages:
+  - name: Home
+    path: /
+    components:
+      - type: Hero
+        title: Transformation Lab
+        subtitle: Knowledge for sustainable territories
+        shapes: 4
+      - type: BlockWithImage
+        imagePosition: right
+        imagePath: image.jpg
+        overtitle: Community
+        title: Learning Path
+        description: We start by getting to know the territories, understanding their needs and creating with the active stakeholders a laboratorial journey based on measurable and concrete results
+        shapes: 2
+      - type: BlockWithImage
+        imagePosition: left
+        imagePath: image.jpg
+        overtitle: knowledge
+        title: Impact Generation
+        description: We empower a new collaborative generation of business owners by transfering knowlege on enterpreneurship, sustainability, impact measurement and open organisation design
+        shapes: 1
+      - type: BlockWithImage
+        imagePosition: right
+        imagePath: image.jpg
+        overtitle: data
+        title: Measurement
+        description: We drive a culture of impact measurement and transparent communication enabling data driven decisions, engagement, funds attraction and open participation
+        shapes: 1
+      - type: Bubbles
+        overtitle: why
+        title: We give shape to complex sustainable territorial transformations
+        bubbles:
+          - Attract people
+          - Create new jobs
+          - Community owned enterprise
+          - Environmental protection
+      - type: Slider
+        overtitle: how
+        title: A learning process that works
+        slides:
+          - imagePath: image.jpg
+            title: Tailor Made
+            description: We co-design a tailor made training path composed by a set of micromasters that transfer the needed knowledge to a territory
+          - imagePath: image.jpg
+            title: Agile
+            description: Communities deliver value by continuously evaluating plans, activities and outcomes in an iterative approach
+          - imagePath: image.jpg
+            title: Results Driven
+            description: All participants practice the immediate application of the acquired skills, generating tangible results
+          - imagePath: image.jpg
+            title: Hybrid
+            description: Residentials trainings are mixed with online sessions to combine the need for human relations with the digital accessibility
+      - type: Cards
+        overtitle: what
+        title: We drive tangible territorial  growth
+        cards:
+          - title: Territorial Catalog
+            description: Co-create an experiences, products and services catalog representing the territorial identity
+          - title: Impact Management
+            description: Identify, plan, execute, measure, assess and transparently communicate the impact narrative inside and outside the territory
+          - title: Community Enterprise
+            description: Create a local organisation where anyone generating positive impact can actively participate to the decision making process
+          - title: Multi-Channel Distribution
+            description: Promote the catalog to remote workers, travelers, enterprises,  schools and locals through OTAs, DMOs or community websites
+      - type: Bubbles
+        overtitle: who
+        title: Who can we help
+        bubbles:
+          - Public Admin and Governments
+          - Private operators individuals or networks
+          - Foundations and Civil Society Organisations
+          - Universities and Reserach Centers 

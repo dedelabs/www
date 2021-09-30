@@ -1,0 +1,6 @@
+@mixin rem-html-reset($factor)
+  font-size: #{($base-font-size * $factor)}
+
+@mixin rem-rule($rule, $size-in-px)
+  #{$rule}: ($size-in-px / $base-font-size) * 1rem
+

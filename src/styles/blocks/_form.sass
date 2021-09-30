@@ -1,0 +1,187 @@
+%hover_inputs
+  border-color: var(--base_body_color)
+  box-shadow: 1px 1px 10px -3px var(--theme_color)
+
+.form
+  padding-bottom: 2rem
+
+.form--highlighted
+  border: 1px solid $border_color
+  padding: 2rem
+  margin-bottom: 2rem
+
+.form__body
+  padding: 2rem
+  background-color: $alt_body_color
+
+.form__field
+  width: 100%
+  #{$all-text-inputs}
+    &:disabled
+      background-color: lighten($base_body_color, 90%)
+      border-color: lighten($base_body_color, 80%)
+    &::placeholder
+      color: lighten($base_body_color, 65%)
+  &:not(:last-child)
+    margin-bottom: 0.75rem
+
+.form__field--with-errors
+  #{$all-text-inputs},
+  .form__select select
+    border-color: var(--alert_color)
+  .form__radio
+    color: var(--alert_color)
+    font-weight: 600
+  .form__field__error
+    color: var(--alert_color)
+.form__fieldgroup
+  margin-bottom: 0.75rem
+  +at-breakpoint(lap)
+    display: flex
+
+.form__title
+  color: var(--theme_color)
+  text-align: center
+
+.form__field--half
+  +at-breakpoint(lap)
+    width: 50%
+    vertical-align: top
+    &:nth-child(odd)
+      padding-right: 0.5rem
+    &:nth-child(even)
+      padding-left: 0.5rem
+
+.form__label
+  display: block
+  font-weight: 600
+  &:not(:last-child)
+    margin-bottom: 0.5em
+
+.form__select
+  width: 100%
+  display: inline-block
+  position: relative
+  select
+    cursor: pointer
+    display: block
+    max-width: 100%
+    outline: 0
+    padding-right: 2.5rem
+    padding: 0.5rem 2.75rem 0.5rem 0.75rem
+    &:hover
+      @extend %hover_inputs
+  &:before
+    border-bottom: 2px solid var(--theme_color)
+    border-radius: 3px
+    border-right: 2px solid var(--theme_color)
+    content: ' '
+    display: block
+    height: 0.75rem
+    position: absolute
+    right: 0.75rem
+    top: 0.5rem
+    transform: rotate(45deg)
+    width: 0.75rem
+
+.form__select select,
+.form__textarea
+  -moz-appearance: none
+  -webkit-appearance: none
+  appearance: none
+  background-color: var(--main_bg_color)
+  border-color: var(--border_color)
+  border-radius: 0
+  width: 100%
+
+.form__input
+  width: 100%
+  &:hover
+    @extend %hover_inputs
+
+.form__control
+  > *
+    display: inline-block
+    padding-right: 0.5rem
+    &:last-child
+      padding-right: 0
+.form__radio
+  cursor: pointer
+  margin-top: 0.75rem
+  padding-left: 1.5rem
+  position: relative
+  &:hover > .radio
+    @extend %hover_inputs
+  > input[type='radio']
+    display: none
+    &:checked
+      ~ .radio
+        background-color: var(--theme_color)
+        &:after
+          background-color: var(--main_bg_color)
+          border-radius: 50%
+          content: ''
+          display: block
+          height: 0.5rem
+          left: 50%
+          position: absolute
+          top: 50%
+          transform: translate(-50%, -50%)
+          width: 0.5rem
+  > .radio
+    background-color: #EEEEEE
+    border-radius: 50%
+    border: 1px solid transparent
+    height: 1rem
+    left: 0
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    width: 1rem
+
+.form__legend
+  font-size: 0.8rem
+
+.form__submit
+  +button
+  +button-primary
+  cursor: pointer
+  padding: 0.5rem 1rem
+  white-space: nowrap
+  width: 100%
+  &:disabled
+    opacity: 0.5
+
+.form__checkbox
+  input[type='checkbox']
+    position: absolute
+    opacity: 0
+    z-index: -1
+    &:checked ~ .form__label
+      &:before
+        background-color: var(--theme_color)
+      &:after
+        content: ''
+        display: block
+        position: absolute
+        left: 0.25rem
+        top: 50%
+        transform: translateY(-50%)
+        width: 0.5rem
+        height: 0.5rem
+        background-color: var(--main_bg_color)
+        border: 1px solid var(--main_bg_color)
+  .form__label
+    padding-left: 1.5rem
+    position: relative
+
+    &:before
+      content: ''
+      display: block
+      position: absolute
+      left: 0
+      top: 50%
+      transform: translateY(-50%)
+      width: 1rem 
+      height: 1rem 
+      border: 1px solid var(--theme_color)
