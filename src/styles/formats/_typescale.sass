@@ -1,25 +1,53 @@
 p
   margin-bottom: 1.15rem
 
-h1, h2, h3, h4, h5
-  margin: 2.75rem 0 1.05rem
-  line-height: 1.15
+h1, h2, h3, h4, h5 
+  // margin: 3rem 0 1.38rem
+  font-weight: 400
+  line-height: 1.3
 
-h1
+h1 
+  color: var(--theme_color)
   margin-top: 0
-  font-size: 2.488em
+  font-size: 2.488rem
+  +at-breakpoint('eq-tab')
+    font-size: 4.209rem
+  +at-breakpoint('lap')
+    font-size: 5.653rem
 
-h2
-  font-size: 2.074em
+h2 
+  color: var(--theme_color)
+  font-size: 2.074rem
+  +at-breakpoint('eq-tab')
+    font-size: 3.157rem
+  +at-breakpoint('lap')
+    font-size: 3.998rem
 
-h3
-  font-size: 1.728em
+h3 
+  font-size: 1.728rem
+  +at-breakpoint('eq-tab')
+    font-size: 2.369rem
+  +at-breakpoint('lap')
+    font-size: 2.827rem
 
-h4
-  font-size: 1.44em
+h4 
+  font-size: 1.44rem
+  +at-breakpoint('eq-tab')
+    font-size: 1.777rem
+  +at-breakpoint('lap')
+    font-size: 1.999rem
 
-h5
-  font-size: 1.2em
+h5 
+  font-size: 1.2rem
+  +at-breakpoint('eq-tab')
+    font-size: 1.333rem
+  +at-breakpoint('lap')
+    font-size: 1.414rem
 
-small, .text-small
-  font-size: 0.833em
+small, 
+.text_small 
+  font-size: 0.833rem
+  +at-breakpoint('eq-tab')
+    font-size: 0.75rem
+  +at-breakpoint('lap')
+    font-size: 0.707rem

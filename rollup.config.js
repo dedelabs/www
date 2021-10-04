@@ -7,7 +7,6 @@ import css from 'rollup-plugin-css-only';
 import scss from "rollup-plugin-scss";
 import json from '@rollup/plugin-json';
 import yaml from 'js-yaml';
-import autoPreprocess from 'svelte-preprocess';
 import fs  from 'fs';
 
 const production = !process.env.ROLLUP_WATCH;
@@ -45,20 +44,19 @@ export default {
 	},
 	plugins: [
 		json(),
+		scss({
+			output: 'public/app.css',
+			outputStyle: 'compressed',
+			// indentedSyntax: true,
+			sass: require('sass'),
+			watch: ['src/styles', 'src/styles/blocks', 'src/styles/formats', 'src/styles/functions', 'src/styles/mixins', 'src/styles/variables']
+		}),
 		svelte({
 			compilerOptions: {
 				// enable run-time checks when not in production
 				dev: !production
-			},
-			preprocess: autoPreprocess()
+			}
 		}),
-		scss({
-			output: 'public/app.css',
-			outputStyle: 'compressed',
-			indentedSyntax: true,
-			sass: require('sass'),
-			watch: ['src/styles', 'src/styles/blocks', 'src/styles/formats', 'src/styles/functions', 'src/styles/mixins', 'src/styles/variables']
-    }),
 		// we'll extract any component CSS out into
 		// a separate file - better for performance
 		css({ output: 'bundle.css' }),

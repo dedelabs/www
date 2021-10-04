@@ -5,7 +5,7 @@
   export let colors = ['red', 'yellow', 'blue'];
 </script>
 
-<div class="hero">
+<div class="wrapper">
   {overtitle}<br />
   {title}<br />
   {slides}<br />

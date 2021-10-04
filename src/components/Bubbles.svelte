@@ -5,7 +5,7 @@
   export let colors = ['red', 'yellow', 'blue'];
 </script>
 
-<div class="block">
+<div class="wrapper">
   {overtitle}<br />
   {title}<br />
   {bubbles}<br />

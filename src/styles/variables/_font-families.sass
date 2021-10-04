@@ -1,8 +1,13 @@
-$serif: "Cormorant Garamond", Times, serif
+// Families
+$chronicle-light-italic: 'Chronicle Display Light Italic', Times, serif
+$chronicle-roman: 'Chronicle Display Roman', Times, serif
+$chronicle-semibold: 'Chronicle Display Semibold', Times, serif
+$chronicle-black: 'Chronicle Display Black', Times, serif
+
 $sans-serif: Arial, Helvetica, sans-serif
 $monospace: "Bitstream Vera Sans Mono", Consolas, Courier, monospace
 
-$heading-font-family: $sans-serif
+$heading-font-family: $chronicle-roman
 $heading-font-weight: 300
 
 $body-font-family: $sans-serif
@@ -10,3 +15,20 @@ $body-font-weight: 300
 
 $monospaced-font-family: $monospace
 $monospaced-font-weight: normal
+
+
+@font-face
+  font-family: 'Chronicle Display Light Italic'
+  src: local('Chronicle Display Light Italic'), url('fonts/Chronicle Display Light Italic.woff') format('woff')
+
+@font-face 
+  font-family: 'Chronicle Display Roman'
+  src: local('Chronicle Display Roman'), url('fonts/Chronicle Display Roman.woff') format('woff')
+
+@font-face
+  font-family: 'Chronicle Display Semibold'
+  src: local('Chronicle Display Semibold'), url('fonts/Chronicle Display Semibold.woff') format('woff')
+
+@font-face 
+  font-family: 'Chronicle Display Black'
+  src: local('Chronicle Display Black'), url('fonts/Chronicle Display Black.woff') format('woff')

@@ -1,5 +1,5 @@
-import './styles/app.sass';
 import App from './App.svelte';
+import './styles/app.sass';
 
 const app = new App({
 	target: document.body,
