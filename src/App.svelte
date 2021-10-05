@@ -3,9 +3,10 @@
 
 	import BlockWithImage from './components/BlockWithImage.svelte';
 	import Bubbles from './components/Bubbles.svelte';
+	import Cards from './components/Cards.svelte';
 	import Hero from './components/Hero.svelte';
 	import Slider from './components/Slider.svelte';
-	import Cards from './components/Cards.svelte';
+	import Spacer from './components/Spacer.svelte';
 
 	// Hardcoded before routing
 	$: components = data.pages.filter((p) => p.name == 'Home')[0].components;

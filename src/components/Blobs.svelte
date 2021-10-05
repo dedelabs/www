@@ -11,6 +11,6 @@
   {/each}
 {:else}
   {#each shapes as shape, i}
-    <Blob color="{shape.color}" top="{shape.top}" left="{shape.left}" size="{shape.size}"></Blob>
+    <Blob color="{shape.color}" top="{shape.top}" left="{shape.left}" size="{shape.size}" zindex="{shape.zindex}"></Blob>
   {/each}
 {/if}

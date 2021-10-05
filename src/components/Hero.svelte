@@ -11,7 +11,7 @@
   <div class="hero">
     <div class="hero__content">
       <h1 class="hero__title">{title}</h1>
-      <h3>{subtitle}</h3>
+      <h3 class="hero__subtitle">{subtitle}</h3>
     </div>
   </div>
   <Blobs shapes={shapes} colors="{colors}"></Blobs>

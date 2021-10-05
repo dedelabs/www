@@ -16,11 +16,10 @@
   <div class="block block--{imagePosition}">
     <div class="block__content">
       <div class="block__overtitle">{overtitle}</div>
-      {title}<br />
-      {description}<br />
+      <h3 class="block__title">{title}</h3>
+      <div class="block__description">{description}</div>
     </div>
-    <div class="block__image" style="background-image: url('https://lorempixel.com/300/{random(300, 500)}/')">
-      {imagePath}<br />
+    <div class="block__image" style="background-image: url('images/{imagePath}')">
     </div>
   </div>
   <Blobs shapes={shapes} colors="{colors}"></Blobs>

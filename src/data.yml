@@ -22,10 +22,12 @@ pages:
             left: 90
             size: 200
             color: "#6A72DC"
+            zindex: 10
           - top: 73
             left: 89
             size: 50
             color: "#60C971"
+            zindex: 20
           - top: 18
             left: -12
             size: 150
@@ -34,30 +36,52 @@ pages:
             left: 20
             size: 100
             color: "#60C971"
+      - type: Spacer
+        height: 100
       - type: BlockWithImage
         imagePosition: right
-        imagePath: image.jpg
+        imagePath: community.jpg
         overtitle: Community
         title: Learning Path
         description: We start by getting to know the territories, understanding their needs and creating with the active stakeholders a laboratorial journey based on measurable and concrete results
-        shapes: 2
+        shapes:
+          - top: 65
+            left: 61
+            size: 150
+            color: "#60C971"
+            zindex: 60
+          - top: 75
+            left: 69
+            size: 50
+            color: "#6A72DC"
+            zindex: 70
       - type: BlockWithImage
         imagePosition: left
-        imagePath: image.jpg
+        imagePath: knowledge.jpg
         overtitle: knowledge
         title: Impact Generation
         description: We empower a new collaborative generation of business owners by transfering knowlege on enterpreneurship, sustainability, impact measurement and open organisation design
-        shapes: 1
+        shapes: 
+          - top: 85
+            left: -10
+            size: 200
+            color: "#6A72DC"
+            zindex: 70
       - type: BlockWithImage
         imagePosition: right
-        imagePath: image.jpg
+        imagePath: data.jpg
         overtitle: data
         title: Measurement
         description: We drive a culture of impact measurement and transparent communication enabling data driven decisions, engagement, funds attraction and open participation
-        shapes: 1
+        shapes: 
+          - top: 65
+            left: 61
+            size: 120
+            color: "#60C971"
+            zindex: 60
       - type: Bubbles
         overtitle: why
-        title: We give shape to complex sustainable territorial transformations
+        title: We give shape to complex<br />sustainable territorial transformations
         bubbles:
           - Attract people
           - Create new jobs
