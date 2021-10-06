@@ -9,6 +9,15 @@
 	import Hero from './components/Hero.svelte';
 	import Spacer from './components/Spacer.svelte';
 
+	let loadedComponents = {
+		"BgCards": BgCards,
+		"BlockWithImage": BlockWithImage,
+		"Bubbles": Bubbles,
+		"Cards": Cards,
+		"Carousel": Carousel,
+		"Hero": Hero,
+		"Spacer": Spacer
+	}
 	// Hardcoded before routing
 	$: components = data.pages.filter((p) => p.name == 'Home')[0].components;
 
@@ -17,6 +26,6 @@
 
 <main>
 	{#each components as component}
-		<svelte:component this={eval(component.type)} {...component} colors="{colors}" />
+		<svelte:component this={loadedComponents[component.type]} {...component} colors="{colors}" />
 	{/each}
 </main>
