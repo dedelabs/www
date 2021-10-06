@@ -1,11 +1,12 @@
 <script>
 	import data from './_data.json';
 
+	import BgCards from './components/BgCards.svelte';
 	import BlockWithImage from './components/BlockWithImage.svelte';
 	import Bubbles from './components/Bubbles.svelte';
 	import Cards from './components/Cards.svelte';
+	import Carousel from './components/Carousel.svelte';
 	import Hero from './components/Hero.svelte';
-	import Slider from './components/Slider.svelte';
 	import Spacer from './components/Spacer.svelte';
 
 	// Hardcoded before routing

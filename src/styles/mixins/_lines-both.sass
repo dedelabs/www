@@ -1,0 +1,21 @@
+@mixin lines-both
+  padding-left: 5rem
+  padding-right: 5rem
+  margin-bottom: 2rem
+  display: inline-block
+  position: relative
+  text-transform: uppercase
+  &::before
+    position: absolute
+    left: 0
+    width: 4rem
+    content: ""
+    top: calc(50% - 2px)
+    border-bottom: 2px solid $base_body_color
+  &::after
+    position: absolute
+    right: 0
+    width: 4rem
+    content: ""
+    top: calc(50% - 2px)
+    border-bottom: 2px solid $base_body_color

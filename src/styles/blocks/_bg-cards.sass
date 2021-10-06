@@ -1,0 +1,32 @@
+@use "sass:math"
+$card-spacing: 2rem
+
+.bg-cards
+  text-align: center
+  &__overtitle
+    +lines-both
+  &__title
+    text-align: center
+    padding-bottom: 2rem
+  &__container
+    display: flex
+    flex-wrap: wrap
+  &__card
+    flex-grow: 1
+    border-radius: $card-spacing
+    padding: 1.5rem
+    height: 300px
+    text-align: left
+    position: relative
+    flex: calc(100% - ($card-spacing * 2))
+    margin: math.div($card-spacing, 2)
+    +at-breakpoint(lap)
+      flex: calc(50% - ($card-spacing * 2))
+    +at-breakpoint(desk)
+      flex: calc(25% - ($card-spacing * 2))
+    &__title
+      position: absolute
+      color: $main_bg_color
+      display: block
+      left: 1.5rem
+      bottom: 1.5rem
