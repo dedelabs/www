@@ -40,12 +40,12 @@ export default {
 		sourcemap: true,
 		format: 'iife',
 		name: 'app',
-		file: 'public/build/bundle.js',
+		file: 'docs/build/bundle.js',
 	},
 	plugins: [
 		json(),
 		scss({
-			output: 'public/app.css',
+			output: 'docs/app.css',
 			outputStyle: 'compressed',
 			// indentedSyntax: true,
 			sass: require('sass'),
@@ -76,7 +76,7 @@ export default {
 		// the bundle has been generated
 		!production && serve(),
 
-		// Watch the `public` directory and refresh the
+		// Watch the `docs` directory and refresh the
 		// browser on changes when not in production
 		!production && livereload('src'),
 
