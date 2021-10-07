@@ -1,25 +1,35 @@
 $radius: 5rem
 .block
-  display: flex
   padding: 2rem 0
   align-items: center
   position: relative
   z-index: 50
+  +at-breakpoint('lap')
+    display: flex
   &--left
     flex-direction: row-reverse
     .block__image
-      border-radius: 0 $radius $radius 0 
+      // border-radius: 0 $radius $radius 0 
+      +at-breakpoint('lte-lap')
+        margin-left: -5rem
   &--right
     flex-direction: row
     .block__image
-      border-radius: $radius 0 0 $radius 
+      +at-breakpoint('lte-lap')
+        margin-right: -5rem
+      // border-radius: $radius 0 0 $radius 
   &__content
-    padding: 5rem
+    padding: 4rem 1rem
+    +at-breakpoint('lap')
+      padding: 5rem
   &__description
     width: 75%
     line-height: 170%
   &__image
-    flex-basis: 70%
+    border-radius: $radius
+    +at-breakpoint('eq-lap')
+      flex-basis: 200%
+    flex-basis: 80%
     height: 500px
     background-color: $base_body_color
     background-repeat: no-repeat
