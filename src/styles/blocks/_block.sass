@@ -10,12 +10,12 @@ $radius: 5rem
     flex-direction: row-reverse
     .block__image
       // border-radius: 0 $radius $radius 0 
-      +at-breakpoint('lte-lap')
+      +at-breakpoint('lte-lap-landscape')
         margin-left: -5rem
   &--right
     flex-direction: row
     .block__image
-      +at-breakpoint('lte-lap')
+      +at-breakpoint('lte-lap-landscape')
         margin-right: -5rem
       // border-radius: $radius 0 0 $radius 
   &__content
@@ -27,9 +27,12 @@ $radius: 5rem
     line-height: 170%
   &__image
     border-radius: $radius
-    +at-breakpoint('eq-lap')
+    +at-breakpoint('lap')
       flex-basis: 200%
-    flex-basis: 80%
+    +at-breakpoint('lap-landscape')
+      flex-basis: 150%
+    +at-breakpoint('desk')
+      flex-basis: 80%
     height: 500px
     background-color: $base_body_color
     background-repeat: no-repeat

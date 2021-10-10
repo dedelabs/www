@@ -8,13 +8,15 @@
   &__bubbles
     +at-breakpoint('lap')
       display: flex
-  &__bubble
+      flex-wrap: wrap 
+  &__bubble-container
     flex-grow: 1
+    flex: calc(25% - 2rem)
+  &__bubble
     position: relative
-    margin: 2rem
-    +at-breakpoint('lap')
-      margin: 0 3rem
+    margin: 2rem auto
     height: 200px
+    width: 200px
     &__text
       color: $main_bg_color
       width: 80%
@@ -31,3 +33,5 @@
       height: 100%
       top: 0
       left: 0
+  &__next
+    +swiper-next

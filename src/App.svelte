@@ -1,6 +1,7 @@
 <script>
 	import data from './_data.json';
-
+	import "swiper/css/navigation";
+  import 'swiper/css';
 	import BgCards from './components/BgCards.svelte';
 	import BlockWithImage from './components/BlockWithImage.svelte';
 	import Bubbles from './components/Bubbles.svelte';

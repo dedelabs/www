@@ -25,17 +25,20 @@
   --left: {leftPos};
   --dimensions: {dimensions};
   --zindex: {zIndex};
+  --blobtiming: {random(3,5)}s;
+  --bloboffsettiming: -{random(3,5)}s;
 "></div>
 
 <style>
   .blob {
     border-radius: var(--border-radius);
-    animation: move 5s ease-in-out alternate infinite;
+    animation: move var(--blobtiming) var(--bloboffsettiming) ease-in-out alternate infinite;
     top: var(--top);
     left: var(--left);
     width: var(--dimensions);
     height: var(--dimensions);
-    z-index: var(--zindex)
+    z-index: var(--zindex);
+    pointer-events: none
   }
   @keyframes move {
     50% { border-radius: var(--fifty) }
