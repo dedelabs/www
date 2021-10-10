@@ -4,6 +4,9 @@
   export let bubbles = ['first', 'second', 'third'];
   export let colors = ['red', 'yellow', 'blue'];
   export let slider = false;
+  export let anchor;
+
+  let HTMLanchor = anchor ? anchor : overtitle;
 
   import { generateBlob } from '../utilities.js';
 
@@ -27,7 +30,7 @@
   
 </script>
 
-<div class="wrapper">
+<div class="wrapper" id="{HTMLanchor}">
   <div class="bubbles">
     <div class="bubbles__overtitle">{overtitle}</div>
     <h3 class="bubbles__title">{@html title}</h3>

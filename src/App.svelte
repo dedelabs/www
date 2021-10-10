@@ -9,6 +9,7 @@
 	import Carousel from './components/Carousel.svelte';
 	import Hero from './components/Hero.svelte';
 	import Spacer from './components/Spacer.svelte';
+	import Header from './components/Header.svelte';
 
 	let loadedComponents = {
 		"BgCards": BgCards,
@@ -23,9 +24,23 @@
 	$: components = data.pages.filter((p) => p.name == 'Home')[0].components;
 
 	$: colors = data.colorPalette;
+
+	import { afterUpdate } from 'svelte'
+   afterUpdate(() => {
+		 setTimeout(() => {
+			let buttons = document.querySelectorAll('[data-smoothscroll]')
+			buttons.forEach((button) => {
+				button.addEventListener('click', function () {
+					let target = this.getAttribute('data-smoothscroll')
+					document.querySelector(target).scrollIntoView({ behavior: 'smooth' })
+			})
+		})
+		}, 200)
+  })
 </script>
 
 <main style="overflow-x: hidden">
+	<Header></Header>
 	{#each components as component}
 		<svelte:component this={loadedComponents[component.type]} {...component} colors="{colors}" />
 	{/each}

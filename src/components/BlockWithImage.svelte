@@ -6,13 +6,15 @@
   export let description = "Sample description";
   export let shapes = 2;
   export let colors = ['red', 'yellow', 'blue'];
+  export let anchor;
 
+  let HTMLanchor = anchor ? anchor : title;
   import Blobs from './Blobs.svelte';
 
   let random = (from = 25, to = 75) => { return Math.floor(Math.random() * (to - from) + from) }
 </script>
 
-<div class="wrapper">
+<div class="wrapper" id="{HTMLanchor}">
   <div class="block block--{imagePosition}">
     <div class="block__content">
       <div class="block__overtitle">{overtitle}</div>

@@ -39,6 +39,7 @@ pages:
       - type: Spacer
         height: 100
       - type: BlockWithImage
+        anchor: Solution
         imagePosition: right
         imagePath: community.jpg
         overtitle: Community
@@ -80,7 +81,7 @@ pages:
             color: "#60C971"
             zindex: 60
       - type: Bubbles
-        overtitle: why
+        overtitle: Why
         title: We give shape to complex<br />sustainable territorial transformations
         bubbles:
           - Attract people
@@ -90,7 +91,7 @@ pages:
       - type: Spacer
         height: 100
       - type: Carousel
-        overtitle: how
+        overtitle: How
         title: A learning process that works
         slides:
           - image: <svg width="71" height="48" viewBox="0 0 71 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="24" r="17.5" transform="rotate(90 18 24)" fill="#60C971" style="mix-blend-mode:multiply"/><circle cx="18" cy="24" r="17.5" transform="rotate(90 18 24)" stroke="#60C971"/><ellipse cx="47" cy="24" rx="24" ry="24" transform="rotate(90 47 24)" fill="#646FFF" style="mix-blend-mode:multiply"/></svg>
@@ -106,7 +107,7 @@ pages:
             title: Hybrid
             description: Residentials trainings are mixed with online sessions to combine the need for human relations with the digital accessibility
       - type: Cards
-        overtitle: what
+        overtitle: What
         title: We drive tangible territorial  growth
         cards:
           - title: Territorial<br />Catalog
@@ -118,7 +119,7 @@ pages:
           - title: Multi-Channel<br />Distribution
             description: Promote the catalog to remote workers, travelers, enterprises,  schools and locals through OTAs, DMOs or community websites
       - type: BgCards
-        overtitle: who
+        overtitle: Who
         title: Who can we help
         cards:
           - firstLine: Public Admin
@@ -135,6 +136,7 @@ pages:
             imagePath: image.jpg
       - type: BgCards
         overtitle: what we can do
+        anchor: Micromaster
         title: Our Micromaster
         cards:
           - firstLine: Context Mapping and Analysis

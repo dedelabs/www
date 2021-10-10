@@ -3,6 +3,9 @@
   export let overtitle = "overtitle";
   export let cards = [];
   export let slider = false;
+  export let anchor;
+
+  let HTMLanchor = anchor ? anchor : overtitle;
 
   let navigation = { nextEl: '.cards__next' }
   let breakpoints = {
@@ -23,7 +26,7 @@
   import { Swiper, SwiperSlide } from 'swiper/svelte'
 </script>
 
-<div class="wrapper">
+<div class="wrapper" id="{HTMLanchor}">
   <div class="cards">
     <div class="cards__overtitle">{overtitle}</div>
     <h3 class="cards__title">{title}</h3>
