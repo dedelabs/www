@@ -22,5 +22,5 @@
     <li class="header__menu__item"><span data-smoothscroll="#Who">Who</span></li>
     <li class="header__menu__item"><span data-smoothscroll="#Micromaster">Micromaster</span></li>
   </ul>
-  <a class="header__button">Open call</a>
+  <a class="header__button" href="##">Open call</a>
 </div>
