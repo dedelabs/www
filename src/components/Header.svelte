@@ -1,5 +1,15 @@
 <script>
   import DedeLogo from './DedeLogo.svelte';
+  import { afterUpdate } from 'svelte'
+   afterUpdate(() => {
+			let buttons = document.querySelectorAll('[data-smoothscroll]')
+			buttons.forEach((button) => {
+				button.addEventListener('click', function () {
+					let target = this.getAttribute('data-smoothscroll')
+					document.querySelector(target).scrollIntoView({ behavior: 'smooth' })
+			})
+		})
+  })
 </script>
 
 <div class="wrapper header">
