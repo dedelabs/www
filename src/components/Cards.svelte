@@ -45,7 +45,7 @@
         {#each cards as card}
           <SwiperSlide>
             <div class="cards__card">
-              <h5 class="cards__card__title">{@html card.title}</h5>
+              <h4 class="cards__card__title">{@html card.title}</h4>
               {card.description}
             </div>
           </SwiperSlide>
@@ -56,7 +56,7 @@
       <div class="cards__container">
         {#each cards as card}
           <div class="cards__card">
-            <h5 class="cards__card__title">{@html card.title}</h5>
+            <h4 class="cards__card__title">{@html card.title}</h4>
             {card.description}
           </div>
         {/each}

@@ -44,7 +44,7 @@
       >
         {#each cards as card}
           <SwiperSlide>
-            <div class="bg-cards__card" style="background-image: linear-gradient(to bottom, rgba(33, 37, 41, 0), rgba(33, 37, 41, 0.4))">
+            <div class="bg-cards__card"  style="background-image: url('images/{card.imagePath}')">
               <div class="bg-cards__card__title">
                 <strong>{@html card.firstLine}</strong><br />
                 {#if card.secondLine}
@@ -59,8 +59,7 @@
     {:else}
       <div class="bg-cards__container">
         {#each cards as card}
-          <!-- <div class="bg-cards__card"  style="background-image: url('images/{card.imagePath}')"> -->
-          <div class="bg-cards__card" style="background-image: linear-gradient(to bottom, rgba(33, 37, 41, 0), rgba(33, 37, 41, 0.4))">
+          <div class="bg-cards__card"  style="background-image: url('images/{card.imagePath}')">
             <div class="bg-cards__card__title">
               <strong>{@html card.firstLine}</strong><br />
               {#if card.secondLine}

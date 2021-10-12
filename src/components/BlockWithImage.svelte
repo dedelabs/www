@@ -7,7 +7,7 @@
   export let shapes = 2;
   export let colors = ['red', 'yellow', 'blue'];
   export let anchor;
-
+ 
   let HTMLanchor = anchor ? anchor : title;
   import Blobs from './Blobs.svelte';
 

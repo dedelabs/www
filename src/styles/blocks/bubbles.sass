@@ -7,17 +7,17 @@
     text-align: center
     margin-bottom: 2rem
   &__bubbles
-    +at-breakpoint('lap')
-      display: flex
-      flex-wrap: wrap 
+    display: flex
+    flex-wrap: wrap 
+    justify-content: space-around
   &__bubble-container
-    flex-grow: 1
-    flex: calc(25% - 2rem)
+    // flex-grow: 1
+    // flex: calc(25% - 2rem)
   &__bubble
     position: relative
-    margin: 2rem auto
-    height: 200px
-    width: 200px
+    margin: 1rem
+    height: 220px
+    width: 220px
     &__text
       color: $main_bg_color
       width: 80%
@@ -26,7 +26,7 @@
       left: 50%
       transform: translate(-50%, -50%)
       z-index: 100
-      font-size: 1.2rem
+      font-size: 1.5rem
     &__bg
       background-color: blue
       position: absolute

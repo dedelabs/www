@@ -21,6 +21,10 @@ $card-spacing: 2rem
     position: relative
     flex: calc(100% - ($card-spacing * 2))
     margin: math.div($card-spacing, 2)
+    background-size: 100%
+    background-position: center center
+    transition: background-size 0.5s ease-out
+    filter: unset
     +at-breakpoint(lap)
       flex: calc(50% - ($card-spacing * 2))
     +at-breakpoint(desk)
@@ -32,6 +36,8 @@ $card-spacing: 2rem
       left: 1.5rem
       bottom: 1.5rem
     &:hover
-      background-size: 110%
+      transition: background-size 0.5s ease-in
+      background-size: 120%
+      filter: brightness(0.5) grayscale(1)
   &__next
     +swiper-next

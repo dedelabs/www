@@ -23,17 +23,21 @@ $radius: 5rem
     +at-breakpoint('lap')
       padding: 5rem
   &__description
-    width: 75%
+    width: 90%
     line-height: 170%
+    font-size: 1.2rem
   &__image
     border-radius: $radius
+    height: 350px
+    width: 70%
     +at-breakpoint('lap')
+      width: unset
+      height: 500px
       flex-basis: 200%
     +at-breakpoint('lap-landscape')
       flex-basis: 150%
     +at-breakpoint('desk')
       flex-basis: 80%
-    height: 500px
     background-color: $base_body_color
     background-repeat: no-repeat
     background-size: cover

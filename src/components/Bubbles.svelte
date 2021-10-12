@@ -2,7 +2,6 @@
   export let overtitle = "overtitle";
   export let title = "Title for hero component";
   export let bubbles = ['first', 'second', 'third'];
-  export let colors = ['red', 'yellow', 'blue'];
   export let slider = false;
   export let anchor;
 
@@ -50,8 +49,8 @@
           {#each bubbles as bubble}
             <SwiperSlide>
               <div class="bubbles__bubble">
-                <div class="bubbles__bubble__text">{bubble}</div>
-                <div class="bubbles__bubble__bg" style="border-radius: {generateBlob()}; background-color: {colors[Math.floor(Math.random() * colors.length)]}"></div>
+                <div class="bubbles__bubble__text">{bubble.text}</div>
+                <div class="bubbles__bubble__bg" style="border-radius: {generateBlob()}; background-color: {bubble.color}"></div>
               </div>
             </SwiperSlide>
           {/each}
@@ -63,8 +62,8 @@
         {#each bubbles as bubble}
           <div class="bubbles__bubble-container">
             <div class="bubbles__bubble">
-              <div class="bubbles__bubble__text">{bubble}</div>
-              <div class="bubbles__bubble__bg" style="border-radius: {generateBlob()}; background-color: {colors[Math.floor(Math.random() * colors.length)]}"></div>
+              <div class="bubbles__bubble__text">{bubble.text}</div>
+              <div class="bubbles__bubble__bg" style="border-radius: {generateBlob()}; background-color: {bubble.color}"></div>
             </div>
           </div>
         {/each}

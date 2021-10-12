@@ -15,7 +15,7 @@
   $: dimensions = isNaN(size) ? `${random(20, 200)}px` : `${size}px`
   $: zIndex = isNaN(zindex) ? random(1, 100) : zindex
 </script>
-
+ 
 <div class="blob" style="
   background-color: {color};
   --border-radius: {generateBlob()};

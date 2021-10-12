@@ -1,16 +1,43 @@
 .header
   padding: 2rem 1rem 1rem
-  display: flex
-  justify-content: space-between
-  align-items: center
+  position: relative
+  +at-breakpoint('lap-landscape')
+    display: flex
+    justify-content: space-between
+    align-items: center
+  > svg
+    z-index: 130
+    position: relative
+  .hamburger
+    float: right
+    position: relative
+    z-index: 130
+    +at-breakpoint('lap-landscape')
+      display: none
   &__menu
     &__item
-      display: inline-block
       padding: 0 2rem
-      font-size: 14px
+      display: block
+      font-size: 2rem
+      +at-breakpoint('lap-landscape')
+        display: inline-block
+        font-size: 14px
       &:hover
         cursor: pointer
         text-decoration: none
+    &--mobile
+      position: fixed
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background-color: $main_bg_color
+      z-index: 120
+      +at-breakpoint('lap-landscape')
+        display: none
+    &--desk
+      +at-breakpoint('lte-lap')
+        display: none
   &__button
     background-color: $theme_color
     text-transform: uppercase
@@ -19,3 +46,6 @@
     text-decoration: none
     padding: 0.5rem 2rem
     border-radius: 1rem 0 1rem 0
+    &--desk
+      +at-breakpoint('lte-lap')
+        display: none

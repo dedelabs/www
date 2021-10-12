@@ -34,11 +34,11 @@ pages:
           - top: 18
             left: -12
             size: 150
-            color: "#6A72DC"
+            color: "#60C971"
           - top: 90
             left: 20
             size: 100
-            color: "#60C971"
+            color: "#6A72DC"
       - type: Spacer
         height: 100
       - type: BlockWithImage
@@ -87,10 +87,16 @@ pages:
         overtitle: Why
         title: We give shape to complex<br />sustainable territorial transformations
         bubbles:
-          - Attract people
-          - Create new jobs
-          - Community owned enterprise
-          - Environmental protection
+          - text: Attract people
+            color: "#6A72DC"
+          - text: Create new jobs
+            color: "#60C971"
+          - text: Community owned enterprise
+            color: "#6A72DC"
+          - text: Environmental protection
+            color: "#60C971"
+          - text: Community owned enterprise
+            color: "#6A72DC"
       - type: Spacer
         height: 100
       - type: Carousel
@@ -127,16 +133,16 @@ pages:
         cards:
           - firstLine: Public Admin
             secondLine: and Governments
-            imagePath: image.jpg
+            imagePath: image.jpeg
           - firstLine: Private operators
             secondLine: individuals or networks
-            imagePath: image.jpg
+            imagePath: image.jpeg
           - firstLine: Foundations
             secondLine: and Civil Society Organisations
-            imagePath: image.jpg
+            imagePath: image.jpeg
           - firstLine: Universities
             secondLine: and Reserach Centers 
-            imagePath: image.jpg
+            imagePath: image.jpeg
       - type: BgCards
         overtitle: what we can do
         anchor: Micromaster
@@ -144,12 +150,12 @@ pages:
         slider: true
         cards:
           - firstLine: Context Mapping and Analysis
-            imagePath: image.jpg
+            imagePath: image.jpeg
           - firstLine: Impact Management
-            imagePath: image.jpg
+            imagePath: image.jpeg
           - firstLine: Open Organisation Design
-            imagePath: image.jpg
+            imagePath: image.jpeg
           - firstLine: Experience Design
-            imagePath: image.jpg
+            imagePath: image.jpeg
           - firstLine: Impact Storytelling
-            imagePath: image.jpg
+            imagePath: image.jpeg
