@@ -5,6 +5,7 @@ $card-spacing: 2rem
   text-align: center
   &__overtitle
     +lines-both
+    letter-spacing: $overtitle_spacing
   &__title
     text-align: center
     padding-bottom: 2rem
@@ -30,5 +31,7 @@ $card-spacing: 2rem
       display: block
       left: 1.5rem
       bottom: 1.5rem
+    &:hover
+      background-size: 110%
   &__next
     +swiper-next

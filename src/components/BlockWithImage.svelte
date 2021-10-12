@@ -18,7 +18,7 @@
   <div class="block block--{imagePosition}">
     <div class="block__content">
       <div class="block__overtitle">{overtitle}</div>
-      <h3 class="block__title">{title}</h3>
+      <h2 class="block__title">{title}</h2>
       <div class="block__description">{description}</div>
     </div>
     <div class="block__image" style="background-image: url('images/{imagePath}')">

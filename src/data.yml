@@ -17,6 +17,9 @@ pages:
       - type: Hero
         title: Transformation Lab
         subtitle: Knowledge for sustainable territories
+        cta:
+          text: scroll down
+          arrow: bottom
         shapes: 
           - top: 90
             left: 90
@@ -138,6 +141,7 @@ pages:
         overtitle: what we can do
         anchor: Micromaster
         title: Our Micromaster
+        slider: true
         cards:
           - firstLine: Context Mapping and Analysis
             imagePath: image.jpg
