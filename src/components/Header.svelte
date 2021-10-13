@@ -11,7 +11,17 @@
 				button.addEventListener('click', function () {
           open = false
 					let target = this.getAttribute('data-smoothscroll')
-					document.querySelector(target).scrollIntoView({ behavior: 'smooth' })
+          let headerOffset = 20
+          if (window.innerWidth < 1024) { 
+            headerOffset = document.querySelector('header.header').offsetHeight + headerOffset
+          }
+          
+          let offsetPosition = document.querySelector(target).offsetTop - headerOffset
+					// document.querySelector(target).scrollIntoView({ behavior: 'smooth' })
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });  
 			})
 		})
   })
@@ -19,7 +29,7 @@
   let open;
 </script>
 
-<div class="wrapper header">
+<header class="wrapper header">
   <DedeLogo></DedeLogo>
   <Hamburger bind:open type="emphatic" />
   {#if open}
@@ -44,4 +54,4 @@
     <li class="header__menu__item"><span data-smoothscroll="#Micromaster">Micromaster</span></li>
   </ul>
   <!-- <a class="header__button header__button--desk" href="##">Open call</a> -->
-</div>
+</header>

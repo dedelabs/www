@@ -1,9 +1,15 @@
 .header
   padding: 2rem 1rem 1rem
-  position: relative
+  +at-breakpoint('lte-lap')
+    position: fixed !important
+    width: 100%
+    z-index: 150
+    background-color: white
+    top: 0
   +at-breakpoint('lap-landscape')
+    position: relative
     display: flex
-    justify-content: space-between
+    justify-content: space-around
     align-items: center
   > svg
     z-index: 130
@@ -33,6 +39,13 @@
       height: 100%
       background-color: $main_bg_color
       z-index: 120
+      .header__menu
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        text-align: center
+        line-height: 4rem
       +at-breakpoint('lap-landscape')
         display: none
     &--desk

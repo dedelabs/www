@@ -27,7 +27,7 @@
 	$: colors = data.colorPalette;
 </script>
 
-<main style="overflow-x: hidden">
+<main>
 	<Header></Header>
 	{#each components as component}
 		<svelte:component this={loadedComponents[component.type]} {...component} colors="{colors}" />
