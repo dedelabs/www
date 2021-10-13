@@ -7396,7 +7396,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (59:4) {:else}
+    // (60:4) {:else}
     function create_else_block$4(ctx) {
     	let div;
     	let each_value_1 = /*cards*/ ctx[2];
@@ -7416,7 +7416,7 @@ var app = (function () {
     			}
 
     			attr_dev(div, "class", "bg-cards__container");
-    			add_location(div, file$c, 59, 6, 1624);
+    			add_location(div, file$c, 60, 6, 1743);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -7462,7 +7462,7 @@ var app = (function () {
     		block,
     		id: create_else_block$4.name,
     		type: "else",
-    		source: "(59:4) {:else}",
+    		source: "(60:4) {:else}",
     		ctx
     	});
 
@@ -7501,7 +7501,7 @@ var app = (function () {
     			div = element("div");
     			div.textContent = "Next ->";
     			attr_dev(div, "class", "bg-cards__next");
-    			add_location(div, file$c, 57, 6, 1564);
+    			add_location(div, file$c, 58, 6, 1683);
     		},
     		m: function mount(target, anchor) {
     			mount_component(swiper, target, anchor);
@@ -7545,7 +7545,7 @@ var app = (function () {
     	return block;
     }
 
-    // (65:14) {#if card.secondLine}
+    // (66:14) {#if card.secondLine}
     function create_if_block_2(ctx) {
     	let small;
     	let raw_value = /*card*/ ctx[8].secondLine + "";
@@ -7553,7 +7553,7 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			small = element("small");
-    			add_location(small, file$c, 65, 16, 1945);
+    			add_location(small, file$c, 66, 16, 2070);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, small, anchor);
@@ -7570,50 +7570,63 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(65:14) {#if card.secondLine}",
+    		source: "(66:14) {#if card.secondLine}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (61:8) {#each cards as card}
+    // (62:8) {#each cards as card}
     function create_each_block_1$4(ctx) {
-    	let div1;
+    	let div2;
     	let div0;
     	let strong;
     	let raw_value = /*card*/ ctx[8].firstLine + "";
     	let br;
     	let t0;
+    	let div0_class_value;
     	let t1;
+    	let div1;
+    	let t2;
     	let if_block = /*card*/ ctx[8].secondLine && create_if_block_2(ctx);
 
     	const block = {
     		c: function create() {
-    			div1 = element("div");
+    			div2 = element("div");
     			div0 = element("div");
     			strong = element("strong");
     			br = element("br");
     			t0 = space();
     			if (if_block) if_block.c();
     			t1 = space();
-    			add_location(strong, file$c, 63, 14, 1847);
-    			add_location(br, file$c, 63, 53, 1886);
-    			attr_dev(div0, "class", "bg-cards__card__title");
-    			add_location(div0, file$c, 62, 12, 1797);
-    			attr_dev(div1, "class", "bg-cards__card");
+    			div1 = element("div");
+    			t2 = space();
+    			add_location(strong, file$c, 64, 14, 1972);
+    			add_location(br, file$c, 64, 53, 2011);
+
+    			attr_dev(div0, "class", div0_class_value = "bg-cards__card__title " + (/*card*/ ctx[8].secondLine
+    			? 'bg-cards__card__title--with-subtitle'
+    			: ''));
+
+    			add_location(div0, file$c, 63, 12, 1858);
+    			attr_dev(div1, "class", "bg-cards__card__image");
     			set_style(div1, "background-image", "url('images/" + /*card*/ ctx[8].imagePath + "')");
-    			add_location(div1, file$c, 61, 10, 1698);
+    			add_location(div1, file$c, 69, 12, 2160);
+    			attr_dev(div2, "class", "bg-cards__card");
+    			add_location(div2, file$c, 62, 10, 1817);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div1, anchor);
-    			append_dev(div1, div0);
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div0);
     			append_dev(div0, strong);
     			strong.innerHTML = raw_value;
     			append_dev(div0, br);
     			append_dev(div0, t0);
     			if (if_block) if_block.m(div0, null);
-    			append_dev(div1, t1);
+    			append_dev(div2, t1);
+    			append_dev(div2, div1);
+    			append_dev(div2, t2);
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*cards*/ 4 && raw_value !== (raw_value = /*card*/ ctx[8].firstLine + "")) strong.innerHTML = raw_value;
@@ -7630,12 +7643,18 @@ var app = (function () {
     				if_block = null;
     			}
 
+    			if (dirty & /*cards*/ 4 && div0_class_value !== (div0_class_value = "bg-cards__card__title " + (/*card*/ ctx[8].secondLine
+    			? 'bg-cards__card__title--with-subtitle'
+    			: ''))) {
+    				attr_dev(div0, "class", div0_class_value);
+    			}
+
     			if (dirty & /*cards*/ 4) {
     				set_style(div1, "background-image", "url('images/" + /*card*/ ctx[8].imagePath + "')");
     			}
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div1);
+    			if (detaching) detach_dev(div2);
     			if (if_block) if_block.d();
     		}
     	};
@@ -7644,7 +7663,7 @@ var app = (function () {
     		block,
     		id: create_each_block_1$4.name,
     		type: "each",
-    		source: "(61:8) {#each cards as card}",
+    		source: "(62:8) {#each cards as card}",
     		ctx
     	});
 
@@ -7659,7 +7678,7 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			small = element("small");
-    			add_location(small, file$c, 50, 18, 1400);
+    			add_location(small, file$c, 50, 18, 1406);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, small, anchor);
@@ -7685,41 +7704,54 @@ var app = (function () {
 
     // (46:10) <SwiperSlide>
     function create_default_slot_1$3(ctx) {
-    	let div1;
+    	let div2;
     	let div0;
     	let strong;
     	let raw_value = /*card*/ ctx[8].firstLine + "";
     	let br;
     	let t0;
+    	let div0_class_value;
     	let t1;
+    	let div1;
+    	let t2;
     	let if_block = /*card*/ ctx[8].secondLine && create_if_block_1$1(ctx);
 
     	const block = {
     		c: function create() {
-    			div1 = element("div");
+    			div2 = element("div");
     			div0 = element("div");
     			strong = element("strong");
     			br = element("br");
     			t0 = space();
     			if (if_block) if_block.c();
     			t1 = space();
-    			add_location(strong, file$c, 48, 16, 1298);
-    			add_location(br, file$c, 48, 55, 1337);
-    			attr_dev(div0, "class", "bg-cards__card__title");
-    			add_location(div0, file$c, 47, 14, 1246);
-    			attr_dev(div1, "class", "bg-cards__card");
+    			div1 = element("div");
+    			t2 = space();
+    			add_location(strong, file$c, 48, 16, 1304);
+    			add_location(br, file$c, 48, 55, 1343);
+
+    			attr_dev(div0, "class", div0_class_value = "bg-cards__card__title " + (/*card*/ ctx[8].secondLine
+    			? 'bg-cards__card__title--with-subtitle'
+    			: ''));
+
+    			add_location(div0, file$c, 47, 14, 1188);
+    			attr_dev(div1, "class", "bg-cards__card__image");
     			set_style(div1, "background-image", "url('images/" + /*card*/ ctx[8].imagePath + "')");
-    			add_location(div1, file$c, 46, 12, 1145);
+    			add_location(div1, file$c, 53, 14, 1502);
+    			attr_dev(div2, "class", "bg-cards__card");
+    			add_location(div2, file$c, 46, 12, 1145);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div1, anchor);
-    			append_dev(div1, div0);
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div0);
     			append_dev(div0, strong);
     			strong.innerHTML = raw_value;
     			append_dev(div0, br);
     			append_dev(div0, t0);
     			if (if_block) if_block.m(div0, null);
-    			insert_dev(target, t1, anchor);
+    			append_dev(div2, t1);
+    			append_dev(div2, div1);
+    			insert_dev(target, t2, anchor);
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*cards*/ 4 && raw_value !== (raw_value = /*card*/ ctx[8].firstLine + "")) strong.innerHTML = raw_value;
@@ -7736,14 +7768,20 @@ var app = (function () {
     				if_block = null;
     			}
 
+    			if (dirty & /*cards*/ 4 && div0_class_value !== (div0_class_value = "bg-cards__card__title " + (/*card*/ ctx[8].secondLine
+    			? 'bg-cards__card__title--with-subtitle'
+    			: ''))) {
+    				attr_dev(div0, "class", div0_class_value);
+    			}
+
     			if (dirty & /*cards*/ 4) {
     				set_style(div1, "background-image", "url('images/" + /*card*/ ctx[8].imagePath + "')");
     			}
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div1);
+    			if (detaching) detach_dev(div2);
     			if (if_block) if_block.d();
-    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(t2);
     		}
     	};
 

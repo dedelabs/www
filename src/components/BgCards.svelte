@@ -44,13 +44,14 @@
       >
         {#each cards as card}
           <SwiperSlide>
-            <div class="bg-cards__card"  style="background-image: url('images/{card.imagePath}')">
-              <div class="bg-cards__card__title">
+            <div class="bg-cards__card">
+              <div class="bg-cards__card__title {card.secondLine ? 'bg-cards__card__title--with-subtitle' : ''}">
                 <strong>{@html card.firstLine}</strong><br />
                 {#if card.secondLine}
                   <small>{@html card.secondLine}</small>
                 {/if}
               </div>
+              <div class="bg-cards__card__image" style="background-image: url('images/{card.imagePath}')"></div>
             </div>
           </SwiperSlide>
         {/each}
@@ -59,13 +60,14 @@
     {:else}
       <div class="bg-cards__container">
         {#each cards as card}
-          <div class="bg-cards__card"  style="background-image: url('images/{card.imagePath}')">
-            <div class="bg-cards__card__title">
+          <div class="bg-cards__card">
+            <div class="bg-cards__card__title {card.secondLine ? 'bg-cards__card__title--with-subtitle' : ''}">
               <strong>{@html card.firstLine}</strong><br />
               {#if card.secondLine}
                 <small>{@html card.secondLine}</small>
               {/if}
             </div>
+            <div class="bg-cards__card__image" style="background-image: url('images/{card.imagePath}')"></div>
           </div>
         {/each}
       </div>
