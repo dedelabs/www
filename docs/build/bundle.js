@@ -980,16 +980,8 @@ var app = (function () {
     					{
     						text: "Environmental protection",
     						color: "#60C971"
-    					},
-    					{
-    						text: "Community owned enterprise",
-    						color: "#6A72DC"
     					}
     				]
-    			},
-    			{
-    				type: "Spacer",
-    				height: 100
     			},
     			{
     				type: "Carousel",
