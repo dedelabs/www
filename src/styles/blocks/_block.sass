@@ -4,8 +4,9 @@ $radius: 5rem
   align-items: center
   position: relative
   z-index: 50
-  +at-breakpoint('lap')
-    display: flex
+  display: flex
+  +at-breakpoint('lte-tab')
+    flex-wrap: wrap
   &--left
     flex-direction: row-reverse
     .block__image
