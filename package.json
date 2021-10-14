@@ -1,7 +1,10 @@
 {
-  "name": "svelte-app",
+  "name": "transformation-lab",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": ">=12"
+  },
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
