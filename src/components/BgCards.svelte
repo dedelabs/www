@@ -29,7 +29,7 @@
 <div class="wrapper" id="{HTMLanchor}">
   <div class="bg-cards">
     <div class="bg-cards__overtitle">{overtitle}</div>
-    <h3 class="bg-cards__title">{title}</h3>
+    <h3 class="bg-cards__title">{@html title}</h3>
     {#if slider}
       <Swiper
         modules={[Navigation]}

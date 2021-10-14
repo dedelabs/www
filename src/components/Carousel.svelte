@@ -35,7 +35,7 @@
       {overtitle}
     </div>
     {#if slider}
-      <h3 class="carousel__title">{title}</h3>
+      <h3 class="carousel__title">{@html title}</h3>
       <Swiper
         modules={[Navigation]}
         loop="{true}"
@@ -69,4 +69,3 @@
     {/if}
   </div>
 </div>
-
