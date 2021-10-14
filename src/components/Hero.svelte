@@ -6,6 +6,12 @@
   export let cta = false;
 
   import Blobs from './Blobs.svelte';
+  import { afterUpdate } from 'svelte'
+  import { smoothScroll } from '../utilities.js';
+  
+  afterUpdate(() => {
+    smoothScroll()
+  })
 </script>
 
 <div class="wrapper">
@@ -15,7 +21,7 @@
       <h3 class="hero__subtitle">{subtitle}</h3>
     </div>
     {#if cta}
-      <div class="hero__cta">
+      <div class="hero__cta" data-smoothscroll="#Solution">
         {cta.text}
         {#if cta.arrow}
           <div class="arrow arrow--{cta.arrow}">-></div>

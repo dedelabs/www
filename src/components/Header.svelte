@@ -5,25 +5,11 @@
 
   
   import { afterUpdate } from 'svelte'
-   afterUpdate(() => {
-			let buttons = document.querySelectorAll('[data-smoothscroll]')
-			buttons.forEach((button) => {
-				button.addEventListener('click', function () {
-          open = false
-					let target = this.getAttribute('data-smoothscroll')
-          let headerOffset = 20
-          if (window.innerWidth < 1024) { 
-            headerOffset = document.querySelector('header.header').offsetHeight + headerOffset
-          }
-          
-          let offsetPosition = document.querySelector(target).offsetTop - headerOffset
-					// document.querySelector(target).scrollIntoView({ behavior: 'smooth' })
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth"
-          });  
-			})
-		})
+  import { smoothScroll } from '../utilities.js';
+  
+  afterUpdate(() => {
+    let buttons = smoothScroll()
+    buttons.forEach((button) => { button.addEventListener('click', () => { open = false })})
   })
 
   let open;
