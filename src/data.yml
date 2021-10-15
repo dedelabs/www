@@ -177,22 +177,22 @@ pages:
         slider: true
         cards:
           - firstLine: Territorial Mapping
-            imagePath: image.jpeg
+            imagePath: micromasters/mapping.jpg
           - firstLine: Experience Design
-            imagePath: image.jpeg
+            imagePath: micromasters/experience.jpg
           - firstLine: Impact Management
-            imagePath: image.jpeg
+            imagePath: micromasters/impact.png
           - firstLine: Organisation Design
-            imagePath: image.jpeg
+            imagePath: micromasters/organisation.jpg
           - firstLine: Impact Storytelling
-            imagePath: image.jpeg
+            imagePath: micromasters/storytelling.jpg
           - firstLine: Brand Identity
-            imagePath: image.jpeg
+            imagePath: micromasters/brand.jpg
           - firstLine: Business Development
-            imagePath: image.jpeg
+            imagePath: micromasters/business-dev.jpg
           - firstLine: Marketing & Distribution
-            imagePath: image.jpeg
+            imagePath: micromasters/marketing.jpg
           - firstLine: Accountability
-            imagePath: image.jpeg
+            imagePath: micromasters/accountability.jpg
           - firstLine: Fundraising
-            imagePath: image.jpeg
+            imagePath: micromasters/fundraising.jpg
