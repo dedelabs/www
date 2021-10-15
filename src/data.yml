@@ -151,25 +151,25 @@ pages:
         cards:
           - firstLine: Public Administration
             secondLine: As well as Governments & European cooperation bodies
-            imagePath: targets/public.jpg
+            imagePath: targets/public.png
           - firstLine: Private operators
             secondLine: As individual or network organisations
-            imagePath: targets/operators.jpg
+            imagePath: targets/operators.png
           - firstLine: Enterprises
             secondLine: Focused on supporting impact and sustainability
-            imagePath: targets/enterprises.jpg
+            imagePath: targets/enterprises.png
           - firstLine: Impact Investors
             secondLine: As Angels Investors or VCs blending profit with impact
-            imagePath: targets/investors.jpg
+            imagePath: targets/investors.png
           - firstLine: Foundations
             secondLine: As well as NGOs & Civil Society Organisations
-            imagePath: targets/foundations.jpg
+            imagePath: targets/foundations.png
           - firstLine: Universities
             secondLine: As well as Public and Private Research Centers
-            imagePath: targets/universities.jpg
+            imagePath: targets/universities.png
           - firstLine: Citizens
             secondLine: Wanted to actively participate
-            imagePath: targets/citizens.jpg
+            imagePath: targets/citizens.png
       - type: BgCards
         overtitle: what we can do
         anchor: Micromaster
@@ -177,22 +177,22 @@ pages:
         slider: true
         cards:
           - firstLine: Territorial Mapping
-            imagePath: micromasters/mapping.jpg
+            imagePath: micromasters/mapping.png
           - firstLine: Experience Design
-            imagePath: micromasters/experience.jpg
+            imagePath: micromasters/experience.png
           - firstLine: Impact Management
             imagePath: micromasters/impact.png
           - firstLine: Organisation Design
-            imagePath: micromasters/organisation.jpg
+            imagePath: micromasters/organisation.png
           - firstLine: Impact Storytelling
-            imagePath: micromasters/storytelling.jpg
+            imagePath: micromasters/storytelling.png
           - firstLine: Brand Identity
-            imagePath: micromasters/brand.jpg
+            imagePath: micromasters/brand.png
           - firstLine: Business Development
-            imagePath: micromasters/business-dev.jpg
+            imagePath: micromasters/business-dev.png
           - firstLine: Marketing & Distribution
-            imagePath: micromasters/marketing.jpg
+            imagePath: micromasters/marketing.png
           - firstLine: Accountability
-            imagePath: micromasters/accountability.jpg
+            imagePath: micromasters/accountability.png
           - firstLine: Fundraising
-            imagePath: micromasters/fundraising.jpg
+            imagePath: micromasters/fundraising.png
