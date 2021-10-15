@@ -62,9 +62,9 @@ pages:
       - type: BlockWithImage
         imagePosition: left
         imagePath: knowledge.jpg
-        overtitle: Enterpreneurship
+        overtitle: Impact business
         title: Community Enterprise
-        description: We transfer knowledge on entrepreneurship and sustainability to activate a community enterprise fully owned and operated by it members, capable to measure its impact and to express its territorial value through experiences embodying their identity and culture
+        description: We transfer knowledge on entrepreneurship and sustainability to activate a community enterprise fully owned and operated by it members, capable to measure its impact and to express its territorial value through experiences embodying territorial identity and culture
         shapes: 
           - top: 75
             left: -10
@@ -84,7 +84,7 @@ pages:
             color: "#60C971"
             zindex: 60
       - type: Bubbles
-        overtitle: Why
+        overtitle: Why it matters
         title: We give shape to complex<br />sustainable territorial transformations
         bubbles:
           - text: More people
@@ -101,7 +101,7 @@ pages:
             color: "#60C971"
           - text: Impact and data culture
             color: "#6A72DC"
-          - text: experience economy
+          - text: Experience economy
             color: "#60C971"
           - text: Sustainable reputation
             color: "#6A72DC"
@@ -134,7 +134,7 @@ pages:
             title: Recognition
             description: Learnings are recognised through the European Credit Transfer and Accumulation System (ECTS) and through Open Badges (digital credentials)
       - type: Cards
-        overtitle: What we activate
+        overtitle: What territories do
         title: We drive tangible territorial results
         cards:
           - title: Community Enterprise
@@ -148,29 +148,28 @@ pages:
       - type: BgCards
         overtitle: Who can we help
         title: Anyone supporting the future of<br />sustainable territorial transformation
-        slider: true
         cards:
           - firstLine: Public Administration
             secondLine: As well as Governments & European cooperation bodies
-            imagePath: image.jpeg
+            imagePath: targets/public.png
           - firstLine: Private operators
             secondLine: As individual or network organisations
-            imagePath: image.jpeg
+            imagePath: targets/operators.png
           - firstLine: Enterprises
             secondLine: Focused on supporting impact and sustainability
-            imagePath: image.jpeg
+            imagePath: targets/enterprises.png
           - firstLine: Impact Investors
             secondLine: As Angels Investors or VCs blending profit with impact
-            imagePath: image.jpeg
+            imagePath: targets/investors.png
           - firstLine: Foundations
             secondLine: As well as NGOs & Civil Society Organisations
-            imagePath: image.jpeg
+            imagePath: targets/foundations.png
           - firstLine: Universities
             secondLine: As well as Public and Private Research Centers
-            imagePath: image.jpeg
+            imagePath: targets/universities.png
           - firstLine: Citizens
             secondLine: Wanted to actively participate
-            imagePath: image.jpeg
+            imagePath: targets/citizens.png
       - type: BgCards
         overtitle: what we can do
         anchor: Micromaster
@@ -178,22 +177,22 @@ pages:
         slider: true
         cards:
           - firstLine: Territorial Mapping
-            imagePath: image.jpeg
+            imagePath: micromasters/mapping.png
           - firstLine: Experience Design
-            imagePath: image.jpeg
+            imagePath: micromasters/experience.png
           - firstLine: Impact Management
-            imagePath: image.jpeg
+            imagePath: micromasters/impact.png
           - firstLine: Organisation Design
-            imagePath: image.jpeg
+            imagePath: micromasters/organisation.png
           - firstLine: Impact Storytelling
-            imagePath: image.jpeg
+            imagePath: micromasters/storytelling.png
           - firstLine: Brand Identity
-            imagePath: image.jpeg
+            imagePath: micromasters/brand.png
           - firstLine: Business Development
-            imagePath: image.jpeg
+            imagePath: micromasters/business-dev.png
           - firstLine: Marketing & Distribution
-            imagePath: image.jpeg
+            imagePath: micromasters/marketing.png
           - firstLine: Accountability
-            imagePath: image.jpeg
+            imagePath: micromasters/accountability.png
           - firstLine: Fundraising
-            imagePath: image.jpeg
+            imagePath: micromasters/fundraising.png
