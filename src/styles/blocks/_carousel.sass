@@ -1,14 +1,14 @@
 .carousel
   text-align: center
-  padding-top: 3rem
+  padding-top: $space-unit*6
   &__overtitle
     +lines-both
     letter-spacing: $overtitle_spacing
   &__title
     text-align: center
-    padding-bottom: 3rem
+    padding-bottom: $space-unit*4
   &__slides
-    text-align: left
+    text-align: center
     width: 90%
     .swiper-button-prev
       display: none
@@ -18,10 +18,14 @@
       flex-wrap: wrap
       .carousel__slide
         flex-grow: 1
-        flex: 25%
+        flex: 33%
         padding: 1rem
-  &__slide__title
-    padding-top: 1rem
-    padding-bottom: 1rem
+  &__slide
+    padding: 0 1rem
+    &__image
+      height: 4rem
+    &__title
+      padding-top: 2rem
+      padding-bottom: 1rem
   &__next
     +swiper-next

@@ -1,8 +1,8 @@
 <script>
-  export let shapes;
-  export let colors;
+  export let shapes
+  export let colors
 
-  import Blob from './Blob.svelte';
+  import Blob from './Blob.svelte'
 </script>
 
 {#if (typeof shapes === 'number')}

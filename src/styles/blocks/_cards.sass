@@ -3,21 +3,22 @@ $card-spacing: 2rem
 
 .cards
   text-align: center
-  padding-top: 3rem
+  padding-top: $space-unit*6
   &__overtitle
     +lines-both
     letter-spacing: $overtitle_spacing
   &__title
     text-align: center
-    padding-bottom: 3rem
+    padding-bottom: $space-unit*4
   &__container
     display: flex
     flex-wrap: wrap
   &__card
     flex-grow: 1
     border-radius: $card-spacing
-    box-shadow: 0 4px 100px $shadow
+    box-shadow: 2px 0px 13px 3px $shadow
     padding: 1rem
+    margin: 0.5rem
     text-align: left
     font-size: 1rem
     background-color: $main_bg_color
@@ -26,8 +27,10 @@ $card-spacing: 2rem
     +at-breakpoint(lap)
       flex: calc(50% - ($card-spacing * 2))
     +at-breakpoint(desk)
-      flex: calc(25% - ($card-spacing * 2))
+      flex: calc(33% - ($card-spacing * 2))
     &__title
       margin-bottom: $card-spacing
+      +at-breakpoint('lap')
+        font-size: 1.799rem
   &__next
     +swiper-next

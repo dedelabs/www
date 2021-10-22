@@ -1,71 +1,61 @@
 <script>
-  export let title = "Title for hero component";
-  export let overtitle = "overtitle";
-  export let slides = [];
-  export let slider = true;
+  export let title = "Title for hero component"
+  export let overtitle = "overtitle"
+  export let slides = []
+  export let slider = true
+  export let type = 'Carousel'
+  export let anchor
+  export let shapes = 0
+  export let colors = ['red', 'yellow', 'blue']
 
-  export let anchor;
+  let HTMLanchor = anchor ? anchor : overtitle
+  let baseClass = type.toLowerCase()
+  let navigation = { nextEl: `.${baseClass}__next` }
 
-  let HTMLanchor = anchor ? anchor : overtitle;
-
-  let navigation = { nextEl: '.carousel__next' }
-  let breakpoints = {
-    '320': {
-      slidesPerView: 1,
-      spaceBetween: 20,
-    },
-    '640': {
-      slidesPerView: 2,
-      spaceBetween: 40,
-    },
-    '1200': {
-      slidesPerView: 4,
-      spaceBetween: 50,
-    },
-  }
-
-  // Import Swiper Svelte components
   import { Navigation } from 'swiper'
   import { Swiper, SwiperSlide } from 'swiper/svelte'
+  import { swiperBreakpoints } from '../utilities.js'
+  import Blobs from './Blobs.svelte'
 </script>
 
 <div class="wrapper" id="{HTMLanchor}">
-  <div class="carousel">
-    <div class="carousel__overtitle">
+  <div class="{baseClass}">
+    <div class="{baseClass}__overtitle">
       {overtitle}
     </div>
     {#if slider}
-      <h3 class="carousel__title">{@html title}</h3>
+      <h3 class="{baseClass}__title">{@html title}</h3>
       <Swiper
         modules={[Navigation]}
         loop="{true}"
         navigation={navigation}
-        class="carousel__slides"
+        class="{baseClass}__slides"
         spaceBetween={50}
-        slidesPerView={4}
-        breakpoints={breakpoints}
+        slidesPerView={3}
+        breakpoints={swiperBreakpoints}
         on:slideChange={() => {}}
         on:swiper={(e) => {}}
       >
         {#each slides as slide}
-          <SwiperSlide>
-            {@html slide.image}
-            <h4 class="carousel__slide__title">{slide.title}</h4>
+          <SwiperSlide class="{baseClass}__slide">
+            <div class="{baseClass}__slide__image">{@html slide.image}</div>
+            <h4 class="{baseClass}__slide__title">{slide.title}</h4>
             {slide.description}
           </SwiperSlide>
         {/each}
       </Swiper>
-      <div class="carousel__next">Next -></div>
+      <div class="{baseClass}__next">Next -></div>
     {:else}
-      <div class="carousel__slides carousel__slides--no-slider">
+      <div class="{baseClass}__slides {baseClass}__slides--no-slider">
         {#each slides as slide}
-          <div class="carousel__slide">
+          <div class="{baseClass}__slide">
             {@html slide.image}
-            <h4 class="carousel__slide__title">{slide.title}</h4>
+            <h4 class="{baseClass}__slide__title">{slide.title}</h4>
             {slide.description}
           </div>
         {/each}
       </div>
     {/if}
   </div>
+  <Blobs shapes={shapes} colors="{colors}"></Blobs>
 </div>

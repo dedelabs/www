@@ -1,73 +1,64 @@
 <script>
-  export let overtitle = "overtitle";
-  export let title = "Title for hero component";
-  export let bubbles = ['first', 'second', 'third'];
-  export let slider = false;
-  export let anchor;
+  export let overtitle = "overtitle"
+  export let title = "Title for hero component"
+  export let bubbles = ['first', 'second', 'third']
+  export let slider = false
+  export let anchor
+  export let type = 'Bubbles'
+  export let shapes = 0
+  export let colors = ['red', 'yellow', 'blue']
 
   let HTMLanchor = anchor ? anchor : overtitle;
+  let baseClass = type.toLowerCase()
+  let navigation = { nextEl: `.${baseClass}__next` }
 
-  import { generateBlob } from '../utilities.js';
-
-  let navigation = { nextEl: '.bubbles__next' }
-  let breakpoints = {
-    '320': {
-      slidesPerView: 1,
-      spaceBetween: 20,
-    },
-    '640': {
-      slidesPerView: 2,
-      spaceBetween: 40,
-    },
-    '1200': {
-      slidesPerView: 4,
-      spaceBetween: 50,
-    },
-  }
+  import { generateBlob } from '../utilities.js'
   import { Navigation } from 'swiper'
   import { Swiper, SwiperSlide } from 'swiper/svelte'
-  
+  import { swiperBreakpoints } from '../utilities.js'
+  import Blobs from './Blobs.svelte'
 </script>
 
 <div class="wrapper" id="{HTMLanchor}">
-  <div class="bubbles">
-    <div class="bubbles__overtitle">{overtitle}</div>
-    <h3 class="bubbles__title">{@html title}</h3>
+  <div class="{baseClass}">
+    <div class="{baseClass}__overtitle">{overtitle}</div>
+    <h3 class="{baseClass}__title">{@html title}</h3>
     {#if slider}
-      <div class="bubbles__bubbles">
+      <div class="{baseClass}__bubbles">
         <Swiper
           modules={[Navigation]}
           loop="{true}"
           navigation={navigation}
-          class="bubbles__slides"
+          class="{bubbles}__slides"
           spaceBetween={50}
           slidesPerView={4}
-          breakpoints={breakpoints}
+          breakpoints={swiperBreakpoints}
           on:slideChange={() => {}}
           on:swiper={(e) => {}}
         >
           {#each bubbles as bubble}
             <SwiperSlide>
-              <div class="bubbles__bubble">
-                <div class="bubbles__bubble__text">{bubble.text}</div>
-                <div class="bubbles__bubble__bg" style="border-radius: {generateBlob()}; background-color: {bubble.color}"></div>
+              <div class="{baseClass}__bubble">
+                <div class="{baseClass}__bubble__text" style="color: {bubble.color}">{bubble.text}</div>
+                <div class="{baseClass}__bubble__bg" style="border-radius: {generateBlob()}; background-color: {bubble.color}"></div>
               </div>
             </SwiperSlide>
           {/each}
         </Swiper>
       </div>
-      <div class="bubbles__next">Next -></div>
+      <div class="{baseClass}__next">Next -></div>
     {:else}
-      <div class="bubbles__bubbles">
+      <div class="{baseClass}__bubbles">
         {#each bubbles as bubble}
-          <div class="bubbles__bubble-container">
-            <div class="bubbles__bubble">
-              <div class="bubbles__bubble__text">{bubble.text}</div>
-              <div class="bubbles__bubble__bg" style="border-radius: {generateBlob()}; background-color: {bubble.color}"></div>
+          <div class="{baseClass}__bubble-container">
+            <div class="{baseClass}__bubble">
+              <div class="{baseClass}__bubble__text" style="color: {bubble.color}">{bubble.text}</div>
+              <div class="{baseClass}__bubble__bg" style="border-radius: {generateBlob()}; background-color: {bubble.color}"></div>
             </div>
           </div>
         {/each}
       </div>
     {/if}
   </div>
+  <Blobs shapes={shapes} colors="{colors}"></Blobs>
 </div>

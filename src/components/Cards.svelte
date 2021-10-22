@@ -1,66 +1,59 @@
 <script>
-  export let title = "Title for hero component";
-  export let overtitle = "overtitle";
-  export let cards = [];
-  export let slider = false;
-  export let anchor;
+  export let title = "Title for hero component"
+  export let overtitle = "overtitle"
+  export let cards = []
+  export let slider = false
+  export let anchor
+  export let type = 'Cards'
+  export let shapes = 0
+  export let colors = ['red', 'yellow', 'blue']
 
-  let HTMLanchor = anchor ? anchor : overtitle;
-
-  let navigation = { nextEl: '.cards__next' }
-  let breakpoints = {
-    '320': {
-      slidesPerView: 1,
-      spaceBetween: 20,
-    },
-    '640': {
-      slidesPerView: 2,
-      spaceBetween: 40,
-    },
-    '1200': {
-      slidesPerView: 4,
-      spaceBetween: 50,
-    },
-  }
+  let HTMLanchor = anchor ? anchor : overtitle
+  let baseClass = type.toLowerCase()
+  let navigation = { nextEl: `.${baseClass}__next` }
+  
   import { Navigation } from 'swiper'
   import { Swiper, SwiperSlide } from 'swiper/svelte'
+  import { swiperBreakpoints } from '../utilities.js'
+  import Blobs from './Blobs.svelte'
 </script>
 
 <div class="wrapper" id="{HTMLanchor}">
-  <div class="cards">
-    <div class="cards__overtitle">{overtitle}</div>
-    <h3 class="cards__title">{title}</h3>
+  <div class="{baseClass}">
+    <div class="{baseClass}__overtitle">{overtitle}</div>
+    <h3 class="{baseClass}__title">{title}</h3>
     {#if slider}
       <Swiper
         modules={[Navigation]}
         loop="{true}"
         navigation={navigation}
-        class="cards__container"
+        class="{baseClass}__container"
         spaceBetween={50}
-        slidesPerView={4}
-        breakpoints={breakpoints}
+        slidesPerView={3}
+        breakpoints={swiperBreakpoints}
         on:slideChange={() => {}}
         on:swiper={(e) => {}}
       >
         {#each cards as card}
           <SwiperSlide>
-            <div class="cards__card">
-              <h4 class="cards__card__title">{@html card.title}</h4>
+            <div class="{baseClass}__card">
+              <h4 class="{baseClass}__card__title">{@html card.title}</h4>
               {card.description}
             </div>
           </SwiperSlide>
         {/each}
       </Swiper>
-      <div class="cards__next">Next -></div>
+      <div class="{baseClass}__next">Next -></div>
     {:else}
-      <div class="cards__container">
+      <div class="{baseClass}__container">
         {#each cards as card}
-          <div class="cards__card">
-            <h4 class="cards__card__title">{@html card.title}</h4>
+          <div class="{baseClass}__card">
+            <h4 class="{baseClass}__card__title">{@html card.title}</h4>
             {card.description}
           </div>
         {/each}
       </div>
     {/if}
   </div>
+  <Blobs shapes={shapes} colors="{colors}"></Blobs>
 </div>

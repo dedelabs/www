@@ -13,8 +13,11 @@
 // |               |               |                |               |              |
 // 0px            480px          720px           1200px          1600px            ∞
 
+$wrap-width: 1024px
+$gutter: 12px
+
 // define breakpoints
-$breakpoint-widths: ('palm': 0px, 'tab': 480px, 'lap': 720px, 'lap-landscape': 1024px, 'desk': 1280px, 'wall': 1600px)
+$breakpoint-widths: ('palm': 0px, 'tab': 480px, 'lap': 720px, 'lap-landscape': 1024px, 'desk': $wrap-width, 'wall': 1600px)
 
 // derived variables
 $breakpoint-names: breakpoint-names($breakpoint-widths)

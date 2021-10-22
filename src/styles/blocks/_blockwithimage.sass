@@ -1,5 +1,5 @@
 $radius: 5rem
-.block
+.blockwithimage
   align-items: center
   position: relative
   z-index: 50
@@ -8,20 +8,24 @@ $radius: 5rem
     flex-wrap: wrap
   &--left
     flex-direction: row-reverse
-    .block__image
+    .blockwithimage__content
+      +at-breakpoint('lap')
+        padding: 4rem 1em 4em 4rem
+    .blockwithimage__image
       // border-radius: 0 $radius $radius 0 
       +at-breakpoint('lte-lap-landscape')
         margin-left: -5rem
   &--right
     flex-direction: row
-    .block__image
+    .blockwithimage__content
+      +at-breakpoint('lap')
+        padding: 4rem 4em 4em 1rem
+    .blockwithimage__image
       +at-breakpoint('lte-lap-landscape')
         margin-right: -5rem
       // border-radius: $radius 0 0 $radius 
   &__content
-    padding: 4rem 1rem
-    +at-breakpoint('lap')
-      padding: 5rem
+    padding: 1em
   &__description
     width: 90%
     line-height: 170%
@@ -29,15 +33,13 @@ $radius: 5rem
   &__image
     border-radius: $radius
     height: 350px
-    width: 70%
+    width: 80%
+    margin: 1em
     +at-breakpoint('lap')
       width: unset
-      height: 500px
       flex-basis: 200%
     +at-breakpoint('lap-landscape')
       flex-basis: 150%
-    +at-breakpoint('desk')
-      flex-basis: 120%
     background-color: $base_body_color
     background-repeat: no-repeat
     background-size: cover
@@ -46,6 +48,7 @@ $radius: 5rem
     padding-bottom: 3rem
     color: $base_body_color
   &__overtitle
+    font-weight: bold
     padding-left: 5rem
     margin-bottom: 3rem
     position: relative
@@ -58,4 +61,3 @@ $radius: 5rem
       content: ""
       top: calc(50% - 2px)
       border-bottom: 2px solid $base_body_color
-      
