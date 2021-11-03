@@ -225,7 +225,7 @@ pages:
       - type: Text
         title: Our purpose
         anchor: purpose
-        subtitle: Why we do what we do everyday
+        subtitle: Building relationships that last
         content: Our purpose is to generate trust in territories by giving the tools to fully express their social, economic and environmental value, by stimulating the impact entrepreneurial tissue, by enabling transparent communication of the accomplished changes, by creating a sense of community around sustainability, by aligning the territorial purpose with economic incentives, by giving territories ownership of their own value and by giving to the community enterprises the power to govern and control their future.
         shapes: 
           - top: -19
