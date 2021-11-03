@@ -15,7 +15,7 @@ pages:
     path: /
     components:
       - type: Hero 
-        title: DEDE LABS
+        title: DEDE Labs
         subtitle: Driving Sustainable Territorial Transformation
         cta:
           text: scroll down
