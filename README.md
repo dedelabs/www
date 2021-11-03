@@ -1,4 +1,4 @@
-# Transformation Lab
+# DEDE Labs
 
 This is a site builder based on [Svelte](https://svelte.dev).
 
