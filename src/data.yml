@@ -15,7 +15,7 @@ pages:
     path: /
     components:
       - type: Hero 
-        title: DEDE LABS
+        title: DEDE Labs
         subtitle: Driving Sustainable Territorial Transformation
         cta:
           text: scroll down
@@ -102,6 +102,25 @@ pages:
             size: 200
             color: "#6A72DC"
             zindex: 70
+      - type: Spacer
+        height: 50
+      - type: Carousel
+        overtitle: Added value
+        anchor: value
+        title: First movers in empowering territorial <br />sovereignty and autonomy
+        slides:
+          - image: <svg width="71" height="48" viewBox="0 0 71 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="24" r="17.5" transform="rotate(90 18 24)" fill="#60C971" style="mix-blend-mode:multiply"/><circle cx="18" cy="24" r="17.5" transform="rotate(90 18 24)" stroke="#60C971"/><ellipse cx="47" cy="24" rx="24" ry="24" transform="rotate(90 47 24)" fill="#646FFF" style="mix-blend-mode:multiply"/></svg>
+            title: Economic Value
+            description: All booking value goes to community members (no commission fee) and we enable additional economic value to be injected into the local community enterprise through the Impact Fee 
+          - image: <svg width="63" height="50" viewBox="0 0 63 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M60.3685 21.7325C62.6268 23.3261 62.6269 26.6754 60.3685 28.269L30.8062 49.1296C28.1565 50.9994 24.5 49.1044 24.5 45.8614L24.5 4.14014C24.5 0.897142 28.1565 -0.997856 30.8062 0.871914L60.3685 21.7325Z" fill="#646FFF" style="mix-blend-mode:multiply"/><path d="M36.3685 21.7325C38.6268 23.3261 38.6269 26.6753 36.3685 28.269L6.80623 49.1296C4.15652 50.9993 0.500001 49.1043 0.500001 45.8613L0.500003 4.14011C0.500003 0.897111 4.15652 -0.997887 6.80623 0.871884L36.3685 21.7325Z" fill="#60C971" style="mix-blend-mode:multiply"/></svg>
+            title: Data Sovereignty
+            description: Territories are in full control of their data (Self Sovereign Identity) giving access to new revenue streams enabled by emerging data markets (e.g. Ocean Protocol)
+          - image: <svg width="63" height="51" viewBox="0 0 63 51" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.07108 20.9704C7.63318 19.4083 10.1658 19.4083 11.7279 20.9704L32.9411 42.1836L25.8701 49.2547C24.308 50.8168 21.7753 50.8168 20.2132 49.2547L1.82844 30.8699C0.266341 29.3078 0.266341 26.7752 1.82844 25.2131L6.07108 20.9704Z" fill="#60C971" style="mix-blend-mode:multiply"/><path d="M60.9842 8.48349C62.5463 10.0456 62.5463 12.5782 60.9842 14.1403L25.87 49.2546C24.3079 50.8167 21.7752 50.8167 20.2131 49.2546L10.3136 39.3551L48.2563 1.41242C49.8184 -0.149673 52.3511 -0.149673 53.9132 1.41242L60.9842 8.48349Z" fill="#646FFF" style="mix-blend-mode:multiply"/></svg>
+            title: Self-Governance
+            description: Territorial community enterprises are fully operated and owned by its members and are also members of DEDE, designing all together the future of our ecosystem
+          - image: <svg width="75" height="66" viewBox="0 0 75 66" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M44.3685 29.7318C46.6268 31.3254 46.6269 34.6746 44.3685 36.2682L14.8062 57.1288C12.1565 58.9986 8.5 57.1036 8.5 53.8606L8.5 12.1394C8.5 8.89638 12.1565 7.00138 14.8062 8.87115L44.3685 29.7318Z" fill="#646FFF" style="mix-blend-mode:multiply"/><circle cx="11" cy="55" r="11" transform="rotate(90 11 55)" fill="#60C971" style="mix-blend-mode:multiply"/><circle cx="11" cy="11" r="11" transform="rotate(90 11 11)" fill="#60C971" style="mix-blend-mode:multiply"/><path d="M30.6315 36.2682C28.3731 34.6746 28.3731 31.3254 30.6315 29.7318L60.1938 8.87115C62.8435 7.00138 66.5 8.89638 66.5 12.1394L66.5 53.8606C66.5 57.1036 62.8435 58.9986 60.1938 57.1288L30.6315 36.2682Z" fill="#646FFF" style="mix-blend-mode:multiply"/><circle cx="64" cy="11" r="11" transform="rotate(-90 64 11)" fill="#60C971" style="mix-blend-mode:multiply"/><circle cx="64" cy="55" r="11" transform="rotate(-90 64 55)" fill="#60C971" style="mix-blend-mode:multiply"/></svg>
+            title: Open Source
+            description: Territories have full access to an open source tech platform where all algorithms and logics are fully visible, enabling an open ecosystem where everyone can participate
       - type: Spacer
         height: 100
       - type: Text
@@ -204,10 +223,10 @@ pages:
       - type: Spacer
         height: 100
       - type: Text
-        title: Our goal
-        anchor: goal
+        title: Our purpose
+        anchor: purpose
         subtitle: The driving force behind everything we do
-        content: Our goal is to build trust in territories by providing them tools to fully express their social, economic and environmental values, while we also aim at stimulating the impact entrepreneurial tissue by enabling transparent communication of the accomplished changes. By creating a sense of community around sustainability, we would like to align territorial needs with economic incentives and would like to give territories full ownership of their own value, giving community enterprises the power to govern and control their future.
+        content: Our purpose is to build trust in territories by providing them tools to fully express their social, economic and environmental values, while we also aim at stimulating the impact entrepreneurial tissue by enabling transparent communication of the accomplished changes. By creating a sense of community around sustainability, we would like to align territorial needs with economic incentives and would like to give territories full ownership of their own value, giving community enterprises the power to govern and control their future.
         shapes: 
           - top: -19
             left: -3
