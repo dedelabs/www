@@ -10,6 +10,7 @@
 	import Carousel from './components/Carousel.svelte'
 	import Footer from './components/Footer.svelte'
 	import Header from './components/Header.svelte'
+	import Headline from './components/Headline.svelte'
 	import Hero from './components/Hero.svelte'
 	import Spacer from './components/Spacer.svelte'
 	import Text from './components/Text.svelte'
@@ -22,6 +23,7 @@
 		"Cards": Cards,
 		"Carousel": Carousel,
 		"Hero": Hero,
+		"Headline": Headline,
 		"Spacer": Spacer,
 		"Text": Text,
 		"Title": Title

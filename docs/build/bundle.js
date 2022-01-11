@@ -1,2 +1,15120 @@
-var app=function(){"use strict";function e(){}const t=e=>e;function n(e,t){for(const n in t)e[n]=t[n];return e}function i(e){return e()}function s(){return Object.create(null)}function r(e){e.forEach(i)}function o(e){return"function"==typeof e}function l(e,t){return e!=e?t==t:e!==t||e&&"object"==typeof e||"function"==typeof e}function a(e,t,n,i){if(e){const s=c(e,t,n,i);return e[0](s)}}function c(e,t,i,s){return e[1]&&s?n(i.ctx.slice(),e[1](s(t))):i.ctx}function d(e,t,n,i){if(e[2]&&i){const s=e[2](i(n));if(void 0===t.dirty)return s;if("object"==typeof s){const e=[],n=Math.max(t.dirty.length,s.length);for(let i=0;i<n;i+=1)e[i]=t.dirty[i]|s[i];return e}return t.dirty|s}return t.dirty}function p(e,t,n,i,s,r){if(s){const o=c(t,n,i,r);e.p(o,s)}}function u(e){if(e.ctx.length>32){const t=[],n=e.ctx.length/32;for(let e=0;e<n;e++)t[e]=-1;return t}return-1}function h(e){const t={};for(const n in e)"$"!==n[0]&&(t[n]=e[n]);return t}function f(e,t){const n={};t=new Set(t);for(const i in e)t.has(i)||"$"===i[0]||(n[i]=e[i]);return n}const m="undefined"!=typeof window;let g=m?()=>window.performance.now():()=>Date.now(),v=m?e=>requestAnimationFrame(e):e;const w=new Set;function b(e){w.forEach((t=>{t.c(e)||(w.delete(t),t.f())})),0!==w.size&&v(b)}function y(e,t){e.appendChild(t)}function x(e){if(!e)return document;const t=e.getRootNode?e.getRootNode():e.ownerDocument;return t&&t.host?t:e.ownerDocument}function $(e){const t=S("style");return function(e,t){y(e.head||e,t)}(x(e),t),t}function C(e,t,n){e.insertBefore(t,n||null)}function _(e){e.parentNode.removeChild(e)}function T(e,t){for(let n=0;n<e.length;n+=1)e[n]&&e[n].d(t)}function S(e){return document.createElement(e)}function E(e){return document.createElementNS("http://www.w3.org/2000/svg",e)}function L(e){return document.createTextNode(e)}function M(){return L(" ")}function k(){return L("")}function P(e,t,n,i){return e.addEventListener(t,n,i),()=>e.removeEventListener(t,n,i)}function H(e,t,n){null==n?e.removeAttribute(t):e.getAttribute(t)!==n&&e.setAttribute(t,n)}function z(e,t){const n=Object.getOwnPropertyDescriptors(e.__proto__);for(const i in t)null==t[i]?e.removeAttribute(i):"style"===i?e.style.cssText=t[i]:"__value"===i?e.value=e[i]=t[i]:n[i]&&n[i].set?e[i]=t[i]:H(e,i,t[i])}function V(e,t){t=""+t,e.wholeText!==t&&(e.data=t)}function O(e,t,n,i){e.style.setProperty(t,n,i?"important":"")}function A(e,t,n=!1){const i=document.createEvent("CustomEvent");return i.initCustomEvent(e,n,!1,t),i}class D{constructor(){this.e=this.n=null}c(e){this.h(e)}m(e,t,n=null){this.e||(this.e=S(t.nodeName),this.t=t,this.c(e)),this.i(n)}h(e){this.e.innerHTML=e,this.n=Array.from(this.e.childNodes)}i(e){for(let t=0;t<this.n.length;t+=1)C(this.t,this.n[t],e)}p(e){this.d(),this.h(e),this.i(this.a)}d(){this.n.forEach(_)}}const I=new Set;let N,B=0;function G(e,t,n,i,s,r,o,l=0){const a=16.666/i;let c="{\n";for(let e=0;e<=1;e+=a){const i=t+(n-t)*r(e);c+=100*e+`%{${o(i,1-i)}}\n`}const d=c+`100% {${o(n,1-n)}}\n}`,p=`__svelte_${function(e){let t=5381,n=e.length;for(;n--;)t=(t<<5)-t^e.charCodeAt(n);return t>>>0}(d)}_${l}`,u=x(e);I.add(u);const h=u.__svelte_stylesheet||(u.__svelte_stylesheet=$(e).sheet),f=u.__svelte_rules||(u.__svelte_rules={});f[p]||(f[p]=!0,h.insertRule(`@keyframes ${p} ${d}`,h.cssRules.length));const m=e.style.animation||"";return e.style.animation=`${m?`${m}, `:""}${p} ${i}ms linear ${s}ms 1 both`,B+=1,p}function F(e,t){const n=(e.style.animation||"").split(", "),i=n.filter(t?e=>e.indexOf(t)<0:e=>-1===e.indexOf("__svelte")),s=n.length-i.length;s&&(e.style.animation=i.join(", "),B-=s,B||v((()=>{B||(I.forEach((e=>{const t=e.__svelte_stylesheet;let n=t.cssRules.length;for(;n--;)t.deleteRule(n);e.__svelte_rules={}})),I.clear())})))}function j(e){N=e}function W(){if(!N)throw new Error("Function called outside component initialization");return N}function Z(e){W().$$.on_mount.push(e)}function R(e){W().$$.after_update.push(e)}function q(e){W().$$.on_destroy.push(e)}function X(e,t){const n=e.$$.callbacks[t.type];n&&n.slice().forEach((e=>e.call(this,t)))}const Y=[],U=[],K=[],J=[],Q=Promise.resolve();let ee=!1;function te(){ee||(ee=!0,Q.then(re))}function ne(e){K.push(e)}let ie=!1;const se=new Set;function re(){if(!ie){ie=!0;do{for(let e=0;e<Y.length;e+=1){const t=Y[e];j(t),oe(t.$$)}for(j(null),Y.length=0;U.length;)U.pop()();for(let e=0;e<K.length;e+=1){const t=K[e];se.has(t)||(se.add(t),t())}K.length=0}while(Y.length);for(;J.length;)J.pop()();ee=!1,ie=!1,se.clear()}}function oe(e){if(null!==e.fragment){e.update(),r(e.before_update);const t=e.dirty;e.dirty=[-1],e.fragment&&e.fragment.p(e.ctx,t),e.after_update.forEach(ne)}}let le;function ae(e,t,n){e.dispatchEvent(A(`${t?"intro":"outro"}${n}`))}const ce=new Set;let de;function pe(){de={r:0,c:[],p:de}}function ue(){de.r||r(de.c),de=de.p}function he(e,t){e&&e.i&&(ce.delete(e),e.i(t))}function fe(e,t,n,i){if(e&&e.o){if(ce.has(e))return;ce.add(e),de.c.push((()=>{ce.delete(e),i&&(n&&e.d(1),i())})),e.o(t)}}const me={duration:0};function ge(n,i,s,l){let a=i(n,s),c=l?0:1,d=null,p=null,u=null;function h(){u&&F(n,u)}function f(e,t){const n=e.b-c;return t*=Math.abs(n),{a:c,b:e.b,d:n,duration:t,start:e.start,end:e.start+t,group:e.group}}function m(i){const{delay:s=0,duration:o=300,easing:l=t,tick:m=e,css:y}=a||me,x={start:g()+s,b:i};i||(x.group=de,de.r+=1),d||p?p=x:(y&&(h(),u=G(n,c,i,o,s,l,y)),i&&m(0,1),d=f(x,o),ne((()=>ae(n,i,"start"))),function(e){let t;0===w.size&&v(b),new Promise((n=>{w.add(t={c:e,f:n})}))}((e=>{if(p&&e>p.start&&(d=f(p,o),p=null,ae(n,d.b,"start"),y&&(h(),u=G(n,c,d.b,d.duration,0,l,a.css))),d)if(e>=d.end)m(c=d.b,1-c),ae(n,d.b,"end"),p||(d.b?h():--d.group.r||r(d.group.c)),d=null;else if(e>=d.start){const t=e-d.start;c=d.a+d.d*l(t/d.duration),m(c,1-c)}return!(!d&&!p)})))}return{run(e){o(a)?(le||(le=Promise.resolve(),le.then((()=>{le=null}))),le).then((()=>{a=a(),m(e)})):m(e)},end(){h(),d=p=null}}}function ve(e,t){const n={},i={},s={$$scope:1};let r=e.length;for(;r--;){const o=e[r],l=t[r];if(l){for(const e in o)e in l||(i[e]=1);for(const e in l)s[e]||(n[e]=l[e],s[e]=1);e[r]=l}else for(const e in o)s[e]=1}for(const e in i)e in n||(n[e]=void 0);return n}function we(e){e&&e.c()}function be(e,t,n,s){const{fragment:l,on_mount:a,on_destroy:c,after_update:d}=e.$$;l&&l.m(t,n),s||ne((()=>{const t=a.map(i).filter(o);c?c.push(...t):r(t),e.$$.on_mount=[]})),d.forEach(ne)}function ye(e,t){const n=e.$$;null!==n.fragment&&(r(n.on_destroy),n.fragment&&n.fragment.d(t),n.on_destroy=n.fragment=null,n.ctx=[])}function xe(t,n,i,o,l,a,c,d=[-1]){const p=N;j(t);const u=t.$$={fragment:null,ctx:null,props:a,update:e,not_equal:l,bound:s(),on_mount:[],on_destroy:[],on_disconnect:[],before_update:[],after_update:[],context:new Map(n.context||(p?p.$$.context:[])),callbacks:s(),dirty:d,skip_bound:!1,root:n.target||p.$$.root};c&&c(u.root);let h=!1;if(u.ctx=i?i(t,n.props||{},((e,n,...i)=>{const s=i.length?i[0]:n;return u.ctx&&l(u.ctx[e],u.ctx[e]=s)&&(!u.skip_bound&&u.bound[e]&&u.bound[e](s),h&&function(e,t){-1===e.$$.dirty[0]&&(Y.push(e),te(),e.$$.dirty.fill(0)),e.$$.dirty[t/31|0]|=1<<t%31}(t,e)),n})):[],u.update(),h=!0,r(u.before_update),u.fragment=!!o&&o(u.ctx),n.target){if(n.hydrate){const e=function(e){return Array.from(e.childNodes)}(n.target);u.fragment&&u.fragment.l(e),e.forEach(_)}else u.fragment&&u.fragment.c();n.intro&&he(t.$$.fragment),be(t,n.target,n.anchor,n.customElement),re()}j(p)}class $e{$destroy(){ye(this,1),this.$destroy=e}$on(e,t){const n=this.$$.callbacks[e]||(this.$$.callbacks[e]=[]);return n.push(t),()=>{const e=n.indexOf(t);-1!==e&&n.splice(e,1)}}$set(e){var t;this.$$set&&(t=e,0!==Object.keys(t).length)&&(this.$$.skip_bound=!0,this.$$set(e),this.$$.skip_bound=!1)}}var Ce={languages:{en:{name:"English",label:"en",default:!0},it:{name:"Italiano",label:"it",default:!1}},colorPalette:["#6A72DC","#60C971"],pages:[{name:"Home",path:"/",components:[{type:"Hero",title:"DEDE Labs",subtitle:"Driving Sustainable Territorial Transformation",cta:{text:"scroll down",arrow:"bottom"},shapes:[{top:53,left:94,size:200,color:"#6A72DC",zindex:10},{top:65,left:89,size:50,color:"#60C971",zindex:20},{top:18,left:-9,size:150,color:"#60C971"},{top:7,left:95,size:70,color:"#60C971"},{top:90,left:20,size:100,color:"#6A72DC"}]},{type:"Spacer",height:100},{type:"BlockWithImage",anchor:"solution",imagePosition:"right",imagePath:"solution/purpose-driven.jpg",overtitle:"purpose-driven enterprise",title:"Sustainable change",description:"DEDE is a purpose-driven enterprise empowering small villages and rural areas to transform into open, transparent and sustainable community enterprises with the help of education, technology and finance.",shapes:[{top:65,left:57,size:150,color:"#60C971",zindex:60},{top:79,left:67,size:50,color:"#6A72DC",zindex:70}]},{type:"BlockWithImage",anchor:"who-are-we",imagePosition:"left",imagePath:"solution/who-are-we.jpg",overtitle:"Complex systems",title:"Industry-wide knowledge",description:"Our interdisciplinary team cosists of professionals, commercial as well as educational entities with different background in travel, technology, design, education, sustainability, fundraising, crypto and more.",shapes:[{top:60,left:-10,size:200,color:"#6A72DC",zindex:70}]},{type:"BlockWithImage",anchor:"trust",imagePosition:"right",imagePath:"solution/trust.jpg",overtitle:"trusted relationships",title:"Our values",description:"We value openness, transparency and sustainability, translating such concepts into concrete actions in order to promote healthy, free and autonomous territorial organisations.",shapes:[{top:65,left:61,size:120,color:"#60C971",zindex:60}]},{type:"BlockWithImage",anchor:"target",imagePosition:"left",imagePath:"solution/target.jpg",overtitle:"Long-term partners",title:"Our target audience",description:"We seek to work with bodies of public administration, private operators, foundations, enterprises and citizens interested in long-term sustainable change through social and digital transformation processeses.",shapes:[{top:60,left:-10,size:200,color:"#6A72DC",zindex:70}]},{type:"Spacer",height:50},{type:"Carousel",overtitle:"Added value",anchor:"value",title:"First movers in empowering territorial <br />sovereignty and autonomy",slides:[{image:'<svg width="71" height="48" viewBox="0 0 71 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="24" r="17.5" transform="rotate(90 18 24)" fill="#60C971" style="mix-blend-mode:multiply"/><circle cx="18" cy="24" r="17.5" transform="rotate(90 18 24)" stroke="#60C971"/><ellipse cx="47" cy="24" rx="24" ry="24" transform="rotate(90 47 24)" fill="#646FFF" style="mix-blend-mode:multiply"/></svg>',title:"Economic Value",description:"All booking value goes to community members (no commission fee) and we enable additional economic value to be injected into the local community enterprise through the Impact Fee"},{image:'<svg width="63" height="50" viewBox="0 0 63 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M60.3685 21.7325C62.6268 23.3261 62.6269 26.6754 60.3685 28.269L30.8062 49.1296C28.1565 50.9994 24.5 49.1044 24.5 45.8614L24.5 4.14014C24.5 0.897142 28.1565 -0.997856 30.8062 0.871914L60.3685 21.7325Z" fill="#646FFF" style="mix-blend-mode:multiply"/><path d="M36.3685 21.7325C38.6268 23.3261 38.6269 26.6753 36.3685 28.269L6.80623 49.1296C4.15652 50.9993 0.500001 49.1043 0.500001 45.8613L0.500003 4.14011C0.500003 0.897111 4.15652 -0.997887 6.80623 0.871884L36.3685 21.7325Z" fill="#60C971" style="mix-blend-mode:multiply"/></svg>',title:"Data Sovereignty",description:"Territories are in full control of their data (Self Sovereign Identity) giving access to new revenue streams enabled by emerging data markets (e.g. Ocean Protocol)"},{image:'<svg width="63" height="51" viewBox="0 0 63 51" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.07108 20.9704C7.63318 19.4083 10.1658 19.4083 11.7279 20.9704L32.9411 42.1836L25.8701 49.2547C24.308 50.8168 21.7753 50.8168 20.2132 49.2547L1.82844 30.8699C0.266341 29.3078 0.266341 26.7752 1.82844 25.2131L6.07108 20.9704Z" fill="#60C971" style="mix-blend-mode:multiply"/><path d="M60.9842 8.48349C62.5463 10.0456 62.5463 12.5782 60.9842 14.1403L25.87 49.2546C24.3079 50.8167 21.7752 50.8167 20.2131 49.2546L10.3136 39.3551L48.2563 1.41242C49.8184 -0.149673 52.3511 -0.149673 53.9132 1.41242L60.9842 8.48349Z" fill="#646FFF" style="mix-blend-mode:multiply"/></svg>',title:"Self-Governance",description:"Territorial community enterprises are fully operated and owned by its members and are also members of DEDE, designing all together the future of our ecosystem"},{image:'<svg width="75" height="66" viewBox="0 0 75 66" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M44.3685 29.7318C46.6268 31.3254 46.6269 34.6746 44.3685 36.2682L14.8062 57.1288C12.1565 58.9986 8.5 57.1036 8.5 53.8606L8.5 12.1394C8.5 8.89638 12.1565 7.00138 14.8062 8.87115L44.3685 29.7318Z" fill="#646FFF" style="mix-blend-mode:multiply"/><circle cx="11" cy="55" r="11" transform="rotate(90 11 55)" fill="#60C971" style="mix-blend-mode:multiply"/><circle cx="11" cy="11" r="11" transform="rotate(90 11 11)" fill="#60C971" style="mix-blend-mode:multiply"/><path d="M30.6315 36.2682C28.3731 34.6746 28.3731 31.3254 30.6315 29.7318L60.1938 8.87115C62.8435 7.00138 66.5 8.89638 66.5 12.1394L66.5 53.8606C66.5 57.1036 62.8435 58.9986 60.1938 57.1288L30.6315 36.2682Z" fill="#646FFF" style="mix-blend-mode:multiply"/><circle cx="64" cy="11" r="11" transform="rotate(-90 64 11)" fill="#60C971" style="mix-blend-mode:multiply"/><circle cx="64" cy="55" r="11" transform="rotate(-90 64 55)" fill="#60C971" style="mix-blend-mode:multiply"/></svg>',title:"Open Source",description:"Territories have full access to an open source tech platform where all algorithms and logics are fully visible, enabling an open ecosystem where everyone can participate"}]},{type:"Spacer",height:100},{type:"Text",title:"Our vision",anchor:"vision",subtitle:"An ideal future for territories",content:"We envision territories as sustainable organisations taking a changemaker position in order to limit the loss and centralisation of territorial values. We see territories (old villages, rural areas, suburban neighborhoods) as community enterprises where local people can acquire the required entrepreneurial skills to face future challenges, where diverse stakeholders participate in the social, economic and environmental development and where education, technology and economy are used to enable the desired transformation.",shapes:[{top:3,left:92,size:120,color:"#6A72DC",zindex:10},{top:15,left:89,size:50,color:"#60C971",zindex:20},{top:90,left:2,size:160,color:"#60C971",zindex:10},{top:86,left:2,size:60,color:"#6A72DC",zindex:10}]},{type:"Carousel",overtitle:"Issues",anchor:"issues",title:"Issues we are addressing",slides:[{image:'<svg width="71" height="48" viewBox="0 0 71 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="24" r="17.5" transform="rotate(90 18 24)" fill="#60C971" style="mix-blend-mode:multiply"/><circle cx="18" cy="24" r="17.5" transform="rotate(90 18 24)" stroke="#60C971"/><ellipse cx="47" cy="24" rx="24" ry="24" transform="rotate(90 47 24)" fill="#646FFF" style="mix-blend-mode:multiply"/></svg>',title:"Socio-economic",description:"Following World War II, many European villages have witnessed a decrease in their population (inhabitants lost to urbanization), the deterioration of local services (e.g. the accessibility of schools), traditions and skills."},{image:'<svg width="63" height="50" viewBox="0 0 63 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M60.3685 21.7325C62.6268 23.3261 62.6269 26.6754 60.3685 28.269L30.8062 49.1296C28.1565 50.9994 24.5 49.1044 24.5 45.8614L24.5 4.14014C24.5 0.897142 28.1565 -0.997856 30.8062 0.871914L60.3685 21.7325Z" fill="#646FFF" style="mix-blend-mode:multiply"/><path d="M36.3685 21.7325C38.6268 23.3261 38.6269 26.6753 36.3685 28.269L6.80623 49.1296C4.15652 50.9993 0.500001 49.1043 0.500001 45.8613L0.500003 4.14011C0.500003 0.897111 4.15652 -0.997887 6.80623 0.871884L36.3685 21.7325Z" fill="#60C971" style="mix-blend-mode:multiply"/></svg>',title:"Environmental",description:"Rural areas account for 50% of Europe, while a huge percentage is characterized by the lack of natural resource management and agricultural land abandonment."},{image:'<svg width="63" height="51" viewBox="0 0 63 51" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.07108 20.9704C7.63318 19.4083 10.1658 19.4083 11.7279 20.9704L32.9411 42.1836L25.8701 49.2547C24.308 50.8168 21.7753 50.8168 20.2132 49.2547L1.82844 30.8699C0.266341 29.3078 0.266341 26.7752 1.82844 25.2131L6.07108 20.9704Z" fill="#60C971" style="mix-blend-mode:multiply"/><path d="M60.9842 8.48349C62.5463 10.0456 62.5463 12.5782 60.9842 14.1403L25.87 49.2546C24.3079 50.8167 21.7752 50.8167 20.2131 49.2546L10.3136 39.3551L48.2563 1.41242C49.8184 -0.149673 52.3511 -0.149673 53.9132 1.41242L60.9842 8.48349Z" fill="#646FFF" style="mix-blend-mode:multiply"/></svg>',title:"Technological",description:"Online Travel Agencies (e.g. Airbnb) and technology corporations (e.g. Google) are profit-driven enterprises centralising territorial economic, governance, data, branding and tech value."},{image:'<svg width="75" height="66" viewBox="0 0 75 66" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M44.3685 29.7318C46.6268 31.3254 46.6269 34.6746 44.3685 36.2682L14.8062 57.1288C12.1565 58.9986 8.5 57.1036 8.5 53.8606L8.5 12.1394C8.5 8.89638 12.1565 7.00138 14.8062 8.87115L44.3685 29.7318Z" fill="#646FFF" style="mix-blend-mode:multiply"/><circle cx="11" cy="55" r="11" transform="rotate(90 11 55)" fill="#60C971" style="mix-blend-mode:multiply"/><circle cx="11" cy="11" r="11" transform="rotate(90 11 11)" fill="#60C971" style="mix-blend-mode:multiply"/><path d="M30.6315 36.2682C28.3731 34.6746 28.3731 31.3254 30.6315 29.7318L60.1938 8.87115C62.8435 7.00138 66.5 8.89638 66.5 12.1394L66.5 53.8606C66.5 57.1036 62.8435 58.9986 60.1938 57.1288L30.6315 36.2682Z" fill="#646FFF" style="mix-blend-mode:multiply"/><circle cx="64" cy="11" r="11" transform="rotate(-90 64 11)" fill="#60C971" style="mix-blend-mode:multiply"/><circle cx="64" cy="55" r="11" transform="rotate(-90 64 55)" fill="#60C971" style="mix-blend-mode:multiply"/></svg>',title:"Complexity",description:"Territories are complex systems composed of diverse entities (e.g. community members, external actors, environmental assets) who need to interact with each other."}]},{type:"Spacer",height:100},{type:"Text",title:"Our mission",anchor:"mission",subtitle:"Educational, technological and financial platform",content:"Our mission is to create an educational, technological and financial platform enabling the transferral of knowledge on impact entrepreneurship, impact management and open organisation design; the co-creation of a territorial catalogue listing local experiences, products and services; the measurement, assessment and transparent communication of the generated social, economic and environmental impact; the sovereignty of the generated data; the activation of new revenue streams and the unlocking of territorial collective intelligence.",shapes:[{top:-10,left:84,size:200,color:"#6A72DC",zindex:10},{top:0,left:80,size:60,color:"#60C971",zindex:10},{top:94,left:-2,size:160,color:"#6A72DC",zindex:10},{top:90,left:-6,size:70,color:"#60C971",zindex:10}]},{type:"Cards",overtitle:"Products",anchor:"products",title:"An educational and technological ecosystem",slider:!0,cards:[{title:"Transformation Lab",description:"Knowledge transfer on entrepreneurship and sustainability to activate a community enterprise fully owned and operated by it members, capable of measuring its impact and expressing its territorial value."},{title:"Impact management",description:"A management platform to plan, measure, assess, monitor and communicate the impact generated through territorial projects and actions contributing to the UN Sustainable Development Goals (SDGs)."},{title:"E-commerce",description:"A territorial marketplace to promote and market the experiences, products and services representing the territorial identity in view of enterprises, remote workers, travellers, schools and citizens."}]},{type:"Cards",overtitle:"Why now",anchor:"products",title:"The transformation is already happening",slider:!0,cards:[{title:"Responsibility",description:"As more and more companies commit to CSR strategies addressing environmental and social issues, it is becoming more important to be goal-driven and ambitious, yet accessible and authentic."},{title:"Remote working",description:"By 2025 an estimated 70% of the workforce will be working remotely at least 5 days a month (workers working from home expected to double in 2021)."},{title:"Sustainability",description:"83% of the global travellers think sustainable travel is vital, with 72% believing people have to act now to save the planet for future generations."},{title:"Lifestyle",description:"People are leaving their well-paid jobs in order to move to rural areas where they are starting new cultural and creative businesses."}]},{type:"Spacer",height:100},{type:"Text",title:"Our purpose",anchor:"purpose",subtitle:"The driving force behind everything we do",content:"Our purpose is to build trust in territories by providing them tools to fully express their social, economic and environmental values, while we also aim at stimulating the impact entrepreneurial tissue by enabling transparent communication of the accomplished changes. By creating a sense of community around sustainability, we would like to align territorial needs with economic incentives and would like to give territories full ownership of their own value, giving community enterprises the power to govern and control their future.",shapes:[{top:-19,left:-3,size:47,color:"#6A72DC",zindex:10},{top:-29,left:3,size:153,color:"#60C971",zindex:20},{top:13,left:99,size:67,color:"#60C971",zindex:10},{top:94,left:82,size:160,color:"#6A72DC",zindex:10},{top:86,left:86,size:70,color:"#60C971",zindex:10}]},{type:"Bubbles",overtitle:"Why does it matter",anchor:"why",title:"We give shape to complex<br />sustainable territorial transformations",bubbles:[{text:"More people",color:"#6A72DC"},{text:"New jobs",color:"#60C971"},{text:"Community enterprise",color:"#6A72DC"},{text:"Climate change actions",color:"#60C971"},{text:"Knowledge transfer",color:"#6A72DC"},{text:"New funds attraction",color:"#60C971"},{text:"Impact and data culture",color:"#6A72DC"},{text:"Experience economy",color:"#60C971"},{text:"Sustainable reputation",color:"#6A72DC"},{text:"Digital transformation",color:"#60C971"},{text:"Terrirorial incubation hub",color:"#6A72DC"},{text:"Autonomy",color:"#60C971"}]},{type:"Spacer",height:100},{type:"Text",title:"About us",anchor:"about-us",subtitle:"A network of passionate experts",content:"Territories are diverse and complex ecosystems identified by the relationship between their unique social, cultural, environmental and economic resources, making them one of the most difficult products to manage and market. To understand this complexity and make a sustainable transformation happen the only way is to create a multidisciplinary network of partners with deep esperience and knowledge in different areas like travel, tech, design, education, sustainability, fundraising, crypto and more.",shapes:[{top:-19,left:-3,size:47,color:"#6A72DC",zindex:10},{top:-33,left:3,size:153,color:"#60C971",zindex:20},{top:13,left:99,size:67,color:"#60C971",zindex:10},{top:94,left:82,size:160,color:"#6A72DC",zindex:10},{top:86,left:86,size:70,color:"#60C971",zindex:10}]},{type:"BgCards",overtitle:"our team",anchor:"Who are we",title:"Advocats of sustainable change",slider:!0,cards:[{firstLine:"Andrea Reginato",secondLine:"Business Developer, Software Developer & Performer",imagePath:"people/andrea-reginato.png"},{firstLine:"Martina Ferro",secondLine:"UX Designer, Product Manager & Brand Identity",imagePath:"people/martina-ferro.png"},{firstLine:"Filippo Gangi Dino",secondLine:"Software Developer & Tech Lead",imagePath:"people/filippo-gangi-dino.jpeg"}]}]}]};function _e(e){return null!==e&&"object"==typeof e&&"constructor"in e&&e.constructor===Object}function Te(e={},t={}){Object.keys(t).forEach((n=>{void 0===e[n]?e[n]=t[n]:_e(t[n])&&_e(e[n])&&Object.keys(t[n]).length>0&&Te(e[n],t[n])}))}const Se={body:{},addEventListener(){},removeEventListener(){},activeElement:{blur(){},nodeName:""},querySelector:()=>null,querySelectorAll:()=>[],getElementById:()=>null,createEvent:()=>({initEvent(){}}),createElement:()=>({children:[],childNodes:[],style:{},setAttribute(){},getElementsByTagName:()=>[]}),createElementNS:()=>({}),importNode:()=>null,location:{hash:"",host:"",hostname:"",href:"",origin:"",pathname:"",protocol:"",search:""}};function Ee(){const e="undefined"!=typeof document?document:{};return Te(e,Se),e}const Le={document:Se,navigator:{userAgent:""},location:{hash:"",host:"",hostname:"",href:"",origin:"",pathname:"",protocol:"",search:""},history:{replaceState(){},pushState(){},go(){},back(){}},CustomEvent:function(){return this},addEventListener(){},removeEventListener(){},getComputedStyle:()=>({getPropertyValue:()=>""}),Image(){},Date(){},screen:{},setTimeout(){},clearTimeout(){},matchMedia:()=>({}),requestAnimationFrame:e=>"undefined"==typeof setTimeout?(e(),null):setTimeout(e,0),cancelAnimationFrame(e){"undefined"!=typeof setTimeout&&clearTimeout(e)}};function Me(){const e="undefined"!=typeof window?window:{};return Te(e,Le),e}class ke extends Array{constructor(e){super(...e||[]),function(e){const t=e.__proto__;Object.defineProperty(e,"__proto__",{get:()=>t,set(e){t.__proto__=e}})}(this)}}function Pe(e=[]){const t=[];return e.forEach((e=>{Array.isArray(e)?t.push(...Pe(e)):t.push(e)})),t}function He(e,t){return Array.prototype.filter.call(e,t)}function ze(e,t){const n=Me(),i=Ee();let s=[];if(!t&&e instanceof ke)return e;if(!e)return new ke(s);if("string"==typeof e){const n=e.trim();if(n.indexOf("<")>=0&&n.indexOf(">")>=0){let e="div";0===n.indexOf("<li")&&(e="ul"),0===n.indexOf("<tr")&&(e="tbody"),0!==n.indexOf("<td")&&0!==n.indexOf("<th")||(e="tr"),0===n.indexOf("<tbody")&&(e="table"),0===n.indexOf("<option")&&(e="select");const t=i.createElement(e);t.innerHTML=n;for(let e=0;e<t.childNodes.length;e+=1)s.push(t.childNodes[e])}else s=function(e,t){if("string"!=typeof e)return[e];const n=[],i=t.querySelectorAll(e);for(let e=0;e<i.length;e+=1)n.push(i[e]);return n}(e.trim(),t||i)}else if(e.nodeType||e===n||e===i)s.push(e);else if(Array.isArray(e)){if(e instanceof ke)return e;s=e}return new ke(function(e){const t=[];for(let n=0;n<e.length;n+=1)-1===t.indexOf(e[n])&&t.push(e[n]);return t}(s))}ze.fn=ke.prototype;const Ve={addClass:function(...e){const t=Pe(e.map((e=>e.split(" "))));return this.forEach((e=>{e.classList.add(...t)})),this},removeClass:function(...e){const t=Pe(e.map((e=>e.split(" "))));return this.forEach((e=>{e.classList.remove(...t)})),this},hasClass:function(...e){const t=Pe(e.map((e=>e.split(" "))));return He(this,(e=>t.filter((t=>e.classList.contains(t))).length>0)).length>0},toggleClass:function(...e){const t=Pe(e.map((e=>e.split(" "))));this.forEach((e=>{t.forEach((t=>{e.classList.toggle(t)}))}))},attr:function(e,t){if(1===arguments.length&&"string"==typeof e)return this[0]?this[0].getAttribute(e):void 0;for(let n=0;n<this.length;n+=1)if(2===arguments.length)this[n].setAttribute(e,t);else for(const t in e)this[n][t]=e[t],this[n].setAttribute(t,e[t]);return this},removeAttr:function(e){for(let t=0;t<this.length;t+=1)this[t].removeAttribute(e);return this},transform:function(e){for(let t=0;t<this.length;t+=1)this[t].style.transform=e;return this},transition:function(e){for(let t=0;t<this.length;t+=1)this[t].style.transitionDuration="string"!=typeof e?`${e}ms`:e;return this},on:function(...e){let[t,n,i,s]=e;function r(e){const t=e.target;if(!t)return;const s=e.target.dom7EventData||[];if(s.indexOf(e)<0&&s.unshift(e),ze(t).is(n))i.apply(t,s);else{const e=ze(t).parents();for(let t=0;t<e.length;t+=1)ze(e[t]).is(n)&&i.apply(e[t],s)}}function o(e){const t=e&&e.target&&e.target.dom7EventData||[];t.indexOf(e)<0&&t.unshift(e),i.apply(this,t)}"function"==typeof e[1]&&([t,i,s]=e,n=void 0),s||(s=!1);const l=t.split(" ");let a;for(let e=0;e<this.length;e+=1){const t=this[e];if(n)for(a=0;a<l.length;a+=1){const e=l[a];t.dom7LiveListeners||(t.dom7LiveListeners={}),t.dom7LiveListeners[e]||(t.dom7LiveListeners[e]=[]),t.dom7LiveListeners[e].push({listener:i,proxyListener:r}),t.addEventListener(e,r,s)}else for(a=0;a<l.length;a+=1){const e=l[a];t.dom7Listeners||(t.dom7Listeners={}),t.dom7Listeners[e]||(t.dom7Listeners[e]=[]),t.dom7Listeners[e].push({listener:i,proxyListener:o}),t.addEventListener(e,o,s)}}return this},off:function(...e){let[t,n,i,s]=e;"function"==typeof e[1]&&([t,i,s]=e,n=void 0),s||(s=!1);const r=t.split(" ");for(let e=0;e<r.length;e+=1){const t=r[e];for(let e=0;e<this.length;e+=1){const r=this[e];let o;if(!n&&r.dom7Listeners?o=r.dom7Listeners[t]:n&&r.dom7LiveListeners&&(o=r.dom7LiveListeners[t]),o&&o.length)for(let e=o.length-1;e>=0;e-=1){const n=o[e];i&&n.listener===i||i&&n.listener&&n.listener.dom7proxy&&n.listener.dom7proxy===i?(r.removeEventListener(t,n.proxyListener,s),o.splice(e,1)):i||(r.removeEventListener(t,n.proxyListener,s),o.splice(e,1))}}}return this},trigger:function(...e){const t=Me(),n=e[0].split(" "),i=e[1];for(let s=0;s<n.length;s+=1){const r=n[s];for(let n=0;n<this.length;n+=1){const s=this[n];if(t.CustomEvent){const n=new t.CustomEvent(r,{detail:i,bubbles:!0,cancelable:!0});s.dom7EventData=e.filter(((e,t)=>t>0)),s.dispatchEvent(n),s.dom7EventData=[],delete s.dom7EventData}}}return this},transitionEnd:function(e){const t=this;return e&&t.on("transitionend",(function n(i){i.target===this&&(e.call(this,i),t.off("transitionend",n))})),this},outerWidth:function(e){if(this.length>0){if(e){const e=this.styles();return this[0].offsetWidth+parseFloat(e.getPropertyValue("margin-right"))+parseFloat(e.getPropertyValue("margin-left"))}return this[0].offsetWidth}return null},outerHeight:function(e){if(this.length>0){if(e){const e=this.styles();return this[0].offsetHeight+parseFloat(e.getPropertyValue("margin-top"))+parseFloat(e.getPropertyValue("margin-bottom"))}return this[0].offsetHeight}return null},styles:function(){const e=Me();return this[0]?e.getComputedStyle(this[0],null):{}},offset:function(){if(this.length>0){const e=Me(),t=Ee(),n=this[0],i=n.getBoundingClientRect(),s=t.body,r=n.clientTop||s.clientTop||0,o=n.clientLeft||s.clientLeft||0,l=n===e?e.scrollY:n.scrollTop,a=n===e?e.scrollX:n.scrollLeft;return{top:i.top+l-r,left:i.left+a-o}}return null},css:function(e,t){const n=Me();let i;if(1===arguments.length){if("string"!=typeof e){for(i=0;i<this.length;i+=1)for(const t in e)this[i].style[t]=e[t];return this}if(this[0])return n.getComputedStyle(this[0],null).getPropertyValue(e)}if(2===arguments.length&&"string"==typeof e){for(i=0;i<this.length;i+=1)this[i].style[e]=t;return this}return this},each:function(e){return e?(this.forEach(((t,n)=>{e.apply(t,[t,n])})),this):this},html:function(e){if(void 0===e)return this[0]?this[0].innerHTML:null;for(let t=0;t<this.length;t+=1)this[t].innerHTML=e;return this},text:function(e){if(void 0===e)return this[0]?this[0].textContent.trim():null;for(let t=0;t<this.length;t+=1)this[t].textContent=e;return this},is:function(e){const t=Me(),n=Ee(),i=this[0];let s,r;if(!i||void 0===e)return!1;if("string"==typeof e){if(i.matches)return i.matches(e);if(i.webkitMatchesSelector)return i.webkitMatchesSelector(e);if(i.msMatchesSelector)return i.msMatchesSelector(e);for(s=ze(e),r=0;r<s.length;r+=1)if(s[r]===i)return!0;return!1}if(e===n)return i===n;if(e===t)return i===t;if(e.nodeType||e instanceof ke){for(s=e.nodeType?[e]:e,r=0;r<s.length;r+=1)if(s[r]===i)return!0;return!1}return!1},index:function(){let e,t=this[0];if(t){for(e=0;null!==(t=t.previousSibling);)1===t.nodeType&&(e+=1);return e}},eq:function(e){if(void 0===e)return this;const t=this.length;if(e>t-1)return ze([]);if(e<0){const n=t+e;return ze(n<0?[]:[this[n]])}return ze([this[e]])},append:function(...e){let t;const n=Ee();for(let i=0;i<e.length;i+=1){t=e[i];for(let e=0;e<this.length;e+=1)if("string"==typeof t){const i=n.createElement("div");for(i.innerHTML=t;i.firstChild;)this[e].appendChild(i.firstChild)}else if(t instanceof ke)for(let n=0;n<t.length;n+=1)this[e].appendChild(t[n]);else this[e].appendChild(t)}return this},prepend:function(e){const t=Ee();let n,i;for(n=0;n<this.length;n+=1)if("string"==typeof e){const s=t.createElement("div");for(s.innerHTML=e,i=s.childNodes.length-1;i>=0;i-=1)this[n].insertBefore(s.childNodes[i],this[n].childNodes[0])}else if(e instanceof ke)for(i=0;i<e.length;i+=1)this[n].insertBefore(e[i],this[n].childNodes[0]);else this[n].insertBefore(e,this[n].childNodes[0]);return this},next:function(e){return this.length>0?e?this[0].nextElementSibling&&ze(this[0].nextElementSibling).is(e)?ze([this[0].nextElementSibling]):ze([]):this[0].nextElementSibling?ze([this[0].nextElementSibling]):ze([]):ze([])},nextAll:function(e){const t=[];let n=this[0];if(!n)return ze([]);for(;n.nextElementSibling;){const i=n.nextElementSibling;e?ze(i).is(e)&&t.push(i):t.push(i),n=i}return ze(t)},prev:function(e){if(this.length>0){const t=this[0];return e?t.previousElementSibling&&ze(t.previousElementSibling).is(e)?ze([t.previousElementSibling]):ze([]):t.previousElementSibling?ze([t.previousElementSibling]):ze([])}return ze([])},prevAll:function(e){const t=[];let n=this[0];if(!n)return ze([]);for(;n.previousElementSibling;){const i=n.previousElementSibling;e?ze(i).is(e)&&t.push(i):t.push(i),n=i}return ze(t)},parent:function(e){const t=[];for(let n=0;n<this.length;n+=1)null!==this[n].parentNode&&(e?ze(this[n].parentNode).is(e)&&t.push(this[n].parentNode):t.push(this[n].parentNode));return ze(t)},parents:function(e){const t=[];for(let n=0;n<this.length;n+=1){let i=this[n].parentNode;for(;i;)e?ze(i).is(e)&&t.push(i):t.push(i),i=i.parentNode}return ze(t)},closest:function(e){let t=this;return void 0===e?ze([]):(t.is(e)||(t=t.parents(e).eq(0)),t)},find:function(e){const t=[];for(let n=0;n<this.length;n+=1){const i=this[n].querySelectorAll(e);for(let e=0;e<i.length;e+=1)t.push(i[e])}return ze(t)},children:function(e){const t=[];for(let n=0;n<this.length;n+=1){const i=this[n].children;for(let n=0;n<i.length;n+=1)e&&!ze(i[n]).is(e)||t.push(i[n])}return ze(t)},filter:function(e){return ze(He(this,e))},remove:function(){for(let e=0;e<this.length;e+=1)this[e].parentNode&&this[e].parentNode.removeChild(this[e]);return this}};function Oe(e,t=0){return setTimeout(e,t)}function Ae(){return Date.now()}function De(e,t="x"){const n=Me();let i,s,r;const o=function(e){const t=Me();let n;return t.getComputedStyle&&(n=t.getComputedStyle(e,null)),!n&&e.currentStyle&&(n=e.currentStyle),n||(n=e.style),n}(e);return n.WebKitCSSMatrix?(s=o.transform||o.webkitTransform,s.split(",").length>6&&(s=s.split(", ").map((e=>e.replace(",","."))).join(", ")),r=new n.WebKitCSSMatrix("none"===s?"":s)):(r=o.MozTransform||o.OTransform||o.MsTransform||o.msTransform||o.transform||o.getPropertyValue("transform").replace("translate(","matrix(1, 0, 0, 1,"),i=r.toString().split(",")),"x"===t&&(s=n.WebKitCSSMatrix?r.m41:16===i.length?parseFloat(i[12]):parseFloat(i[4])),"y"===t&&(s=n.WebKitCSSMatrix?r.m42:16===i.length?parseFloat(i[13]):parseFloat(i[5])),s||0}function Ie(e){return"object"==typeof e&&null!==e&&e.constructor&&"Object"===Object.prototype.toString.call(e).slice(8,-1)}function Ne(...e){const t=Object(e[0]),n=["__proto__","constructor","prototype"];for(let s=1;s<e.length;s+=1){const r=e[s];if(null!=r&&(i=r,!("undefined"!=typeof window&&void 0!==window.HTMLElement?i instanceof HTMLElement:i&&(1===i.nodeType||11===i.nodeType)))){const e=Object.keys(Object(r)).filter((e=>n.indexOf(e)<0));for(let n=0,i=e.length;n<i;n+=1){const i=e[n],s=Object.getOwnPropertyDescriptor(r,i);void 0!==s&&s.enumerable&&(Ie(t[i])&&Ie(r[i])?r[i].__swiper__?t[i]=r[i]:Ne(t[i],r[i]):!Ie(t[i])&&Ie(r[i])?(t[i]={},r[i].__swiper__?t[i]=r[i]:Ne(t[i],r[i])):t[i]=r[i])}}}var i;return t}function Be(e,t,n){e.style.setProperty(t,n)}function Ge({swiper:e,targetPosition:t,side:n}){const i=Me(),s=-e.translate;let r,o=null;const l=e.params.speed;e.wrapperEl.style.scrollSnapType="none",i.cancelAnimationFrame(e.cssModeFrameID);const a=t>s?"next":"prev",c=(e,t)=>"next"===a&&e>=t||"prev"===a&&e<=t,d=()=>{r=(new Date).getTime(),null===o&&(o=r);const a=Math.max(Math.min((r-o)/l,1),0),p=.5-Math.cos(a*Math.PI)/2;let u=s+p*(t-s);if(c(u,t)&&(u=t),e.wrapperEl.scrollTo({[n]:u}),c(u,t))return e.wrapperEl.style.overflow="hidden",e.wrapperEl.style.scrollSnapType="",setTimeout((()=>{e.wrapperEl.style.overflow="",e.wrapperEl.scrollTo({[n]:u})})),void i.cancelAnimationFrame(e.cssModeFrameID);e.cssModeFrameID=i.requestAnimationFrame(d)};d()}let Fe,je,We;function Ze(){return Fe||(Fe=function(){const e=Me(),t=Ee();return{smoothScroll:t.documentElement&&"scrollBehavior"in t.documentElement.style,touch:!!("ontouchstart"in e||e.DocumentTouch&&t instanceof e.DocumentTouch),passiveListener:function(){let t=!1;try{const n=Object.defineProperty({},"passive",{get(){t=!0}});e.addEventListener("testPassiveListener",null,n)}catch(e){}return t}(),gestures:"ongesturestart"in e}}()),Fe}function Re(e={}){return je||(je=function({userAgent:e}={}){const t=Ze(),n=Me(),i=n.navigator.platform,s=e||n.navigator.userAgent,r={ios:!1,android:!1},o=n.screen.width,l=n.screen.height,a=s.match(/(Android);?[\s\/]+([\d.]+)?/);let c=s.match(/(iPad).*OS\s([\d_]+)/);const d=s.match(/(iPod)(.*OS\s([\d_]+))?/),p=!c&&s.match(/(iPhone\sOS|iOS)\s([\d_]+)/),u="Win32"===i;let h="MacIntel"===i;return!c&&h&&t.touch&&["1024x1366","1366x1024","834x1194","1194x834","834x1112","1112x834","768x1024","1024x768","820x1180","1180x820","810x1080","1080x810"].indexOf(`${o}x${l}`)>=0&&(c=s.match(/(Version)\/([\d.]+)/),c||(c=[0,1,"13_0_0"]),h=!1),a&&!u&&(r.os="android",r.android=!0),(c||p||d)&&(r.os="ios",r.ios=!0),r}(e)),je}function qe(){return We||(We=function(){const e=Me();return{isSafari:function(){const t=e.navigator.userAgent.toLowerCase();return t.indexOf("safari")>=0&&t.indexOf("chrome")<0&&t.indexOf("android")<0}(),isWebView:/(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(e.navigator.userAgent)}}()),We}Object.keys(Ve).forEach((e=>{Object.defineProperty(ze.fn,e,{value:Ve[e],writable:!0})}));var Xe={on(e,t,n){const i=this;if("function"!=typeof t)return i;const s=n?"unshift":"push";return e.split(" ").forEach((e=>{i.eventsListeners[e]||(i.eventsListeners[e]=[]),i.eventsListeners[e][s](t)})),i},once(e,t,n){const i=this;if("function"!=typeof t)return i;function s(...n){i.off(e,s),s.__emitterProxy&&delete s.__emitterProxy,t.apply(i,n)}return s.__emitterProxy=t,i.on(e,s,n)},onAny(e,t){const n=this;if("function"!=typeof e)return n;const i=t?"unshift":"push";return n.eventsAnyListeners.indexOf(e)<0&&n.eventsAnyListeners[i](e),n},offAny(e){const t=this;if(!t.eventsAnyListeners)return t;const n=t.eventsAnyListeners.indexOf(e);return n>=0&&t.eventsAnyListeners.splice(n,1),t},off(e,t){const n=this;return n.eventsListeners?(e.split(" ").forEach((e=>{void 0===t?n.eventsListeners[e]=[]:n.eventsListeners[e]&&n.eventsListeners[e].forEach(((i,s)=>{(i===t||i.__emitterProxy&&i.__emitterProxy===t)&&n.eventsListeners[e].splice(s,1)}))})),n):n},emit(...e){const t=this;if(!t.eventsListeners)return t;let n,i,s;"string"==typeof e[0]||Array.isArray(e[0])?(n=e[0],i=e.slice(1,e.length),s=t):(n=e[0].events,i=e[0].data,s=e[0].context||t),i.unshift(s);return(Array.isArray(n)?n:n.split(" ")).forEach((e=>{t.eventsAnyListeners&&t.eventsAnyListeners.length&&t.eventsAnyListeners.forEach((t=>{t.apply(s,[e,...i])})),t.eventsListeners&&t.eventsListeners[e]&&t.eventsListeners[e].forEach((e=>{e.apply(s,i)}))})),t}};var Ye={updateSize:function(){const e=this;let t,n;const i=e.$el;t=void 0!==e.params.width&&null!==e.params.width?e.params.width:i[0].clientWidth,n=void 0!==e.params.height&&null!==e.params.height?e.params.height:i[0].clientHeight,0===t&&e.isHorizontal()||0===n&&e.isVertical()||(t=t-parseInt(i.css("padding-left")||0,10)-parseInt(i.css("padding-right")||0,10),n=n-parseInt(i.css("padding-top")||0,10)-parseInt(i.css("padding-bottom")||0,10),Number.isNaN(t)&&(t=0),Number.isNaN(n)&&(n=0),Object.assign(e,{width:t,height:n,size:e.isHorizontal()?t:n}))},updateSlides:function(){const e=this;function t(t){return e.isHorizontal()?t:{width:"height","margin-top":"margin-left","margin-bottom ":"margin-right","margin-left":"margin-top","margin-right":"margin-bottom","padding-left":"padding-top","padding-right":"padding-bottom",marginRight:"marginBottom"}[t]}function n(e,n){return parseFloat(e.getPropertyValue(t(n))||0)}const i=e.params,{$wrapperEl:s,size:r,rtlTranslate:o,wrongRTL:l}=e,a=e.virtual&&i.virtual.enabled,c=a?e.virtual.slides.length:e.slides.length,d=s.children(`.${e.params.slideClass}`),p=a?e.virtual.slides.length:d.length;let u=[];const h=[],f=[];let m=i.slidesOffsetBefore;"function"==typeof m&&(m=i.slidesOffsetBefore.call(e));let g=i.slidesOffsetAfter;"function"==typeof g&&(g=i.slidesOffsetAfter.call(e));const v=e.snapGrid.length,w=e.slidesGrid.length;let b=i.spaceBetween,y=-m,x=0,$=0;if(void 0===r)return;"string"==typeof b&&b.indexOf("%")>=0&&(b=parseFloat(b.replace("%",""))/100*r),e.virtualSize=-b,o?d.css({marginLeft:"",marginBottom:"",marginTop:""}):d.css({marginRight:"",marginBottom:"",marginTop:""}),i.centeredSlides&&i.cssMode&&(Be(e.wrapperEl,"--swiper-centered-offset-before",""),Be(e.wrapperEl,"--swiper-centered-offset-after",""));const C=i.grid&&i.grid.rows>1&&e.grid;let _;C&&e.grid.initSlides(p);const T="auto"===i.slidesPerView&&i.breakpoints&&Object.keys(i.breakpoints).filter((e=>void 0!==i.breakpoints[e].slidesPerView)).length>0;for(let s=0;s<p;s+=1){_=0;const o=d.eq(s);if(C&&e.grid.updateSlide(s,o,p,t),"none"!==o.css("display")){if("auto"===i.slidesPerView){T&&(d[s].style[t("width")]="");const r=getComputedStyle(o[0]),l=o[0].style.transform,a=o[0].style.webkitTransform;if(l&&(o[0].style.transform="none"),a&&(o[0].style.webkitTransform="none"),i.roundLengths)_=e.isHorizontal()?o.outerWidth(!0):o.outerHeight(!0);else{const e=n(r,"width"),t=n(r,"padding-left"),i=n(r,"padding-right"),s=n(r,"margin-left"),l=n(r,"margin-right"),a=r.getPropertyValue("box-sizing");if(a&&"border-box"===a)_=e+s+l;else{const{clientWidth:n,offsetWidth:r}=o[0];_=e+t+i+s+l+(r-n)}}l&&(o[0].style.transform=l),a&&(o[0].style.webkitTransform=a),i.roundLengths&&(_=Math.floor(_))}else _=(r-(i.slidesPerView-1)*b)/i.slidesPerView,i.roundLengths&&(_=Math.floor(_)),d[s]&&(d[s].style[t("width")]=`${_}px`);d[s]&&(d[s].swiperSlideSize=_),f.push(_),i.centeredSlides?(y=y+_/2+x/2+b,0===x&&0!==s&&(y=y-r/2-b),0===s&&(y=y-r/2-b),Math.abs(y)<.001&&(y=0),i.roundLengths&&(y=Math.floor(y)),$%i.slidesPerGroup==0&&u.push(y),h.push(y)):(i.roundLengths&&(y=Math.floor(y)),($-Math.min(e.params.slidesPerGroupSkip,$))%e.params.slidesPerGroup==0&&u.push(y),h.push(y),y=y+_+b),e.virtualSize+=_+b,x=_,$+=1}}if(e.virtualSize=Math.max(e.virtualSize,r)+g,o&&l&&("slide"===i.effect||"coverflow"===i.effect)&&s.css({width:`${e.virtualSize+i.spaceBetween}px`}),i.setWrapperSize&&s.css({[t("width")]:`${e.virtualSize+i.spaceBetween}px`}),C&&e.grid.updateWrapperSize(_,u,t),!i.centeredSlides){const t=[];for(let n=0;n<u.length;n+=1){let s=u[n];i.roundLengths&&(s=Math.floor(s)),u[n]<=e.virtualSize-r&&t.push(s)}u=t,Math.floor(e.virtualSize-r)-Math.floor(u[u.length-1])>1&&u.push(e.virtualSize-r)}if(0===u.length&&(u=[0]),0!==i.spaceBetween){const n=e.isHorizontal()&&o?"marginLeft":t("marginRight");d.filter(((e,t)=>!i.cssMode||t!==d.length-1)).css({[n]:`${b}px`})}if(i.centeredSlides&&i.centeredSlidesBounds){let e=0;f.forEach((t=>{e+=t+(i.spaceBetween?i.spaceBetween:0)})),e-=i.spaceBetween;const t=e-r;u=u.map((e=>e<0?-m:e>t?t+g:e))}if(i.centerInsufficientSlides){let e=0;if(f.forEach((t=>{e+=t+(i.spaceBetween?i.spaceBetween:0)})),e-=i.spaceBetween,e<r){const t=(r-e)/2;u.forEach(((e,n)=>{u[n]=e-t})),h.forEach(((e,n)=>{h[n]=e+t}))}}if(Object.assign(e,{slides:d,snapGrid:u,slidesGrid:h,slidesSizesGrid:f}),i.centeredSlides&&i.cssMode&&!i.centeredSlidesBounds){Be(e.wrapperEl,"--swiper-centered-offset-before",-u[0]+"px"),Be(e.wrapperEl,"--swiper-centered-offset-after",e.size/2-f[f.length-1]/2+"px");const t=-e.snapGrid[0],n=-e.slidesGrid[0];e.snapGrid=e.snapGrid.map((e=>e+t)),e.slidesGrid=e.slidesGrid.map((e=>e+n))}p!==c&&e.emit("slidesLengthChange"),u.length!==v&&(e.params.watchOverflow&&e.checkOverflow(),e.emit("snapGridLengthChange")),h.length!==w&&e.emit("slidesGridLengthChange"),i.watchSlidesProgress&&e.updateSlidesOffset()},updateAutoHeight:function(e){const t=this,n=[],i=t.virtual&&t.params.virtual.enabled;let s,r=0;"number"==typeof e?t.setTransition(e):!0===e&&t.setTransition(t.params.speed);const o=e=>i?t.slides.filter((t=>parseInt(t.getAttribute("data-swiper-slide-index"),10)===e))[0]:t.slides.eq(e)[0];if("auto"!==t.params.slidesPerView&&t.params.slidesPerView>1)if(t.params.centeredSlides)t.visibleSlides.each((e=>{n.push(e)}));else for(s=0;s<Math.ceil(t.params.slidesPerView);s+=1){const e=t.activeIndex+s;if(e>t.slides.length&&!i)break;n.push(o(e))}else n.push(o(t.activeIndex));for(s=0;s<n.length;s+=1)if(void 0!==n[s]){const e=n[s].offsetHeight;r=e>r?e:r}r&&t.$wrapperEl.css("height",`${r}px`)},updateSlidesOffset:function(){const e=this,t=e.slides;for(let n=0;n<t.length;n+=1)t[n].swiperSlideOffset=e.isHorizontal()?t[n].offsetLeft:t[n].offsetTop},updateSlidesProgress:function(e=this&&this.translate||0){const t=this,n=t.params,{slides:i,rtlTranslate:s}=t;if(0===i.length)return;void 0===i[0].swiperSlideOffset&&t.updateSlidesOffset();let r=-e;s&&(r=e),i.removeClass(n.slideVisibleClass),t.visibleSlidesIndexes=[],t.visibleSlides=[];for(let e=0;e<i.length;e+=1){const o=i[e];let l=o.swiperSlideOffset;n.cssMode&&n.centeredSlides&&(l-=i[0].swiperSlideOffset);const a=(r+(n.centeredSlides?t.minTranslate():0)-l)/(o.swiperSlideSize+n.spaceBetween),c=-(r-l),d=c+t.slidesSizesGrid[e];(c>=0&&c<t.size-1||d>1&&d<=t.size||c<=0&&d>=t.size)&&(t.visibleSlides.push(o),t.visibleSlidesIndexes.push(e),i.eq(e).addClass(n.slideVisibleClass)),o.progress=s?-a:a}t.visibleSlides=ze(t.visibleSlides)},updateProgress:function(e){const t=this;if(void 0===e){const n=t.rtlTranslate?-1:1;e=t&&t.translate&&t.translate*n||0}const n=t.params,i=t.maxTranslate()-t.minTranslate();let{progress:s,isBeginning:r,isEnd:o}=t;const l=r,a=o;0===i?(s=0,r=!0,o=!0):(s=(e-t.minTranslate())/i,r=s<=0,o=s>=1),Object.assign(t,{progress:s,isBeginning:r,isEnd:o}),(n.watchSlidesProgress||n.centeredSlides&&n.autoHeight)&&t.updateSlidesProgress(e),r&&!l&&t.emit("reachBeginning toEdge"),o&&!a&&t.emit("reachEnd toEdge"),(l&&!r||a&&!o)&&t.emit("fromEdge"),t.emit("progress",s)},updateSlidesClasses:function(){const e=this,{slides:t,params:n,$wrapperEl:i,activeIndex:s,realIndex:r}=e,o=e.virtual&&n.virtual.enabled;let l;t.removeClass(`${n.slideActiveClass} ${n.slideNextClass} ${n.slidePrevClass} ${n.slideDuplicateActiveClass} ${n.slideDuplicateNextClass} ${n.slideDuplicatePrevClass}`),l=o?e.$wrapperEl.find(`.${n.slideClass}[data-swiper-slide-index="${s}"]`):t.eq(s),l.addClass(n.slideActiveClass),n.loop&&(l.hasClass(n.slideDuplicateClass)?i.children(`.${n.slideClass}:not(.${n.slideDuplicateClass})[data-swiper-slide-index="${r}"]`).addClass(n.slideDuplicateActiveClass):i.children(`.${n.slideClass}.${n.slideDuplicateClass}[data-swiper-slide-index="${r}"]`).addClass(n.slideDuplicateActiveClass));let a=l.nextAll(`.${n.slideClass}`).eq(0).addClass(n.slideNextClass);n.loop&&0===a.length&&(a=t.eq(0),a.addClass(n.slideNextClass));let c=l.prevAll(`.${n.slideClass}`).eq(0).addClass(n.slidePrevClass);n.loop&&0===c.length&&(c=t.eq(-1),c.addClass(n.slidePrevClass)),n.loop&&(a.hasClass(n.slideDuplicateClass)?i.children(`.${n.slideClass}:not(.${n.slideDuplicateClass})[data-swiper-slide-index="${a.attr("data-swiper-slide-index")}"]`).addClass(n.slideDuplicateNextClass):i.children(`.${n.slideClass}.${n.slideDuplicateClass}[data-swiper-slide-index="${a.attr("data-swiper-slide-index")}"]`).addClass(n.slideDuplicateNextClass),c.hasClass(n.slideDuplicateClass)?i.children(`.${n.slideClass}:not(.${n.slideDuplicateClass})[data-swiper-slide-index="${c.attr("data-swiper-slide-index")}"]`).addClass(n.slideDuplicatePrevClass):i.children(`.${n.slideClass}.${n.slideDuplicateClass}[data-swiper-slide-index="${c.attr("data-swiper-slide-index")}"]`).addClass(n.slideDuplicatePrevClass)),e.emitSlidesClasses()},updateActiveIndex:function(e){const t=this,n=t.rtlTranslate?t.translate:-t.translate,{slidesGrid:i,snapGrid:s,params:r,activeIndex:o,realIndex:l,snapIndex:a}=t;let c,d=e;if(void 0===d){for(let e=0;e<i.length;e+=1)void 0!==i[e+1]?n>=i[e]&&n<i[e+1]-(i[e+1]-i[e])/2?d=e:n>=i[e]&&n<i[e+1]&&(d=e+1):n>=i[e]&&(d=e);r.normalizeSlideIndex&&(d<0||void 0===d)&&(d=0)}if(s.indexOf(n)>=0)c=s.indexOf(n);else{const e=Math.min(r.slidesPerGroupSkip,d);c=e+Math.floor((d-e)/r.slidesPerGroup)}if(c>=s.length&&(c=s.length-1),d===o)return void(c!==a&&(t.snapIndex=c,t.emit("snapIndexChange")));const p=parseInt(t.slides.eq(d).attr("data-swiper-slide-index")||d,10);Object.assign(t,{snapIndex:c,realIndex:p,previousIndex:o,activeIndex:d}),t.emit("activeIndexChange"),t.emit("snapIndexChange"),l!==p&&t.emit("realIndexChange"),(t.initialized||t.params.runCallbacksOnInit)&&t.emit("slideChange")},updateClickedSlide:function(e){const t=this,n=t.params,i=ze(e.target).closest(`.${n.slideClass}`)[0];let s,r=!1;if(i)for(let e=0;e<t.slides.length;e+=1)if(t.slides[e]===i){r=!0,s=e;break}if(!i||!r)return t.clickedSlide=void 0,void(t.clickedIndex=void 0);t.clickedSlide=i,t.virtual&&t.params.virtual.enabled?t.clickedIndex=parseInt(ze(i).attr("data-swiper-slide-index"),10):t.clickedIndex=s,n.slideToClickedSlide&&void 0!==t.clickedIndex&&t.clickedIndex!==t.activeIndex&&t.slideToClickedSlide()}};var Ue={getTranslate:function(e=(this.isHorizontal()?"x":"y")){const{params:t,rtlTranslate:n,translate:i,$wrapperEl:s}=this;if(t.virtualTranslate)return n?-i:i;if(t.cssMode)return i;let r=De(s[0],e);return n&&(r=-r),r||0},setTranslate:function(e,t){const n=this,{rtlTranslate:i,params:s,$wrapperEl:r,wrapperEl:o,progress:l}=n;let a,c=0,d=0;n.isHorizontal()?c=i?-e:e:d=e,s.roundLengths&&(c=Math.floor(c),d=Math.floor(d)),s.cssMode?o[n.isHorizontal()?"scrollLeft":"scrollTop"]=n.isHorizontal()?-c:-d:s.virtualTranslate||r.transform(`translate3d(${c}px, ${d}px, 0px)`),n.previousTranslate=n.translate,n.translate=n.isHorizontal()?c:d;const p=n.maxTranslate()-n.minTranslate();a=0===p?0:(e-n.minTranslate())/p,a!==l&&n.updateProgress(e),n.emit("setTranslate",n.translate,t)},minTranslate:function(){return-this.snapGrid[0]},maxTranslate:function(){return-this.snapGrid[this.snapGrid.length-1]},translateTo:function(e=0,t=this.params.speed,n=!0,i=!0,s){const r=this,{params:o,wrapperEl:l}=r;if(r.animating&&o.preventInteractionOnTransition)return!1;const a=r.minTranslate(),c=r.maxTranslate();let d;if(d=i&&e>a?a:i&&e<c?c:e,r.updateProgress(d),o.cssMode){const e=r.isHorizontal();if(0===t)l[e?"scrollLeft":"scrollTop"]=-d;else{if(!r.support.smoothScroll)return Ge({swiper:r,targetPosition:-d,side:e?"left":"top"}),!0;l.scrollTo({[e?"left":"top"]:-d,behavior:"smooth"})}return!0}return 0===t?(r.setTransition(0),r.setTranslate(d),n&&(r.emit("beforeTransitionStart",t,s),r.emit("transitionEnd"))):(r.setTransition(t),r.setTranslate(d),n&&(r.emit("beforeTransitionStart",t,s),r.emit("transitionStart")),r.animating||(r.animating=!0,r.onTranslateToWrapperTransitionEnd||(r.onTranslateToWrapperTransitionEnd=function(e){r&&!r.destroyed&&e.target===this&&(r.$wrapperEl[0].removeEventListener("transitionend",r.onTranslateToWrapperTransitionEnd),r.$wrapperEl[0].removeEventListener("webkitTransitionEnd",r.onTranslateToWrapperTransitionEnd),r.onTranslateToWrapperTransitionEnd=null,delete r.onTranslateToWrapperTransitionEnd,n&&r.emit("transitionEnd"))}),r.$wrapperEl[0].addEventListener("transitionend",r.onTranslateToWrapperTransitionEnd),r.$wrapperEl[0].addEventListener("webkitTransitionEnd",r.onTranslateToWrapperTransitionEnd))),!0}};function Ke({swiper:e,runCallbacks:t,direction:n,step:i}){const{activeIndex:s,previousIndex:r}=e;let o=n;if(o||(o=s>r?"next":s<r?"prev":"reset"),e.emit(`transition${i}`),t&&s!==r){if("reset"===o)return void e.emit(`slideResetTransition${i}`);e.emit(`slideChangeTransition${i}`),"next"===o?e.emit(`slideNextTransition${i}`):e.emit(`slidePrevTransition${i}`)}}var Je={slideTo:function(e=0,t=this.params.speed,n=!0,i,s){if("number"!=typeof e&&"string"!=typeof e)throw new Error(`The 'index' argument cannot have type other than 'number' or 'string'. [${typeof e}] given.`);if("string"==typeof e){const t=parseInt(e,10);if(!isFinite(t))throw new Error(`The passed-in 'index' (string) couldn't be converted to 'number'. [${e}] given.`);e=t}const r=this;let o=e;o<0&&(o=0);const{params:l,snapGrid:a,slidesGrid:c,previousIndex:d,activeIndex:p,rtlTranslate:u,wrapperEl:h,enabled:f}=r;if(r.animating&&l.preventInteractionOnTransition||!f&&!i&&!s)return!1;const m=Math.min(r.params.slidesPerGroupSkip,o);let g=m+Math.floor((o-m)/r.params.slidesPerGroup);g>=a.length&&(g=a.length-1),(p||l.initialSlide||0)===(d||0)&&n&&r.emit("beforeSlideChangeStart");const v=-a[g];if(r.updateProgress(v),l.normalizeSlideIndex)for(let e=0;e<c.length;e+=1){const t=-Math.floor(100*v),n=Math.floor(100*c[e]),i=Math.floor(100*c[e+1]);void 0!==c[e+1]?t>=n&&t<i-(i-n)/2?o=e:t>=n&&t<i&&(o=e+1):t>=n&&(o=e)}if(r.initialized&&o!==p){if(!r.allowSlideNext&&v<r.translate&&v<r.minTranslate())return!1;if(!r.allowSlidePrev&&v>r.translate&&v>r.maxTranslate()&&(p||0)!==o)return!1}let w;if(w=o>p?"next":o<p?"prev":"reset",u&&-v===r.translate||!u&&v===r.translate)return r.updateActiveIndex(o),l.autoHeight&&r.updateAutoHeight(),r.updateSlidesClasses(),"slide"!==l.effect&&r.setTranslate(v),"reset"!==w&&(r.transitionStart(n,w),r.transitionEnd(n,w)),!1;if(l.cssMode){const e=r.isHorizontal(),n=u?v:-v;if(0===t){const t=r.virtual&&r.params.virtual.enabled;t&&(r.wrapperEl.style.scrollSnapType="none",r._immediateVirtual=!0),h[e?"scrollLeft":"scrollTop"]=n,t&&requestAnimationFrame((()=>{r.wrapperEl.style.scrollSnapType="",r._swiperImmediateVirtual=!1}))}else{if(!r.support.smoothScroll)return Ge({swiper:r,targetPosition:n,side:e?"left":"top"}),!0;h.scrollTo({[e?"left":"top"]:n,behavior:"smooth"})}return!0}return 0===t?(r.setTransition(0),r.setTranslate(v),r.updateActiveIndex(o),r.updateSlidesClasses(),r.emit("beforeTransitionStart",t,i),r.transitionStart(n,w),r.transitionEnd(n,w)):(r.setTransition(t),r.setTranslate(v),r.updateActiveIndex(o),r.updateSlidesClasses(),r.emit("beforeTransitionStart",t,i),r.transitionStart(n,w),r.animating||(r.animating=!0,r.onSlideToWrapperTransitionEnd||(r.onSlideToWrapperTransitionEnd=function(e){r&&!r.destroyed&&e.target===this&&(r.$wrapperEl[0].removeEventListener("transitionend",r.onSlideToWrapperTransitionEnd),r.$wrapperEl[0].removeEventListener("webkitTransitionEnd",r.onSlideToWrapperTransitionEnd),r.onSlideToWrapperTransitionEnd=null,delete r.onSlideToWrapperTransitionEnd,r.transitionEnd(n,w))}),r.$wrapperEl[0].addEventListener("transitionend",r.onSlideToWrapperTransitionEnd),r.$wrapperEl[0].addEventListener("webkitTransitionEnd",r.onSlideToWrapperTransitionEnd))),!0},slideToLoop:function(e=0,t=this.params.speed,n=!0,i){const s=this;let r=e;return s.params.loop&&(r+=s.loopedSlides),s.slideTo(r,t,n,i)},slideNext:function(e=this.params.speed,t=!0,n){const i=this,{animating:s,enabled:r,params:o}=i;if(!r)return i;let l=o.slidesPerGroup;"auto"===o.slidesPerView&&1===o.slidesPerGroup&&o.slidesPerGroupAuto&&(l=Math.max(i.slidesPerViewDynamic("current",!0),1));const a=i.activeIndex<o.slidesPerGroupSkip?1:l;if(o.loop){if(s&&o.loopPreventsSlide)return!1;i.loopFix(),i._clientLeft=i.$wrapperEl[0].clientLeft}return i.slideTo(i.activeIndex+a,e,t,n)},slidePrev:function(e=this.params.speed,t=!0,n){const i=this,{params:s,animating:r,snapGrid:o,slidesGrid:l,rtlTranslate:a,enabled:c}=i;if(!c)return i;if(s.loop){if(r&&s.loopPreventsSlide)return!1;i.loopFix(),i._clientLeft=i.$wrapperEl[0].clientLeft}function d(e){return e<0?-Math.floor(Math.abs(e)):Math.floor(e)}const p=d(a?i.translate:-i.translate),u=o.map((e=>d(e)));let h=o[u.indexOf(p)-1];if(void 0===h&&s.cssMode){let e;o.forEach(((t,n)=>{p>=t&&(e=n)})),void 0!==e&&(h=o[e>0?e-1:e])}let f=0;return void 0!==h&&(f=l.indexOf(h),f<0&&(f=i.activeIndex-1),"auto"===s.slidesPerView&&1===s.slidesPerGroup&&s.slidesPerGroupAuto&&(f=f-i.slidesPerViewDynamic("previous",!0)+1,f=Math.max(f,0))),i.slideTo(f,e,t,n)},slideReset:function(e=this.params.speed,t=!0,n){return this.slideTo(this.activeIndex,e,t,n)},slideToClosest:function(e=this.params.speed,t=!0,n,i=.5){const s=this;let r=s.activeIndex;const o=Math.min(s.params.slidesPerGroupSkip,r),l=o+Math.floor((r-o)/s.params.slidesPerGroup),a=s.rtlTranslate?s.translate:-s.translate;if(a>=s.snapGrid[l]){const e=s.snapGrid[l];a-e>(s.snapGrid[l+1]-e)*i&&(r+=s.params.slidesPerGroup)}else{const e=s.snapGrid[l-1];a-e<=(s.snapGrid[l]-e)*i&&(r-=s.params.slidesPerGroup)}return r=Math.max(r,0),r=Math.min(r,s.slidesGrid.length-1),s.slideTo(r,e,t,n)},slideToClickedSlide:function(){const e=this,{params:t,$wrapperEl:n}=e,i="auto"===t.slidesPerView?e.slidesPerViewDynamic():t.slidesPerView;let s,r=e.clickedIndex;if(t.loop){if(e.animating)return;s=parseInt(ze(e.clickedSlide).attr("data-swiper-slide-index"),10),t.centeredSlides?r<e.loopedSlides-i/2||r>e.slides.length-e.loopedSlides+i/2?(e.loopFix(),r=n.children(`.${t.slideClass}[data-swiper-slide-index="${s}"]:not(.${t.slideDuplicateClass})`).eq(0).index(),Oe((()=>{e.slideTo(r)}))):e.slideTo(r):r>e.slides.length-i?(e.loopFix(),r=n.children(`.${t.slideClass}[data-swiper-slide-index="${s}"]:not(.${t.slideDuplicateClass})`).eq(0).index(),Oe((()=>{e.slideTo(r)}))):e.slideTo(r)}else e.slideTo(r)}};var Qe={loopCreate:function(){const e=this,t=Ee(),{params:n,$wrapperEl:i}=e;i.children(`.${n.slideClass}.${n.slideDuplicateClass}`).remove();let s=i.children(`.${n.slideClass}`);if(n.loopFillGroupWithBlank){const e=n.slidesPerGroup-s.length%n.slidesPerGroup;if(e!==n.slidesPerGroup){for(let s=0;s<e;s+=1){const e=ze(t.createElement("div")).addClass(`${n.slideClass} ${n.slideBlankClass}`);i.append(e)}s=i.children(`.${n.slideClass}`)}}"auto"!==n.slidesPerView||n.loopedSlides||(n.loopedSlides=s.length),e.loopedSlides=Math.ceil(parseFloat(n.loopedSlides||n.slidesPerView,10)),e.loopedSlides+=n.loopAdditionalSlides,e.loopedSlides>s.length&&(e.loopedSlides=s.length);const r=[],o=[];s.each(((t,n)=>{const i=ze(t);n<e.loopedSlides&&o.push(t),n<s.length&&n>=s.length-e.loopedSlides&&r.push(t),i.attr("data-swiper-slide-index",n)}));for(let e=0;e<o.length;e+=1)i.append(ze(o[e].cloneNode(!0)).addClass(n.slideDuplicateClass));for(let e=r.length-1;e>=0;e-=1)i.prepend(ze(r[e].cloneNode(!0)).addClass(n.slideDuplicateClass))},loopFix:function(){const e=this;e.emit("beforeLoopFix");const{activeIndex:t,slides:n,loopedSlides:i,allowSlidePrev:s,allowSlideNext:r,snapGrid:o,rtlTranslate:l}=e;let a;e.allowSlidePrev=!0,e.allowSlideNext=!0;const c=-o[t]-e.getTranslate();if(t<i){a=n.length-3*i+t,a+=i;e.slideTo(a,0,!1,!0)&&0!==c&&e.setTranslate((l?-e.translate:e.translate)-c)}else if(t>=n.length-i){a=-n.length+t+i,a+=i;e.slideTo(a,0,!1,!0)&&0!==c&&e.setTranslate((l?-e.translate:e.translate)-c)}e.allowSlidePrev=s,e.allowSlideNext=r,e.emit("loopFix")},loopDestroy:function(){const{$wrapperEl:e,params:t,slides:n}=this;e.children(`.${t.slideClass}.${t.slideDuplicateClass},.${t.slideClass}.${t.slideBlankClass}`).remove(),n.removeAttr("data-swiper-slide-index")}};function et(e){const t=this,n=Ee(),i=Me(),s=t.touchEventsData,{params:r,touches:o,enabled:l}=t;if(!l)return;if(t.animating&&r.preventInteractionOnTransition)return;!t.animating&&r.cssMode&&r.loop&&t.loopFix();let a=e;a.originalEvent&&(a=a.originalEvent);let c=ze(a.target);if("wrapper"===r.touchEventsTarget&&!c.closest(t.wrapperEl).length)return;if(s.isTouchEvent="touchstart"===a.type,!s.isTouchEvent&&"which"in a&&3===a.which)return;if(!s.isTouchEvent&&"button"in a&&a.button>0)return;if(s.isTouched&&s.isMoved)return;!!r.noSwipingClass&&""!==r.noSwipingClass&&a.target&&a.target.shadowRoot&&e.path&&e.path[0]&&(c=ze(e.path[0]));const d=r.noSwipingSelector?r.noSwipingSelector:`.${r.noSwipingClass}`,p=!(!a.target||!a.target.shadowRoot);if(r.noSwiping&&(p?function(e,t=this){return function t(n){return n&&n!==Ee()&&n!==Me()?(n.assignedSlot&&(n=n.assignedSlot),n.closest(e)||t(n.getRootNode().host)):null}(t)}(d,a.target):c.closest(d)[0]))return void(t.allowClick=!0);if(r.swipeHandler&&!c.closest(r.swipeHandler)[0])return;o.currentX="touchstart"===a.type?a.targetTouches[0].pageX:a.pageX,o.currentY="touchstart"===a.type?a.targetTouches[0].pageY:a.pageY;const u=o.currentX,h=o.currentY,f=r.edgeSwipeDetection||r.iOSEdgeSwipeDetection,m=r.edgeSwipeThreshold||r.iOSEdgeSwipeThreshold;if(f&&(u<=m||u>=i.innerWidth-m)){if("prevent"!==f)return;e.preventDefault()}if(Object.assign(s,{isTouched:!0,isMoved:!1,allowTouchCallbacks:!0,isScrolling:void 0,startMoving:void 0}),o.startX=u,o.startY=h,s.touchStartTime=Ae(),t.allowClick=!0,t.updateSize(),t.swipeDirection=void 0,r.threshold>0&&(s.allowThresholdMove=!1),"touchstart"!==a.type){let e=!0;c.is(s.focusableElements)&&(e=!1),n.activeElement&&ze(n.activeElement).is(s.focusableElements)&&n.activeElement!==c[0]&&n.activeElement.blur();const i=e&&t.allowTouchMove&&r.touchStartPreventDefault;!r.touchStartForcePreventDefault&&!i||c[0].isContentEditable||a.preventDefault()}t.emit("touchStart",a)}function tt(e){const t=Ee(),n=this,i=n.touchEventsData,{params:s,touches:r,rtlTranslate:o,enabled:l}=n;if(!l)return;let a=e;if(a.originalEvent&&(a=a.originalEvent),!i.isTouched)return void(i.startMoving&&i.isScrolling&&n.emit("touchMoveOpposite",a));if(i.isTouchEvent&&"touchmove"!==a.type)return;const c="touchmove"===a.type&&a.targetTouches&&(a.targetTouches[0]||a.changedTouches[0]),d="touchmove"===a.type?c.pageX:a.pageX,p="touchmove"===a.type?c.pageY:a.pageY;if(a.preventedByNestedSwiper)return r.startX=d,void(r.startY=p);if(!n.allowTouchMove)return n.allowClick=!1,void(i.isTouched&&(Object.assign(r,{startX:d,startY:p,currentX:d,currentY:p}),i.touchStartTime=Ae()));if(i.isTouchEvent&&s.touchReleaseOnEdges&&!s.loop)if(n.isVertical()){if(p<r.startY&&n.translate<=n.maxTranslate()||p>r.startY&&n.translate>=n.minTranslate())return i.isTouched=!1,void(i.isMoved=!1)}else if(d<r.startX&&n.translate<=n.maxTranslate()||d>r.startX&&n.translate>=n.minTranslate())return;if(i.isTouchEvent&&t.activeElement&&a.target===t.activeElement&&ze(a.target).is(i.focusableElements))return i.isMoved=!0,void(n.allowClick=!1);if(i.allowTouchCallbacks&&n.emit("touchMove",a),a.targetTouches&&a.targetTouches.length>1)return;r.currentX=d,r.currentY=p;const u=r.currentX-r.startX,h=r.currentY-r.startY;if(n.params.threshold&&Math.sqrt(u**2+h**2)<n.params.threshold)return;if(void 0===i.isScrolling){let e;n.isHorizontal()&&r.currentY===r.startY||n.isVertical()&&r.currentX===r.startX?i.isScrolling=!1:u*u+h*h>=25&&(e=180*Math.atan2(Math.abs(h),Math.abs(u))/Math.PI,i.isScrolling=n.isHorizontal()?e>s.touchAngle:90-e>s.touchAngle)}if(i.isScrolling&&n.emit("touchMoveOpposite",a),void 0===i.startMoving&&(r.currentX===r.startX&&r.currentY===r.startY||(i.startMoving=!0)),i.isScrolling)return void(i.isTouched=!1);if(!i.startMoving)return;n.allowClick=!1,!s.cssMode&&a.cancelable&&a.preventDefault(),s.touchMoveStopPropagation&&!s.nested&&a.stopPropagation(),i.isMoved||(s.loop&&!s.cssMode&&n.loopFix(),i.startTranslate=n.getTranslate(),n.setTransition(0),n.animating&&n.$wrapperEl.trigger("webkitTransitionEnd transitionend"),i.allowMomentumBounce=!1,!s.grabCursor||!0!==n.allowSlideNext&&!0!==n.allowSlidePrev||n.setGrabCursor(!0),n.emit("sliderFirstMove",a)),n.emit("sliderMove",a),i.isMoved=!0;let f=n.isHorizontal()?u:h;r.diff=f,f*=s.touchRatio,o&&(f=-f),n.swipeDirection=f>0?"prev":"next",i.currentTranslate=f+i.startTranslate;let m=!0,g=s.resistanceRatio;if(s.touchReleaseOnEdges&&(g=0),f>0&&i.currentTranslate>n.minTranslate()?(m=!1,s.resistance&&(i.currentTranslate=n.minTranslate()-1+(-n.minTranslate()+i.startTranslate+f)**g)):f<0&&i.currentTranslate<n.maxTranslate()&&(m=!1,s.resistance&&(i.currentTranslate=n.maxTranslate()+1-(n.maxTranslate()-i.startTranslate-f)**g)),m&&(a.preventedByNestedSwiper=!0),!n.allowSlideNext&&"next"===n.swipeDirection&&i.currentTranslate<i.startTranslate&&(i.currentTranslate=i.startTranslate),!n.allowSlidePrev&&"prev"===n.swipeDirection&&i.currentTranslate>i.startTranslate&&(i.currentTranslate=i.startTranslate),n.allowSlidePrev||n.allowSlideNext||(i.currentTranslate=i.startTranslate),s.threshold>0){if(!(Math.abs(f)>s.threshold||i.allowThresholdMove))return void(i.currentTranslate=i.startTranslate);if(!i.allowThresholdMove)return i.allowThresholdMove=!0,r.startX=r.currentX,r.startY=r.currentY,i.currentTranslate=i.startTranslate,void(r.diff=n.isHorizontal()?r.currentX-r.startX:r.currentY-r.startY)}s.followFinger&&!s.cssMode&&((s.freeMode&&s.freeMode.enabled&&n.freeMode||s.watchSlidesProgress)&&(n.updateActiveIndex(),n.updateSlidesClasses()),n.params.freeMode&&s.freeMode.enabled&&n.freeMode&&n.freeMode.onTouchMove(),n.updateProgress(i.currentTranslate),n.setTranslate(i.currentTranslate))}function nt(e){const t=this,n=t.touchEventsData,{params:i,touches:s,rtlTranslate:r,slidesGrid:o,enabled:l}=t;if(!l)return;let a=e;if(a.originalEvent&&(a=a.originalEvent),n.allowTouchCallbacks&&t.emit("touchEnd",a),n.allowTouchCallbacks=!1,!n.isTouched)return n.isMoved&&i.grabCursor&&t.setGrabCursor(!1),n.isMoved=!1,void(n.startMoving=!1);i.grabCursor&&n.isMoved&&n.isTouched&&(!0===t.allowSlideNext||!0===t.allowSlidePrev)&&t.setGrabCursor(!1);const c=Ae(),d=c-n.touchStartTime;if(t.allowClick&&(t.updateClickedSlide(a),t.emit("tap click",a),d<300&&c-n.lastClickTime<300&&t.emit("doubleTap doubleClick",a)),n.lastClickTime=Ae(),Oe((()=>{t.destroyed||(t.allowClick=!0)})),!n.isTouched||!n.isMoved||!t.swipeDirection||0===s.diff||n.currentTranslate===n.startTranslate)return n.isTouched=!1,n.isMoved=!1,void(n.startMoving=!1);let p;if(n.isTouched=!1,n.isMoved=!1,n.startMoving=!1,p=i.followFinger?r?t.translate:-t.translate:-n.currentTranslate,i.cssMode)return;if(t.params.freeMode&&i.freeMode.enabled)return void t.freeMode.onTouchEnd({currentPos:p});let u=0,h=t.slidesSizesGrid[0];for(let e=0;e<o.length;e+=e<i.slidesPerGroupSkip?1:i.slidesPerGroup){const t=e<i.slidesPerGroupSkip-1?1:i.slidesPerGroup;void 0!==o[e+t]?p>=o[e]&&p<o[e+t]&&(u=e,h=o[e+t]-o[e]):p>=o[e]&&(u=e,h=o[o.length-1]-o[o.length-2])}const f=(p-o[u])/h,m=u<i.slidesPerGroupSkip-1?1:i.slidesPerGroup;if(d>i.longSwipesMs){if(!i.longSwipes)return void t.slideTo(t.activeIndex);"next"===t.swipeDirection&&(f>=i.longSwipesRatio?t.slideTo(u+m):t.slideTo(u)),"prev"===t.swipeDirection&&(f>1-i.longSwipesRatio?t.slideTo(u+m):t.slideTo(u))}else{if(!i.shortSwipes)return void t.slideTo(t.activeIndex);t.navigation&&(a.target===t.navigation.nextEl||a.target===t.navigation.prevEl)?a.target===t.navigation.nextEl?t.slideTo(u+m):t.slideTo(u):("next"===t.swipeDirection&&t.slideTo(u+m),"prev"===t.swipeDirection&&t.slideTo(u))}}function it(){const e=this,{params:t,el:n}=e;if(n&&0===n.offsetWidth)return;t.breakpoints&&e.setBreakpoint();const{allowSlideNext:i,allowSlidePrev:s,snapGrid:r}=e;e.allowSlideNext=!0,e.allowSlidePrev=!0,e.updateSize(),e.updateSlides(),e.updateSlidesClasses(),("auto"===t.slidesPerView||t.slidesPerView>1)&&e.isEnd&&!e.isBeginning&&!e.params.centeredSlides?e.slideTo(e.slides.length-1,0,!1,!0):e.slideTo(e.activeIndex,0,!1,!0),e.autoplay&&e.autoplay.running&&e.autoplay.paused&&e.autoplay.run(),e.allowSlidePrev=s,e.allowSlideNext=i,e.params.watchOverflow&&r!==e.snapGrid&&e.checkOverflow()}function st(e){const t=this;t.enabled&&(t.allowClick||(t.params.preventClicks&&e.preventDefault(),t.params.preventClicksPropagation&&t.animating&&(e.stopPropagation(),e.stopImmediatePropagation())))}function rt(){const e=this,{wrapperEl:t,rtlTranslate:n,enabled:i}=e;if(!i)return;let s;e.previousTranslate=e.translate,e.isHorizontal()?e.translate=-t.scrollLeft:e.translate=-t.scrollTop,-0===e.translate&&(e.translate=0),e.updateActiveIndex(),e.updateSlidesClasses();const r=e.maxTranslate()-e.minTranslate();s=0===r?0:(e.translate-e.minTranslate())/r,s!==e.progress&&e.updateProgress(n?-e.translate:e.translate),e.emit("setTranslate",e.translate,!1)}let ot=!1;function lt(){}const at=(e,t)=>{const n=Ee(),{params:i,touchEvents:s,el:r,wrapperEl:o,device:l,support:a}=e,c=!!i.nested,d="on"===t?"addEventListener":"removeEventListener",p=t;if(a.touch){const t=!("touchstart"!==s.start||!a.passiveListener||!i.passiveListeners)&&{passive:!0,capture:!1};r[d](s.start,e.onTouchStart,t),r[d](s.move,e.onTouchMove,a.passiveListener?{passive:!1,capture:c}:c),r[d](s.end,e.onTouchEnd,t),s.cancel&&r[d](s.cancel,e.onTouchEnd,t)}else r[d](s.start,e.onTouchStart,!1),n[d](s.move,e.onTouchMove,c),n[d](s.end,e.onTouchEnd,!1);(i.preventClicks||i.preventClicksPropagation)&&r[d]("click",e.onClick,!0),i.cssMode&&o[d]("scroll",e.onScroll),i.updateOnWindowResize?e[p](l.ios||l.android?"resize orientationchange observerUpdate":"resize observerUpdate",it,!0):e[p]("observerUpdate",it,!0)};var ct={attachEvents:function(){const e=this,t=Ee(),{params:n,support:i}=e;e.onTouchStart=et.bind(e),e.onTouchMove=tt.bind(e),e.onTouchEnd=nt.bind(e),n.cssMode&&(e.onScroll=rt.bind(e)),e.onClick=st.bind(e),i.touch&&!ot&&(t.addEventListener("touchstart",lt),ot=!0),at(e,"on")},detachEvents:function(){at(this,"off")}};const dt=(e,t)=>e.grid&&t.grid&&t.grid.rows>1;var pt={addClasses:function(){const e=this,{classNames:t,params:n,rtl:i,$el:s,device:r,support:o}=e,l=function(e,t){const n=[];return e.forEach((e=>{"object"==typeof e?Object.keys(e).forEach((i=>{e[i]&&n.push(t+i)})):"string"==typeof e&&n.push(t+e)})),n}(["initialized",n.direction,{"pointer-events":!o.touch},{"free-mode":e.params.freeMode&&n.freeMode.enabled},{autoheight:n.autoHeight},{rtl:i},{grid:n.grid&&n.grid.rows>1},{"grid-column":n.grid&&n.grid.rows>1&&"column"===n.grid.fill},{android:r.android},{ios:r.ios},{"css-mode":n.cssMode},{centered:n.cssMode&&n.centeredSlides}],n.containerModifierClass);t.push(...l),s.addClass([...t].join(" ")),e.emitContainerClasses()},removeClasses:function(){const{$el:e,classNames:t}=this;e.removeClass(t.join(" ")),this.emitContainerClasses()}};var ut={init:!0,direction:"horizontal",touchEventsTarget:"wrapper",initialSlide:0,speed:300,cssMode:!1,updateOnWindowResize:!0,resizeObserver:!0,nested:!1,createElements:!1,enabled:!0,focusableElements:"input, select, option, textarea, button, video, label",width:null,height:null,preventInteractionOnTransition:!1,userAgent:null,url:null,edgeSwipeDetection:!1,edgeSwipeThreshold:20,autoHeight:!1,setWrapperSize:!1,virtualTranslate:!1,effect:"slide",breakpoints:void 0,breakpointsBase:"window",spaceBetween:0,slidesPerView:1,slidesPerGroup:1,slidesPerGroupSkip:0,slidesPerGroupAuto:!1,centeredSlides:!1,centeredSlidesBounds:!1,slidesOffsetBefore:0,slidesOffsetAfter:0,normalizeSlideIndex:!0,centerInsufficientSlides:!1,watchOverflow:!0,roundLengths:!1,touchRatio:1,touchAngle:45,simulateTouch:!0,shortSwipes:!0,longSwipes:!0,longSwipesRatio:.5,longSwipesMs:300,followFinger:!0,allowTouchMove:!0,threshold:0,touchMoveStopPropagation:!1,touchStartPreventDefault:!0,touchStartForcePreventDefault:!1,touchReleaseOnEdges:!1,uniqueNavElements:!0,resistance:!0,resistanceRatio:.85,watchSlidesProgress:!1,grabCursor:!1,preventClicks:!0,preventClicksPropagation:!0,slideToClickedSlide:!1,preloadImages:!0,updateOnImagesReady:!0,loop:!1,loopAdditionalSlides:0,loopedSlides:null,loopFillGroupWithBlank:!1,loopPreventsSlide:!0,allowSlidePrev:!0,allowSlideNext:!0,swipeHandler:null,noSwiping:!0,noSwipingClass:"swiper-no-swiping",noSwipingSelector:null,passiveListeners:!0,containerModifierClass:"swiper-",slideClass:"swiper-slide",slideBlankClass:"swiper-slide-invisible-blank",slideActiveClass:"swiper-slide-active",slideDuplicateActiveClass:"swiper-slide-duplicate-active",slideVisibleClass:"swiper-slide-visible",slideDuplicateClass:"swiper-slide-duplicate",slideNextClass:"swiper-slide-next",slideDuplicateNextClass:"swiper-slide-duplicate-next",slidePrevClass:"swiper-slide-prev",slideDuplicatePrevClass:"swiper-slide-duplicate-prev",wrapperClass:"swiper-wrapper",runCallbacksOnInit:!0,_emitClasses:!1};function ht(e,t){return function(n={}){const i=Object.keys(n)[0],s=n[i];"object"==typeof s&&null!==s?(["navigation","pagination","scrollbar"].indexOf(i)>=0&&!0===e[i]&&(e[i]={auto:!0}),i in e&&"enabled"in s?(!0===e[i]&&(e[i]={enabled:!0}),"object"!=typeof e[i]||"enabled"in e[i]||(e[i].enabled=!0),e[i]||(e[i]={enabled:!1}),Ne(t,n)):Ne(t,n)):Ne(t,n)}}const ft={eventsEmitter:Xe,update:Ye,translate:Ue,transition:{setTransition:function(e,t){const n=this;n.params.cssMode||n.$wrapperEl.transition(e),n.emit("setTransition",e,t)},transitionStart:function(e=!0,t){const n=this,{params:i}=n;i.cssMode||(i.autoHeight&&n.updateAutoHeight(),Ke({swiper:n,runCallbacks:e,direction:t,step:"Start"}))},transitionEnd:function(e=!0,t){const n=this,{params:i}=n;n.animating=!1,i.cssMode||(n.setTransition(0),Ke({swiper:n,runCallbacks:e,direction:t,step:"End"}))}},slide:Je,loop:Qe,grabCursor:{setGrabCursor:function(e){const t=this;if(t.support.touch||!t.params.simulateTouch||t.params.watchOverflow&&t.isLocked||t.params.cssMode)return;const n="container"===t.params.touchEventsTarget?t.el:t.wrapperEl;n.style.cursor="move",n.style.cursor=e?"-webkit-grabbing":"-webkit-grab",n.style.cursor=e?"-moz-grabbin":"-moz-grab",n.style.cursor=e?"grabbing":"grab"},unsetGrabCursor:function(){const e=this;e.support.touch||e.params.watchOverflow&&e.isLocked||e.params.cssMode||(e["container"===e.params.touchEventsTarget?"el":"wrapperEl"].style.cursor="")}},events:ct,breakpoints:{setBreakpoint:function(){const e=this,{activeIndex:t,initialized:n,loopedSlides:i=0,params:s,$el:r}=e,o=s.breakpoints;if(!o||o&&0===Object.keys(o).length)return;const l=e.getBreakpoint(o,e.params.breakpointsBase,e.el);if(!l||e.currentBreakpoint===l)return;const a=(l in o?o[l]:void 0)||e.originalParams,c=dt(e,s),d=dt(e,a),p=s.enabled;c&&!d?(r.removeClass(`${s.containerModifierClass}grid ${s.containerModifierClass}grid-column`),e.emitContainerClasses()):!c&&d&&(r.addClass(`${s.containerModifierClass}grid`),(a.grid.fill&&"column"===a.grid.fill||!a.grid.fill&&"column"===s.grid.fill)&&r.addClass(`${s.containerModifierClass}grid-column`),e.emitContainerClasses());const u=a.direction&&a.direction!==s.direction,h=s.loop&&(a.slidesPerView!==s.slidesPerView||u);u&&n&&e.changeDirection(),Ne(e.params,a);const f=e.params.enabled;Object.assign(e,{allowTouchMove:e.params.allowTouchMove,allowSlideNext:e.params.allowSlideNext,allowSlidePrev:e.params.allowSlidePrev}),p&&!f?e.disable():!p&&f&&e.enable(),e.currentBreakpoint=l,e.emit("_beforeBreakpoint",a),h&&n&&(e.loopDestroy(),e.loopCreate(),e.updateSlides(),e.slideTo(t-i+e.loopedSlides,0,!1)),e.emit("breakpoint",a)},getBreakpoint:function(e,t="window",n){if(!e||"container"===t&&!n)return;let i=!1;const s=Me(),r="window"===t?s.innerHeight:n.clientHeight,o=Object.keys(e).map((e=>{if("string"==typeof e&&0===e.indexOf("@")){const t=parseFloat(e.substr(1));return{value:r*t,point:e}}return{value:e,point:e}}));o.sort(((e,t)=>parseInt(e.value,10)-parseInt(t.value,10)));for(let e=0;e<o.length;e+=1){const{point:r,value:l}=o[e];"window"===t?s.matchMedia(`(min-width: ${l}px)`).matches&&(i=r):l<=n.clientWidth&&(i=r)}return i||"max"}},checkOverflow:{checkOverflow:function(){const e=this,{isLocked:t,params:n}=e,{slidesOffsetBefore:i}=n;if(i){const t=e.slides.length-1,n=e.slidesGrid[t]+e.slidesSizesGrid[t]+2*i;e.isLocked=e.size>n}else e.isLocked=1===e.snapGrid.length;!0===n.allowSlideNext&&(e.allowSlideNext=!e.isLocked),!0===n.allowSlidePrev&&(e.allowSlidePrev=!e.isLocked),t&&t!==e.isLocked&&(e.isEnd=!1),t!==e.isLocked&&e.emit(e.isLocked?"lock":"unlock")}},classes:pt,images:{loadImage:function(e,t,n,i,s,r){const o=Me();let l;function a(){r&&r()}ze(e).parent("picture")[0]||e.complete&&s?a():t?(l=new o.Image,l.onload=a,l.onerror=a,i&&(l.sizes=i),n&&(l.srcset=n),t&&(l.src=t)):a()},preloadImages:function(){const e=this;function t(){null!=e&&e&&!e.destroyed&&(void 0!==e.imagesLoaded&&(e.imagesLoaded+=1),e.imagesLoaded===e.imagesToLoad.length&&(e.params.updateOnImagesReady&&e.update(),e.emit("imagesReady")))}e.imagesToLoad=e.$el.find("img");for(let n=0;n<e.imagesToLoad.length;n+=1){const i=e.imagesToLoad[n];e.loadImage(i,i.currentSrc||i.getAttribute("src"),i.srcset||i.getAttribute("srcset"),i.sizes||i.getAttribute("sizes"),!0,t)}}}},mt={};class gt{constructor(...e){let t,n;if(1===e.length&&e[0].constructor&&"Object"===Object.prototype.toString.call(e[0]).slice(8,-1)?n=e[0]:[t,n]=e,n||(n={}),n=Ne({},n),t&&!n.el&&(n.el=t),n.el&&ze(n.el).length>1){const e=[];return ze(n.el).each((t=>{const i=Ne({},n,{el:t});e.push(new gt(i))})),e}const i=this;i.__swiper__=!0,i.support=Ze(),i.device=Re({userAgent:n.userAgent}),i.browser=qe(),i.eventsListeners={},i.eventsAnyListeners=[],i.modules=[...i.__modules__],n.modules&&Array.isArray(n.modules)&&i.modules.push(...n.modules);const s={};i.modules.forEach((e=>{e({swiper:i,extendParams:ht(n,s),on:i.on.bind(i),once:i.once.bind(i),off:i.off.bind(i),emit:i.emit.bind(i)})}));const r=Ne({},ut,s);return i.params=Ne({},r,mt,n),i.originalParams=Ne({},i.params),i.passedParams=Ne({},n),i.params&&i.params.on&&Object.keys(i.params.on).forEach((e=>{i.on(e,i.params.on[e])})),i.params&&i.params.onAny&&i.onAny(i.params.onAny),i.$=ze,Object.assign(i,{enabled:i.params.enabled,el:t,classNames:[],slides:ze(),slidesGrid:[],snapGrid:[],slidesSizesGrid:[],isHorizontal:()=>"horizontal"===i.params.direction,isVertical:()=>"vertical"===i.params.direction,activeIndex:0,realIndex:0,isBeginning:!0,isEnd:!1,translate:0,previousTranslate:0,progress:0,velocity:0,animating:!1,allowSlideNext:i.params.allowSlideNext,allowSlidePrev:i.params.allowSlidePrev,touchEvents:function(){const e=["touchstart","touchmove","touchend","touchcancel"],t=["pointerdown","pointermove","pointerup"];return i.touchEventsTouch={start:e[0],move:e[1],end:e[2],cancel:e[3]},i.touchEventsDesktop={start:t[0],move:t[1],end:t[2]},i.support.touch||!i.params.simulateTouch?i.touchEventsTouch:i.touchEventsDesktop}(),touchEventsData:{isTouched:void 0,isMoved:void 0,allowTouchCallbacks:void 0,touchStartTime:void 0,isScrolling:void 0,currentTranslate:void 0,startTranslate:void 0,allowThresholdMove:void 0,focusableElements:i.params.focusableElements,lastClickTime:Ae(),clickTimeout:void 0,velocities:[],allowMomentumBounce:void 0,isTouchEvent:void 0,startMoving:void 0},allowClick:!0,allowTouchMove:i.params.allowTouchMove,touches:{startX:0,startY:0,currentX:0,currentY:0,diff:0},imagesToLoad:[],imagesLoaded:0}),i.emit("_swiper"),i.params.init&&i.init(),i}enable(){const e=this;e.enabled||(e.enabled=!0,e.params.grabCursor&&e.setGrabCursor(),e.emit("enable"))}disable(){const e=this;e.enabled&&(e.enabled=!1,e.params.grabCursor&&e.unsetGrabCursor(),e.emit("disable"))}setProgress(e,t){const n=this;e=Math.min(Math.max(e,0),1);const i=n.minTranslate(),s=(n.maxTranslate()-i)*e+i;n.translateTo(s,void 0===t?0:t),n.updateActiveIndex(),n.updateSlidesClasses()}emitContainerClasses(){const e=this;if(!e.params._emitClasses||!e.el)return;const t=e.el.className.split(" ").filter((t=>0===t.indexOf("swiper")||0===t.indexOf(e.params.containerModifierClass)));e.emit("_containerClasses",t.join(" "))}getSlideClasses(e){const t=this;return e.className.split(" ").filter((e=>0===e.indexOf("swiper-slide")||0===e.indexOf(t.params.slideClass))).join(" ")}emitSlidesClasses(){const e=this;if(!e.params._emitClasses||!e.el)return;const t=[];e.slides.each((n=>{const i=e.getSlideClasses(n);t.push({slideEl:n,classNames:i}),e.emit("_slideClass",n,i)})),e.emit("_slideClasses",t)}slidesPerViewDynamic(e="current",t=!1){const{params:n,slides:i,slidesGrid:s,slidesSizesGrid:r,size:o,activeIndex:l}=this;let a=1;if(n.centeredSlides){let e,t=i[l].swiperSlideSize;for(let n=l+1;n<i.length;n+=1)i[n]&&!e&&(t+=i[n].swiperSlideSize,a+=1,t>o&&(e=!0));for(let n=l-1;n>=0;n-=1)i[n]&&!e&&(t+=i[n].swiperSlideSize,a+=1,t>o&&(e=!0))}else if("current"===e)for(let e=l+1;e<i.length;e+=1){(t?s[e]+r[e]-s[l]<o:s[e]-s[l]<o)&&(a+=1)}else for(let e=l-1;e>=0;e-=1){s[l]-s[e]<o&&(a+=1)}return a}update(){const e=this;if(!e||e.destroyed)return;const{snapGrid:t,params:n}=e;function i(){const t=e.rtlTranslate?-1*e.translate:e.translate,n=Math.min(Math.max(t,e.maxTranslate()),e.minTranslate());e.setTranslate(n),e.updateActiveIndex(),e.updateSlidesClasses()}let s;n.breakpoints&&e.setBreakpoint(),e.updateSize(),e.updateSlides(),e.updateProgress(),e.updateSlidesClasses(),e.params.freeMode&&e.params.freeMode.enabled?(i(),e.params.autoHeight&&e.updateAutoHeight()):(s=("auto"===e.params.slidesPerView||e.params.slidesPerView>1)&&e.isEnd&&!e.params.centeredSlides?e.slideTo(e.slides.length-1,0,!1,!0):e.slideTo(e.activeIndex,0,!1,!0),s||i()),n.watchOverflow&&t!==e.snapGrid&&e.checkOverflow(),e.emit("update")}changeDirection(e,t=!0){const n=this,i=n.params.direction;return e||(e="horizontal"===i?"vertical":"horizontal"),e===i||"horizontal"!==e&&"vertical"!==e||(n.$el.removeClass(`${n.params.containerModifierClass}${i}`).addClass(`${n.params.containerModifierClass}${e}`),n.emitContainerClasses(),n.params.direction=e,n.slides.each((t=>{"vertical"===e?t.style.width="":t.style.height=""})),n.emit("changeDirection"),t&&n.update()),n}mount(e){const t=this;if(t.mounted)return!0;const n=ze(e||t.params.el);if(!(e=n[0]))return!1;e.swiper=t;const i=()=>`.${(t.params.wrapperClass||"").trim().split(" ").join(".")}`;let s=(()=>{if(e&&e.shadowRoot&&e.shadowRoot.querySelector){const t=ze(e.shadowRoot.querySelector(i()));return t.children=e=>n.children(e),t}return n.children(i())})();if(0===s.length&&t.params.createElements){const e=Ee().createElement("div");s=ze(e),e.className=t.params.wrapperClass,n.append(e),n.children(`.${t.params.slideClass}`).each((e=>{s.append(e)}))}return Object.assign(t,{$el:n,el:e,$wrapperEl:s,wrapperEl:s[0],mounted:!0,rtl:"rtl"===e.dir.toLowerCase()||"rtl"===n.css("direction"),rtlTranslate:"horizontal"===t.params.direction&&("rtl"===e.dir.toLowerCase()||"rtl"===n.css("direction")),wrongRTL:"-webkit-box"===s.css("display")}),!0}init(e){const t=this;if(t.initialized)return t;return!1===t.mount(e)||(t.emit("beforeInit"),t.params.breakpoints&&t.setBreakpoint(),t.addClasses(),t.params.loop&&t.loopCreate(),t.updateSize(),t.updateSlides(),t.params.watchOverflow&&t.checkOverflow(),t.params.grabCursor&&t.enabled&&t.setGrabCursor(),t.params.preloadImages&&t.preloadImages(),t.params.loop?t.slideTo(t.params.initialSlide+t.loopedSlides,0,t.params.runCallbacksOnInit,!1,!0):t.slideTo(t.params.initialSlide,0,t.params.runCallbacksOnInit,!1,!0),t.attachEvents(),t.initialized=!0,t.emit("init"),t.emit("afterInit")),t}destroy(e=!0,t=!0){const n=this,{params:i,$el:s,$wrapperEl:r,slides:o}=n;return void 0===n.params||n.destroyed||(n.emit("beforeDestroy"),n.initialized=!1,n.detachEvents(),i.loop&&n.loopDestroy(),t&&(n.removeClasses(),s.removeAttr("style"),r.removeAttr("style"),o&&o.length&&o.removeClass([i.slideVisibleClass,i.slideActiveClass,i.slideNextClass,i.slidePrevClass].join(" ")).removeAttr("style").removeAttr("data-swiper-slide-index")),n.emit("destroy"),Object.keys(n.eventsListeners).forEach((e=>{n.off(e)})),!1!==e&&(n.$el[0].swiper=null,function(e){const t=e;Object.keys(t).forEach((e=>{try{t[e]=null}catch(e){}try{delete t[e]}catch(e){}}))}(n)),n.destroyed=!0),null}static extendDefaults(e){Ne(mt,e)}static get extendedDefaults(){return mt}static get defaults(){return ut}static installModule(e){gt.prototype.__modules__||(gt.prototype.__modules__=[]);const t=gt.prototype.__modules__;"function"==typeof e&&t.indexOf(e)<0&&t.push(e)}static use(e){return Array.isArray(e)?(e.forEach((e=>gt.installModule(e))),gt):(gt.installModule(e),gt)}}function vt({swiper:e,extendParams:t,on:n,emit:i}){function s(t){let n;return t&&(n=ze(t),e.params.uniqueNavElements&&"string"==typeof t&&n.length>1&&1===e.$el.find(t).length&&(n=e.$el.find(t))),n}function r(t,n){const i=e.params.navigation;t&&t.length>0&&(t[n?"addClass":"removeClass"](i.disabledClass),t[0]&&"BUTTON"===t[0].tagName&&(t[0].disabled=n),e.params.watchOverflow&&e.enabled&&t[e.isLocked?"addClass":"removeClass"](i.lockClass))}function o(){if(e.params.loop)return;const{$nextEl:t,$prevEl:n}=e.navigation;r(n,e.isBeginning),r(t,e.isEnd)}function l(t){t.preventDefault(),e.isBeginning&&!e.params.loop||e.slidePrev()}function a(t){t.preventDefault(),e.isEnd&&!e.params.loop||e.slideNext()}function c(){const t=e.params.navigation;if(e.params.navigation=function(e,t,n,i){const s=Ee();return e.params.createElements&&Object.keys(i).forEach((r=>{if(!n[r]&&!0===n.auto){let o=e.$el.children(`.${i[r]}`)[0];o||(o=s.createElement("div"),o.className=i[r],e.$el.append(o)),n[r]=o,t[r]=o}})),n}(e,e.originalParams.navigation,e.params.navigation,{nextEl:"swiper-button-next",prevEl:"swiper-button-prev"}),!t.nextEl&&!t.prevEl)return;const n=s(t.nextEl),i=s(t.prevEl);n&&n.length>0&&n.on("click",a),i&&i.length>0&&i.on("click",l),Object.assign(e.navigation,{$nextEl:n,nextEl:n&&n[0],$prevEl:i,prevEl:i&&i[0]}),e.enabled||(n&&n.addClass(t.lockClass),i&&i.addClass(t.lockClass))}function d(){const{$nextEl:t,$prevEl:n}=e.navigation;t&&t.length&&(t.off("click",a),t.removeClass(e.params.navigation.disabledClass)),n&&n.length&&(n.off("click",l),n.removeClass(e.params.navigation.disabledClass))}t({navigation:{nextEl:null,prevEl:null,hideOnClick:!1,disabledClass:"swiper-button-disabled",hiddenClass:"swiper-button-hidden",lockClass:"swiper-button-lock"}}),e.navigation={nextEl:null,$nextEl:null,prevEl:null,$prevEl:null},n("init",(()=>{c(),o()})),n("toEdge fromEdge lock unlock",(()=>{o()})),n("destroy",(()=>{d()})),n("enable disable",(()=>{const{$nextEl:t,$prevEl:n}=e.navigation;t&&t[e.enabled?"removeClass":"addClass"](e.params.navigation.lockClass),n&&n[e.enabled?"removeClass":"addClass"](e.params.navigation.lockClass)})),n("click",((t,n)=>{const{$nextEl:s,$prevEl:r}=e.navigation,o=n.target;if(e.params.navigation.hideOnClick&&!ze(o).is(r)&&!ze(o).is(s)){if(e.pagination&&e.params.pagination&&e.params.pagination.clickable&&(e.pagination.el===o||e.pagination.el.contains(o)))return;let t;s?t=s.hasClass(e.params.navigation.hiddenClass):r&&(t=r.hasClass(e.params.navigation.hiddenClass)),i(!0===t?"navigationShow":"navigationHide"),s&&s.toggleClass(e.params.navigation.hiddenClass),r&&r.toggleClass(e.params.navigation.hiddenClass)}})),Object.assign(e.navigation,{update:o,init:c,destroy:d})}function wt(e){return"object"==typeof e&&null!==e&&e.constructor&&"Object"===Object.prototype.toString.call(e).slice(8,-1)}function bt(e,t){const n=["__proto__","constructor","prototype"];Object.keys(t).filter((e=>n.indexOf(e)<0)).forEach((n=>{void 0===e[n]?e[n]=t[n]:wt(t[n])&&wt(e[n])&&Object.keys(t[n]).length>0?t[n].__swiper__?e[n]=t[n]:bt(e[n],t[n]):e[n]=t[n]}))}function yt(e={}){return e.navigation&&void 0===e.navigation.nextEl&&void 0===e.navigation.prevEl}function xt(e={}){return e.pagination&&void 0===e.pagination.el}function $t(e={}){return e.scrollbar&&void 0===e.scrollbar.el}function Ct(e=""){const t=e.split(" ").map((e=>e.trim())).filter((e=>!!e)),n=[];return t.forEach((e=>{n.indexOf(e)<0&&n.push(e)})),n.join(" ")}Object.keys(ft).forEach((e=>{Object.keys(ft[e]).forEach((t=>{gt.prototype[t]=ft[e][t]}))})),gt.use([function({swiper:e,on:t,emit:n}){const i=Me();let s=null;const r=()=>{e&&!e.destroyed&&e.initialized&&(n("beforeResize"),n("resize"))},o=()=>{e&&!e.destroyed&&e.initialized&&n("orientationchange")};t("init",(()=>{e.params.resizeObserver&&void 0!==i.ResizeObserver?e&&!e.destroyed&&e.initialized&&(s=new ResizeObserver((t=>{const{width:n,height:i}=e;let s=n,o=i;t.forEach((({contentBoxSize:t,contentRect:n,target:i})=>{i&&i!==e.el||(s=n?n.width:(t[0]||t).inlineSize,o=n?n.height:(t[0]||t).blockSize)})),s===n&&o===i||r()})),s.observe(e.el)):(i.addEventListener("resize",r),i.addEventListener("orientationchange",o))})),t("destroy",(()=>{s&&s.unobserve&&e.el&&(s.unobserve(e.el),s=null),i.removeEventListener("resize",r),i.removeEventListener("orientationchange",o)}))},function({swiper:e,extendParams:t,on:n,emit:i}){const s=[],r=Me(),o=(e,t={})=>{const n=new(r.MutationObserver||r.WebkitMutationObserver)((e=>{if(1===e.length)return void i("observerUpdate",e[0]);const t=function(){i("observerUpdate",e[0])};r.requestAnimationFrame?r.requestAnimationFrame(t):r.setTimeout(t,0)}));n.observe(e,{attributes:void 0===t.attributes||t.attributes,childList:void 0===t.childList||t.childList,characterData:void 0===t.characterData||t.characterData}),s.push(n)};t({observer:!1,observeParents:!1,observeSlideChildren:!1}),n("init",(()=>{if(e.params.observer){if(e.params.observeParents){const t=e.$el.parents();for(let e=0;e<t.length;e+=1)o(t[e])}o(e.$el[0],{childList:e.params.observeSlideChildren}),o(e.$wrapperEl[0],{attributes:!1})}})),n("destroy",(()=>{s.forEach((e=>{e.disconnect()})),s.splice(0,s.length)}))}]);const _t=["modules","init","_direction","touchEventsTarget","initialSlide","_speed","cssMode","updateOnWindowResize","resizeObserver","nested","focusableElements","_enabled","_width","_height","preventInteractionOnTransition","userAgent","url","_edgeSwipeDetection","_edgeSwipeThreshold","_freeMode","_autoHeight","setWrapperSize","virtualTranslate","_effect","breakpoints","_spaceBetween","_slidesPerView","_grid","_slidesPerGroup","_slidesPerGroupSkip","_slidesPerGroupAuto","_centeredSlides","_centeredSlidesBounds","_slidesOffsetBefore","_slidesOffsetAfter","normalizeSlideIndex","_centerInsufficientSlides","_watchOverflow","roundLengths","touchRatio","touchAngle","simulateTouch","_shortSwipes","_longSwipes","longSwipesRatio","longSwipesMs","_followFinger","allowTouchMove","_threshold","touchMoveStopPropagation","touchStartPreventDefault","touchStartForcePreventDefault","touchReleaseOnEdges","uniqueNavElements","_resistance","_resistanceRatio","_watchSlidesProgress","_grabCursor","preventClicks","preventClicksPropagation","_slideToClickedSlide","_preloadImages","updateOnImagesReady","_loop","_loopAdditionalSlides","_loopedSlides","_loopFillGroupWithBlank","loopPreventsSlide","_allowSlidePrev","_allowSlideNext","_swipeHandler","_noSwiping","noSwipingClass","noSwipingSelector","passiveListeners","containerModifierClass","slideClass","slideBlankClass","slideActiveClass","slideDuplicateActiveClass","slideVisibleClass","slideDuplicateClass","slideNextClass","slideDuplicateNextClass","slidePrevClass","slideDuplicatePrevClass","wrapperClass","runCallbacksOnInit","observer","observeParents","observeSlideChildren","a11y","autoplay","_controller","coverflowEffect","cubeEffect","fadeEffect","flipEffect","creativeEffect","cardsEffect","hashNavigation","history","keyboard","lazy","mousewheel","_navigation","_pagination","parallax","_scrollbar","_thumbs","_virtual","zoom"];function Tt({swiper:e,passedParams:t,changedParams:n,nextEl:i,prevEl:s,scrollbarEl:r,paginationEl:o}){const l=n.filter((e=>"children"!==e&&"direction"!==e)),{params:a,pagination:c,navigation:d,scrollbar:p,thumbs:u}=e;let h,f,m,g,v;n.includes("thumbs")&&t.thumbs&&t.thumbs.swiper&&a.thumbs&&!a.thumbs.swiper&&(h=!0),n.includes("controller")&&t.controller&&t.controller.control&&a.controller&&!a.controller.control&&(f=!0),n.includes("pagination")&&t.pagination&&(t.pagination.el||o)&&(a.pagination||!1===a.pagination)&&c&&!c.el&&(m=!0),n.includes("scrollbar")&&t.scrollbar&&(t.scrollbar.el||r)&&(a.scrollbar||!1===a.scrollbar)&&p&&!p.el&&(g=!0),n.includes("navigation")&&t.navigation&&(t.navigation.prevEl||s)&&(t.navigation.nextEl||i)&&(a.navigation||!1===a.navigation)&&d&&!d.prevEl&&!d.nextEl&&(v=!0),n.includes("virtual")&&t.virtual&&t.virtual.slides&&e.virtual&&(e.virtual.slides=t.virtual.slides,e.virtual.update());if(l.forEach((n=>{if(wt(a[n])&&wt(t[n]))bt(a[n],t[n]);else{const s=t[n];!0!==s&&!1!==s||"navigation"!==n&&"pagination"!==n&&"scrollbar"!==n?a[n]=t[n]:!1===s&&e[i=n]&&(e[i].destroy(),"navigation"===i?(a[i].prevEl=void 0,a[i].nextEl=void 0,e[i].prevEl=void 0,e[i].nextEl=void 0):(a[i].el=void 0,e[i].el=void 0))}var i})),h){u.init()&&u.update(!0)}f&&(e.controller.control=a.controller.control),m&&(o&&(a.pagination.el=o),c.init(),c.render(),c.update()),g&&(r&&(a.scrollbar.el=r),p.init(),p.updateSize(),p.setTranslate()),v&&(i&&(a.navigation.nextEl=i),s&&(a.navigation.prevEl=s),d.init(),d.update()),n.includes("allowSlideNext")&&(e.allowSlideNext=t.allowSlideNext),n.includes("allowSlidePrev")&&(e.allowSlidePrev=t.allowSlidePrev),n.includes("direction")&&e.changeDirection(t.direction,!1),e.update()}const St=e=>({virtualData:512&e}),Et=e=>({virtualData:e[9]}),Lt=e=>({virtualData:512&e}),Mt=e=>({virtualData:e[9]}),kt=e=>({virtualData:512&e}),Pt=e=>({virtualData:e[9]}),Ht=e=>({virtualData:512&e}),zt=e=>({virtualData:e[9]}),Vt=e=>({virtualData:512&e}),Ot=e=>({virtualData:e[9]});function At(t){let n,i,s;return{c(){n=S("div"),i=M(),s=S("div"),H(n,"class","swiper-button-prev"),H(s,"class","swiper-button-next")},m(e,r){C(e,n,r),t[13](n),C(e,i,r),C(e,s,r),t[14](s)},p:e,d(e){e&&_(n),t[13](null),e&&_(i),e&&_(s),t[14](null)}}}function Dt(t){let n;return{c(){n=S("div"),H(n,"class","swiper-scrollbar")},m(e,i){C(e,n,i),t[15](n)},p:e,d(e){e&&_(n),t[15](null)}}}function It(t){let n;return{c(){n=S("div"),H(n,"class","swiper-pagination")},m(e,i){C(e,n,i),t[16](n)},p:e,d(e){e&&_(n),t[16](null)}}}function Nt(e){let t,i,s,r,o,l,c,h,f,m,g,v=yt(e[2]),w=$t(e[2]),b=xt(e[2]);const x=e[12]["container-start"],$=a(x,e,e[11],Ot);let T=v&&At(e),E=w&&Dt(e),L=b&&It(e);const k=e[12]["wrapper-start"],P=a(k,e,e[11],zt),V=e[12].default,O=a(V,e,e[11],Pt),A=e[12]["wrapper-end"],D=a(A,e,e[11],Mt),I=e[12]["container-end"],N=a(I,e,e[11],Et);let B=[{class:m=Ct(`${e[1]}${e[0]?` ${e[0]}`:""}`)},e[3]],G={};for(let e=0;e<B.length;e+=1)G=n(G,B[e]);return{c(){t=S("div"),$&&$.c(),i=M(),T&&T.c(),s=M(),E&&E.c(),r=M(),L&&L.c(),o=M(),l=S("div"),P&&P.c(),c=M(),O&&O.c(),h=M(),D&&D.c(),f=M(),N&&N.c(),H(l,"class","swiper-wrapper"),z(t,G)},m(n,a){C(n,t,a),$&&$.m(t,null),y(t,i),T&&T.m(t,null),y(t,s),E&&E.m(t,null),y(t,r),L&&L.m(t,null),y(t,o),y(t,l),P&&P.m(l,null),y(l,c),O&&O.m(l,null),y(l,h),D&&D.m(l,null),y(t,f),N&&N.m(t,null),e[17](t),g=!0},p(e,[n]){$&&$.p&&(!g||2560&n)&&p($,x,e,e[11],g?d(x,e[11],n,Vt):u(e[11]),Ot),4&n&&(v=yt(e[2])),v?T?T.p(e,n):(T=At(e),T.c(),T.m(t,s)):T&&(T.d(1),T=null),4&n&&(w=$t(e[2])),w?E?E.p(e,n):(E=Dt(e),E.c(),E.m(t,r)):E&&(E.d(1),E=null),4&n&&(b=xt(e[2])),b?L?L.p(e,n):(L=It(e),L.c(),L.m(t,o)):L&&(L.d(1),L=null),P&&P.p&&(!g||2560&n)&&p(P,k,e,e[11],g?d(k,e[11],n,Ht):u(e[11]),zt),O&&O.p&&(!g||2560&n)&&p(O,V,e,e[11],g?d(V,e[11],n,kt):u(e[11]),Pt),D&&D.p&&(!g||2560&n)&&p(D,A,e,e[11],g?d(A,e[11],n,Lt):u(e[11]),Mt),N&&N.p&&(!g||2560&n)&&p(N,I,e,e[11],g?d(I,e[11],n,St):u(e[11]),Et),z(t,G=ve(B,[(!g||3&n&&m!==(m=Ct(`${e[1]}${e[0]?` ${e[0]}`:""}`)))&&{class:m},8&n&&e[3]]))},i(e){g||(he($,e),he(P,e),he(O,e),he(D,e),he(N,e),g=!0)},o(e){fe($,e),fe(P,e),fe(O,e),fe(D,e),fe(N,e),g=!1},d(n){n&&_(t),$&&$.d(n),T&&T.d(),E&&E.d(),L&&L.d(),P&&P.d(n),O&&O.d(n),D&&D.d(n),N&&N.d(n),e[17](null)}}}function Bt(e,t,i){const s=["class","swiper"];let r=f(t,s),{$$slots:o={},$$scope:l}=t;const a=function(){const e=W();return(t,n)=>{const i=e.$$.callbacks[t];if(i){const s=A(t,n);i.slice().forEach((t=>{t.call(e,s)}))}}}();let c,d,p,u,{class:m}=t,g="swiper",v=!1,w=null,b=null,y=null,x=null,$=null,C=null,_=null,T={slides:[]};const S=e=>{i(9,T=e),(te(),Q).then((()=>{w.$wrapperEl.children(".swiper-slide").each((e=>{e.onSwiper&&e.onSwiper(w)})),w.updateSlides(),w.updateProgress(),w.updateSlidesClasses(),w.lazy&&w.params.lazy.enabled&&w.lazy.load()}))},E=()=>{c=function(e={}){const t={on:{}},n={};bt(t,gt.defaults),bt(t,gt.extendedDefaults),t._emitClasses=!0,t.init=!1;const i={},s=_t.map((e=>e.replace(/_/,"")));return Object.keys(e).forEach((r=>{s.indexOf(r)>=0?wt(e[r])?(t[r]={},n[r]={},bt(t[r],e[r]),bt(n[r],e[r])):(t[r]=e[r],n[r]=e[r]):0===r.search(/on[A-Z]/)&&"function"==typeof e[r]?t.on[`${r[2].toLowerCase()}${r.substr(3)}`]=e[r]:i[r]=e[r]})),["navigation","pagination","scrollbar"].forEach((e=>{!0===t[e]&&(t[e]={}),!1===t[e]&&delete t[e]})),{params:t,passedParams:n,rest:i}}(r),i(2,d=c.params),p=c.passedParams,i(3,u=c.rest)};E(),b=p;if(d.onAny=(e,...t)=>{a(e,[t])},Object.assign(d.on,{_beforeBreakpoint:()=>{v=!0},_containerClasses(e,t){i(1,g=t)}}),w=function(e){return new gt(e)}(d),w.virtual&&w.params.virtual.enabled){const e={cache:!1,renderExternal:e=>{S(e),d.virtual&&d.virtual.renderExternal&&d.virtual.renderExternal(e)},renderExternalUpdate:!1};bt(w.params.virtual,e),bt(w.originalParams.virtual,e)}return Z((()=>{y&&(!function({el:e,nextEl:t,prevEl:n,paginationEl:i,scrollbarEl:s,swiper:r},o){yt(o)&&t&&n&&(r.params.navigation.nextEl=t,r.originalParams.navigation.nextEl=t,r.params.navigation.prevEl=n,r.originalParams.navigation.prevEl=n),xt(o)&&i&&(r.params.pagination.el=i,r.originalParams.pagination.el=i),$t(o)&&s&&(r.params.scrollbar.el=s,r.originalParams.scrollbar.el=s),r.init(e)}({el:y,nextEl:$,prevEl:x,paginationEl:_,scrollbarEl:C,swiper:w},d),a("swiper",[w]),d.virtual||w.slides.each((e=>{e.onSwiper&&e.onSwiper(w)})))})),R((()=>{if(!w)return;E();const e=function(e,t){const n=[];if(!t)return n;const i=e=>{n.indexOf(e)<0&&n.push(e)};return _t.filter((e=>"_"===e[0])).map((e=>e.replace(/_/,""))).forEach((n=>{if(n in e&&n in t)if(wt(e[n])&&wt(t[n])){const s=Object.keys(e[n]),r=Object.keys(t[n]);s.length!==r.length?i(n):(s.forEach((s=>{e[n][s]!==t[n][s]&&i(n)})),r.forEach((s=>{e[n][s]!==t[n][s]&&i(n)})))}else e[n]!==t[n]&&i(n)})),n}(p,b);(e.length||v)&&w&&!w.destroyed&&Tt({swiper:w,passedParams:p,changedParams:e,nextEl:$,prevEl:x,scrollbarEl:C,paginationEl:_}),v=!1,b=p})),q((()=>{"undefined"!=typeof window&&w&&!w.destroyed&&w.destroy(!0,!1)})),e.$$set=e=>{t=n(n({},t),h(e)),i(27,r=f(t,s)),"class"in e&&i(0,m=e.class),"$$scope"in e&&i(11,l=e.$$scope)},[m,g,d,u,y,x,$,C,_,T,function(){return w},l,o,function(e){U[e?"unshift":"push"]((()=>{x=e,i(5,x)}))},function(e){U[e?"unshift":"push"]((()=>{$=e,i(6,$)}))},function(e){U[e?"unshift":"push"]((()=>{C=e,i(7,C)}))},function(e){U[e?"unshift":"push"]((()=>{_=e,i(8,_)}))},function(e){U[e?"unshift":"push"]((()=>{y=e,i(4,y)}))}]}class Gt extends $e{constructor(e){super(),xe(this,e,Bt,Nt,l,{class:0,swiper:10})}get swiper(){return this.$$.ctx[10]}}const Ft=e=>({data:32&e}),jt=e=>({data:e[5]}),Wt=e=>({data:32&e}),Zt=e=>({data:e[5]});function Rt(e){let t;const n=e[8].default,i=a(n,e,e[7],jt);return{c(){i&&i.c()},m(e,n){i&&i.m(e,n),t=!0},p(e,s){i&&i.p&&(!t||160&s)&&p(i,n,e,e[7],t?d(n,e[7],s,Ft):u(e[7]),jt)},i(e){t||(he(i,e),t=!0)},o(e){fe(i,e),t=!1},d(e){i&&i.d(e)}}}function qt(e){let t,n,i;const s=e[8].default,r=a(s,e,e[7],Zt);return{c(){t=S("div"),r&&r.c(),H(t,"class","swiper-zoom-container"),H(t,"data-swiper-zoom",n="number"==typeof e[0]?e[0]:void 0)},m(e,n){C(e,t,n),r&&r.m(t,null),i=!0},p(e,o){r&&r.p&&(!i||160&o)&&p(r,s,e,e[7],i?d(s,e[7],o,Wt):u(e[7]),Zt),(!i||1&o&&n!==(n="number"==typeof e[0]?e[0]:void 0))&&H(t,"data-swiper-zoom",n)},i(e){i||(he(r,e),i=!0)},o(e){fe(r,e),i=!1},d(e){e&&_(t),r&&r.d(e)}}}function Xt(e){let t,i,s,r,o;const l=[qt,Rt],a=[];function c(e,t){return e[0]?0:1}i=c(e),s=a[i]=l[i](e);let d=[{class:r=Ct(`${e[3]}${e[2]?` ${e[2]}`:""}`)},{"data-swiper-slide-index":e[1]},e[6]],p={};for(let e=0;e<d.length;e+=1)p=n(p,d[e]);return{c(){t=S("div"),s.c(),z(t,p)},m(n,s){C(n,t,s),a[i].m(t,null),e[9](t),o=!0},p(e,[n]){let u=i;i=c(e),i===u?a[i].p(e,n):(pe(),fe(a[u],1,1,(()=>{a[u]=null})),ue(),s=a[i],s?s.p(e,n):(s=a[i]=l[i](e),s.c()),he(s,1),s.m(t,null)),z(t,p=ve(d,[(!o||12&n&&r!==(r=Ct(`${e[3]}${e[2]?` ${e[2]}`:""}`)))&&{class:r},(!o||2&n)&&{"data-swiper-slide-index":e[1]},64&n&&e[6]]))},i(e){o||(he(s),o=!0)},o(e){fe(s),o=!1},d(n){n&&_(t),a[i].d(),e[9](null)}}}function Yt(e,t,i){let s;const r=["zoom","virtualIndex","class"];let o=f(t,r),{$$slots:l={},$$scope:a}=t,{zoom:c}=t,{virtualIndex:d}=t,{class:p}=t,u=null,m="swiper-slide",g=null,v=!1;const w=(e,t,n)=>{t===u&&i(3,m=n)},b=()=>{g&&!v&&(g.on("_slideClass",w),v=!0)};var y;return Z((()=>{void 0!==d&&(i(4,u.onSwiper=e=>{g=e,b()},u),b())})),R((()=>{u&&g&&(g.destroyed?"swiper-slide"!==m&&i(3,m="swiper-slide"):b())})),y=()=>{b()},W().$$.before_update.push(y),q((()=>{g&&g&&(g.off("_slideClass",w),v=!1)})),e.$$set=e=>{t=n(n({},t),h(e)),i(6,o=f(t,r)),"zoom"in e&&i(0,c=e.zoom),"virtualIndex"in e&&i(1,d=e.virtualIndex),"class"in e&&i(2,p=e.class),"$$scope"in e&&i(7,a=e.$$scope)},e.$$.update=()=>{8&e.$$.dirty&&i(5,s={isActive:m.indexOf("swiper-slide-active")>=0||m.indexOf("swiper-slide-duplicate-active")>=0,isVisible:m.indexOf("swiper-slide-visible")>=0,isDuplicate:m.indexOf("swiper-slide-duplicate")>=0,isPrev:m.indexOf("swiper-slide-prev")>=0||m.indexOf("swiper-slide-duplicate-prev")>=0,isNext:m.indexOf("swiper-slide-next")>=0||m.indexOf("swiper-slide-duplicate-next")>=0})},[c,d,p,m,u,s,o,a,l,function(e){U[e?"unshift":"push"]((()=>{u=e,i(4,u)}))}]}class Ut extends $e{constructor(e){super(),xe(this,e,Yt,Xt,l,{zoom:0,virtualIndex:1,class:2})}}let Kt=(e=25,t=75)=>{let n=Jt(e,t),i=Jt(e,t),s=Jt(e,t),r=Jt(e,t);return`${n}% ${Qt(n)}% ${Qt(i)}% ${i}% / ${s}% ${r}% ${Qt(r)}% ${Qt(s)}%`},Jt=(e=25,t=75)=>Math.floor(Math.random()*(t-e)+e),Qt=e=>100-e,en=()=>{let e=document.querySelectorAll("[data-smoothscroll]");return e.forEach((e=>{e.addEventListener("click",(function(){open=!1;let e=this.getAttribute("data-smoothscroll"),t=20;window.innerWidth<1024&&(t=document.querySelector("header.header").offsetHeight);let n=document.querySelector(e).offsetTop-t;window.scrollTo({top:n,behavior:"smooth"})}))})),e},tn={1:{slidesPerView:1,spaceBetween:0},480:{slidesPerView:1,spaceBetween:0},720:{slidesPerView:2,spaceBetween:0},1024:{slidesPerView:3,spaceBetween:0}};function nn(t){let n,i;return{c(){n=S("div"),i=S("div"),H(i,"class","blob-in svelte-1ufj2aa"),O(i,"background-color",t[0]),O(i,"--border-radius",Kt()),O(i,"--fifty",Kt()),O(i,"--onehundred",Kt()),O(i,"--dimensions",t[2]),O(i,"--blobtiming",Jt(3,5)+"s"),O(i,"--bloboffsettiming","-"+Jt(3,5)+"s"),H(n,"class","blob svelte-1ufj2aa"),O(n,"background-color",t[0]+"66"),O(n,"--top",t[4]),O(n,"--left",t[3]),O(n,"--dimensions",t[2]),O(n,"--zindex",t[1]),O(n,"--blobtiming",Jt(35,45)+"s"),O(n,"--bloboffsettiming","-"+Jt(25,35)+"s")},m(e,t){C(e,n,t),y(n,i)},p(e,[t]){1&t&&O(i,"background-color",e[0]),4&t&&O(i,"--dimensions",e[2]),1&t&&O(n,"background-color",e[0]+"66"),16&t&&O(n,"--top",e[4]),8&t&&O(n,"--left",e[3]),4&t&&O(n,"--dimensions",e[2]),2&t&&O(n,"--zindex",e[1])},i:e,o:e,d(e){e&&_(n)}}}function sn(e,t,n){let i,s,r,o,{color:l}=t,{top:a}=t,{left:c}=t,{size:d}=t,{zindex:p}=t,u=()=>`${Jt(0,100)}%`;return e.$$set=e=>{"color"in e&&n(0,l=e.color),"top"in e&&n(5,a=e.top),"left"in e&&n(6,c=e.left),"size"in e&&n(7,d=e.size),"zindex"in e&&n(8,p=e.zindex)},e.$$.update=()=>{32&e.$$.dirty&&n(4,i=isNaN(a)?u():`${a}%`),64&e.$$.dirty&&n(3,s=isNaN(c)?u():`${c}%`),128&e.$$.dirty&&n(2,r=isNaN(d)?`${Jt(20,200)}px`:`${d}px`),256&e.$$.dirty&&n(1,o=isNaN(p)?Jt(1,100):p)},[l,o,r,s,i,a,c,d,p]}class rn extends $e{constructor(e){super(),xe(this,e,sn,nn,l,{color:0,top:5,left:6,size:7,zindex:8})}}function on(e,t,n){const i=e.slice();return i[5]=t[n],i[4]=n,i}function ln(e,t,n){const i=e.slice();return i[2]=t[n],i[4]=n,i}function an(e){let t,n,i=e[0],s=[];for(let t=0;t<i.length;t+=1)s[t]=dn(on(e,i,t));const r=e=>fe(s[e],1,1,(()=>{s[e]=null}));return{c(){for(let e=0;e<s.length;e+=1)s[e].c();t=k()},m(e,i){for(let t=0;t<s.length;t+=1)s[t].m(e,i);C(e,t,i),n=!0},p(e,n){if(1&n){let o;for(i=e[0],o=0;o<i.length;o+=1){const r=on(e,i,o);s[o]?(s[o].p(r,n),he(s[o],1)):(s[o]=dn(r),s[o].c(),he(s[o],1),s[o].m(t.parentNode,t))}for(pe(),o=i.length;o<s.length;o+=1)r(o);ue()}},i(e){if(!n){for(let e=0;e<i.length;e+=1)he(s[e]);n=!0}},o(e){s=s.filter(Boolean);for(let e=0;e<s.length;e+=1)fe(s[e]);n=!1},d(e){T(s,e),e&&_(t)}}}function cn(e){let t,n,i=Array(e[0]),s=[];for(let t=0;t<i.length;t+=1)s[t]=pn(ln(e,i,t));const r=e=>fe(s[e],1,1,(()=>{s[e]=null}));return{c(){for(let e=0;e<s.length;e+=1)s[e].c();t=k()},m(e,i){for(let t=0;t<s.length;t+=1)s[t].m(e,i);C(e,t,i),n=!0},p(e,n){if(3&n){let o;for(i=Array(e[0]),o=0;o<i.length;o+=1){const r=ln(e,i,o);s[o]?(s[o].p(r,n),he(s[o],1)):(s[o]=pn(r),s[o].c(),he(s[o],1),s[o].m(t.parentNode,t))}for(pe(),o=i.length;o<s.length;o+=1)r(o);ue()}},i(e){if(!n){for(let e=0;e<i.length;e+=1)he(s[e]);n=!0}},o(e){s=s.filter(Boolean);for(let e=0;e<s.length;e+=1)fe(s[e]);n=!1},d(e){T(s,e),e&&_(t)}}}function dn(e){let t,n;return t=new rn({props:{color:e[5].color,top:e[5].top,left:e[5].left,size:e[5].size,zindex:e[5].zindex}}),{c(){we(t.$$.fragment)},m(e,i){be(t,e,i),n=!0},p(e,n){const i={};1&n&&(i.color=e[5].color),1&n&&(i.top=e[5].top),1&n&&(i.left=e[5].left),1&n&&(i.size=e[5].size),1&n&&(i.zindex=e[5].zindex),t.$set(i)},i(e){n||(he(t.$$.fragment,e),n=!0)},o(e){fe(t.$$.fragment,e),n=!1},d(e){ye(t,e)}}}function pn(e){let t,n;return t=new rn({props:{color:e[1][Math.floor(Math.random()*e[1].length)]}}),{c(){we(t.$$.fragment)},m(e,i){be(t,e,i),n=!0},p(e,n){const i={};2&n&&(i.color=e[1][Math.floor(Math.random()*e[1].length)]),t.$set(i)},i(e){n||(he(t.$$.fragment,e),n=!0)},o(e){fe(t.$$.fragment,e),n=!1},d(e){ye(t,e)}}}function un(e){let t,n,i,s;const r=[cn,an],o=[];function l(e,t){return"number"==typeof e[0]?0:1}return t=l(e),n=o[t]=r[t](e),{c(){n.c(),i=k()},m(e,n){o[t].m(e,n),C(e,i,n),s=!0},p(e,[s]){let a=t;t=l(e),t===a?o[t].p(e,s):(pe(),fe(o[a],1,1,(()=>{o[a]=null})),ue(),n=o[t],n?n.p(e,s):(n=o[t]=r[t](e),n.c()),he(n,1),n.m(i.parentNode,i))},i(e){s||(he(n),s=!0)},o(e){fe(n),s=!1},d(e){o[t].d(e),e&&_(i)}}}function hn(e,t,n){let{shapes:i}=t,{colors:s}=t;return e.$$set=e=>{"shapes"in e&&n(0,i=e.shapes),"colors"in e&&n(1,s=e.colors)},[i,s]}class fn extends $e{constructor(e){super(),xe(this,e,hn,un,l,{shapes:0,colors:1})}}function mn(e,t,n){const i=e.slice();return i[11]=t[n],i}function gn(e,t,n){const i=e.slice();return i[11]=t[n],i}function vn(t){let n,i=t[2],s=[];for(let e=0;e<i.length;e+=1)s[e]=yn(mn(t,i,e));return{c(){n=S("div");for(let e=0;e<s.length;e+=1)s[e].c();H(n,"class",t[7]+"__container")},m(e,t){C(e,n,t);for(let e=0;e<s.length;e+=1)s[e].m(n,null)},p(e,t){if(132&t){let r;for(i=e[2],r=0;r<i.length;r+=1){const o=mn(e,i,r);s[r]?s[r].p(o,t):(s[r]=yn(o),s[r].c(),s[r].m(n,null))}for(;r<s.length;r+=1)s[r].d(1);s.length=i.length}},i:e,o:e,d(e){e&&_(n),T(s,e)}}}function wn(e){let t,n,i,s,r;return t=new Gt({props:{modules:[vt],loop:!0,navigation:e[8],class:e[7]+"__container",spaceBetween:50,slidesPerView:3,breakpoints:tn,$$slots:{default:[_n]},$$scope:{ctx:e}}}),t.$on("slideChange",Sn),t.$on("swiper",En),{c(){we(t.$$.fragment),n=M(),i=S("div"),s=L("Next ->"),H(i,"class",e[7]+"__next")},m(e,o){be(t,e,o),C(e,n,o),C(e,i,o),y(i,s),r=!0},p(e,n){const i={};65540&n&&(i.$$scope={dirty:n,ctx:e}),t.$set(i)},i(e){r||(he(t.$$.fragment,e),r=!0)},o(e){fe(t.$$.fragment,e),r=!1},d(e){ye(t,e),e&&_(n),e&&_(i)}}}function bn(e){let t,n=e[11].secondLine+"";return{c(){t=S("small")},m(e,i){C(e,t,i),t.innerHTML=n},p(e,i){4&i&&n!==(n=e[11].secondLine+"")&&(t.innerHTML=n)},d(e){e&&_(t)}}}function yn(e){let t,n,i,s,r,o,l,a,c,d,p,u=e[11].firstLine+"",h=e[11].secondLine&&bn(e);return{c(){t=S("div"),n=S("div"),i=S("strong"),s=S("br"),r=M(),h&&h.c(),l=M(),a=S("div"),d=M(),H(n,"class",o=e[7]+"__card__title "+(e[11].secondLine?"{baseClass}__card__title--with-subtitle":"")),H(a,"class",c=e[7]+"__card__image"),O(a,"background-image","url('images/"+e[11].imagePath+"')"),H(t,"class",p=e[7]+"__card")},m(e,o){C(e,t,o),y(t,n),y(n,i),i.innerHTML=u,y(n,s),y(n,r),h&&h.m(n,null),y(t,l),y(t,a),y(t,d)},p(e,t){4&t&&u!==(u=e[11].firstLine+"")&&(i.innerHTML=u),e[11].secondLine?h?h.p(e,t):(h=bn(e),h.c(),h.m(n,null)):h&&(h.d(1),h=null),4&t&&o!==(o=e[7]+"__card__title "+(e[11].secondLine?"{baseClass}__card__title--with-subtitle":""))&&H(n,"class",o),4&t&&O(a,"background-image","url('images/"+e[11].imagePath+"')")},d(e){e&&_(t),h&&h.d()}}}function xn(e){let t,n=e[11].secondLine+"";return{c(){t=S("small")},m(e,i){C(e,t,i),t.innerHTML=n},p(e,i){4&i&&n!==(n=e[11].secondLine+"")&&(t.innerHTML=n)},d(e){e&&_(t)}}}function $n(e){let t,n,i,s,r,o,l,a,c,d=e[11].firstLine+"",p=e[11].secondLine&&xn(e);return{c(){t=S("div"),n=S("div"),i=S("strong"),s=S("br"),r=M(),p&&p.c(),l=M(),a=S("div"),c=M(),H(n,"class",o=e[7]+"__card__title "+(e[11].secondLine?"{baseClass}__card__title--with-subtitle":"")),H(a,"class",e[7]+"__card__image"),O(a,"background-image","url('images/"+e[11].imagePath+"')"),H(t,"class",e[7]+"__card")},m(e,o){C(e,t,o),y(t,n),y(n,i),i.innerHTML=d,y(n,s),y(n,r),p&&p.m(n,null),y(t,l),y(t,a),C(e,c,o)},p(e,t){4&t&&d!==(d=e[11].firstLine+"")&&(i.innerHTML=d),e[11].secondLine?p?p.p(e,t):(p=xn(e),p.c(),p.m(n,null)):p&&(p.d(1),p=null),4&t&&o!==(o=e[7]+"__card__title "+(e[11].secondLine?"{baseClass}__card__title--with-subtitle":""))&&H(n,"class",o),4&t&&O(a,"background-image","url('images/"+e[11].imagePath+"')")},d(e){e&&_(t),p&&p.d(),e&&_(c)}}}function Cn(e){let t,n;return t=new Ut({props:{$$slots:{default:[$n]},$$scope:{ctx:e}}}),{c(){we(t.$$.fragment)},m(e,i){be(t,e,i),n=!0},p(e,n){const i={};65540&n&&(i.$$scope={dirty:n,ctx:e}),t.$set(i)},i(e){n||(he(t.$$.fragment,e),n=!0)},o(e){fe(t.$$.fragment,e),n=!1},d(e){ye(t,e)}}}function _n(e){let t,n,i=e[2],s=[];for(let t=0;t<i.length;t+=1)s[t]=Cn(gn(e,i,t));const r=e=>fe(s[e],1,1,(()=>{s[e]=null}));return{c(){for(let e=0;e<s.length;e+=1)s[e].c();t=k()},m(e,i){for(let t=0;t<s.length;t+=1)s[t].m(e,i);C(e,t,i),n=!0},p(e,n){if(132&n){let o;for(i=e[2],o=0;o<i.length;o+=1){const r=gn(e,i,o);s[o]?(s[o].p(r,n),he(s[o],1)):(s[o]=Cn(r),s[o].c(),he(s[o],1),s[o].m(t.parentNode,t))}for(pe(),o=i.length;o<s.length;o+=1)r(o);ue()}},i(e){if(!n){for(let e=0;e<i.length;e+=1)he(s[e]);n=!0}},o(e){s=s.filter(Boolean);for(let e=0;e<s.length;e+=1)fe(s[e]);n=!1},d(e){T(s,e),e&&_(t)}}}function Tn(e){let t,n,i,s,r,o,l,a,c,d,p,u;const h=[wn,vn],f=[];function m(e,t){return e[3]?0:1}return a=m(e),c=f[a]=h[a](e),p=new fn({props:{shapes:e[4],colors:e[5]}}),{c(){t=S("div"),n=S("div"),i=S("div"),s=L(e[1]),r=M(),o=S("h3"),l=M(),c.c(),d=M(),we(p.$$.fragment),H(i,"class",e[7]+"__overtitle"),H(o,"class",e[7]+"__title"),H(n,"class",e[7]),H(t,"class","wrapper"),H(t,"id",e[6])},m(c,h){C(c,t,h),y(t,n),y(n,i),y(i,s),y(n,r),y(n,o),o.innerHTML=e[0],y(n,l),f[a].m(n,null),y(t,d),be(p,t,null),u=!0},p(e,[t]){(!u||2&t)&&V(s,e[1]),(!u||1&t)&&(o.innerHTML=e[0]);let i=a;a=m(e),a===i?f[a].p(e,t):(pe(),fe(f[i],1,1,(()=>{f[i]=null})),ue(),c=f[a],c?c.p(e,t):(c=f[a]=h[a](e),c.c()),he(c,1),c.m(n,null));const r={};16&t&&(r.shapes=e[4]),32&t&&(r.colors=e[5]),p.$set(r)},i(e){u||(he(c),he(p.$$.fragment,e),u=!0)},o(e){fe(c),fe(p.$$.fragment,e),u=!1},d(e){e&&_(t),f[a].d(),ye(p)}}}const Sn=()=>{},En=e=>{};function Ln(e,t,n){let{title:i="Title for hero component"}=t,{overtitle:s="overtitle"}=t,{cards:r=[]}=t,{slider:o=!1}=t,{anchor:l}=t,{type:a="BgCards"}=t,{shapes:c=0}=t,{colors:d=["red","yellow","blue"]}=t,p=l||s,u=a.toLowerCase(),h={nextEl:`.${u}__next`};return e.$$set=e=>{"title"in e&&n(0,i=e.title),"overtitle"in e&&n(1,s=e.overtitle),"cards"in e&&n(2,r=e.cards),"slider"in e&&n(3,o=e.slider),"anchor"in e&&n(9,l=e.anchor),"type"in e&&n(10,a=e.type),"shapes"in e&&n(4,c=e.shapes),"colors"in e&&n(5,d=e.colors)},[i,s,r,o,c,d,p,u,h,l,a]}class Mn extends $e{constructor(e){super(),xe(this,e,Ln,Tn,l,{title:0,overtitle:1,cards:2,slider:3,anchor:9,type:10,shapes:4,colors:5})}}function kn(e){let t,n,i,s,r,o,l,a,c,d,p,u,h,f,m,g,v;return g=new fn({props:{shapes:e[5],colors:e[6]}}),{c(){t=S("div"),n=S("div"),i=S("div"),s=S("div"),r=L(e[2]),o=M(),l=S("h2"),a=L(e[3]),c=M(),d=S("div"),p=L(e[4]),u=M(),h=S("div"),m=M(),we(g.$$.fragment),H(s,"class",e[8]+"__overtitle"),H(l,"class",e[8]+"__title"),H(d,"class",e[8]+"__description"),H(i,"class",e[8]+"__content"),H(h,"class",e[8]+"__image"),O(h,"background-image","url('images/"+e[1]+"')"),O(h,"border-radius",Kt(30,70)),H(n,"class",f=e[8]+" "+e[8]+"--"+e[0]),H(t,"class","wrapper"),H(t,"id",e[7])},m(e,f){C(e,t,f),y(t,n),y(n,i),y(i,s),y(s,r),y(i,o),y(i,l),y(l,a),y(i,c),y(i,d),y(d,p),y(n,u),y(n,h),y(t,m),be(g,t,null),v=!0},p(e,[t]){(!v||4&t)&&V(r,e[2]),(!v||8&t)&&V(a,e[3]),(!v||16&t)&&V(p,e[4]),(!v||2&t)&&O(h,"background-image","url('images/"+e[1]+"')"),(!v||1&t&&f!==(f=e[8]+" "+e[8]+"--"+e[0]))&&H(n,"class",f);const i={};32&t&&(i.shapes=e[5]),64&t&&(i.colors=e[6]),g.$set(i)},i(e){v||(he(g.$$.fragment,e),v=!0)},o(e){fe(g.$$.fragment,e),v=!1},d(e){e&&_(t),ye(g)}}}function Pn(e,t,n){let{imagePosition:i="left"}=t,{imagePath:s="image.jpg"}=t,{overtitle:r="overtitle"}=t,{title:o="Title for hero component"}=t,{description:l="Sample description"}=t,{shapes:a=2}=t,{colors:c=["red","yellow","blue"]}=t,{anchor:d}=t,{type:p="BlockWithImage"}=t,u=d||o,h=p.toLowerCase();return e.$$set=e=>{"imagePosition"in e&&n(0,i=e.imagePosition),"imagePath"in e&&n(1,s=e.imagePath),"overtitle"in e&&n(2,r=e.overtitle),"title"in e&&n(3,o=e.title),"description"in e&&n(4,l=e.description),"shapes"in e&&n(5,a=e.shapes),"colors"in e&&n(6,c=e.colors),"anchor"in e&&n(9,d=e.anchor),"type"in e&&n(10,p=e.type)},[i,s,r,o,l,a,c,u,h,d,p]}class Hn extends $e{constructor(e){super(),xe(this,e,Pn,kn,l,{imagePosition:0,imagePath:1,overtitle:2,title:3,description:4,shapes:5,colors:6,anchor:9,type:10})}}function zn(e,t,n){const i=e.slice();return i[11]=t[n],i}function Vn(e,t,n){const i=e.slice();return i[11]=t[n],i}function On(t){let n,i=t[2],s=[];for(let e=0;e<i.length;e+=1)s[e]=Dn(zn(t,i,e));return{c(){n=S("div");for(let e=0;e<s.length;e+=1)s[e].c();H(n,"class",t[7]+"__bubbles")},m(e,t){C(e,n,t);for(let e=0;e<s.length;e+=1)s[e].m(n,null)},p(e,t){if(132&t){let r;for(i=e[2],r=0;r<i.length;r+=1){const o=zn(e,i,r);s[r]?s[r].p(o,t):(s[r]=Dn(o),s[r].c(),s[r].m(n,null))}for(;r<s.length;r+=1)s[r].d(1);s.length=i.length}},i:e,o:e,d(e){e&&_(n),T(s,e)}}}function An(e){let t,n,i,s,r,o;return n=new Gt({props:{modules:[vt],loop:!0,navigation:e[8],class:e[2]+"__slides",spaceBetween:50,slidesPerView:4,breakpoints:tn,$$slots:{default:[Bn]},$$scope:{ctx:e}}}),n.$on("slideChange",Fn),n.$on("swiper",jn),{c(){t=S("div"),we(n.$$.fragment),i=M(),s=S("div"),r=L("Next ->"),H(t,"class",e[7]+"__bubbles"),H(s,"class",e[7]+"__next")},m(e,l){C(e,t,l),be(n,t,null),C(e,i,l),C(e,s,l),y(s,r),o=!0},p(e,t){const i={};4&t&&(i.class=e[2]+"__slides"),65540&t&&(i.$$scope={dirty:t,ctx:e}),n.$set(i)},i(e){o||(he(n.$$.fragment,e),o=!0)},o(e){fe(n.$$.fragment,e),o=!1},d(e){e&&_(t),ye(n),e&&_(i),e&&_(s)}}}function Dn(e){let t,n,i,s,r,o,l,a,c,d,p,u=e[11].text+"";return{c(){t=S("div"),n=S("div"),i=S("div"),s=L(u),o=M(),l=S("div"),d=M(),H(i,"class",r=e[7]+"__bubble__text"),O(i,"color",e[11].color),H(l,"class",a=e[7]+"__bubble__bg"),O(l,"border-radius",Kt()),O(l,"background-color",e[11].color),H(n,"class",c=e[7]+"__bubble"),H(t,"class",p=e[7]+"__bubble-container")},m(e,r){C(e,t,r),y(t,n),y(n,i),y(i,s),y(n,o),y(n,l),y(t,d)},p(e,t){4&t&&u!==(u=e[11].text+"")&&V(s,u),4&t&&O(i,"color",e[11].color),4&t&&O(l,"background-color",e[11].color)},d(e){e&&_(t)}}}function In(e){let t,n,i,s,r,o,l=e[11].text+"";return{c(){t=S("div"),n=S("div"),i=L(l),s=M(),r=S("div"),o=M(),H(n,"class",e[7]+"__bubble__text"),O(n,"color",e[11].color),H(r,"class",e[7]+"__bubble__bg"),O(r,"border-radius",Kt()),O(r,"background-color",e[11].color),H(t,"class",e[7]+"__bubble")},m(e,l){C(e,t,l),y(t,n),y(n,i),y(t,s),y(t,r),C(e,o,l)},p(e,t){4&t&&l!==(l=e[11].text+"")&&V(i,l),4&t&&O(n,"color",e[11].color),4&t&&O(r,"background-color",e[11].color)},d(e){e&&_(t),e&&_(o)}}}function Nn(e){let t,n;return t=new Ut({props:{$$slots:{default:[In]},$$scope:{ctx:e}}}),{c(){we(t.$$.fragment)},m(e,i){be(t,e,i),n=!0},p(e,n){const i={};65540&n&&(i.$$scope={dirty:n,ctx:e}),t.$set(i)},i(e){n||(he(t.$$.fragment,e),n=!0)},o(e){fe(t.$$.fragment,e),n=!1},d(e){ye(t,e)}}}function Bn(e){let t,n,i=e[2],s=[];for(let t=0;t<i.length;t+=1)s[t]=Nn(Vn(e,i,t));const r=e=>fe(s[e],1,1,(()=>{s[e]=null}));return{c(){for(let e=0;e<s.length;e+=1)s[e].c();t=k()},m(e,i){for(let t=0;t<s.length;t+=1)s[t].m(e,i);C(e,t,i),n=!0},p(e,n){if(132&n){let o;for(i=e[2],o=0;o<i.length;o+=1){const r=Vn(e,i,o);s[o]?(s[o].p(r,n),he(s[o],1)):(s[o]=Nn(r),s[o].c(),he(s[o],1),s[o].m(t.parentNode,t))}for(pe(),o=i.length;o<s.length;o+=1)r(o);ue()}},i(e){if(!n){for(let e=0;e<i.length;e+=1)he(s[e]);n=!0}},o(e){s=s.filter(Boolean);for(let e=0;e<s.length;e+=1)fe(s[e]);n=!1},d(e){T(s,e),e&&_(t)}}}function Gn(e){let t,n,i,s,r,o,l,a,c,d,p,u;const h=[An,On],f=[];function m(e,t){return e[3]?0:1}return a=m(e),c=f[a]=h[a](e),p=new fn({props:{shapes:e[4],colors:e[5]}}),{c(){t=S("div"),n=S("div"),i=S("div"),s=L(e[0]),r=M(),o=S("h3"),l=M(),c.c(),d=M(),we(p.$$.fragment),H(i,"class",e[7]+"__overtitle"),H(o,"class",e[7]+"__title"),H(n,"class",e[7]),H(t,"class","wrapper"),H(t,"id",e[6])},m(c,h){C(c,t,h),y(t,n),y(n,i),y(i,s),y(n,r),y(n,o),o.innerHTML=e[1],y(n,l),f[a].m(n,null),y(t,d),be(p,t,null),u=!0},p(e,[t]){(!u||1&t)&&V(s,e[0]),(!u||2&t)&&(o.innerHTML=e[1]);let i=a;a=m(e),a===i?f[a].p(e,t):(pe(),fe(f[i],1,1,(()=>{f[i]=null})),ue(),c=f[a],c?c.p(e,t):(c=f[a]=h[a](e),c.c()),he(c,1),c.m(n,null));const r={};16&t&&(r.shapes=e[4]),32&t&&(r.colors=e[5]),p.$set(r)},i(e){u||(he(c),he(p.$$.fragment,e),u=!0)},o(e){fe(c),fe(p.$$.fragment,e),u=!1},d(e){e&&_(t),f[a].d(),ye(p)}}}const Fn=()=>{},jn=e=>{};function Wn(e,t,n){let{overtitle:i="overtitle"}=t,{title:s="Title for hero component"}=t,{bubbles:r=["first","second","third"]}=t,{slider:o=!1}=t,{anchor:l}=t,{type:a="Bubbles"}=t,{shapes:c=0}=t,{colors:d=["red","yellow","blue"]}=t,p=l||i,u=a.toLowerCase(),h={nextEl:`.${u}__next`};return e.$$set=e=>{"overtitle"in e&&n(0,i=e.overtitle),"title"in e&&n(1,s=e.title),"bubbles"in e&&n(2,r=e.bubbles),"slider"in e&&n(3,o=e.slider),"anchor"in e&&n(9,l=e.anchor),"type"in e&&n(10,a=e.type),"shapes"in e&&n(4,c=e.shapes),"colors"in e&&n(5,d=e.colors)},[i,s,r,o,c,d,p,u,h,l,a]}class Zn extends $e{constructor(e){super(),xe(this,e,Wn,Gn,l,{overtitle:0,title:1,bubbles:2,slider:3,anchor:9,type:10,shapes:4,colors:5})}}function Rn(e,t,n){const i=e.slice();return i[11]=t[n],i}function qn(e,t,n){const i=e.slice();return i[11]=t[n],i}function Xn(t){let n,i=t[2],s=[];for(let e=0;e<i.length;e+=1)s[e]=Un(Rn(t,i,e));return{c(){n=S("div");for(let e=0;e<s.length;e+=1)s[e].c();H(n,"class",t[7]+"__container")},m(e,t){C(e,n,t);for(let e=0;e<s.length;e+=1)s[e].m(n,null)},p(e,t){if(132&t){let r;for(i=e[2],r=0;r<i.length;r+=1){const o=Rn(e,i,r);s[r]?s[r].p(o,t):(s[r]=Un(o),s[r].c(),s[r].m(n,null))}for(;r<s.length;r+=1)s[r].d(1);s.length=i.length}},i:e,o:e,d(e){e&&_(n),T(s,e)}}}function Yn(e){let t,n,i,s,r;return t=new Gt({props:{modules:[vt],loop:!0,navigation:e[8],class:e[7]+"__container",spaceBetween:50,slidesPerView:3,breakpoints:tn,$$slots:{default:[Qn]},$$scope:{ctx:e}}}),t.$on("slideChange",ti),t.$on("swiper",ni),{c(){we(t.$$.fragment),n=M(),i=S("div"),s=L("Next ->"),H(i,"class",e[7]+"__next")},m(e,o){be(t,e,o),C(e,n,o),C(e,i,o),y(i,s),r=!0},p(e,n){const i={};65540&n&&(i.$$scope={dirty:n,ctx:e}),t.$set(i)},i(e){r||(he(t.$$.fragment,e),r=!0)},o(e){fe(t.$$.fragment,e),r=!1},d(e){ye(t,e),e&&_(n),e&&_(i)}}}function Un(e){let t,n,i,s,r,o,l,a=e[11].title+"",c=e[11].description+"";return{c(){t=S("div"),n=S("h4"),s=M(),r=L(c),o=M(),H(n,"class",i=e[7]+"__card__title"),H(t,"class",l=e[7]+"__card")},m(e,i){C(e,t,i),y(t,n),n.innerHTML=a,y(t,s),y(t,r),y(t,o)},p(e,t){4&t&&a!==(a=e[11].title+"")&&(n.innerHTML=a),4&t&&c!==(c=e[11].description+"")&&V(r,c)},d(e){e&&_(t)}}}function Kn(e){let t,n,i,s,r,o=e[11].title+"",l=e[11].description+"";return{c(){t=S("div"),n=S("h4"),i=M(),s=L(l),r=M(),H(n,"class",e[7]+"__card__title"),H(t,"class",e[7]+"__card")},m(e,l){C(e,t,l),y(t,n),n.innerHTML=o,y(t,i),y(t,s),C(e,r,l)},p(e,t){4&t&&o!==(o=e[11].title+"")&&(n.innerHTML=o),4&t&&l!==(l=e[11].description+"")&&V(s,l)},d(e){e&&_(t),e&&_(r)}}}function Jn(e){let t,n;return t=new Ut({props:{$$slots:{default:[Kn]},$$scope:{ctx:e}}}),{c(){we(t.$$.fragment)},m(e,i){be(t,e,i),n=!0},p(e,n){const i={};65540&n&&(i.$$scope={dirty:n,ctx:e}),t.$set(i)},i(e){n||(he(t.$$.fragment,e),n=!0)},o(e){fe(t.$$.fragment,e),n=!1},d(e){ye(t,e)}}}function Qn(e){let t,n,i=e[2],s=[];for(let t=0;t<i.length;t+=1)s[t]=Jn(qn(e,i,t));const r=e=>fe(s[e],1,1,(()=>{s[e]=null}));return{c(){for(let e=0;e<s.length;e+=1)s[e].c();t=k()},m(e,i){for(let t=0;t<s.length;t+=1)s[t].m(e,i);C(e,t,i),n=!0},p(e,n){if(132&n){let o;for(i=e[2],o=0;o<i.length;o+=1){const r=qn(e,i,o);s[o]?(s[o].p(r,n),he(s[o],1)):(s[o]=Jn(r),s[o].c(),he(s[o],1),s[o].m(t.parentNode,t))}for(pe(),o=i.length;o<s.length;o+=1)r(o);ue()}},i(e){if(!n){for(let e=0;e<i.length;e+=1)he(s[e]);n=!0}},o(e){s=s.filter(Boolean);for(let e=0;e<s.length;e+=1)fe(s[e]);n=!1},d(e){T(s,e),e&&_(t)}}}function ei(e){let t,n,i,s,r,o,l,a,c,d,p,u,h;const f=[Yn,Xn],m=[];function g(e,t){return e[3]?0:1}return c=g(e),d=m[c]=f[c](e),u=new fn({props:{shapes:e[4],colors:e[5]}}),{c(){t=S("div"),n=S("div"),i=S("div"),s=L(e[1]),r=M(),o=S("h3"),l=L(e[0]),a=M(),d.c(),p=M(),we(u.$$.fragment),H(i,"class",e[7]+"__overtitle"),H(o,"class",e[7]+"__title"),H(n,"class",e[7]),H(t,"class","wrapper"),H(t,"id",e[6])},m(e,d){C(e,t,d),y(t,n),y(n,i),y(i,s),y(n,r),y(n,o),y(o,l),y(n,a),m[c].m(n,null),y(t,p),be(u,t,null),h=!0},p(e,[t]){(!h||2&t)&&V(s,e[1]),(!h||1&t)&&V(l,e[0]);let i=c;c=g(e),c===i?m[c].p(e,t):(pe(),fe(m[i],1,1,(()=>{m[i]=null})),ue(),d=m[c],d?d.p(e,t):(d=m[c]=f[c](e),d.c()),he(d,1),d.m(n,null));const r={};16&t&&(r.shapes=e[4]),32&t&&(r.colors=e[5]),u.$set(r)},i(e){h||(he(d),he(u.$$.fragment,e),h=!0)},o(e){fe(d),fe(u.$$.fragment,e),h=!1},d(e){e&&_(t),m[c].d(),ye(u)}}}const ti=()=>{},ni=e=>{};function ii(e,t,n){let{title:i="Title for hero component"}=t,{overtitle:s="overtitle"}=t,{cards:r=[]}=t,{slider:o=!1}=t,{anchor:l}=t,{type:a="Cards"}=t,{shapes:c=0}=t,{colors:d=["red","yellow","blue"]}=t,p=l||s,u=a.toLowerCase(),h={nextEl:`.${u}__next`};return e.$$set=e=>{"title"in e&&n(0,i=e.title),"overtitle"in e&&n(1,s=e.overtitle),"cards"in e&&n(2,r=e.cards),"slider"in e&&n(3,o=e.slider),"anchor"in e&&n(9,l=e.anchor),"type"in e&&n(10,a=e.type),"shapes"in e&&n(4,c=e.shapes),"colors"in e&&n(5,d=e.colors)},[i,s,r,o,c,d,p,u,h,l,a]}class si extends $e{constructor(e){super(),xe(this,e,ii,ei,l,{title:0,overtitle:1,cards:2,slider:3,anchor:9,type:10,shapes:4,colors:5})}}function ri(e,t,n){const i=e.slice();return i[11]=t[n],i}function oi(e,t,n){const i=e.slice();return i[11]=t[n],i}function li(t){let n,i=t[2],s=[];for(let e=0;e<i.length;e+=1)s[e]=ci(ri(t,i,e));return{c(){n=S("div");for(let e=0;e<s.length;e+=1)s[e].c();H(n,"class",t[7]+"__slides "+t[7]+"__slides--no-slider")},m(e,t){C(e,n,t);for(let e=0;e<s.length;e+=1)s[e].m(n,null)},p(e,t){if(132&t){let r;for(i=e[2],r=0;r<i.length;r+=1){const o=ri(e,i,r);s[r]?s[r].p(o,t):(s[r]=ci(o),s[r].c(),s[r].m(n,null))}for(;r<s.length;r+=1)s[r].d(1);s.length=i.length}},i:e,o:e,d(e){e&&_(n),T(s,e)}}}function ai(e){let t,n,i,s,r,o,l;return i=new Gt({props:{modules:[vt],loop:!0,navigation:e[8],class:e[7]+"__slides",spaceBetween:50,slidesPerView:3,breakpoints:tn,$$slots:{default:[ui]},$$scope:{ctx:e}}}),i.$on("slideChange",fi),i.$on("swiper",mi),{c(){t=S("h3"),n=M(),we(i.$$.fragment),s=M(),r=S("div"),o=L("Next ->"),H(t,"class",e[7]+"__title"),H(r,"class",e[7]+"__next")},m(a,c){C(a,t,c),t.innerHTML=e[0],C(a,n,c),be(i,a,c),C(a,s,c),C(a,r,c),y(r,o),l=!0},p(e,n){(!l||1&n)&&(t.innerHTML=e[0]);const s={};65540&n&&(s.$$scope={dirty:n,ctx:e}),i.$set(s)},i(e){l||(he(i.$$.fragment,e),l=!0)},o(e){fe(i.$$.fragment,e),l=!1},d(e){e&&_(t),e&&_(n),ye(i,e),e&&_(s),e&&_(r)}}}function ci(e){let t,n,i,s,r,o,l,a,c,d,p=e[11].image+"",u=e[11].title+"",h=e[11].description+"";return{c(){t=S("div"),n=new D,i=M(),s=S("h4"),r=L(u),l=M(),a=L(h),c=M(),n.a=i,H(s,"class",o=e[7]+"__slide__title"),H(t,"class",d=e[7]+"__slide")},m(e,o){C(e,t,o),n.m(p,t),y(t,i),y(t,s),y(s,r),y(t,l),y(t,a),y(t,c)},p(e,t){4&t&&p!==(p=e[11].image+"")&&n.p(p),4&t&&u!==(u=e[11].title+"")&&V(r,u),4&t&&h!==(h=e[11].description+"")&&V(a,h)},d(e){e&&_(t)}}}function di(e){let t,n,i,s,r,o,l,a=e[11].image+"",c=e[11].title+"",d=e[11].description+"";return{c(){t=S("div"),n=M(),i=S("h4"),s=L(c),r=M(),o=L(d),l=M(),H(t,"class",e[7]+"__slide__image"),H(i,"class",e[7]+"__slide__title")},m(e,c){C(e,t,c),t.innerHTML=a,C(e,n,c),C(e,i,c),y(i,s),C(e,r,c),C(e,o,c),C(e,l,c)},p(e,n){4&n&&a!==(a=e[11].image+"")&&(t.innerHTML=a),4&n&&c!==(c=e[11].title+"")&&V(s,c),4&n&&d!==(d=e[11].description+"")&&V(o,d)},d(e){e&&_(t),e&&_(n),e&&_(i),e&&_(r),e&&_(o),e&&_(l)}}}function pi(e){let t,n;return t=new Ut({props:{class:e[7]+"__slide",$$slots:{default:[di]},$$scope:{ctx:e}}}),{c(){we(t.$$.fragment)},m(e,i){be(t,e,i),n=!0},p(e,n){const i={};65540&n&&(i.$$scope={dirty:n,ctx:e}),t.$set(i)},i(e){n||(he(t.$$.fragment,e),n=!0)},o(e){fe(t.$$.fragment,e),n=!1},d(e){ye(t,e)}}}function ui(e){let t,n,i=e[2],s=[];for(let t=0;t<i.length;t+=1)s[t]=pi(oi(e,i,t));const r=e=>fe(s[e],1,1,(()=>{s[e]=null}));return{c(){for(let e=0;e<s.length;e+=1)s[e].c();t=k()},m(e,i){for(let t=0;t<s.length;t+=1)s[t].m(e,i);C(e,t,i),n=!0},p(e,n){if(132&n){let o;for(i=e[2],o=0;o<i.length;o+=1){const r=oi(e,i,o);s[o]?(s[o].p(r,n),he(s[o],1)):(s[o]=pi(r),s[o].c(),he(s[o],1),s[o].m(t.parentNode,t))}for(pe(),o=i.length;o<s.length;o+=1)r(o);ue()}},i(e){if(!n){for(let e=0;e<i.length;e+=1)he(s[e]);n=!0}},o(e){s=s.filter(Boolean);for(let e=0;e<s.length;e+=1)fe(s[e]);n=!1},d(e){T(s,e),e&&_(t)}}}function hi(e){let t,n,i,s,r,o,l,a,c,d;const p=[ai,li],u=[];function h(e,t){return e[3]?0:1}return o=h(e),l=u[o]=p[o](e),c=new fn({props:{shapes:e[4],colors:e[5]}}),{c(){t=S("div"),n=S("div"),i=S("div"),s=L(e[1]),r=M(),l.c(),a=M(),we(c.$$.fragment),H(i,"class",e[7]+"__overtitle"),H(n,"class",e[7]),H(t,"class","wrapper"),H(t,"id",e[6])},m(e,l){C(e,t,l),y(t,n),y(n,i),y(i,s),y(n,r),u[o].m(n,null),y(t,a),be(c,t,null),d=!0},p(e,[t]){(!d||2&t)&&V(s,e[1]);let i=o;o=h(e),o===i?u[o].p(e,t):(pe(),fe(u[i],1,1,(()=>{u[i]=null})),ue(),l=u[o],l?l.p(e,t):(l=u[o]=p[o](e),l.c()),he(l,1),l.m(n,null));const r={};16&t&&(r.shapes=e[4]),32&t&&(r.colors=e[5]),c.$set(r)},i(e){d||(he(l),he(c.$$.fragment,e),d=!0)},o(e){fe(l),fe(c.$$.fragment,e),d=!1},d(e){e&&_(t),u[o].d(),ye(c)}}}const fi=()=>{},mi=e=>{};function gi(e,t,n){let{title:i="Title for hero component"}=t,{overtitle:s="overtitle"}=t,{slides:r=[]}=t,{slider:o=!0}=t,{type:l="Carousel"}=t,{anchor:a}=t,{shapes:c=0}=t,{colors:d=["red","yellow","blue"]}=t,p=a||s,u=l.toLowerCase(),h={nextEl:`.${u}__next`};return e.$$set=e=>{"title"in e&&n(0,i=e.title),"overtitle"in e&&n(1,s=e.overtitle),"slides"in e&&n(2,r=e.slides),"slider"in e&&n(3,o=e.slider),"type"in e&&n(9,l=e.type),"anchor"in e&&n(10,a=e.anchor),"shapes"in e&&n(4,c=e.shapes),"colors"in e&&n(5,d=e.colors)},[i,s,r,o,c,d,p,u,h,l,a]}class vi extends $e{constructor(e){super(),xe(this,e,gi,hi,l,{title:0,overtitle:1,slides:2,slider:3,type:9,anchor:10,shapes:4,colors:5})}}function wi(t){let n;return{c(){n=S("div"),n.innerHTML='<div class="wrapper"><h3 class="footer__title">Get in touch with us</h3> \n    <p class="footer__description">Do you want to be part of the upcoming territorial sustainable transformation?</p> \n    \n    <div class="footer__button"><a href="mailto:info@dede.is">contact us</a></div> \n    <div class="footer__disclaimer"><small>Copyright 2021 of DEDE</small></div></div>',H(n,"class","footer")},m(e,t){C(e,n,t)},p:e,i:e,o:e,d(e){e&&_(n)}}}class bi extends $e{constructor(e){super(),xe(this,e,null,wi,l,{})}}function yi(t){let n,i,s,r,o,l,a,c,d,p,u,h,f,m,g,v,w,b,x,$,T,S,L,M,k,P,z,V,O;return{c(){n=E("svg"),i=E("path"),s=E("path"),r=E("path"),o=E("path"),l=E("path"),a=E("path"),c=E("path"),d=E("path"),p=E("path"),u=E("path"),h=E("path"),f=E("path"),m=E("path"),g=E("path"),v=E("path"),w=E("path"),b=E("path"),x=E("path"),$=E("path"),T=E("path"),S=E("path"),L=E("path"),M=E("path"),k=E("path"),P=E("path"),z=E("path"),V=E("path"),O=E("path"),H(i,"d","M4.23644 51.8377H6.43718C8.19452 51.8377 9.19929 50.7597 9.19929 48.8804V48.8722C9.19929 47.0335 8.18232 45.9677 6.43718 45.9677H4.23644V48.5183H3.51235V49.2831H4.23644V51.8377ZM5.28596 50.955V49.2831H6.49007V48.5183H5.28596V46.8505H6.29887C7.45009 46.8505 8.12943 47.599 8.12943 48.8885V48.8966C8.12943 50.2146 7.46636 50.955 6.29887 50.955H5.28596Z"),H(i,"fill","#214250"),H(s,"d","M15.5477 46.8505H19.9289V45.9677H15.5477V46.8505ZM15.9017 49.2749H19.575V48.441H15.9017V49.2749ZM15.5477 51.8377H19.9289V50.955H15.5477V51.8377Z"),H(s,"fill","#214250"),H(r,"d","M28.9784 51.9842C30.333 51.9842 31.3053 51.1991 31.4599 50.0234V49.995H30.4307L30.4266 50.0153C30.2761 50.6621 29.7229 51.077 28.9784 51.077C27.9777 51.077 27.3553 50.2431 27.3553 48.9048V48.8966C27.3553 47.5624 27.9777 46.7284 28.9744 46.7284C29.7147 46.7284 30.2761 47.1881 30.4266 47.8837L30.4307 47.9H31.4599V47.8674C31.3215 46.6674 30.3086 45.8213 28.9744 45.8213C27.3106 45.8213 26.2814 46.9969 26.2814 48.9007V48.9088C26.2814 50.8045 27.3147 51.9842 28.9784 51.9842Z"),H(r,"fill","#214250"),H(o,"d","M37.9263 51.8377H41.7257V50.955H38.9758V49.2749H41.5752V48.441H38.9758V46.8505H41.7257V45.9677H37.9263V51.8377Z"),H(o,"fill","#214250"),H(l,"d","M48.3223 51.8377H49.3352V47.7942H49.4003L52.2844 51.8377H53.1916V45.9677H52.1828V50.0112H52.1177L49.2335 45.9677H48.3223V51.8377Z"),H(l,"fill","#214250"),H(a,"d","M61.3991 51.8377H62.4486V46.8505H64.2588V45.9677H59.5929V46.8505H61.3991V51.8377Z"),H(a,"fill","#214250"),H(c,"d","M70.652 51.8377H71.7015V49.6289H72.865L74.0162 51.8377H75.2162L73.9348 49.4702C74.6304 49.218 75.0413 48.5753 75.0413 47.7983V47.7902C75.0413 46.6715 74.2847 45.9677 73.0236 45.9677H70.652V51.8377ZM71.7015 48.8234V46.8179H72.8934C73.5606 46.8179 73.9633 47.2003 73.9633 47.8146V47.8227C73.9633 48.4532 73.5769 48.8234 72.9138 48.8234H71.7015Z"),H(c,"fill","#214250"),H(d,"d","M81.1742 51.8377H82.2725L82.7606 50.3204H84.9329L85.4251 51.8377H86.5235L84.4407 45.9677H83.2569L81.1742 51.8377ZM83.8142 47.0579H83.8834L84.6726 49.5109H83.0251L83.8142 47.0579Z"),H(d,"fill","#214250"),H(p,"d","M92.8272 51.8377H96.5696V50.955H93.8767V45.9677H92.8272V51.8377Z"),H(p,"fill","#214250"),H(u,"d","M102.995 51.8377H104.045V45.9677H102.995V51.8377Z"),H(u,"fill","#214250"),H(h,"d","M112.826 51.9842C114.233 51.9842 115.116 51.2682 115.116 50.1251V50.1211C115.116 49.2343 114.6 48.738 113.363 48.4776L112.732 48.3434C112 48.1888 111.703 47.9285 111.703 47.5135V47.5095C111.703 47.0091 112.167 46.704 112.818 46.704C113.489 46.7 113.924 47.0254 113.998 47.481L114.006 47.5298H115.01L115.006 47.4769C114.933 46.5332 114.124 45.8213 112.822 45.8213C111.553 45.8213 110.65 46.5291 110.65 47.5786V47.5827C110.65 48.4573 111.17 49.0187 112.37 49.2709L113.001 49.4011C113.758 49.5638 114.063 49.82 114.063 50.2431V50.2472C114.063 50.7516 113.566 51.1014 112.859 51.1014C112.114 51.1014 111.589 50.776 111.541 50.2838L111.536 50.2431H110.519L110.524 50.3001C110.597 51.313 111.463 51.9842 112.826 51.9842Z"),H(h,"fill","#214250"),H(f,"d","M121.591 51.8377H125.39V50.955H122.64V49.2749H125.24V48.441H122.64V46.8505H125.39V45.9677H121.591V51.8377Z"),H(f,"fill","#214250"),H(m,"d","M131.987 51.8377H134.188C135.945 51.8377 136.95 50.7597 136.95 48.8804V48.8722C136.95 47.0335 135.933 45.9677 134.188 45.9677H131.987V51.8377ZM133.036 50.955V46.8505H134.049C135.2 46.8505 135.88 47.599 135.88 48.8885V48.8966C135.88 50.2146 135.217 50.955 134.049 50.955H133.036Z"),H(m,"fill","#214250"),H(g,"d","M4.04587 63.8715H6.2466C8.00394 63.8715 9.00872 62.7935 9.00872 60.9141V60.906C9.00872 59.0673 7.99174 58.0015 6.2466 58.0015H4.04587V60.5521H3.32178V61.3169H4.04587V63.8715ZM5.09539 62.9888V61.3169H6.29949V60.5521H5.09539V58.8843H6.1083C7.25951 58.8843 7.93886 59.6327 7.93886 60.9223V60.9304C7.93886 62.2484 7.27579 62.9888 6.1083 62.9888H5.09539Z"),H(g,"fill","#214250"),H(v,"d","M17.7454 58.8843H22.1266V58.0015H17.7454V58.8843ZM18.0993 61.3087H21.7726V60.4748H18.0993V61.3087ZM17.7454 63.8715H22.1266V62.9888H17.7454V63.8715Z"),H(v,"fill","#214250"),H(w,"d","M33.1535 64.018C34.561 64.018 35.4437 63.302 35.4437 62.1589V62.1549C35.4437 61.2681 34.9271 60.7718 33.6904 60.5114L33.0599 60.3772C32.3277 60.2226 32.0307 59.9623 32.0307 59.5473V59.5433C32.0307 59.0429 32.4945 58.7378 33.1453 58.7378C33.8166 58.7337 34.2518 59.0592 34.325 59.5148L34.3332 59.5636H35.3379L35.3339 59.5107C35.2607 58.567 34.4511 57.8551 33.1494 57.8551C31.8802 57.8551 30.9771 58.5629 30.9771 59.6124V59.6165C30.9771 60.4911 31.4978 61.0525 32.6979 61.3047L33.3284 61.4348C34.085 61.5976 34.3901 61.8538 34.3901 62.2769V62.281C34.3901 62.7854 33.8938 63.1352 33.186 63.1352C32.4416 63.1352 31.9168 62.8098 31.868 62.3176L31.864 62.2769H30.847L30.851 62.3338C30.9243 63.3468 31.7907 64.018 33.1535 64.018Z"),H(w,"fill","#214250"),H(b,"d","M45.7669 63.8715H46.8164V58.8843H48.6266V58.0015H43.9607V58.8843H45.7669V63.8715Z"),H(b,"fill","#214250"),H(x,"d","M57.4081 63.8715H58.4576V58.0015H57.4081V63.8715Z"),H(x,"fill","#214250"),H($,"d","M67.5889 63.8715H68.6018V59.828H68.6669L71.551 63.8715H72.4582V58.0015H71.4493V62.045H71.3842L68.5001 58.0015H67.5889V63.8715Z"),H($,"fill","#214250"),H(T,"d","M81.1583 63.8715H82.2566L82.7448 62.3542H84.917L85.4092 63.8715H86.5076L84.4248 58.0015H83.241L81.1583 63.8715ZM83.7983 59.0917H83.8675L84.6567 61.5447H83.0092L83.7983 59.0917Z"),H(T,"fill","#214250"),H(S,"d","M96.009 63.8715H97.0585V58.8843H98.8688V58.0015H94.2029V58.8843H96.009V63.8715Z"),H(S,"fill","#214250"),H(L,"d","M107.65 63.8715H108.7V58.0015H107.65V63.8715Z"),H(L,"fill","#214250"),H(M,"d","M120.361 64.018C122.074 64.018 123.136 62.8261 123.136 60.9385V60.9304C123.136 59.0388 122.07 57.8551 120.361 57.8551C118.657 57.8551 117.583 59.0388 117.583 60.9304V60.9385C117.583 62.8261 118.641 64.018 120.361 64.018ZM120.361 63.1108C119.304 63.1108 118.653 62.2566 118.653 60.9385V60.9304C118.653 59.6043 119.32 58.7622 120.361 58.7622C121.403 58.7622 122.066 59.6043 122.066 60.9304V60.9385C122.066 62.2566 121.407 63.1108 120.361 63.1108Z"),H(M,"fill","#214250"),H(k,"d","M132.023 63.8715H133.036V59.828H133.101L135.985 63.8715H136.892V58.0015H135.883V62.045H135.818L132.934 58.0015H132.023V63.8715Z"),H(k,"fill","#214250"),H(P,"d","M4.30524 34.25H17.3903C27.8389 34.25 33.813 27.9602 33.813 16.9945V16.947C33.813 6.21864 27.7664 0 17.3903 0H4.30524V14.882H0V19.3442H4.30524V34.25ZM10.5454 29.0994V19.3442H17.7047V14.882H10.5454V5.15055H16.5679C23.4127 5.15055 27.4519 9.51784 27.4519 17.0419V17.0894C27.4519 24.7796 23.5095 29.0994 16.5679 29.0994H10.5454Z"),H(P,"fill","#214250"),H(z,"d","M40.0312 5.15055H66.0803V0H40.0312V5.15055ZM42.1354 19.2968H63.976V14.431H42.1354V19.2968ZM40.0312 34.25H66.0803V29.0994H40.0312V34.25Z"),H(z,"fill","#214250"),H(V,"d","M75.225 34.25H88.31C98.7587 34.25 104.733 27.9602 104.733 16.9945V16.947C104.733 6.21864 98.6861 0 88.31 0H75.225V14.882H70.9198V19.3442H75.225V34.25ZM81.4652 29.0994V19.3442H88.6244V14.882H81.4652V5.15055H87.4876C94.3325 5.15055 98.3717 9.51784 98.3717 17.0419V17.0894C98.3717 24.7796 94.4292 29.0994 87.4876 29.0994H81.4652Z"),H(V,"fill","#214250"),H(O,"d","M110.951 5.15055H137V0H110.951V5.15055ZM113.055 19.2968H134.896V14.431H113.055V19.2968ZM110.951 34.25H137V29.0994H110.951V34.25Z"),H(O,"fill","#214250"),H(n,"width","137"),H(n,"height","65"),H(n,"viewBox","0 0 137 65"),H(n,"fill","none"),H(n,"xmlns","http://www.w3.org/2000/svg")},m(e,t){C(e,n,t),y(n,i),y(n,s),y(n,r),y(n,o),y(n,l),y(n,a),y(n,c),y(n,d),y(n,p),y(n,u),y(n,h),y(n,f),y(n,m),y(n,g),y(n,v),y(n,w),y(n,b),y(n,x),y(n,$),y(n,T),y(n,S),y(n,L),y(n,M),y(n,k),y(n,P),y(n,z),y(n,V),y(n,O)},p:e,i:e,o:e,d(e){e&&_(n)}}}class xi extends $e{constructor(e){super(),xe(this,e,null,yi,l,{})}}function $i(t){let n,i,s,o,l;return{c(){n=S("button"),i=S("span"),i.innerHTML='<span class="hamburger-inner"></span>',H(i,"class","hamburger-box"),H(n,"class",s="hamburger hamburger--"+t[1]+" "+(t[0]&&"is-active"))},m(e,s){C(e,n,s),y(n,i),o||(l=[P(n,"click",t[2]),P(n,"click",t[3])],o=!0)},p(e,[t]){3&t&&s!==(s="hamburger hamburger--"+e[1]+" "+(e[0]&&"is-active"))&&H(n,"class",s)},i:e,o:e,d(e){e&&_(n),o=!1,r(l)}}}function Ci(e,t,n){let{open:i}=t,{type:s="spin"}=t;return e.$$set=e=>{"open"in e&&n(0,i=e.open),"type"in e&&n(1,s=e.type)},[i,s,function(t){X.call(this,e,t)},()=>n(0,i=!i)]}class _i extends $e{constructor(e){super(),xe(this,e,Ci,$i,l,{open:0,type:1})}}function Ti(e){const t=e-1;return t*t*t+1}function Si(e,{delay:t=0,duration:n=400,easing:i=Ti,x:s=0,y:r=0,opacity:o=0}={}){const l=getComputedStyle(e),a=+l.opacity,c="none"===l.transform?"":l.transform,d=a*(1-o);return{delay:t,duration:n,easing:i,css:(e,t)=>`\n\t\t\ttransform: ${c} translate(${(1-e)*s}px, ${(1-e)*r}px);\n\t\t\topacity: ${a-d*t}`}}function Ei(e){let t,n,i;return{c(){t=S("div"),t.innerHTML='<ul class="header__menu"><li class="header__menu__item"><span data-smoothscroll="#vision">Vision</span></li> \n        <li class="header__menu__item"><span data-smoothscroll="#mission">Mission</span></li> \n        <li class="header__menu__item"><span data-smoothscroll="#purpose">Purpose</span></li> \n        <li class="header__menu__item"><span data-smoothscroll="#about-us">About us</span></li></ul>',H(t,"class","header__menu--mobile")},m(e,n){C(e,t,n),i=!0},i(e){i||(ne((()=>{n||(n=ge(t,Si,{y:200,duration:500},!0)),n.run(1)})),i=!0)},o(e){n||(n=ge(t,Si,{y:200,duration:500},!1)),n.run(0),i=!1},d(e){e&&_(t),e&&n&&n.end()}}}function Li(e){let t,n,i,s,r,o,l,a,c;function d(t){e[1](t)}n=new xi({});let p={type:"emphatic"};void 0!==e[0]&&(p.open=e[0]),s=new _i({props:p}),U.push((()=>function(e,t,n){const i=e.$$.props[t];void 0!==i&&(e.$$.bound[i]=n,n(e.$$.ctx[i]))}(s,"open",d)));let u=e[0]&&Ei();return{c(){t=S("header"),we(n.$$.fragment),i=M(),we(s.$$.fragment),o=M(),u&&u.c(),l=M(),a=S("ul"),a.innerHTML='<li class="header__menu__item"><span data-smoothscroll="#vision">Vision</span></li> \n    <li class="header__menu__item"><span data-smoothscroll="#mission">Mission</span></li> \n    <li class="header__menu__item"><span data-smoothscroll="#purpose">Purpose</span></li> \n    <li class="header__menu__item"><span data-smoothscroll="#about-us">About us</span></li>',H(a,"class","header__menu header__menu--desk"),H(t,"class","wrapper header")},m(e,r){C(e,t,r),be(n,t,null),y(t,i),be(s,t,null),y(t,o),u&&u.m(t,null),y(t,l),y(t,a),c=!0},p(e,[n]){const i={};var o;!r&&1&n&&(r=!0,i.open=e[0],o=()=>r=!1,J.push(o)),s.$set(i),e[0]?u?1&n&&he(u,1):(u=Ei(),u.c(),he(u,1),u.m(t,l)):u&&(pe(),fe(u,1,1,(()=>{u=null})),ue())},i(e){c||(he(n.$$.fragment,e),he(s.$$.fragment,e),he(u),c=!0)},o(e){fe(n.$$.fragment,e),fe(s.$$.fragment,e),fe(u),c=!1},d(e){e&&_(t),ye(n),ye(s),u&&u.d()}}}function Mi(e,t,n){let i=!1;return R((()=>{en().forEach((e=>{e.addEventListener("click",(()=>{n(0,i=!1)}))}))})),[i,function(e){i=e,n(0,i)}]}class ki extends $e{constructor(e){super(),xe(this,e,Mi,Li,l,{})}}function Pi(e){let t,n,i,s,r=e[4].text+"",o=e[4].arrow&&Hi(e);return{c(){t=S("div"),n=L(r),i=M(),o&&o.c(),H(t,"class",s=e[5]+"__cta"),H(t,"data-smoothscroll","#solution")},m(e,s){C(e,t,s),y(t,n),y(t,i),o&&o.m(t,null)},p(e,i){16&i&&r!==(r=e[4].text+"")&&V(n,r),e[4].arrow?o?o.p(e,i):(o=Hi(e),o.c(),o.m(t,null)):o&&(o.d(1),o=null)},d(e){e&&_(t),o&&o.d()}}}function Hi(e){let t,n,i;return{c(){t=S("div"),n=L("->"),H(t,"class",i="arrow arrow--"+e[4].arrow)},m(e,i){C(e,t,i),y(t,n)},p(e,n){16&n&&i!==(i="arrow arrow--"+e[4].arrow)&&H(t,"class",i)},d(e){e&&_(t)}}}function zi(e){let t,n,i,s,r,o,l,a,c,d,p,u,h=e[4]&&Pi(e);return p=new fn({props:{shapes:e[2],colors:e[3]}}),{c(){t=S("div"),n=S("div"),i=S("div"),s=S("h1"),r=L(e[0]),o=M(),l=S("h3"),a=L(e[1]),c=M(),h&&h.c(),d=M(),we(p.$$.fragment),H(s,"class",e[5]+"__title"),H(l,"class",e[5]+"__subtitle"),H(i,"class",e[5]+"__content"),H(n,"class",e[5]),H(t,"class","wrapper")},m(e,f){C(e,t,f),y(t,n),y(n,i),y(i,s),y(s,r),y(i,o),y(i,l),y(l,a),y(n,c),h&&h.m(n,null),y(t,d),be(p,t,null),u=!0},p(e,[t]){(!u||1&t)&&V(r,e[0]),(!u||2&t)&&V(a,e[1]),e[4]?h?h.p(e,t):(h=Pi(e),h.c(),h.m(n,null)):h&&(h.d(1),h=null);const i={};4&t&&(i.shapes=e[2]),8&t&&(i.colors=e[3]),p.$set(i)},i(e){u||(he(p.$$.fragment,e),u=!0)},o(e){fe(p.$$.fragment,e),u=!1},d(e){e&&_(t),h&&h.d(),ye(p)}}}function Vi(e,t,n){let{title:i="Title for hero component"}=t,{subtitle:s="Subtitle for hero component"}=t,{shapes:r=2}=t,{colors:o=["red","yellow","blue"]}=t,{cta:l=!1}=t,{type:a="Hero"}=t,c=a.toLowerCase();return R((()=>{en()})),e.$$set=e=>{"title"in e&&n(0,i=e.title),"subtitle"in e&&n(1,s=e.subtitle),"shapes"in e&&n(2,r=e.shapes),"colors"in e&&n(3,o=e.colors),"cta"in e&&n(4,l=e.cta),"type"in e&&n(6,a=e.type)},[i,s,r,o,l,c,a]}class Oi extends $e{constructor(e){super(),xe(this,e,Vi,zi,l,{title:0,subtitle:1,shapes:2,colors:3,cta:4,type:6})}}function Ai(e){let t,n,i,s;return i=new fn({props:{shapes:e[1],colors:e[2]}}),{c(){t=S("div"),n=M(),we(i.$$.fragment),H(t,"class",e[3]),O(t,"height",e[0]+"px")},m(e,r){C(e,t,r),C(e,n,r),be(i,e,r),s=!0},p(e,[n]){(!s||1&n)&&O(t,"height",e[0]+"px");const r={};2&n&&(r.shapes=e[1]),4&n&&(r.colors=e[2]),i.$set(r)},i(e){s||(he(i.$$.fragment,e),s=!0)},o(e){fe(i.$$.fragment,e),s=!1},d(e){e&&_(t),e&&_(n),ye(i,e)}}}function Di(e,t,n){let{height:i=100}=t,{type:s="Spacer"}=t,{shapes:r=0}=t,{colors:o=["red","yellow","blue"]}=t,l=s.toLowerCase();return e.$$set=e=>{"height"in e&&n(0,i=e.height),"type"in e&&n(4,s=e.type),"shapes"in e&&n(1,r=e.shapes),"colors"in e&&n(2,o=e.colors)},[i,r,o,l,s]}class Ii extends $e{constructor(e){super(),xe(this,e,Di,Ai,l,{height:0,type:4,shapes:1,colors:2})}}function Ni(e){let t,n,i,s,r,o,l,a,c,d,p,u,h;return u=new fn({props:{shapes:e[3],colors:e[4]}}),{c(){t=S("div"),n=S("div"),i=S("h2"),s=L(e[0]),r=M(),o=S("h3"),l=L(e[1]),a=M(),c=S("div"),d=S("p"),p=M(),we(u.$$.fragment),H(i,"class",e[6]+"__title"),H(o,"class",e[6]+"__subtitle"),H(c,"class",e[6]+"__content"),H(n,"class",e[6]),H(t,"class","wrapper"),H(t,"id",e[5])},m(f,m){C(f,t,m),y(t,n),y(n,i),y(i,s),y(n,r),y(n,o),y(o,l),y(n,a),y(n,c),y(c,d),d.innerHTML=e[2],y(t,p),be(u,t,null),h=!0},p(e,[t]){(!h||1&t)&&V(s,e[0]),(!h||2&t)&&V(l,e[1]),(!h||4&t)&&(d.innerHTML=e[2]);const n={};8&t&&(n.shapes=e[3]),16&t&&(n.colors=e[4]),u.$set(n)},i(e){h||(he(u.$$.fragment,e),h=!0)},o(e){fe(u.$$.fragment,e),h=!1},d(e){e&&_(t),ye(u)}}}function Bi(e,t,n){let{title:i="Sample title"}=t,{subtitle:s="Sample subtitle"}=t,{content:r="Sample content"}=t,{type:o="Text"}=t,{shapes:l=0}=t,{anchor:a}=t,{colors:c=["red","yellow","blue"]}=t,d=a||i,p=o.toLowerCase();return e.$$set=e=>{"title"in e&&n(0,i=e.title),"subtitle"in e&&n(1,s=e.subtitle),"content"in e&&n(2,r=e.content),"type"in e&&n(7,o=e.type),"shapes"in e&&n(3,l=e.shapes),"anchor"in e&&n(8,a=e.anchor),"colors"in e&&n(4,c=e.colors)},[i,s,r,l,c,d,p,o,a]}class Gi extends $e{constructor(e){super(),xe(this,e,Bi,Ni,l,{title:0,subtitle:1,content:2,type:7,shapes:3,anchor:8,colors:4})}}function Fi(e){let t,n,i;return{c(){t=S("h4"),n=L(e[1]),H(t,"class",i=e[4]+"__subtitle")},m(e,i){C(e,t,i),y(t,n)},p(e,t){2&t&&V(n,e[1])},d(e){e&&_(t)}}}function ji(e){let t,n,i,s,r,o,l,a,c=e[1]&&Fi(e);return l=new fn({props:{shapes:e[2],colors:e[3]}}),{c(){t=S("div"),n=S("div"),i=S("h2"),s=L(e[0]),r=M(),c&&c.c(),o=M(),we(l.$$.fragment),H(i,"class",e[4]+"__title"),H(n,"class",e[4]),H(t,"class","wrapper")},m(e,d){C(e,t,d),y(t,n),y(n,i),y(i,s),y(n,r),c&&c.m(n,null),y(t,o),be(l,t,null),a=!0},p(e,[t]){(!a||1&t)&&V(s,e[0]),e[1]?c?c.p(e,t):(c=Fi(e),c.c(),c.m(n,null)):c&&(c.d(1),c=null);const i={};4&t&&(i.shapes=e[2]),8&t&&(i.colors=e[3]),l.$set(i)},i(e){a||(he(l.$$.fragment,e),a=!0)},o(e){fe(l.$$.fragment,e),a=!1},d(e){e&&_(t),c&&c.d(),ye(l)}}}function Wi(e,t,n){let{title:i="Sample title"}=t,{subtitle:s}=t,{type:r="Title"}=t,{shapes:o=0}=t,{colors:l=["red","yellow","blue"]}=t,a=r.toLowerCase();return e.$$set=e=>{"title"in e&&n(0,i=e.title),"subtitle"in e&&n(1,s=e.subtitle),"type"in e&&n(5,r=e.type),"shapes"in e&&n(2,o=e.shapes),"colors"in e&&n(3,l=e.colors)},[i,s,o,l,a,r]}class Zi extends $e{constructor(e){super(),xe(this,e,Wi,ji,l,{title:0,subtitle:1,type:5,shapes:2,colors:3})}}function Ri(e,t,n){const i=e.slice();return i[3]=t[n],i}function qi(e){let t,i,s;const r=[e[3],{colors:e[0]}];var o=e[2][e[3].type];function l(e){let t={};for(let e=0;e<r.length;e+=1)t=n(t,r[e]);return{props:t}}return o&&(t=new o(l())),{c(){t&&we(t.$$.fragment),i=k()},m(e,n){t&&be(t,e,n),C(e,i,n),s=!0},p(e,n){const s=3&n?ve(r,[2&n&&(a=e[3],"object"==typeof a&&null!==a?a:{}),1&n&&{colors:e[0]}]):{};var a;if(o!==(o=e[2][e[3].type])){if(t){pe();const e=t;fe(e.$$.fragment,1,0,(()=>{ye(e,1)})),ue()}o?(t=new o(l()),we(t.$$.fragment),he(t.$$.fragment,1),be(t,i.parentNode,i)):t=null}else o&&t.$set(s)},i(e){s||(t&&he(t.$$.fragment,e),s=!0)},o(e){t&&fe(t.$$.fragment,e),s=!1},d(e){e&&_(i),t&&ye(t,e)}}}function Xi(e){let t,n,i,s,r,o;n=new ki({});let l=e[1],a=[];for(let t=0;t<l.length;t+=1)a[t]=qi(Ri(e,l,t));const c=e=>fe(a[e],1,1,(()=>{a[e]=null}));return r=new bi({}),{c(){t=S("main"),we(n.$$.fragment),i=M();for(let e=0;e<a.length;e+=1)a[e].c();s=M(),we(r.$$.fragment)},m(e,l){C(e,t,l),be(n,t,null),y(t,i);for(let e=0;e<a.length;e+=1)a[e].m(t,null);y(t,s),be(r,t,null),o=!0},p(e,[n]){if(7&n){let i;for(l=e[1],i=0;i<l.length;i+=1){const r=Ri(e,l,i);a[i]?(a[i].p(r,n),he(a[i],1)):(a[i]=qi(r),a[i].c(),he(a[i],1),a[i].m(t,s))}for(pe(),i=l.length;i<a.length;i+=1)c(i);ue()}},i(e){if(!o){he(n.$$.fragment,e);for(let e=0;e<l.length;e+=1)he(a[e]);he(r.$$.fragment,e),o=!0}},o(e){fe(n.$$.fragment,e),a=a.filter(Boolean);for(let e=0;e<a.length;e+=1)fe(a[e]);fe(r.$$.fragment,e),o=!1},d(e){e&&_(t),ye(n),T(a,e),ye(r)}}}function Yi(e,t,n){let i,s,r={BgCards:Mn,BlockWithImage:Hn,Bubbles:Zn,Cards:si,Carousel:vi,Hero:Oi,Spacer:Ii,Text:Gi,Title:Zi};return n(1,i=Ce.pages.filter((e=>"Home"==e.name))[0].components),n(0,s=Ce.colorPalette),[s,i,r]}return new class extends $e{constructor(e){super(),xe(this,e,Yi,Xi,l,{})}}({target:document.body,props:{}})}();
+var app = (function () {
+    'use strict';
+
+    function noop() { }
+    const identity = x => x;
+    function assign(tar, src) {
+        // @ts-ignore
+        for (const k in src)
+            tar[k] = src[k];
+        return tar;
+    }
+    function add_location(element, file, line, column, char) {
+        element.__svelte_meta = {
+            loc: { file, line, column, char }
+        };
+    }
+    function run(fn) {
+        return fn();
+    }
+    function blank_object() {
+        return Object.create(null);
+    }
+    function run_all(fns) {
+        fns.forEach(run);
+    }
+    function is_function(thing) {
+        return typeof thing === 'function';
+    }
+    function safe_not_equal(a, b) {
+        return a != a ? b == b : a !== b || ((a && typeof a === 'object') || typeof a === 'function');
+    }
+    function is_empty(obj) {
+        return Object.keys(obj).length === 0;
+    }
+    function create_slot(definition, ctx, $$scope, fn) {
+        if (definition) {
+            const slot_ctx = get_slot_context(definition, ctx, $$scope, fn);
+            return definition[0](slot_ctx);
+        }
+    }
+    function get_slot_context(definition, ctx, $$scope, fn) {
+        return definition[1] && fn
+            ? assign($$scope.ctx.slice(), definition[1](fn(ctx)))
+            : $$scope.ctx;
+    }
+    function get_slot_changes(definition, $$scope, dirty, fn) {
+        if (definition[2] && fn) {
+            const lets = definition[2](fn(dirty));
+            if ($$scope.dirty === undefined) {
+                return lets;
+            }
+            if (typeof lets === 'object') {
+                const merged = [];
+                const len = Math.max($$scope.dirty.length, lets.length);
+                for (let i = 0; i < len; i += 1) {
+                    merged[i] = $$scope.dirty[i] | lets[i];
+                }
+                return merged;
+            }
+            return $$scope.dirty | lets;
+        }
+        return $$scope.dirty;
+    }
+    function update_slot_base(slot, slot_definition, ctx, $$scope, slot_changes, get_slot_context_fn) {
+        if (slot_changes) {
+            const slot_context = get_slot_context(slot_definition, ctx, $$scope, get_slot_context_fn);
+            slot.p(slot_context, slot_changes);
+        }
+    }
+    function get_all_dirty_from_scope($$scope) {
+        if ($$scope.ctx.length > 32) {
+            const dirty = [];
+            const length = $$scope.ctx.length / 32;
+            for (let i = 0; i < length; i++) {
+                dirty[i] = -1;
+            }
+            return dirty;
+        }
+        return -1;
+    }
+    function exclude_internal_props(props) {
+        const result = {};
+        for (const k in props)
+            if (k[0] !== '$')
+                result[k] = props[k];
+        return result;
+    }
+    function compute_rest_props(props, keys) {
+        const rest = {};
+        keys = new Set(keys);
+        for (const k in props)
+            if (!keys.has(k) && k[0] !== '$')
+                rest[k] = props[k];
+        return rest;
+    }
+    function action_destroyer(action_result) {
+        return action_result && is_function(action_result.destroy) ? action_result.destroy : noop;
+    }
+
+    const is_client = typeof window !== 'undefined';
+    let now$1 = is_client
+        ? () => window.performance.now()
+        : () => Date.now();
+    let raf = is_client ? cb => requestAnimationFrame(cb) : noop;
+
+    const tasks = new Set();
+    function run_tasks(now) {
+        tasks.forEach(task => {
+            if (!task.c(now)) {
+                tasks.delete(task);
+                task.f();
+            }
+        });
+        if (tasks.size !== 0)
+            raf(run_tasks);
+    }
+    /**
+     * Creates a new task that runs on each raf frame
+     * until it returns a falsy value or is aborted
+     */
+    function loop$1(callback) {
+        let task;
+        if (tasks.size === 0)
+            raf(run_tasks);
+        return {
+            promise: new Promise(fulfill => {
+                tasks.add(task = { c: callback, f: fulfill });
+            }),
+            abort() {
+                tasks.delete(task);
+            }
+        };
+    }
+    function append$1(target, node) {
+        target.appendChild(node);
+    }
+    function get_root_for_style(node) {
+        if (!node)
+            return document;
+        const root = node.getRootNode ? node.getRootNode() : node.ownerDocument;
+        if (root && root.host) {
+            return root;
+        }
+        return node.ownerDocument;
+    }
+    function append_empty_stylesheet(node) {
+        const style_element = element('style');
+        append_stylesheet(get_root_for_style(node), style_element);
+        return style_element;
+    }
+    function append_stylesheet(node, style) {
+        append$1(node.head || node, style);
+    }
+    function insert(target, node, anchor) {
+        target.insertBefore(node, anchor || null);
+    }
+    function detach(node) {
+        node.parentNode.removeChild(node);
+    }
+    function destroy_each(iterations, detaching) {
+        for (let i = 0; i < iterations.length; i += 1) {
+            if (iterations[i])
+                iterations[i].d(detaching);
+        }
+    }
+    function element(name) {
+        return document.createElement(name);
+    }
+    function svg_element(name) {
+        return document.createElementNS('http://www.w3.org/2000/svg', name);
+    }
+    function text$1(data) {
+        return document.createTextNode(data);
+    }
+    function space() {
+        return text$1(' ');
+    }
+    function empty() {
+        return text$1('');
+    }
+    function listen(node, event, handler, options) {
+        node.addEventListener(event, handler, options);
+        return () => node.removeEventListener(event, handler, options);
+    }
+    function attr$1(node, attribute, value) {
+        if (value == null)
+            node.removeAttribute(attribute);
+        else if (node.getAttribute(attribute) !== value)
+            node.setAttribute(attribute, value);
+    }
+    function set_attributes(node, attributes) {
+        // @ts-ignore
+        const descriptors = Object.getOwnPropertyDescriptors(node.__proto__);
+        for (const key in attributes) {
+            if (attributes[key] == null) {
+                node.removeAttribute(key);
+            }
+            else if (key === 'style') {
+                node.style.cssText = attributes[key];
+            }
+            else if (key === '__value') {
+                node.value = node[key] = attributes[key];
+            }
+            else if (descriptors[key] && descriptors[key].set) {
+                node[key] = attributes[key];
+            }
+            else {
+                attr$1(node, key, attributes[key]);
+            }
+        }
+    }
+    function children$1(element) {
+        return Array.from(element.childNodes);
+    }
+    function set_style(node, key, value, important) {
+        node.style.setProperty(key, value, important ? 'important' : '');
+    }
+    function toggle_class(element, name, toggle) {
+        element.classList[toggle ? 'add' : 'remove'](name);
+    }
+    function custom_event(type, detail, bubbles = false) {
+        const e = document.createEvent('CustomEvent');
+        e.initCustomEvent(type, bubbles, false, detail);
+        return e;
+    }
+    class HtmlTag {
+        constructor() {
+            this.e = this.n = null;
+        }
+        c(html) {
+            this.h(html);
+        }
+        m(html, target, anchor = null) {
+            if (!this.e) {
+                this.e = element(target.nodeName);
+                this.t = target;
+                this.c(html);
+            }
+            this.i(anchor);
+        }
+        h(html) {
+            this.e.innerHTML = html;
+            this.n = Array.from(this.e.childNodes);
+        }
+        i(anchor) {
+            for (let i = 0; i < this.n.length; i += 1) {
+                insert(this.t, this.n[i], anchor);
+            }
+        }
+        p(html) {
+            this.d();
+            this.h(html);
+            this.i(this.a);
+        }
+        d() {
+            this.n.forEach(detach);
+        }
+    }
+
+    const active_docs = new Set();
+    let active = 0;
+    // https://github.com/darkskyapp/string-hash/blob/master/index.js
+    function hash(str) {
+        let hash = 5381;
+        let i = str.length;
+        while (i--)
+            hash = ((hash << 5) - hash) ^ str.charCodeAt(i);
+        return hash >>> 0;
+    }
+    function create_rule(node, a, b, duration, delay, ease, fn, uid = 0) {
+        const step = 16.666 / duration;
+        let keyframes = '{\n';
+        for (let p = 0; p <= 1; p += step) {
+            const t = a + (b - a) * ease(p);
+            keyframes += p * 100 + `%{${fn(t, 1 - t)}}\n`;
+        }
+        const rule = keyframes + `100% {${fn(b, 1 - b)}}\n}`;
+        const name = `__svelte_${hash(rule)}_${uid}`;
+        const doc = get_root_for_style(node);
+        active_docs.add(doc);
+        const stylesheet = doc.__svelte_stylesheet || (doc.__svelte_stylesheet = append_empty_stylesheet(node).sheet);
+        const current_rules = doc.__svelte_rules || (doc.__svelte_rules = {});
+        if (!current_rules[name]) {
+            current_rules[name] = true;
+            stylesheet.insertRule(`@keyframes ${name} ${rule}`, stylesheet.cssRules.length);
+        }
+        const animation = node.style.animation || '';
+        node.style.animation = `${animation ? `${animation}, ` : ''}${name} ${duration}ms linear ${delay}ms 1 both`;
+        active += 1;
+        return name;
+    }
+    function delete_rule(node, name) {
+        const previous = (node.style.animation || '').split(', ');
+        const next = previous.filter(name
+            ? anim => anim.indexOf(name) < 0 // remove specific animation
+            : anim => anim.indexOf('__svelte') === -1 // remove all Svelte animations
+        );
+        const deleted = previous.length - next.length;
+        if (deleted) {
+            node.style.animation = next.join(', ');
+            active -= deleted;
+            if (!active)
+                clear_rules();
+        }
+    }
+    function clear_rules() {
+        raf(() => {
+            if (active)
+                return;
+            active_docs.forEach(doc => {
+                const stylesheet = doc.__svelte_stylesheet;
+                let i = stylesheet.cssRules.length;
+                while (i--)
+                    stylesheet.deleteRule(i);
+                doc.__svelte_rules = {};
+            });
+            active_docs.clear();
+        });
+    }
+
+    let current_component;
+    function set_current_component(component) {
+        current_component = component;
+    }
+    function get_current_component() {
+        if (!current_component)
+            throw new Error('Function called outside component initialization');
+        return current_component;
+    }
+    function beforeUpdate(fn) {
+        get_current_component().$$.before_update.push(fn);
+    }
+    function onMount(fn) {
+        get_current_component().$$.on_mount.push(fn);
+    }
+    function afterUpdate(fn) {
+        get_current_component().$$.after_update.push(fn);
+    }
+    function onDestroy(fn) {
+        get_current_component().$$.on_destroy.push(fn);
+    }
+    function createEventDispatcher() {
+        const component = get_current_component();
+        return (type, detail) => {
+            const callbacks = component.$$.callbacks[type];
+            if (callbacks) {
+                // TODO are there situations where events could be dispatched
+                // in a server (non-DOM) environment?
+                const event = custom_event(type, detail);
+                callbacks.slice().forEach(fn => {
+                    fn.call(component, event);
+                });
+            }
+        };
+    }
+    // TODO figure out if we still want to support
+    // shorthand events, or if we want to implement
+    // a real bubbling mechanism
+    function bubble(component, event) {
+        const callbacks = component.$$.callbacks[event.type];
+        if (callbacks) {
+            // @ts-ignore
+            callbacks.slice().forEach(fn => fn.call(this, event));
+        }
+    }
+
+    const dirty_components = [];
+    const binding_callbacks = [];
+    const render_callbacks = [];
+    const flush_callbacks = [];
+    const resolved_promise = Promise.resolve();
+    let update_scheduled = false;
+    function schedule_update() {
+        if (!update_scheduled) {
+            update_scheduled = true;
+            resolved_promise.then(flush);
+        }
+    }
+    function tick() {
+        schedule_update();
+        return resolved_promise;
+    }
+    function add_render_callback(fn) {
+        render_callbacks.push(fn);
+    }
+    function add_flush_callback(fn) {
+        flush_callbacks.push(fn);
+    }
+    let flushing = false;
+    const seen_callbacks = new Set();
+    function flush() {
+        if (flushing)
+            return;
+        flushing = true;
+        do {
+            // first, call beforeUpdate functions
+            // and update components
+            for (let i = 0; i < dirty_components.length; i += 1) {
+                const component = dirty_components[i];
+                set_current_component(component);
+                update$1(component.$$);
+            }
+            set_current_component(null);
+            dirty_components.length = 0;
+            while (binding_callbacks.length)
+                binding_callbacks.pop()();
+            // then, once components are updated, call
+            // afterUpdate functions. This may cause
+            // subsequent updates...
+            for (let i = 0; i < render_callbacks.length; i += 1) {
+                const callback = render_callbacks[i];
+                if (!seen_callbacks.has(callback)) {
+                    // ...so guard against infinite loops
+                    seen_callbacks.add(callback);
+                    callback();
+                }
+            }
+            render_callbacks.length = 0;
+        } while (dirty_components.length);
+        while (flush_callbacks.length) {
+            flush_callbacks.pop()();
+        }
+        update_scheduled = false;
+        flushing = false;
+        seen_callbacks.clear();
+    }
+    function update$1($$) {
+        if ($$.fragment !== null) {
+            $$.update();
+            run_all($$.before_update);
+            const dirty = $$.dirty;
+            $$.dirty = [-1];
+            $$.fragment && $$.fragment.p($$.ctx, dirty);
+            $$.after_update.forEach(add_render_callback);
+        }
+    }
+
+    let promise;
+    function wait() {
+        if (!promise) {
+            promise = Promise.resolve();
+            promise.then(() => {
+                promise = null;
+            });
+        }
+        return promise;
+    }
+    function dispatch(node, direction, kind) {
+        node.dispatchEvent(custom_event(`${direction ? 'intro' : 'outro'}${kind}`));
+    }
+    const outroing = new Set();
+    let outros;
+    function group_outros() {
+        outros = {
+            r: 0,
+            c: [],
+            p: outros // parent group
+        };
+    }
+    function check_outros() {
+        if (!outros.r) {
+            run_all(outros.c);
+        }
+        outros = outros.p;
+    }
+    function transition_in(block, local) {
+        if (block && block.i) {
+            outroing.delete(block);
+            block.i(local);
+        }
+    }
+    function transition_out(block, local, detach, callback) {
+        if (block && block.o) {
+            if (outroing.has(block))
+                return;
+            outroing.add(block);
+            outros.c.push(() => {
+                outroing.delete(block);
+                if (callback) {
+                    if (detach)
+                        block.d(1);
+                    callback();
+                }
+            });
+            block.o(local);
+        }
+    }
+    const null_transition = { duration: 0 };
+    function create_bidirectional_transition(node, fn, params, intro) {
+        let config = fn(node, params);
+        let t = intro ? 0 : 1;
+        let running_program = null;
+        let pending_program = null;
+        let animation_name = null;
+        function clear_animation() {
+            if (animation_name)
+                delete_rule(node, animation_name);
+        }
+        function init(program, duration) {
+            const d = (program.b - t);
+            duration *= Math.abs(d);
+            return {
+                a: t,
+                b: program.b,
+                d,
+                duration,
+                start: program.start,
+                end: program.start + duration,
+                group: program.group
+            };
+        }
+        function go(b) {
+            const { delay = 0, duration = 300, easing = identity, tick = noop, css } = config || null_transition;
+            const program = {
+                start: now$1() + delay,
+                b
+            };
+            if (!b) {
+                // @ts-ignore todo: improve typings
+                program.group = outros;
+                outros.r += 1;
+            }
+            if (running_program || pending_program) {
+                pending_program = program;
+            }
+            else {
+                // if this is an intro, and there's a delay, we need to do
+                // an initial tick and/or apply CSS animation immediately
+                if (css) {
+                    clear_animation();
+                    animation_name = create_rule(node, t, b, duration, delay, easing, css);
+                }
+                if (b)
+                    tick(0, 1);
+                running_program = init(program, duration);
+                add_render_callback(() => dispatch(node, b, 'start'));
+                loop$1(now => {
+                    if (pending_program && now > pending_program.start) {
+                        running_program = init(pending_program, duration);
+                        pending_program = null;
+                        dispatch(node, running_program.b, 'start');
+                        if (css) {
+                            clear_animation();
+                            animation_name = create_rule(node, t, running_program.b, running_program.duration, 0, easing, config.css);
+                        }
+                    }
+                    if (running_program) {
+                        if (now >= running_program.end) {
+                            tick(t = running_program.b, 1 - t);
+                            dispatch(node, running_program.b, 'end');
+                            if (!pending_program) {
+                                // we're done
+                                if (running_program.b) {
+                                    // intro — we can tidy up immediately
+                                    clear_animation();
+                                }
+                                else {
+                                    // outro — needs to be coordinated
+                                    if (!--running_program.group.r)
+                                        run_all(running_program.group.c);
+                                }
+                            }
+                            running_program = null;
+                        }
+                        else if (now >= running_program.start) {
+                            const p = now - running_program.start;
+                            t = running_program.a + running_program.d * easing(p / running_program.duration);
+                            tick(t, 1 - t);
+                        }
+                    }
+                    return !!(running_program || pending_program);
+                });
+            }
+        }
+        return {
+            run(b) {
+                if (is_function(config)) {
+                    wait().then(() => {
+                        // @ts-ignore
+                        config = config();
+                        go(b);
+                    });
+                }
+                else {
+                    go(b);
+                }
+            },
+            end() {
+                clear_animation();
+                running_program = pending_program = null;
+            }
+        };
+    }
+
+    function get_spread_update(levels, updates) {
+        const update = {};
+        const to_null_out = {};
+        const accounted_for = { $$scope: 1 };
+        let i = levels.length;
+        while (i--) {
+            const o = levels[i];
+            const n = updates[i];
+            if (n) {
+                for (const key in o) {
+                    if (!(key in n))
+                        to_null_out[key] = 1;
+                }
+                for (const key in n) {
+                    if (!accounted_for[key]) {
+                        update[key] = n[key];
+                        accounted_for[key] = 1;
+                    }
+                }
+                levels[i] = n;
+            }
+            else {
+                for (const key in o) {
+                    accounted_for[key] = 1;
+                }
+            }
+        }
+        for (const key in to_null_out) {
+            if (!(key in update))
+                update[key] = undefined;
+        }
+        return update;
+    }
+    function get_spread_object(spread_props) {
+        return typeof spread_props === 'object' && spread_props !== null ? spread_props : {};
+    }
+
+    function bind(component, name, callback) {
+        const index = component.$$.props[name];
+        if (index !== undefined) {
+            component.$$.bound[index] = callback;
+            callback(component.$$.ctx[index]);
+        }
+    }
+    function create_component(block) {
+        block && block.c();
+    }
+    function mount_component(component, target, anchor, customElement) {
+        const { fragment, on_mount, on_destroy, after_update } = component.$$;
+        fragment && fragment.m(target, anchor);
+        if (!customElement) {
+            // onMount happens before the initial afterUpdate
+            add_render_callback(() => {
+                const new_on_destroy = on_mount.map(run).filter(is_function);
+                if (on_destroy) {
+                    on_destroy.push(...new_on_destroy);
+                }
+                else {
+                    // Edge case - component was destroyed immediately,
+                    // most likely as a result of a binding initialising
+                    run_all(new_on_destroy);
+                }
+                component.$$.on_mount = [];
+            });
+        }
+        after_update.forEach(add_render_callback);
+    }
+    function destroy_component(component, detaching) {
+        const $$ = component.$$;
+        if ($$.fragment !== null) {
+            run_all($$.on_destroy);
+            $$.fragment && $$.fragment.d(detaching);
+            // TODO null out other refs, including component.$$ (but need to
+            // preserve final state?)
+            $$.on_destroy = $$.fragment = null;
+            $$.ctx = [];
+        }
+    }
+    function make_dirty(component, i) {
+        if (component.$$.dirty[0] === -1) {
+            dirty_components.push(component);
+            schedule_update();
+            component.$$.dirty.fill(0);
+        }
+        component.$$.dirty[(i / 31) | 0] |= (1 << (i % 31));
+    }
+    function init(component, options, instance, create_fragment, not_equal, props, append_styles, dirty = [-1]) {
+        const parent_component = current_component;
+        set_current_component(component);
+        const $$ = component.$$ = {
+            fragment: null,
+            ctx: null,
+            // state
+            props,
+            update: noop,
+            not_equal,
+            bound: blank_object(),
+            // lifecycle
+            on_mount: [],
+            on_destroy: [],
+            on_disconnect: [],
+            before_update: [],
+            after_update: [],
+            context: new Map(options.context || (parent_component ? parent_component.$$.context : [])),
+            // everything else
+            callbacks: blank_object(),
+            dirty,
+            skip_bound: false,
+            root: options.target || parent_component.$$.root
+        };
+        append_styles && append_styles($$.root);
+        let ready = false;
+        $$.ctx = instance
+            ? instance(component, options.props || {}, (i, ret, ...rest) => {
+                const value = rest.length ? rest[0] : ret;
+                if ($$.ctx && not_equal($$.ctx[i], $$.ctx[i] = value)) {
+                    if (!$$.skip_bound && $$.bound[i])
+                        $$.bound[i](value);
+                    if (ready)
+                        make_dirty(component, i);
+                }
+                return ret;
+            })
+            : [];
+        $$.update();
+        ready = true;
+        run_all($$.before_update);
+        // `false` as a special case of no DOM component
+        $$.fragment = create_fragment ? create_fragment($$.ctx) : false;
+        if (options.target) {
+            if (options.hydrate) {
+                const nodes = children$1(options.target);
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                $$.fragment && $$.fragment.l(nodes);
+                nodes.forEach(detach);
+            }
+            else {
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                $$.fragment && $$.fragment.c();
+            }
+            if (options.intro)
+                transition_in(component.$$.fragment);
+            mount_component(component, options.target, options.anchor, options.customElement);
+            flush();
+        }
+        set_current_component(parent_component);
+    }
+    /**
+     * Base class for Svelte components. Used when dev=false.
+     */
+    class SvelteComponent {
+        $destroy() {
+            destroy_component(this, 1);
+            this.$destroy = noop;
+        }
+        $on(type, callback) {
+            const callbacks = (this.$$.callbacks[type] || (this.$$.callbacks[type] = []));
+            callbacks.push(callback);
+            return () => {
+                const index = callbacks.indexOf(callback);
+                if (index !== -1)
+                    callbacks.splice(index, 1);
+            };
+        }
+        $set($$props) {
+            if (this.$$set && !is_empty($$props)) {
+                this.$$.skip_bound = true;
+                this.$$set($$props);
+                this.$$.skip_bound = false;
+            }
+        }
+    }
+
+    function dispatch_dev(type, detail) {
+        document.dispatchEvent(custom_event(type, Object.assign({ version: '3.43.0' }, detail), true));
+    }
+    function append_dev(target, node) {
+        dispatch_dev('SvelteDOMInsert', { target, node });
+        append$1(target, node);
+    }
+    function insert_dev(target, node, anchor) {
+        dispatch_dev('SvelteDOMInsert', { target, node, anchor });
+        insert(target, node, anchor);
+    }
+    function detach_dev(node) {
+        dispatch_dev('SvelteDOMRemove', { node });
+        detach(node);
+    }
+    function listen_dev(node, event, handler, options, has_prevent_default, has_stop_propagation) {
+        const modifiers = options === true ? ['capture'] : options ? Array.from(Object.keys(options)) : [];
+        if (has_prevent_default)
+            modifiers.push('preventDefault');
+        if (has_stop_propagation)
+            modifiers.push('stopPropagation');
+        dispatch_dev('SvelteDOMAddEventListener', { node, event, handler, modifiers });
+        const dispose = listen(node, event, handler, options);
+        return () => {
+            dispatch_dev('SvelteDOMRemoveEventListener', { node, event, handler, modifiers });
+            dispose();
+        };
+    }
+    function attr_dev(node, attribute, value) {
+        attr$1(node, attribute, value);
+        if (value == null)
+            dispatch_dev('SvelteDOMRemoveAttribute', { node, attribute });
+        else
+            dispatch_dev('SvelteDOMSetAttribute', { node, attribute, value });
+    }
+    function set_data_dev(text, data) {
+        data = '' + data;
+        if (text.wholeText === data)
+            return;
+        dispatch_dev('SvelteDOMSetData', { node: text, data });
+        text.data = data;
+    }
+    function validate_each_argument(arg) {
+        if (typeof arg !== 'string' && !(arg && typeof arg === 'object' && 'length' in arg)) {
+            let msg = '{#each} only iterates over array-like objects.';
+            if (typeof Symbol === 'function' && arg && Symbol.iterator in arg) {
+                msg += ' You can use a spread to convert this iterable into an array.';
+            }
+            throw new Error(msg);
+        }
+    }
+    function validate_slots(name, slot, keys) {
+        for (const slot_key of Object.keys(slot)) {
+            if (!~keys.indexOf(slot_key)) {
+                console.warn(`<${name}> received an unexpected slot "${slot_key}".`);
+            }
+        }
+    }
+    /**
+     * Base class for Svelte components with some minor dev-enhancements. Used when dev=true.
+     */
+    class SvelteComponentDev extends SvelteComponent {
+        constructor(options) {
+            if (!options || (!options.target && !options.$$inline)) {
+                throw new Error("'target' is a required option");
+            }
+            super();
+        }
+        $destroy() {
+            super.$destroy();
+            this.$destroy = () => {
+                console.warn('Component was already destroyed'); // eslint-disable-line no-console
+            };
+        }
+        $capture_state() { }
+        $inject_state() { }
+    }
+
+    var languages = {
+    	en: {
+    		name: "English",
+    		label: "en",
+    		"default": true
+    	},
+    	it: {
+    		name: "Italiano",
+    		label: "it",
+    		"default": false
+    	}
+    };
+    var colorPalette = [
+    	"#6A72DC",
+    	"#60C971"
+    ];
+    var pages = [
+    	{
+    		name: "Home",
+    		path: "/",
+    		components: [
+    			{
+    				type: "Headline",
+    				title: "Sustainable territories",
+    				text: "Changing the world while changing your way of",
+    				typewriter_html: "<Typewriter loopRandom><span>living</span><span>working</span><span>travelling</span></Typewriter>",
+    				cta: {
+    					text: "scroll down",
+    					arrow: "bottom"
+    				},
+    				shapes: [
+    					{
+    						top: 53,
+    						left: 94,
+    						size: 200,
+    						color: "#6A72DC",
+    						zindex: 10
+    					},
+    					{
+    						top: 65,
+    						left: 89,
+    						size: 50,
+    						color: "#60C971",
+    						zindex: 20
+    					},
+    					{
+    						top: 7,
+    						left: 95,
+    						size: 70,
+    						color: "#60C971"
+    					},
+    					{
+    						top: 90,
+    						left: 20,
+    						size: 100,
+    						color: "#6A72DC"
+    					}
+    				]
+    			},
+    			{
+    				type: "Spacer",
+    				height: 100
+    			},
+    			{
+    				type: "BlockWithImage",
+    				anchor: "solution",
+    				imagePosition: "right",
+    				imagePath: "solution/purpose-driven.jpg",
+    				overtitle: "purpose-driven enterprise",
+    				title: "Sustainable change",
+    				description: "DEDE is a purpose-driven enterprise empowering small villages and rural areas to transform into open, transparent and sustainable community enterprises with the help of education, technology and finance.",
+    				shapes: [
+    					{
+    						top: 65,
+    						left: 57,
+    						size: 150,
+    						color: "#60C971",
+    						zindex: 60
+    					},
+    					{
+    						top: 79,
+    						left: 67,
+    						size: 50,
+    						color: "#6A72DC",
+    						zindex: 70
+    					}
+    				]
+    			},
+    			{
+    				type: "BlockWithImage",
+    				anchor: "who-are-we",
+    				imagePosition: "left",
+    				imagePath: "solution/who-are-we.jpg",
+    				overtitle: "Complex systems",
+    				title: "Industry-wide knowledge",
+    				description: "Our interdisciplinary team cosists of professionals, commercial as well as educational entities with different background in travel, technology, design, education, sustainability, fundraising, crypto and more.",
+    				shapes: [
+    					{
+    						top: 60,
+    						left: -10,
+    						size: 200,
+    						color: "#6A72DC",
+    						zindex: 70
+    					}
+    				]
+    			},
+    			{
+    				type: "BlockWithImage",
+    				anchor: "trust",
+    				imagePosition: "right",
+    				imagePath: "solution/trust.jpg",
+    				overtitle: "trusted relationships",
+    				title: "Our values",
+    				description: "We value openness, transparency and sustainability, translating such concepts into concrete actions in order to promote healthy, free and autonomous territorial organisations.",
+    				shapes: [
+    					{
+    						top: 65,
+    						left: 61,
+    						size: 120,
+    						color: "#60C971",
+    						zindex: 60
+    					}
+    				]
+    			},
+    			{
+    				type: "BlockWithImage",
+    				anchor: "target",
+    				imagePosition: "left",
+    				imagePath: "solution/target.jpg",
+    				overtitle: "Long-term partners",
+    				title: "Our target audience",
+    				description: "We seek to work with bodies of public administration, private operators, foundations, enterprises and citizens interested in long-term sustainable change through social and digital transformation processeses.",
+    				shapes: [
+    					{
+    						top: 60,
+    						left: -10,
+    						size: 200,
+    						color: "#6A72DC",
+    						zindex: 70
+    					}
+    				]
+    			},
+    			{
+    				type: "Spacer",
+    				height: 50
+    			},
+    			{
+    				type: "Carousel",
+    				overtitle: "Added value",
+    				anchor: "value",
+    				title: "First movers in empowering territorial <br />sovereignty and autonomy",
+    				slides: [
+    					{
+    						image: "<svg width=\"71\" height=\"48\" viewBox=\"0 0 71 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"18\" cy=\"24\" r=\"17.5\" transform=\"rotate(90 18 24)\" fill=\"#60C971\" style=\"mix-blend-mode:multiply\"/><circle cx=\"18\" cy=\"24\" r=\"17.5\" transform=\"rotate(90 18 24)\" stroke=\"#60C971\"/><ellipse cx=\"47\" cy=\"24\" rx=\"24\" ry=\"24\" transform=\"rotate(90 47 24)\" fill=\"#646FFF\" style=\"mix-blend-mode:multiply\"/></svg>",
+    						title: "Economic Value",
+    						description: "All booking value goes to community members (no commission fee) and we enable additional economic value to be injected into the local community enterprise through the Impact Fee"
+    					},
+    					{
+    						image: "<svg width=\"63\" height=\"50\" viewBox=\"0 0 63 50\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M60.3685 21.7325C62.6268 23.3261 62.6269 26.6754 60.3685 28.269L30.8062 49.1296C28.1565 50.9994 24.5 49.1044 24.5 45.8614L24.5 4.14014C24.5 0.897142 28.1565 -0.997856 30.8062 0.871914L60.3685 21.7325Z\" fill=\"#646FFF\" style=\"mix-blend-mode:multiply\"/><path d=\"M36.3685 21.7325C38.6268 23.3261 38.6269 26.6753 36.3685 28.269L6.80623 49.1296C4.15652 50.9993 0.500001 49.1043 0.500001 45.8613L0.500003 4.14011C0.500003 0.897111 4.15652 -0.997887 6.80623 0.871884L36.3685 21.7325Z\" fill=\"#60C971\" style=\"mix-blend-mode:multiply\"/></svg>",
+    						title: "Data Sovereignty",
+    						description: "Territories are in full control of their data (Self Sovereign Identity) giving access to new revenue streams enabled by emerging data markets (e.g. Ocean Protocol)"
+    					},
+    					{
+    						image: "<svg width=\"63\" height=\"51\" viewBox=\"0 0 63 51\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M6.07108 20.9704C7.63318 19.4083 10.1658 19.4083 11.7279 20.9704L32.9411 42.1836L25.8701 49.2547C24.308 50.8168 21.7753 50.8168 20.2132 49.2547L1.82844 30.8699C0.266341 29.3078 0.266341 26.7752 1.82844 25.2131L6.07108 20.9704Z\" fill=\"#60C971\" style=\"mix-blend-mode:multiply\"/><path d=\"M60.9842 8.48349C62.5463 10.0456 62.5463 12.5782 60.9842 14.1403L25.87 49.2546C24.3079 50.8167 21.7752 50.8167 20.2131 49.2546L10.3136 39.3551L48.2563 1.41242C49.8184 -0.149673 52.3511 -0.149673 53.9132 1.41242L60.9842 8.48349Z\" fill=\"#646FFF\" style=\"mix-blend-mode:multiply\"/></svg>",
+    						title: "Self-Governance",
+    						description: "Territorial community enterprises are fully operated and owned by its members and are also members of DEDE, designing all together the future of our ecosystem"
+    					},
+    					{
+    						image: "<svg width=\"75\" height=\"66\" viewBox=\"0 0 75 66\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M44.3685 29.7318C46.6268 31.3254 46.6269 34.6746 44.3685 36.2682L14.8062 57.1288C12.1565 58.9986 8.5 57.1036 8.5 53.8606L8.5 12.1394C8.5 8.89638 12.1565 7.00138 14.8062 8.87115L44.3685 29.7318Z\" fill=\"#646FFF\" style=\"mix-blend-mode:multiply\"/><circle cx=\"11\" cy=\"55\" r=\"11\" transform=\"rotate(90 11 55)\" fill=\"#60C971\" style=\"mix-blend-mode:multiply\"/><circle cx=\"11\" cy=\"11\" r=\"11\" transform=\"rotate(90 11 11)\" fill=\"#60C971\" style=\"mix-blend-mode:multiply\"/><path d=\"M30.6315 36.2682C28.3731 34.6746 28.3731 31.3254 30.6315 29.7318L60.1938 8.87115C62.8435 7.00138 66.5 8.89638 66.5 12.1394L66.5 53.8606C66.5 57.1036 62.8435 58.9986 60.1938 57.1288L30.6315 36.2682Z\" fill=\"#646FFF\" style=\"mix-blend-mode:multiply\"/><circle cx=\"64\" cy=\"11\" r=\"11\" transform=\"rotate(-90 64 11)\" fill=\"#60C971\" style=\"mix-blend-mode:multiply\"/><circle cx=\"64\" cy=\"55\" r=\"11\" transform=\"rotate(-90 64 55)\" fill=\"#60C971\" style=\"mix-blend-mode:multiply\"/></svg>",
+    						title: "Open Source",
+    						description: "Territories have full access to an open source tech platform where all algorithms and logics are fully visible, enabling an open ecosystem where everyone can participate"
+    					}
+    				]
+    			},
+    			{
+    				type: "Spacer",
+    				height: 100
+    			},
+    			{
+    				type: "Text",
+    				title: "Our vision",
+    				anchor: "vision",
+    				subtitle: "An ideal future for territories",
+    				content: "We envision territories as sustainable organisations taking a changemaker position in order to limit the loss and centralisation of territorial values. We see territories (old villages, rural areas, suburban neighborhoods) as community enterprises where local people can acquire the required entrepreneurial skills to face future challenges, where diverse stakeholders participate in the social, economic and environmental development and where education, technology and economy are used to enable the desired transformation.",
+    				shapes: [
+    					{
+    						top: 3,
+    						left: 92,
+    						size: 120,
+    						color: "#6A72DC",
+    						zindex: 10
+    					},
+    					{
+    						top: 15,
+    						left: 89,
+    						size: 50,
+    						color: "#60C971",
+    						zindex: 20
+    					},
+    					{
+    						top: 90,
+    						left: 2,
+    						size: 160,
+    						color: "#60C971",
+    						zindex: 10
+    					},
+    					{
+    						top: 86,
+    						left: 2,
+    						size: 60,
+    						color: "#6A72DC",
+    						zindex: 10
+    					}
+    				]
+    			},
+    			{
+    				type: "Carousel",
+    				overtitle: "Issues",
+    				anchor: "issues",
+    				title: "Issues we are addressing",
+    				slides: [
+    					{
+    						image: "<svg width=\"71\" height=\"48\" viewBox=\"0 0 71 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"18\" cy=\"24\" r=\"17.5\" transform=\"rotate(90 18 24)\" fill=\"#60C971\" style=\"mix-blend-mode:multiply\"/><circle cx=\"18\" cy=\"24\" r=\"17.5\" transform=\"rotate(90 18 24)\" stroke=\"#60C971\"/><ellipse cx=\"47\" cy=\"24\" rx=\"24\" ry=\"24\" transform=\"rotate(90 47 24)\" fill=\"#646FFF\" style=\"mix-blend-mode:multiply\"/></svg>",
+    						title: "Socio-economic",
+    						description: "Following World War II, many European villages have witnessed a decrease in their population (inhabitants lost to urbanization), the deterioration of local services (e.g. the accessibility of schools), traditions and skills."
+    					},
+    					{
+    						image: "<svg width=\"63\" height=\"50\" viewBox=\"0 0 63 50\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M60.3685 21.7325C62.6268 23.3261 62.6269 26.6754 60.3685 28.269L30.8062 49.1296C28.1565 50.9994 24.5 49.1044 24.5 45.8614L24.5 4.14014C24.5 0.897142 28.1565 -0.997856 30.8062 0.871914L60.3685 21.7325Z\" fill=\"#646FFF\" style=\"mix-blend-mode:multiply\"/><path d=\"M36.3685 21.7325C38.6268 23.3261 38.6269 26.6753 36.3685 28.269L6.80623 49.1296C4.15652 50.9993 0.500001 49.1043 0.500001 45.8613L0.500003 4.14011C0.500003 0.897111 4.15652 -0.997887 6.80623 0.871884L36.3685 21.7325Z\" fill=\"#60C971\" style=\"mix-blend-mode:multiply\"/></svg>",
+    						title: "Environmental",
+    						description: "Rural areas account for 50% of Europe, while a huge percentage is characterized by the lack of natural resource management and agricultural land abandonment."
+    					},
+    					{
+    						image: "<svg width=\"63\" height=\"51\" viewBox=\"0 0 63 51\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M6.07108 20.9704C7.63318 19.4083 10.1658 19.4083 11.7279 20.9704L32.9411 42.1836L25.8701 49.2547C24.308 50.8168 21.7753 50.8168 20.2132 49.2547L1.82844 30.8699C0.266341 29.3078 0.266341 26.7752 1.82844 25.2131L6.07108 20.9704Z\" fill=\"#60C971\" style=\"mix-blend-mode:multiply\"/><path d=\"M60.9842 8.48349C62.5463 10.0456 62.5463 12.5782 60.9842 14.1403L25.87 49.2546C24.3079 50.8167 21.7752 50.8167 20.2131 49.2546L10.3136 39.3551L48.2563 1.41242C49.8184 -0.149673 52.3511 -0.149673 53.9132 1.41242L60.9842 8.48349Z\" fill=\"#646FFF\" style=\"mix-blend-mode:multiply\"/></svg>",
+    						title: "Technological",
+    						description: "Online Travel Agencies (e.g. Airbnb) and technology corporations (e.g. Google) are profit-driven enterprises centralising territorial economic, governance, data, branding and tech value."
+    					},
+    					{
+    						image: "<svg width=\"75\" height=\"66\" viewBox=\"0 0 75 66\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M44.3685 29.7318C46.6268 31.3254 46.6269 34.6746 44.3685 36.2682L14.8062 57.1288C12.1565 58.9986 8.5 57.1036 8.5 53.8606L8.5 12.1394C8.5 8.89638 12.1565 7.00138 14.8062 8.87115L44.3685 29.7318Z\" fill=\"#646FFF\" style=\"mix-blend-mode:multiply\"/><circle cx=\"11\" cy=\"55\" r=\"11\" transform=\"rotate(90 11 55)\" fill=\"#60C971\" style=\"mix-blend-mode:multiply\"/><circle cx=\"11\" cy=\"11\" r=\"11\" transform=\"rotate(90 11 11)\" fill=\"#60C971\" style=\"mix-blend-mode:multiply\"/><path d=\"M30.6315 36.2682C28.3731 34.6746 28.3731 31.3254 30.6315 29.7318L60.1938 8.87115C62.8435 7.00138 66.5 8.89638 66.5 12.1394L66.5 53.8606C66.5 57.1036 62.8435 58.9986 60.1938 57.1288L30.6315 36.2682Z\" fill=\"#646FFF\" style=\"mix-blend-mode:multiply\"/><circle cx=\"64\" cy=\"11\" r=\"11\" transform=\"rotate(-90 64 11)\" fill=\"#60C971\" style=\"mix-blend-mode:multiply\"/><circle cx=\"64\" cy=\"55\" r=\"11\" transform=\"rotate(-90 64 55)\" fill=\"#60C971\" style=\"mix-blend-mode:multiply\"/></svg>",
+    						title: "Complexity",
+    						description: "Territories are complex systems composed of diverse entities (e.g. community members, external actors, environmental assets) who need to interact with each other."
+    					}
+    				]
+    			},
+    			{
+    				type: "Spacer",
+    				height: 100
+    			},
+    			{
+    				type: "Text",
+    				title: "Our mission",
+    				anchor: "mission",
+    				subtitle: "Educational, technological and financial platform",
+    				content: "Our mission is to create an educational, technological and financial platform enabling the transferral of knowledge on impact entrepreneurship, impact management and open organisation design; the co-creation of a territorial catalogue listing local experiences, products and services; the measurement, assessment and transparent communication of the generated social, economic and environmental impact; the sovereignty of the generated data; the activation of new revenue streams and the unlocking of territorial collective intelligence.",
+    				shapes: [
+    					{
+    						top: -10,
+    						left: 84,
+    						size: 200,
+    						color: "#6A72DC",
+    						zindex: 10
+    					},
+    					{
+    						top: 0,
+    						left: 80,
+    						size: 60,
+    						color: "#60C971",
+    						zindex: 10
+    					},
+    					{
+    						top: 94,
+    						left: -2,
+    						size: 160,
+    						color: "#6A72DC",
+    						zindex: 10
+    					},
+    					{
+    						top: 90,
+    						left: -6,
+    						size: 70,
+    						color: "#60C971",
+    						zindex: 10
+    					}
+    				]
+    			},
+    			{
+    				type: "Cards",
+    				overtitle: "Products",
+    				anchor: "products",
+    				title: "An educational and technological ecosystem",
+    				slider: true,
+    				cards: [
+    					{
+    						title: "Transformation Lab",
+    						description: "Knowledge transfer on entrepreneurship and sustainability to activate a community enterprise fully owned and operated by it members, capable of measuring its impact and expressing its territorial value."
+    					},
+    					{
+    						title: "Impact management",
+    						description: "A management platform to plan, measure, assess, monitor and communicate the impact generated through territorial projects and actions contributing to the UN Sustainable Development Goals (SDGs)."
+    					},
+    					{
+    						title: "E-commerce",
+    						description: "A territorial marketplace to promote and market the experiences, products and services representing the territorial identity in view of enterprises, remote workers, travellers, schools and citizens."
+    					}
+    				]
+    			},
+    			{
+    				type: "Cards",
+    				overtitle: "Why now",
+    				anchor: "products",
+    				title: "The transformation is already happening",
+    				slider: true,
+    				cards: [
+    					{
+    						title: "Responsibility",
+    						description: "As more and more companies commit to CSR strategies addressing environmental and social issues, it is becoming more important to be goal-driven and ambitious, yet accessible and authentic."
+    					},
+    					{
+    						title: "Remote working",
+    						description: "By 2025 an estimated 70% of the workforce will be working remotely at least 5 days a month (workers working from home expected to double in 2021)."
+    					},
+    					{
+    						title: "Sustainability",
+    						description: "83% of the global travellers think sustainable travel is vital, with 72% believing people have to act now to save the planet for future generations."
+    					},
+    					{
+    						title: "Lifestyle",
+    						description: "People are leaving their well-paid jobs in order to move to rural areas where they are starting new cultural and creative businesses."
+    					}
+    				]
+    			},
+    			{
+    				type: "Spacer",
+    				height: 100
+    			},
+    			{
+    				type: "Text",
+    				title: "Our purpose",
+    				anchor: "purpose",
+    				subtitle: "The driving force behind everything we do",
+    				content: "Our purpose is to build trust in territories by providing them tools to fully express their social, economic and environmental values, while we also aim at stimulating the impact entrepreneurial tissue by enabling transparent communication of the accomplished changes. By creating a sense of community around sustainability, we would like to align territorial needs with economic incentives and would like to give territories full ownership of their own value, giving community enterprises the power to govern and control their future.",
+    				shapes: [
+    					{
+    						top: -19,
+    						left: -3,
+    						size: 47,
+    						color: "#6A72DC",
+    						zindex: 10
+    					},
+    					{
+    						top: -29,
+    						left: 3,
+    						size: 153,
+    						color: "#60C971",
+    						zindex: 20
+    					},
+    					{
+    						top: 13,
+    						left: 99,
+    						size: 67,
+    						color: "#60C971",
+    						zindex: 10
+    					},
+    					{
+    						top: 94,
+    						left: 82,
+    						size: 160,
+    						color: "#6A72DC",
+    						zindex: 10
+    					},
+    					{
+    						top: 86,
+    						left: 86,
+    						size: 70,
+    						color: "#60C971",
+    						zindex: 10
+    					}
+    				]
+    			},
+    			{
+    				type: "Bubbles",
+    				overtitle: "Why does it matter",
+    				anchor: "why",
+    				title: "We give shape to complex<br />sustainable territorial transformations",
+    				bubbles: [
+    					{
+    						text: "More people",
+    						color: "#6A72DC"
+    					},
+    					{
+    						text: "New jobs",
+    						color: "#60C971"
+    					},
+    					{
+    						text: "Community enterprise",
+    						color: "#6A72DC"
+    					},
+    					{
+    						text: "Climate change actions",
+    						color: "#60C971"
+    					},
+    					{
+    						text: "Knowledge transfer",
+    						color: "#6A72DC"
+    					},
+    					{
+    						text: "New funds attraction",
+    						color: "#60C971"
+    					},
+    					{
+    						text: "Impact and data culture",
+    						color: "#6A72DC"
+    					},
+    					{
+    						text: "Experience economy",
+    						color: "#60C971"
+    					},
+    					{
+    						text: "Sustainable reputation",
+    						color: "#6A72DC"
+    					},
+    					{
+    						text: "Digital transformation",
+    						color: "#60C971"
+    					},
+    					{
+    						text: "Terrirorial incubation hub",
+    						color: "#6A72DC"
+    					},
+    					{
+    						text: "Autonomy",
+    						color: "#60C971"
+    					}
+    				]
+    			},
+    			{
+    				type: "Spacer",
+    				height: 100
+    			},
+    			{
+    				type: "Text",
+    				title: "About us",
+    				anchor: "about-us",
+    				subtitle: "A network of passionate experts",
+    				content: "Territories are diverse and complex ecosystems identified by the relationship between their unique social, cultural, environmental and economic resources, making them one of the most difficult products to manage and market. To understand this complexity and make a sustainable transformation happen the only way is to create a multidisciplinary network of partners with deep esperience and knowledge in different areas like travel, tech, design, education, sustainability, fundraising, crypto and more.",
+    				shapes: [
+    					{
+    						top: -19,
+    						left: -3,
+    						size: 47,
+    						color: "#6A72DC",
+    						zindex: 10
+    					},
+    					{
+    						top: -33,
+    						left: 3,
+    						size: 153,
+    						color: "#60C971",
+    						zindex: 20
+    					},
+    					{
+    						top: 13,
+    						left: 99,
+    						size: 67,
+    						color: "#60C971",
+    						zindex: 10
+    					},
+    					{
+    						top: 94,
+    						left: 82,
+    						size: 160,
+    						color: "#6A72DC",
+    						zindex: 10
+    					},
+    					{
+    						top: 86,
+    						left: 86,
+    						size: 70,
+    						color: "#60C971",
+    						zindex: 10
+    					}
+    				]
+    			},
+    			{
+    				type: "BgCards",
+    				overtitle: "our team",
+    				anchor: "Who are we",
+    				title: "Advocats of sustainable change",
+    				slider: true,
+    				cards: [
+    					{
+    						firstLine: "Andrea Reginato",
+    						secondLine: "Business Developer, Software Developer & Performer",
+    						imagePath: "people/andrea-reginato.png"
+    					},
+    					{
+    						firstLine: "Martina Ferro",
+    						secondLine: "UX Designer, Product Manager & Brand Identity",
+    						imagePath: "people/martina-ferro.png"
+    					},
+    					{
+    						firstLine: "Filippo Gangi Dino",
+    						secondLine: "Software Developer & Tech Lead",
+    						imagePath: "people/filippo-gangi-dino.jpeg"
+    					}
+    				]
+    			}
+    		]
+    	}
+    ];
+    var data = {
+    	languages: languages,
+    	colorPalette: colorPalette,
+    	pages: pages
+    };
+
+    /**
+     * SSR Window 4.0.0
+     * Better handling for window object in SSR environment
+     * https://github.com/nolimits4web/ssr-window
+     *
+     * Copyright 2021, Vladimir Kharlampidi
+     *
+     * Licensed under MIT
+     *
+     * Released on: August 25, 2021
+     */
+    /* eslint-disable no-param-reassign */
+    function isObject$2(obj) {
+        return (obj !== null &&
+            typeof obj === 'object' &&
+            'constructor' in obj &&
+            obj.constructor === Object);
+    }
+    function extend$2(target = {}, src = {}) {
+        Object.keys(src).forEach((key) => {
+            if (typeof target[key] === 'undefined')
+                target[key] = src[key];
+            else if (isObject$2(src[key]) &&
+                isObject$2(target[key]) &&
+                Object.keys(src[key]).length > 0) {
+                extend$2(target[key], src[key]);
+            }
+        });
+    }
+
+    const ssrDocument = {
+        body: {},
+        addEventListener() { },
+        removeEventListener() { },
+        activeElement: {
+            blur() { },
+            nodeName: '',
+        },
+        querySelector() {
+            return null;
+        },
+        querySelectorAll() {
+            return [];
+        },
+        getElementById() {
+            return null;
+        },
+        createEvent() {
+            return {
+                initEvent() { },
+            };
+        },
+        createElement() {
+            return {
+                children: [],
+                childNodes: [],
+                style: {},
+                setAttribute() { },
+                getElementsByTagName() {
+                    return [];
+                },
+            };
+        },
+        createElementNS() {
+            return {};
+        },
+        importNode() {
+            return null;
+        },
+        location: {
+            hash: '',
+            host: '',
+            hostname: '',
+            href: '',
+            origin: '',
+            pathname: '',
+            protocol: '',
+            search: '',
+        },
+    };
+    function getDocument() {
+        const doc = typeof document !== 'undefined' ? document : {};
+        extend$2(doc, ssrDocument);
+        return doc;
+    }
+
+    const ssrWindow = {
+        document: ssrDocument,
+        navigator: {
+            userAgent: '',
+        },
+        location: {
+            hash: '',
+            host: '',
+            hostname: '',
+            href: '',
+            origin: '',
+            pathname: '',
+            protocol: '',
+            search: '',
+        },
+        history: {
+            replaceState() { },
+            pushState() { },
+            go() { },
+            back() { },
+        },
+        CustomEvent: function CustomEvent() {
+            return this;
+        },
+        addEventListener() { },
+        removeEventListener() { },
+        getComputedStyle() {
+            return {
+                getPropertyValue() {
+                    return '';
+                },
+            };
+        },
+        Image() { },
+        Date() { },
+        screen: {},
+        setTimeout() { },
+        clearTimeout() { },
+        matchMedia() {
+            return {};
+        },
+        requestAnimationFrame(callback) {
+            if (typeof setTimeout === 'undefined') {
+                callback();
+                return null;
+            }
+            return setTimeout(callback, 0);
+        },
+        cancelAnimationFrame(id) {
+            if (typeof setTimeout === 'undefined') {
+                return;
+            }
+            clearTimeout(id);
+        },
+    };
+    function getWindow() {
+        const win = typeof window !== 'undefined' ? window : {};
+        extend$2(win, ssrWindow);
+        return win;
+    }
+
+    /**
+     * Dom7 4.0.0
+     * Minimalistic JavaScript library for DOM manipulation, with a jQuery-compatible API
+     * https://framework7.io/docs/dom7.html
+     *
+     * Copyright 2021, Vladimir Kharlampidi
+     *
+     * Licensed under MIT
+     *
+     * Released on: August 25, 2021
+     */
+
+    /* eslint-disable no-proto */
+    function makeReactive(obj) {
+      const proto = obj.__proto__;
+      Object.defineProperty(obj, '__proto__', {
+        get() {
+          return proto;
+        },
+
+        set(value) {
+          proto.__proto__ = value;
+        }
+
+      });
+    }
+
+    class Dom7 extends Array {
+      constructor(items) {
+        super(...(items || []));
+        makeReactive(this);
+      }
+
+    }
+
+    function arrayFlat(arr = []) {
+      const res = [];
+      arr.forEach(el => {
+        if (Array.isArray(el)) {
+          res.push(...arrayFlat(el));
+        } else {
+          res.push(el);
+        }
+      });
+      return res;
+    }
+    function arrayFilter(arr, callback) {
+      return Array.prototype.filter.call(arr, callback);
+    }
+    function arrayUnique(arr) {
+      const uniqueArray = [];
+
+      for (let i = 0; i < arr.length; i += 1) {
+        if (uniqueArray.indexOf(arr[i]) === -1) uniqueArray.push(arr[i]);
+      }
+
+      return uniqueArray;
+    }
+
+    // eslint-disable-next-line
+
+    function qsa(selector, context) {
+      if (typeof selector !== 'string') {
+        return [selector];
+      }
+
+      const a = [];
+      const res = context.querySelectorAll(selector);
+
+      for (let i = 0; i < res.length; i += 1) {
+        a.push(res[i]);
+      }
+
+      return a;
+    }
+
+    function $(selector, context) {
+      const window = getWindow();
+      const document = getDocument();
+      let arr = [];
+
+      if (!context && selector instanceof Dom7) {
+        return selector;
+      }
+
+      if (!selector) {
+        return new Dom7(arr);
+      }
+
+      if (typeof selector === 'string') {
+        const html = selector.trim();
+
+        if (html.indexOf('<') >= 0 && html.indexOf('>') >= 0) {
+          let toCreate = 'div';
+          if (html.indexOf('<li') === 0) toCreate = 'ul';
+          if (html.indexOf('<tr') === 0) toCreate = 'tbody';
+          if (html.indexOf('<td') === 0 || html.indexOf('<th') === 0) toCreate = 'tr';
+          if (html.indexOf('<tbody') === 0) toCreate = 'table';
+          if (html.indexOf('<option') === 0) toCreate = 'select';
+          const tempParent = document.createElement(toCreate);
+          tempParent.innerHTML = html;
+
+          for (let i = 0; i < tempParent.childNodes.length; i += 1) {
+            arr.push(tempParent.childNodes[i]);
+          }
+        } else {
+          arr = qsa(selector.trim(), context || document);
+        } // arr = qsa(selector, document);
+
+      } else if (selector.nodeType || selector === window || selector === document) {
+        arr.push(selector);
+      } else if (Array.isArray(selector)) {
+        if (selector instanceof Dom7) return selector;
+        arr = selector;
+      }
+
+      return new Dom7(arrayUnique(arr));
+    }
+
+    $.fn = Dom7.prototype;
+
+    // eslint-disable-next-line
+
+    function addClass(...classes) {
+      const classNames = arrayFlat(classes.map(c => c.split(' ')));
+      this.forEach(el => {
+        el.classList.add(...classNames);
+      });
+      return this;
+    }
+
+    function removeClass(...classes) {
+      const classNames = arrayFlat(classes.map(c => c.split(' ')));
+      this.forEach(el => {
+        el.classList.remove(...classNames);
+      });
+      return this;
+    }
+
+    function toggleClass(...classes) {
+      const classNames = arrayFlat(classes.map(c => c.split(' ')));
+      this.forEach(el => {
+        classNames.forEach(className => {
+          el.classList.toggle(className);
+        });
+      });
+    }
+
+    function hasClass(...classes) {
+      const classNames = arrayFlat(classes.map(c => c.split(' ')));
+      return arrayFilter(this, el => {
+        return classNames.filter(className => el.classList.contains(className)).length > 0;
+      }).length > 0;
+    }
+
+    function attr(attrs, value) {
+      if (arguments.length === 1 && typeof attrs === 'string') {
+        // Get attr
+        if (this[0]) return this[0].getAttribute(attrs);
+        return undefined;
+      } // Set attrs
+
+
+      for (let i = 0; i < this.length; i += 1) {
+        if (arguments.length === 2) {
+          // String
+          this[i].setAttribute(attrs, value);
+        } else {
+          // Object
+          for (const attrName in attrs) {
+            this[i][attrName] = attrs[attrName];
+            this[i].setAttribute(attrName, attrs[attrName]);
+          }
+        }
+      }
+
+      return this;
+    }
+
+    function removeAttr(attr) {
+      for (let i = 0; i < this.length; i += 1) {
+        this[i].removeAttribute(attr);
+      }
+
+      return this;
+    }
+
+    function transform(transform) {
+      for (let i = 0; i < this.length; i += 1) {
+        this[i].style.transform = transform;
+      }
+
+      return this;
+    }
+
+    function transition$1(duration) {
+      for (let i = 0; i < this.length; i += 1) {
+        this[i].style.transitionDuration = typeof duration !== 'string' ? `${duration}ms` : duration;
+      }
+
+      return this;
+    }
+
+    function on(...args) {
+      let [eventType, targetSelector, listener, capture] = args;
+
+      if (typeof args[1] === 'function') {
+        [eventType, listener, capture] = args;
+        targetSelector = undefined;
+      }
+
+      if (!capture) capture = false;
+
+      function handleLiveEvent(e) {
+        const target = e.target;
+        if (!target) return;
+        const eventData = e.target.dom7EventData || [];
+
+        if (eventData.indexOf(e) < 0) {
+          eventData.unshift(e);
+        }
+
+        if ($(target).is(targetSelector)) listener.apply(target, eventData);else {
+          const parents = $(target).parents(); // eslint-disable-line
+
+          for (let k = 0; k < parents.length; k += 1) {
+            if ($(parents[k]).is(targetSelector)) listener.apply(parents[k], eventData);
+          }
+        }
+      }
+
+      function handleEvent(e) {
+        const eventData = e && e.target ? e.target.dom7EventData || [] : [];
+
+        if (eventData.indexOf(e) < 0) {
+          eventData.unshift(e);
+        }
+
+        listener.apply(this, eventData);
+      }
+
+      const events = eventType.split(' ');
+      let j;
+
+      for (let i = 0; i < this.length; i += 1) {
+        const el = this[i];
+
+        if (!targetSelector) {
+          for (j = 0; j < events.length; j += 1) {
+            const event = events[j];
+            if (!el.dom7Listeners) el.dom7Listeners = {};
+            if (!el.dom7Listeners[event]) el.dom7Listeners[event] = [];
+            el.dom7Listeners[event].push({
+              listener,
+              proxyListener: handleEvent
+            });
+            el.addEventListener(event, handleEvent, capture);
+          }
+        } else {
+          // Live events
+          for (j = 0; j < events.length; j += 1) {
+            const event = events[j];
+            if (!el.dom7LiveListeners) el.dom7LiveListeners = {};
+            if (!el.dom7LiveListeners[event]) el.dom7LiveListeners[event] = [];
+            el.dom7LiveListeners[event].push({
+              listener,
+              proxyListener: handleLiveEvent
+            });
+            el.addEventListener(event, handleLiveEvent, capture);
+          }
+        }
+      }
+
+      return this;
+    }
+
+    function off(...args) {
+      let [eventType, targetSelector, listener, capture] = args;
+
+      if (typeof args[1] === 'function') {
+        [eventType, listener, capture] = args;
+        targetSelector = undefined;
+      }
+
+      if (!capture) capture = false;
+      const events = eventType.split(' ');
+
+      for (let i = 0; i < events.length; i += 1) {
+        const event = events[i];
+
+        for (let j = 0; j < this.length; j += 1) {
+          const el = this[j];
+          let handlers;
+
+          if (!targetSelector && el.dom7Listeners) {
+            handlers = el.dom7Listeners[event];
+          } else if (targetSelector && el.dom7LiveListeners) {
+            handlers = el.dom7LiveListeners[event];
+          }
+
+          if (handlers && handlers.length) {
+            for (let k = handlers.length - 1; k >= 0; k -= 1) {
+              const handler = handlers[k];
+
+              if (listener && handler.listener === listener) {
+                el.removeEventListener(event, handler.proxyListener, capture);
+                handlers.splice(k, 1);
+              } else if (listener && handler.listener && handler.listener.dom7proxy && handler.listener.dom7proxy === listener) {
+                el.removeEventListener(event, handler.proxyListener, capture);
+                handlers.splice(k, 1);
+              } else if (!listener) {
+                el.removeEventListener(event, handler.proxyListener, capture);
+                handlers.splice(k, 1);
+              }
+            }
+          }
+        }
+      }
+
+      return this;
+    }
+
+    function trigger(...args) {
+      const window = getWindow();
+      const events = args[0].split(' ');
+      const eventData = args[1];
+
+      for (let i = 0; i < events.length; i += 1) {
+        const event = events[i];
+
+        for (let j = 0; j < this.length; j += 1) {
+          const el = this[j];
+
+          if (window.CustomEvent) {
+            const evt = new window.CustomEvent(event, {
+              detail: eventData,
+              bubbles: true,
+              cancelable: true
+            });
+            el.dom7EventData = args.filter((data, dataIndex) => dataIndex > 0);
+            el.dispatchEvent(evt);
+            el.dom7EventData = [];
+            delete el.dom7EventData;
+          }
+        }
+      }
+
+      return this;
+    }
+
+    function transitionEnd$1(callback) {
+      const dom = this;
+
+      function fireCallBack(e) {
+        if (e.target !== this) return;
+        callback.call(this, e);
+        dom.off('transitionend', fireCallBack);
+      }
+
+      if (callback) {
+        dom.on('transitionend', fireCallBack);
+      }
+
+      return this;
+    }
+
+    function outerWidth(includeMargins) {
+      if (this.length > 0) {
+        if (includeMargins) {
+          const styles = this.styles();
+          return this[0].offsetWidth + parseFloat(styles.getPropertyValue('margin-right')) + parseFloat(styles.getPropertyValue('margin-left'));
+        }
+
+        return this[0].offsetWidth;
+      }
+
+      return null;
+    }
+
+    function outerHeight(includeMargins) {
+      if (this.length > 0) {
+        if (includeMargins) {
+          const styles = this.styles();
+          return this[0].offsetHeight + parseFloat(styles.getPropertyValue('margin-top')) + parseFloat(styles.getPropertyValue('margin-bottom'));
+        }
+
+        return this[0].offsetHeight;
+      }
+
+      return null;
+    }
+
+    function offset() {
+      if (this.length > 0) {
+        const window = getWindow();
+        const document = getDocument();
+        const el = this[0];
+        const box = el.getBoundingClientRect();
+        const body = document.body;
+        const clientTop = el.clientTop || body.clientTop || 0;
+        const clientLeft = el.clientLeft || body.clientLeft || 0;
+        const scrollTop = el === window ? window.scrollY : el.scrollTop;
+        const scrollLeft = el === window ? window.scrollX : el.scrollLeft;
+        return {
+          top: box.top + scrollTop - clientTop,
+          left: box.left + scrollLeft - clientLeft
+        };
+      }
+
+      return null;
+    }
+
+    function styles() {
+      const window = getWindow();
+      if (this[0]) return window.getComputedStyle(this[0], null);
+      return {};
+    }
+
+    function css(props, value) {
+      const window = getWindow();
+      let i;
+
+      if (arguments.length === 1) {
+        if (typeof props === 'string') {
+          // .css('width')
+          if (this[0]) return window.getComputedStyle(this[0], null).getPropertyValue(props);
+        } else {
+          // .css({ width: '100px' })
+          for (i = 0; i < this.length; i += 1) {
+            for (const prop in props) {
+              this[i].style[prop] = props[prop];
+            }
+          }
+
+          return this;
+        }
+      }
+
+      if (arguments.length === 2 && typeof props === 'string') {
+        // .css('width', '100px')
+        for (i = 0; i < this.length; i += 1) {
+          this[i].style[props] = value;
+        }
+
+        return this;
+      }
+
+      return this;
+    }
+
+    function each(callback) {
+      if (!callback) return this;
+      this.forEach((el, index) => {
+        callback.apply(el, [el, index]);
+      });
+      return this;
+    }
+
+    function filter(callback) {
+      const result = arrayFilter(this, callback);
+      return $(result);
+    }
+
+    function html(html) {
+      if (typeof html === 'undefined') {
+        return this[0] ? this[0].innerHTML : null;
+      }
+
+      for (let i = 0; i < this.length; i += 1) {
+        this[i].innerHTML = html;
+      }
+
+      return this;
+    }
+
+    function text(text) {
+      if (typeof text === 'undefined') {
+        return this[0] ? this[0].textContent.trim() : null;
+      }
+
+      for (let i = 0; i < this.length; i += 1) {
+        this[i].textContent = text;
+      }
+
+      return this;
+    }
+
+    function is(selector) {
+      const window = getWindow();
+      const document = getDocument();
+      const el = this[0];
+      let compareWith;
+      let i;
+      if (!el || typeof selector === 'undefined') return false;
+
+      if (typeof selector === 'string') {
+        if (el.matches) return el.matches(selector);
+        if (el.webkitMatchesSelector) return el.webkitMatchesSelector(selector);
+        if (el.msMatchesSelector) return el.msMatchesSelector(selector);
+        compareWith = $(selector);
+
+        for (i = 0; i < compareWith.length; i += 1) {
+          if (compareWith[i] === el) return true;
+        }
+
+        return false;
+      }
+
+      if (selector === document) {
+        return el === document;
+      }
+
+      if (selector === window) {
+        return el === window;
+      }
+
+      if (selector.nodeType || selector instanceof Dom7) {
+        compareWith = selector.nodeType ? [selector] : selector;
+
+        for (i = 0; i < compareWith.length; i += 1) {
+          if (compareWith[i] === el) return true;
+        }
+
+        return false;
+      }
+
+      return false;
+    }
+
+    function index() {
+      let child = this[0];
+      let i;
+
+      if (child) {
+        i = 0; // eslint-disable-next-line
+
+        while ((child = child.previousSibling) !== null) {
+          if (child.nodeType === 1) i += 1;
+        }
+
+        return i;
+      }
+
+      return undefined;
+    }
+
+    function eq(index) {
+      if (typeof index === 'undefined') return this;
+      const length = this.length;
+
+      if (index > length - 1) {
+        return $([]);
+      }
+
+      if (index < 0) {
+        const returnIndex = length + index;
+        if (returnIndex < 0) return $([]);
+        return $([this[returnIndex]]);
+      }
+
+      return $([this[index]]);
+    }
+
+    function append(...els) {
+      let newChild;
+      const document = getDocument();
+
+      for (let k = 0; k < els.length; k += 1) {
+        newChild = els[k];
+
+        for (let i = 0; i < this.length; i += 1) {
+          if (typeof newChild === 'string') {
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = newChild;
+
+            while (tempDiv.firstChild) {
+              this[i].appendChild(tempDiv.firstChild);
+            }
+          } else if (newChild instanceof Dom7) {
+            for (let j = 0; j < newChild.length; j += 1) {
+              this[i].appendChild(newChild[j]);
+            }
+          } else {
+            this[i].appendChild(newChild);
+          }
+        }
+      }
+
+      return this;
+    }
+
+    function prepend(newChild) {
+      const document = getDocument();
+      let i;
+      let j;
+
+      for (i = 0; i < this.length; i += 1) {
+        if (typeof newChild === 'string') {
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = newChild;
+
+          for (j = tempDiv.childNodes.length - 1; j >= 0; j -= 1) {
+            this[i].insertBefore(tempDiv.childNodes[j], this[i].childNodes[0]);
+          }
+        } else if (newChild instanceof Dom7) {
+          for (j = 0; j < newChild.length; j += 1) {
+            this[i].insertBefore(newChild[j], this[i].childNodes[0]);
+          }
+        } else {
+          this[i].insertBefore(newChild, this[i].childNodes[0]);
+        }
+      }
+
+      return this;
+    }
+
+    function next(selector) {
+      if (this.length > 0) {
+        if (selector) {
+          if (this[0].nextElementSibling && $(this[0].nextElementSibling).is(selector)) {
+            return $([this[0].nextElementSibling]);
+          }
+
+          return $([]);
+        }
+
+        if (this[0].nextElementSibling) return $([this[0].nextElementSibling]);
+        return $([]);
+      }
+
+      return $([]);
+    }
+
+    function nextAll(selector) {
+      const nextEls = [];
+      let el = this[0];
+      if (!el) return $([]);
+
+      while (el.nextElementSibling) {
+        const next = el.nextElementSibling; // eslint-disable-line
+
+        if (selector) {
+          if ($(next).is(selector)) nextEls.push(next);
+        } else nextEls.push(next);
+
+        el = next;
+      }
+
+      return $(nextEls);
+    }
+
+    function prev(selector) {
+      if (this.length > 0) {
+        const el = this[0];
+
+        if (selector) {
+          if (el.previousElementSibling && $(el.previousElementSibling).is(selector)) {
+            return $([el.previousElementSibling]);
+          }
+
+          return $([]);
+        }
+
+        if (el.previousElementSibling) return $([el.previousElementSibling]);
+        return $([]);
+      }
+
+      return $([]);
+    }
+
+    function prevAll(selector) {
+      const prevEls = [];
+      let el = this[0];
+      if (!el) return $([]);
+
+      while (el.previousElementSibling) {
+        const prev = el.previousElementSibling; // eslint-disable-line
+
+        if (selector) {
+          if ($(prev).is(selector)) prevEls.push(prev);
+        } else prevEls.push(prev);
+
+        el = prev;
+      }
+
+      return $(prevEls);
+    }
+
+    function parent(selector) {
+      const parents = []; // eslint-disable-line
+
+      for (let i = 0; i < this.length; i += 1) {
+        if (this[i].parentNode !== null) {
+          if (selector) {
+            if ($(this[i].parentNode).is(selector)) parents.push(this[i].parentNode);
+          } else {
+            parents.push(this[i].parentNode);
+          }
+        }
+      }
+
+      return $(parents);
+    }
+
+    function parents(selector) {
+      const parents = []; // eslint-disable-line
+
+      for (let i = 0; i < this.length; i += 1) {
+        let parent = this[i].parentNode; // eslint-disable-line
+
+        while (parent) {
+          if (selector) {
+            if ($(parent).is(selector)) parents.push(parent);
+          } else {
+            parents.push(parent);
+          }
+
+          parent = parent.parentNode;
+        }
+      }
+
+      return $(parents);
+    }
+
+    function closest(selector) {
+      let closest = this; // eslint-disable-line
+
+      if (typeof selector === 'undefined') {
+        return $([]);
+      }
+
+      if (!closest.is(selector)) {
+        closest = closest.parents(selector).eq(0);
+      }
+
+      return closest;
+    }
+
+    function find(selector) {
+      const foundElements = [];
+
+      for (let i = 0; i < this.length; i += 1) {
+        const found = this[i].querySelectorAll(selector);
+
+        for (let j = 0; j < found.length; j += 1) {
+          foundElements.push(found[j]);
+        }
+      }
+
+      return $(foundElements);
+    }
+
+    function children(selector) {
+      const children = []; // eslint-disable-line
+
+      for (let i = 0; i < this.length; i += 1) {
+        const childNodes = this[i].children;
+
+        for (let j = 0; j < childNodes.length; j += 1) {
+          if (!selector || $(childNodes[j]).is(selector)) {
+            children.push(childNodes[j]);
+          }
+        }
+      }
+
+      return $(children);
+    }
+
+    function remove() {
+      for (let i = 0; i < this.length; i += 1) {
+        if (this[i].parentNode) this[i].parentNode.removeChild(this[i]);
+      }
+
+      return this;
+    }
+
+    const Methods = {
+      addClass,
+      removeClass,
+      hasClass,
+      toggleClass,
+      attr,
+      removeAttr,
+      transform,
+      transition: transition$1,
+      on,
+      off,
+      trigger,
+      transitionEnd: transitionEnd$1,
+      outerWidth,
+      outerHeight,
+      styles,
+      offset,
+      css,
+      each,
+      html,
+      text,
+      is,
+      index,
+      eq,
+      append,
+      prepend,
+      next,
+      nextAll,
+      prev,
+      prevAll,
+      parent,
+      parents,
+      closest,
+      find,
+      children,
+      filter,
+      remove
+    };
+    Object.keys(Methods).forEach(methodName => {
+      Object.defineProperty($.fn, methodName, {
+        value: Methods[methodName],
+        writable: true
+      });
+    });
+
+    function deleteProps(obj) {
+      const object = obj;
+      Object.keys(object).forEach(key => {
+        try {
+          object[key] = null;
+        } catch (e) {// no getter for object
+        }
+
+        try {
+          delete object[key];
+        } catch (e) {// something got wrong
+        }
+      });
+    }
+
+    function nextTick(callback, delay = 0) {
+      return setTimeout(callback, delay);
+    }
+
+    function now() {
+      return Date.now();
+    }
+
+    function getComputedStyle$1(el) {
+      const window = getWindow();
+      let style;
+
+      if (window.getComputedStyle) {
+        style = window.getComputedStyle(el, null);
+      }
+
+      if (!style && el.currentStyle) {
+        style = el.currentStyle;
+      }
+
+      if (!style) {
+        style = el.style;
+      }
+
+      return style;
+    }
+
+    function getTranslate(el, axis = 'x') {
+      const window = getWindow();
+      let matrix;
+      let curTransform;
+      let transformMatrix;
+      const curStyle = getComputedStyle$1(el);
+
+      if (window.WebKitCSSMatrix) {
+        curTransform = curStyle.transform || curStyle.webkitTransform;
+
+        if (curTransform.split(',').length > 6) {
+          curTransform = curTransform.split(', ').map(a => a.replace(',', '.')).join(', ');
+        } // Some old versions of Webkit choke when 'none' is passed; pass
+        // empty string instead in this case
+
+
+        transformMatrix = new window.WebKitCSSMatrix(curTransform === 'none' ? '' : curTransform);
+      } else {
+        transformMatrix = curStyle.MozTransform || curStyle.OTransform || curStyle.MsTransform || curStyle.msTransform || curStyle.transform || curStyle.getPropertyValue('transform').replace('translate(', 'matrix(1, 0, 0, 1,');
+        matrix = transformMatrix.toString().split(',');
+      }
+
+      if (axis === 'x') {
+        // Latest Chrome and webkits Fix
+        if (window.WebKitCSSMatrix) curTransform = transformMatrix.m41; // Crazy IE10 Matrix
+        else if (matrix.length === 16) curTransform = parseFloat(matrix[12]); // Normal Browsers
+        else curTransform = parseFloat(matrix[4]);
+      }
+
+      if (axis === 'y') {
+        // Latest Chrome and webkits Fix
+        if (window.WebKitCSSMatrix) curTransform = transformMatrix.m42; // Crazy IE10 Matrix
+        else if (matrix.length === 16) curTransform = parseFloat(matrix[13]); // Normal Browsers
+        else curTransform = parseFloat(matrix[5]);
+      }
+
+      return curTransform || 0;
+    }
+
+    function isObject$1(o) {
+      return typeof o === 'object' && o !== null && o.constructor && Object.prototype.toString.call(o).slice(8, -1) === 'Object';
+    }
+
+    function isNode(node) {
+      // eslint-disable-next-line
+      if (typeof window !== 'undefined' && typeof window.HTMLElement !== 'undefined') {
+        return node instanceof HTMLElement;
+      }
+
+      return node && (node.nodeType === 1 || node.nodeType === 11);
+    }
+
+    function extend$1(...args) {
+      const to = Object(args[0]);
+      const noExtend = ['__proto__', 'constructor', 'prototype'];
+
+      for (let i = 1; i < args.length; i += 1) {
+        const nextSource = args[i];
+
+        if (nextSource !== undefined && nextSource !== null && !isNode(nextSource)) {
+          const keysArray = Object.keys(Object(nextSource)).filter(key => noExtend.indexOf(key) < 0);
+
+          for (let nextIndex = 0, len = keysArray.length; nextIndex < len; nextIndex += 1) {
+            const nextKey = keysArray[nextIndex];
+            const desc = Object.getOwnPropertyDescriptor(nextSource, nextKey);
+
+            if (desc !== undefined && desc.enumerable) {
+              if (isObject$1(to[nextKey]) && isObject$1(nextSource[nextKey])) {
+                if (nextSource[nextKey].__swiper__) {
+                  to[nextKey] = nextSource[nextKey];
+                } else {
+                  extend$1(to[nextKey], nextSource[nextKey]);
+                }
+              } else if (!isObject$1(to[nextKey]) && isObject$1(nextSource[nextKey])) {
+                to[nextKey] = {};
+
+                if (nextSource[nextKey].__swiper__) {
+                  to[nextKey] = nextSource[nextKey];
+                } else {
+                  extend$1(to[nextKey], nextSource[nextKey]);
+                }
+              } else {
+                to[nextKey] = nextSource[nextKey];
+              }
+            }
+          }
+        }
+      }
+
+      return to;
+    }
+
+    function setCSSProperty(el, varName, varValue) {
+      el.style.setProperty(varName, varValue);
+    }
+
+    function animateCSSModeScroll({
+      swiper,
+      targetPosition,
+      side
+    }) {
+      const window = getWindow();
+      const startPosition = -swiper.translate;
+      let startTime = null;
+      let time;
+      const duration = swiper.params.speed;
+      swiper.wrapperEl.style.scrollSnapType = 'none';
+      window.cancelAnimationFrame(swiper.cssModeFrameID);
+      const dir = targetPosition > startPosition ? 'next' : 'prev';
+
+      const isOutOfBound = (current, target) => {
+        return dir === 'next' && current >= target || dir === 'prev' && current <= target;
+      };
+
+      const animate = () => {
+        time = new Date().getTime();
+
+        if (startTime === null) {
+          startTime = time;
+        }
+
+        const progress = Math.max(Math.min((time - startTime) / duration, 1), 0);
+        const easeProgress = 0.5 - Math.cos(progress * Math.PI) / 2;
+        let currentPosition = startPosition + easeProgress * (targetPosition - startPosition);
+
+        if (isOutOfBound(currentPosition, targetPosition)) {
+          currentPosition = targetPosition;
+        }
+
+        swiper.wrapperEl.scrollTo({
+          [side]: currentPosition
+        });
+
+        if (isOutOfBound(currentPosition, targetPosition)) {
+          swiper.wrapperEl.style.overflow = 'hidden';
+          swiper.wrapperEl.style.scrollSnapType = '';
+          setTimeout(() => {
+            swiper.wrapperEl.style.overflow = '';
+            swiper.wrapperEl.scrollTo({
+              [side]: currentPosition
+            });
+          });
+          window.cancelAnimationFrame(swiper.cssModeFrameID);
+          return;
+        }
+
+        swiper.cssModeFrameID = window.requestAnimationFrame(animate);
+      };
+
+      animate();
+    }
+
+    let support;
+
+    function calcSupport() {
+      const window = getWindow();
+      const document = getDocument();
+      return {
+        smoothScroll: document.documentElement && 'scrollBehavior' in document.documentElement.style,
+        touch: !!('ontouchstart' in window || window.DocumentTouch && document instanceof window.DocumentTouch),
+        passiveListener: function checkPassiveListener() {
+          let supportsPassive = false;
+
+          try {
+            const opts = Object.defineProperty({}, 'passive', {
+              // eslint-disable-next-line
+              get() {
+                supportsPassive = true;
+              }
+
+            });
+            window.addEventListener('testPassiveListener', null, opts);
+          } catch (e) {// No support
+          }
+
+          return supportsPassive;
+        }(),
+        gestures: function checkGestures() {
+          return 'ongesturestart' in window;
+        }()
+      };
+    }
+
+    function getSupport() {
+      if (!support) {
+        support = calcSupport();
+      }
+
+      return support;
+    }
+
+    let deviceCached;
+
+    function calcDevice({
+      userAgent
+    } = {}) {
+      const support = getSupport();
+      const window = getWindow();
+      const platform = window.navigator.platform;
+      const ua = userAgent || window.navigator.userAgent;
+      const device = {
+        ios: false,
+        android: false
+      };
+      const screenWidth = window.screen.width;
+      const screenHeight = window.screen.height;
+      const android = ua.match(/(Android);?[\s\/]+([\d.]+)?/); // eslint-disable-line
+
+      let ipad = ua.match(/(iPad).*OS\s([\d_]+)/);
+      const ipod = ua.match(/(iPod)(.*OS\s([\d_]+))?/);
+      const iphone = !ipad && ua.match(/(iPhone\sOS|iOS)\s([\d_]+)/);
+      const windows = platform === 'Win32';
+      let macos = platform === 'MacIntel'; // iPadOs 13 fix
+
+      const iPadScreens = ['1024x1366', '1366x1024', '834x1194', '1194x834', '834x1112', '1112x834', '768x1024', '1024x768', '820x1180', '1180x820', '810x1080', '1080x810'];
+
+      if (!ipad && macos && support.touch && iPadScreens.indexOf(`${screenWidth}x${screenHeight}`) >= 0) {
+        ipad = ua.match(/(Version)\/([\d.]+)/);
+        if (!ipad) ipad = [0, 1, '13_0_0'];
+        macos = false;
+      } // Android
+
+
+      if (android && !windows) {
+        device.os = 'android';
+        device.android = true;
+      }
+
+      if (ipad || iphone || ipod) {
+        device.os = 'ios';
+        device.ios = true;
+      } // Export object
+
+
+      return device;
+    }
+
+    function getDevice(overrides = {}) {
+      if (!deviceCached) {
+        deviceCached = calcDevice(overrides);
+      }
+
+      return deviceCached;
+    }
+
+    let browser;
+
+    function calcBrowser() {
+      const window = getWindow();
+
+      function isSafari() {
+        const ua = window.navigator.userAgent.toLowerCase();
+        return ua.indexOf('safari') >= 0 && ua.indexOf('chrome') < 0 && ua.indexOf('android') < 0;
+      }
+
+      return {
+        isSafari: isSafari(),
+        isWebView: /(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(window.navigator.userAgent)
+      };
+    }
+
+    function getBrowser() {
+      if (!browser) {
+        browser = calcBrowser();
+      }
+
+      return browser;
+    }
+
+    function Resize({
+      swiper,
+      on,
+      emit
+    }) {
+      const window = getWindow();
+      let observer = null;
+
+      const resizeHandler = () => {
+        if (!swiper || swiper.destroyed || !swiper.initialized) return;
+        emit('beforeResize');
+        emit('resize');
+      };
+
+      const createObserver = () => {
+        if (!swiper || swiper.destroyed || !swiper.initialized) return;
+        observer = new ResizeObserver(entries => {
+          const {
+            width,
+            height
+          } = swiper;
+          let newWidth = width;
+          let newHeight = height;
+          entries.forEach(({
+            contentBoxSize,
+            contentRect,
+            target
+          }) => {
+            if (target && target !== swiper.el) return;
+            newWidth = contentRect ? contentRect.width : (contentBoxSize[0] || contentBoxSize).inlineSize;
+            newHeight = contentRect ? contentRect.height : (contentBoxSize[0] || contentBoxSize).blockSize;
+          });
+
+          if (newWidth !== width || newHeight !== height) {
+            resizeHandler();
+          }
+        });
+        observer.observe(swiper.el);
+      };
+
+      const removeObserver = () => {
+        if (observer && observer.unobserve && swiper.el) {
+          observer.unobserve(swiper.el);
+          observer = null;
+        }
+      };
+
+      const orientationChangeHandler = () => {
+        if (!swiper || swiper.destroyed || !swiper.initialized) return;
+        emit('orientationchange');
+      };
+
+      on('init', () => {
+        if (swiper.params.resizeObserver && typeof window.ResizeObserver !== 'undefined') {
+          createObserver();
+          return;
+        }
+
+        window.addEventListener('resize', resizeHandler);
+        window.addEventListener('orientationchange', orientationChangeHandler);
+      });
+      on('destroy', () => {
+        removeObserver();
+        window.removeEventListener('resize', resizeHandler);
+        window.removeEventListener('orientationchange', orientationChangeHandler);
+      });
+    }
+
+    function Observer({
+      swiper,
+      extendParams,
+      on,
+      emit
+    }) {
+      const observers = [];
+      const window = getWindow();
+
+      const attach = (target, options = {}) => {
+        const ObserverFunc = window.MutationObserver || window.WebkitMutationObserver;
+        const observer = new ObserverFunc(mutations => {
+          // The observerUpdate event should only be triggered
+          // once despite the number of mutations.  Additional
+          // triggers are redundant and are very costly
+          if (mutations.length === 1) {
+            emit('observerUpdate', mutations[0]);
+            return;
+          }
+
+          const observerUpdate = function observerUpdate() {
+            emit('observerUpdate', mutations[0]);
+          };
+
+          if (window.requestAnimationFrame) {
+            window.requestAnimationFrame(observerUpdate);
+          } else {
+            window.setTimeout(observerUpdate, 0);
+          }
+        });
+        observer.observe(target, {
+          attributes: typeof options.attributes === 'undefined' ? true : options.attributes,
+          childList: typeof options.childList === 'undefined' ? true : options.childList,
+          characterData: typeof options.characterData === 'undefined' ? true : options.characterData
+        });
+        observers.push(observer);
+      };
+
+      const init = () => {
+        if (!swiper.params.observer) return;
+
+        if (swiper.params.observeParents) {
+          const containerParents = swiper.$el.parents();
+
+          for (let i = 0; i < containerParents.length; i += 1) {
+            attach(containerParents[i]);
+          }
+        } // Observe container
+
+
+        attach(swiper.$el[0], {
+          childList: swiper.params.observeSlideChildren
+        }); // Observe wrapper
+
+        attach(swiper.$wrapperEl[0], {
+          attributes: false
+        });
+      };
+
+      const destroy = () => {
+        observers.forEach(observer => {
+          observer.disconnect();
+        });
+        observers.splice(0, observers.length);
+      };
+
+      extendParams({
+        observer: false,
+        observeParents: false,
+        observeSlideChildren: false
+      });
+      on('init', init);
+      on('destroy', destroy);
+    }
+
+    /* eslint-disable no-underscore-dangle */
+    var eventsEmitter = {
+      on(events, handler, priority) {
+        const self = this;
+        if (typeof handler !== 'function') return self;
+        const method = priority ? 'unshift' : 'push';
+        events.split(' ').forEach(event => {
+          if (!self.eventsListeners[event]) self.eventsListeners[event] = [];
+          self.eventsListeners[event][method](handler);
+        });
+        return self;
+      },
+
+      once(events, handler, priority) {
+        const self = this;
+        if (typeof handler !== 'function') return self;
+
+        function onceHandler(...args) {
+          self.off(events, onceHandler);
+
+          if (onceHandler.__emitterProxy) {
+            delete onceHandler.__emitterProxy;
+          }
+
+          handler.apply(self, args);
+        }
+
+        onceHandler.__emitterProxy = handler;
+        return self.on(events, onceHandler, priority);
+      },
+
+      onAny(handler, priority) {
+        const self = this;
+        if (typeof handler !== 'function') return self;
+        const method = priority ? 'unshift' : 'push';
+
+        if (self.eventsAnyListeners.indexOf(handler) < 0) {
+          self.eventsAnyListeners[method](handler);
+        }
+
+        return self;
+      },
+
+      offAny(handler) {
+        const self = this;
+        if (!self.eventsAnyListeners) return self;
+        const index = self.eventsAnyListeners.indexOf(handler);
+
+        if (index >= 0) {
+          self.eventsAnyListeners.splice(index, 1);
+        }
+
+        return self;
+      },
+
+      off(events, handler) {
+        const self = this;
+        if (!self.eventsListeners) return self;
+        events.split(' ').forEach(event => {
+          if (typeof handler === 'undefined') {
+            self.eventsListeners[event] = [];
+          } else if (self.eventsListeners[event]) {
+            self.eventsListeners[event].forEach((eventHandler, index) => {
+              if (eventHandler === handler || eventHandler.__emitterProxy && eventHandler.__emitterProxy === handler) {
+                self.eventsListeners[event].splice(index, 1);
+              }
+            });
+          }
+        });
+        return self;
+      },
+
+      emit(...args) {
+        const self = this;
+        if (!self.eventsListeners) return self;
+        let events;
+        let data;
+        let context;
+
+        if (typeof args[0] === 'string' || Array.isArray(args[0])) {
+          events = args[0];
+          data = args.slice(1, args.length);
+          context = self;
+        } else {
+          events = args[0].events;
+          data = args[0].data;
+          context = args[0].context || self;
+        }
+
+        data.unshift(context);
+        const eventsArray = Array.isArray(events) ? events : events.split(' ');
+        eventsArray.forEach(event => {
+          if (self.eventsAnyListeners && self.eventsAnyListeners.length) {
+            self.eventsAnyListeners.forEach(eventHandler => {
+              eventHandler.apply(context, [event, ...data]);
+            });
+          }
+
+          if (self.eventsListeners && self.eventsListeners[event]) {
+            self.eventsListeners[event].forEach(eventHandler => {
+              eventHandler.apply(context, data);
+            });
+          }
+        });
+        return self;
+      }
+
+    };
+
+    function updateSize() {
+      const swiper = this;
+      let width;
+      let height;
+      const $el = swiper.$el;
+
+      if (typeof swiper.params.width !== 'undefined' && swiper.params.width !== null) {
+        width = swiper.params.width;
+      } else {
+        width = $el[0].clientWidth;
+      }
+
+      if (typeof swiper.params.height !== 'undefined' && swiper.params.height !== null) {
+        height = swiper.params.height;
+      } else {
+        height = $el[0].clientHeight;
+      }
+
+      if (width === 0 && swiper.isHorizontal() || height === 0 && swiper.isVertical()) {
+        return;
+      } // Subtract paddings
+
+
+      width = width - parseInt($el.css('padding-left') || 0, 10) - parseInt($el.css('padding-right') || 0, 10);
+      height = height - parseInt($el.css('padding-top') || 0, 10) - parseInt($el.css('padding-bottom') || 0, 10);
+      if (Number.isNaN(width)) width = 0;
+      if (Number.isNaN(height)) height = 0;
+      Object.assign(swiper, {
+        width,
+        height,
+        size: swiper.isHorizontal() ? width : height
+      });
+    }
+
+    function updateSlides() {
+      const swiper = this;
+
+      function getDirectionLabel(property) {
+        if (swiper.isHorizontal()) {
+          return property;
+        } // prettier-ignore
+
+
+        return {
+          'width': 'height',
+          'margin-top': 'margin-left',
+          'margin-bottom ': 'margin-right',
+          'margin-left': 'margin-top',
+          'margin-right': 'margin-bottom',
+          'padding-left': 'padding-top',
+          'padding-right': 'padding-bottom',
+          'marginRight': 'marginBottom'
+        }[property];
+      }
+
+      function getDirectionPropertyValue(node, label) {
+        return parseFloat(node.getPropertyValue(getDirectionLabel(label)) || 0);
+      }
+
+      const params = swiper.params;
+      const {
+        $wrapperEl,
+        size: swiperSize,
+        rtlTranslate: rtl,
+        wrongRTL
+      } = swiper;
+      const isVirtual = swiper.virtual && params.virtual.enabled;
+      const previousSlidesLength = isVirtual ? swiper.virtual.slides.length : swiper.slides.length;
+      const slides = $wrapperEl.children(`.${swiper.params.slideClass}`);
+      const slidesLength = isVirtual ? swiper.virtual.slides.length : slides.length;
+      let snapGrid = [];
+      const slidesGrid = [];
+      const slidesSizesGrid = [];
+      let offsetBefore = params.slidesOffsetBefore;
+
+      if (typeof offsetBefore === 'function') {
+        offsetBefore = params.slidesOffsetBefore.call(swiper);
+      }
+
+      let offsetAfter = params.slidesOffsetAfter;
+
+      if (typeof offsetAfter === 'function') {
+        offsetAfter = params.slidesOffsetAfter.call(swiper);
+      }
+
+      const previousSnapGridLength = swiper.snapGrid.length;
+      const previousSlidesGridLength = swiper.slidesGrid.length;
+      let spaceBetween = params.spaceBetween;
+      let slidePosition = -offsetBefore;
+      let prevSlideSize = 0;
+      let index = 0;
+
+      if (typeof swiperSize === 'undefined') {
+        return;
+      }
+
+      if (typeof spaceBetween === 'string' && spaceBetween.indexOf('%') >= 0) {
+        spaceBetween = parseFloat(spaceBetween.replace('%', '')) / 100 * swiperSize;
+      }
+
+      swiper.virtualSize = -spaceBetween; // reset margins
+
+      if (rtl) slides.css({
+        marginLeft: '',
+        marginBottom: '',
+        marginTop: ''
+      });else slides.css({
+        marginRight: '',
+        marginBottom: '',
+        marginTop: ''
+      }); // reset cssMode offsets
+
+      if (params.centeredSlides && params.cssMode) {
+        setCSSProperty(swiper.wrapperEl, '--swiper-centered-offset-before', '');
+        setCSSProperty(swiper.wrapperEl, '--swiper-centered-offset-after', '');
+      }
+
+      const gridEnabled = params.grid && params.grid.rows > 1 && swiper.grid;
+
+      if (gridEnabled) {
+        swiper.grid.initSlides(slidesLength);
+      } // Calc slides
+
+
+      let slideSize;
+      const shouldResetSlideSize = params.slidesPerView === 'auto' && params.breakpoints && Object.keys(params.breakpoints).filter(key => {
+        return typeof params.breakpoints[key].slidesPerView !== 'undefined';
+      }).length > 0;
+
+      for (let i = 0; i < slidesLength; i += 1) {
+        slideSize = 0;
+        const slide = slides.eq(i);
+
+        if (gridEnabled) {
+          swiper.grid.updateSlide(i, slide, slidesLength, getDirectionLabel);
+        }
+
+        if (slide.css('display') === 'none') continue; // eslint-disable-line
+
+        if (params.slidesPerView === 'auto') {
+          if (shouldResetSlideSize) {
+            slides[i].style[getDirectionLabel('width')] = ``;
+          }
+
+          const slideStyles = getComputedStyle(slide[0]);
+          const currentTransform = slide[0].style.transform;
+          const currentWebKitTransform = slide[0].style.webkitTransform;
+
+          if (currentTransform) {
+            slide[0].style.transform = 'none';
+          }
+
+          if (currentWebKitTransform) {
+            slide[0].style.webkitTransform = 'none';
+          }
+
+          if (params.roundLengths) {
+            slideSize = swiper.isHorizontal() ? slide.outerWidth(true) : slide.outerHeight(true);
+          } else {
+            // eslint-disable-next-line
+            const width = getDirectionPropertyValue(slideStyles, 'width');
+            const paddingLeft = getDirectionPropertyValue(slideStyles, 'padding-left');
+            const paddingRight = getDirectionPropertyValue(slideStyles, 'padding-right');
+            const marginLeft = getDirectionPropertyValue(slideStyles, 'margin-left');
+            const marginRight = getDirectionPropertyValue(slideStyles, 'margin-right');
+            const boxSizing = slideStyles.getPropertyValue('box-sizing');
+
+            if (boxSizing && boxSizing === 'border-box') {
+              slideSize = width + marginLeft + marginRight;
+            } else {
+              const {
+                clientWidth,
+                offsetWidth
+              } = slide[0];
+              slideSize = width + paddingLeft + paddingRight + marginLeft + marginRight + (offsetWidth - clientWidth);
+            }
+          }
+
+          if (currentTransform) {
+            slide[0].style.transform = currentTransform;
+          }
+
+          if (currentWebKitTransform) {
+            slide[0].style.webkitTransform = currentWebKitTransform;
+          }
+
+          if (params.roundLengths) slideSize = Math.floor(slideSize);
+        } else {
+          slideSize = (swiperSize - (params.slidesPerView - 1) * spaceBetween) / params.slidesPerView;
+          if (params.roundLengths) slideSize = Math.floor(slideSize);
+
+          if (slides[i]) {
+            slides[i].style[getDirectionLabel('width')] = `${slideSize}px`;
+          }
+        }
+
+        if (slides[i]) {
+          slides[i].swiperSlideSize = slideSize;
+        }
+
+        slidesSizesGrid.push(slideSize);
+
+        if (params.centeredSlides) {
+          slidePosition = slidePosition + slideSize / 2 + prevSlideSize / 2 + spaceBetween;
+          if (prevSlideSize === 0 && i !== 0) slidePosition = slidePosition - swiperSize / 2 - spaceBetween;
+          if (i === 0) slidePosition = slidePosition - swiperSize / 2 - spaceBetween;
+          if (Math.abs(slidePosition) < 1 / 1000) slidePosition = 0;
+          if (params.roundLengths) slidePosition = Math.floor(slidePosition);
+          if (index % params.slidesPerGroup === 0) snapGrid.push(slidePosition);
+          slidesGrid.push(slidePosition);
+        } else {
+          if (params.roundLengths) slidePosition = Math.floor(slidePosition);
+          if ((index - Math.min(swiper.params.slidesPerGroupSkip, index)) % swiper.params.slidesPerGroup === 0) snapGrid.push(slidePosition);
+          slidesGrid.push(slidePosition);
+          slidePosition = slidePosition + slideSize + spaceBetween;
+        }
+
+        swiper.virtualSize += slideSize + spaceBetween;
+        prevSlideSize = slideSize;
+        index += 1;
+      }
+
+      swiper.virtualSize = Math.max(swiper.virtualSize, swiperSize) + offsetAfter;
+
+      if (rtl && wrongRTL && (params.effect === 'slide' || params.effect === 'coverflow')) {
+        $wrapperEl.css({
+          width: `${swiper.virtualSize + params.spaceBetween}px`
+        });
+      }
+
+      if (params.setWrapperSize) {
+        $wrapperEl.css({
+          [getDirectionLabel('width')]: `${swiper.virtualSize + params.spaceBetween}px`
+        });
+      }
+
+      if (gridEnabled) {
+        swiper.grid.updateWrapperSize(slideSize, snapGrid, getDirectionLabel);
+      } // Remove last grid elements depending on width
+
+
+      if (!params.centeredSlides) {
+        const newSlidesGrid = [];
+
+        for (let i = 0; i < snapGrid.length; i += 1) {
+          let slidesGridItem = snapGrid[i];
+          if (params.roundLengths) slidesGridItem = Math.floor(slidesGridItem);
+
+          if (snapGrid[i] <= swiper.virtualSize - swiperSize) {
+            newSlidesGrid.push(slidesGridItem);
+          }
+        }
+
+        snapGrid = newSlidesGrid;
+
+        if (Math.floor(swiper.virtualSize - swiperSize) - Math.floor(snapGrid[snapGrid.length - 1]) > 1) {
+          snapGrid.push(swiper.virtualSize - swiperSize);
+        }
+      }
+
+      if (snapGrid.length === 0) snapGrid = [0];
+
+      if (params.spaceBetween !== 0) {
+        const key = swiper.isHorizontal() && rtl ? 'marginLeft' : getDirectionLabel('marginRight');
+        slides.filter((_, slideIndex) => {
+          if (!params.cssMode) return true;
+
+          if (slideIndex === slides.length - 1) {
+            return false;
+          }
+
+          return true;
+        }).css({
+          [key]: `${spaceBetween}px`
+        });
+      }
+
+      if (params.centeredSlides && params.centeredSlidesBounds) {
+        let allSlidesSize = 0;
+        slidesSizesGrid.forEach(slideSizeValue => {
+          allSlidesSize += slideSizeValue + (params.spaceBetween ? params.spaceBetween : 0);
+        });
+        allSlidesSize -= params.spaceBetween;
+        const maxSnap = allSlidesSize - swiperSize;
+        snapGrid = snapGrid.map(snap => {
+          if (snap < 0) return -offsetBefore;
+          if (snap > maxSnap) return maxSnap + offsetAfter;
+          return snap;
+        });
+      }
+
+      if (params.centerInsufficientSlides) {
+        let allSlidesSize = 0;
+        slidesSizesGrid.forEach(slideSizeValue => {
+          allSlidesSize += slideSizeValue + (params.spaceBetween ? params.spaceBetween : 0);
+        });
+        allSlidesSize -= params.spaceBetween;
+
+        if (allSlidesSize < swiperSize) {
+          const allSlidesOffset = (swiperSize - allSlidesSize) / 2;
+          snapGrid.forEach((snap, snapIndex) => {
+            snapGrid[snapIndex] = snap - allSlidesOffset;
+          });
+          slidesGrid.forEach((snap, snapIndex) => {
+            slidesGrid[snapIndex] = snap + allSlidesOffset;
+          });
+        }
+      }
+
+      Object.assign(swiper, {
+        slides,
+        snapGrid,
+        slidesGrid,
+        slidesSizesGrid
+      });
+
+      if (params.centeredSlides && params.cssMode && !params.centeredSlidesBounds) {
+        setCSSProperty(swiper.wrapperEl, '--swiper-centered-offset-before', `${-snapGrid[0]}px`);
+        setCSSProperty(swiper.wrapperEl, '--swiper-centered-offset-after', `${swiper.size / 2 - slidesSizesGrid[slidesSizesGrid.length - 1] / 2}px`);
+        const addToSnapGrid = -swiper.snapGrid[0];
+        const addToSlidesGrid = -swiper.slidesGrid[0];
+        swiper.snapGrid = swiper.snapGrid.map(v => v + addToSnapGrid);
+        swiper.slidesGrid = swiper.slidesGrid.map(v => v + addToSlidesGrid);
+      }
+
+      if (slidesLength !== previousSlidesLength) {
+        swiper.emit('slidesLengthChange');
+      }
+
+      if (snapGrid.length !== previousSnapGridLength) {
+        if (swiper.params.watchOverflow) swiper.checkOverflow();
+        swiper.emit('snapGridLengthChange');
+      }
+
+      if (slidesGrid.length !== previousSlidesGridLength) {
+        swiper.emit('slidesGridLengthChange');
+      }
+
+      if (params.watchSlidesProgress) {
+        swiper.updateSlidesOffset();
+      }
+    }
+
+    function updateAutoHeight(speed) {
+      const swiper = this;
+      const activeSlides = [];
+      const isVirtual = swiper.virtual && swiper.params.virtual.enabled;
+      let newHeight = 0;
+      let i;
+
+      if (typeof speed === 'number') {
+        swiper.setTransition(speed);
+      } else if (speed === true) {
+        swiper.setTransition(swiper.params.speed);
+      }
+
+      const getSlideByIndex = index => {
+        if (isVirtual) {
+          return swiper.slides.filter(el => parseInt(el.getAttribute('data-swiper-slide-index'), 10) === index)[0];
+        }
+
+        return swiper.slides.eq(index)[0];
+      }; // Find slides currently in view
+
+
+      if (swiper.params.slidesPerView !== 'auto' && swiper.params.slidesPerView > 1) {
+        if (swiper.params.centeredSlides) {
+          swiper.visibleSlides.each(slide => {
+            activeSlides.push(slide);
+          });
+        } else {
+          for (i = 0; i < Math.ceil(swiper.params.slidesPerView); i += 1) {
+            const index = swiper.activeIndex + i;
+            if (index > swiper.slides.length && !isVirtual) break;
+            activeSlides.push(getSlideByIndex(index));
+          }
+        }
+      } else {
+        activeSlides.push(getSlideByIndex(swiper.activeIndex));
+      } // Find new height from highest slide in view
+
+
+      for (i = 0; i < activeSlides.length; i += 1) {
+        if (typeof activeSlides[i] !== 'undefined') {
+          const height = activeSlides[i].offsetHeight;
+          newHeight = height > newHeight ? height : newHeight;
+        }
+      } // Update Height
+
+
+      if (newHeight) swiper.$wrapperEl.css('height', `${newHeight}px`);
+    }
+
+    function updateSlidesOffset() {
+      const swiper = this;
+      const slides = swiper.slides;
+
+      for (let i = 0; i < slides.length; i += 1) {
+        slides[i].swiperSlideOffset = swiper.isHorizontal() ? slides[i].offsetLeft : slides[i].offsetTop;
+      }
+    }
+
+    function updateSlidesProgress(translate = this && this.translate || 0) {
+      const swiper = this;
+      const params = swiper.params;
+      const {
+        slides,
+        rtlTranslate: rtl
+      } = swiper;
+      if (slides.length === 0) return;
+      if (typeof slides[0].swiperSlideOffset === 'undefined') swiper.updateSlidesOffset();
+      let offsetCenter = -translate;
+      if (rtl) offsetCenter = translate; // Visible Slides
+
+      slides.removeClass(params.slideVisibleClass);
+      swiper.visibleSlidesIndexes = [];
+      swiper.visibleSlides = [];
+
+      for (let i = 0; i < slides.length; i += 1) {
+        const slide = slides[i];
+        let slideOffset = slide.swiperSlideOffset;
+
+        if (params.cssMode && params.centeredSlides) {
+          slideOffset -= slides[0].swiperSlideOffset;
+        }
+
+        const slideProgress = (offsetCenter + (params.centeredSlides ? swiper.minTranslate() : 0) - slideOffset) / (slide.swiperSlideSize + params.spaceBetween);
+        const slideBefore = -(offsetCenter - slideOffset);
+        const slideAfter = slideBefore + swiper.slidesSizesGrid[i];
+        const isVisible = slideBefore >= 0 && slideBefore < swiper.size - 1 || slideAfter > 1 && slideAfter <= swiper.size || slideBefore <= 0 && slideAfter >= swiper.size;
+
+        if (isVisible) {
+          swiper.visibleSlides.push(slide);
+          swiper.visibleSlidesIndexes.push(i);
+          slides.eq(i).addClass(params.slideVisibleClass);
+        }
+
+        slide.progress = rtl ? -slideProgress : slideProgress;
+      }
+
+      swiper.visibleSlides = $(swiper.visibleSlides);
+    }
+
+    function updateProgress(translate) {
+      const swiper = this;
+
+      if (typeof translate === 'undefined') {
+        const multiplier = swiper.rtlTranslate ? -1 : 1; // eslint-disable-next-line
+
+        translate = swiper && swiper.translate && swiper.translate * multiplier || 0;
+      }
+
+      const params = swiper.params;
+      const translatesDiff = swiper.maxTranslate() - swiper.minTranslate();
+      let {
+        progress,
+        isBeginning,
+        isEnd
+      } = swiper;
+      const wasBeginning = isBeginning;
+      const wasEnd = isEnd;
+
+      if (translatesDiff === 0) {
+        progress = 0;
+        isBeginning = true;
+        isEnd = true;
+      } else {
+        progress = (translate - swiper.minTranslate()) / translatesDiff;
+        isBeginning = progress <= 0;
+        isEnd = progress >= 1;
+      }
+
+      Object.assign(swiper, {
+        progress,
+        isBeginning,
+        isEnd
+      });
+      if (params.watchSlidesProgress || params.centeredSlides && params.autoHeight) swiper.updateSlidesProgress(translate);
+
+      if (isBeginning && !wasBeginning) {
+        swiper.emit('reachBeginning toEdge');
+      }
+
+      if (isEnd && !wasEnd) {
+        swiper.emit('reachEnd toEdge');
+      }
+
+      if (wasBeginning && !isBeginning || wasEnd && !isEnd) {
+        swiper.emit('fromEdge');
+      }
+
+      swiper.emit('progress', progress);
+    }
+
+    function updateSlidesClasses() {
+      const swiper = this;
+      const {
+        slides,
+        params,
+        $wrapperEl,
+        activeIndex,
+        realIndex
+      } = swiper;
+      const isVirtual = swiper.virtual && params.virtual.enabled;
+      slides.removeClass(`${params.slideActiveClass} ${params.slideNextClass} ${params.slidePrevClass} ${params.slideDuplicateActiveClass} ${params.slideDuplicateNextClass} ${params.slideDuplicatePrevClass}`);
+      let activeSlide;
+
+      if (isVirtual) {
+        activeSlide = swiper.$wrapperEl.find(`.${params.slideClass}[data-swiper-slide-index="${activeIndex}"]`);
+      } else {
+        activeSlide = slides.eq(activeIndex);
+      } // Active classes
+
+
+      activeSlide.addClass(params.slideActiveClass);
+
+      if (params.loop) {
+        // Duplicate to all looped slides
+        if (activeSlide.hasClass(params.slideDuplicateClass)) {
+          $wrapperEl.children(`.${params.slideClass}:not(.${params.slideDuplicateClass})[data-swiper-slide-index="${realIndex}"]`).addClass(params.slideDuplicateActiveClass);
+        } else {
+          $wrapperEl.children(`.${params.slideClass}.${params.slideDuplicateClass}[data-swiper-slide-index="${realIndex}"]`).addClass(params.slideDuplicateActiveClass);
+        }
+      } // Next Slide
+
+
+      let nextSlide = activeSlide.nextAll(`.${params.slideClass}`).eq(0).addClass(params.slideNextClass);
+
+      if (params.loop && nextSlide.length === 0) {
+        nextSlide = slides.eq(0);
+        nextSlide.addClass(params.slideNextClass);
+      } // Prev Slide
+
+
+      let prevSlide = activeSlide.prevAll(`.${params.slideClass}`).eq(0).addClass(params.slidePrevClass);
+
+      if (params.loop && prevSlide.length === 0) {
+        prevSlide = slides.eq(-1);
+        prevSlide.addClass(params.slidePrevClass);
+      }
+
+      if (params.loop) {
+        // Duplicate to all looped slides
+        if (nextSlide.hasClass(params.slideDuplicateClass)) {
+          $wrapperEl.children(`.${params.slideClass}:not(.${params.slideDuplicateClass})[data-swiper-slide-index="${nextSlide.attr('data-swiper-slide-index')}"]`).addClass(params.slideDuplicateNextClass);
+        } else {
+          $wrapperEl.children(`.${params.slideClass}.${params.slideDuplicateClass}[data-swiper-slide-index="${nextSlide.attr('data-swiper-slide-index')}"]`).addClass(params.slideDuplicateNextClass);
+        }
+
+        if (prevSlide.hasClass(params.slideDuplicateClass)) {
+          $wrapperEl.children(`.${params.slideClass}:not(.${params.slideDuplicateClass})[data-swiper-slide-index="${prevSlide.attr('data-swiper-slide-index')}"]`).addClass(params.slideDuplicatePrevClass);
+        } else {
+          $wrapperEl.children(`.${params.slideClass}.${params.slideDuplicateClass}[data-swiper-slide-index="${prevSlide.attr('data-swiper-slide-index')}"]`).addClass(params.slideDuplicatePrevClass);
+        }
+      }
+
+      swiper.emitSlidesClasses();
+    }
+
+    function updateActiveIndex(newActiveIndex) {
+      const swiper = this;
+      const translate = swiper.rtlTranslate ? swiper.translate : -swiper.translate;
+      const {
+        slidesGrid,
+        snapGrid,
+        params,
+        activeIndex: previousIndex,
+        realIndex: previousRealIndex,
+        snapIndex: previousSnapIndex
+      } = swiper;
+      let activeIndex = newActiveIndex;
+      let snapIndex;
+
+      if (typeof activeIndex === 'undefined') {
+        for (let i = 0; i < slidesGrid.length; i += 1) {
+          if (typeof slidesGrid[i + 1] !== 'undefined') {
+            if (translate >= slidesGrid[i] && translate < slidesGrid[i + 1] - (slidesGrid[i + 1] - slidesGrid[i]) / 2) {
+              activeIndex = i;
+            } else if (translate >= slidesGrid[i] && translate < slidesGrid[i + 1]) {
+              activeIndex = i + 1;
+            }
+          } else if (translate >= slidesGrid[i]) {
+            activeIndex = i;
+          }
+        } // Normalize slideIndex
+
+
+        if (params.normalizeSlideIndex) {
+          if (activeIndex < 0 || typeof activeIndex === 'undefined') activeIndex = 0;
+        }
+      }
+
+      if (snapGrid.indexOf(translate) >= 0) {
+        snapIndex = snapGrid.indexOf(translate);
+      } else {
+        const skip = Math.min(params.slidesPerGroupSkip, activeIndex);
+        snapIndex = skip + Math.floor((activeIndex - skip) / params.slidesPerGroup);
+      }
+
+      if (snapIndex >= snapGrid.length) snapIndex = snapGrid.length - 1;
+
+      if (activeIndex === previousIndex) {
+        if (snapIndex !== previousSnapIndex) {
+          swiper.snapIndex = snapIndex;
+          swiper.emit('snapIndexChange');
+        }
+
+        return;
+      } // Get real index
+
+
+      const realIndex = parseInt(swiper.slides.eq(activeIndex).attr('data-swiper-slide-index') || activeIndex, 10);
+      Object.assign(swiper, {
+        snapIndex,
+        realIndex,
+        previousIndex,
+        activeIndex
+      });
+      swiper.emit('activeIndexChange');
+      swiper.emit('snapIndexChange');
+
+      if (previousRealIndex !== realIndex) {
+        swiper.emit('realIndexChange');
+      }
+
+      if (swiper.initialized || swiper.params.runCallbacksOnInit) {
+        swiper.emit('slideChange');
+      }
+    }
+
+    function updateClickedSlide(e) {
+      const swiper = this;
+      const params = swiper.params;
+      const slide = $(e.target).closest(`.${params.slideClass}`)[0];
+      let slideFound = false;
+      let slideIndex;
+
+      if (slide) {
+        for (let i = 0; i < swiper.slides.length; i += 1) {
+          if (swiper.slides[i] === slide) {
+            slideFound = true;
+            slideIndex = i;
+            break;
+          }
+        }
+      }
+
+      if (slide && slideFound) {
+        swiper.clickedSlide = slide;
+
+        if (swiper.virtual && swiper.params.virtual.enabled) {
+          swiper.clickedIndex = parseInt($(slide).attr('data-swiper-slide-index'), 10);
+        } else {
+          swiper.clickedIndex = slideIndex;
+        }
+      } else {
+        swiper.clickedSlide = undefined;
+        swiper.clickedIndex = undefined;
+        return;
+      }
+
+      if (params.slideToClickedSlide && swiper.clickedIndex !== undefined && swiper.clickedIndex !== swiper.activeIndex) {
+        swiper.slideToClickedSlide();
+      }
+    }
+
+    var update = {
+      updateSize,
+      updateSlides,
+      updateAutoHeight,
+      updateSlidesOffset,
+      updateSlidesProgress,
+      updateProgress,
+      updateSlidesClasses,
+      updateActiveIndex,
+      updateClickedSlide
+    };
+
+    function getSwiperTranslate(axis = this.isHorizontal() ? 'x' : 'y') {
+      const swiper = this;
+      const {
+        params,
+        rtlTranslate: rtl,
+        translate,
+        $wrapperEl
+      } = swiper;
+
+      if (params.virtualTranslate) {
+        return rtl ? -translate : translate;
+      }
+
+      if (params.cssMode) {
+        return translate;
+      }
+
+      let currentTranslate = getTranslate($wrapperEl[0], axis);
+      if (rtl) currentTranslate = -currentTranslate;
+      return currentTranslate || 0;
+    }
+
+    function setTranslate(translate, byController) {
+      const swiper = this;
+      const {
+        rtlTranslate: rtl,
+        params,
+        $wrapperEl,
+        wrapperEl,
+        progress
+      } = swiper;
+      let x = 0;
+      let y = 0;
+      const z = 0;
+
+      if (swiper.isHorizontal()) {
+        x = rtl ? -translate : translate;
+      } else {
+        y = translate;
+      }
+
+      if (params.roundLengths) {
+        x = Math.floor(x);
+        y = Math.floor(y);
+      }
+
+      if (params.cssMode) {
+        wrapperEl[swiper.isHorizontal() ? 'scrollLeft' : 'scrollTop'] = swiper.isHorizontal() ? -x : -y;
+      } else if (!params.virtualTranslate) {
+        $wrapperEl.transform(`translate3d(${x}px, ${y}px, ${z}px)`);
+      }
+
+      swiper.previousTranslate = swiper.translate;
+      swiper.translate = swiper.isHorizontal() ? x : y; // Check if we need to update progress
+
+      let newProgress;
+      const translatesDiff = swiper.maxTranslate() - swiper.minTranslate();
+
+      if (translatesDiff === 0) {
+        newProgress = 0;
+      } else {
+        newProgress = (translate - swiper.minTranslate()) / translatesDiff;
+      }
+
+      if (newProgress !== progress) {
+        swiper.updateProgress(translate);
+      }
+
+      swiper.emit('setTranslate', swiper.translate, byController);
+    }
+
+    function minTranslate() {
+      return -this.snapGrid[0];
+    }
+
+    function maxTranslate() {
+      return -this.snapGrid[this.snapGrid.length - 1];
+    }
+
+    function translateTo(translate = 0, speed = this.params.speed, runCallbacks = true, translateBounds = true, internal) {
+      const swiper = this;
+      const {
+        params,
+        wrapperEl
+      } = swiper;
+
+      if (swiper.animating && params.preventInteractionOnTransition) {
+        return false;
+      }
+
+      const minTranslate = swiper.minTranslate();
+      const maxTranslate = swiper.maxTranslate();
+      let newTranslate;
+      if (translateBounds && translate > minTranslate) newTranslate = minTranslate;else if (translateBounds && translate < maxTranslate) newTranslate = maxTranslate;else newTranslate = translate; // Update progress
+
+      swiper.updateProgress(newTranslate);
+
+      if (params.cssMode) {
+        const isH = swiper.isHorizontal();
+
+        if (speed === 0) {
+          wrapperEl[isH ? 'scrollLeft' : 'scrollTop'] = -newTranslate;
+        } else {
+          if (!swiper.support.smoothScroll) {
+            animateCSSModeScroll({
+              swiper,
+              targetPosition: -newTranslate,
+              side: isH ? 'left' : 'top'
+            });
+            return true;
+          }
+
+          wrapperEl.scrollTo({
+            [isH ? 'left' : 'top']: -newTranslate,
+            behavior: 'smooth'
+          });
+        }
+
+        return true;
+      }
+
+      if (speed === 0) {
+        swiper.setTransition(0);
+        swiper.setTranslate(newTranslate);
+
+        if (runCallbacks) {
+          swiper.emit('beforeTransitionStart', speed, internal);
+          swiper.emit('transitionEnd');
+        }
+      } else {
+        swiper.setTransition(speed);
+        swiper.setTranslate(newTranslate);
+
+        if (runCallbacks) {
+          swiper.emit('beforeTransitionStart', speed, internal);
+          swiper.emit('transitionStart');
+        }
+
+        if (!swiper.animating) {
+          swiper.animating = true;
+
+          if (!swiper.onTranslateToWrapperTransitionEnd) {
+            swiper.onTranslateToWrapperTransitionEnd = function transitionEnd(e) {
+              if (!swiper || swiper.destroyed) return;
+              if (e.target !== this) return;
+              swiper.$wrapperEl[0].removeEventListener('transitionend', swiper.onTranslateToWrapperTransitionEnd);
+              swiper.$wrapperEl[0].removeEventListener('webkitTransitionEnd', swiper.onTranslateToWrapperTransitionEnd);
+              swiper.onTranslateToWrapperTransitionEnd = null;
+              delete swiper.onTranslateToWrapperTransitionEnd;
+
+              if (runCallbacks) {
+                swiper.emit('transitionEnd');
+              }
+            };
+          }
+
+          swiper.$wrapperEl[0].addEventListener('transitionend', swiper.onTranslateToWrapperTransitionEnd);
+          swiper.$wrapperEl[0].addEventListener('webkitTransitionEnd', swiper.onTranslateToWrapperTransitionEnd);
+        }
+      }
+
+      return true;
+    }
+
+    var translate = {
+      getTranslate: getSwiperTranslate,
+      setTranslate,
+      minTranslate,
+      maxTranslate,
+      translateTo
+    };
+
+    function setTransition(duration, byController) {
+      const swiper = this;
+
+      if (!swiper.params.cssMode) {
+        swiper.$wrapperEl.transition(duration);
+      }
+
+      swiper.emit('setTransition', duration, byController);
+    }
+
+    function transitionEmit({
+      swiper,
+      runCallbacks,
+      direction,
+      step
+    }) {
+      const {
+        activeIndex,
+        previousIndex
+      } = swiper;
+      let dir = direction;
+
+      if (!dir) {
+        if (activeIndex > previousIndex) dir = 'next';else if (activeIndex < previousIndex) dir = 'prev';else dir = 'reset';
+      }
+
+      swiper.emit(`transition${step}`);
+
+      if (runCallbacks && activeIndex !== previousIndex) {
+        if (dir === 'reset') {
+          swiper.emit(`slideResetTransition${step}`);
+          return;
+        }
+
+        swiper.emit(`slideChangeTransition${step}`);
+
+        if (dir === 'next') {
+          swiper.emit(`slideNextTransition${step}`);
+        } else {
+          swiper.emit(`slidePrevTransition${step}`);
+        }
+      }
+    }
+
+    function transitionStart(runCallbacks = true, direction) {
+      const swiper = this;
+      const {
+        params
+      } = swiper;
+      if (params.cssMode) return;
+
+      if (params.autoHeight) {
+        swiper.updateAutoHeight();
+      }
+
+      transitionEmit({
+        swiper,
+        runCallbacks,
+        direction,
+        step: 'Start'
+      });
+    }
+
+    function transitionEnd(runCallbacks = true, direction) {
+      const swiper = this;
+      const {
+        params
+      } = swiper;
+      swiper.animating = false;
+      if (params.cssMode) return;
+      swiper.setTransition(0);
+      transitionEmit({
+        swiper,
+        runCallbacks,
+        direction,
+        step: 'End'
+      });
+    }
+
+    var transition = {
+      setTransition,
+      transitionStart,
+      transitionEnd
+    };
+
+    function slideTo(index = 0, speed = this.params.speed, runCallbacks = true, internal, initial) {
+      if (typeof index !== 'number' && typeof index !== 'string') {
+        throw new Error(`The 'index' argument cannot have type other than 'number' or 'string'. [${typeof index}] given.`);
+      }
+
+      if (typeof index === 'string') {
+        /**
+         * The `index` argument converted from `string` to `number`.
+         * @type {number}
+         */
+        const indexAsNumber = parseInt(index, 10);
+        /**
+         * Determines whether the `index` argument is a valid `number`
+         * after being converted from the `string` type.
+         * @type {boolean}
+         */
+
+        const isValidNumber = isFinite(indexAsNumber);
+
+        if (!isValidNumber) {
+          throw new Error(`The passed-in 'index' (string) couldn't be converted to 'number'. [${index}] given.`);
+        } // Knowing that the converted `index` is a valid number,
+        // we can update the original argument's value.
+
+
+        index = indexAsNumber;
+      }
+
+      const swiper = this;
+      let slideIndex = index;
+      if (slideIndex < 0) slideIndex = 0;
+      const {
+        params,
+        snapGrid,
+        slidesGrid,
+        previousIndex,
+        activeIndex,
+        rtlTranslate: rtl,
+        wrapperEl,
+        enabled
+      } = swiper;
+
+      if (swiper.animating && params.preventInteractionOnTransition || !enabled && !internal && !initial) {
+        return false;
+      }
+
+      const skip = Math.min(swiper.params.slidesPerGroupSkip, slideIndex);
+      let snapIndex = skip + Math.floor((slideIndex - skip) / swiper.params.slidesPerGroup);
+      if (snapIndex >= snapGrid.length) snapIndex = snapGrid.length - 1;
+
+      if ((activeIndex || params.initialSlide || 0) === (previousIndex || 0) && runCallbacks) {
+        swiper.emit('beforeSlideChangeStart');
+      }
+
+      const translate = -snapGrid[snapIndex]; // Update progress
+
+      swiper.updateProgress(translate); // Normalize slideIndex
+
+      if (params.normalizeSlideIndex) {
+        for (let i = 0; i < slidesGrid.length; i += 1) {
+          const normalizedTranslate = -Math.floor(translate * 100);
+          const normalizedGrid = Math.floor(slidesGrid[i] * 100);
+          const normalizedGridNext = Math.floor(slidesGrid[i + 1] * 100);
+
+          if (typeof slidesGrid[i + 1] !== 'undefined') {
+            if (normalizedTranslate >= normalizedGrid && normalizedTranslate < normalizedGridNext - (normalizedGridNext - normalizedGrid) / 2) {
+              slideIndex = i;
+            } else if (normalizedTranslate >= normalizedGrid && normalizedTranslate < normalizedGridNext) {
+              slideIndex = i + 1;
+            }
+          } else if (normalizedTranslate >= normalizedGrid) {
+            slideIndex = i;
+          }
+        }
+      } // Directions locks
+
+
+      if (swiper.initialized && slideIndex !== activeIndex) {
+        if (!swiper.allowSlideNext && translate < swiper.translate && translate < swiper.minTranslate()) {
+          return false;
+        }
+
+        if (!swiper.allowSlidePrev && translate > swiper.translate && translate > swiper.maxTranslate()) {
+          if ((activeIndex || 0) !== slideIndex) return false;
+        }
+      }
+
+      let direction;
+      if (slideIndex > activeIndex) direction = 'next';else if (slideIndex < activeIndex) direction = 'prev';else direction = 'reset'; // Update Index
+
+      if (rtl && -translate === swiper.translate || !rtl && translate === swiper.translate) {
+        swiper.updateActiveIndex(slideIndex); // Update Height
+
+        if (params.autoHeight) {
+          swiper.updateAutoHeight();
+        }
+
+        swiper.updateSlidesClasses();
+
+        if (params.effect !== 'slide') {
+          swiper.setTranslate(translate);
+        }
+
+        if (direction !== 'reset') {
+          swiper.transitionStart(runCallbacks, direction);
+          swiper.transitionEnd(runCallbacks, direction);
+        }
+
+        return false;
+      }
+
+      if (params.cssMode) {
+        const isH = swiper.isHorizontal();
+        const t = rtl ? translate : -translate;
+
+        if (speed === 0) {
+          const isVirtual = swiper.virtual && swiper.params.virtual.enabled;
+
+          if (isVirtual) {
+            swiper.wrapperEl.style.scrollSnapType = 'none';
+            swiper._immediateVirtual = true;
+          }
+
+          wrapperEl[isH ? 'scrollLeft' : 'scrollTop'] = t;
+
+          if (isVirtual) {
+            requestAnimationFrame(() => {
+              swiper.wrapperEl.style.scrollSnapType = '';
+              swiper._swiperImmediateVirtual = false;
+            });
+          }
+        } else {
+          if (!swiper.support.smoothScroll) {
+            animateCSSModeScroll({
+              swiper,
+              targetPosition: t,
+              side: isH ? 'left' : 'top'
+            });
+            return true;
+          }
+
+          wrapperEl.scrollTo({
+            [isH ? 'left' : 'top']: t,
+            behavior: 'smooth'
+          });
+        }
+
+        return true;
+      }
+
+      if (speed === 0) {
+        swiper.setTransition(0);
+        swiper.setTranslate(translate);
+        swiper.updateActiveIndex(slideIndex);
+        swiper.updateSlidesClasses();
+        swiper.emit('beforeTransitionStart', speed, internal);
+        swiper.transitionStart(runCallbacks, direction);
+        swiper.transitionEnd(runCallbacks, direction);
+      } else {
+        swiper.setTransition(speed);
+        swiper.setTranslate(translate);
+        swiper.updateActiveIndex(slideIndex);
+        swiper.updateSlidesClasses();
+        swiper.emit('beforeTransitionStart', speed, internal);
+        swiper.transitionStart(runCallbacks, direction);
+
+        if (!swiper.animating) {
+          swiper.animating = true;
+
+          if (!swiper.onSlideToWrapperTransitionEnd) {
+            swiper.onSlideToWrapperTransitionEnd = function transitionEnd(e) {
+              if (!swiper || swiper.destroyed) return;
+              if (e.target !== this) return;
+              swiper.$wrapperEl[0].removeEventListener('transitionend', swiper.onSlideToWrapperTransitionEnd);
+              swiper.$wrapperEl[0].removeEventListener('webkitTransitionEnd', swiper.onSlideToWrapperTransitionEnd);
+              swiper.onSlideToWrapperTransitionEnd = null;
+              delete swiper.onSlideToWrapperTransitionEnd;
+              swiper.transitionEnd(runCallbacks, direction);
+            };
+          }
+
+          swiper.$wrapperEl[0].addEventListener('transitionend', swiper.onSlideToWrapperTransitionEnd);
+          swiper.$wrapperEl[0].addEventListener('webkitTransitionEnd', swiper.onSlideToWrapperTransitionEnd);
+        }
+      }
+
+      return true;
+    }
+
+    function slideToLoop(index = 0, speed = this.params.speed, runCallbacks = true, internal) {
+      const swiper = this;
+      let newIndex = index;
+
+      if (swiper.params.loop) {
+        newIndex += swiper.loopedSlides;
+      }
+
+      return swiper.slideTo(newIndex, speed, runCallbacks, internal);
+    }
+
+    /* eslint no-unused-vars: "off" */
+    function slideNext(speed = this.params.speed, runCallbacks = true, internal) {
+      const swiper = this;
+      const {
+        animating,
+        enabled,
+        params
+      } = swiper;
+      if (!enabled) return swiper;
+      let perGroup = params.slidesPerGroup;
+
+      if (params.slidesPerView === 'auto' && params.slidesPerGroup === 1 && params.slidesPerGroupAuto) {
+        perGroup = Math.max(swiper.slidesPerViewDynamic('current', true), 1);
+      }
+
+      const increment = swiper.activeIndex < params.slidesPerGroupSkip ? 1 : perGroup;
+
+      if (params.loop) {
+        if (animating && params.loopPreventsSlide) return false;
+        swiper.loopFix(); // eslint-disable-next-line
+
+        swiper._clientLeft = swiper.$wrapperEl[0].clientLeft;
+      }
+
+      return swiper.slideTo(swiper.activeIndex + increment, speed, runCallbacks, internal);
+    }
+
+    /* eslint no-unused-vars: "off" */
+    function slidePrev(speed = this.params.speed, runCallbacks = true, internal) {
+      const swiper = this;
+      const {
+        params,
+        animating,
+        snapGrid,
+        slidesGrid,
+        rtlTranslate,
+        enabled
+      } = swiper;
+      if (!enabled) return swiper;
+
+      if (params.loop) {
+        if (animating && params.loopPreventsSlide) return false;
+        swiper.loopFix(); // eslint-disable-next-line
+
+        swiper._clientLeft = swiper.$wrapperEl[0].clientLeft;
+      }
+
+      const translate = rtlTranslate ? swiper.translate : -swiper.translate;
+
+      function normalize(val) {
+        if (val < 0) return -Math.floor(Math.abs(val));
+        return Math.floor(val);
+      }
+
+      const normalizedTranslate = normalize(translate);
+      const normalizedSnapGrid = snapGrid.map(val => normalize(val));
+      let prevSnap = snapGrid[normalizedSnapGrid.indexOf(normalizedTranslate) - 1];
+
+      if (typeof prevSnap === 'undefined' && params.cssMode) {
+        let prevSnapIndex;
+        snapGrid.forEach((snap, snapIndex) => {
+          if (normalizedTranslate >= snap) {
+            // prevSnap = snap;
+            prevSnapIndex = snapIndex;
+          }
+        });
+
+        if (typeof prevSnapIndex !== 'undefined') {
+          prevSnap = snapGrid[prevSnapIndex > 0 ? prevSnapIndex - 1 : prevSnapIndex];
+        }
+      }
+
+      let prevIndex = 0;
+
+      if (typeof prevSnap !== 'undefined') {
+        prevIndex = slidesGrid.indexOf(prevSnap);
+        if (prevIndex < 0) prevIndex = swiper.activeIndex - 1;
+
+        if (params.slidesPerView === 'auto' && params.slidesPerGroup === 1 && params.slidesPerGroupAuto) {
+          prevIndex = prevIndex - swiper.slidesPerViewDynamic('previous', true) + 1;
+          prevIndex = Math.max(prevIndex, 0);
+        }
+      }
+
+      return swiper.slideTo(prevIndex, speed, runCallbacks, internal);
+    }
+
+    /* eslint no-unused-vars: "off" */
+    function slideReset(speed = this.params.speed, runCallbacks = true, internal) {
+      const swiper = this;
+      return swiper.slideTo(swiper.activeIndex, speed, runCallbacks, internal);
+    }
+
+    /* eslint no-unused-vars: "off" */
+    function slideToClosest(speed = this.params.speed, runCallbacks = true, internal, threshold = 0.5) {
+      const swiper = this;
+      let index = swiper.activeIndex;
+      const skip = Math.min(swiper.params.slidesPerGroupSkip, index);
+      const snapIndex = skip + Math.floor((index - skip) / swiper.params.slidesPerGroup);
+      const translate = swiper.rtlTranslate ? swiper.translate : -swiper.translate;
+
+      if (translate >= swiper.snapGrid[snapIndex]) {
+        // The current translate is on or after the current snap index, so the choice
+        // is between the current index and the one after it.
+        const currentSnap = swiper.snapGrid[snapIndex];
+        const nextSnap = swiper.snapGrid[snapIndex + 1];
+
+        if (translate - currentSnap > (nextSnap - currentSnap) * threshold) {
+          index += swiper.params.slidesPerGroup;
+        }
+      } else {
+        // The current translate is before the current snap index, so the choice
+        // is between the current index and the one before it.
+        const prevSnap = swiper.snapGrid[snapIndex - 1];
+        const currentSnap = swiper.snapGrid[snapIndex];
+
+        if (translate - prevSnap <= (currentSnap - prevSnap) * threshold) {
+          index -= swiper.params.slidesPerGroup;
+        }
+      }
+
+      index = Math.max(index, 0);
+      index = Math.min(index, swiper.slidesGrid.length - 1);
+      return swiper.slideTo(index, speed, runCallbacks, internal);
+    }
+
+    function slideToClickedSlide() {
+      const swiper = this;
+      const {
+        params,
+        $wrapperEl
+      } = swiper;
+      const slidesPerView = params.slidesPerView === 'auto' ? swiper.slidesPerViewDynamic() : params.slidesPerView;
+      let slideToIndex = swiper.clickedIndex;
+      let realIndex;
+
+      if (params.loop) {
+        if (swiper.animating) return;
+        realIndex = parseInt($(swiper.clickedSlide).attr('data-swiper-slide-index'), 10);
+
+        if (params.centeredSlides) {
+          if (slideToIndex < swiper.loopedSlides - slidesPerView / 2 || slideToIndex > swiper.slides.length - swiper.loopedSlides + slidesPerView / 2) {
+            swiper.loopFix();
+            slideToIndex = $wrapperEl.children(`.${params.slideClass}[data-swiper-slide-index="${realIndex}"]:not(.${params.slideDuplicateClass})`).eq(0).index();
+            nextTick(() => {
+              swiper.slideTo(slideToIndex);
+            });
+          } else {
+            swiper.slideTo(slideToIndex);
+          }
+        } else if (slideToIndex > swiper.slides.length - slidesPerView) {
+          swiper.loopFix();
+          slideToIndex = $wrapperEl.children(`.${params.slideClass}[data-swiper-slide-index="${realIndex}"]:not(.${params.slideDuplicateClass})`).eq(0).index();
+          nextTick(() => {
+            swiper.slideTo(slideToIndex);
+          });
+        } else {
+          swiper.slideTo(slideToIndex);
+        }
+      } else {
+        swiper.slideTo(slideToIndex);
+      }
+    }
+
+    var slide = {
+      slideTo,
+      slideToLoop,
+      slideNext,
+      slidePrev,
+      slideReset,
+      slideToClosest,
+      slideToClickedSlide
+    };
+
+    function loopCreate() {
+      const swiper = this;
+      const document = getDocument();
+      const {
+        params,
+        $wrapperEl
+      } = swiper; // Remove duplicated slides
+
+      $wrapperEl.children(`.${params.slideClass}.${params.slideDuplicateClass}`).remove();
+      let slides = $wrapperEl.children(`.${params.slideClass}`);
+
+      if (params.loopFillGroupWithBlank) {
+        const blankSlidesNum = params.slidesPerGroup - slides.length % params.slidesPerGroup;
+
+        if (blankSlidesNum !== params.slidesPerGroup) {
+          for (let i = 0; i < blankSlidesNum; i += 1) {
+            const blankNode = $(document.createElement('div')).addClass(`${params.slideClass} ${params.slideBlankClass}`);
+            $wrapperEl.append(blankNode);
+          }
+
+          slides = $wrapperEl.children(`.${params.slideClass}`);
+        }
+      }
+
+      if (params.slidesPerView === 'auto' && !params.loopedSlides) params.loopedSlides = slides.length;
+      swiper.loopedSlides = Math.ceil(parseFloat(params.loopedSlides || params.slidesPerView, 10));
+      swiper.loopedSlides += params.loopAdditionalSlides;
+
+      if (swiper.loopedSlides > slides.length) {
+        swiper.loopedSlides = slides.length;
+      }
+
+      const prependSlides = [];
+      const appendSlides = [];
+      slides.each((el, index) => {
+        const slide = $(el);
+
+        if (index < swiper.loopedSlides) {
+          appendSlides.push(el);
+        }
+
+        if (index < slides.length && index >= slides.length - swiper.loopedSlides) {
+          prependSlides.push(el);
+        }
+
+        slide.attr('data-swiper-slide-index', index);
+      });
+
+      for (let i = 0; i < appendSlides.length; i += 1) {
+        $wrapperEl.append($(appendSlides[i].cloneNode(true)).addClass(params.slideDuplicateClass));
+      }
+
+      for (let i = prependSlides.length - 1; i >= 0; i -= 1) {
+        $wrapperEl.prepend($(prependSlides[i].cloneNode(true)).addClass(params.slideDuplicateClass));
+      }
+    }
+
+    function loopFix() {
+      const swiper = this;
+      swiper.emit('beforeLoopFix');
+      const {
+        activeIndex,
+        slides,
+        loopedSlides,
+        allowSlidePrev,
+        allowSlideNext,
+        snapGrid,
+        rtlTranslate: rtl
+      } = swiper;
+      let newIndex;
+      swiper.allowSlidePrev = true;
+      swiper.allowSlideNext = true;
+      const snapTranslate = -snapGrid[activeIndex];
+      const diff = snapTranslate - swiper.getTranslate(); // Fix For Negative Oversliding
+
+      if (activeIndex < loopedSlides) {
+        newIndex = slides.length - loopedSlides * 3 + activeIndex;
+        newIndex += loopedSlides;
+        const slideChanged = swiper.slideTo(newIndex, 0, false, true);
+
+        if (slideChanged && diff !== 0) {
+          swiper.setTranslate((rtl ? -swiper.translate : swiper.translate) - diff);
+        }
+      } else if (activeIndex >= slides.length - loopedSlides) {
+        // Fix For Positive Oversliding
+        newIndex = -slides.length + activeIndex + loopedSlides;
+        newIndex += loopedSlides;
+        const slideChanged = swiper.slideTo(newIndex, 0, false, true);
+
+        if (slideChanged && diff !== 0) {
+          swiper.setTranslate((rtl ? -swiper.translate : swiper.translate) - diff);
+        }
+      }
+
+      swiper.allowSlidePrev = allowSlidePrev;
+      swiper.allowSlideNext = allowSlideNext;
+      swiper.emit('loopFix');
+    }
+
+    function loopDestroy() {
+      const swiper = this;
+      const {
+        $wrapperEl,
+        params,
+        slides
+      } = swiper;
+      $wrapperEl.children(`.${params.slideClass}.${params.slideDuplicateClass},.${params.slideClass}.${params.slideBlankClass}`).remove();
+      slides.removeAttr('data-swiper-slide-index');
+    }
+
+    var loop = {
+      loopCreate,
+      loopFix,
+      loopDestroy
+    };
+
+    function setGrabCursor(moving) {
+      const swiper = this;
+      if (swiper.support.touch || !swiper.params.simulateTouch || swiper.params.watchOverflow && swiper.isLocked || swiper.params.cssMode) return;
+      const el = swiper.params.touchEventsTarget === 'container' ? swiper.el : swiper.wrapperEl;
+      el.style.cursor = 'move';
+      el.style.cursor = moving ? '-webkit-grabbing' : '-webkit-grab';
+      el.style.cursor = moving ? '-moz-grabbin' : '-moz-grab';
+      el.style.cursor = moving ? 'grabbing' : 'grab';
+    }
+
+    function unsetGrabCursor() {
+      const swiper = this;
+
+      if (swiper.support.touch || swiper.params.watchOverflow && swiper.isLocked || swiper.params.cssMode) {
+        return;
+      }
+
+      swiper[swiper.params.touchEventsTarget === 'container' ? 'el' : 'wrapperEl'].style.cursor = '';
+    }
+
+    var grabCursor = {
+      setGrabCursor,
+      unsetGrabCursor
+    };
+
+    function closestElement(selector, base = this) {
+      function __closestFrom(el) {
+        if (!el || el === getDocument() || el === getWindow()) return null;
+        if (el.assignedSlot) el = el.assignedSlot;
+        const found = el.closest(selector);
+        return found || __closestFrom(el.getRootNode().host);
+      }
+
+      return __closestFrom(base);
+    }
+
+    function onTouchStart(event) {
+      const swiper = this;
+      const document = getDocument();
+      const window = getWindow();
+      const data = swiper.touchEventsData;
+      const {
+        params,
+        touches,
+        enabled
+      } = swiper;
+      if (!enabled) return;
+
+      if (swiper.animating && params.preventInteractionOnTransition) {
+        return;
+      }
+
+      if (!swiper.animating && params.cssMode && params.loop) {
+        swiper.loopFix();
+      }
+
+      let e = event;
+      if (e.originalEvent) e = e.originalEvent;
+      let $targetEl = $(e.target);
+
+      if (params.touchEventsTarget === 'wrapper') {
+        if (!$targetEl.closest(swiper.wrapperEl).length) return;
+      }
+
+      data.isTouchEvent = e.type === 'touchstart';
+      if (!data.isTouchEvent && 'which' in e && e.which === 3) return;
+      if (!data.isTouchEvent && 'button' in e && e.button > 0) return;
+      if (data.isTouched && data.isMoved) return; // change target el for shadow root component
+
+      const swipingClassHasValue = !!params.noSwipingClass && params.noSwipingClass !== '';
+
+      if (swipingClassHasValue && e.target && e.target.shadowRoot && event.path && event.path[0]) {
+        $targetEl = $(event.path[0]);
+      }
+
+      const noSwipingSelector = params.noSwipingSelector ? params.noSwipingSelector : `.${params.noSwipingClass}`;
+      const isTargetShadow = !!(e.target && e.target.shadowRoot); // use closestElement for shadow root element to get the actual closest for nested shadow root element
+
+      if (params.noSwiping && (isTargetShadow ? closestElement(noSwipingSelector, e.target) : $targetEl.closest(noSwipingSelector)[0])) {
+        swiper.allowClick = true;
+        return;
+      }
+
+      if (params.swipeHandler) {
+        if (!$targetEl.closest(params.swipeHandler)[0]) return;
+      }
+
+      touches.currentX = e.type === 'touchstart' ? e.targetTouches[0].pageX : e.pageX;
+      touches.currentY = e.type === 'touchstart' ? e.targetTouches[0].pageY : e.pageY;
+      const startX = touches.currentX;
+      const startY = touches.currentY; // Do NOT start if iOS edge swipe is detected. Otherwise iOS app cannot swipe-to-go-back anymore
+
+      const edgeSwipeDetection = params.edgeSwipeDetection || params.iOSEdgeSwipeDetection;
+      const edgeSwipeThreshold = params.edgeSwipeThreshold || params.iOSEdgeSwipeThreshold;
+
+      if (edgeSwipeDetection && (startX <= edgeSwipeThreshold || startX >= window.innerWidth - edgeSwipeThreshold)) {
+        if (edgeSwipeDetection === 'prevent') {
+          event.preventDefault();
+        } else {
+          return;
+        }
+      }
+
+      Object.assign(data, {
+        isTouched: true,
+        isMoved: false,
+        allowTouchCallbacks: true,
+        isScrolling: undefined,
+        startMoving: undefined
+      });
+      touches.startX = startX;
+      touches.startY = startY;
+      data.touchStartTime = now();
+      swiper.allowClick = true;
+      swiper.updateSize();
+      swiper.swipeDirection = undefined;
+      if (params.threshold > 0) data.allowThresholdMove = false;
+
+      if (e.type !== 'touchstart') {
+        let preventDefault = true;
+        if ($targetEl.is(data.focusableElements)) preventDefault = false;
+
+        if (document.activeElement && $(document.activeElement).is(data.focusableElements) && document.activeElement !== $targetEl[0]) {
+          document.activeElement.blur();
+        }
+
+        const shouldPreventDefault = preventDefault && swiper.allowTouchMove && params.touchStartPreventDefault;
+
+        if ((params.touchStartForcePreventDefault || shouldPreventDefault) && !$targetEl[0].isContentEditable) {
+          e.preventDefault();
+        }
+      }
+
+      swiper.emit('touchStart', e);
+    }
+
+    function onTouchMove(event) {
+      const document = getDocument();
+      const swiper = this;
+      const data = swiper.touchEventsData;
+      const {
+        params,
+        touches,
+        rtlTranslate: rtl,
+        enabled
+      } = swiper;
+      if (!enabled) return;
+      let e = event;
+      if (e.originalEvent) e = e.originalEvent;
+
+      if (!data.isTouched) {
+        if (data.startMoving && data.isScrolling) {
+          swiper.emit('touchMoveOpposite', e);
+        }
+
+        return;
+      }
+
+      if (data.isTouchEvent && e.type !== 'touchmove') return;
+      const targetTouch = e.type === 'touchmove' && e.targetTouches && (e.targetTouches[0] || e.changedTouches[0]);
+      const pageX = e.type === 'touchmove' ? targetTouch.pageX : e.pageX;
+      const pageY = e.type === 'touchmove' ? targetTouch.pageY : e.pageY;
+
+      if (e.preventedByNestedSwiper) {
+        touches.startX = pageX;
+        touches.startY = pageY;
+        return;
+      }
+
+      if (!swiper.allowTouchMove) {
+        // isMoved = true;
+        swiper.allowClick = false;
+
+        if (data.isTouched) {
+          Object.assign(touches, {
+            startX: pageX,
+            startY: pageY,
+            currentX: pageX,
+            currentY: pageY
+          });
+          data.touchStartTime = now();
+        }
+
+        return;
+      }
+
+      if (data.isTouchEvent && params.touchReleaseOnEdges && !params.loop) {
+        if (swiper.isVertical()) {
+          // Vertical
+          if (pageY < touches.startY && swiper.translate <= swiper.maxTranslate() || pageY > touches.startY && swiper.translate >= swiper.minTranslate()) {
+            data.isTouched = false;
+            data.isMoved = false;
+            return;
+          }
+        } else if (pageX < touches.startX && swiper.translate <= swiper.maxTranslate() || pageX > touches.startX && swiper.translate >= swiper.minTranslate()) {
+          return;
+        }
+      }
+
+      if (data.isTouchEvent && document.activeElement) {
+        if (e.target === document.activeElement && $(e.target).is(data.focusableElements)) {
+          data.isMoved = true;
+          swiper.allowClick = false;
+          return;
+        }
+      }
+
+      if (data.allowTouchCallbacks) {
+        swiper.emit('touchMove', e);
+      }
+
+      if (e.targetTouches && e.targetTouches.length > 1) return;
+      touches.currentX = pageX;
+      touches.currentY = pageY;
+      const diffX = touches.currentX - touches.startX;
+      const diffY = touches.currentY - touches.startY;
+      if (swiper.params.threshold && Math.sqrt(diffX ** 2 + diffY ** 2) < swiper.params.threshold) return;
+
+      if (typeof data.isScrolling === 'undefined') {
+        let touchAngle;
+
+        if (swiper.isHorizontal() && touches.currentY === touches.startY || swiper.isVertical() && touches.currentX === touches.startX) {
+          data.isScrolling = false;
+        } else {
+          // eslint-disable-next-line
+          if (diffX * diffX + diffY * diffY >= 25) {
+            touchAngle = Math.atan2(Math.abs(diffY), Math.abs(diffX)) * 180 / Math.PI;
+            data.isScrolling = swiper.isHorizontal() ? touchAngle > params.touchAngle : 90 - touchAngle > params.touchAngle;
+          }
+        }
+      }
+
+      if (data.isScrolling) {
+        swiper.emit('touchMoveOpposite', e);
+      }
+
+      if (typeof data.startMoving === 'undefined') {
+        if (touches.currentX !== touches.startX || touches.currentY !== touches.startY) {
+          data.startMoving = true;
+        }
+      }
+
+      if (data.isScrolling) {
+        data.isTouched = false;
+        return;
+      }
+
+      if (!data.startMoving) {
+        return;
+      }
+
+      swiper.allowClick = false;
+
+      if (!params.cssMode && e.cancelable) {
+        e.preventDefault();
+      }
+
+      if (params.touchMoveStopPropagation && !params.nested) {
+        e.stopPropagation();
+      }
+
+      if (!data.isMoved) {
+        if (params.loop && !params.cssMode) {
+          swiper.loopFix();
+        }
+
+        data.startTranslate = swiper.getTranslate();
+        swiper.setTransition(0);
+
+        if (swiper.animating) {
+          swiper.$wrapperEl.trigger('webkitTransitionEnd transitionend');
+        }
+
+        data.allowMomentumBounce = false; // Grab Cursor
+
+        if (params.grabCursor && (swiper.allowSlideNext === true || swiper.allowSlidePrev === true)) {
+          swiper.setGrabCursor(true);
+        }
+
+        swiper.emit('sliderFirstMove', e);
+      }
+
+      swiper.emit('sliderMove', e);
+      data.isMoved = true;
+      let diff = swiper.isHorizontal() ? diffX : diffY;
+      touches.diff = diff;
+      diff *= params.touchRatio;
+      if (rtl) diff = -diff;
+      swiper.swipeDirection = diff > 0 ? 'prev' : 'next';
+      data.currentTranslate = diff + data.startTranslate;
+      let disableParentSwiper = true;
+      let resistanceRatio = params.resistanceRatio;
+
+      if (params.touchReleaseOnEdges) {
+        resistanceRatio = 0;
+      }
+
+      if (diff > 0 && data.currentTranslate > swiper.minTranslate()) {
+        disableParentSwiper = false;
+        if (params.resistance) data.currentTranslate = swiper.minTranslate() - 1 + (-swiper.minTranslate() + data.startTranslate + diff) ** resistanceRatio;
+      } else if (diff < 0 && data.currentTranslate < swiper.maxTranslate()) {
+        disableParentSwiper = false;
+        if (params.resistance) data.currentTranslate = swiper.maxTranslate() + 1 - (swiper.maxTranslate() - data.startTranslate - diff) ** resistanceRatio;
+      }
+
+      if (disableParentSwiper) {
+        e.preventedByNestedSwiper = true;
+      } // Directions locks
+
+
+      if (!swiper.allowSlideNext && swiper.swipeDirection === 'next' && data.currentTranslate < data.startTranslate) {
+        data.currentTranslate = data.startTranslate;
+      }
+
+      if (!swiper.allowSlidePrev && swiper.swipeDirection === 'prev' && data.currentTranslate > data.startTranslate) {
+        data.currentTranslate = data.startTranslate;
+      }
+
+      if (!swiper.allowSlidePrev && !swiper.allowSlideNext) {
+        data.currentTranslate = data.startTranslate;
+      } // Threshold
+
+
+      if (params.threshold > 0) {
+        if (Math.abs(diff) > params.threshold || data.allowThresholdMove) {
+          if (!data.allowThresholdMove) {
+            data.allowThresholdMove = true;
+            touches.startX = touches.currentX;
+            touches.startY = touches.currentY;
+            data.currentTranslate = data.startTranslate;
+            touches.diff = swiper.isHorizontal() ? touches.currentX - touches.startX : touches.currentY - touches.startY;
+            return;
+          }
+        } else {
+          data.currentTranslate = data.startTranslate;
+          return;
+        }
+      }
+
+      if (!params.followFinger || params.cssMode) return; // Update active index in free mode
+
+      if (params.freeMode && params.freeMode.enabled && swiper.freeMode || params.watchSlidesProgress) {
+        swiper.updateActiveIndex();
+        swiper.updateSlidesClasses();
+      }
+
+      if (swiper.params.freeMode && params.freeMode.enabled && swiper.freeMode) {
+        swiper.freeMode.onTouchMove();
+      } // Update progress
+
+
+      swiper.updateProgress(data.currentTranslate); // Update translate
+
+      swiper.setTranslate(data.currentTranslate);
+    }
+
+    function onTouchEnd(event) {
+      const swiper = this;
+      const data = swiper.touchEventsData;
+      const {
+        params,
+        touches,
+        rtlTranslate: rtl,
+        slidesGrid,
+        enabled
+      } = swiper;
+      if (!enabled) return;
+      let e = event;
+      if (e.originalEvent) e = e.originalEvent;
+
+      if (data.allowTouchCallbacks) {
+        swiper.emit('touchEnd', e);
+      }
+
+      data.allowTouchCallbacks = false;
+
+      if (!data.isTouched) {
+        if (data.isMoved && params.grabCursor) {
+          swiper.setGrabCursor(false);
+        }
+
+        data.isMoved = false;
+        data.startMoving = false;
+        return;
+      } // Return Grab Cursor
+
+
+      if (params.grabCursor && data.isMoved && data.isTouched && (swiper.allowSlideNext === true || swiper.allowSlidePrev === true)) {
+        swiper.setGrabCursor(false);
+      } // Time diff
+
+
+      const touchEndTime = now();
+      const timeDiff = touchEndTime - data.touchStartTime; // Tap, doubleTap, Click
+
+      if (swiper.allowClick) {
+        swiper.updateClickedSlide(e);
+        swiper.emit('tap click', e);
+
+        if (timeDiff < 300 && touchEndTime - data.lastClickTime < 300) {
+          swiper.emit('doubleTap doubleClick', e);
+        }
+      }
+
+      data.lastClickTime = now();
+      nextTick(() => {
+        if (!swiper.destroyed) swiper.allowClick = true;
+      });
+
+      if (!data.isTouched || !data.isMoved || !swiper.swipeDirection || touches.diff === 0 || data.currentTranslate === data.startTranslate) {
+        data.isTouched = false;
+        data.isMoved = false;
+        data.startMoving = false;
+        return;
+      }
+
+      data.isTouched = false;
+      data.isMoved = false;
+      data.startMoving = false;
+      let currentPos;
+
+      if (params.followFinger) {
+        currentPos = rtl ? swiper.translate : -swiper.translate;
+      } else {
+        currentPos = -data.currentTranslate;
+      }
+
+      if (params.cssMode) {
+        return;
+      }
+
+      if (swiper.params.freeMode && params.freeMode.enabled) {
+        swiper.freeMode.onTouchEnd({
+          currentPos
+        });
+        return;
+      } // Find current slide
+
+
+      let stopIndex = 0;
+      let groupSize = swiper.slidesSizesGrid[0];
+
+      for (let i = 0; i < slidesGrid.length; i += i < params.slidesPerGroupSkip ? 1 : params.slidesPerGroup) {
+        const increment = i < params.slidesPerGroupSkip - 1 ? 1 : params.slidesPerGroup;
+
+        if (typeof slidesGrid[i + increment] !== 'undefined') {
+          if (currentPos >= slidesGrid[i] && currentPos < slidesGrid[i + increment]) {
+            stopIndex = i;
+            groupSize = slidesGrid[i + increment] - slidesGrid[i];
+          }
+        } else if (currentPos >= slidesGrid[i]) {
+          stopIndex = i;
+          groupSize = slidesGrid[slidesGrid.length - 1] - slidesGrid[slidesGrid.length - 2];
+        }
+      } // Find current slide size
+
+
+      const ratio = (currentPos - slidesGrid[stopIndex]) / groupSize;
+      const increment = stopIndex < params.slidesPerGroupSkip - 1 ? 1 : params.slidesPerGroup;
+
+      if (timeDiff > params.longSwipesMs) {
+        // Long touches
+        if (!params.longSwipes) {
+          swiper.slideTo(swiper.activeIndex);
+          return;
+        }
+
+        if (swiper.swipeDirection === 'next') {
+          if (ratio >= params.longSwipesRatio) swiper.slideTo(stopIndex + increment);else swiper.slideTo(stopIndex);
+        }
+
+        if (swiper.swipeDirection === 'prev') {
+          if (ratio > 1 - params.longSwipesRatio) swiper.slideTo(stopIndex + increment);else swiper.slideTo(stopIndex);
+        }
+      } else {
+        // Short swipes
+        if (!params.shortSwipes) {
+          swiper.slideTo(swiper.activeIndex);
+          return;
+        }
+
+        const isNavButtonTarget = swiper.navigation && (e.target === swiper.navigation.nextEl || e.target === swiper.navigation.prevEl);
+
+        if (!isNavButtonTarget) {
+          if (swiper.swipeDirection === 'next') {
+            swiper.slideTo(stopIndex + increment);
+          }
+
+          if (swiper.swipeDirection === 'prev') {
+            swiper.slideTo(stopIndex);
+          }
+        } else if (e.target === swiper.navigation.nextEl) {
+          swiper.slideTo(stopIndex + increment);
+        } else {
+          swiper.slideTo(stopIndex);
+        }
+      }
+    }
+
+    function onResize() {
+      const swiper = this;
+      const {
+        params,
+        el
+      } = swiper;
+      if (el && el.offsetWidth === 0) return; // Breakpoints
+
+      if (params.breakpoints) {
+        swiper.setBreakpoint();
+      } // Save locks
+
+
+      const {
+        allowSlideNext,
+        allowSlidePrev,
+        snapGrid
+      } = swiper; // Disable locks on resize
+
+      swiper.allowSlideNext = true;
+      swiper.allowSlidePrev = true;
+      swiper.updateSize();
+      swiper.updateSlides();
+      swiper.updateSlidesClasses();
+
+      if ((params.slidesPerView === 'auto' || params.slidesPerView > 1) && swiper.isEnd && !swiper.isBeginning && !swiper.params.centeredSlides) {
+        swiper.slideTo(swiper.slides.length - 1, 0, false, true);
+      } else {
+        swiper.slideTo(swiper.activeIndex, 0, false, true);
+      }
+
+      if (swiper.autoplay && swiper.autoplay.running && swiper.autoplay.paused) {
+        swiper.autoplay.run();
+      } // Return locks after resize
+
+
+      swiper.allowSlidePrev = allowSlidePrev;
+      swiper.allowSlideNext = allowSlideNext;
+
+      if (swiper.params.watchOverflow && snapGrid !== swiper.snapGrid) {
+        swiper.checkOverflow();
+      }
+    }
+
+    function onClick(e) {
+      const swiper = this;
+      if (!swiper.enabled) return;
+
+      if (!swiper.allowClick) {
+        if (swiper.params.preventClicks) e.preventDefault();
+
+        if (swiper.params.preventClicksPropagation && swiper.animating) {
+          e.stopPropagation();
+          e.stopImmediatePropagation();
+        }
+      }
+    }
+
+    function onScroll() {
+      const swiper = this;
+      const {
+        wrapperEl,
+        rtlTranslate,
+        enabled
+      } = swiper;
+      if (!enabled) return;
+      swiper.previousTranslate = swiper.translate;
+
+      if (swiper.isHorizontal()) {
+        swiper.translate = -wrapperEl.scrollLeft;
+      } else {
+        swiper.translate = -wrapperEl.scrollTop;
+      } // eslint-disable-next-line
+
+
+      if (swiper.translate === -0) swiper.translate = 0;
+      swiper.updateActiveIndex();
+      swiper.updateSlidesClasses();
+      let newProgress;
+      const translatesDiff = swiper.maxTranslate() - swiper.minTranslate();
+
+      if (translatesDiff === 0) {
+        newProgress = 0;
+      } else {
+        newProgress = (swiper.translate - swiper.minTranslate()) / translatesDiff;
+      }
+
+      if (newProgress !== swiper.progress) {
+        swiper.updateProgress(rtlTranslate ? -swiper.translate : swiper.translate);
+      }
+
+      swiper.emit('setTranslate', swiper.translate, false);
+    }
+
+    let dummyEventAttached = false;
+
+    function dummyEventListener() {}
+
+    const events = (swiper, method) => {
+      const document = getDocument();
+      const {
+        params,
+        touchEvents,
+        el,
+        wrapperEl,
+        device,
+        support
+      } = swiper;
+      const capture = !!params.nested;
+      const domMethod = method === 'on' ? 'addEventListener' : 'removeEventListener';
+      const swiperMethod = method; // Touch Events
+
+      if (!support.touch) {
+        el[domMethod](touchEvents.start, swiper.onTouchStart, false);
+        document[domMethod](touchEvents.move, swiper.onTouchMove, capture);
+        document[domMethod](touchEvents.end, swiper.onTouchEnd, false);
+      } else {
+        const passiveListener = touchEvents.start === 'touchstart' && support.passiveListener && params.passiveListeners ? {
+          passive: true,
+          capture: false
+        } : false;
+        el[domMethod](touchEvents.start, swiper.onTouchStart, passiveListener);
+        el[domMethod](touchEvents.move, swiper.onTouchMove, support.passiveListener ? {
+          passive: false,
+          capture
+        } : capture);
+        el[domMethod](touchEvents.end, swiper.onTouchEnd, passiveListener);
+
+        if (touchEvents.cancel) {
+          el[domMethod](touchEvents.cancel, swiper.onTouchEnd, passiveListener);
+        }
+      } // Prevent Links Clicks
+
+
+      if (params.preventClicks || params.preventClicksPropagation) {
+        el[domMethod]('click', swiper.onClick, true);
+      }
+
+      if (params.cssMode) {
+        wrapperEl[domMethod]('scroll', swiper.onScroll);
+      } // Resize handler
+
+
+      if (params.updateOnWindowResize) {
+        swiper[swiperMethod](device.ios || device.android ? 'resize orientationchange observerUpdate' : 'resize observerUpdate', onResize, true);
+      } else {
+        swiper[swiperMethod]('observerUpdate', onResize, true);
+      }
+    };
+
+    function attachEvents() {
+      const swiper = this;
+      const document = getDocument();
+      const {
+        params,
+        support
+      } = swiper;
+      swiper.onTouchStart = onTouchStart.bind(swiper);
+      swiper.onTouchMove = onTouchMove.bind(swiper);
+      swiper.onTouchEnd = onTouchEnd.bind(swiper);
+
+      if (params.cssMode) {
+        swiper.onScroll = onScroll.bind(swiper);
+      }
+
+      swiper.onClick = onClick.bind(swiper);
+
+      if (support.touch && !dummyEventAttached) {
+        document.addEventListener('touchstart', dummyEventListener);
+        dummyEventAttached = true;
+      }
+
+      events(swiper, 'on');
+    }
+
+    function detachEvents() {
+      const swiper = this;
+      events(swiper, 'off');
+    }
+
+    var events$1 = {
+      attachEvents,
+      detachEvents
+    };
+
+    const isGridEnabled = (swiper, params) => {
+      return swiper.grid && params.grid && params.grid.rows > 1;
+    };
+
+    function setBreakpoint() {
+      const swiper = this;
+      const {
+        activeIndex,
+        initialized,
+        loopedSlides = 0,
+        params,
+        $el
+      } = swiper;
+      const breakpoints = params.breakpoints;
+      if (!breakpoints || breakpoints && Object.keys(breakpoints).length === 0) return; // Get breakpoint for window width and update parameters
+
+      const breakpoint = swiper.getBreakpoint(breakpoints, swiper.params.breakpointsBase, swiper.el);
+      if (!breakpoint || swiper.currentBreakpoint === breakpoint) return;
+      const breakpointOnlyParams = breakpoint in breakpoints ? breakpoints[breakpoint] : undefined;
+      const breakpointParams = breakpointOnlyParams || swiper.originalParams;
+      const wasMultiRow = isGridEnabled(swiper, params);
+      const isMultiRow = isGridEnabled(swiper, breakpointParams);
+      const wasEnabled = params.enabled;
+
+      if (wasMultiRow && !isMultiRow) {
+        $el.removeClass(`${params.containerModifierClass}grid ${params.containerModifierClass}grid-column`);
+        swiper.emitContainerClasses();
+      } else if (!wasMultiRow && isMultiRow) {
+        $el.addClass(`${params.containerModifierClass}grid`);
+
+        if (breakpointParams.grid.fill && breakpointParams.grid.fill === 'column' || !breakpointParams.grid.fill && params.grid.fill === 'column') {
+          $el.addClass(`${params.containerModifierClass}grid-column`);
+        }
+
+        swiper.emitContainerClasses();
+      }
+
+      const directionChanged = breakpointParams.direction && breakpointParams.direction !== params.direction;
+      const needsReLoop = params.loop && (breakpointParams.slidesPerView !== params.slidesPerView || directionChanged);
+
+      if (directionChanged && initialized) {
+        swiper.changeDirection();
+      }
+
+      extend$1(swiper.params, breakpointParams);
+      const isEnabled = swiper.params.enabled;
+      Object.assign(swiper, {
+        allowTouchMove: swiper.params.allowTouchMove,
+        allowSlideNext: swiper.params.allowSlideNext,
+        allowSlidePrev: swiper.params.allowSlidePrev
+      });
+
+      if (wasEnabled && !isEnabled) {
+        swiper.disable();
+      } else if (!wasEnabled && isEnabled) {
+        swiper.enable();
+      }
+
+      swiper.currentBreakpoint = breakpoint;
+      swiper.emit('_beforeBreakpoint', breakpointParams);
+
+      if (needsReLoop && initialized) {
+        swiper.loopDestroy();
+        swiper.loopCreate();
+        swiper.updateSlides();
+        swiper.slideTo(activeIndex - loopedSlides + swiper.loopedSlides, 0, false);
+      }
+
+      swiper.emit('breakpoint', breakpointParams);
+    }
+
+    function getBreakpoint(breakpoints, base = 'window', containerEl) {
+      if (!breakpoints || base === 'container' && !containerEl) return undefined;
+      let breakpoint = false;
+      const window = getWindow();
+      const currentHeight = base === 'window' ? window.innerHeight : containerEl.clientHeight;
+      const points = Object.keys(breakpoints).map(point => {
+        if (typeof point === 'string' && point.indexOf('@') === 0) {
+          const minRatio = parseFloat(point.substr(1));
+          const value = currentHeight * minRatio;
+          return {
+            value,
+            point
+          };
+        }
+
+        return {
+          value: point,
+          point
+        };
+      });
+      points.sort((a, b) => parseInt(a.value, 10) - parseInt(b.value, 10));
+
+      for (let i = 0; i < points.length; i += 1) {
+        const {
+          point,
+          value
+        } = points[i];
+
+        if (base === 'window') {
+          if (window.matchMedia(`(min-width: ${value}px)`).matches) {
+            breakpoint = point;
+          }
+        } else if (value <= containerEl.clientWidth) {
+          breakpoint = point;
+        }
+      }
+
+      return breakpoint || 'max';
+    }
+
+    var breakpoints = {
+      setBreakpoint,
+      getBreakpoint
+    };
+
+    function prepareClasses(entries, prefix) {
+      const resultClasses = [];
+      entries.forEach(item => {
+        if (typeof item === 'object') {
+          Object.keys(item).forEach(classNames => {
+            if (item[classNames]) {
+              resultClasses.push(prefix + classNames);
+            }
+          });
+        } else if (typeof item === 'string') {
+          resultClasses.push(prefix + item);
+        }
+      });
+      return resultClasses;
+    }
+
+    function addClasses() {
+      const swiper = this;
+      const {
+        classNames,
+        params,
+        rtl,
+        $el,
+        device,
+        support
+      } = swiper; // prettier-ignore
+
+      const suffixes = prepareClasses(['initialized', params.direction, {
+        'pointer-events': !support.touch
+      }, {
+        'free-mode': swiper.params.freeMode && params.freeMode.enabled
+      }, {
+        'autoheight': params.autoHeight
+      }, {
+        'rtl': rtl
+      }, {
+        'grid': params.grid && params.grid.rows > 1
+      }, {
+        'grid-column': params.grid && params.grid.rows > 1 && params.grid.fill === 'column'
+      }, {
+        'android': device.android
+      }, {
+        'ios': device.ios
+      }, {
+        'css-mode': params.cssMode
+      }, {
+        'centered': params.cssMode && params.centeredSlides
+      }], params.containerModifierClass);
+      classNames.push(...suffixes);
+      $el.addClass([...classNames].join(' '));
+      swiper.emitContainerClasses();
+    }
+
+    function removeClasses() {
+      const swiper = this;
+      const {
+        $el,
+        classNames
+      } = swiper;
+      $el.removeClass(classNames.join(' '));
+      swiper.emitContainerClasses();
+    }
+
+    var classes = {
+      addClasses,
+      removeClasses
+    };
+
+    function loadImage(imageEl, src, srcset, sizes, checkForComplete, callback) {
+      const window = getWindow();
+      let image;
+
+      function onReady() {
+        if (callback) callback();
+      }
+
+      const isPicture = $(imageEl).parent('picture')[0];
+
+      if (!isPicture && (!imageEl.complete || !checkForComplete)) {
+        if (src) {
+          image = new window.Image();
+          image.onload = onReady;
+          image.onerror = onReady;
+
+          if (sizes) {
+            image.sizes = sizes;
+          }
+
+          if (srcset) {
+            image.srcset = srcset;
+          }
+
+          if (src) {
+            image.src = src;
+          }
+        } else {
+          onReady();
+        }
+      } else {
+        // image already loaded...
+        onReady();
+      }
+    }
+
+    function preloadImages() {
+      const swiper = this;
+      swiper.imagesToLoad = swiper.$el.find('img');
+
+      function onReady() {
+        if (typeof swiper === 'undefined' || swiper === null || !swiper || swiper.destroyed) return;
+        if (swiper.imagesLoaded !== undefined) swiper.imagesLoaded += 1;
+
+        if (swiper.imagesLoaded === swiper.imagesToLoad.length) {
+          if (swiper.params.updateOnImagesReady) swiper.update();
+          swiper.emit('imagesReady');
+        }
+      }
+
+      for (let i = 0; i < swiper.imagesToLoad.length; i += 1) {
+        const imageEl = swiper.imagesToLoad[i];
+        swiper.loadImage(imageEl, imageEl.currentSrc || imageEl.getAttribute('src'), imageEl.srcset || imageEl.getAttribute('srcset'), imageEl.sizes || imageEl.getAttribute('sizes'), true, onReady);
+      }
+    }
+
+    var images = {
+      loadImage,
+      preloadImages
+    };
+
+    function checkOverflow() {
+      const swiper = this;
+      const {
+        isLocked: wasLocked,
+        params
+      } = swiper;
+      const {
+        slidesOffsetBefore
+      } = params;
+
+      if (slidesOffsetBefore) {
+        const lastSlideIndex = swiper.slides.length - 1;
+        const lastSlideRightEdge = swiper.slidesGrid[lastSlideIndex] + swiper.slidesSizesGrid[lastSlideIndex] + slidesOffsetBefore * 2;
+        swiper.isLocked = swiper.size > lastSlideRightEdge;
+      } else {
+        swiper.isLocked = swiper.snapGrid.length === 1;
+      }
+
+      if (params.allowSlideNext === true) {
+        swiper.allowSlideNext = !swiper.isLocked;
+      }
+
+      if (params.allowSlidePrev === true) {
+        swiper.allowSlidePrev = !swiper.isLocked;
+      }
+
+      if (wasLocked && wasLocked !== swiper.isLocked) {
+        swiper.isEnd = false;
+      }
+
+      if (wasLocked !== swiper.isLocked) {
+        swiper.emit(swiper.isLocked ? 'lock' : 'unlock');
+      }
+    }
+
+    var checkOverflow$1 = {
+      checkOverflow
+    };
+
+    var defaults = {
+      init: true,
+      direction: 'horizontal',
+      touchEventsTarget: 'wrapper',
+      initialSlide: 0,
+      speed: 300,
+      cssMode: false,
+      updateOnWindowResize: true,
+      resizeObserver: true,
+      nested: false,
+      createElements: false,
+      enabled: true,
+      focusableElements: 'input, select, option, textarea, button, video, label',
+      // Overrides
+      width: null,
+      height: null,
+      //
+      preventInteractionOnTransition: false,
+      // ssr
+      userAgent: null,
+      url: null,
+      // To support iOS's swipe-to-go-back gesture (when being used in-app).
+      edgeSwipeDetection: false,
+      edgeSwipeThreshold: 20,
+      // Autoheight
+      autoHeight: false,
+      // Set wrapper width
+      setWrapperSize: false,
+      // Virtual Translate
+      virtualTranslate: false,
+      // Effects
+      effect: 'slide',
+      // 'slide' or 'fade' or 'cube' or 'coverflow' or 'flip'
+      // Breakpoints
+      breakpoints: undefined,
+      breakpointsBase: 'window',
+      // Slides grid
+      spaceBetween: 0,
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      slidesPerGroupSkip: 0,
+      slidesPerGroupAuto: false,
+      centeredSlides: false,
+      centeredSlidesBounds: false,
+      slidesOffsetBefore: 0,
+      // in px
+      slidesOffsetAfter: 0,
+      // in px
+      normalizeSlideIndex: true,
+      centerInsufficientSlides: false,
+      // Disable swiper and hide navigation when container not overflow
+      watchOverflow: true,
+      // Round length
+      roundLengths: false,
+      // Touches
+      touchRatio: 1,
+      touchAngle: 45,
+      simulateTouch: true,
+      shortSwipes: true,
+      longSwipes: true,
+      longSwipesRatio: 0.5,
+      longSwipesMs: 300,
+      followFinger: true,
+      allowTouchMove: true,
+      threshold: 0,
+      touchMoveStopPropagation: false,
+      touchStartPreventDefault: true,
+      touchStartForcePreventDefault: false,
+      touchReleaseOnEdges: false,
+      // Unique Navigation Elements
+      uniqueNavElements: true,
+      // Resistance
+      resistance: true,
+      resistanceRatio: 0.85,
+      // Progress
+      watchSlidesProgress: false,
+      // Cursor
+      grabCursor: false,
+      // Clicks
+      preventClicks: true,
+      preventClicksPropagation: true,
+      slideToClickedSlide: false,
+      // Images
+      preloadImages: true,
+      updateOnImagesReady: true,
+      // loop
+      loop: false,
+      loopAdditionalSlides: 0,
+      loopedSlides: null,
+      loopFillGroupWithBlank: false,
+      loopPreventsSlide: true,
+      // Swiping/no swiping
+      allowSlidePrev: true,
+      allowSlideNext: true,
+      swipeHandler: null,
+      // '.swipe-handler',
+      noSwiping: true,
+      noSwipingClass: 'swiper-no-swiping',
+      noSwipingSelector: null,
+      // Passive Listeners
+      passiveListeners: true,
+      // NS
+      containerModifierClass: 'swiper-',
+      // NEW
+      slideClass: 'swiper-slide',
+      slideBlankClass: 'swiper-slide-invisible-blank',
+      slideActiveClass: 'swiper-slide-active',
+      slideDuplicateActiveClass: 'swiper-slide-duplicate-active',
+      slideVisibleClass: 'swiper-slide-visible',
+      slideDuplicateClass: 'swiper-slide-duplicate',
+      slideNextClass: 'swiper-slide-next',
+      slideDuplicateNextClass: 'swiper-slide-duplicate-next',
+      slidePrevClass: 'swiper-slide-prev',
+      slideDuplicatePrevClass: 'swiper-slide-duplicate-prev',
+      wrapperClass: 'swiper-wrapper',
+      // Callbacks
+      runCallbacksOnInit: true,
+      // Internals
+      _emitClasses: false
+    };
+
+    function moduleExtendParams(params, allModulesParams) {
+      return function extendParams(obj = {}) {
+        const moduleParamName = Object.keys(obj)[0];
+        const moduleParams = obj[moduleParamName];
+
+        if (typeof moduleParams !== 'object' || moduleParams === null) {
+          extend$1(allModulesParams, obj);
+          return;
+        }
+
+        if (['navigation', 'pagination', 'scrollbar'].indexOf(moduleParamName) >= 0 && params[moduleParamName] === true) {
+          params[moduleParamName] = {
+            auto: true
+          };
+        }
+
+        if (!(moduleParamName in params && 'enabled' in moduleParams)) {
+          extend$1(allModulesParams, obj);
+          return;
+        }
+
+        if (params[moduleParamName] === true) {
+          params[moduleParamName] = {
+            enabled: true
+          };
+        }
+
+        if (typeof params[moduleParamName] === 'object' && !('enabled' in params[moduleParamName])) {
+          params[moduleParamName].enabled = true;
+        }
+
+        if (!params[moduleParamName]) params[moduleParamName] = {
+          enabled: false
+        };
+        extend$1(allModulesParams, obj);
+      };
+    }
+
+    /* eslint no-param-reassign: "off" */
+    const prototypes = {
+      eventsEmitter,
+      update,
+      translate,
+      transition,
+      slide,
+      loop,
+      grabCursor,
+      events: events$1,
+      breakpoints,
+      checkOverflow: checkOverflow$1,
+      classes,
+      images
+    };
+    const extendedDefaults = {};
+
+    class Swiper$1 {
+      constructor(...args) {
+        let el;
+        let params;
+
+        if (args.length === 1 && args[0].constructor && Object.prototype.toString.call(args[0]).slice(8, -1) === 'Object') {
+          params = args[0];
+        } else {
+          [el, params] = args;
+        }
+
+        if (!params) params = {};
+        params = extend$1({}, params);
+        if (el && !params.el) params.el = el;
+
+        if (params.el && $(params.el).length > 1) {
+          const swipers = [];
+          $(params.el).each(containerEl => {
+            const newParams = extend$1({}, params, {
+              el: containerEl
+            });
+            swipers.push(new Swiper$1(newParams));
+          });
+          return swipers;
+        } // Swiper Instance
+
+
+        const swiper = this;
+        swiper.__swiper__ = true;
+        swiper.support = getSupport();
+        swiper.device = getDevice({
+          userAgent: params.userAgent
+        });
+        swiper.browser = getBrowser();
+        swiper.eventsListeners = {};
+        swiper.eventsAnyListeners = [];
+        swiper.modules = [...swiper.__modules__];
+
+        if (params.modules && Array.isArray(params.modules)) {
+          swiper.modules.push(...params.modules);
+        }
+
+        const allModulesParams = {};
+        swiper.modules.forEach(mod => {
+          mod({
+            swiper,
+            extendParams: moduleExtendParams(params, allModulesParams),
+            on: swiper.on.bind(swiper),
+            once: swiper.once.bind(swiper),
+            off: swiper.off.bind(swiper),
+            emit: swiper.emit.bind(swiper)
+          });
+        }); // Extend defaults with modules params
+
+        const swiperParams = extend$1({}, defaults, allModulesParams); // Extend defaults with passed params
+
+        swiper.params = extend$1({}, swiperParams, extendedDefaults, params);
+        swiper.originalParams = extend$1({}, swiper.params);
+        swiper.passedParams = extend$1({}, params); // add event listeners
+
+        if (swiper.params && swiper.params.on) {
+          Object.keys(swiper.params.on).forEach(eventName => {
+            swiper.on(eventName, swiper.params.on[eventName]);
+          });
+        }
+
+        if (swiper.params && swiper.params.onAny) {
+          swiper.onAny(swiper.params.onAny);
+        } // Save Dom lib
+
+
+        swiper.$ = $; // Extend Swiper
+
+        Object.assign(swiper, {
+          enabled: swiper.params.enabled,
+          el,
+          // Classes
+          classNames: [],
+          // Slides
+          slides: $(),
+          slidesGrid: [],
+          snapGrid: [],
+          slidesSizesGrid: [],
+
+          // isDirection
+          isHorizontal() {
+            return swiper.params.direction === 'horizontal';
+          },
+
+          isVertical() {
+            return swiper.params.direction === 'vertical';
+          },
+
+          // Indexes
+          activeIndex: 0,
+          realIndex: 0,
+          //
+          isBeginning: true,
+          isEnd: false,
+          // Props
+          translate: 0,
+          previousTranslate: 0,
+          progress: 0,
+          velocity: 0,
+          animating: false,
+          // Locks
+          allowSlideNext: swiper.params.allowSlideNext,
+          allowSlidePrev: swiper.params.allowSlidePrev,
+          // Touch Events
+          touchEvents: function touchEvents() {
+            const touch = ['touchstart', 'touchmove', 'touchend', 'touchcancel'];
+            const desktop = ['pointerdown', 'pointermove', 'pointerup'];
+            swiper.touchEventsTouch = {
+              start: touch[0],
+              move: touch[1],
+              end: touch[2],
+              cancel: touch[3]
+            };
+            swiper.touchEventsDesktop = {
+              start: desktop[0],
+              move: desktop[1],
+              end: desktop[2]
+            };
+            return swiper.support.touch || !swiper.params.simulateTouch ? swiper.touchEventsTouch : swiper.touchEventsDesktop;
+          }(),
+          touchEventsData: {
+            isTouched: undefined,
+            isMoved: undefined,
+            allowTouchCallbacks: undefined,
+            touchStartTime: undefined,
+            isScrolling: undefined,
+            currentTranslate: undefined,
+            startTranslate: undefined,
+            allowThresholdMove: undefined,
+            // Form elements to match
+            focusableElements: swiper.params.focusableElements,
+            // Last click time
+            lastClickTime: now(),
+            clickTimeout: undefined,
+            // Velocities
+            velocities: [],
+            allowMomentumBounce: undefined,
+            isTouchEvent: undefined,
+            startMoving: undefined
+          },
+          // Clicks
+          allowClick: true,
+          // Touches
+          allowTouchMove: swiper.params.allowTouchMove,
+          touches: {
+            startX: 0,
+            startY: 0,
+            currentX: 0,
+            currentY: 0,
+            diff: 0
+          },
+          // Images
+          imagesToLoad: [],
+          imagesLoaded: 0
+        });
+        swiper.emit('_swiper'); // Init
+
+        if (swiper.params.init) {
+          swiper.init();
+        } // Return app instance
+
+
+        return swiper;
+      }
+
+      enable() {
+        const swiper = this;
+        if (swiper.enabled) return;
+        swiper.enabled = true;
+
+        if (swiper.params.grabCursor) {
+          swiper.setGrabCursor();
+        }
+
+        swiper.emit('enable');
+      }
+
+      disable() {
+        const swiper = this;
+        if (!swiper.enabled) return;
+        swiper.enabled = false;
+
+        if (swiper.params.grabCursor) {
+          swiper.unsetGrabCursor();
+        }
+
+        swiper.emit('disable');
+      }
+
+      setProgress(progress, speed) {
+        const swiper = this;
+        progress = Math.min(Math.max(progress, 0), 1);
+        const min = swiper.minTranslate();
+        const max = swiper.maxTranslate();
+        const current = (max - min) * progress + min;
+        swiper.translateTo(current, typeof speed === 'undefined' ? 0 : speed);
+        swiper.updateActiveIndex();
+        swiper.updateSlidesClasses();
+      }
+
+      emitContainerClasses() {
+        const swiper = this;
+        if (!swiper.params._emitClasses || !swiper.el) return;
+        const cls = swiper.el.className.split(' ').filter(className => {
+          return className.indexOf('swiper') === 0 || className.indexOf(swiper.params.containerModifierClass) === 0;
+        });
+        swiper.emit('_containerClasses', cls.join(' '));
+      }
+
+      getSlideClasses(slideEl) {
+        const swiper = this;
+        return slideEl.className.split(' ').filter(className => {
+          return className.indexOf('swiper-slide') === 0 || className.indexOf(swiper.params.slideClass) === 0;
+        }).join(' ');
+      }
+
+      emitSlidesClasses() {
+        const swiper = this;
+        if (!swiper.params._emitClasses || !swiper.el) return;
+        const updates = [];
+        swiper.slides.each(slideEl => {
+          const classNames = swiper.getSlideClasses(slideEl);
+          updates.push({
+            slideEl,
+            classNames
+          });
+          swiper.emit('_slideClass', slideEl, classNames);
+        });
+        swiper.emit('_slideClasses', updates);
+      }
+
+      slidesPerViewDynamic(view = 'current', exact = false) {
+        const swiper = this;
+        const {
+          params,
+          slides,
+          slidesGrid,
+          slidesSizesGrid,
+          size: swiperSize,
+          activeIndex
+        } = swiper;
+        let spv = 1;
+
+        if (params.centeredSlides) {
+          let slideSize = slides[activeIndex].swiperSlideSize;
+          let breakLoop;
+
+          for (let i = activeIndex + 1; i < slides.length; i += 1) {
+            if (slides[i] && !breakLoop) {
+              slideSize += slides[i].swiperSlideSize;
+              spv += 1;
+              if (slideSize > swiperSize) breakLoop = true;
+            }
+          }
+
+          for (let i = activeIndex - 1; i >= 0; i -= 1) {
+            if (slides[i] && !breakLoop) {
+              slideSize += slides[i].swiperSlideSize;
+              spv += 1;
+              if (slideSize > swiperSize) breakLoop = true;
+            }
+          }
+        } else {
+          // eslint-disable-next-line
+          if (view === 'current') {
+            for (let i = activeIndex + 1; i < slides.length; i += 1) {
+              const slideInView = exact ? slidesGrid[i] + slidesSizesGrid[i] - slidesGrid[activeIndex] < swiperSize : slidesGrid[i] - slidesGrid[activeIndex] < swiperSize;
+
+              if (slideInView) {
+                spv += 1;
+              }
+            }
+          } else {
+            // previous
+            for (let i = activeIndex - 1; i >= 0; i -= 1) {
+              const slideInView = slidesGrid[activeIndex] - slidesGrid[i] < swiperSize;
+
+              if (slideInView) {
+                spv += 1;
+              }
+            }
+          }
+        }
+
+        return spv;
+      }
+
+      update() {
+        const swiper = this;
+        if (!swiper || swiper.destroyed) return;
+        const {
+          snapGrid,
+          params
+        } = swiper; // Breakpoints
+
+        if (params.breakpoints) {
+          swiper.setBreakpoint();
+        }
+
+        swiper.updateSize();
+        swiper.updateSlides();
+        swiper.updateProgress();
+        swiper.updateSlidesClasses();
+
+        function setTranslate() {
+          const translateValue = swiper.rtlTranslate ? swiper.translate * -1 : swiper.translate;
+          const newTranslate = Math.min(Math.max(translateValue, swiper.maxTranslate()), swiper.minTranslate());
+          swiper.setTranslate(newTranslate);
+          swiper.updateActiveIndex();
+          swiper.updateSlidesClasses();
+        }
+
+        let translated;
+
+        if (swiper.params.freeMode && swiper.params.freeMode.enabled) {
+          setTranslate();
+
+          if (swiper.params.autoHeight) {
+            swiper.updateAutoHeight();
+          }
+        } else {
+          if ((swiper.params.slidesPerView === 'auto' || swiper.params.slidesPerView > 1) && swiper.isEnd && !swiper.params.centeredSlides) {
+            translated = swiper.slideTo(swiper.slides.length - 1, 0, false, true);
+          } else {
+            translated = swiper.slideTo(swiper.activeIndex, 0, false, true);
+          }
+
+          if (!translated) {
+            setTranslate();
+          }
+        }
+
+        if (params.watchOverflow && snapGrid !== swiper.snapGrid) {
+          swiper.checkOverflow();
+        }
+
+        swiper.emit('update');
+      }
+
+      changeDirection(newDirection, needUpdate = true) {
+        const swiper = this;
+        const currentDirection = swiper.params.direction;
+
+        if (!newDirection) {
+          // eslint-disable-next-line
+          newDirection = currentDirection === 'horizontal' ? 'vertical' : 'horizontal';
+        }
+
+        if (newDirection === currentDirection || newDirection !== 'horizontal' && newDirection !== 'vertical') {
+          return swiper;
+        }
+
+        swiper.$el.removeClass(`${swiper.params.containerModifierClass}${currentDirection}`).addClass(`${swiper.params.containerModifierClass}${newDirection}`);
+        swiper.emitContainerClasses();
+        swiper.params.direction = newDirection;
+        swiper.slides.each(slideEl => {
+          if (newDirection === 'vertical') {
+            slideEl.style.width = '';
+          } else {
+            slideEl.style.height = '';
+          }
+        });
+        swiper.emit('changeDirection');
+        if (needUpdate) swiper.update();
+        return swiper;
+      }
+
+      mount(el) {
+        const swiper = this;
+        if (swiper.mounted) return true; // Find el
+
+        const $el = $(el || swiper.params.el);
+        el = $el[0];
+
+        if (!el) {
+          return false;
+        }
+
+        el.swiper = swiper;
+
+        const getWrapperSelector = () => {
+          return `.${(swiper.params.wrapperClass || '').trim().split(' ').join('.')}`;
+        };
+
+        const getWrapper = () => {
+          if (el && el.shadowRoot && el.shadowRoot.querySelector) {
+            const res = $(el.shadowRoot.querySelector(getWrapperSelector())); // Children needs to return slot items
+
+            res.children = options => $el.children(options);
+
+            return res;
+          }
+
+          return $el.children(getWrapperSelector());
+        }; // Find Wrapper
+
+
+        let $wrapperEl = getWrapper();
+
+        if ($wrapperEl.length === 0 && swiper.params.createElements) {
+          const document = getDocument();
+          const wrapper = document.createElement('div');
+          $wrapperEl = $(wrapper);
+          wrapper.className = swiper.params.wrapperClass;
+          $el.append(wrapper);
+          $el.children(`.${swiper.params.slideClass}`).each(slideEl => {
+            $wrapperEl.append(slideEl);
+          });
+        }
+
+        Object.assign(swiper, {
+          $el,
+          el,
+          $wrapperEl,
+          wrapperEl: $wrapperEl[0],
+          mounted: true,
+          // RTL
+          rtl: el.dir.toLowerCase() === 'rtl' || $el.css('direction') === 'rtl',
+          rtlTranslate: swiper.params.direction === 'horizontal' && (el.dir.toLowerCase() === 'rtl' || $el.css('direction') === 'rtl'),
+          wrongRTL: $wrapperEl.css('display') === '-webkit-box'
+        });
+        return true;
+      }
+
+      init(el) {
+        const swiper = this;
+        if (swiper.initialized) return swiper;
+        const mounted = swiper.mount(el);
+        if (mounted === false) return swiper;
+        swiper.emit('beforeInit'); // Set breakpoint
+
+        if (swiper.params.breakpoints) {
+          swiper.setBreakpoint();
+        } // Add Classes
+
+
+        swiper.addClasses(); // Create loop
+
+        if (swiper.params.loop) {
+          swiper.loopCreate();
+        } // Update size
+
+
+        swiper.updateSize(); // Update slides
+
+        swiper.updateSlides();
+
+        if (swiper.params.watchOverflow) {
+          swiper.checkOverflow();
+        } // Set Grab Cursor
+
+
+        if (swiper.params.grabCursor && swiper.enabled) {
+          swiper.setGrabCursor();
+        }
+
+        if (swiper.params.preloadImages) {
+          swiper.preloadImages();
+        } // Slide To Initial Slide
+
+
+        if (swiper.params.loop) {
+          swiper.slideTo(swiper.params.initialSlide + swiper.loopedSlides, 0, swiper.params.runCallbacksOnInit, false, true);
+        } else {
+          swiper.slideTo(swiper.params.initialSlide, 0, swiper.params.runCallbacksOnInit, false, true);
+        } // Attach events
+
+
+        swiper.attachEvents(); // Init Flag
+
+        swiper.initialized = true; // Emit
+
+        swiper.emit('init');
+        swiper.emit('afterInit');
+        return swiper;
+      }
+
+      destroy(deleteInstance = true, cleanStyles = true) {
+        const swiper = this;
+        const {
+          params,
+          $el,
+          $wrapperEl,
+          slides
+        } = swiper;
+
+        if (typeof swiper.params === 'undefined' || swiper.destroyed) {
+          return null;
+        }
+
+        swiper.emit('beforeDestroy'); // Init Flag
+
+        swiper.initialized = false; // Detach events
+
+        swiper.detachEvents(); // Destroy loop
+
+        if (params.loop) {
+          swiper.loopDestroy();
+        } // Cleanup styles
+
+
+        if (cleanStyles) {
+          swiper.removeClasses();
+          $el.removeAttr('style');
+          $wrapperEl.removeAttr('style');
+
+          if (slides && slides.length) {
+            slides.removeClass([params.slideVisibleClass, params.slideActiveClass, params.slideNextClass, params.slidePrevClass].join(' ')).removeAttr('style').removeAttr('data-swiper-slide-index');
+          }
+        }
+
+        swiper.emit('destroy'); // Detach emitter events
+
+        Object.keys(swiper.eventsListeners).forEach(eventName => {
+          swiper.off(eventName);
+        });
+
+        if (deleteInstance !== false) {
+          swiper.$el[0].swiper = null;
+          deleteProps(swiper);
+        }
+
+        swiper.destroyed = true;
+        return null;
+      }
+
+      static extendDefaults(newDefaults) {
+        extend$1(extendedDefaults, newDefaults);
+      }
+
+      static get extendedDefaults() {
+        return extendedDefaults;
+      }
+
+      static get defaults() {
+        return defaults;
+      }
+
+      static installModule(mod) {
+        if (!Swiper$1.prototype.__modules__) Swiper$1.prototype.__modules__ = [];
+        const modules = Swiper$1.prototype.__modules__;
+
+        if (typeof mod === 'function' && modules.indexOf(mod) < 0) {
+          modules.push(mod);
+        }
+      }
+
+      static use(module) {
+        if (Array.isArray(module)) {
+          module.forEach(m => Swiper$1.installModule(m));
+          return Swiper$1;
+        }
+
+        Swiper$1.installModule(module);
+        return Swiper$1;
+      }
+
+    }
+
+    Object.keys(prototypes).forEach(prototypeGroup => {
+      Object.keys(prototypes[prototypeGroup]).forEach(protoMethod => {
+        Swiper$1.prototype[protoMethod] = prototypes[prototypeGroup][protoMethod];
+      });
+    });
+    Swiper$1.use([Resize, Observer]);
+
+    function createElementIfNotDefined(swiper, originalParams, params, checkProps) {
+      const document = getDocument();
+
+      if (swiper.params.createElements) {
+        Object.keys(checkProps).forEach(key => {
+          if (!params[key] && params.auto === true) {
+            let element = swiper.$el.children(`.${checkProps[key]}`)[0];
+
+            if (!element) {
+              element = document.createElement('div');
+              element.className = checkProps[key];
+              swiper.$el.append(element);
+            }
+
+            params[key] = element;
+            originalParams[key] = element;
+          }
+        });
+      }
+
+      return params;
+    }
+
+    function Navigation({
+      swiper,
+      extendParams,
+      on,
+      emit
+    }) {
+      extendParams({
+        navigation: {
+          nextEl: null,
+          prevEl: null,
+          hideOnClick: false,
+          disabledClass: 'swiper-button-disabled',
+          hiddenClass: 'swiper-button-hidden',
+          lockClass: 'swiper-button-lock'
+        }
+      });
+      swiper.navigation = {
+        nextEl: null,
+        $nextEl: null,
+        prevEl: null,
+        $prevEl: null
+      };
+
+      function getEl(el) {
+        let $el;
+
+        if (el) {
+          $el = $(el);
+
+          if (swiper.params.uniqueNavElements && typeof el === 'string' && $el.length > 1 && swiper.$el.find(el).length === 1) {
+            $el = swiper.$el.find(el);
+          }
+        }
+
+        return $el;
+      }
+
+      function toggleEl($el, disabled) {
+        const params = swiper.params.navigation;
+
+        if ($el && $el.length > 0) {
+          $el[disabled ? 'addClass' : 'removeClass'](params.disabledClass);
+          if ($el[0] && $el[0].tagName === 'BUTTON') $el[0].disabled = disabled;
+
+          if (swiper.params.watchOverflow && swiper.enabled) {
+            $el[swiper.isLocked ? 'addClass' : 'removeClass'](params.lockClass);
+          }
+        }
+      }
+
+      function update() {
+        // Update Navigation Buttons
+        if (swiper.params.loop) return;
+        const {
+          $nextEl,
+          $prevEl
+        } = swiper.navigation;
+        toggleEl($prevEl, swiper.isBeginning);
+        toggleEl($nextEl, swiper.isEnd);
+      }
+
+      function onPrevClick(e) {
+        e.preventDefault();
+        if (swiper.isBeginning && !swiper.params.loop) return;
+        swiper.slidePrev();
+      }
+
+      function onNextClick(e) {
+        e.preventDefault();
+        if (swiper.isEnd && !swiper.params.loop) return;
+        swiper.slideNext();
+      }
+
+      function init() {
+        const params = swiper.params.navigation;
+        swiper.params.navigation = createElementIfNotDefined(swiper, swiper.originalParams.navigation, swiper.params.navigation, {
+          nextEl: 'swiper-button-next',
+          prevEl: 'swiper-button-prev'
+        });
+        if (!(params.nextEl || params.prevEl)) return;
+        const $nextEl = getEl(params.nextEl);
+        const $prevEl = getEl(params.prevEl);
+
+        if ($nextEl && $nextEl.length > 0) {
+          $nextEl.on('click', onNextClick);
+        }
+
+        if ($prevEl && $prevEl.length > 0) {
+          $prevEl.on('click', onPrevClick);
+        }
+
+        Object.assign(swiper.navigation, {
+          $nextEl,
+          nextEl: $nextEl && $nextEl[0],
+          $prevEl,
+          prevEl: $prevEl && $prevEl[0]
+        });
+
+        if (!swiper.enabled) {
+          if ($nextEl) $nextEl.addClass(params.lockClass);
+          if ($prevEl) $prevEl.addClass(params.lockClass);
+        }
+      }
+
+      function destroy() {
+        const {
+          $nextEl,
+          $prevEl
+        } = swiper.navigation;
+
+        if ($nextEl && $nextEl.length) {
+          $nextEl.off('click', onNextClick);
+          $nextEl.removeClass(swiper.params.navigation.disabledClass);
+        }
+
+        if ($prevEl && $prevEl.length) {
+          $prevEl.off('click', onPrevClick);
+          $prevEl.removeClass(swiper.params.navigation.disabledClass);
+        }
+      }
+
+      on('init', () => {
+        init();
+        update();
+      });
+      on('toEdge fromEdge lock unlock', () => {
+        update();
+      });
+      on('destroy', () => {
+        destroy();
+      });
+      on('enable disable', () => {
+        const {
+          $nextEl,
+          $prevEl
+        } = swiper.navigation;
+
+        if ($nextEl) {
+          $nextEl[swiper.enabled ? 'removeClass' : 'addClass'](swiper.params.navigation.lockClass);
+        }
+
+        if ($prevEl) {
+          $prevEl[swiper.enabled ? 'removeClass' : 'addClass'](swiper.params.navigation.lockClass);
+        }
+      });
+      on('click', (_s, e) => {
+        const {
+          $nextEl,
+          $prevEl
+        } = swiper.navigation;
+        const targetEl = e.target;
+
+        if (swiper.params.navigation.hideOnClick && !$(targetEl).is($prevEl) && !$(targetEl).is($nextEl)) {
+          if (swiper.pagination && swiper.params.pagination && swiper.params.pagination.clickable && (swiper.pagination.el === targetEl || swiper.pagination.el.contains(targetEl))) return;
+          let isHidden;
+
+          if ($nextEl) {
+            isHidden = $nextEl.hasClass(swiper.params.navigation.hiddenClass);
+          } else if ($prevEl) {
+            isHidden = $prevEl.hasClass(swiper.params.navigation.hiddenClass);
+          }
+
+          if (isHidden === true) {
+            emit('navigationShow');
+          } else {
+            emit('navigationHide');
+          }
+
+          if ($nextEl) {
+            $nextEl.toggleClass(swiper.params.navigation.hiddenClass);
+          }
+
+          if ($prevEl) {
+            $prevEl.toggleClass(swiper.params.navigation.hiddenClass);
+          }
+        }
+      });
+      Object.assign(swiper.navigation, {
+        update,
+        init,
+        destroy
+      });
+    }
+
+    function isObject(o) {
+      return typeof o === 'object' && o !== null && o.constructor && Object.prototype.toString.call(o).slice(8, -1) === 'Object';
+    }
+
+    function extend(target, src) {
+      const noExtend = ['__proto__', 'constructor', 'prototype'];
+      Object.keys(src).filter(key => noExtend.indexOf(key) < 0).forEach(key => {
+        if (typeof target[key] === 'undefined') target[key] = src[key];else if (isObject(src[key]) && isObject(target[key]) && Object.keys(src[key]).length > 0) {
+          if (src[key].__swiper__) target[key] = src[key];else extend(target[key], src[key]);
+        } else {
+          target[key] = src[key];
+        }
+      });
+    }
+
+    function needsNavigation(params = {}) {
+      return params.navigation && typeof params.navigation.nextEl === 'undefined' && typeof params.navigation.prevEl === 'undefined';
+    }
+
+    function needsPagination(params = {}) {
+      return params.pagination && typeof params.pagination.el === 'undefined';
+    }
+
+    function needsScrollbar(params = {}) {
+      return params.scrollbar && typeof params.scrollbar.el === 'undefined';
+    }
+
+    function uniqueClasses(classNames = '') {
+      const classes = classNames.split(' ').map(c => c.trim()).filter(c => !!c);
+      const unique = [];
+      classes.forEach(c => {
+        if (unique.indexOf(c) < 0) unique.push(c);
+      });
+      return unique.join(' ');
+    }
+
+    /* underscore in name -> watch for changes */
+    const paramsList = ['modules', 'init', '_direction', 'touchEventsTarget', 'initialSlide', '_speed', 'cssMode', 'updateOnWindowResize', 'resizeObserver', 'nested', 'focusableElements', '_enabled', '_width', '_height', 'preventInteractionOnTransition', 'userAgent', 'url', '_edgeSwipeDetection', '_edgeSwipeThreshold', '_freeMode', '_autoHeight', 'setWrapperSize', 'virtualTranslate', '_effect', 'breakpoints', '_spaceBetween', '_slidesPerView', '_grid', '_slidesPerGroup', '_slidesPerGroupSkip', '_slidesPerGroupAuto', '_centeredSlides', '_centeredSlidesBounds', '_slidesOffsetBefore', '_slidesOffsetAfter', 'normalizeSlideIndex', '_centerInsufficientSlides', '_watchOverflow', 'roundLengths', 'touchRatio', 'touchAngle', 'simulateTouch', '_shortSwipes', '_longSwipes', 'longSwipesRatio', 'longSwipesMs', '_followFinger', 'allowTouchMove', '_threshold', 'touchMoveStopPropagation', 'touchStartPreventDefault', 'touchStartForcePreventDefault', 'touchReleaseOnEdges', 'uniqueNavElements', '_resistance', '_resistanceRatio', '_watchSlidesProgress', '_grabCursor', 'preventClicks', 'preventClicksPropagation', '_slideToClickedSlide', '_preloadImages', 'updateOnImagesReady', '_loop', '_loopAdditionalSlides', '_loopedSlides', '_loopFillGroupWithBlank', 'loopPreventsSlide', '_allowSlidePrev', '_allowSlideNext', '_swipeHandler', '_noSwiping', 'noSwipingClass', 'noSwipingSelector', 'passiveListeners', 'containerModifierClass', 'slideClass', 'slideBlankClass', 'slideActiveClass', 'slideDuplicateActiveClass', 'slideVisibleClass', 'slideDuplicateClass', 'slideNextClass', 'slideDuplicateNextClass', 'slidePrevClass', 'slideDuplicatePrevClass', 'wrapperClass', 'runCallbacksOnInit', 'observer', 'observeParents', 'observeSlideChildren', // modules
+    'a11y', 'autoplay', '_controller', 'coverflowEffect', 'cubeEffect', 'fadeEffect', 'flipEffect', 'creativeEffect', 'cardsEffect', 'hashNavigation', 'history', 'keyboard', 'lazy', 'mousewheel', '_navigation', '_pagination', 'parallax', '_scrollbar', '_thumbs', '_virtual', 'zoom'];
+
+    function getParams(obj = {}) {
+      const params = {
+        on: {}
+      };
+      const passedParams = {};
+      extend(params, Swiper$1.defaults);
+      extend(params, Swiper$1.extendedDefaults);
+      params._emitClasses = true;
+      params.init = false;
+      const rest = {};
+      const allowedParams = paramsList.map(key => key.replace(/_/, ''));
+      Object.keys(obj).forEach(key => {
+        if (allowedParams.indexOf(key) >= 0) {
+          if (isObject(obj[key])) {
+            params[key] = {};
+            passedParams[key] = {};
+            extend(params[key], obj[key]);
+            extend(passedParams[key], obj[key]);
+          } else {
+            params[key] = obj[key];
+            passedParams[key] = obj[key];
+          }
+        } else if (key.search(/on[A-Z]/) === 0 && typeof obj[key] === 'function') {
+          params.on[`${key[2].toLowerCase()}${key.substr(3)}`] = obj[key];
+        } else {
+          rest[key] = obj[key];
+        }
+      });
+      ['navigation', 'pagination', 'scrollbar'].forEach(key => {
+        if (params[key] === true) params[key] = {};
+        if (params[key] === false) delete params[key];
+      });
+      return {
+        params,
+        passedParams,
+        rest
+      };
+    }
+
+    function initSwiper(swiperParams) {
+      return new Swiper$1(swiperParams);
+    }
+
+    function mountSwiper({
+      el,
+      nextEl,
+      prevEl,
+      paginationEl,
+      scrollbarEl,
+      swiper
+    }, swiperParams) {
+      if (needsNavigation(swiperParams) && nextEl && prevEl) {
+        swiper.params.navigation.nextEl = nextEl;
+        swiper.originalParams.navigation.nextEl = nextEl;
+        swiper.params.navigation.prevEl = prevEl;
+        swiper.originalParams.navigation.prevEl = prevEl;
+      }
+
+      if (needsPagination(swiperParams) && paginationEl) {
+        swiper.params.pagination.el = paginationEl;
+        swiper.originalParams.pagination.el = paginationEl;
+      }
+
+      if (needsScrollbar(swiperParams) && scrollbarEl) {
+        swiper.params.scrollbar.el = scrollbarEl;
+        swiper.originalParams.scrollbar.el = scrollbarEl;
+      }
+
+      swiper.init(el);
+    }
+
+    function getChangedParams(swiperParams, oldParams) {
+      const keys = [];
+      if (!oldParams) return keys;
+
+      const addKey = key => {
+        if (keys.indexOf(key) < 0) keys.push(key);
+      };
+
+      const watchParams = paramsList.filter(key => key[0] === '_').map(key => key.replace(/_/, ''));
+      watchParams.forEach(key => {
+        if (key in swiperParams && key in oldParams) {
+          if (isObject(swiperParams[key]) && isObject(oldParams[key])) {
+            const newKeys = Object.keys(swiperParams[key]);
+            const oldKeys = Object.keys(oldParams[key]);
+
+            if (newKeys.length !== oldKeys.length) {
+              addKey(key);
+            } else {
+              newKeys.forEach(newKey => {
+                if (swiperParams[key][newKey] !== oldParams[key][newKey]) {
+                  addKey(key);
+                }
+              });
+              oldKeys.forEach(oldKey => {
+                if (swiperParams[key][oldKey] !== oldParams[key][oldKey]) addKey(key);
+              });
+            }
+          } else if (swiperParams[key] !== oldParams[key]) {
+            addKey(key);
+          }
+        }
+      });
+      return keys;
+    }
+
+    function updateSwiper({
+      swiper,
+      passedParams,
+      changedParams,
+      nextEl,
+      prevEl,
+      scrollbarEl,
+      paginationEl
+    }) {
+      const updateParams = changedParams.filter(key => key !== 'children' && key !== 'direction');
+      const {
+        params: currentParams,
+        pagination,
+        navigation,
+        scrollbar,
+        thumbs
+      } = swiper;
+      let needThumbsInit;
+      let needControllerInit;
+      let needPaginationInit;
+      let needScrollbarInit;
+      let needNavigationInit;
+
+      if (changedParams.includes('thumbs') && passedParams.thumbs && passedParams.thumbs.swiper && currentParams.thumbs && !currentParams.thumbs.swiper) {
+        needThumbsInit = true;
+      }
+
+      if (changedParams.includes('controller') && passedParams.controller && passedParams.controller.control && currentParams.controller && !currentParams.controller.control) {
+        needControllerInit = true;
+      }
+
+      if (changedParams.includes('pagination') && passedParams.pagination && (passedParams.pagination.el || paginationEl) && (currentParams.pagination || currentParams.pagination === false) && pagination && !pagination.el) {
+        needPaginationInit = true;
+      }
+
+      if (changedParams.includes('scrollbar') && passedParams.scrollbar && (passedParams.scrollbar.el || scrollbarEl) && (currentParams.scrollbar || currentParams.scrollbar === false) && scrollbar && !scrollbar.el) {
+        needScrollbarInit = true;
+      }
+
+      if (changedParams.includes('navigation') && passedParams.navigation && (passedParams.navigation.prevEl || prevEl) && (passedParams.navigation.nextEl || nextEl) && (currentParams.navigation || currentParams.navigation === false) && navigation && !navigation.prevEl && !navigation.nextEl) {
+        needNavigationInit = true;
+      }
+
+      if (changedParams.includes('virtual')) {
+        if (passedParams.virtual && passedParams.virtual.slides && swiper.virtual) {
+          swiper.virtual.slides = passedParams.virtual.slides;
+          swiper.virtual.update();
+        }
+      }
+
+      const destroyModule = mod => {
+        if (!swiper[mod]) return;
+        swiper[mod].destroy();
+
+        if (mod === 'navigation') {
+          currentParams[mod].prevEl = undefined;
+          currentParams[mod].nextEl = undefined;
+          swiper[mod].prevEl = undefined;
+          swiper[mod].nextEl = undefined;
+        } else {
+          currentParams[mod].el = undefined;
+          swiper[mod].el = undefined;
+        }
+      };
+
+      updateParams.forEach(key => {
+        if (isObject(currentParams[key]) && isObject(passedParams[key])) {
+          extend(currentParams[key], passedParams[key]);
+        } else {
+          const newValue = passedParams[key];
+
+          if ((newValue === true || newValue === false) && (key === 'navigation' || key === 'pagination' || key === 'scrollbar')) {
+            if (newValue === false) {
+              destroyModule(key);
+            }
+          } else {
+            currentParams[key] = passedParams[key];
+          }
+        }
+      });
+
+      if (needThumbsInit) {
+        const initialized = thumbs.init();
+
+        if (initialized) {
+          thumbs.update(true);
+        }
+      }
+
+      if (needControllerInit) {
+        swiper.controller.control = currentParams.controller.control;
+      }
+
+      if (needPaginationInit) {
+        if (paginationEl) currentParams.pagination.el = paginationEl;
+        pagination.init();
+        pagination.render();
+        pagination.update();
+      }
+
+      if (needScrollbarInit) {
+        if (scrollbarEl) currentParams.scrollbar.el = scrollbarEl;
+        scrollbar.init();
+        scrollbar.updateSize();
+        scrollbar.setTranslate();
+      }
+
+      if (needNavigationInit) {
+        if (nextEl) currentParams.navigation.nextEl = nextEl;
+        if (prevEl) currentParams.navigation.prevEl = prevEl;
+        navigation.init();
+        navigation.update();
+      }
+
+      if (changedParams.includes('allowSlideNext')) {
+        swiper.allowSlideNext = passedParams.allowSlideNext;
+      }
+
+      if (changedParams.includes('allowSlidePrev')) {
+        swiper.allowSlidePrev = passedParams.allowSlidePrev;
+      }
+
+      if (changedParams.includes('direction')) {
+        swiper.changeDirection(passedParams.direction, false);
+      }
+
+      swiper.update();
+    }
+
+    /* node_modules/swiper/svelte/swiper.svelte generated by Svelte v3.43.0 */
+    const file$i = "node_modules/swiper/svelte/swiper.svelte";
+    const get_container_end_slot_changes = dirty => ({ virtualData: dirty & /*virtualData*/ 512 });
+    const get_container_end_slot_context = ctx => ({ virtualData: /*virtualData*/ ctx[9] });
+    const get_wrapper_end_slot_changes = dirty => ({ virtualData: dirty & /*virtualData*/ 512 });
+    const get_wrapper_end_slot_context = ctx => ({ virtualData: /*virtualData*/ ctx[9] });
+    const get_default_slot_changes$1 = dirty => ({ virtualData: dirty & /*virtualData*/ 512 });
+    const get_default_slot_context$1 = ctx => ({ virtualData: /*virtualData*/ ctx[9] });
+    const get_wrapper_start_slot_changes = dirty => ({ virtualData: dirty & /*virtualData*/ 512 });
+    const get_wrapper_start_slot_context = ctx => ({ virtualData: /*virtualData*/ ctx[9] });
+    const get_container_start_slot_changes = dirty => ({ virtualData: dirty & /*virtualData*/ 512 });
+    const get_container_start_slot_context = ctx => ({ virtualData: /*virtualData*/ ctx[9] });
+
+    // (162:2) {#if needsNavigation(swiperParams)}
+    function create_if_block_2$1(ctx) {
+    	let div0;
+    	let t;
+    	let div1;
+
+    	const block = {
+    		c: function create() {
+    			div0 = element("div");
+    			t = space();
+    			div1 = element("div");
+    			attr_dev(div0, "class", "swiper-button-prev");
+    			add_location(div0, file$i, 162, 4, 4007);
+    			attr_dev(div1, "class", "swiper-button-next");
+    			add_location(div1, file$i, 163, 4, 4065);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div0, anchor);
+    			/*div0_binding*/ ctx[13](div0);
+    			insert_dev(target, t, anchor);
+    			insert_dev(target, div1, anchor);
+    			/*div1_binding*/ ctx[14](div1);
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div0);
+    			/*div0_binding*/ ctx[13](null);
+    			if (detaching) detach_dev(t);
+    			if (detaching) detach_dev(div1);
+    			/*div1_binding*/ ctx[14](null);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_2$1.name,
+    		type: "if",
+    		source: "(162:2) {#if needsNavigation(swiperParams)}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (166:2) {#if needsScrollbar(swiperParams)}
+    function create_if_block_1$3(ctx) {
+    	let div;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			attr_dev(div, "class", "swiper-scrollbar");
+    			add_location(div, file$i, 166, 4, 4168);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			/*div_binding*/ ctx[15](div);
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			/*div_binding*/ ctx[15](null);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1$3.name,
+    		type: "if",
+    		source: "(166:2) {#if needsScrollbar(swiperParams)}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (169:2) {#if needsPagination(swiperParams)}
+    function create_if_block$a(ctx) {
+    	let div;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			attr_dev(div, "class", "swiper-pagination");
+    			add_location(div, file$i, 169, 4, 4275);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			/*div_binding_1*/ ctx[16](div);
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			/*div_binding_1*/ ctx[16](null);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$a.name,
+    		type: "if",
+    		source: "(169:2) {#if needsPagination(swiperParams)}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$j(ctx) {
+    	let div1;
+    	let t0;
+    	let show_if_2 = needsNavigation(/*swiperParams*/ ctx[2]);
+    	let t1;
+    	let show_if_1 = needsScrollbar(/*swiperParams*/ ctx[2]);
+    	let t2;
+    	let show_if = needsPagination(/*swiperParams*/ ctx[2]);
+    	let t3;
+    	let div0;
+    	let t4;
+    	let t5;
+    	let t6;
+    	let div1_class_value;
+    	let current;
+    	const container_start_slot_template = /*#slots*/ ctx[12]["container-start"];
+    	const container_start_slot = create_slot(container_start_slot_template, ctx, /*$$scope*/ ctx[11], get_container_start_slot_context);
+    	let if_block0 = show_if_2 && create_if_block_2$1(ctx);
+    	let if_block1 = show_if_1 && create_if_block_1$3(ctx);
+    	let if_block2 = show_if && create_if_block$a(ctx);
+    	const wrapper_start_slot_template = /*#slots*/ ctx[12]["wrapper-start"];
+    	const wrapper_start_slot = create_slot(wrapper_start_slot_template, ctx, /*$$scope*/ ctx[11], get_wrapper_start_slot_context);
+    	const default_slot_template = /*#slots*/ ctx[12].default;
+    	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[11], get_default_slot_context$1);
+    	const wrapper_end_slot_template = /*#slots*/ ctx[12]["wrapper-end"];
+    	const wrapper_end_slot = create_slot(wrapper_end_slot_template, ctx, /*$$scope*/ ctx[11], get_wrapper_end_slot_context);
+    	const container_end_slot_template = /*#slots*/ ctx[12]["container-end"];
+    	const container_end_slot = create_slot(container_end_slot_template, ctx, /*$$scope*/ ctx[11], get_container_end_slot_context);
+
+    	let div1_levels = [
+    		{
+    			class: div1_class_value = uniqueClasses(`${/*containerClasses*/ ctx[1]}${/*className*/ ctx[0] ? ` ${/*className*/ ctx[0]}` : ''}`)
+    		},
+    		/*restProps*/ ctx[3]
+    	];
+
+    	let div1_data = {};
+
+    	for (let i = 0; i < div1_levels.length; i += 1) {
+    		div1_data = assign(div1_data, div1_levels[i]);
+    	}
+
+    	const block = {
+    		c: function create() {
+    			div1 = element("div");
+    			if (container_start_slot) container_start_slot.c();
+    			t0 = space();
+    			if (if_block0) if_block0.c();
+    			t1 = space();
+    			if (if_block1) if_block1.c();
+    			t2 = space();
+    			if (if_block2) if_block2.c();
+    			t3 = space();
+    			div0 = element("div");
+    			if (wrapper_start_slot) wrapper_start_slot.c();
+    			t4 = space();
+    			if (default_slot) default_slot.c();
+    			t5 = space();
+    			if (wrapper_end_slot) wrapper_end_slot.c();
+    			t6 = space();
+    			if (container_end_slot) container_end_slot.c();
+    			attr_dev(div0, "class", "swiper-wrapper");
+    			add_location(div0, file$i, 171, 2, 4344);
+    			set_attributes(div1, div1_data);
+    			add_location(div1, file$i, 155, 0, 3802);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div1, anchor);
+
+    			if (container_start_slot) {
+    				container_start_slot.m(div1, null);
+    			}
+
+    			append_dev(div1, t0);
+    			if (if_block0) if_block0.m(div1, null);
+    			append_dev(div1, t1);
+    			if (if_block1) if_block1.m(div1, null);
+    			append_dev(div1, t2);
+    			if (if_block2) if_block2.m(div1, null);
+    			append_dev(div1, t3);
+    			append_dev(div1, div0);
+
+    			if (wrapper_start_slot) {
+    				wrapper_start_slot.m(div0, null);
+    			}
+
+    			append_dev(div0, t4);
+
+    			if (default_slot) {
+    				default_slot.m(div0, null);
+    			}
+
+    			append_dev(div0, t5);
+
+    			if (wrapper_end_slot) {
+    				wrapper_end_slot.m(div0, null);
+    			}
+
+    			append_dev(div1, t6);
+
+    			if (container_end_slot) {
+    				container_end_slot.m(div1, null);
+    			}
+
+    			/*div1_binding_1*/ ctx[17](div1);
+    			current = true;
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (container_start_slot) {
+    				if (container_start_slot.p && (!current || dirty & /*$$scope, virtualData*/ 2560)) {
+    					update_slot_base(
+    						container_start_slot,
+    						container_start_slot_template,
+    						ctx,
+    						/*$$scope*/ ctx[11],
+    						!current
+    						? get_all_dirty_from_scope(/*$$scope*/ ctx[11])
+    						: get_slot_changes(container_start_slot_template, /*$$scope*/ ctx[11], dirty, get_container_start_slot_changes),
+    						get_container_start_slot_context
+    					);
+    				}
+    			}
+
+    			if (dirty & /*swiperParams*/ 4) show_if_2 = needsNavigation(/*swiperParams*/ ctx[2]);
+
+    			if (show_if_2) {
+    				if (if_block0) {
+    					if_block0.p(ctx, dirty);
+    				} else {
+    					if_block0 = create_if_block_2$1(ctx);
+    					if_block0.c();
+    					if_block0.m(div1, t1);
+    				}
+    			} else if (if_block0) {
+    				if_block0.d(1);
+    				if_block0 = null;
+    			}
+
+    			if (dirty & /*swiperParams*/ 4) show_if_1 = needsScrollbar(/*swiperParams*/ ctx[2]);
+
+    			if (show_if_1) {
+    				if (if_block1) {
+    					if_block1.p(ctx, dirty);
+    				} else {
+    					if_block1 = create_if_block_1$3(ctx);
+    					if_block1.c();
+    					if_block1.m(div1, t2);
+    				}
+    			} else if (if_block1) {
+    				if_block1.d(1);
+    				if_block1 = null;
+    			}
+
+    			if (dirty & /*swiperParams*/ 4) show_if = needsPagination(/*swiperParams*/ ctx[2]);
+
+    			if (show_if) {
+    				if (if_block2) {
+    					if_block2.p(ctx, dirty);
+    				} else {
+    					if_block2 = create_if_block$a(ctx);
+    					if_block2.c();
+    					if_block2.m(div1, t3);
+    				}
+    			} else if (if_block2) {
+    				if_block2.d(1);
+    				if_block2 = null;
+    			}
+
+    			if (wrapper_start_slot) {
+    				if (wrapper_start_slot.p && (!current || dirty & /*$$scope, virtualData*/ 2560)) {
+    					update_slot_base(
+    						wrapper_start_slot,
+    						wrapper_start_slot_template,
+    						ctx,
+    						/*$$scope*/ ctx[11],
+    						!current
+    						? get_all_dirty_from_scope(/*$$scope*/ ctx[11])
+    						: get_slot_changes(wrapper_start_slot_template, /*$$scope*/ ctx[11], dirty, get_wrapper_start_slot_changes),
+    						get_wrapper_start_slot_context
+    					);
+    				}
+    			}
+
+    			if (default_slot) {
+    				if (default_slot.p && (!current || dirty & /*$$scope, virtualData*/ 2560)) {
+    					update_slot_base(
+    						default_slot,
+    						default_slot_template,
+    						ctx,
+    						/*$$scope*/ ctx[11],
+    						!current
+    						? get_all_dirty_from_scope(/*$$scope*/ ctx[11])
+    						: get_slot_changes(default_slot_template, /*$$scope*/ ctx[11], dirty, get_default_slot_changes$1),
+    						get_default_slot_context$1
+    					);
+    				}
+    			}
+
+    			if (wrapper_end_slot) {
+    				if (wrapper_end_slot.p && (!current || dirty & /*$$scope, virtualData*/ 2560)) {
+    					update_slot_base(
+    						wrapper_end_slot,
+    						wrapper_end_slot_template,
+    						ctx,
+    						/*$$scope*/ ctx[11],
+    						!current
+    						? get_all_dirty_from_scope(/*$$scope*/ ctx[11])
+    						: get_slot_changes(wrapper_end_slot_template, /*$$scope*/ ctx[11], dirty, get_wrapper_end_slot_changes),
+    						get_wrapper_end_slot_context
+    					);
+    				}
+    			}
+
+    			if (container_end_slot) {
+    				if (container_end_slot.p && (!current || dirty & /*$$scope, virtualData*/ 2560)) {
+    					update_slot_base(
+    						container_end_slot,
+    						container_end_slot_template,
+    						ctx,
+    						/*$$scope*/ ctx[11],
+    						!current
+    						? get_all_dirty_from_scope(/*$$scope*/ ctx[11])
+    						: get_slot_changes(container_end_slot_template, /*$$scope*/ ctx[11], dirty, get_container_end_slot_changes),
+    						get_container_end_slot_context
+    					);
+    				}
+    			}
+
+    			set_attributes(div1, div1_data = get_spread_update(div1_levels, [
+    				(!current || dirty & /*containerClasses, className*/ 3 && div1_class_value !== (div1_class_value = uniqueClasses(`${/*containerClasses*/ ctx[1]}${/*className*/ ctx[0] ? ` ${/*className*/ ctx[0]}` : ''}`))) && { class: div1_class_value },
+    				dirty & /*restProps*/ 8 && /*restProps*/ ctx[3]
+    			]));
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(container_start_slot, local);
+    			transition_in(wrapper_start_slot, local);
+    			transition_in(default_slot, local);
+    			transition_in(wrapper_end_slot, local);
+    			transition_in(container_end_slot, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(container_start_slot, local);
+    			transition_out(wrapper_start_slot, local);
+    			transition_out(default_slot, local);
+    			transition_out(wrapper_end_slot, local);
+    			transition_out(container_end_slot, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div1);
+    			if (container_start_slot) container_start_slot.d(detaching);
+    			if (if_block0) if_block0.d();
+    			if (if_block1) if_block1.d();
+    			if (if_block2) if_block2.d();
+    			if (wrapper_start_slot) wrapper_start_slot.d(detaching);
+    			if (default_slot) default_slot.d(detaching);
+    			if (wrapper_end_slot) wrapper_end_slot.d(detaching);
+    			if (container_end_slot) container_end_slot.d(detaching);
+    			/*div1_binding_1*/ ctx[17](null);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$j.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$j($$self, $$props, $$invalidate) {
+    	const omit_props_names = ["class","swiper"];
+    	let $$restProps = compute_rest_props($$props, omit_props_names);
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('Swiper', slots, ['container-start','wrapper-start','default','wrapper-end','container-end']);
+    	const dispatch = createEventDispatcher();
+    	let { class: className = undefined } = $$props;
+    	let containerClasses = 'swiper';
+    	let breakpointChanged = false;
+    	let swiperInstance = null;
+    	let oldPassedParams = null;
+    	let paramsData;
+    	let swiperParams;
+    	let passedParams;
+    	let restProps;
+    	let swiperEl = null;
+    	let prevEl = null;
+    	let nextEl = null;
+    	let scrollbarEl = null;
+    	let paginationEl = null;
+    	let virtualData = { slides: [] };
+
+    	function swiper() {
+    		return swiperInstance;
+    	}
+
+    	const setVirtualData = data => {
+    		$$invalidate(9, virtualData = data);
+
+    		tick().then(() => {
+    			swiperInstance.$wrapperEl.children('.swiper-slide').each(el => {
+    				if (el.onSwiper) el.onSwiper(swiperInstance);
+    			});
+
+    			swiperInstance.updateSlides();
+    			swiperInstance.updateProgress();
+    			swiperInstance.updateSlidesClasses();
+
+    			if (swiperInstance.lazy && swiperInstance.params.lazy.enabled) {
+    				swiperInstance.lazy.load();
+    			}
+    		});
+    	};
+
+    	const calcParams = () => {
+    		paramsData = getParams($$restProps);
+    		$$invalidate(2, swiperParams = paramsData.params);
+    		passedParams = paramsData.passedParams;
+    		$$invalidate(3, restProps = paramsData.rest);
+    	};
+
+    	calcParams();
+    	oldPassedParams = passedParams;
+
+    	const onBeforeBreakpoint = () => {
+    		breakpointChanged = true;
+    	};
+
+    	swiperParams.onAny = (event, ...args) => {
+    		dispatch(event, [args]);
+    	};
+
+    	Object.assign(swiperParams.on, {
+    		_beforeBreakpoint: onBeforeBreakpoint,
+    		_containerClasses(_swiper, classes) {
+    			$$invalidate(1, containerClasses = classes);
+    		}
+    	});
+
+    	swiperInstance = initSwiper(swiperParams);
+
+    	if (swiperInstance.virtual && swiperInstance.params.virtual.enabled) {
+    		const extendWith = {
+    			cache: false,
+    			renderExternal: data => {
+    				setVirtualData(data);
+
+    				if (swiperParams.virtual && swiperParams.virtual.renderExternal) {
+    					swiperParams.virtual.renderExternal(data);
+    				}
+    			},
+    			renderExternalUpdate: false
+    		};
+
+    		extend(swiperInstance.params.virtual, extendWith);
+    		extend(swiperInstance.originalParams.virtual, extendWith);
+    	}
+
+    	onMount(() => {
+    		if (!swiperEl) return;
+
+    		mountSwiper(
+    			{
+    				el: swiperEl,
+    				nextEl,
+    				prevEl,
+    				paginationEl,
+    				scrollbarEl,
+    				swiper: swiperInstance
+    			},
+    			swiperParams
+    		);
+
+    		dispatch('swiper', [swiperInstance]);
+    		if (swiperParams.virtual) return;
+
+    		swiperInstance.slides.each(el => {
+    			if (el.onSwiper) el.onSwiper(swiperInstance);
+    		});
+    	});
+
+    	afterUpdate(() => {
+    		if (!swiperInstance) return;
+    		calcParams();
+    		const changedParams = getChangedParams(passedParams, oldPassedParams);
+
+    		if ((changedParams.length || breakpointChanged) && swiperInstance && !swiperInstance.destroyed) {
+    			updateSwiper({
+    				swiper: swiperInstance,
+    				passedParams,
+    				changedParams,
+    				nextEl,
+    				prevEl,
+    				scrollbarEl,
+    				paginationEl
+    			});
+    		}
+
+    		breakpointChanged = false;
+    		oldPassedParams = passedParams;
+    	});
+
+    	onDestroy(() => {
+    		// eslint-disable-next-line
+    		if (typeof window !== 'undefined' && swiperInstance && !swiperInstance.destroyed) {
+    			swiperInstance.destroy(true, false);
+    		}
+    	});
+
+    	function div0_binding($$value) {
+    		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+    			prevEl = $$value;
+    			$$invalidate(5, prevEl);
+    		});
+    	}
+
+    	function div1_binding($$value) {
+    		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+    			nextEl = $$value;
+    			$$invalidate(6, nextEl);
+    		});
+    	}
+
+    	function div_binding($$value) {
+    		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+    			scrollbarEl = $$value;
+    			$$invalidate(7, scrollbarEl);
+    		});
+    	}
+
+    	function div_binding_1($$value) {
+    		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+    			paginationEl = $$value;
+    			$$invalidate(8, paginationEl);
+    		});
+    	}
+
+    	function div1_binding_1($$value) {
+    		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+    			swiperEl = $$value;
+    			$$invalidate(4, swiperEl);
+    		});
+    	}
+
+    	$$self.$$set = $$new_props => {
+    		$$props = assign(assign({}, $$props), exclude_internal_props($$new_props));
+    		$$invalidate(27, $$restProps = compute_rest_props($$props, omit_props_names));
+    		if ('class' in $$new_props) $$invalidate(0, className = $$new_props.class);
+    		if ('$$scope' in $$new_props) $$invalidate(11, $$scope = $$new_props.$$scope);
+    	};
+
+    	$$self.$capture_state = () => ({
+    		onMount,
+    		onDestroy,
+    		afterUpdate,
+    		createEventDispatcher,
+    		tick,
+    		beforeUpdate,
+    		getParams,
+    		initSwiper,
+    		mountSwiper,
+    		needsScrollbar,
+    		needsNavigation,
+    		needsPagination,
+    		uniqueClasses,
+    		extend,
+    		getChangedParams,
+    		updateSwiper,
+    		dispatch,
+    		className,
+    		containerClasses,
+    		breakpointChanged,
+    		swiperInstance,
+    		oldPassedParams,
+    		paramsData,
+    		swiperParams,
+    		passedParams,
+    		restProps,
+    		swiperEl,
+    		prevEl,
+    		nextEl,
+    		scrollbarEl,
+    		paginationEl,
+    		virtualData,
+    		swiper,
+    		setVirtualData,
+    		calcParams,
+    		onBeforeBreakpoint
+    	});
+
+    	$$self.$inject_state = $$new_props => {
+    		if ('className' in $$props) $$invalidate(0, className = $$new_props.className);
+    		if ('containerClasses' in $$props) $$invalidate(1, containerClasses = $$new_props.containerClasses);
+    		if ('breakpointChanged' in $$props) breakpointChanged = $$new_props.breakpointChanged;
+    		if ('swiperInstance' in $$props) swiperInstance = $$new_props.swiperInstance;
+    		if ('oldPassedParams' in $$props) oldPassedParams = $$new_props.oldPassedParams;
+    		if ('paramsData' in $$props) paramsData = $$new_props.paramsData;
+    		if ('swiperParams' in $$props) $$invalidate(2, swiperParams = $$new_props.swiperParams);
+    		if ('passedParams' in $$props) passedParams = $$new_props.passedParams;
+    		if ('restProps' in $$props) $$invalidate(3, restProps = $$new_props.restProps);
+    		if ('swiperEl' in $$props) $$invalidate(4, swiperEl = $$new_props.swiperEl);
+    		if ('prevEl' in $$props) $$invalidate(5, prevEl = $$new_props.prevEl);
+    		if ('nextEl' in $$props) $$invalidate(6, nextEl = $$new_props.nextEl);
+    		if ('scrollbarEl' in $$props) $$invalidate(7, scrollbarEl = $$new_props.scrollbarEl);
+    		if ('paginationEl' in $$props) $$invalidate(8, paginationEl = $$new_props.paginationEl);
+    		if ('virtualData' in $$props) $$invalidate(9, virtualData = $$new_props.virtualData);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [
+    		className,
+    		containerClasses,
+    		swiperParams,
+    		restProps,
+    		swiperEl,
+    		prevEl,
+    		nextEl,
+    		scrollbarEl,
+    		paginationEl,
+    		virtualData,
+    		swiper,
+    		$$scope,
+    		slots,
+    		div0_binding,
+    		div1_binding,
+    		div_binding,
+    		div_binding_1,
+    		div1_binding_1
+    	];
+    }
+
+    class Swiper extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$j, create_fragment$j, safe_not_equal, { class: 0, swiper: 10 });
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Swiper",
+    			options,
+    			id: create_fragment$j.name
+    		});
+    	}
+
+    	get class() {
+    		throw new Error("<Swiper>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set class(value) {
+    		throw new Error("<Swiper>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get swiper() {
+    		return this.$$.ctx[10];
+    	}
+
+    	set swiper(value) {
+    		throw new Error("<Swiper>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* node_modules/swiper/svelte/swiper-slide.svelte generated by Svelte v3.43.0 */
+    const file$h = "node_modules/swiper/svelte/swiper-slide.svelte";
+    const get_default_slot_changes_1 = dirty => ({ data: dirty & /*slideData*/ 32 });
+    const get_default_slot_context_1 = ctx => ({ data: /*slideData*/ ctx[5] });
+    const get_default_slot_changes = dirty => ({ data: dirty & /*slideData*/ 32 });
+    const get_default_slot_context = ctx => ({ data: /*slideData*/ ctx[5] });
+
+    // (92:2) {:else}
+    function create_else_block$5(ctx) {
+    	let current;
+    	const default_slot_template = /*#slots*/ ctx[8].default;
+    	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[7], get_default_slot_context_1);
+
+    	const block = {
+    		c: function create() {
+    			if (default_slot) default_slot.c();
+    		},
+    		m: function mount(target, anchor) {
+    			if (default_slot) {
+    				default_slot.m(target, anchor);
+    			}
+
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			if (default_slot) {
+    				if (default_slot.p && (!current || dirty & /*$$scope, slideData*/ 160)) {
+    					update_slot_base(
+    						default_slot,
+    						default_slot_template,
+    						ctx,
+    						/*$$scope*/ ctx[7],
+    						!current
+    						? get_all_dirty_from_scope(/*$$scope*/ ctx[7])
+    						: get_slot_changes(default_slot_template, /*$$scope*/ ctx[7], dirty, get_default_slot_changes_1),
+    						get_default_slot_context_1
+    					);
+    				}
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(default_slot, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(default_slot, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (default_slot) default_slot.d(detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block$5.name,
+    		type: "else",
+    		source: "(92:2) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (85:2) {#if zoom}
+    function create_if_block$9(ctx) {
+    	let div;
+    	let div_data_swiper_zoom_value;
+    	let current;
+    	const default_slot_template = /*#slots*/ ctx[8].default;
+    	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[7], get_default_slot_context);
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			if (default_slot) default_slot.c();
+    			attr_dev(div, "class", "swiper-zoom-container");
+
+    			attr_dev(div, "data-swiper-zoom", div_data_swiper_zoom_value = typeof /*zoom*/ ctx[0] === 'number'
+    			? /*zoom*/ ctx[0]
+    			: undefined);
+
+    			add_location(div, file$h, 85, 4, 2067);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+
+    			if (default_slot) {
+    				default_slot.m(div, null);
+    			}
+
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			if (default_slot) {
+    				if (default_slot.p && (!current || dirty & /*$$scope, slideData*/ 160)) {
+    					update_slot_base(
+    						default_slot,
+    						default_slot_template,
+    						ctx,
+    						/*$$scope*/ ctx[7],
+    						!current
+    						? get_all_dirty_from_scope(/*$$scope*/ ctx[7])
+    						: get_slot_changes(default_slot_template, /*$$scope*/ ctx[7], dirty, get_default_slot_changes),
+    						get_default_slot_context
+    					);
+    				}
+    			}
+
+    			if (!current || dirty & /*zoom*/ 1 && div_data_swiper_zoom_value !== (div_data_swiper_zoom_value = typeof /*zoom*/ ctx[0] === 'number'
+    			? /*zoom*/ ctx[0]
+    			: undefined)) {
+    				attr_dev(div, "data-swiper-zoom", div_data_swiper_zoom_value);
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(default_slot, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(default_slot, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			if (default_slot) default_slot.d(detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$9.name,
+    		type: "if",
+    		source: "(85:2) {#if zoom}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$i(ctx) {
+    	let div;
+    	let current_block_type_index;
+    	let if_block;
+    	let div_class_value;
+    	let current;
+    	const if_block_creators = [create_if_block$9, create_else_block$5];
+    	const if_blocks = [];
+
+    	function select_block_type(ctx, dirty) {
+    		if (/*zoom*/ ctx[0]) return 0;
+    		return 1;
+    	}
+
+    	current_block_type_index = select_block_type(ctx);
+    	if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+
+    	let div_levels = [
+    		{
+    			class: div_class_value = uniqueClasses(`${/*slideClasses*/ ctx[3]}${/*className*/ ctx[2] ? ` ${/*className*/ ctx[2]}` : ''}`)
+    		},
+    		{
+    			"data-swiper-slide-index": /*virtualIndex*/ ctx[1]
+    		},
+    		/*$$restProps*/ ctx[6]
+    	];
+
+    	let div_data = {};
+
+    	for (let i = 0; i < div_levels.length; i += 1) {
+    		div_data = assign(div_data, div_levels[i]);
+    	}
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			if_block.c();
+    			set_attributes(div, div_data);
+    			add_location(div, file$h, 78, 0, 1883);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			if_blocks[current_block_type_index].m(div, null);
+    			/*div_binding*/ ctx[9](div);
+    			current = true;
+    		},
+    		p: function update(ctx, [dirty]) {
+    			let previous_block_index = current_block_type_index;
+    			current_block_type_index = select_block_type(ctx);
+
+    			if (current_block_type_index === previous_block_index) {
+    				if_blocks[current_block_type_index].p(ctx, dirty);
+    			} else {
+    				group_outros();
+
+    				transition_out(if_blocks[previous_block_index], 1, 1, () => {
+    					if_blocks[previous_block_index] = null;
+    				});
+
+    				check_outros();
+    				if_block = if_blocks[current_block_type_index];
+
+    				if (!if_block) {
+    					if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    					if_block.c();
+    				} else {
+    					if_block.p(ctx, dirty);
+    				}
+
+    				transition_in(if_block, 1);
+    				if_block.m(div, null);
+    			}
+
+    			set_attributes(div, div_data = get_spread_update(div_levels, [
+    				(!current || dirty & /*slideClasses, className*/ 12 && div_class_value !== (div_class_value = uniqueClasses(`${/*slideClasses*/ ctx[3]}${/*className*/ ctx[2] ? ` ${/*className*/ ctx[2]}` : ''}`))) && { class: div_class_value },
+    				(!current || dirty & /*virtualIndex*/ 2) && {
+    					"data-swiper-slide-index": /*virtualIndex*/ ctx[1]
+    				},
+    				dirty & /*$$restProps*/ 64 && /*$$restProps*/ ctx[6]
+    			]));
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			if_blocks[current_block_type_index].d();
+    			/*div_binding*/ ctx[9](null);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$i.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$i($$self, $$props, $$invalidate) {
+    	let slideData;
+    	const omit_props_names = ["zoom","virtualIndex","class"];
+    	let $$restProps = compute_rest_props($$props, omit_props_names);
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('Swiper_slide', slots, ['default']);
+    	let { zoom = undefined } = $$props;
+    	let { virtualIndex = undefined } = $$props;
+    	let { class: className = undefined } = $$props;
+    	let slideEl = null;
+    	let slideClasses = 'swiper-slide';
+    	let swiper = null;
+    	let eventAttached = false;
+
+    	const updateClasses = (_, el, classNames) => {
+    		if (el === slideEl) {
+    			$$invalidate(3, slideClasses = classNames);
+    		}
+    	};
+
+    	const attachEvent = () => {
+    		if (!swiper || eventAttached) return;
+    		swiper.on('_slideClass', updateClasses);
+    		eventAttached = true;
+    	};
+
+    	const detachEvent = () => {
+    		if (!swiper) return;
+    		swiper.off('_slideClass', updateClasses);
+    		eventAttached = false;
+    	};
+
+    	onMount(() => {
+    		if (typeof virtualIndex === 'undefined') return;
+
+    		$$invalidate(
+    			4,
+    			slideEl.onSwiper = _swiper => {
+    				swiper = _swiper;
+    				attachEvent();
+    			},
+    			slideEl
+    		);
+
+    		attachEvent();
+    	});
+
+    	afterUpdate(() => {
+    		if (!slideEl || !swiper) return;
+
+    		if (swiper.destroyed) {
+    			if (slideClasses !== 'swiper-slide') {
+    				$$invalidate(3, slideClasses = 'swiper-slide');
+    			}
+
+    			return;
+    		}
+
+    		attachEvent();
+    	});
+
+    	beforeUpdate(() => {
+    		attachEvent();
+    	});
+
+    	onDestroy(() => {
+    		if (!swiper) return;
+    		detachEvent();
+    	});
+
+    	function div_binding($$value) {
+    		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+    			slideEl = $$value;
+    			$$invalidate(4, slideEl);
+    		});
+    	}
+
+    	$$self.$$set = $$new_props => {
+    		$$props = assign(assign({}, $$props), exclude_internal_props($$new_props));
+    		$$invalidate(6, $$restProps = compute_rest_props($$props, omit_props_names));
+    		if ('zoom' in $$new_props) $$invalidate(0, zoom = $$new_props.zoom);
+    		if ('virtualIndex' in $$new_props) $$invalidate(1, virtualIndex = $$new_props.virtualIndex);
+    		if ('class' in $$new_props) $$invalidate(2, className = $$new_props.class);
+    		if ('$$scope' in $$new_props) $$invalidate(7, $$scope = $$new_props.$$scope);
+    	};
+
+    	$$self.$capture_state = () => ({
+    		onMount,
+    		onDestroy,
+    		beforeUpdate,
+    		afterUpdate,
+    		uniqueClasses,
+    		zoom,
+    		virtualIndex,
+    		className,
+    		slideEl,
+    		slideClasses,
+    		swiper,
+    		eventAttached,
+    		updateClasses,
+    		attachEvent,
+    		detachEvent,
+    		slideData
+    	});
+
+    	$$self.$inject_state = $$new_props => {
+    		if ('zoom' in $$props) $$invalidate(0, zoom = $$new_props.zoom);
+    		if ('virtualIndex' in $$props) $$invalidate(1, virtualIndex = $$new_props.virtualIndex);
+    		if ('className' in $$props) $$invalidate(2, className = $$new_props.className);
+    		if ('slideEl' in $$props) $$invalidate(4, slideEl = $$new_props.slideEl);
+    		if ('slideClasses' in $$props) $$invalidate(3, slideClasses = $$new_props.slideClasses);
+    		if ('swiper' in $$props) swiper = $$new_props.swiper;
+    		if ('eventAttached' in $$props) eventAttached = $$new_props.eventAttached;
+    		if ('slideData' in $$props) $$invalidate(5, slideData = $$new_props.slideData);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	$$self.$$.update = () => {
+    		if ($$self.$$.dirty & /*slideClasses*/ 8) {
+    			$$invalidate(5, slideData = {
+    				isActive: slideClasses.indexOf('swiper-slide-active') >= 0 || slideClasses.indexOf('swiper-slide-duplicate-active') >= 0,
+    				isVisible: slideClasses.indexOf('swiper-slide-visible') >= 0,
+    				isDuplicate: slideClasses.indexOf('swiper-slide-duplicate') >= 0,
+    				isPrev: slideClasses.indexOf('swiper-slide-prev') >= 0 || slideClasses.indexOf('swiper-slide-duplicate-prev') >= 0,
+    				isNext: slideClasses.indexOf('swiper-slide-next') >= 0 || slideClasses.indexOf('swiper-slide-duplicate-next') >= 0
+    			});
+    		}
+    	};
+
+    	return [
+    		zoom,
+    		virtualIndex,
+    		className,
+    		slideClasses,
+    		slideEl,
+    		slideData,
+    		$$restProps,
+    		$$scope,
+    		slots,
+    		div_binding
+    	];
+    }
+
+    class Swiper_slide extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$i, create_fragment$i, safe_not_equal, { zoom: 0, virtualIndex: 1, class: 2 });
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Swiper_slide",
+    			options,
+    			id: create_fragment$i.name
+    		});
+    	}
+
+    	get zoom() {
+    		throw new Error("<Swiper_slide>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set zoom(value) {
+    		throw new Error("<Swiper_slide>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get virtualIndex() {
+    		throw new Error("<Swiper_slide>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set virtualIndex(value) {
+    		throw new Error("<Swiper_slide>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get class() {
+    		throw new Error("<Swiper_slide>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set class(value) {
+    		throw new Error("<Swiper_slide>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    let generateBlob = (from = 25, to = 75) => {
+      let p1 = random(from, to);
+      let p2 = random(from, to);
+      let p3 = random(from, to);
+      let p4 = random(from, to);
+      return `${p1}% ${reflect(p1)}% ${reflect(p2)}% ${p2}% / ${p3}% ${p4}% ${reflect(p4)}% ${reflect(p3)}%`;
+    };
+
+    let random = (from = 25, to = 75) => { return Math.floor(Math.random() * (to - from) + from) };
+
+    let reflect = (n) => { return 100 - n };
+
+    let smoothScroll = () => { 
+      let buttons = document.querySelectorAll('[data-smoothscroll]');
+      buttons.forEach((button) => {
+        button.addEventListener('click', function () {
+          open = false;
+          let target = this.getAttribute('data-smoothscroll');
+          let headerOffset = 20;
+          if (window.innerWidth < 1024) { 
+            headerOffset = document.querySelector('header.header').offsetHeight;
+          }
+          
+          let offsetPosition = document.querySelector(target).offsetTop - headerOffset;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });  
+        });
+      });
+      return buttons
+    };
+
+    let swiperBreakpoints = {
+      '1': {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      },
+      '480': {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      },
+      '720': {
+        slidesPerView: 2,
+        spaceBetween: 0,
+      },
+      '1024': {
+        slidesPerView: 3,
+        spaceBetween: 0,
+      },
+    };
+
+    /* src/components/Blob.svelte generated by Svelte v3.43.0 */
+    const file$g = "src/components/Blob.svelte";
+
+    function create_fragment$h(ctx) {
+    	let div1;
+    	let div0;
+
+    	const block = {
+    		c: function create() {
+    			div1 = element("div");
+    			div0 = element("div");
+    			attr_dev(div0, "class", "blob-in svelte-1ufj2aa");
+    			set_style(div0, "background-color", /*color*/ ctx[0]);
+    			set_style(div0, "--border-radius", generateBlob());
+    			set_style(div0, "--fifty", generateBlob());
+    			set_style(div0, "--onehundred", generateBlob());
+    			set_style(div0, "--dimensions", /*dimensions*/ ctx[2]);
+    			set_style(div0, "--blobtiming", random(3, 5) + "s");
+    			set_style(div0, "--bloboffsettiming", "-" + random(3, 5) + "s");
+    			add_location(div0, file$g, 31, 2, 713);
+    			attr_dev(div1, "class", "blob svelte-1ufj2aa");
+    			set_style(div1, "background-color", /*color*/ ctx[0] + "66");
+    			set_style(div1, "--top", /*topPos*/ ctx[4]);
+    			set_style(div1, "--left", /*leftPos*/ ctx[3]);
+    			set_style(div1, "--dimensions", /*dimensions*/ ctx[2]);
+    			set_style(div1, "--zindex", /*zIndex*/ ctx[1]);
+    			set_style(div1, "--blobtiming", random(35, 45) + "s");
+    			set_style(div1, "--bloboffsettiming", "-" + random(25, 35) + "s");
+    			add_location(div1, file$g, 19, 0, 477);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, div0);
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*color*/ 1) {
+    				set_style(div0, "background-color", /*color*/ ctx[0]);
+    			}
+
+    			if (dirty & /*dimensions*/ 4) {
+    				set_style(div0, "--dimensions", /*dimensions*/ ctx[2]);
+    			}
+
+    			if (dirty & /*color*/ 1) {
+    				set_style(div1, "background-color", /*color*/ ctx[0] + "66");
+    			}
+
+    			if (dirty & /*topPos*/ 16) {
+    				set_style(div1, "--top", /*topPos*/ ctx[4]);
+    			}
+
+    			if (dirty & /*leftPos*/ 8) {
+    				set_style(div1, "--left", /*leftPos*/ ctx[3]);
+    			}
+
+    			if (dirty & /*dimensions*/ 4) {
+    				set_style(div1, "--dimensions", /*dimensions*/ ctx[2]);
+    			}
+
+    			if (dirty & /*zIndex*/ 2) {
+    				set_style(div1, "--zindex", /*zIndex*/ ctx[1]);
+    			}
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div1);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$h.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$h($$self, $$props, $$invalidate) {
+    	let topPos;
+    	let leftPos;
+    	let dimensions;
+    	let zIndex;
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('Blob', slots, []);
+    	let { color } = $$props;
+    	let { top } = $$props;
+    	let { left } = $$props;
+    	let { size } = $$props;
+    	let { zindex } = $$props;
+
+    	let randomPosition = () => {
+    		return `${random(0, 100)}%`;
+    	};
+
+    	const writable_props = ['color', 'top', 'left', 'size', 'zindex'];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Blob> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$$set = $$props => {
+    		if ('color' in $$props) $$invalidate(0, color = $$props.color);
+    		if ('top' in $$props) $$invalidate(5, top = $$props.top);
+    		if ('left' in $$props) $$invalidate(6, left = $$props.left);
+    		if ('size' in $$props) $$invalidate(7, size = $$props.size);
+    		if ('zindex' in $$props) $$invalidate(8, zindex = $$props.zindex);
+    	};
+
+    	$$self.$capture_state = () => ({
+    		color,
+    		top,
+    		left,
+    		size,
+    		zindex,
+    		randomPosition,
+    		generateBlob,
+    		random,
+    		zIndex,
+    		dimensions,
+    		leftPos,
+    		topPos
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ('color' in $$props) $$invalidate(0, color = $$props.color);
+    		if ('top' in $$props) $$invalidate(5, top = $$props.top);
+    		if ('left' in $$props) $$invalidate(6, left = $$props.left);
+    		if ('size' in $$props) $$invalidate(7, size = $$props.size);
+    		if ('zindex' in $$props) $$invalidate(8, zindex = $$props.zindex);
+    		if ('randomPosition' in $$props) $$invalidate(9, randomPosition = $$props.randomPosition);
+    		if ('zIndex' in $$props) $$invalidate(1, zIndex = $$props.zIndex);
+    		if ('dimensions' in $$props) $$invalidate(2, dimensions = $$props.dimensions);
+    		if ('leftPos' in $$props) $$invalidate(3, leftPos = $$props.leftPos);
+    		if ('topPos' in $$props) $$invalidate(4, topPos = $$props.topPos);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	$$self.$$.update = () => {
+    		if ($$self.$$.dirty & /*top*/ 32) {
+    			$$invalidate(4, topPos = isNaN(top) ? randomPosition() : `${top}%`);
+    		}
+
+    		if ($$self.$$.dirty & /*left*/ 64) {
+    			$$invalidate(3, leftPos = isNaN(left) ? randomPosition() : `${left}%`);
+    		}
+
+    		if ($$self.$$.dirty & /*size*/ 128) {
+    			$$invalidate(2, dimensions = isNaN(size) ? `${random(20, 200)}px` : `${size}px`);
+    		}
+
+    		if ($$self.$$.dirty & /*zindex*/ 256) {
+    			$$invalidate(1, zIndex = isNaN(zindex) ? random(1, 100) : zindex);
+    		}
+    	};
+
+    	return [color, zIndex, dimensions, leftPos, topPos, top, left, size, zindex];
+    }
+
+    class Blob extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+
+    		init(this, options, instance$h, create_fragment$h, safe_not_equal, {
+    			color: 0,
+    			top: 5,
+    			left: 6,
+    			size: 7,
+    			zindex: 8
+    		});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Blob",
+    			options,
+    			id: create_fragment$h.name
+    		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*color*/ ctx[0] === undefined && !('color' in props)) {
+    			console.warn("<Blob> was created without expected prop 'color'");
+    		}
+
+    		if (/*top*/ ctx[5] === undefined && !('top' in props)) {
+    			console.warn("<Blob> was created without expected prop 'top'");
+    		}
+
+    		if (/*left*/ ctx[6] === undefined && !('left' in props)) {
+    			console.warn("<Blob> was created without expected prop 'left'");
+    		}
+
+    		if (/*size*/ ctx[7] === undefined && !('size' in props)) {
+    			console.warn("<Blob> was created without expected prop 'size'");
+    		}
+
+    		if (/*zindex*/ ctx[8] === undefined && !('zindex' in props)) {
+    			console.warn("<Blob> was created without expected prop 'zindex'");
+    		}
+    	}
+
+    	get color() {
+    		throw new Error("<Blob>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set color(value) {
+    		throw new Error("<Blob>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get top() {
+    		throw new Error("<Blob>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set top(value) {
+    		throw new Error("<Blob>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get left() {
+    		throw new Error("<Blob>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set left(value) {
+    		throw new Error("<Blob>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get size() {
+    		throw new Error("<Blob>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set size(value) {
+    		throw new Error("<Blob>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get zindex() {
+    		throw new Error("<Blob>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set zindex(value) {
+    		throw new Error("<Blob>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src/components/Blobs.svelte generated by Svelte v3.43.0 */
+
+    function get_each_context_1$4(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[5] = list[i];
+    	child_ctx[4] = i;
+    	return child_ctx;
+    }
+
+    function get_each_context$5(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[2] = list[i];
+    	child_ctx[4] = i;
+    	return child_ctx;
+    }
+
+    // (12:0) {:else}
+    function create_else_block$4(ctx) {
+    	let each_1_anchor;
+    	let current;
+    	let each_value_1 = /*shapes*/ ctx[0];
+    	validate_each_argument(each_value_1);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_1.length; i += 1) {
+    		each_blocks[i] = create_each_block_1$4(get_each_context_1$4(ctx, each_value_1, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			each_1_anchor = empty();
+    		},
+    		m: function mount(target, anchor) {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, each_1_anchor, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*shapes*/ 1) {
+    				each_value_1 = /*shapes*/ ctx[0];
+    				validate_each_argument(each_value_1);
+    				let i;
+
+    				for (i = 0; i < each_value_1.length; i += 1) {
+    					const child_ctx = get_each_context_1$4(ctx, each_value_1, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block_1$4(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    					}
+    				}
+
+    				group_outros();
+
+    				for (i = each_value_1.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+
+    				check_outros();
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+
+    			for (let i = 0; i < each_value_1.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_each(each_blocks, detaching);
+    			if (detaching) detach_dev(each_1_anchor);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block$4.name,
+    		type: "else",
+    		source: "(12:0) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (8:0) {#if (typeof shapes === 'number')}
+    function create_if_block$8(ctx) {
+    	let each_1_anchor;
+    	let current;
+    	let each_value = Array(/*shapes*/ ctx[0]);
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$5(get_each_context$5(ctx, each_value, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			each_1_anchor = empty();
+    		},
+    		m: function mount(target, anchor) {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, each_1_anchor, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*colors, Math, shapes*/ 3) {
+    				each_value = Array(/*shapes*/ ctx[0]);
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$5(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block$5(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    					}
+    				}
+
+    				group_outros();
+
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+
+    				check_outros();
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_each(each_blocks, detaching);
+    			if (detaching) detach_dev(each_1_anchor);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$8.name,
+    		type: "if",
+    		source: "(8:0) {#if (typeof shapes === 'number')}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (13:2) {#each shapes as shape, i}
+    function create_each_block_1$4(ctx) {
+    	let blob;
+    	let current;
+
+    	blob = new Blob({
+    			props: {
+    				color: /*shape*/ ctx[5].color,
+    				top: /*shape*/ ctx[5].top,
+    				left: /*shape*/ ctx[5].left,
+    				size: /*shape*/ ctx[5].size,
+    				zindex: /*shape*/ ctx[5].zindex
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(blob.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(blob, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const blob_changes = {};
+    			if (dirty & /*shapes*/ 1) blob_changes.color = /*shape*/ ctx[5].color;
+    			if (dirty & /*shapes*/ 1) blob_changes.top = /*shape*/ ctx[5].top;
+    			if (dirty & /*shapes*/ 1) blob_changes.left = /*shape*/ ctx[5].left;
+    			if (dirty & /*shapes*/ 1) blob_changes.size = /*shape*/ ctx[5].size;
+    			if (dirty & /*shapes*/ 1) blob_changes.zindex = /*shape*/ ctx[5].zindex;
+    			blob.$set(blob_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(blob.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(blob.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(blob, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block_1$4.name,
+    		type: "each",
+    		source: "(13:2) {#each shapes as shape, i}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (9:2) {#each Array(shapes) as _, i}
+    function create_each_block$5(ctx) {
+    	let blob;
+    	let current;
+
+    	blob = new Blob({
+    			props: {
+    				color: /*colors*/ ctx[1][Math.floor(Math.random() * /*colors*/ ctx[1].length)]
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(blob.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(blob, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const blob_changes = {};
+    			if (dirty & /*colors*/ 2) blob_changes.color = /*colors*/ ctx[1][Math.floor(Math.random() * /*colors*/ ctx[1].length)];
+    			blob.$set(blob_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(blob.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(blob.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(blob, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block$5.name,
+    		type: "each",
+    		source: "(9:2) {#each Array(shapes) as _, i}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$g(ctx) {
+    	let current_block_type_index;
+    	let if_block;
+    	let if_block_anchor;
+    	let current;
+    	const if_block_creators = [create_if_block$8, create_else_block$4];
+    	const if_blocks = [];
+
+    	function select_block_type(ctx, dirty) {
+    		if (typeof /*shapes*/ ctx[0] === 'number') return 0;
+    		return 1;
+    	}
+
+    	current_block_type_index = select_block_type(ctx);
+    	if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+
+    	const block = {
+    		c: function create() {
+    			if_block.c();
+    			if_block_anchor = empty();
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			if_blocks[current_block_type_index].m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, [dirty]) {
+    			let previous_block_index = current_block_type_index;
+    			current_block_type_index = select_block_type(ctx);
+
+    			if (current_block_type_index === previous_block_index) {
+    				if_blocks[current_block_type_index].p(ctx, dirty);
+    			} else {
+    				group_outros();
+
+    				transition_out(if_blocks[previous_block_index], 1, 1, () => {
+    					if_blocks[previous_block_index] = null;
+    				});
+
+    				check_outros();
+    				if_block = if_blocks[current_block_type_index];
+
+    				if (!if_block) {
+    					if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    					if_block.c();
+    				} else {
+    					if_block.p(ctx, dirty);
+    				}
+
+    				transition_in(if_block, 1);
+    				if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if_blocks[current_block_type_index].d(detaching);
+    			if (detaching) detach_dev(if_block_anchor);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$g.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$g($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('Blobs', slots, []);
+    	let { shapes } = $$props;
+    	let { colors } = $$props;
+    	const writable_props = ['shapes', 'colors'];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Blobs> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$$set = $$props => {
+    		if ('shapes' in $$props) $$invalidate(0, shapes = $$props.shapes);
+    		if ('colors' in $$props) $$invalidate(1, colors = $$props.colors);
+    	};
+
+    	$$self.$capture_state = () => ({ shapes, colors, Blob });
+
+    	$$self.$inject_state = $$props => {
+    		if ('shapes' in $$props) $$invalidate(0, shapes = $$props.shapes);
+    		if ('colors' in $$props) $$invalidate(1, colors = $$props.colors);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [shapes, colors];
+    }
+
+    class Blobs extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$g, create_fragment$g, safe_not_equal, { shapes: 0, colors: 1 });
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Blobs",
+    			options,
+    			id: create_fragment$g.name
+    		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*shapes*/ ctx[0] === undefined && !('shapes' in props)) {
+    			console.warn("<Blobs> was created without expected prop 'shapes'");
+    		}
+
+    		if (/*colors*/ ctx[1] === undefined && !('colors' in props)) {
+    			console.warn("<Blobs> was created without expected prop 'colors'");
+    		}
+    	}
+
+    	get shapes() {
+    		throw new Error("<Blobs>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set shapes(value) {
+    		throw new Error("<Blobs>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get colors() {
+    		throw new Error("<Blobs>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set colors(value) {
+    		throw new Error("<Blobs>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src/components/BgCards.svelte generated by Svelte v3.43.0 */
+    const file$f = "src/components/BgCards.svelte";
+
+    function get_each_context_1$3(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[11] = list[i];
+    	return child_ctx;
+    }
+
+    function get_each_context$4(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[11] = list[i];
+    	return child_ctx;
+    }
+
+    // (52:4) {:else}
+    function create_else_block$3(ctx) {
+    	let div;
+    	let each_value_1 = /*cards*/ ctx[2];
+    	validate_each_argument(each_value_1);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_1.length; i += 1) {
+    		each_blocks[i] = create_each_block_1$3(get_each_context_1$3(ctx, each_value_1, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[7] + "__container"));
+    			add_location(div, file$f, 52, 6, 1780);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(div, null);
+    			}
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*baseClass, cards*/ 132) {
+    				each_value_1 = /*cards*/ ctx[2];
+    				validate_each_argument(each_value_1);
+    				let i;
+
+    				for (i = 0; i < each_value_1.length; i += 1) {
+    					const child_ctx = get_each_context_1$3(ctx, each_value_1, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block_1$3(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(div, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value_1.length;
+    			}
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block$3.name,
+    		type: "else",
+    		source: "(52:4) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (25:4) {#if slider}
+    function create_if_block$7(ctx) {
+    	let swiper;
+    	let t0;
+    	let div;
+    	let t1;
+    	let current;
+
+    	swiper = new Swiper({
+    			props: {
+    				modules: [Navigation],
+    				loop: true,
+    				navigation: /*navigation*/ ctx[8],
+    				class: "" + (/*baseClass*/ ctx[7] + "__container"),
+    				spaceBetween: 50,
+    				slidesPerView: 3,
+    				breakpoints: swiperBreakpoints,
+    				$$slots: { default: [create_default_slot$4] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	swiper.$on("slideChange", slideChange_handler$3);
+    	swiper.$on("swiper", swiper_handler$3);
+
+    	const block = {
+    		c: function create() {
+    			create_component(swiper.$$.fragment);
+    			t0 = space();
+    			div = element("div");
+    			t1 = text$1("Next ->");
+    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[7] + "__next"));
+    			add_location(div, file$f, 50, 6, 1717);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(swiper, target, anchor);
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, div, anchor);
+    			append_dev(div, t1);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const swiper_changes = {};
+
+    			if (dirty & /*$$scope, cards*/ 65540) {
+    				swiper_changes.$$scope = { dirty, ctx };
+    			}
+
+    			swiper.$set(swiper_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(swiper.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(swiper.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(swiper, detaching);
+    			if (detaching) detach_dev(t0);
+    			if (detaching) detach_dev(div);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$7.name,
+    		type: "if",
+    		source: "(25:4) {#if slider}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (58:14) {#if card.secondLine}
+    function create_if_block_2(ctx) {
+    	let small;
+    	let raw_value = /*card*/ ctx[11].secondLine + "";
+
+    	const block = {
+    		c: function create() {
+    			small = element("small");
+    			add_location(small, file$f, 58, 16, 2119);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, small, anchor);
+    			small.innerHTML = raw_value;
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*cards*/ 4 && raw_value !== (raw_value = /*card*/ ctx[11].secondLine + "")) small.innerHTML = raw_value;		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(small);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_2.name,
+    		type: "if",
+    		source: "(58:14) {#if card.secondLine}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (54:8) {#each cards as card}
+    function create_each_block_1$3(ctx) {
+    	let div2;
+    	let div0;
+    	let strong;
+    	let raw_value = /*card*/ ctx[11].firstLine + "";
+    	let br;
+    	let t0;
+    	let div0_class_value;
+    	let t1;
+    	let div1;
+    	let t2;
+    	let if_block = /*card*/ ctx[11].secondLine && create_if_block_2(ctx);
+
+    	const block = {
+    		c: function create() {
+    			div2 = element("div");
+    			div0 = element("div");
+    			strong = element("strong");
+    			br = element("br");
+    			t0 = space();
+    			if (if_block) if_block.c();
+    			t1 = space();
+    			div1 = element("div");
+    			t2 = space();
+    			add_location(strong, file$f, 56, 14, 2021);
+    			add_location(br, file$f, 56, 53, 2060);
+
+    			attr_dev(div0, "class", div0_class_value = "" + (/*baseClass*/ ctx[7] + "__card__title " + (/*card*/ ctx[11].secondLine
+    			? '{baseClass}__card__title--with-subtitle'
+    			: '')));
+
+    			add_location(div0, file$f, 55, 12, 1901);
+    			attr_dev(div1, "class", "" + (/*baseClass*/ ctx[7] + "__card__image"));
+    			set_style(div1, "background-image", "url('images/" + /*card*/ ctx[11].imagePath + "')");
+    			add_location(div1, file$f, 61, 12, 2209);
+    			attr_dev(div2, "class", "" + (/*baseClass*/ ctx[7] + "__card"));
+    			add_location(div2, file$f, 54, 10, 1857);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div0);
+    			append_dev(div0, strong);
+    			strong.innerHTML = raw_value;
+    			append_dev(div0, br);
+    			append_dev(div0, t0);
+    			if (if_block) if_block.m(div0, null);
+    			append_dev(div2, t1);
+    			append_dev(div2, div1);
+    			append_dev(div2, t2);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*cards*/ 4 && raw_value !== (raw_value = /*card*/ ctx[11].firstLine + "")) strong.innerHTML = raw_value;
+    			if (/*card*/ ctx[11].secondLine) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block_2(ctx);
+    					if_block.c();
+    					if_block.m(div0, null);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+
+    			if (dirty & /*cards*/ 4 && div0_class_value !== (div0_class_value = "" + (/*baseClass*/ ctx[7] + "__card__title " + (/*card*/ ctx[11].secondLine
+    			? '{baseClass}__card__title--with-subtitle'
+    			: '')))) {
+    				attr_dev(div0, "class", div0_class_value);
+    			}
+
+    			if (dirty & /*cards*/ 4) {
+    				set_style(div1, "background-image", "url('images/" + /*card*/ ctx[11].imagePath + "')");
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div2);
+    			if (if_block) if_block.d();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block_1$3.name,
+    		type: "each",
+    		source: "(54:8) {#each cards as card}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (42:16) {#if card.secondLine}
+    function create_if_block_1$2(ctx) {
+    	let small;
+    	let raw_value = /*card*/ ctx[11].secondLine + "";
+
+    	const block = {
+    		c: function create() {
+    			small = element("small");
+    			add_location(small, file$f, 42, 18, 1437);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, small, anchor);
+    			small.innerHTML = raw_value;
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*cards*/ 4 && raw_value !== (raw_value = /*card*/ ctx[11].secondLine + "")) small.innerHTML = raw_value;		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(small);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1$2.name,
+    		type: "if",
+    		source: "(42:16) {#if card.secondLine}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (38:10) <SwiperSlide>
+    function create_default_slot_1$3(ctx) {
+    	let div2;
+    	let div0;
+    	let strong;
+    	let raw_value = /*card*/ ctx[11].firstLine + "";
+    	let br;
+    	let t0;
+    	let div0_class_value;
+    	let t1;
+    	let div1;
+    	let t2;
+    	let if_block = /*card*/ ctx[11].secondLine && create_if_block_1$2(ctx);
+
+    	const block = {
+    		c: function create() {
+    			div2 = element("div");
+    			div0 = element("div");
+    			strong = element("strong");
+    			br = element("br");
+    			t0 = space();
+    			if (if_block) if_block.c();
+    			t1 = space();
+    			div1 = element("div");
+    			t2 = space();
+    			add_location(strong, file$f, 40, 16, 1335);
+    			add_location(br, file$f, 40, 55, 1374);
+
+    			attr_dev(div0, "class", div0_class_value = "" + (/*baseClass*/ ctx[7] + "__card__title " + (/*card*/ ctx[11].secondLine
+    			? '{baseClass}__card__title--with-subtitle'
+    			: '')));
+
+    			add_location(div0, file$f, 39, 14, 1213);
+    			attr_dev(div1, "class", "" + (/*baseClass*/ ctx[7] + "__card__image"));
+    			set_style(div1, "background-image", "url('images/" + /*card*/ ctx[11].imagePath + "')");
+    			add_location(div1, file$f, 45, 14, 1533);
+    			attr_dev(div2, "class", "" + (/*baseClass*/ ctx[7] + "__card"));
+    			add_location(div2, file$f, 38, 12, 1167);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div0);
+    			append_dev(div0, strong);
+    			strong.innerHTML = raw_value;
+    			append_dev(div0, br);
+    			append_dev(div0, t0);
+    			if (if_block) if_block.m(div0, null);
+    			append_dev(div2, t1);
+    			append_dev(div2, div1);
+    			insert_dev(target, t2, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*cards*/ 4 && raw_value !== (raw_value = /*card*/ ctx[11].firstLine + "")) strong.innerHTML = raw_value;
+    			if (/*card*/ ctx[11].secondLine) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block_1$2(ctx);
+    					if_block.c();
+    					if_block.m(div0, null);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+
+    			if (dirty & /*cards*/ 4 && div0_class_value !== (div0_class_value = "" + (/*baseClass*/ ctx[7] + "__card__title " + (/*card*/ ctx[11].secondLine
+    			? '{baseClass}__card__title--with-subtitle'
+    			: '')))) {
+    				attr_dev(div0, "class", div0_class_value);
+    			}
+
+    			if (dirty & /*cards*/ 4) {
+    				set_style(div1, "background-image", "url('images/" + /*card*/ ctx[11].imagePath + "')");
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div2);
+    			if (if_block) if_block.d();
+    			if (detaching) detach_dev(t2);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_1$3.name,
+    		type: "slot",
+    		source: "(38:10) <SwiperSlide>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (37:8) {#each cards as card}
+    function create_each_block$4(ctx) {
+    	let swiperslide;
+    	let current;
+
+    	swiperslide = new Swiper_slide({
+    			props: {
+    				$$slots: { default: [create_default_slot_1$3] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(swiperslide.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(swiperslide, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const swiperslide_changes = {};
+
+    			if (dirty & /*$$scope, cards*/ 65540) {
+    				swiperslide_changes.$$scope = { dirty, ctx };
+    			}
+
+    			swiperslide.$set(swiperslide_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(swiperslide.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(swiperslide.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(swiperslide, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block$4.name,
+    		type: "each",
+    		source: "(37:8) {#each cards as card}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (26:6) <Swiper         modules={[Navigation]}         loop="{true}"         navigation={navigation}         class="{baseClass}__container"         spaceBetween={50}         slidesPerView={3}         breakpoints={swiperBreakpoints}         on:slideChange={() => {}}         on:swiper={(e) => {}}       >
+    function create_default_slot$4(ctx) {
+    	let each_1_anchor;
+    	let current;
+    	let each_value = /*cards*/ ctx[2];
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$4(get_each_context$4(ctx, each_value, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			each_1_anchor = empty();
+    		},
+    		m: function mount(target, anchor) {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, each_1_anchor, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*baseClass, cards*/ 132) {
+    				each_value = /*cards*/ ctx[2];
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$4(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block$4(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    					}
+    				}
+
+    				group_outros();
+
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+
+    				check_outros();
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_each(each_blocks, detaching);
+    			if (detaching) detach_dev(each_1_anchor);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot$4.name,
+    		type: "slot",
+    		source: "(26:6) <Swiper         modules={[Navigation]}         loop=\\\"{true}\\\"         navigation={navigation}         class=\\\"{baseClass}__container\\\"         spaceBetween={50}         slidesPerView={3}         breakpoints={swiperBreakpoints}         on:slideChange={() => {}}         on:swiper={(e) => {}}       >",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$f(ctx) {
+    	let div2;
+    	let div1;
+    	let div0;
+    	let t0;
+    	let t1;
+    	let h3;
+    	let t2;
+    	let current_block_type_index;
+    	let if_block;
+    	let t3;
+    	let blobs;
+    	let current;
+    	const if_block_creators = [create_if_block$7, create_else_block$3];
+    	const if_blocks = [];
+
+    	function select_block_type(ctx, dirty) {
+    		if (/*slider*/ ctx[3]) return 0;
+    		return 1;
+    	}
+
+    	current_block_type_index = select_block_type(ctx);
+    	if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+
+    	blobs = new Blobs({
+    			props: {
+    				shapes: /*shapes*/ ctx[4],
+    				colors: /*colors*/ ctx[5]
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			div2 = element("div");
+    			div1 = element("div");
+    			div0 = element("div");
+    			t0 = text$1(/*overtitle*/ ctx[1]);
+    			t1 = space();
+    			h3 = element("h3");
+    			t2 = space();
+    			if_block.c();
+    			t3 = space();
+    			create_component(blobs.$$.fragment);
+    			attr_dev(div0, "class", "" + (/*baseClass*/ ctx[7] + "__overtitle"));
+    			add_location(div0, file$f, 22, 4, 674);
+    			attr_dev(h3, "class", "" + (/*baseClass*/ ctx[7] + "__title"));
+    			add_location(h3, file$f, 23, 4, 732);
+    			attr_dev(div1, "class", /*baseClass*/ ctx[7]);
+    			add_location(div1, file$f, 21, 2, 644);
+    			attr_dev(div2, "class", "wrapper");
+    			attr_dev(div2, "id", /*HTMLanchor*/ ctx[6]);
+    			add_location(div2, file$f, 20, 0, 602);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div1);
+    			append_dev(div1, div0);
+    			append_dev(div0, t0);
+    			append_dev(div1, t1);
+    			append_dev(div1, h3);
+    			h3.innerHTML = /*title*/ ctx[0];
+    			append_dev(div1, t2);
+    			if_blocks[current_block_type_index].m(div1, null);
+    			append_dev(div2, t3);
+    			mount_component(blobs, div2, null);
+    			current = true;
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (!current || dirty & /*overtitle*/ 2) set_data_dev(t0, /*overtitle*/ ctx[1]);
+    			if (!current || dirty & /*title*/ 1) h3.innerHTML = /*title*/ ctx[0];			let previous_block_index = current_block_type_index;
+    			current_block_type_index = select_block_type(ctx);
+
+    			if (current_block_type_index === previous_block_index) {
+    				if_blocks[current_block_type_index].p(ctx, dirty);
+    			} else {
+    				group_outros();
+
+    				transition_out(if_blocks[previous_block_index], 1, 1, () => {
+    					if_blocks[previous_block_index] = null;
+    				});
+
+    				check_outros();
+    				if_block = if_blocks[current_block_type_index];
+
+    				if (!if_block) {
+    					if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    					if_block.c();
+    				} else {
+    					if_block.p(ctx, dirty);
+    				}
+
+    				transition_in(if_block, 1);
+    				if_block.m(div1, null);
+    			}
+
+    			const blobs_changes = {};
+    			if (dirty & /*shapes*/ 16) blobs_changes.shapes = /*shapes*/ ctx[4];
+    			if (dirty & /*colors*/ 32) blobs_changes.colors = /*colors*/ ctx[5];
+    			blobs.$set(blobs_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			transition_in(blobs.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			transition_out(blobs.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div2);
+    			if_blocks[current_block_type_index].d();
+    			destroy_component(blobs);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$f.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    const slideChange_handler$3 = () => {
+    	
+    };
+
+    const swiper_handler$3 = e => {
+    	
+    };
+
+    function instance$f($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('BgCards', slots, []);
+    	let { title = "Title for hero component" } = $$props;
+    	let { overtitle = "overtitle" } = $$props;
+    	let { cards = [] } = $$props;
+    	let { slider = false } = $$props;
+    	let { anchor } = $$props;
+    	let { type = 'BgCards' } = $$props;
+    	let { shapes = 0 } = $$props;
+    	let { colors = ['red', 'yellow', 'blue'] } = $$props;
+    	let HTMLanchor = anchor ? anchor : overtitle;
+    	let baseClass = type.toLowerCase();
+    	let navigation = { nextEl: `.${baseClass}__next` };
+    	const writable_props = ['title', 'overtitle', 'cards', 'slider', 'anchor', 'type', 'shapes', 'colors'];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<BgCards> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$$set = $$props => {
+    		if ('title' in $$props) $$invalidate(0, title = $$props.title);
+    		if ('overtitle' in $$props) $$invalidate(1, overtitle = $$props.overtitle);
+    		if ('cards' in $$props) $$invalidate(2, cards = $$props.cards);
+    		if ('slider' in $$props) $$invalidate(3, slider = $$props.slider);
+    		if ('anchor' in $$props) $$invalidate(9, anchor = $$props.anchor);
+    		if ('type' in $$props) $$invalidate(10, type = $$props.type);
+    		if ('shapes' in $$props) $$invalidate(4, shapes = $$props.shapes);
+    		if ('colors' in $$props) $$invalidate(5, colors = $$props.colors);
+    	};
+
+    	$$self.$capture_state = () => ({
+    		title,
+    		overtitle,
+    		cards,
+    		slider,
+    		anchor,
+    		type,
+    		shapes,
+    		colors,
+    		HTMLanchor,
+    		baseClass,
+    		navigation,
+    		Navigation,
+    		Swiper,
+    		SwiperSlide: Swiper_slide,
+    		swiperBreakpoints,
+    		Blobs
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ('title' in $$props) $$invalidate(0, title = $$props.title);
+    		if ('overtitle' in $$props) $$invalidate(1, overtitle = $$props.overtitle);
+    		if ('cards' in $$props) $$invalidate(2, cards = $$props.cards);
+    		if ('slider' in $$props) $$invalidate(3, slider = $$props.slider);
+    		if ('anchor' in $$props) $$invalidate(9, anchor = $$props.anchor);
+    		if ('type' in $$props) $$invalidate(10, type = $$props.type);
+    		if ('shapes' in $$props) $$invalidate(4, shapes = $$props.shapes);
+    		if ('colors' in $$props) $$invalidate(5, colors = $$props.colors);
+    		if ('HTMLanchor' in $$props) $$invalidate(6, HTMLanchor = $$props.HTMLanchor);
+    		if ('baseClass' in $$props) $$invalidate(7, baseClass = $$props.baseClass);
+    		if ('navigation' in $$props) $$invalidate(8, navigation = $$props.navigation);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [
+    		title,
+    		overtitle,
+    		cards,
+    		slider,
+    		shapes,
+    		colors,
+    		HTMLanchor,
+    		baseClass,
+    		navigation,
+    		anchor,
+    		type
+    	];
+    }
+
+    class BgCards extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+
+    		init(this, options, instance$f, create_fragment$f, safe_not_equal, {
+    			title: 0,
+    			overtitle: 1,
+    			cards: 2,
+    			slider: 3,
+    			anchor: 9,
+    			type: 10,
+    			shapes: 4,
+    			colors: 5
+    		});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "BgCards",
+    			options,
+    			id: create_fragment$f.name
+    		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*anchor*/ ctx[9] === undefined && !('anchor' in props)) {
+    			console.warn("<BgCards> was created without expected prop 'anchor'");
+    		}
+    	}
+
+    	get title() {
+    		throw new Error("<BgCards>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set title(value) {
+    		throw new Error("<BgCards>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get overtitle() {
+    		throw new Error("<BgCards>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set overtitle(value) {
+    		throw new Error("<BgCards>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get cards() {
+    		throw new Error("<BgCards>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set cards(value) {
+    		throw new Error("<BgCards>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get slider() {
+    		throw new Error("<BgCards>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set slider(value) {
+    		throw new Error("<BgCards>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get anchor() {
+    		throw new Error("<BgCards>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set anchor(value) {
+    		throw new Error("<BgCards>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get type() {
+    		throw new Error("<BgCards>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set type(value) {
+    		throw new Error("<BgCards>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get shapes() {
+    		throw new Error("<BgCards>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set shapes(value) {
+    		throw new Error("<BgCards>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get colors() {
+    		throw new Error("<BgCards>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set colors(value) {
+    		throw new Error("<BgCards>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src/components/BlockWithImage.svelte generated by Svelte v3.43.0 */
+    const file$e = "src/components/BlockWithImage.svelte";
+
+    function create_fragment$e(ctx) {
+    	let div5;
+    	let div4;
+    	let div2;
+    	let div0;
+    	let t0;
+    	let t1;
+    	let h2;
+    	let t2;
+    	let t3;
+    	let div1;
+    	let t4;
+    	let t5;
+    	let div3;
+    	let div4_class_value;
+    	let t6;
+    	let blobs;
+    	let current;
+
+    	blobs = new Blobs({
+    			props: {
+    				shapes: /*shapes*/ ctx[5],
+    				colors: /*colors*/ ctx[6]
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			div5 = element("div");
+    			div4 = element("div");
+    			div2 = element("div");
+    			div0 = element("div");
+    			t0 = text$1(/*overtitle*/ ctx[2]);
+    			t1 = space();
+    			h2 = element("h2");
+    			t2 = text$1(/*title*/ ctx[3]);
+    			t3 = space();
+    			div1 = element("div");
+    			t4 = text$1(/*description*/ ctx[4]);
+    			t5 = space();
+    			div3 = element("div");
+    			t6 = space();
+    			create_component(blobs.$$.fragment);
+    			attr_dev(div0, "class", "" + (/*baseClass*/ ctx[8] + "__overtitle"));
+    			add_location(div0, file$e, 21, 6, 674);
+    			attr_dev(h2, "class", "" + (/*baseClass*/ ctx[8] + "__title"));
+    			add_location(h2, file$e, 22, 6, 734);
+    			attr_dev(div1, "class", "" + (/*baseClass*/ ctx[8] + "__description"));
+    			add_location(div1, file$e, 23, 6, 784);
+    			attr_dev(div2, "class", "" + (/*baseClass*/ ctx[8] + "__content"));
+    			add_location(div2, file$e, 20, 4, 633);
+    			attr_dev(div3, "class", "" + (/*baseClass*/ ctx[8] + "__image"));
+    			set_style(div3, "background-image", "url('images/" + /*imagePath*/ ctx[1] + "')");
+    			set_style(div3, "border-radius", generateBlob(30, 70));
+    			add_location(div3, file$e, 25, 4, 857);
+    			attr_dev(div4, "class", div4_class_value = "" + (/*baseClass*/ ctx[8] + " " + /*baseClass*/ ctx[8] + "--" + /*imagePosition*/ ctx[0]));
+    			add_location(div4, file$e, 19, 2, 574);
+    			attr_dev(div5, "class", "wrapper");
+    			attr_dev(div5, "id", /*HTMLanchor*/ ctx[7]);
+    			add_location(div5, file$e, 18, 0, 532);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div5, anchor);
+    			append_dev(div5, div4);
+    			append_dev(div4, div2);
+    			append_dev(div2, div0);
+    			append_dev(div0, t0);
+    			append_dev(div2, t1);
+    			append_dev(div2, h2);
+    			append_dev(h2, t2);
+    			append_dev(div2, t3);
+    			append_dev(div2, div1);
+    			append_dev(div1, t4);
+    			append_dev(div4, t5);
+    			append_dev(div4, div3);
+    			append_dev(div5, t6);
+    			mount_component(blobs, div5, null);
+    			current = true;
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (!current || dirty & /*overtitle*/ 4) set_data_dev(t0, /*overtitle*/ ctx[2]);
+    			if (!current || dirty & /*title*/ 8) set_data_dev(t2, /*title*/ ctx[3]);
+    			if (!current || dirty & /*description*/ 16) set_data_dev(t4, /*description*/ ctx[4]);
+
+    			if (!current || dirty & /*imagePath*/ 2) {
+    				set_style(div3, "background-image", "url('images/" + /*imagePath*/ ctx[1] + "')");
+    			}
+
+    			if (!current || dirty & /*imagePosition*/ 1 && div4_class_value !== (div4_class_value = "" + (/*baseClass*/ ctx[8] + " " + /*baseClass*/ ctx[8] + "--" + /*imagePosition*/ ctx[0]))) {
+    				attr_dev(div4, "class", div4_class_value);
+    			}
+
+    			const blobs_changes = {};
+    			if (dirty & /*shapes*/ 32) blobs_changes.shapes = /*shapes*/ ctx[5];
+    			if (dirty & /*colors*/ 64) blobs_changes.colors = /*colors*/ ctx[6];
+    			blobs.$set(blobs_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(blobs.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(blobs.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div5);
+    			destroy_component(blobs);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$e.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$e($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('BlockWithImage', slots, []);
+    	let { imagePosition = "left" } = $$props;
+    	let { imagePath = "image.jpg" } = $$props;
+    	let { overtitle = "overtitle" } = $$props;
+    	let { title = "Title for hero component" } = $$props;
+    	let { description = "Sample description" } = $$props;
+    	let { shapes = 2 } = $$props;
+    	let { colors = ['red', 'yellow', 'blue'] } = $$props;
+    	let { anchor } = $$props;
+    	let { type = 'BlockWithImage' } = $$props;
+    	let HTMLanchor = anchor ? anchor : title;
+    	let baseClass = type.toLowerCase();
+
+    	const writable_props = [
+    		'imagePosition',
+    		'imagePath',
+    		'overtitle',
+    		'title',
+    		'description',
+    		'shapes',
+    		'colors',
+    		'anchor',
+    		'type'
+    	];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<BlockWithImage> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$$set = $$props => {
+    		if ('imagePosition' in $$props) $$invalidate(0, imagePosition = $$props.imagePosition);
+    		if ('imagePath' in $$props) $$invalidate(1, imagePath = $$props.imagePath);
+    		if ('overtitle' in $$props) $$invalidate(2, overtitle = $$props.overtitle);
+    		if ('title' in $$props) $$invalidate(3, title = $$props.title);
+    		if ('description' in $$props) $$invalidate(4, description = $$props.description);
+    		if ('shapes' in $$props) $$invalidate(5, shapes = $$props.shapes);
+    		if ('colors' in $$props) $$invalidate(6, colors = $$props.colors);
+    		if ('anchor' in $$props) $$invalidate(9, anchor = $$props.anchor);
+    		if ('type' in $$props) $$invalidate(10, type = $$props.type);
+    	};
+
+    	$$self.$capture_state = () => ({
+    		imagePosition,
+    		imagePath,
+    		overtitle,
+    		title,
+    		description,
+    		shapes,
+    		colors,
+    		anchor,
+    		type,
+    		HTMLanchor,
+    		baseClass,
+    		generateBlob,
+    		random,
+    		Blobs
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ('imagePosition' in $$props) $$invalidate(0, imagePosition = $$props.imagePosition);
+    		if ('imagePath' in $$props) $$invalidate(1, imagePath = $$props.imagePath);
+    		if ('overtitle' in $$props) $$invalidate(2, overtitle = $$props.overtitle);
+    		if ('title' in $$props) $$invalidate(3, title = $$props.title);
+    		if ('description' in $$props) $$invalidate(4, description = $$props.description);
+    		if ('shapes' in $$props) $$invalidate(5, shapes = $$props.shapes);
+    		if ('colors' in $$props) $$invalidate(6, colors = $$props.colors);
+    		if ('anchor' in $$props) $$invalidate(9, anchor = $$props.anchor);
+    		if ('type' in $$props) $$invalidate(10, type = $$props.type);
+    		if ('HTMLanchor' in $$props) $$invalidate(7, HTMLanchor = $$props.HTMLanchor);
+    		if ('baseClass' in $$props) $$invalidate(8, baseClass = $$props.baseClass);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [
+    		imagePosition,
+    		imagePath,
+    		overtitle,
+    		title,
+    		description,
+    		shapes,
+    		colors,
+    		HTMLanchor,
+    		baseClass,
+    		anchor,
+    		type
+    	];
+    }
+
+    class BlockWithImage extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+
+    		init(this, options, instance$e, create_fragment$e, safe_not_equal, {
+    			imagePosition: 0,
+    			imagePath: 1,
+    			overtitle: 2,
+    			title: 3,
+    			description: 4,
+    			shapes: 5,
+    			colors: 6,
+    			anchor: 9,
+    			type: 10
+    		});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "BlockWithImage",
+    			options,
+    			id: create_fragment$e.name
+    		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*anchor*/ ctx[9] === undefined && !('anchor' in props)) {
+    			console.warn("<BlockWithImage> was created without expected prop 'anchor'");
+    		}
+    	}
+
+    	get imagePosition() {
+    		throw new Error("<BlockWithImage>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set imagePosition(value) {
+    		throw new Error("<BlockWithImage>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get imagePath() {
+    		throw new Error("<BlockWithImage>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set imagePath(value) {
+    		throw new Error("<BlockWithImage>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get overtitle() {
+    		throw new Error("<BlockWithImage>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set overtitle(value) {
+    		throw new Error("<BlockWithImage>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get title() {
+    		throw new Error("<BlockWithImage>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set title(value) {
+    		throw new Error("<BlockWithImage>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get description() {
+    		throw new Error("<BlockWithImage>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set description(value) {
+    		throw new Error("<BlockWithImage>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get shapes() {
+    		throw new Error("<BlockWithImage>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set shapes(value) {
+    		throw new Error("<BlockWithImage>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get colors() {
+    		throw new Error("<BlockWithImage>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set colors(value) {
+    		throw new Error("<BlockWithImage>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get anchor() {
+    		throw new Error("<BlockWithImage>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set anchor(value) {
+    		throw new Error("<BlockWithImage>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get type() {
+    		throw new Error("<BlockWithImage>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set type(value) {
+    		throw new Error("<BlockWithImage>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src/components/Bubbles.svelte generated by Svelte v3.43.0 */
+    const file$d = "src/components/Bubbles.svelte";
+
+    function get_each_context_1$2(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[11] = list[i];
+    	return child_ctx;
+    }
+
+    function get_each_context$3(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[11] = list[i];
+    	return child_ctx;
+    }
+
+    // (50:4) {:else}
+    function create_else_block$2(ctx) {
+    	let div;
+    	let each_value_1 = /*bubbles*/ ctx[2];
+    	validate_each_argument(each_value_1);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_1.length; i += 1) {
+    		each_blocks[i] = create_each_block_1$2(get_each_context_1$2(ctx, each_value_1, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[7] + "__bubbles"));
+    			add_location(div, file$d, 50, 6, 1751);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(div, null);
+    			}
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*baseClass, generateBlob, bubbles*/ 132) {
+    				each_value_1 = /*bubbles*/ ctx[2];
+    				validate_each_argument(each_value_1);
+    				let i;
+
+    				for (i = 0; i < each_value_1.length; i += 1) {
+    					const child_ctx = get_each_context_1$2(ctx, each_value_1, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block_1$2(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(div, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value_1.length;
+    			}
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block$2.name,
+    		type: "else",
+    		source: "(50:4) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (26:4) {#if slider}
+    function create_if_block$6(ctx) {
+    	let div0;
+    	let swiper;
+    	let t0;
+    	let div1;
+    	let t1;
+    	let current;
+
+    	swiper = new Swiper({
+    			props: {
+    				modules: [Navigation],
+    				loop: true,
+    				navigation: /*navigation*/ ctx[8],
+    				class: "" + (/*bubbles*/ ctx[2] + "__slides"),
+    				spaceBetween: 50,
+    				slidesPerView: 4,
+    				breakpoints: swiperBreakpoints,
+    				$$slots: { default: [create_default_slot$3] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	swiper.$on("slideChange", slideChange_handler$2);
+    	swiper.$on("swiper", swiper_handler$2);
+
+    	const block = {
+    		c: function create() {
+    			div0 = element("div");
+    			create_component(swiper.$$.fragment);
+    			t0 = space();
+    			div1 = element("div");
+    			t1 = text$1("Next ->");
+    			attr_dev(div0, "class", "" + (/*baseClass*/ ctx[7] + "__bubbles"));
+    			add_location(div0, file$d, 26, 6, 882);
+    			attr_dev(div1, "class", "" + (/*baseClass*/ ctx[7] + "__next"));
+    			add_location(div1, file$d, 48, 6, 1688);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div0, anchor);
+    			mount_component(swiper, div0, null);
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, t1);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const swiper_changes = {};
+    			if (dirty & /*bubbles*/ 4) swiper_changes.class = "" + (/*bubbles*/ ctx[2] + "__slides");
+
+    			if (dirty & /*$$scope, bubbles*/ 65540) {
+    				swiper_changes.$$scope = { dirty, ctx };
+    			}
+
+    			swiper.$set(swiper_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(swiper.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(swiper.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div0);
+    			destroy_component(swiper);
+    			if (detaching) detach_dev(t0);
+    			if (detaching) detach_dev(div1);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$6.name,
+    		type: "if",
+    		source: "(26:4) {#if slider}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (52:8) {#each bubbles as bubble}
+    function create_each_block_1$2(ctx) {
+    	let div3;
+    	let div2;
+    	let div0;
+    	let t0_value = /*bubble*/ ctx[11].text + "";
+    	let t0;
+    	let t1;
+    	let div1;
+    	let t2;
+
+    	const block = {
+    		c: function create() {
+    			div3 = element("div");
+    			div2 = element("div");
+    			div0 = element("div");
+    			t0 = text$1(t0_value);
+    			t1 = space();
+    			div1 = element("div");
+    			t2 = space();
+    			attr_dev(div0, "class", "" + (/*baseClass*/ ctx[7] + "__bubble__text"));
+    			set_style(div0, "color", /*bubble*/ ctx[11].color);
+    			add_location(div0, file$d, 54, 14, 1934);
+    			attr_dev(div1, "class", "" + (/*baseClass*/ ctx[7] + "__bubble__bg"));
+    			set_style(div1, "border-radius", generateBlob());
+    			set_style(div1, "background-color", /*bubble*/ ctx[11].color);
+    			add_location(div1, file$d, 55, 14, 2037);
+    			attr_dev(div2, "class", "" + (/*baseClass*/ ctx[7] + "__bubble"));
+    			add_location(div2, file$d, 53, 12, 1886);
+    			attr_dev(div3, "class", "" + (/*baseClass*/ ctx[7] + "__bubble-container"));
+    			add_location(div3, file$d, 52, 10, 1830);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div3, anchor);
+    			append_dev(div3, div2);
+    			append_dev(div2, div0);
+    			append_dev(div0, t0);
+    			append_dev(div2, t1);
+    			append_dev(div2, div1);
+    			append_dev(div3, t2);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*bubbles*/ 4 && t0_value !== (t0_value = /*bubble*/ ctx[11].text + "")) set_data_dev(t0, t0_value);
+
+    			if (dirty & /*bubbles*/ 4) {
+    				set_style(div0, "color", /*bubble*/ ctx[11].color);
+    			}
+
+    			if (dirty & /*bubbles*/ 4) {
+    				set_style(div1, "background-color", /*bubble*/ ctx[11].color);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div3);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block_1$2.name,
+    		type: "each",
+    		source: "(52:8) {#each bubbles as bubble}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (40:12) <SwiperSlide>
+    function create_default_slot_1$2(ctx) {
+    	let div2;
+    	let div0;
+    	let t0_value = /*bubble*/ ctx[11].text + "";
+    	let t0;
+    	let t1;
+    	let div1;
+    	let t2;
+
+    	const block = {
+    		c: function create() {
+    			div2 = element("div");
+    			div0 = element("div");
+    			t0 = text$1(t0_value);
+    			t1 = space();
+    			div1 = element("div");
+    			t2 = space();
+    			attr_dev(div0, "class", "" + (/*baseClass*/ ctx[7] + "__bubble__text"));
+    			set_style(div0, "color", /*bubble*/ ctx[11].color);
+    			add_location(div0, file$d, 41, 16, 1362);
+    			attr_dev(div1, "class", "" + (/*baseClass*/ ctx[7] + "__bubble__bg"));
+    			set_style(div1, "border-radius", generateBlob());
+    			set_style(div1, "background-color", /*bubble*/ ctx[11].color);
+    			add_location(div1, file$d, 42, 16, 1467);
+    			attr_dev(div2, "class", "" + (/*baseClass*/ ctx[7] + "__bubble"));
+    			add_location(div2, file$d, 40, 14, 1312);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div0);
+    			append_dev(div0, t0);
+    			append_dev(div2, t1);
+    			append_dev(div2, div1);
+    			insert_dev(target, t2, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*bubbles*/ 4 && t0_value !== (t0_value = /*bubble*/ ctx[11].text + "")) set_data_dev(t0, t0_value);
+
+    			if (dirty & /*bubbles*/ 4) {
+    				set_style(div0, "color", /*bubble*/ ctx[11].color);
+    			}
+
+    			if (dirty & /*bubbles*/ 4) {
+    				set_style(div1, "background-color", /*bubble*/ ctx[11].color);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div2);
+    			if (detaching) detach_dev(t2);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_1$2.name,
+    		type: "slot",
+    		source: "(40:12) <SwiperSlide>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (39:10) {#each bubbles as bubble}
+    function create_each_block$3(ctx) {
+    	let swiperslide;
+    	let current;
+
+    	swiperslide = new Swiper_slide({
+    			props: {
+    				$$slots: { default: [create_default_slot_1$2] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(swiperslide.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(swiperslide, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const swiperslide_changes = {};
+
+    			if (dirty & /*$$scope, bubbles*/ 65540) {
+    				swiperslide_changes.$$scope = { dirty, ctx };
+    			}
+
+    			swiperslide.$set(swiperslide_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(swiperslide.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(swiperslide.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(swiperslide, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block$3.name,
+    		type: "each",
+    		source: "(39:10) {#each bubbles as bubble}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (28:8) <Swiper           modules={[Navigation]}           loop="{true}"           navigation={navigation}           class="{bubbles}__slides"           spaceBetween={50}           slidesPerView={4}           breakpoints={swiperBreakpoints}           on:slideChange={() => {}}           on:swiper={(e) => {}}         >
+    function create_default_slot$3(ctx) {
+    	let each_1_anchor;
+    	let current;
+    	let each_value = /*bubbles*/ ctx[2];
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$3(get_each_context$3(ctx, each_value, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			each_1_anchor = empty();
+    		},
+    		m: function mount(target, anchor) {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, each_1_anchor, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*baseClass, generateBlob, bubbles*/ 132) {
+    				each_value = /*bubbles*/ ctx[2];
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$3(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block$3(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    					}
+    				}
+
+    				group_outros();
+
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+
+    				check_outros();
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_each(each_blocks, detaching);
+    			if (detaching) detach_dev(each_1_anchor);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot$3.name,
+    		type: "slot",
+    		source: "(28:8) <Swiper           modules={[Navigation]}           loop=\\\"{true}\\\"           navigation={navigation}           class=\\\"{bubbles}__slides\\\"           spaceBetween={50}           slidesPerView={4}           breakpoints={swiperBreakpoints}           on:slideChange={() => {}}           on:swiper={(e) => {}}         >",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$d(ctx) {
+    	let div2;
+    	let div1;
+    	let div0;
+    	let t0;
+    	let t1;
+    	let h3;
+    	let t2;
+    	let current_block_type_index;
+    	let if_block;
+    	let t3;
+    	let blobs;
+    	let current;
+    	const if_block_creators = [create_if_block$6, create_else_block$2];
+    	const if_blocks = [];
+
+    	function select_block_type(ctx, dirty) {
+    		if (/*slider*/ ctx[3]) return 0;
+    		return 1;
+    	}
+
+    	current_block_type_index = select_block_type(ctx);
+    	if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+
+    	blobs = new Blobs({
+    			props: {
+    				shapes: /*shapes*/ ctx[4],
+    				colors: /*colors*/ ctx[5]
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			div2 = element("div");
+    			div1 = element("div");
+    			div0 = element("div");
+    			t0 = text$1(/*overtitle*/ ctx[0]);
+    			t1 = space();
+    			h3 = element("h3");
+    			t2 = space();
+    			if_block.c();
+    			t3 = space();
+    			create_component(blobs.$$.fragment);
+    			attr_dev(div0, "class", "" + (/*baseClass*/ ctx[7] + "__overtitle"));
+    			add_location(div0, file$d, 23, 4, 751);
+    			attr_dev(h3, "class", "" + (/*baseClass*/ ctx[7] + "__title"));
+    			add_location(h3, file$d, 24, 4, 809);
+    			attr_dev(div1, "class", /*baseClass*/ ctx[7]);
+    			add_location(div1, file$d, 22, 2, 721);
+    			attr_dev(div2, "class", "wrapper");
+    			attr_dev(div2, "id", /*HTMLanchor*/ ctx[6]);
+    			add_location(div2, file$d, 21, 0, 679);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div1);
+    			append_dev(div1, div0);
+    			append_dev(div0, t0);
+    			append_dev(div1, t1);
+    			append_dev(div1, h3);
+    			h3.innerHTML = /*title*/ ctx[1];
+    			append_dev(div1, t2);
+    			if_blocks[current_block_type_index].m(div1, null);
+    			append_dev(div2, t3);
+    			mount_component(blobs, div2, null);
+    			current = true;
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (!current || dirty & /*overtitle*/ 1) set_data_dev(t0, /*overtitle*/ ctx[0]);
+    			if (!current || dirty & /*title*/ 2) h3.innerHTML = /*title*/ ctx[1];			let previous_block_index = current_block_type_index;
+    			current_block_type_index = select_block_type(ctx);
+
+    			if (current_block_type_index === previous_block_index) {
+    				if_blocks[current_block_type_index].p(ctx, dirty);
+    			} else {
+    				group_outros();
+
+    				transition_out(if_blocks[previous_block_index], 1, 1, () => {
+    					if_blocks[previous_block_index] = null;
+    				});
+
+    				check_outros();
+    				if_block = if_blocks[current_block_type_index];
+
+    				if (!if_block) {
+    					if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    					if_block.c();
+    				} else {
+    					if_block.p(ctx, dirty);
+    				}
+
+    				transition_in(if_block, 1);
+    				if_block.m(div1, null);
+    			}
+
+    			const blobs_changes = {};
+    			if (dirty & /*shapes*/ 16) blobs_changes.shapes = /*shapes*/ ctx[4];
+    			if (dirty & /*colors*/ 32) blobs_changes.colors = /*colors*/ ctx[5];
+    			blobs.$set(blobs_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			transition_in(blobs.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			transition_out(blobs.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div2);
+    			if_blocks[current_block_type_index].d();
+    			destroy_component(blobs);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$d.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    const slideChange_handler$2 = () => {
+    	
+    };
+
+    const swiper_handler$2 = e => {
+    	
+    };
+
+    function instance$d($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('Bubbles', slots, []);
+    	let { overtitle = "overtitle" } = $$props;
+    	let { title = "Title for hero component" } = $$props;
+    	let { bubbles = ['first', 'second', 'third'] } = $$props;
+    	let { slider = false } = $$props;
+    	let { anchor } = $$props;
+    	let { type = 'Bubbles' } = $$props;
+    	let { shapes = 0 } = $$props;
+    	let { colors = ['red', 'yellow', 'blue'] } = $$props;
+    	let HTMLanchor = anchor ? anchor : overtitle;
+    	let baseClass = type.toLowerCase();
+    	let navigation = { nextEl: `.${baseClass}__next` };
+
+    	const writable_props = [
+    		'overtitle',
+    		'title',
+    		'bubbles',
+    		'slider',
+    		'anchor',
+    		'type',
+    		'shapes',
+    		'colors'
+    	];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Bubbles> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$$set = $$props => {
+    		if ('overtitle' in $$props) $$invalidate(0, overtitle = $$props.overtitle);
+    		if ('title' in $$props) $$invalidate(1, title = $$props.title);
+    		if ('bubbles' in $$props) $$invalidate(2, bubbles = $$props.bubbles);
+    		if ('slider' in $$props) $$invalidate(3, slider = $$props.slider);
+    		if ('anchor' in $$props) $$invalidate(9, anchor = $$props.anchor);
+    		if ('type' in $$props) $$invalidate(10, type = $$props.type);
+    		if ('shapes' in $$props) $$invalidate(4, shapes = $$props.shapes);
+    		if ('colors' in $$props) $$invalidate(5, colors = $$props.colors);
+    	};
+
+    	$$self.$capture_state = () => ({
+    		overtitle,
+    		title,
+    		bubbles,
+    		slider,
+    		anchor,
+    		type,
+    		shapes,
+    		colors,
+    		HTMLanchor,
+    		baseClass,
+    		navigation,
+    		generateBlob,
+    		Navigation,
+    		Swiper,
+    		SwiperSlide: Swiper_slide,
+    		swiperBreakpoints,
+    		Blobs
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ('overtitle' in $$props) $$invalidate(0, overtitle = $$props.overtitle);
+    		if ('title' in $$props) $$invalidate(1, title = $$props.title);
+    		if ('bubbles' in $$props) $$invalidate(2, bubbles = $$props.bubbles);
+    		if ('slider' in $$props) $$invalidate(3, slider = $$props.slider);
+    		if ('anchor' in $$props) $$invalidate(9, anchor = $$props.anchor);
+    		if ('type' in $$props) $$invalidate(10, type = $$props.type);
+    		if ('shapes' in $$props) $$invalidate(4, shapes = $$props.shapes);
+    		if ('colors' in $$props) $$invalidate(5, colors = $$props.colors);
+    		if ('HTMLanchor' in $$props) $$invalidate(6, HTMLanchor = $$props.HTMLanchor);
+    		if ('baseClass' in $$props) $$invalidate(7, baseClass = $$props.baseClass);
+    		if ('navigation' in $$props) $$invalidate(8, navigation = $$props.navigation);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [
+    		overtitle,
+    		title,
+    		bubbles,
+    		slider,
+    		shapes,
+    		colors,
+    		HTMLanchor,
+    		baseClass,
+    		navigation,
+    		anchor,
+    		type
+    	];
+    }
+
+    class Bubbles extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+
+    		init(this, options, instance$d, create_fragment$d, safe_not_equal, {
+    			overtitle: 0,
+    			title: 1,
+    			bubbles: 2,
+    			slider: 3,
+    			anchor: 9,
+    			type: 10,
+    			shapes: 4,
+    			colors: 5
+    		});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Bubbles",
+    			options,
+    			id: create_fragment$d.name
+    		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*anchor*/ ctx[9] === undefined && !('anchor' in props)) {
+    			console.warn("<Bubbles> was created without expected prop 'anchor'");
+    		}
+    	}
+
+    	get overtitle() {
+    		throw new Error("<Bubbles>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set overtitle(value) {
+    		throw new Error("<Bubbles>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get title() {
+    		throw new Error("<Bubbles>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set title(value) {
+    		throw new Error("<Bubbles>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get bubbles() {
+    		throw new Error("<Bubbles>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set bubbles(value) {
+    		throw new Error("<Bubbles>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get slider() {
+    		throw new Error("<Bubbles>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set slider(value) {
+    		throw new Error("<Bubbles>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get anchor() {
+    		throw new Error("<Bubbles>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set anchor(value) {
+    		throw new Error("<Bubbles>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get type() {
+    		throw new Error("<Bubbles>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set type(value) {
+    		throw new Error("<Bubbles>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get shapes() {
+    		throw new Error("<Bubbles>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set shapes(value) {
+    		throw new Error("<Bubbles>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get colors() {
+    		throw new Error("<Bubbles>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set colors(value) {
+    		throw new Error("<Bubbles>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src/components/Cards.svelte generated by Svelte v3.43.0 */
+    const file$c = "src/components/Cards.svelte";
+
+    function get_each_context_1$1(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[11] = list[i];
+    	return child_ctx;
+    }
+
+    function get_each_context$2(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[11] = list[i];
+    	return child_ctx;
+    }
+
+    // (47:4) {:else}
+    function create_else_block$1(ctx) {
+    	let div;
+    	let each_value_1 = /*cards*/ ctx[2];
+    	validate_each_argument(each_value_1);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_1.length; i += 1) {
+    		each_blocks[i] = create_each_block_1$1(get_each_context_1$1(ctx, each_value_1, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[7] + "__container"));
+    			add_location(div, file$c, 47, 6, 1445);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(div, null);
+    			}
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*baseClass, cards*/ 132) {
+    				each_value_1 = /*cards*/ ctx[2];
+    				validate_each_argument(each_value_1);
+    				let i;
+
+    				for (i = 0; i < each_value_1.length; i += 1) {
+    					const child_ctx = get_each_context_1$1(ctx, each_value_1, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block_1$1(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(div, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value_1.length;
+    			}
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block$1.name,
+    		type: "else",
+    		source: "(47:4) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (25:4) {#if slider}
+    function create_if_block$5(ctx) {
+    	let swiper;
+    	let t0;
+    	let div;
+    	let t1;
+    	let current;
+
+    	swiper = new Swiper({
+    			props: {
+    				modules: [Navigation],
+    				loop: true,
+    				navigation: /*navigation*/ ctx[8],
+    				class: "" + (/*baseClass*/ ctx[7] + "__container"),
+    				spaceBetween: 50,
+    				slidesPerView: 3,
+    				breakpoints: swiperBreakpoints,
+    				$$slots: { default: [create_default_slot$2] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	swiper.$on("slideChange", slideChange_handler$1);
+    	swiper.$on("swiper", swiper_handler$1);
+
+    	const block = {
+    		c: function create() {
+    			create_component(swiper.$$.fragment);
+    			t0 = space();
+    			div = element("div");
+    			t1 = text$1("Next ->");
+    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[7] + "__next"));
+    			add_location(div, file$c, 45, 6, 1382);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(swiper, target, anchor);
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, div, anchor);
+    			append_dev(div, t1);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const swiper_changes = {};
+
+    			if (dirty & /*$$scope, cards*/ 65540) {
+    				swiper_changes.$$scope = { dirty, ctx };
+    			}
+
+    			swiper.$set(swiper_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(swiper.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(swiper.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(swiper, detaching);
+    			if (detaching) detach_dev(t0);
+    			if (detaching) detach_dev(div);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$5.name,
+    		type: "if",
+    		source: "(25:4) {#if slider}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (49:8) {#each cards as card}
+    function create_each_block_1$1(ctx) {
+    	let div;
+    	let h4;
+    	let raw_value = /*card*/ ctx[11].title + "";
+    	let t0;
+    	let t1_value = /*card*/ ctx[11].description + "";
+    	let t1;
+    	let t2;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			h4 = element("h4");
+    			t0 = space();
+    			t1 = text$1(t1_value);
+    			t2 = space();
+    			attr_dev(h4, "class", "" + (/*baseClass*/ ctx[7] + "__card__title"));
+    			add_location(h4, file$c, 50, 12, 1566);
+    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[7] + "__card"));
+    			add_location(div, file$c, 49, 10, 1522);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, h4);
+    			h4.innerHTML = raw_value;
+    			append_dev(div, t0);
+    			append_dev(div, t1);
+    			append_dev(div, t2);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*cards*/ 4 && raw_value !== (raw_value = /*card*/ ctx[11].title + "")) h4.innerHTML = raw_value;			if (dirty & /*cards*/ 4 && t1_value !== (t1_value = /*card*/ ctx[11].description + "")) set_data_dev(t1, t1_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block_1$1.name,
+    		type: "each",
+    		source: "(49:8) {#each cards as card}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (38:10) <SwiperSlide>
+    function create_default_slot_1$1(ctx) {
+    	let div;
+    	let h4;
+    	let raw_value = /*card*/ ctx[11].title + "";
+    	let t0;
+    	let t1_value = /*card*/ ctx[11].description + "";
+    	let t1;
+    	let t2;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			h4 = element("h4");
+    			t0 = space();
+    			t1 = text$1(t1_value);
+    			t2 = space();
+    			attr_dev(h4, "class", "" + (/*baseClass*/ ctx[7] + "__card__title"));
+    			add_location(h4, file$c, 39, 14, 1206);
+    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[7] + "__card"));
+    			add_location(div, file$c, 38, 12, 1160);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, h4);
+    			h4.innerHTML = raw_value;
+    			append_dev(div, t0);
+    			append_dev(div, t1);
+    			insert_dev(target, t2, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*cards*/ 4 && raw_value !== (raw_value = /*card*/ ctx[11].title + "")) h4.innerHTML = raw_value;			if (dirty & /*cards*/ 4 && t1_value !== (t1_value = /*card*/ ctx[11].description + "")) set_data_dev(t1, t1_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			if (detaching) detach_dev(t2);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_1$1.name,
+    		type: "slot",
+    		source: "(38:10) <SwiperSlide>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (37:8) {#each cards as card}
+    function create_each_block$2(ctx) {
+    	let swiperslide;
+    	let current;
+
+    	swiperslide = new Swiper_slide({
+    			props: {
+    				$$slots: { default: [create_default_slot_1$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(swiperslide.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(swiperslide, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const swiperslide_changes = {};
+
+    			if (dirty & /*$$scope, cards*/ 65540) {
+    				swiperslide_changes.$$scope = { dirty, ctx };
+    			}
+
+    			swiperslide.$set(swiperslide_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(swiperslide.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(swiperslide.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(swiperslide, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block$2.name,
+    		type: "each",
+    		source: "(37:8) {#each cards as card}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (26:6) <Swiper         modules={[Navigation]}         loop="{true}"         navigation={navigation}         class="{baseClass}__container"         spaceBetween={50}         slidesPerView={3}         breakpoints={swiperBreakpoints}         on:slideChange={() => {}}         on:swiper={(e) => {}}       >
+    function create_default_slot$2(ctx) {
+    	let each_1_anchor;
+    	let current;
+    	let each_value = /*cards*/ ctx[2];
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$2(get_each_context$2(ctx, each_value, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			each_1_anchor = empty();
+    		},
+    		m: function mount(target, anchor) {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, each_1_anchor, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*baseClass, cards*/ 132) {
+    				each_value = /*cards*/ ctx[2];
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$2(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block$2(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    					}
+    				}
+
+    				group_outros();
+
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+
+    				check_outros();
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_each(each_blocks, detaching);
+    			if (detaching) detach_dev(each_1_anchor);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot$2.name,
+    		type: "slot",
+    		source: "(26:6) <Swiper         modules={[Navigation]}         loop=\\\"{true}\\\"         navigation={navigation}         class=\\\"{baseClass}__container\\\"         spaceBetween={50}         slidesPerView={3}         breakpoints={swiperBreakpoints}         on:slideChange={() => {}}         on:swiper={(e) => {}}       >",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$c(ctx) {
+    	let div2;
+    	let div1;
+    	let div0;
+    	let t0;
+    	let t1;
+    	let h3;
+    	let t2;
+    	let t3;
+    	let current_block_type_index;
+    	let if_block;
+    	let t4;
+    	let blobs;
+    	let current;
+    	const if_block_creators = [create_if_block$5, create_else_block$1];
+    	const if_blocks = [];
+
+    	function select_block_type(ctx, dirty) {
+    		if (/*slider*/ ctx[3]) return 0;
+    		return 1;
+    	}
+
+    	current_block_type_index = select_block_type(ctx);
+    	if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+
+    	blobs = new Blobs({
+    			props: {
+    				shapes: /*shapes*/ ctx[4],
+    				colors: /*colors*/ ctx[5]
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			div2 = element("div");
+    			div1 = element("div");
+    			div0 = element("div");
+    			t0 = text$1(/*overtitle*/ ctx[1]);
+    			t1 = space();
+    			h3 = element("h3");
+    			t2 = text$1(/*title*/ ctx[0]);
+    			t3 = space();
+    			if_block.c();
+    			t4 = space();
+    			create_component(blobs.$$.fragment);
+    			attr_dev(div0, "class", "" + (/*baseClass*/ ctx[7] + "__overtitle"));
+    			add_location(div0, file$c, 22, 4, 673);
+    			attr_dev(h3, "class", "" + (/*baseClass*/ ctx[7] + "__title"));
+    			add_location(h3, file$c, 23, 4, 731);
+    			attr_dev(div1, "class", /*baseClass*/ ctx[7]);
+    			add_location(div1, file$c, 21, 2, 643);
+    			attr_dev(div2, "class", "wrapper");
+    			attr_dev(div2, "id", /*HTMLanchor*/ ctx[6]);
+    			add_location(div2, file$c, 20, 0, 601);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div1);
+    			append_dev(div1, div0);
+    			append_dev(div0, t0);
+    			append_dev(div1, t1);
+    			append_dev(div1, h3);
+    			append_dev(h3, t2);
+    			append_dev(div1, t3);
+    			if_blocks[current_block_type_index].m(div1, null);
+    			append_dev(div2, t4);
+    			mount_component(blobs, div2, null);
+    			current = true;
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (!current || dirty & /*overtitle*/ 2) set_data_dev(t0, /*overtitle*/ ctx[1]);
+    			if (!current || dirty & /*title*/ 1) set_data_dev(t2, /*title*/ ctx[0]);
+    			let previous_block_index = current_block_type_index;
+    			current_block_type_index = select_block_type(ctx);
+
+    			if (current_block_type_index === previous_block_index) {
+    				if_blocks[current_block_type_index].p(ctx, dirty);
+    			} else {
+    				group_outros();
+
+    				transition_out(if_blocks[previous_block_index], 1, 1, () => {
+    					if_blocks[previous_block_index] = null;
+    				});
+
+    				check_outros();
+    				if_block = if_blocks[current_block_type_index];
+
+    				if (!if_block) {
+    					if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    					if_block.c();
+    				} else {
+    					if_block.p(ctx, dirty);
+    				}
+
+    				transition_in(if_block, 1);
+    				if_block.m(div1, null);
+    			}
+
+    			const blobs_changes = {};
+    			if (dirty & /*shapes*/ 16) blobs_changes.shapes = /*shapes*/ ctx[4];
+    			if (dirty & /*colors*/ 32) blobs_changes.colors = /*colors*/ ctx[5];
+    			blobs.$set(blobs_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			transition_in(blobs.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			transition_out(blobs.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div2);
+    			if_blocks[current_block_type_index].d();
+    			destroy_component(blobs);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$c.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    const slideChange_handler$1 = () => {
+    	
+    };
+
+    const swiper_handler$1 = e => {
+    	
+    };
+
+    function instance$c($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('Cards', slots, []);
+    	let { title = "Title for hero component" } = $$props;
+    	let { overtitle = "overtitle" } = $$props;
+    	let { cards = [] } = $$props;
+    	let { slider = false } = $$props;
+    	let { anchor } = $$props;
+    	let { type = 'Cards' } = $$props;
+    	let { shapes = 0 } = $$props;
+    	let { colors = ['red', 'yellow', 'blue'] } = $$props;
+    	let HTMLanchor = anchor ? anchor : overtitle;
+    	let baseClass = type.toLowerCase();
+    	let navigation = { nextEl: `.${baseClass}__next` };
+    	const writable_props = ['title', 'overtitle', 'cards', 'slider', 'anchor', 'type', 'shapes', 'colors'];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Cards> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$$set = $$props => {
+    		if ('title' in $$props) $$invalidate(0, title = $$props.title);
+    		if ('overtitle' in $$props) $$invalidate(1, overtitle = $$props.overtitle);
+    		if ('cards' in $$props) $$invalidate(2, cards = $$props.cards);
+    		if ('slider' in $$props) $$invalidate(3, slider = $$props.slider);
+    		if ('anchor' in $$props) $$invalidate(9, anchor = $$props.anchor);
+    		if ('type' in $$props) $$invalidate(10, type = $$props.type);
+    		if ('shapes' in $$props) $$invalidate(4, shapes = $$props.shapes);
+    		if ('colors' in $$props) $$invalidate(5, colors = $$props.colors);
+    	};
+
+    	$$self.$capture_state = () => ({
+    		title,
+    		overtitle,
+    		cards,
+    		slider,
+    		anchor,
+    		type,
+    		shapes,
+    		colors,
+    		HTMLanchor,
+    		baseClass,
+    		navigation,
+    		Navigation,
+    		Swiper,
+    		SwiperSlide: Swiper_slide,
+    		swiperBreakpoints,
+    		Blobs
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ('title' in $$props) $$invalidate(0, title = $$props.title);
+    		if ('overtitle' in $$props) $$invalidate(1, overtitle = $$props.overtitle);
+    		if ('cards' in $$props) $$invalidate(2, cards = $$props.cards);
+    		if ('slider' in $$props) $$invalidate(3, slider = $$props.slider);
+    		if ('anchor' in $$props) $$invalidate(9, anchor = $$props.anchor);
+    		if ('type' in $$props) $$invalidate(10, type = $$props.type);
+    		if ('shapes' in $$props) $$invalidate(4, shapes = $$props.shapes);
+    		if ('colors' in $$props) $$invalidate(5, colors = $$props.colors);
+    		if ('HTMLanchor' in $$props) $$invalidate(6, HTMLanchor = $$props.HTMLanchor);
+    		if ('baseClass' in $$props) $$invalidate(7, baseClass = $$props.baseClass);
+    		if ('navigation' in $$props) $$invalidate(8, navigation = $$props.navigation);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [
+    		title,
+    		overtitle,
+    		cards,
+    		slider,
+    		shapes,
+    		colors,
+    		HTMLanchor,
+    		baseClass,
+    		navigation,
+    		anchor,
+    		type
+    	];
+    }
+
+    class Cards extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+
+    		init(this, options, instance$c, create_fragment$c, safe_not_equal, {
+    			title: 0,
+    			overtitle: 1,
+    			cards: 2,
+    			slider: 3,
+    			anchor: 9,
+    			type: 10,
+    			shapes: 4,
+    			colors: 5
+    		});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Cards",
+    			options,
+    			id: create_fragment$c.name
+    		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*anchor*/ ctx[9] === undefined && !('anchor' in props)) {
+    			console.warn("<Cards> was created without expected prop 'anchor'");
+    		}
+    	}
+
+    	get title() {
+    		throw new Error("<Cards>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set title(value) {
+    		throw new Error("<Cards>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get overtitle() {
+    		throw new Error("<Cards>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set overtitle(value) {
+    		throw new Error("<Cards>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get cards() {
+    		throw new Error("<Cards>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set cards(value) {
+    		throw new Error("<Cards>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get slider() {
+    		throw new Error("<Cards>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set slider(value) {
+    		throw new Error("<Cards>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get anchor() {
+    		throw new Error("<Cards>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set anchor(value) {
+    		throw new Error("<Cards>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get type() {
+    		throw new Error("<Cards>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set type(value) {
+    		throw new Error("<Cards>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get shapes() {
+    		throw new Error("<Cards>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set shapes(value) {
+    		throw new Error("<Cards>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get colors() {
+    		throw new Error("<Cards>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set colors(value) {
+    		throw new Error("<Cards>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src/components/Carousel.svelte generated by Svelte v3.43.0 */
+    const file$b = "src/components/Carousel.svelte";
+
+    function get_each_context_1(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[11] = list[i];
+    	return child_ctx;
+    }
+
+    function get_each_context$1(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[11] = list[i];
+    	return child_ctx;
+    }
+
+    // (48:4) {:else}
+    function create_else_block(ctx) {
+    	let div;
+    	let each_value_1 = /*slides*/ ctx[2];
+    	validate_each_argument(each_value_1);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_1.length; i += 1) {
+    		each_blocks[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[7] + "__slides " + /*baseClass*/ ctx[7] + "__slides--no-slider"));
+    			add_location(div, file$b, 48, 6, 1499);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(div, null);
+    			}
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*baseClass, slides*/ 132) {
+    				each_value_1 = /*slides*/ ctx[2];
+    				validate_each_argument(each_value_1);
+    				let i;
+
+    				for (i = 0; i < each_value_1.length; i += 1) {
+    					const child_ctx = get_each_context_1(ctx, each_value_1, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block_1(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(div, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value_1.length;
+    			}
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block.name,
+    		type: "else",
+    		source: "(48:4) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (26:4) {#if slider}
+    function create_if_block$4(ctx) {
+    	let h3;
+    	let t0;
+    	let swiper;
+    	let t1;
+    	let div;
+    	let t2;
+    	let current;
+
+    	swiper = new Swiper({
+    			props: {
+    				modules: [Navigation],
+    				loop: true,
+    				navigation: /*navigation*/ ctx[8],
+    				class: "" + (/*baseClass*/ ctx[7] + "__slides"),
+    				spaceBetween: 50,
+    				slidesPerView: 3,
+    				breakpoints: swiperBreakpoints,
+    				$$slots: { default: [create_default_slot$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	swiper.$on("slideChange", slideChange_handler);
+    	swiper.$on("swiper", swiper_handler);
+
+    	const block = {
+    		c: function create() {
+    			h3 = element("h3");
+    			t0 = space();
+    			create_component(swiper.$$.fragment);
+    			t1 = space();
+    			div = element("div");
+    			t2 = text$1("Next ->");
+    			attr_dev(h3, "class", "" + (/*baseClass*/ ctx[7] + "__title"));
+    			add_location(h3, file$b, 26, 6, 763);
+    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[7] + "__next"));
+    			add_location(div, file$b, 46, 6, 1436);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, h3, anchor);
+    			h3.innerHTML = /*title*/ ctx[0];
+    			insert_dev(target, t0, anchor);
+    			mount_component(swiper, target, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, div, anchor);
+    			append_dev(div, t2);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			if (!current || dirty & /*title*/ 1) h3.innerHTML = /*title*/ ctx[0];			const swiper_changes = {};
+
+    			if (dirty & /*$$scope, slides*/ 65540) {
+    				swiper_changes.$$scope = { dirty, ctx };
+    			}
+
+    			swiper.$set(swiper_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(swiper.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(swiper.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(h3);
+    			if (detaching) detach_dev(t0);
+    			destroy_component(swiper, detaching);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(div);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$4.name,
+    		type: "if",
+    		source: "(26:4) {#if slider}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (50:8) {#each slides as slide}
+    function create_each_block_1(ctx) {
+    	let div;
+    	let html_tag;
+    	let raw_value = /*slide*/ ctx[11].image + "";
+    	let t0;
+    	let h4;
+    	let t1_value = /*slide*/ ctx[11].title + "";
+    	let t1;
+    	let t2;
+    	let t3_value = /*slide*/ ctx[11].description + "";
+    	let t3;
+    	let t4;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			html_tag = new HtmlTag();
+    			t0 = space();
+    			h4 = element("h4");
+    			t1 = text$1(t1_value);
+    			t2 = space();
+    			t3 = text$1(t3_value);
+    			t4 = space();
+    			html_tag.a = t0;
+    			attr_dev(h4, "class", "" + (/*baseClass*/ ctx[7] + "__slide__title"));
+    			add_location(h4, file$b, 52, 12, 1683);
+    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[7] + "__slide"));
+    			add_location(div, file$b, 50, 10, 1606);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			html_tag.m(raw_value, div);
+    			append_dev(div, t0);
+    			append_dev(div, h4);
+    			append_dev(h4, t1);
+    			append_dev(div, t2);
+    			append_dev(div, t3);
+    			append_dev(div, t4);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*slides*/ 4 && raw_value !== (raw_value = /*slide*/ ctx[11].image + "")) html_tag.p(raw_value);
+    			if (dirty & /*slides*/ 4 && t1_value !== (t1_value = /*slide*/ ctx[11].title + "")) set_data_dev(t1, t1_value);
+    			if (dirty & /*slides*/ 4 && t3_value !== (t3_value = /*slide*/ ctx[11].description + "")) set_data_dev(t3, t3_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block_1.name,
+    		type: "each",
+    		source: "(50:8) {#each slides as slide}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (40:10) <SwiperSlide class="{baseClass}__slide">
+    function create_default_slot_1(ctx) {
+    	let div;
+    	let raw_value = /*slide*/ ctx[11].image + "";
+    	let t0;
+    	let h4;
+    	let t1_value = /*slide*/ ctx[11].title + "";
+    	let t1;
+    	let t2;
+    	let t3_value = /*slide*/ ctx[11].description + "";
+    	let t3;
+    	let t4;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			t0 = space();
+    			h4 = element("h4");
+    			t1 = text$1(t1_value);
+    			t2 = space();
+    			t3 = text$1(t3_value);
+    			t4 = space();
+    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[7] + "__slide__image"));
+    			add_location(div, file$b, 40, 12, 1207);
+    			attr_dev(h4, "class", "" + (/*baseClass*/ ctx[7] + "__slide__title"));
+    			add_location(h4, file$b, 41, 12, 1284);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			div.innerHTML = raw_value;
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, h4, anchor);
+    			append_dev(h4, t1);
+    			insert_dev(target, t2, anchor);
+    			insert_dev(target, t3, anchor);
+    			insert_dev(target, t4, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*slides*/ 4 && raw_value !== (raw_value = /*slide*/ ctx[11].image + "")) div.innerHTML = raw_value;			if (dirty & /*slides*/ 4 && t1_value !== (t1_value = /*slide*/ ctx[11].title + "")) set_data_dev(t1, t1_value);
+    			if (dirty & /*slides*/ 4 && t3_value !== (t3_value = /*slide*/ ctx[11].description + "")) set_data_dev(t3, t3_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			if (detaching) detach_dev(t0);
+    			if (detaching) detach_dev(h4);
+    			if (detaching) detach_dev(t2);
+    			if (detaching) detach_dev(t3);
+    			if (detaching) detach_dev(t4);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_1.name,
+    		type: "slot",
+    		source: "(40:10) <SwiperSlide class=\\\"{baseClass}__slide\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (39:8) {#each slides as slide}
+    function create_each_block$1(ctx) {
+    	let swiperslide;
+    	let current;
+
+    	swiperslide = new Swiper_slide({
+    			props: {
+    				class: "" + (/*baseClass*/ ctx[7] + "__slide"),
+    				$$slots: { default: [create_default_slot_1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(swiperslide.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(swiperslide, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const swiperslide_changes = {};
+
+    			if (dirty & /*$$scope, slides*/ 65540) {
+    				swiperslide_changes.$$scope = { dirty, ctx };
+    			}
+
+    			swiperslide.$set(swiperslide_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(swiperslide.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(swiperslide.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(swiperslide, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block$1.name,
+    		type: "each",
+    		source: "(39:8) {#each slides as slide}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (28:6) <Swiper         modules={[Navigation]}         loop="{true}"         navigation={navigation}         class="{baseClass}__slides"         spaceBetween={50}         slidesPerView={3}         breakpoints={swiperBreakpoints}         on:slideChange={() => {}}         on:swiper={(e) => {}}       >
+    function create_default_slot$1(ctx) {
+    	let each_1_anchor;
+    	let current;
+    	let each_value = /*slides*/ ctx[2];
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$1(get_each_context$1(ctx, each_value, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			each_1_anchor = empty();
+    		},
+    		m: function mount(target, anchor) {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, each_1_anchor, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*baseClass, slides*/ 132) {
+    				each_value = /*slides*/ ctx[2];
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$1(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block$1(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    					}
+    				}
+
+    				group_outros();
+
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+
+    				check_outros();
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_each(each_blocks, detaching);
+    			if (detaching) detach_dev(each_1_anchor);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot$1.name,
+    		type: "slot",
+    		source: "(28:6) <Swiper         modules={[Navigation]}         loop=\\\"{true}\\\"         navigation={navigation}         class=\\\"{baseClass}__slides\\\"         spaceBetween={50}         slidesPerView={3}         breakpoints={swiperBreakpoints}         on:slideChange={() => {}}         on:swiper={(e) => {}}       >",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$b(ctx) {
+    	let div2;
+    	let div1;
+    	let div0;
+    	let t0;
+    	let t1;
+    	let current_block_type_index;
+    	let if_block;
+    	let t2;
+    	let blobs;
+    	let current;
+    	const if_block_creators = [create_if_block$4, create_else_block];
+    	const if_blocks = [];
+
+    	function select_block_type(ctx, dirty) {
+    		if (/*slider*/ ctx[3]) return 0;
+    		return 1;
+    	}
+
+    	current_block_type_index = select_block_type(ctx);
+    	if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+
+    	blobs = new Blobs({
+    			props: {
+    				shapes: /*shapes*/ ctx[4],
+    				colors: /*colors*/ ctx[5]
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			div2 = element("div");
+    			div1 = element("div");
+    			div0 = element("div");
+    			t0 = text$1(/*overtitle*/ ctx[1]);
+    			t1 = space();
+    			if_block.c();
+    			t2 = space();
+    			create_component(blobs.$$.fragment);
+    			attr_dev(div0, "class", "" + (/*baseClass*/ ctx[7] + "__overtitle"));
+    			add_location(div0, file$b, 22, 4, 674);
+    			attr_dev(div1, "class", /*baseClass*/ ctx[7]);
+    			add_location(div1, file$b, 21, 2, 644);
+    			attr_dev(div2, "class", "wrapper");
+    			attr_dev(div2, "id", /*HTMLanchor*/ ctx[6]);
+    			add_location(div2, file$b, 20, 0, 602);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div1);
+    			append_dev(div1, div0);
+    			append_dev(div0, t0);
+    			append_dev(div1, t1);
+    			if_blocks[current_block_type_index].m(div1, null);
+    			append_dev(div2, t2);
+    			mount_component(blobs, div2, null);
+    			current = true;
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (!current || dirty & /*overtitle*/ 2) set_data_dev(t0, /*overtitle*/ ctx[1]);
+    			let previous_block_index = current_block_type_index;
+    			current_block_type_index = select_block_type(ctx);
+
+    			if (current_block_type_index === previous_block_index) {
+    				if_blocks[current_block_type_index].p(ctx, dirty);
+    			} else {
+    				group_outros();
+
+    				transition_out(if_blocks[previous_block_index], 1, 1, () => {
+    					if_blocks[previous_block_index] = null;
+    				});
+
+    				check_outros();
+    				if_block = if_blocks[current_block_type_index];
+
+    				if (!if_block) {
+    					if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    					if_block.c();
+    				} else {
+    					if_block.p(ctx, dirty);
+    				}
+
+    				transition_in(if_block, 1);
+    				if_block.m(div1, null);
+    			}
+
+    			const blobs_changes = {};
+    			if (dirty & /*shapes*/ 16) blobs_changes.shapes = /*shapes*/ ctx[4];
+    			if (dirty & /*colors*/ 32) blobs_changes.colors = /*colors*/ ctx[5];
+    			blobs.$set(blobs_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			transition_in(blobs.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			transition_out(blobs.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div2);
+    			if_blocks[current_block_type_index].d();
+    			destroy_component(blobs);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$b.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    const slideChange_handler = () => {
+    	
+    };
+
+    const swiper_handler = e => {
+    	
+    };
+
+    function instance$b($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('Carousel', slots, []);
+    	let { title = "Title for hero component" } = $$props;
+    	let { overtitle = "overtitle" } = $$props;
+    	let { slides = [] } = $$props;
+    	let { slider = true } = $$props;
+    	let { type = 'Carousel' } = $$props;
+    	let { anchor } = $$props;
+    	let { shapes = 0 } = $$props;
+    	let { colors = ['red', 'yellow', 'blue'] } = $$props;
+    	let HTMLanchor = anchor ? anchor : overtitle;
+    	let baseClass = type.toLowerCase();
+    	let navigation = { nextEl: `.${baseClass}__next` };
+    	const writable_props = ['title', 'overtitle', 'slides', 'slider', 'type', 'anchor', 'shapes', 'colors'];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Carousel> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$$set = $$props => {
+    		if ('title' in $$props) $$invalidate(0, title = $$props.title);
+    		if ('overtitle' in $$props) $$invalidate(1, overtitle = $$props.overtitle);
+    		if ('slides' in $$props) $$invalidate(2, slides = $$props.slides);
+    		if ('slider' in $$props) $$invalidate(3, slider = $$props.slider);
+    		if ('type' in $$props) $$invalidate(9, type = $$props.type);
+    		if ('anchor' in $$props) $$invalidate(10, anchor = $$props.anchor);
+    		if ('shapes' in $$props) $$invalidate(4, shapes = $$props.shapes);
+    		if ('colors' in $$props) $$invalidate(5, colors = $$props.colors);
+    	};
+
+    	$$self.$capture_state = () => ({
+    		title,
+    		overtitle,
+    		slides,
+    		slider,
+    		type,
+    		anchor,
+    		shapes,
+    		colors,
+    		HTMLanchor,
+    		baseClass,
+    		navigation,
+    		Navigation,
+    		Swiper,
+    		SwiperSlide: Swiper_slide,
+    		swiperBreakpoints,
+    		Blobs
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ('title' in $$props) $$invalidate(0, title = $$props.title);
+    		if ('overtitle' in $$props) $$invalidate(1, overtitle = $$props.overtitle);
+    		if ('slides' in $$props) $$invalidate(2, slides = $$props.slides);
+    		if ('slider' in $$props) $$invalidate(3, slider = $$props.slider);
+    		if ('type' in $$props) $$invalidate(9, type = $$props.type);
+    		if ('anchor' in $$props) $$invalidate(10, anchor = $$props.anchor);
+    		if ('shapes' in $$props) $$invalidate(4, shapes = $$props.shapes);
+    		if ('colors' in $$props) $$invalidate(5, colors = $$props.colors);
+    		if ('HTMLanchor' in $$props) $$invalidate(6, HTMLanchor = $$props.HTMLanchor);
+    		if ('baseClass' in $$props) $$invalidate(7, baseClass = $$props.baseClass);
+    		if ('navigation' in $$props) $$invalidate(8, navigation = $$props.navigation);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [
+    		title,
+    		overtitle,
+    		slides,
+    		slider,
+    		shapes,
+    		colors,
+    		HTMLanchor,
+    		baseClass,
+    		navigation,
+    		type,
+    		anchor
+    	];
+    }
+
+    class Carousel extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+
+    		init(this, options, instance$b, create_fragment$b, safe_not_equal, {
+    			title: 0,
+    			overtitle: 1,
+    			slides: 2,
+    			slider: 3,
+    			type: 9,
+    			anchor: 10,
+    			shapes: 4,
+    			colors: 5
+    		});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Carousel",
+    			options,
+    			id: create_fragment$b.name
+    		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*anchor*/ ctx[10] === undefined && !('anchor' in props)) {
+    			console.warn("<Carousel> was created without expected prop 'anchor'");
+    		}
+    	}
+
+    	get title() {
+    		throw new Error("<Carousel>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set title(value) {
+    		throw new Error("<Carousel>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get overtitle() {
+    		throw new Error("<Carousel>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set overtitle(value) {
+    		throw new Error("<Carousel>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get slides() {
+    		throw new Error("<Carousel>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set slides(value) {
+    		throw new Error("<Carousel>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get slider() {
+    		throw new Error("<Carousel>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set slider(value) {
+    		throw new Error("<Carousel>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get type() {
+    		throw new Error("<Carousel>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set type(value) {
+    		throw new Error("<Carousel>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get anchor() {
+    		throw new Error("<Carousel>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set anchor(value) {
+    		throw new Error("<Carousel>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get shapes() {
+    		throw new Error("<Carousel>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set shapes(value) {
+    		throw new Error("<Carousel>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get colors() {
+    		throw new Error("<Carousel>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set colors(value) {
+    		throw new Error("<Carousel>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src/components/Footer.svelte generated by Svelte v3.43.0 */
+
+    const file$a = "src/components/Footer.svelte";
+
+    function create_fragment$a(ctx) {
+    	let div3;
+    	let div2;
+    	let h3;
+    	let t1;
+    	let p;
+    	let t3;
+    	let div0;
+    	let a;
+    	let t5;
+    	let div1;
+    	let small;
+
+    	const block = {
+    		c: function create() {
+    			div3 = element("div");
+    			div2 = element("div");
+    			h3 = element("h3");
+    			h3.textContent = "Get in touch with us";
+    			t1 = space();
+    			p = element("p");
+    			p.textContent = "Do you want to be part of the upcoming territorial sustainable transformation?";
+    			t3 = space();
+    			div0 = element("div");
+    			a = element("a");
+    			a.textContent = "contact us";
+    			t5 = space();
+    			div1 = element("div");
+    			small = element("small");
+    			small.textContent = "Copyright 2021 of DEDE";
+    			attr_dev(h3, "class", "footer__title");
+    			add_location(h3, file$a, 5, 4, 69);
+    			attr_dev(p, "class", "footer__description");
+    			add_location(p, file$a, 6, 4, 125);
+    			attr_dev(a, "href", "mailto:info@dede.is");
+    			add_location(a, file$a, 8, 32, 502);
+    			attr_dev(div0, "class", "footer__button");
+    			add_location(div0, file$a, 8, 4, 474);
+    			add_location(small, file$a, 9, 36, 589);
+    			attr_dev(div1, "class", "footer__disclaimer");
+    			add_location(div1, file$a, 9, 4, 557);
+    			attr_dev(div2, "class", "wrapper");
+    			add_location(div2, file$a, 4, 2, 43);
+    			attr_dev(div3, "class", "footer");
+    			add_location(div3, file$a, 3, 0, 20);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div3, anchor);
+    			append_dev(div3, div2);
+    			append_dev(div2, h3);
+    			append_dev(div2, t1);
+    			append_dev(div2, p);
+    			append_dev(div2, t3);
+    			append_dev(div2, div0);
+    			append_dev(div0, a);
+    			append_dev(div2, t5);
+    			append_dev(div2, div1);
+    			append_dev(div1, small);
+    		},
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div3);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$a.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$a($$self, $$props) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('Footer', slots, []);
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Footer> was created with unknown prop '${key}'`);
+    	});
+
+    	return [];
+    }
+
+    class Footer extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$a, create_fragment$a, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Footer",
+    			options,
+    			id: create_fragment$a.name
+    		});
+    	}
+    }
+
+    /* src/components/DedeLogo.svelte generated by Svelte v3.43.0 */
+
+    const file$9 = "src/components/DedeLogo.svelte";
+
+    function create_fragment$9(ctx) {
+    	let svg;
+    	let path0;
+    	let path1;
+    	let path2;
+    	let path3;
+    	let path4;
+    	let path5;
+    	let path6;
+    	let path7;
+    	let path8;
+    	let path9;
+    	let path10;
+    	let path11;
+    	let path12;
+    	let path13;
+    	let path14;
+    	let path15;
+    	let path16;
+    	let path17;
+    	let path18;
+    	let path19;
+    	let path20;
+    	let path21;
+    	let path22;
+    	let path23;
+    	let path24;
+    	let path25;
+    	let path26;
+    	let path27;
+
+    	const block = {
+    		c: function create() {
+    			svg = svg_element("svg");
+    			path0 = svg_element("path");
+    			path1 = svg_element("path");
+    			path2 = svg_element("path");
+    			path3 = svg_element("path");
+    			path4 = svg_element("path");
+    			path5 = svg_element("path");
+    			path6 = svg_element("path");
+    			path7 = svg_element("path");
+    			path8 = svg_element("path");
+    			path9 = svg_element("path");
+    			path10 = svg_element("path");
+    			path11 = svg_element("path");
+    			path12 = svg_element("path");
+    			path13 = svg_element("path");
+    			path14 = svg_element("path");
+    			path15 = svg_element("path");
+    			path16 = svg_element("path");
+    			path17 = svg_element("path");
+    			path18 = svg_element("path");
+    			path19 = svg_element("path");
+    			path20 = svg_element("path");
+    			path21 = svg_element("path");
+    			path22 = svg_element("path");
+    			path23 = svg_element("path");
+    			path24 = svg_element("path");
+    			path25 = svg_element("path");
+    			path26 = svg_element("path");
+    			path27 = svg_element("path");
+    			attr_dev(path0, "d", "M4.23644 51.8377H6.43718C8.19452 51.8377 9.19929 50.7597 9.19929 48.8804V48.8722C9.19929 47.0335 8.18232 45.9677 6.43718 45.9677H4.23644V48.5183H3.51235V49.2831H4.23644V51.8377ZM5.28596 50.955V49.2831H6.49007V48.5183H5.28596V46.8505H6.29887C7.45009 46.8505 8.12943 47.599 8.12943 48.8885V48.8966C8.12943 50.2146 7.46636 50.955 6.29887 50.955H5.28596Z");
+    			attr_dev(path0, "fill", "#214250");
+    			add_location(path0, file$9, 1, 0, 98);
+    			attr_dev(path1, "d", "M15.5477 46.8505H19.9289V45.9677H15.5477V46.8505ZM15.9017 49.2749H19.575V48.441H15.9017V49.2749ZM15.5477 51.8377H19.9289V50.955H15.5477V51.8377Z");
+    			attr_dev(path1, "fill", "#214250");
+    			add_location(path1, file$9, 2, 0, 476);
+    			attr_dev(path2, "d", "M28.9784 51.9842C30.333 51.9842 31.3053 51.1991 31.4599 50.0234V49.995H30.4307L30.4266 50.0153C30.2761 50.6621 29.7229 51.077 28.9784 51.077C27.9777 51.077 27.3553 50.2431 27.3553 48.9048V48.8966C27.3553 47.5624 27.9777 46.7284 28.9744 46.7284C29.7147 46.7284 30.2761 47.1881 30.4266 47.8837L30.4307 47.9H31.4599V47.8674C31.3215 46.6674 30.3086 45.8213 28.9744 45.8213C27.3106 45.8213 26.2814 46.9969 26.2814 48.9007V48.9088C26.2814 50.8045 27.3147 51.9842 28.9784 51.9842Z");
+    			attr_dev(path2, "fill", "#214250");
+    			add_location(path2, file$9, 3, 0, 648);
+    			attr_dev(path3, "d", "M37.9263 51.8377H41.7257V50.955H38.9758V49.2749H41.5752V48.441H38.9758V46.8505H41.7257V45.9677H37.9263V51.8377Z");
+    			attr_dev(path3, "fill", "#214250");
+    			add_location(path3, file$9, 4, 0, 1149);
+    			attr_dev(path4, "d", "M48.3223 51.8377H49.3352V47.7942H49.4003L52.2844 51.8377H53.1916V45.9677H52.1828V50.0112H52.1177L49.2335 45.9677H48.3223V51.8377Z");
+    			attr_dev(path4, "fill", "#214250");
+    			add_location(path4, file$9, 5, 0, 1288);
+    			attr_dev(path5, "d", "M61.3991 51.8377H62.4486V46.8505H64.2588V45.9677H59.5929V46.8505H61.3991V51.8377Z");
+    			attr_dev(path5, "fill", "#214250");
+    			add_location(path5, file$9, 6, 0, 1445);
+    			attr_dev(path6, "d", "M70.652 51.8377H71.7015V49.6289H72.865L74.0162 51.8377H75.2162L73.9348 49.4702C74.6304 49.218 75.0413 48.5753 75.0413 47.7983V47.7902C75.0413 46.6715 74.2847 45.9677 73.0236 45.9677H70.652V51.8377ZM71.7015 48.8234V46.8179H72.8934C73.5606 46.8179 73.9633 47.2003 73.9633 47.8146V47.8227C73.9633 48.4532 73.5769 48.8234 72.9138 48.8234H71.7015Z");
+    			attr_dev(path6, "fill", "#214250");
+    			add_location(path6, file$9, 7, 0, 1554);
+    			attr_dev(path7, "d", "M81.1742 51.8377H82.2725L82.7606 50.3204H84.9329L85.4251 51.8377H86.5235L84.4407 45.9677H83.2569L81.1742 51.8377ZM83.8142 47.0579H83.8834L84.6726 49.5109H83.0251L83.8142 47.0579Z");
+    			attr_dev(path7, "fill", "#214250");
+    			add_location(path7, file$9, 8, 0, 1924);
+    			attr_dev(path8, "d", "M92.8272 51.8377H96.5696V50.955H93.8767V45.9677H92.8272V51.8377Z");
+    			attr_dev(path8, "fill", "#214250");
+    			add_location(path8, file$9, 9, 0, 2130);
+    			attr_dev(path9, "d", "M102.995 51.8377H104.045V45.9677H102.995V51.8377Z");
+    			attr_dev(path9, "fill", "#214250");
+    			add_location(path9, file$9, 10, 0, 2222);
+    			attr_dev(path10, "d", "M112.826 51.9842C114.233 51.9842 115.116 51.2682 115.116 50.1251V50.1211C115.116 49.2343 114.6 48.738 113.363 48.4776L112.732 48.3434C112 48.1888 111.703 47.9285 111.703 47.5135V47.5095C111.703 47.0091 112.167 46.704 112.818 46.704C113.489 46.7 113.924 47.0254 113.998 47.481L114.006 47.5298H115.01L115.006 47.4769C114.933 46.5332 114.124 45.8213 112.822 45.8213C111.553 45.8213 110.65 46.5291 110.65 47.5786V47.5827C110.65 48.4573 111.17 49.0187 112.37 49.2709L113.001 49.4011C113.758 49.5638 114.063 49.82 114.063 50.2431V50.2472C114.063 50.7516 113.566 51.1014 112.859 51.1014C112.114 51.1014 111.589 50.776 111.541 50.2838L111.536 50.2431H110.519L110.524 50.3001C110.597 51.313 111.463 51.9842 112.826 51.9842Z");
+    			attr_dev(path10, "fill", "#214250");
+    			add_location(path10, file$9, 11, 0, 2299);
+    			attr_dev(path11, "d", "M121.591 51.8377H125.39V50.955H122.64V49.2749H125.24V48.441H122.64V46.8505H125.39V45.9677H121.591V51.8377Z");
+    			attr_dev(path11, "fill", "#214250");
+    			add_location(path11, file$9, 12, 0, 3041);
+    			attr_dev(path12, "d", "M131.987 51.8377H134.188C135.945 51.8377 136.95 50.7597 136.95 48.8804V48.8722C136.95 47.0335 135.933 45.9677 134.188 45.9677H131.987V51.8377ZM133.036 50.955V46.8505H134.049C135.2 46.8505 135.88 47.599 135.88 48.8885V48.8966C135.88 50.2146 135.217 50.955 134.049 50.955H133.036Z");
+    			attr_dev(path12, "fill", "#214250");
+    			add_location(path12, file$9, 13, 0, 3175);
+    			attr_dev(path13, "d", "M4.04587 63.8715H6.2466C8.00394 63.8715 9.00872 62.7935 9.00872 60.9141V60.906C9.00872 59.0673 7.99174 58.0015 6.2466 58.0015H4.04587V60.5521H3.32178V61.3169H4.04587V63.8715ZM5.09539 62.9888V61.3169H6.29949V60.5521H5.09539V58.8843H6.1083C7.25951 58.8843 7.93886 59.6327 7.93886 60.9223V60.9304C7.93886 62.2484 7.27579 62.9888 6.1083 62.9888H5.09539Z");
+    			attr_dev(path13, "fill", "#214250");
+    			add_location(path13, file$9, 14, 0, 3481);
+    			attr_dev(path14, "d", "M17.7454 58.8843H22.1266V58.0015H17.7454V58.8843ZM18.0993 61.3087H21.7726V60.4748H18.0993V61.3087ZM17.7454 63.8715H22.1266V62.9888H17.7454V63.8715Z");
+    			attr_dev(path14, "fill", "#214250");
+    			add_location(path14, file$9, 15, 0, 3858);
+    			attr_dev(path15, "d", "M33.1535 64.018C34.561 64.018 35.4437 63.302 35.4437 62.1589V62.1549C35.4437 61.2681 34.9271 60.7718 33.6904 60.5114L33.0599 60.3772C32.3277 60.2226 32.0307 59.9623 32.0307 59.5473V59.5433C32.0307 59.0429 32.4945 58.7378 33.1453 58.7378C33.8166 58.7337 34.2518 59.0592 34.325 59.5148L34.3332 59.5636H35.3379L35.3339 59.5107C35.2607 58.567 34.4511 57.8551 33.1494 57.8551C31.8802 57.8551 30.9771 58.5629 30.9771 59.6124V59.6165C30.9771 60.4911 31.4978 61.0525 32.6979 61.3047L33.3284 61.4348C34.085 61.5976 34.3901 61.8538 34.3901 62.2769V62.281C34.3901 62.7854 33.8938 63.1352 33.186 63.1352C32.4416 63.1352 31.9168 62.8098 31.868 62.3176L31.864 62.2769H30.847L30.851 62.3338C30.9243 63.3468 31.7907 64.018 33.1535 64.018Z");
+    			attr_dev(path15, "fill", "#214250");
+    			add_location(path15, file$9, 16, 0, 4033);
+    			attr_dev(path16, "d", "M45.7669 63.8715H46.8164V58.8843H48.6266V58.0015H43.9607V58.8843H45.7669V63.8715Z");
+    			attr_dev(path16, "fill", "#214250");
+    			add_location(path16, file$9, 17, 0, 4783);
+    			attr_dev(path17, "d", "M57.4081 63.8715H58.4576V58.0015H57.4081V63.8715Z");
+    			attr_dev(path17, "fill", "#214250");
+    			add_location(path17, file$9, 18, 0, 4892);
+    			attr_dev(path18, "d", "M67.5889 63.8715H68.6018V59.828H68.6669L71.551 63.8715H72.4582V58.0015H71.4493V62.045H71.3842L68.5001 58.0015H67.5889V63.8715Z");
+    			attr_dev(path18, "fill", "#214250");
+    			add_location(path18, file$9, 19, 0, 4969);
+    			attr_dev(path19, "d", "M81.1583 63.8715H82.2566L82.7448 62.3542H84.917L85.4092 63.8715H86.5076L84.4248 58.0015H83.241L81.1583 63.8715ZM83.7983 59.0917H83.8675L84.6567 61.5447H83.0092L83.7983 59.0917Z");
+    			attr_dev(path19, "fill", "#214250");
+    			add_location(path19, file$9, 20, 0, 5123);
+    			attr_dev(path20, "d", "M96.009 63.8715H97.0585V58.8843H98.8688V58.0015H94.2029V58.8843H96.009V63.8715Z");
+    			attr_dev(path20, "fill", "#214250");
+    			add_location(path20, file$9, 21, 0, 5327);
+    			attr_dev(path21, "d", "M107.65 63.8715H108.7V58.0015H107.65V63.8715Z");
+    			attr_dev(path21, "fill", "#214250");
+    			add_location(path21, file$9, 22, 0, 5434);
+    			attr_dev(path22, "d", "M120.361 64.018C122.074 64.018 123.136 62.8261 123.136 60.9385V60.9304C123.136 59.0388 122.07 57.8551 120.361 57.8551C118.657 57.8551 117.583 59.0388 117.583 60.9304V60.9385C117.583 62.8261 118.641 64.018 120.361 64.018ZM120.361 63.1108C119.304 63.1108 118.653 62.2566 118.653 60.9385V60.9304C118.653 59.6043 119.32 58.7622 120.361 58.7622C121.403 58.7622 122.066 59.6043 122.066 60.9304V60.9385C122.066 62.2566 121.407 63.1108 120.361 63.1108Z");
+    			attr_dev(path22, "fill", "#214250");
+    			add_location(path22, file$9, 23, 0, 5507);
+    			attr_dev(path23, "d", "M132.023 63.8715H133.036V59.828H133.101L135.985 63.8715H136.892V58.0015H135.883V62.045H135.818L132.934 58.0015H132.023V63.8715Z");
+    			attr_dev(path23, "fill", "#214250");
+    			add_location(path23, file$9, 24, 0, 5979);
+    			attr_dev(path24, "d", "M4.30524 34.25H17.3903C27.8389 34.25 33.813 27.9602 33.813 16.9945V16.947C33.813 6.21864 27.7664 0 17.3903 0H4.30524V14.882H0V19.3442H4.30524V34.25ZM10.5454 29.0994V19.3442H17.7047V14.882H10.5454V5.15055H16.5679C23.4127 5.15055 27.4519 9.51784 27.4519 17.0419V17.0894C27.4519 24.7796 23.5095 29.0994 16.5679 29.0994H10.5454Z");
+    			attr_dev(path24, "fill", "#214250");
+    			add_location(path24, file$9, 25, 0, 6134);
+    			attr_dev(path25, "d", "M40.0312 5.15055H66.0803V0H40.0312V5.15055ZM42.1354 19.2968H63.976V14.431H42.1354V19.2968ZM40.0312 34.25H66.0803V29.0994H40.0312V34.25Z");
+    			attr_dev(path25, "fill", "#214250");
+    			add_location(path25, file$9, 26, 0, 6486);
+    			attr_dev(path26, "d", "M75.225 34.25H88.31C98.7587 34.25 104.733 27.9602 104.733 16.9945V16.947C104.733 6.21864 98.6861 0 88.31 0H75.225V14.882H70.9198V19.3442H75.225V34.25ZM81.4652 29.0994V19.3442H88.6244V14.882H81.4652V5.15055H87.4876C94.3325 5.15055 98.3717 9.51784 98.3717 17.0419V17.0894C98.3717 24.7796 94.4292 29.0994 87.4876 29.0994H81.4652Z");
+    			attr_dev(path26, "fill", "#214250");
+    			add_location(path26, file$9, 27, 0, 6649);
+    			attr_dev(path27, "d", "M110.951 5.15055H137V0H110.951V5.15055ZM113.055 19.2968H134.896V14.431H113.055V19.2968ZM110.951 34.25H137V29.0994H110.951V34.25Z");
+    			attr_dev(path27, "fill", "#214250");
+    			add_location(path27, file$9, 28, 0, 7003);
+    			attr_dev(svg, "width", "137");
+    			attr_dev(svg, "height", "65");
+    			attr_dev(svg, "viewBox", "0 0 137 65");
+    			attr_dev(svg, "fill", "none");
+    			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
+    			add_location(svg, file$9, 0, 0, 0);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, svg, anchor);
+    			append_dev(svg, path0);
+    			append_dev(svg, path1);
+    			append_dev(svg, path2);
+    			append_dev(svg, path3);
+    			append_dev(svg, path4);
+    			append_dev(svg, path5);
+    			append_dev(svg, path6);
+    			append_dev(svg, path7);
+    			append_dev(svg, path8);
+    			append_dev(svg, path9);
+    			append_dev(svg, path10);
+    			append_dev(svg, path11);
+    			append_dev(svg, path12);
+    			append_dev(svg, path13);
+    			append_dev(svg, path14);
+    			append_dev(svg, path15);
+    			append_dev(svg, path16);
+    			append_dev(svg, path17);
+    			append_dev(svg, path18);
+    			append_dev(svg, path19);
+    			append_dev(svg, path20);
+    			append_dev(svg, path21);
+    			append_dev(svg, path22);
+    			append_dev(svg, path23);
+    			append_dev(svg, path24);
+    			append_dev(svg, path25);
+    			append_dev(svg, path26);
+    			append_dev(svg, path27);
+    		},
+    		p: noop,
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(svg);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$9.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$9($$self, $$props) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('DedeLogo', slots, []);
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<DedeLogo> was created with unknown prop '${key}'`);
+    	});
+
+    	return [];
+    }
+
+    class DedeLogo extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$9, create_fragment$9, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "DedeLogo",
+    			options,
+    			id: create_fragment$9.name
+    		});
+    	}
+    }
+
+    /* node_modules/svelte-hamburgers/src/Hamburger.svelte generated by Svelte v3.43.0 */
+
+    const file$8 = "node_modules/svelte-hamburgers/src/Hamburger.svelte";
+
+    function create_fragment$8(ctx) {
+    	let button;
+    	let span1;
+    	let span0;
+    	let button_class_value;
+    	let mounted;
+    	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			button = element("button");
+    			span1 = element("span");
+    			span0 = element("span");
+    			attr_dev(span0, "class", "hamburger-inner");
+    			add_location(span0, file$8, 22, 8, 445);
+    			attr_dev(span1, "class", "hamburger-box");
+    			add_location(span1, file$8, 21, 4, 408);
+    			attr_dev(button, "class", button_class_value = "hamburger hamburger--" + /*type*/ ctx[1] + " " + (/*open*/ ctx[0] && 'is-active'));
+    			add_location(button, file$8, 17, 0, 284);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, button, anchor);
+    			append_dev(button, span1);
+    			append_dev(span1, span0);
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(button, "click", /*click_handler*/ ctx[2], false, false, false),
+    					listen_dev(button, "click", /*click_handler_1*/ ctx[3], false, false, false)
+    				];
+
+    				mounted = true;
+    			}
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*type, open*/ 3 && button_class_value !== (button_class_value = "hamburger hamburger--" + /*type*/ ctx[1] + " " + (/*open*/ ctx[0] && 'is-active'))) {
+    				attr_dev(button, "class", button_class_value);
+    			}
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(button);
+    			mounted = false;
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$8.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$8($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('Hamburger', slots, []);
+    	let { open } = $$props;
+    	let { type = 'spin' } = $$props;
+    	const writable_props = ['open', 'type'];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Hamburger> was created with unknown prop '${key}'`);
+    	});
+
+    	function click_handler(event) {
+    		bubble.call(this, $$self, event);
+    	}
+
+    	const click_handler_1 = () => $$invalidate(0, open = !open);
+
+    	$$self.$$set = $$props => {
+    		if ('open' in $$props) $$invalidate(0, open = $$props.open);
+    		if ('type' in $$props) $$invalidate(1, type = $$props.type);
+    	};
+
+    	$$self.$capture_state = () => ({ open, type });
+
+    	$$self.$inject_state = $$props => {
+    		if ('open' in $$props) $$invalidate(0, open = $$props.open);
+    		if ('type' in $$props) $$invalidate(1, type = $$props.type);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [open, type, click_handler, click_handler_1];
+    }
+
+    class Hamburger extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$8, create_fragment$8, safe_not_equal, { open: 0, type: 1 });
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Hamburger",
+    			options,
+    			id: create_fragment$8.name
+    		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*open*/ ctx[0] === undefined && !('open' in props)) {
+    			console.warn("<Hamburger> was created without expected prop 'open'");
+    		}
+    	}
+
+    	get open() {
+    		throw new Error("<Hamburger>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set open(value) {
+    		throw new Error("<Hamburger>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get type() {
+    		throw new Error("<Hamburger>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set type(value) {
+    		throw new Error("<Hamburger>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    function cubicOut(t) {
+        const f = t - 1.0;
+        return f * f * f + 1.0;
+    }
+
+    function fly(node, { delay = 0, duration = 400, easing = cubicOut, x = 0, y = 0, opacity = 0 } = {}) {
+        const style = getComputedStyle(node);
+        const target_opacity = +style.opacity;
+        const transform = style.transform === 'none' ? '' : style.transform;
+        const od = target_opacity * (1 - opacity);
+        return {
+            delay,
+            duration,
+            easing,
+            css: (t, u) => `
+			transform: ${transform} translate(${(1 - t) * x}px, ${(1 - t) * y}px);
+			opacity: ${target_opacity - (od * u)}`
+        };
+    }
+
+    /* src/components/Header.svelte generated by Svelte v3.43.0 */
+    const file$7 = "src/components/Header.svelte";
+
+    // (19:2) {#if open}
+    function create_if_block$3(ctx) {
+    	let div;
+    	let ul;
+    	let li0;
+    	let span0;
+    	let t1;
+    	let li1;
+    	let span1;
+    	let t3;
+    	let li2;
+    	let span2;
+    	let t5;
+    	let li3;
+    	let span3;
+    	let div_transition;
+    	let current;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			ul = element("ul");
+    			li0 = element("li");
+    			span0 = element("span");
+    			span0.textContent = "Vision";
+    			t1 = space();
+    			li1 = element("li");
+    			span1 = element("span");
+    			span1.textContent = "Mission";
+    			t3 = space();
+    			li2 = element("li");
+    			span2 = element("span");
+    			span2.textContent = "Purpose";
+    			t5 = space();
+    			li3 = element("li");
+    			span3 = element("span");
+    			span3.textContent = "About us";
+    			attr_dev(span0, "data-smoothscroll", "#vision");
+    			add_location(span0, file$7, 21, 39, 680);
+    			attr_dev(li0, "class", "header__menu__item");
+    			add_location(li0, file$7, 21, 8, 649);
+    			attr_dev(span1, "data-smoothscroll", "#mission");
+    			add_location(span1, file$7, 22, 39, 772);
+    			attr_dev(li1, "class", "header__menu__item");
+    			add_location(li1, file$7, 22, 8, 741);
+    			attr_dev(span2, "data-smoothscroll", "#purpose");
+    			add_location(span2, file$7, 23, 39, 866);
+    			attr_dev(li2, "class", "header__menu__item");
+    			add_location(li2, file$7, 23, 8, 835);
+    			attr_dev(span3, "data-smoothscroll", "#about-us");
+    			add_location(span3, file$7, 24, 39, 960);
+    			attr_dev(li3, "class", "header__menu__item");
+    			add_location(li3, file$7, 24, 8, 929);
+    			attr_dev(ul, "class", "header__menu");
+    			add_location(ul, file$7, 20, 6, 615);
+    			attr_dev(div, "class", "header__menu--mobile");
+    			add_location(div, file$7, 19, 4, 528);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, ul);
+    			append_dev(ul, li0);
+    			append_dev(li0, span0);
+    			append_dev(ul, t1);
+    			append_dev(ul, li1);
+    			append_dev(li1, span1);
+    			append_dev(ul, t3);
+    			append_dev(ul, li2);
+    			append_dev(li2, span2);
+    			append_dev(ul, t5);
+    			append_dev(ul, li3);
+    			append_dev(li3, span3);
+    			current = true;
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+
+    			add_render_callback(() => {
+    				if (!div_transition) div_transition = create_bidirectional_transition(div, fly, { y: 200, duration: 500 }, true);
+    				div_transition.run(1);
+    			});
+
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			if (!div_transition) div_transition = create_bidirectional_transition(div, fly, { y: 200, duration: 500 }, false);
+    			div_transition.run(0);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			if (detaching && div_transition) div_transition.end();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$3.name,
+    		type: "if",
+    		source: "(19:2) {#if open}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$7(ctx) {
+    	let header;
+    	let dedelogo;
+    	let t0;
+    	let hamburger;
+    	let updating_open;
+    	let t1;
+    	let t2;
+    	let ul;
+    	let li0;
+    	let span0;
+    	let t4;
+    	let li1;
+    	let span1;
+    	let t6;
+    	let li2;
+    	let span2;
+    	let t8;
+    	let li3;
+    	let span3;
+    	let current;
+    	dedelogo = new DedeLogo({ $$inline: true });
+
+    	function hamburger_open_binding(value) {
+    		/*hamburger_open_binding*/ ctx[1](value);
+    	}
+
+    	let hamburger_props = { type: "emphatic" };
+
+    	if (/*open*/ ctx[0] !== void 0) {
+    		hamburger_props.open = /*open*/ ctx[0];
+    	}
+
+    	hamburger = new Hamburger({ props: hamburger_props, $$inline: true });
+    	binding_callbacks.push(() => bind(hamburger, 'open', hamburger_open_binding));
+    	let if_block = /*open*/ ctx[0] && create_if_block$3(ctx);
+
+    	const block = {
+    		c: function create() {
+    			header = element("header");
+    			create_component(dedelogo.$$.fragment);
+    			t0 = space();
+    			create_component(hamburger.$$.fragment);
+    			t1 = space();
+    			if (if_block) if_block.c();
+    			t2 = space();
+    			ul = element("ul");
+    			li0 = element("li");
+    			span0 = element("span");
+    			span0.textContent = "Vision";
+    			t4 = space();
+    			li1 = element("li");
+    			span1 = element("span");
+    			span1.textContent = "Mission";
+    			t6 = space();
+    			li2 = element("li");
+    			span2 = element("span");
+    			span2.textContent = "Purpose";
+    			t8 = space();
+    			li3 = element("li");
+    			span3 = element("span");
+    			span3.textContent = "About us";
+    			attr_dev(span0, "data-smoothscroll", "#vision");
+    			add_location(span0, file$7, 30, 35, 1218);
+    			attr_dev(li0, "class", "header__menu__item");
+    			add_location(li0, file$7, 30, 4, 1187);
+    			attr_dev(span1, "data-smoothscroll", "#mission");
+    			add_location(span1, file$7, 31, 35, 1306);
+    			attr_dev(li1, "class", "header__menu__item");
+    			add_location(li1, file$7, 31, 4, 1275);
+    			attr_dev(span2, "data-smoothscroll", "#purpose");
+    			add_location(span2, file$7, 32, 35, 1396);
+    			attr_dev(li2, "class", "header__menu__item");
+    			add_location(li2, file$7, 32, 4, 1365);
+    			attr_dev(span3, "data-smoothscroll", "#about-us");
+    			add_location(span3, file$7, 33, 35, 1486);
+    			attr_dev(li3, "class", "header__menu__item");
+    			add_location(li3, file$7, 33, 4, 1455);
+    			attr_dev(ul, "class", "header__menu header__menu--desk");
+    			add_location(ul, file$7, 29, 2, 1138);
+    			attr_dev(header, "class", "wrapper header");
+    			add_location(header, file$7, 15, 0, 413);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, header, anchor);
+    			mount_component(dedelogo, header, null);
+    			append_dev(header, t0);
+    			mount_component(hamburger, header, null);
+    			append_dev(header, t1);
+    			if (if_block) if_block.m(header, null);
+    			append_dev(header, t2);
+    			append_dev(header, ul);
+    			append_dev(ul, li0);
+    			append_dev(li0, span0);
+    			append_dev(ul, t4);
+    			append_dev(ul, li1);
+    			append_dev(li1, span1);
+    			append_dev(ul, t6);
+    			append_dev(ul, li2);
+    			append_dev(li2, span2);
+    			append_dev(ul, t8);
+    			append_dev(ul, li3);
+    			append_dev(li3, span3);
+    			current = true;
+    		},
+    		p: function update(ctx, [dirty]) {
+    			const hamburger_changes = {};
+
+    			if (!updating_open && dirty & /*open*/ 1) {
+    				updating_open = true;
+    				hamburger_changes.open = /*open*/ ctx[0];
+    				add_flush_callback(() => updating_open = false);
+    			}
+
+    			hamburger.$set(hamburger_changes);
+
+    			if (/*open*/ ctx[0]) {
+    				if (if_block) {
+    					if (dirty & /*open*/ 1) {
+    						transition_in(if_block, 1);
+    					}
+    				} else {
+    					if_block = create_if_block$3(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(header, t2);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+
+    				check_outros();
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(dedelogo.$$.fragment, local);
+    			transition_in(hamburger.$$.fragment, local);
+    			transition_in(if_block);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(dedelogo.$$.fragment, local);
+    			transition_out(hamburger.$$.fragment, local);
+    			transition_out(if_block);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(header);
+    			destroy_component(dedelogo);
+    			destroy_component(hamburger);
+    			if (if_block) if_block.d();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$7.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$7($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('Header', slots, []);
+    	let open = false;
+
+    	afterUpdate(() => {
+    		let buttons = smoothScroll();
+
+    		buttons.forEach(button => {
+    			button.addEventListener('click', () => {
+    				$$invalidate(0, open = false);
+    			});
+    		});
+    	});
+
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Header> was created with unknown prop '${key}'`);
+    	});
+
+    	function hamburger_open_binding(value) {
+    		open = value;
+    		$$invalidate(0, open);
+    	}
+
+    	$$self.$capture_state = () => ({
+    		open,
+    		DedeLogo,
+    		Hamburger,
+    		fly,
+    		afterUpdate,
+    		smoothScroll
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ('open' in $$props) $$invalidate(0, open = $$props.open);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [open, hamburger_open_binding];
+    }
+
+    class Header extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$7, create_fragment$7, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Header",
+    			options,
+    			id: create_fragment$7.name
+    		});
+    	}
+    }
+
+    /** @type {import(types').HasSingleTextNode} */
+    const hasSingleTextNode = el => el.childNodes.length === 1 && el.childNodes[0].nodeType === 3;
+
+    /** @type {import(types').CreateElement} */
+    const createElement = (text, elementTag) => {
+    	const element = document.createElement(elementTag);
+    	element.textContent = text;
+    	return element
+    };
+
+    const filterOutStaticElements = child => child.dataset.static === undefined;
+
+    /** @type {import(types').GetElements} */
+    const getElements = (node, { parentElement }) => {
+    	if (hasSingleTextNode(parentElement)) {
+    		const text = parentElement.textContent;
+    		const childNode = createElement(parentElement.textContent, 'p');
+    		parentElement.textContent = '';
+    		parentElement.appendChild(childNode);
+    		return [{ currentNode: childNode, text }]
+    	}
+
+    	if (hasSingleTextNode(node)) {
+    		const textWithFilteredAmpersand = node.innerHTML.replaceAll('&amp;', '&');
+    		return [{ currentNode: node, text: textWithFilteredAmpersand }]
+    	} else {
+    		const children = [...node.children].filter(filterOutStaticElements);
+    		const allChildren = children.flatMap(child => getElements(child, { parentElement }));
+    		return allChildren
+    	}
+    };
+
+    const runOnEveryParentUntil = async (element, parent, callback) => {
+    	if (!parent) {
+    		console.error('The specified parent element does not exists!');
+    		return
+    	}
+
+    	let currentElement = element;
+    	do {
+    		if (currentElement === parent) return
+
+    		callback(currentElement);
+
+    		currentElement = currentElement.parentElement || currentElement.parentNode;
+    	} while (currentElement !== null && currentElement.nodeType === 1)
+    };
+
+    const makeNestedStaticElementsVisible = parentElement => {
+    	const staticElements = [...parentElement.querySelectorAll('[data-static]')];
+    	for (const staticElement of staticElements) {
+    		runOnEveryParentUntil(staticElement, parentElement, currentStaticElement => {
+    			const isParentElement = currentStaticElement !== staticElement;
+    			isParentElement && currentStaticElement.classList.add('finished-typing');
+    		});
+    	}
+    };
+
+    const getSelectedMode = async options => {
+    	if (options.loop || options.loopRandom) {
+    		return (await Promise.resolve().then(function () { return loopTypewriter$1; })).mode
+    	} else if (options.scramble) {
+    		return (await Promise.resolve().then(function () { return scramble; })).mode
+    	} else {
+    		return (await Promise.resolve().then(function () { return typewriter; })).mode
+    	}
+    };
+
+    /** @type {import('types').TypewriterMainFn} */
+    const typewriter$1 = async (node, options) => {
+    	makeNestedStaticElementsVisible(node);
+    	const mode = await getSelectedMode(options);
+    	const elements = getElements(node, { parentElement: node, ...options });
+    	if (options.delay > 0) {
+    		const { sleep } = await Promise.resolve().then(function () { return sleep$1; });
+    		await sleep(options.delay);
+    		node.classList.remove('delay');
+    	}
+    	mode(elements, { parentElement: node, ...options });
+    };
+
+    /* node_modules/svelte-typewriter/src/Typewriter.svelte generated by Svelte v3.43.0 */
+    const file$6 = "node_modules/svelte-typewriter/src/Typewriter.svelte";
+
+    function create_fragment$6(ctx) {
+    	let div;
+    	let typewriter_action;
+    	let current;
+    	let mounted;
+    	let dispose;
+    	const default_slot_template = /*#slots*/ ctx[10].default;
+    	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[9], null);
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			if (default_slot) default_slot.c();
+    			attr_dev(div, "class", "typewriter-container svelte-x8atzo");
+
+    			set_style(div, "--cursor-color", typeof /*cursor*/ ctx[0] === 'string'
+    			? /*cursor*/ ctx[0]
+    			: 'black');
+
+    			toggle_class(div, "cursor", /*cursor*/ ctx[0]);
+    			toggle_class(div, "delay", /*options*/ ctx[1].delay > 0);
+    			add_location(div, file$6, 50, 0, 995);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+
+    			if (default_slot) {
+    				default_slot.m(div, null);
+    			}
+
+    			current = true;
+
+    			if (!mounted) {
+    				dispose = action_destroyer(typewriter_action = typewriter$1.call(null, div, /*options*/ ctx[1]));
+    				mounted = true;
+    			}
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (default_slot) {
+    				if (default_slot.p && (!current || dirty & /*$$scope*/ 512)) {
+    					update_slot_base(
+    						default_slot,
+    						default_slot_template,
+    						ctx,
+    						/*$$scope*/ ctx[9],
+    						!current
+    						? get_all_dirty_from_scope(/*$$scope*/ ctx[9])
+    						: get_slot_changes(default_slot_template, /*$$scope*/ ctx[9], dirty, null),
+    						null
+    					);
+    				}
+    			}
+
+    			if (!current || dirty & /*cursor*/ 1) {
+    				set_style(div, "--cursor-color", typeof /*cursor*/ ctx[0] === 'string'
+    				? /*cursor*/ ctx[0]
+    				: 'black');
+    			}
+
+    			if (typewriter_action && is_function(typewriter_action.update) && dirty & /*options*/ 2) typewriter_action.update.call(null, /*options*/ ctx[1]);
+
+    			if (dirty & /*cursor*/ 1) {
+    				toggle_class(div, "cursor", /*cursor*/ ctx[0]);
+    			}
+
+    			if (dirty & /*options*/ 2) {
+    				toggle_class(div, "delay", /*options*/ ctx[1].delay > 0);
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(default_slot, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(default_slot, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			if (default_slot) default_slot.d(detaching);
+    			mounted = false;
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$6.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$6($$self, $$props, $$invalidate) {
+    	let options;
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('Typewriter', slots, ['default']);
+    	let { interval = 30 } = $$props;
+    	let { cascade = false } = $$props;
+    	let { loop = false } = $$props;
+    	let { loopRandom = false } = $$props;
+    	let { scramble = false } = $$props;
+    	let { scrambleSlowdown = scramble ? true : false } = $$props;
+    	let { cursor = true } = $$props;
+    	let { delay = 0 } = $$props;
+    	const dispatch = createEventDispatcher();
+
+    	const writable_props = [
+    		'interval',
+    		'cascade',
+    		'loop',
+    		'loopRandom',
+    		'scramble',
+    		'scrambleSlowdown',
+    		'cursor',
+    		'delay'
+    	];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Typewriter> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$$set = $$props => {
+    		if ('interval' in $$props) $$invalidate(2, interval = $$props.interval);
+    		if ('cascade' in $$props) $$invalidate(3, cascade = $$props.cascade);
+    		if ('loop' in $$props) $$invalidate(4, loop = $$props.loop);
+    		if ('loopRandom' in $$props) $$invalidate(5, loopRandom = $$props.loopRandom);
+    		if ('scramble' in $$props) $$invalidate(6, scramble = $$props.scramble);
+    		if ('scrambleSlowdown' in $$props) $$invalidate(7, scrambleSlowdown = $$props.scrambleSlowdown);
+    		if ('cursor' in $$props) $$invalidate(0, cursor = $$props.cursor);
+    		if ('delay' in $$props) $$invalidate(8, delay = $$props.delay);
+    		if ('$$scope' in $$props) $$invalidate(9, $$scope = $$props.$$scope);
+    	};
+
+    	$$self.$capture_state = () => ({
+    		createEventDispatcher,
+    		typewriter: typewriter$1,
+    		interval,
+    		cascade,
+    		loop,
+    		loopRandom,
+    		scramble,
+    		scrambleSlowdown,
+    		cursor,
+    		delay,
+    		dispatch,
+    		options
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ('interval' in $$props) $$invalidate(2, interval = $$props.interval);
+    		if ('cascade' in $$props) $$invalidate(3, cascade = $$props.cascade);
+    		if ('loop' in $$props) $$invalidate(4, loop = $$props.loop);
+    		if ('loopRandom' in $$props) $$invalidate(5, loopRandom = $$props.loopRandom);
+    		if ('scramble' in $$props) $$invalidate(6, scramble = $$props.scramble);
+    		if ('scrambleSlowdown' in $$props) $$invalidate(7, scrambleSlowdown = $$props.scrambleSlowdown);
+    		if ('cursor' in $$props) $$invalidate(0, cursor = $$props.cursor);
+    		if ('delay' in $$props) $$invalidate(8, delay = $$props.delay);
+    		if ('options' in $$props) $$invalidate(1, options = $$props.options);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	$$self.$$.update = () => {
+    		if ($$self.$$.dirty & /*interval, cascade, loop, loopRandom, scramble, scrambleSlowdown, cursor, delay*/ 509) {
+    			$$invalidate(1, options = {
+    				interval,
+    				cascade,
+    				loop,
+    				loopRandom,
+    				scramble,
+    				scrambleSlowdown,
+    				cursor,
+    				delay,
+    				dispatch
+    			});
+    		}
+    	};
+
+    	return [
+    		cursor,
+    		options,
+    		interval,
+    		cascade,
+    		loop,
+    		loopRandom,
+    		scramble,
+    		scrambleSlowdown,
+    		delay,
+    		$$scope,
+    		slots
+    	];
+    }
+
+    class Typewriter extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+
+    		init(this, options, instance$6, create_fragment$6, safe_not_equal, {
+    			interval: 2,
+    			cascade: 3,
+    			loop: 4,
+    			loopRandom: 5,
+    			scramble: 6,
+    			scrambleSlowdown: 7,
+    			cursor: 0,
+    			delay: 8
+    		});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Typewriter",
+    			options,
+    			id: create_fragment$6.name
+    		});
+    	}
+
+    	get interval() {
+    		throw new Error("<Typewriter>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set interval(value) {
+    		throw new Error("<Typewriter>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get cascade() {
+    		throw new Error("<Typewriter>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set cascade(value) {
+    		throw new Error("<Typewriter>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get loop() {
+    		throw new Error("<Typewriter>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set loop(value) {
+    		throw new Error("<Typewriter>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get loopRandom() {
+    		throw new Error("<Typewriter>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set loopRandom(value) {
+    		throw new Error("<Typewriter>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get scramble() {
+    		throw new Error("<Typewriter>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set scramble(value) {
+    		throw new Error("<Typewriter>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get scrambleSlowdown() {
+    		throw new Error("<Typewriter>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set scrambleSlowdown(value) {
+    		throw new Error("<Typewriter>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get cursor() {
+    		throw new Error("<Typewriter>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set cursor(value) {
+    		throw new Error("<Typewriter>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get delay() {
+    		throw new Error("<Typewriter>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set delay(value) {
+    		throw new Error("<Typewriter>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src/components/Headline.svelte generated by Svelte v3.43.0 */
+    const file$5 = "src/components/Headline.svelte";
+
+    // (28:8) <Typewriter loopRandom interval={[100, 120, 160]} delay=500>
+    function create_default_slot(ctx) {
+    	let html_tag;
+    	let html_anchor;
+
+    	const block = {
+    		c: function create() {
+    			html_tag = new HtmlTag();
+    			html_anchor = empty();
+    			html_tag.a = html_anchor;
+    		},
+    		m: function mount(target, anchor) {
+    			html_tag.m(/*typewriter_html*/ ctx[2], target, anchor);
+    			insert_dev(target, html_anchor, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*typewriter_html*/ 4) html_tag.p(/*typewriter_html*/ ctx[2]);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(html_anchor);
+    			if (detaching) html_tag.d();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot.name,
+    		type: "slot",
+    		source: "(28:8) <Typewriter loopRandom interval={[100, 120, 160]} delay=500>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (31:4) {#if cta}
+    function create_if_block$2(ctx) {
+    	let div;
+    	let t0_value = /*cta*/ ctx[5].text + "";
+    	let t0;
+    	let t1;
+    	let if_block = /*cta*/ ctx[5].arrow && create_if_block_1$1(ctx);
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			t0 = text$1(t0_value);
+    			t1 = space();
+    			if (if_block) if_block.c();
+    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[6] + "__cta"));
+    			attr_dev(div, "data-smoothscroll", "#solution");
+    			add_location(div, file$5, 31, 6, 890);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, t0);
+    			append_dev(div, t1);
+    			if (if_block) if_block.m(div, null);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*cta*/ 32 && t0_value !== (t0_value = /*cta*/ ctx[5].text + "")) set_data_dev(t0, t0_value);
+
+    			if (/*cta*/ ctx[5].arrow) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block_1$1(ctx);
+    					if_block.c();
+    					if_block.m(div, null);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			if (if_block) if_block.d();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$2.name,
+    		type: "if",
+    		source: "(31:4) {#if cta}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (34:8) {#if cta.arrow}
+    function create_if_block_1$1(ctx) {
+    	let div;
+    	let t;
+    	let div_class_value;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			t = text$1("->");
+    			attr_dev(div, "class", div_class_value = "arrow arrow--" + /*cta*/ ctx[5].arrow);
+    			add_location(div, file$5, 34, 10, 1004);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*cta*/ 32 && div_class_value !== (div_class_value = "arrow arrow--" + /*cta*/ ctx[5].arrow)) {
+    				attr_dev(div, "class", div_class_value);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1$1.name,
+    		type: "if",
+    		source: "(34:8) {#if cta.arrow}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$5(ctx) {
+    	let div2;
+    	let div1;
+    	let div0;
+    	let h1;
+    	let t0;
+    	let t1;
+    	let h3;
+    	let t2;
+    	let t3;
+    	let typewriter;
+    	let t4;
+    	let t5;
+    	let blobs;
+    	let current;
+
+    	typewriter = new Typewriter({
+    			props: {
+    				loopRandom: true,
+    				interval: [100, 120, 160],
+    				delay: "500",
+    				$$slots: { default: [create_default_slot] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	let if_block = /*cta*/ ctx[5] && create_if_block$2(ctx);
+
+    	blobs = new Blobs({
+    			props: {
+    				shapes: /*shapes*/ ctx[3],
+    				colors: /*colors*/ ctx[4]
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			div2 = element("div");
+    			div1 = element("div");
+    			div0 = element("div");
+    			h1 = element("h1");
+    			t0 = text$1(/*title*/ ctx[0]);
+    			t1 = space();
+    			h3 = element("h3");
+    			t2 = text$1(/*text*/ ctx[1]);
+    			t3 = space();
+    			create_component(typewriter.$$.fragment);
+    			t4 = space();
+    			if (if_block) if_block.c();
+    			t5 = space();
+    			create_component(blobs.$$.fragment);
+    			attr_dev(h1, "class", "" + (/*baseClass*/ ctx[6] + "__title"));
+    			add_location(h1, file$5, 24, 6, 646);
+    			attr_dev(h3, "class", "" + (/*baseClass*/ ctx[6] + "__text"));
+    			add_location(h3, file$5, 25, 6, 696);
+    			attr_dev(div0, "class", "" + (/*baseClass*/ ctx[6] + "__content"));
+    			add_location(div0, file$5, 23, 4, 605);
+    			attr_dev(div1, "class", /*baseClass*/ ctx[6]);
+    			add_location(div1, file$5, 22, 2, 575);
+    			attr_dev(div2, "class", "wrapper");
+    			add_location(div2, file$5, 21, 0, 551);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div1);
+    			append_dev(div1, div0);
+    			append_dev(div0, h1);
+    			append_dev(h1, t0);
+    			append_dev(div0, t1);
+    			append_dev(div0, h3);
+    			append_dev(h3, t2);
+    			append_dev(h3, t3);
+    			mount_component(typewriter, h3, null);
+    			append_dev(div1, t4);
+    			if (if_block) if_block.m(div1, null);
+    			append_dev(div2, t5);
+    			mount_component(blobs, div2, null);
+    			current = true;
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (!current || dirty & /*title*/ 1) set_data_dev(t0, /*title*/ ctx[0]);
+    			if (!current || dirty & /*text*/ 2) set_data_dev(t2, /*text*/ ctx[1]);
+    			const typewriter_changes = {};
+
+    			if (dirty & /*$$scope, typewriter_html*/ 260) {
+    				typewriter_changes.$$scope = { dirty, ctx };
+    			}
+
+    			typewriter.$set(typewriter_changes);
+
+    			if (/*cta*/ ctx[5]) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block$2(ctx);
+    					if_block.c();
+    					if_block.m(div1, null);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+
+    			const blobs_changes = {};
+    			if (dirty & /*shapes*/ 8) blobs_changes.shapes = /*shapes*/ ctx[3];
+    			if (dirty & /*colors*/ 16) blobs_changes.colors = /*colors*/ ctx[4];
+    			blobs.$set(blobs_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(typewriter.$$.fragment, local);
+    			transition_in(blobs.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(typewriter.$$.fragment, local);
+    			transition_out(blobs.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div2);
+    			destroy_component(typewriter);
+    			if (if_block) if_block.d();
+    			destroy_component(blobs);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$5.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$5($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('Headline', slots, []);
+    	let { title = "Title for hero component" } = $$props;
+    	let { text = "Text_html for hero component" } = $$props;
+    	let { typewriter_html = "<span>1</span>" } = $$props;
+    	let { shapes = 2 } = $$props;
+    	let { colors = ['red', 'yellow', 'blue'] } = $$props;
+    	let { cta = false } = $$props;
+    	let { type = 'Headline' } = $$props;
+    	let baseClass = type.toLowerCase();
+
+    	afterUpdate(() => {
+    		smoothScroll();
+    	});
+
+    	const writable_props = ['title', 'text', 'typewriter_html', 'shapes', 'colors', 'cta', 'type'];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Headline> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$$set = $$props => {
+    		if ('title' in $$props) $$invalidate(0, title = $$props.title);
+    		if ('text' in $$props) $$invalidate(1, text = $$props.text);
+    		if ('typewriter_html' in $$props) $$invalidate(2, typewriter_html = $$props.typewriter_html);
+    		if ('shapes' in $$props) $$invalidate(3, shapes = $$props.shapes);
+    		if ('colors' in $$props) $$invalidate(4, colors = $$props.colors);
+    		if ('cta' in $$props) $$invalidate(5, cta = $$props.cta);
+    		if ('type' in $$props) $$invalidate(7, type = $$props.type);
+    	};
+
+    	$$self.$capture_state = () => ({
+    		title,
+    		text,
+    		typewriter_html,
+    		shapes,
+    		colors,
+    		cta,
+    		type,
+    		baseClass,
+    		Typewriter,
+    		Blobs,
+    		afterUpdate,
+    		smoothScroll
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ('title' in $$props) $$invalidate(0, title = $$props.title);
+    		if ('text' in $$props) $$invalidate(1, text = $$props.text);
+    		if ('typewriter_html' in $$props) $$invalidate(2, typewriter_html = $$props.typewriter_html);
+    		if ('shapes' in $$props) $$invalidate(3, shapes = $$props.shapes);
+    		if ('colors' in $$props) $$invalidate(4, colors = $$props.colors);
+    		if ('cta' in $$props) $$invalidate(5, cta = $$props.cta);
+    		if ('type' in $$props) $$invalidate(7, type = $$props.type);
+    		if ('baseClass' in $$props) $$invalidate(6, baseClass = $$props.baseClass);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [title, text, typewriter_html, shapes, colors, cta, baseClass, type];
+    }
+
+    class Headline extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+
+    		init(this, options, instance$5, create_fragment$5, safe_not_equal, {
+    			title: 0,
+    			text: 1,
+    			typewriter_html: 2,
+    			shapes: 3,
+    			colors: 4,
+    			cta: 5,
+    			type: 7
+    		});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Headline",
+    			options,
+    			id: create_fragment$5.name
+    		});
+    	}
+
+    	get title() {
+    		throw new Error("<Headline>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set title(value) {
+    		throw new Error("<Headline>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get text() {
+    		throw new Error("<Headline>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set text(value) {
+    		throw new Error("<Headline>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get typewriter_html() {
+    		throw new Error("<Headline>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set typewriter_html(value) {
+    		throw new Error("<Headline>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get shapes() {
+    		throw new Error("<Headline>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set shapes(value) {
+    		throw new Error("<Headline>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get colors() {
+    		throw new Error("<Headline>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set colors(value) {
+    		throw new Error("<Headline>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get cta() {
+    		throw new Error("<Headline>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set cta(value) {
+    		throw new Error("<Headline>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get type() {
+    		throw new Error("<Headline>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set type(value) {
+    		throw new Error("<Headline>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src/components/Hero.svelte generated by Svelte v3.43.0 */
+    const file$4 = "src/components/Hero.svelte";
+
+    // (26:4) {#if cta}
+    function create_if_block$1(ctx) {
+    	let div;
+    	let t0_value = /*cta*/ ctx[4].text + "";
+    	let t0;
+    	let t1;
+    	let if_block = /*cta*/ ctx[4].arrow && create_if_block_1(ctx);
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			t0 = text$1(t0_value);
+    			t1 = space();
+    			if (if_block) if_block.c();
+    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[5] + "__cta"));
+    			attr_dev(div, "data-smoothscroll", "#solution");
+    			add_location(div, file$4, 26, 6, 683);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, t0);
+    			append_dev(div, t1);
+    			if (if_block) if_block.m(div, null);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*cta*/ 16 && t0_value !== (t0_value = /*cta*/ ctx[4].text + "")) set_data_dev(t0, t0_value);
+
+    			if (/*cta*/ ctx[4].arrow) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block_1(ctx);
+    					if_block.c();
+    					if_block.m(div, null);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			if (if_block) if_block.d();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$1.name,
+    		type: "if",
+    		source: "(26:4) {#if cta}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (29:8) {#if cta.arrow}
+    function create_if_block_1(ctx) {
+    	let div;
+    	let t;
+    	let div_class_value;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			t = text$1("->");
+    			attr_dev(div, "class", div_class_value = "arrow arrow--" + /*cta*/ ctx[4].arrow);
+    			add_location(div, file$4, 29, 10, 797);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*cta*/ 16 && div_class_value !== (div_class_value = "arrow arrow--" + /*cta*/ ctx[4].arrow)) {
+    				attr_dev(div, "class", div_class_value);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1.name,
+    		type: "if",
+    		source: "(29:8) {#if cta.arrow}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$4(ctx) {
+    	let div2;
+    	let div1;
+    	let div0;
+    	let h1;
+    	let t0;
+    	let t1;
+    	let h3;
+    	let t2;
+    	let t3;
+    	let t4;
+    	let blobs;
+    	let current;
+    	let if_block = /*cta*/ ctx[4] && create_if_block$1(ctx);
+
+    	blobs = new Blobs({
+    			props: {
+    				shapes: /*shapes*/ ctx[2],
+    				colors: /*colors*/ ctx[3]
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			div2 = element("div");
+    			div1 = element("div");
+    			div0 = element("div");
+    			h1 = element("h1");
+    			t0 = text$1(/*title*/ ctx[0]);
+    			t1 = space();
+    			h3 = element("h3");
+    			t2 = text$1(/*subtitle*/ ctx[1]);
+    			t3 = space();
+    			if (if_block) if_block.c();
+    			t4 = space();
+    			create_component(blobs.$$.fragment);
+    			attr_dev(h1, "class", "" + (/*baseClass*/ ctx[5] + "__title"));
+    			add_location(h1, file$4, 22, 6, 552);
+    			attr_dev(h3, "class", "" + (/*baseClass*/ ctx[5] + "__subtitle"));
+    			add_location(h3, file$4, 23, 6, 602);
+    			attr_dev(div0, "class", "" + (/*baseClass*/ ctx[5] + "__content"));
+    			add_location(div0, file$4, 21, 4, 511);
+    			attr_dev(div1, "class", /*baseClass*/ ctx[5]);
+    			add_location(div1, file$4, 20, 2, 481);
+    			attr_dev(div2, "class", "wrapper");
+    			add_location(div2, file$4, 19, 0, 457);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div1);
+    			append_dev(div1, div0);
+    			append_dev(div0, h1);
+    			append_dev(h1, t0);
+    			append_dev(div0, t1);
+    			append_dev(div0, h3);
+    			append_dev(h3, t2);
+    			append_dev(div1, t3);
+    			if (if_block) if_block.m(div1, null);
+    			append_dev(div2, t4);
+    			mount_component(blobs, div2, null);
+    			current = true;
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (!current || dirty & /*title*/ 1) set_data_dev(t0, /*title*/ ctx[0]);
+    			if (!current || dirty & /*subtitle*/ 2) set_data_dev(t2, /*subtitle*/ ctx[1]);
+
+    			if (/*cta*/ ctx[4]) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block$1(ctx);
+    					if_block.c();
+    					if_block.m(div1, null);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+
+    			const blobs_changes = {};
+    			if (dirty & /*shapes*/ 4) blobs_changes.shapes = /*shapes*/ ctx[2];
+    			if (dirty & /*colors*/ 8) blobs_changes.colors = /*colors*/ ctx[3];
+    			blobs.$set(blobs_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(blobs.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(blobs.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div2);
+    			if (if_block) if_block.d();
+    			destroy_component(blobs);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$4.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$4($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('Hero', slots, []);
+    	let { title = "Title for hero component" } = $$props;
+    	let { subtitle = "Subtitle for hero component" } = $$props;
+    	let { shapes = 2 } = $$props;
+    	let { colors = ['red', 'yellow', 'blue'] } = $$props;
+    	let { cta = false } = $$props;
+    	let { type = 'Hero' } = $$props;
+    	let baseClass = type.toLowerCase();
+
+    	afterUpdate(() => {
+    		smoothScroll();
+    	});
+
+    	const writable_props = ['title', 'subtitle', 'shapes', 'colors', 'cta', 'type'];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Hero> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$$set = $$props => {
+    		if ('title' in $$props) $$invalidate(0, title = $$props.title);
+    		if ('subtitle' in $$props) $$invalidate(1, subtitle = $$props.subtitle);
+    		if ('shapes' in $$props) $$invalidate(2, shapes = $$props.shapes);
+    		if ('colors' in $$props) $$invalidate(3, colors = $$props.colors);
+    		if ('cta' in $$props) $$invalidate(4, cta = $$props.cta);
+    		if ('type' in $$props) $$invalidate(6, type = $$props.type);
+    	};
+
+    	$$self.$capture_state = () => ({
+    		title,
+    		subtitle,
+    		shapes,
+    		colors,
+    		cta,
+    		type,
+    		baseClass,
+    		Blobs,
+    		afterUpdate,
+    		smoothScroll
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ('title' in $$props) $$invalidate(0, title = $$props.title);
+    		if ('subtitle' in $$props) $$invalidate(1, subtitle = $$props.subtitle);
+    		if ('shapes' in $$props) $$invalidate(2, shapes = $$props.shapes);
+    		if ('colors' in $$props) $$invalidate(3, colors = $$props.colors);
+    		if ('cta' in $$props) $$invalidate(4, cta = $$props.cta);
+    		if ('type' in $$props) $$invalidate(6, type = $$props.type);
+    		if ('baseClass' in $$props) $$invalidate(5, baseClass = $$props.baseClass);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [title, subtitle, shapes, colors, cta, baseClass, type];
+    }
+
+    class Hero extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+
+    		init(this, options, instance$4, create_fragment$4, safe_not_equal, {
+    			title: 0,
+    			subtitle: 1,
+    			shapes: 2,
+    			colors: 3,
+    			cta: 4,
+    			type: 6
+    		});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Hero",
+    			options,
+    			id: create_fragment$4.name
+    		});
+    	}
+
+    	get title() {
+    		throw new Error("<Hero>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set title(value) {
+    		throw new Error("<Hero>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get subtitle() {
+    		throw new Error("<Hero>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set subtitle(value) {
+    		throw new Error("<Hero>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get shapes() {
+    		throw new Error("<Hero>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set shapes(value) {
+    		throw new Error("<Hero>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get colors() {
+    		throw new Error("<Hero>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set colors(value) {
+    		throw new Error("<Hero>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get cta() {
+    		throw new Error("<Hero>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set cta(value) {
+    		throw new Error("<Hero>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get type() {
+    		throw new Error("<Hero>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set type(value) {
+    		throw new Error("<Hero>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src/components/Spacer.svelte generated by Svelte v3.43.0 */
+    const file$3 = "src/components/Spacer.svelte";
+
+    function create_fragment$3(ctx) {
+    	let div;
+    	let t;
+    	let blobs;
+    	let current;
+
+    	blobs = new Blobs({
+    			props: {
+    				shapes: /*shapes*/ ctx[1],
+    				colors: /*colors*/ ctx[2]
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			t = space();
+    			create_component(blobs.$$.fragment);
+    			attr_dev(div, "class", /*baseClass*/ ctx[3]);
+    			set_style(div, "height", /*height*/ ctx[0] + "px");
+    			add_location(div, file$3, 11, 0, 223);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			insert_dev(target, t, anchor);
+    			mount_component(blobs, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (!current || dirty & /*height*/ 1) {
+    				set_style(div, "height", /*height*/ ctx[0] + "px");
+    			}
+
+    			const blobs_changes = {};
+    			if (dirty & /*shapes*/ 2) blobs_changes.shapes = /*shapes*/ ctx[1];
+    			if (dirty & /*colors*/ 4) blobs_changes.colors = /*colors*/ ctx[2];
+    			blobs.$set(blobs_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(blobs.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(blobs.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    			if (detaching) detach_dev(t);
+    			destroy_component(blobs, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$3.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$3($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('Spacer', slots, []);
+    	let { height = 100 } = $$props;
+    	let { type = 'Spacer' } = $$props;
+    	let { shapes = 0 } = $$props;
+    	let { colors = ['red', 'yellow', 'blue'] } = $$props;
+    	let baseClass = type.toLowerCase();
+    	const writable_props = ['height', 'type', 'shapes', 'colors'];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Spacer> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$$set = $$props => {
+    		if ('height' in $$props) $$invalidate(0, height = $$props.height);
+    		if ('type' in $$props) $$invalidate(4, type = $$props.type);
+    		if ('shapes' in $$props) $$invalidate(1, shapes = $$props.shapes);
+    		if ('colors' in $$props) $$invalidate(2, colors = $$props.colors);
+    	};
+
+    	$$self.$capture_state = () => ({
+    		height,
+    		type,
+    		shapes,
+    		colors,
+    		baseClass,
+    		Blobs
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ('height' in $$props) $$invalidate(0, height = $$props.height);
+    		if ('type' in $$props) $$invalidate(4, type = $$props.type);
+    		if ('shapes' in $$props) $$invalidate(1, shapes = $$props.shapes);
+    		if ('colors' in $$props) $$invalidate(2, colors = $$props.colors);
+    		if ('baseClass' in $$props) $$invalidate(3, baseClass = $$props.baseClass);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [height, shapes, colors, baseClass, type];
+    }
+
+    class Spacer extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$3, create_fragment$3, safe_not_equal, { height: 0, type: 4, shapes: 1, colors: 2 });
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Spacer",
+    			options,
+    			id: create_fragment$3.name
+    		});
+    	}
+
+    	get height() {
+    		throw new Error("<Spacer>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set height(value) {
+    		throw new Error("<Spacer>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get type() {
+    		throw new Error("<Spacer>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set type(value) {
+    		throw new Error("<Spacer>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get shapes() {
+    		throw new Error("<Spacer>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set shapes(value) {
+    		throw new Error("<Spacer>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get colors() {
+    		throw new Error("<Spacer>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set colors(value) {
+    		throw new Error("<Spacer>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src/components/Text.svelte generated by Svelte v3.43.0 */
+    const file$2 = "src/components/Text.svelte";
+
+    function create_fragment$2(ctx) {
+    	let div2;
+    	let div1;
+    	let h2;
+    	let t0;
+    	let t1;
+    	let h3;
+    	let t2;
+    	let t3;
+    	let div0;
+    	let p;
+    	let t4;
+    	let blobs;
+    	let current;
+
+    	blobs = new Blobs({
+    			props: {
+    				shapes: /*shapes*/ ctx[3],
+    				colors: /*colors*/ ctx[4]
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			div2 = element("div");
+    			div1 = element("div");
+    			h2 = element("h2");
+    			t0 = text$1(/*title*/ ctx[0]);
+    			t1 = space();
+    			h3 = element("h3");
+    			t2 = text$1(/*subtitle*/ ctx[1]);
+    			t3 = space();
+    			div0 = element("div");
+    			p = element("p");
+    			t4 = space();
+    			create_component(blobs.$$.fragment);
+    			attr_dev(h2, "class", "" + (/*baseClass*/ ctx[6] + "__title"));
+    			add_location(h2, file$2, 17, 4, 448);
+    			attr_dev(h3, "class", "" + (/*baseClass*/ ctx[6] + "__subtitle"));
+    			add_location(h3, file$2, 18, 4, 496);
+    			add_location(p, file$2, 20, 6, 591);
+    			attr_dev(div0, "class", "" + (/*baseClass*/ ctx[6] + "__content"));
+    			add_location(div0, file$2, 19, 4, 550);
+    			attr_dev(div1, "class", /*baseClass*/ ctx[6]);
+    			add_location(div1, file$2, 16, 2, 418);
+    			attr_dev(div2, "class", "wrapper");
+    			attr_dev(div2, "id", /*HTMLanchor*/ ctx[5]);
+    			add_location(div2, file$2, 15, 0, 376);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div1);
+    			append_dev(div1, h2);
+    			append_dev(h2, t0);
+    			append_dev(div1, t1);
+    			append_dev(div1, h3);
+    			append_dev(h3, t2);
+    			append_dev(div1, t3);
+    			append_dev(div1, div0);
+    			append_dev(div0, p);
+    			p.innerHTML = /*content*/ ctx[2];
+    			append_dev(div2, t4);
+    			mount_component(blobs, div2, null);
+    			current = true;
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (!current || dirty & /*title*/ 1) set_data_dev(t0, /*title*/ ctx[0]);
+    			if (!current || dirty & /*subtitle*/ 2) set_data_dev(t2, /*subtitle*/ ctx[1]);
+    			if (!current || dirty & /*content*/ 4) p.innerHTML = /*content*/ ctx[2];			const blobs_changes = {};
+    			if (dirty & /*shapes*/ 8) blobs_changes.shapes = /*shapes*/ ctx[3];
+    			if (dirty & /*colors*/ 16) blobs_changes.colors = /*colors*/ ctx[4];
+    			blobs.$set(blobs_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(blobs.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(blobs.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div2);
+    			destroy_component(blobs);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$2.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$2($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('Text', slots, []);
+    	let { title = "Sample title" } = $$props;
+    	let { subtitle = "Sample subtitle" } = $$props;
+    	let { content = "Sample content" } = $$props;
+    	let { type = 'Text' } = $$props;
+    	let { shapes = 0 } = $$props;
+    	let { anchor } = $$props;
+    	let { colors = ['red', 'yellow', 'blue'] } = $$props;
+    	let HTMLanchor = anchor ? anchor : title;
+    	let baseClass = type.toLowerCase();
+    	const writable_props = ['title', 'subtitle', 'content', 'type', 'shapes', 'anchor', 'colors'];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Text> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$$set = $$props => {
+    		if ('title' in $$props) $$invalidate(0, title = $$props.title);
+    		if ('subtitle' in $$props) $$invalidate(1, subtitle = $$props.subtitle);
+    		if ('content' in $$props) $$invalidate(2, content = $$props.content);
+    		if ('type' in $$props) $$invalidate(7, type = $$props.type);
+    		if ('shapes' in $$props) $$invalidate(3, shapes = $$props.shapes);
+    		if ('anchor' in $$props) $$invalidate(8, anchor = $$props.anchor);
+    		if ('colors' in $$props) $$invalidate(4, colors = $$props.colors);
+    	};
+
+    	$$self.$capture_state = () => ({
+    		title,
+    		subtitle,
+    		content,
+    		type,
+    		shapes,
+    		anchor,
+    		colors,
+    		HTMLanchor,
+    		baseClass,
+    		Blobs
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ('title' in $$props) $$invalidate(0, title = $$props.title);
+    		if ('subtitle' in $$props) $$invalidate(1, subtitle = $$props.subtitle);
+    		if ('content' in $$props) $$invalidate(2, content = $$props.content);
+    		if ('type' in $$props) $$invalidate(7, type = $$props.type);
+    		if ('shapes' in $$props) $$invalidate(3, shapes = $$props.shapes);
+    		if ('anchor' in $$props) $$invalidate(8, anchor = $$props.anchor);
+    		if ('colors' in $$props) $$invalidate(4, colors = $$props.colors);
+    		if ('HTMLanchor' in $$props) $$invalidate(5, HTMLanchor = $$props.HTMLanchor);
+    		if ('baseClass' in $$props) $$invalidate(6, baseClass = $$props.baseClass);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [title, subtitle, content, shapes, colors, HTMLanchor, baseClass, type, anchor];
+    }
+
+    class Text extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+
+    		init(this, options, instance$2, create_fragment$2, safe_not_equal, {
+    			title: 0,
+    			subtitle: 1,
+    			content: 2,
+    			type: 7,
+    			shapes: 3,
+    			anchor: 8,
+    			colors: 4
+    		});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Text",
+    			options,
+    			id: create_fragment$2.name
+    		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*anchor*/ ctx[8] === undefined && !('anchor' in props)) {
+    			console.warn("<Text> was created without expected prop 'anchor'");
+    		}
+    	}
+
+    	get title() {
+    		throw new Error("<Text>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set title(value) {
+    		throw new Error("<Text>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get subtitle() {
+    		throw new Error("<Text>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set subtitle(value) {
+    		throw new Error("<Text>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get content() {
+    		throw new Error("<Text>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set content(value) {
+    		throw new Error("<Text>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get type() {
+    		throw new Error("<Text>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set type(value) {
+    		throw new Error("<Text>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get shapes() {
+    		throw new Error("<Text>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set shapes(value) {
+    		throw new Error("<Text>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get anchor() {
+    		throw new Error("<Text>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set anchor(value) {
+    		throw new Error("<Text>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get colors() {
+    		throw new Error("<Text>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set colors(value) {
+    		throw new Error("<Text>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src/components/Title.svelte generated by Svelte v3.43.0 */
+    const file$1 = "src/components/Title.svelte";
+
+    // (16:4) {#if subtitle}
+    function create_if_block(ctx) {
+    	let h4;
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			h4 = element("h4");
+    			t = text$1(/*subtitle*/ ctx[1]);
+    			attr_dev(h4, "class", "" + (/*baseClass*/ ctx[4] + "__subtitle"));
+    			add_location(h4, file$1, 16, 6, 377);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, h4, anchor);
+    			append_dev(h4, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*subtitle*/ 2) set_data_dev(t, /*subtitle*/ ctx[1]);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(h4);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block.name,
+    		type: "if",
+    		source: "(16:4) {#if subtitle}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$1(ctx) {
+    	let div1;
+    	let div0;
+    	let h2;
+    	let t0;
+    	let t1;
+    	let t2;
+    	let blobs;
+    	let current;
+    	let if_block = /*subtitle*/ ctx[1] && create_if_block(ctx);
+
+    	blobs = new Blobs({
+    			props: {
+    				shapes: /*shapes*/ ctx[2],
+    				colors: /*colors*/ ctx[3]
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			div1 = element("div");
+    			div0 = element("div");
+    			h2 = element("h2");
+    			t0 = text$1(/*title*/ ctx[0]);
+    			t1 = space();
+    			if (if_block) if_block.c();
+    			t2 = space();
+    			create_component(blobs.$$.fragment);
+    			attr_dev(h2, "class", "" + (/*baseClass*/ ctx[4] + "__title"));
+    			add_location(h2, file$1, 14, 4, 308);
+    			attr_dev(div0, "class", /*baseClass*/ ctx[4]);
+    			add_location(div0, file$1, 13, 2, 278);
+    			attr_dev(div1, "class", "wrapper");
+    			add_location(div1, file$1, 12, 0, 254);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, div0);
+    			append_dev(div0, h2);
+    			append_dev(h2, t0);
+    			append_dev(div0, t1);
+    			if (if_block) if_block.m(div0, null);
+    			append_dev(div1, t2);
+    			mount_component(blobs, div1, null);
+    			current = true;
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (!current || dirty & /*title*/ 1) set_data_dev(t0, /*title*/ ctx[0]);
+
+    			if (/*subtitle*/ ctx[1]) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block(ctx);
+    					if_block.c();
+    					if_block.m(div0, null);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+
+    			const blobs_changes = {};
+    			if (dirty & /*shapes*/ 4) blobs_changes.shapes = /*shapes*/ ctx[2];
+    			if (dirty & /*colors*/ 8) blobs_changes.colors = /*colors*/ ctx[3];
+    			blobs.$set(blobs_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(blobs.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(blobs.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div1);
+    			if (if_block) if_block.d();
+    			destroy_component(blobs);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$1.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$1($$self, $$props, $$invalidate) {
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('Title', slots, []);
+    	let { title = "Sample title" } = $$props;
+    	let { subtitle } = $$props;
+    	let { type = 'Title' } = $$props;
+    	let { shapes = 0 } = $$props;
+    	let { colors = ['red', 'yellow', 'blue'] } = $$props;
+    	let baseClass = type.toLowerCase();
+    	const writable_props = ['title', 'subtitle', 'type', 'shapes', 'colors'];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Title> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$$set = $$props => {
+    		if ('title' in $$props) $$invalidate(0, title = $$props.title);
+    		if ('subtitle' in $$props) $$invalidate(1, subtitle = $$props.subtitle);
+    		if ('type' in $$props) $$invalidate(5, type = $$props.type);
+    		if ('shapes' in $$props) $$invalidate(2, shapes = $$props.shapes);
+    		if ('colors' in $$props) $$invalidate(3, colors = $$props.colors);
+    	};
+
+    	$$self.$capture_state = () => ({
+    		title,
+    		subtitle,
+    		type,
+    		shapes,
+    		colors,
+    		baseClass,
+    		Blobs
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ('title' in $$props) $$invalidate(0, title = $$props.title);
+    		if ('subtitle' in $$props) $$invalidate(1, subtitle = $$props.subtitle);
+    		if ('type' in $$props) $$invalidate(5, type = $$props.type);
+    		if ('shapes' in $$props) $$invalidate(2, shapes = $$props.shapes);
+    		if ('colors' in $$props) $$invalidate(3, colors = $$props.colors);
+    		if ('baseClass' in $$props) $$invalidate(4, baseClass = $$props.baseClass);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [title, subtitle, shapes, colors, baseClass, type];
+    }
+
+    class Title extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+
+    		init(this, options, instance$1, create_fragment$1, safe_not_equal, {
+    			title: 0,
+    			subtitle: 1,
+    			type: 5,
+    			shapes: 2,
+    			colors: 3
+    		});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Title",
+    			options,
+    			id: create_fragment$1.name
+    		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*subtitle*/ ctx[1] === undefined && !('subtitle' in props)) {
+    			console.warn("<Title> was created without expected prop 'subtitle'");
+    		}
+    	}
+
+    	get title() {
+    		throw new Error("<Title>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set title(value) {
+    		throw new Error("<Title>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get subtitle() {
+    		throw new Error("<Title>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set subtitle(value) {
+    		throw new Error("<Title>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get type() {
+    		throw new Error("<Title>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set type(value) {
+    		throw new Error("<Title>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get shapes() {
+    		throw new Error("<Title>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set shapes(value) {
+    		throw new Error("<Title>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get colors() {
+    		throw new Error("<Title>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set colors(value) {
+    		throw new Error("<Title>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src/App.svelte generated by Svelte v3.43.0 */
+    const file = "src/App.svelte";
+
+    function get_each_context(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[3] = list[i];
+    	return child_ctx;
+    }
+
+    // (39:1) {#each components as component}
+    function create_each_block(ctx) {
+    	let switch_instance;
+    	let switch_instance_anchor;
+    	let current;
+    	const switch_instance_spread_levels = [/*component*/ ctx[3], { colors: /*colors*/ ctx[0] }];
+    	var switch_value = /*loadedComponents*/ ctx[2][/*component*/ ctx[3].type];
+
+    	function switch_props(ctx) {
+    		let switch_instance_props = {};
+
+    		for (let i = 0; i < switch_instance_spread_levels.length; i += 1) {
+    			switch_instance_props = assign(switch_instance_props, switch_instance_spread_levels[i]);
+    		}
+
+    		return {
+    			props: switch_instance_props,
+    			$$inline: true
+    		};
+    	}
+
+    	if (switch_value) {
+    		switch_instance = new switch_value(switch_props());
+    	}
+
+    	const block = {
+    		c: function create() {
+    			if (switch_instance) create_component(switch_instance.$$.fragment);
+    			switch_instance_anchor = empty();
+    		},
+    		m: function mount(target, anchor) {
+    			if (switch_instance) {
+    				mount_component(switch_instance, target, anchor);
+    			}
+
+    			insert_dev(target, switch_instance_anchor, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const switch_instance_changes = (dirty & /*components, colors*/ 3)
+    			? get_spread_update(switch_instance_spread_levels, [
+    					dirty & /*components*/ 2 && get_spread_object(/*component*/ ctx[3]),
+    					dirty & /*colors*/ 1 && { colors: /*colors*/ ctx[0] }
+    				])
+    			: {};
+
+    			if (switch_value !== (switch_value = /*loadedComponents*/ ctx[2][/*component*/ ctx[3].type])) {
+    				if (switch_instance) {
+    					group_outros();
+    					const old_component = switch_instance;
+
+    					transition_out(old_component.$$.fragment, 1, 0, () => {
+    						destroy_component(old_component, 1);
+    					});
+
+    					check_outros();
+    				}
+
+    				if (switch_value) {
+    					switch_instance = new switch_value(switch_props());
+    					create_component(switch_instance.$$.fragment);
+    					transition_in(switch_instance.$$.fragment, 1);
+    					mount_component(switch_instance, switch_instance_anchor.parentNode, switch_instance_anchor);
+    				} else {
+    					switch_instance = null;
+    				}
+    			} else if (switch_value) {
+    				switch_instance.$set(switch_instance_changes);
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			if (switch_instance) transition_in(switch_instance.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			if (switch_instance) transition_out(switch_instance.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(switch_instance_anchor);
+    			if (switch_instance) destroy_component(switch_instance, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block.name,
+    		type: "each",
+    		source: "(39:1) {#each components as component}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment(ctx) {
+    	let main;
+    	let header;
+    	let t0;
+    	let t1;
+    	let footer;
+    	let current;
+    	header = new Header({ $$inline: true });
+    	let each_value = /*components*/ ctx[1];
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	footer = new Footer({ $$inline: true });
+
+    	const block = {
+    		c: function create() {
+    			main = element("main");
+    			create_component(header.$$.fragment);
+    			t0 = space();
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			t1 = space();
+    			create_component(footer.$$.fragment);
+    			add_location(main, file, 36, 0, 1094);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, main, anchor);
+    			mount_component(header, main, null);
+    			append_dev(main, t0);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(main, null);
+    			}
+
+    			append_dev(main, t1);
+    			mount_component(footer, main, null);
+    			current = true;
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*loadedComponents, components, colors*/ 7) {
+    				each_value = /*components*/ ctx[1];
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(main, t1);
+    					}
+    				}
+
+    				group_outros();
+
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+
+    				check_outros();
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(header.$$.fragment, local);
+
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			transition_in(footer.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(header.$$.fragment, local);
+    			each_blocks = each_blocks.filter(Boolean);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			transition_out(footer.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(main);
+    			destroy_component(header);
+    			destroy_each(each_blocks, detaching);
+    			destroy_component(footer);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance($$self, $$props, $$invalidate) {
+    	let components;
+    	let colors;
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots('App', slots, []);
+
+    	let loadedComponents = {
+    		BgCards,
+    		BlockWithImage,
+    		Bubbles,
+    		Cards,
+    		Carousel,
+    		Hero,
+    		Headline,
+    		Spacer,
+    		Text,
+    		Title
+    	};
+
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<App> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$capture_state = () => ({
+    		data,
+    		BgCards,
+    		BlockWithImage,
+    		Bubbles,
+    		Cards,
+    		Carousel,
+    		Footer,
+    		Header,
+    		Headline,
+    		Hero,
+    		Spacer,
+    		Text,
+    		Title,
+    		loadedComponents,
+    		colors,
+    		components
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ('loadedComponents' in $$props) $$invalidate(2, loadedComponents = $$props.loadedComponents);
+    		if ('colors' in $$props) $$invalidate(0, colors = $$props.colors);
+    		if ('components' in $$props) $$invalidate(1, components = $$props.components);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	$$invalidate(1, components = data.pages.filter(p => p.name == 'Home')[0].components);
+    	$$invalidate(0, colors = data.colorPalette);
+    	return [colors, components, loadedComponents];
+    }
+
+    class App extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance, create_fragment, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "App",
+    			options,
+    			id: create_fragment.name
+    		});
+    	}
+    }
+
+    const app = new App({
+    	target: document.body,
+    	props: {}
+    });
+
+    /** @type {import(types').Sleep} */
+    const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+    var sleep$1 = /*#__PURE__*/Object.freeze({
+        __proto__: null,
+        sleep: sleep
+    });
+
+    /** @type {import(types').RandomNumberGenerator} */
+    const rng = (min, max) => Math.floor(Math.random() * (max - min) + min);
+
+    /** @type {import(types').TypingInterval} */
+    const typingInterval = async interval =>
+    	sleep(Array.isArray(interval) ? interval[rng(0, interval.length)] : interval);
+
+    /** @type {import(types').TypewriterEffectFn} */
+    const writeEffect = async ({ currentNode, text }, options) => {
+    	runOnEveryParentUntil(currentNode, options.parentElement, element => {
+    		const classToAdd = currentNode === element ? 'typing' : 'finished-typing';
+    		element.classList.add(classToAdd);
+    	});
+    	for (let index = 0; index <= text.length; index++) {
+    		const char = text[index];
+    		char === '<' && (index = text.indexOf('>', index));
+    		currentNode.innerHTML = text.slice(0, index);
+    		await typingInterval(options.interval);
+    	}
+    };
+
+    /** @type {import(types').UnwriteEffect} */
+    const unwriteEffect = async (currentNode, options) => {
+    	options.dispatch('done');
+    	await typingInterval(typeof options.loop === 'number' ? options.loop : 1500);
+    	const text = currentNode.innerHTML.replaceAll('&amp;', '&');
+    	for (let index = text.length - 1; index >= 0; index--) {
+    		const letter = text[index];
+    		letter === '>' && (index = text.lastIndexOf('<', index));
+    		currentNode.innerHTML = text.slice(0, index);
+    		await typingInterval(options.interval);
+    	}
+    };
+
+    /** @type {any[]} */
+    let alreadyChoosenTexts = [];
+
+    /** @type {import(types').GetRandomText} */
+    const getRandomElement = elements => {
+    	while (true) {
+    		const randomIndex = rng(0, elements.length);
+    		// After each iteration, avoid repeating the last text from the last iteration
+    		const isTextDifferentFromPrevious =
+    			typeof alreadyChoosenTexts === 'number' && randomIndex !== alreadyChoosenTexts;
+    		const isTextFirstTime =
+    			Array.isArray(alreadyChoosenTexts) && !alreadyChoosenTexts.includes(randomIndex);
+    		const hasSingleChildElement = elements.length === 1;
+    		const shouldAnimate =
+    			hasSingleChildElement || isTextFirstTime || isTextDifferentFromPrevious;
+    		if (shouldAnimate) {
+    			isTextDifferentFromPrevious && (alreadyChoosenTexts = []);
+    			alreadyChoosenTexts.push(randomIndex);
+    			const randomText = elements[randomIndex];
+    			return randomText
+    		}
+    		const restartRandomizationCycle = alreadyChoosenTexts.length === elements.length;
+    		restartRandomizationCycle && (alreadyChoosenTexts = alreadyChoosenTexts.pop());
+    	}
+    };
+
+    /** @type {import('types').TypewriterEffectFn} */
+    const loopTypewriter = async ({ currentNode, text }, options) => {
+    	await writeEffect({ currentNode, text }, options);
+    	const textWithUnescapedAmpersands = text.replaceAll('&', '&amp;');
+    	const fullyWritten = currentNode.innerHTML === textWithUnescapedAmpersands;
+    	fullyWritten && (await unwriteEffect(currentNode, options));
+    	runOnEveryParentUntil(currentNode, options.parentElement, element => {
+    		currentNode === element
+    			? element.classList.remove('typing')
+    			: element.classList.remove('finished-typing');
+    	});
+    };
+
+    /** @type {import('types').TypewriterModeFn} */
+    const mode$2 = async (elements, options) => {
+    	while (true) {
+    		if (options.loop) {
+    			for (const element of elements) await loopTypewriter(element, options);
+    		} else if (options.loopRandom) {
+    			const element = getRandomElement(elements);
+    			await loopTypewriter(element, options);
+    		}
+    	}
+    };
+
+    var loopTypewriter$1 = /*#__PURE__*/Object.freeze({
+        __proto__: null,
+        mode: mode$2
+    });
+
+    const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+
+    const getRandomLetter = () => {
+    	const possibleLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'.split(
+    		''
+    	);
+    	const letterIndexLimit = possibleLetters.length;
+    	const randomLetterIndex = getRandomNumber(0, letterIndexLimit);
+    	const randomLetter = possibleLetters[randomLetterIndex];
+    	return randomLetter
+    };
+
+    // returns a array with a timeout (in ms) for each letter of the word
+    const getLettersTimeout = (textLetters, timeout) => {
+    	const minimumTimeoutPossible = timeout / 3;
+    	// TODO: find a better way to deal with this instead of explicitly reducing the maximum timeout
+    	// otherwise, at the end of the animation, one or two characters remain scrambled
+    	const lettersTimeout = textLetters.map(() =>
+    		getRandomNumber(minimumTimeoutPossible, timeout - 100)
+    	);
+    	return lettersTimeout
+    };
+
+    /** @type {TypewriterModeFn} */
+    const mode$1 = async (elements, options) => {
+    	const timeout = typeof options.scramble == 'number' ? options.scramble : 3000;
+    	await new Promise(resolve => {
+    		elements.forEach(async ({ currentNode, text }) => {
+    			let wordLetters = text.split('');
+    			const lettersTimeout = getLettersTimeout(wordLetters, timeout);
+    			const startingTime = Date.now();
+
+    			runOnEveryParentUntil(currentNode, options.parentElement, element => {
+    				element.classList.add('finished-typing');
+    			});
+
+    			while (Date.now() - startingTime < timeout) {
+    				const randomLetterIndex = getRandomNumber(0, wordLetters.length);
+    				const randomLetterTimeout = lettersTimeout[randomLetterIndex];
+    				const isRandomLetterWhitespace = wordLetters[randomLetterIndex] === ' ';
+    				const timeEllapsed = () => Date.now() - startingTime;
+    				const didRandomLetterReachTimeout = () => timeEllapsed() >= randomLetterTimeout;
+
+    				if (didRandomLetterReachTimeout() || isRandomLetterWhitespace) {
+    					const letterFinishedAnimation =
+    						wordLetters[randomLetterIndex] === text[randomLetterIndex];
+
+    					if (!letterFinishedAnimation)
+    						wordLetters[randomLetterIndex] = text[randomLetterIndex];
+    					else continue
+    				} else {
+    					wordLetters[randomLetterIndex] = getRandomLetter();
+    				}
+
+    				const scrambledText = wordLetters.join('');
+    				currentNode.innerHTML = scrambledText;
+
+    				const finishedScrambling = scrambledText === text;
+
+    				const letterInterval = options.scrambleSlowdown
+    					? Math.round(timeEllapsed() / 100)
+    					: 1;
+
+    				await sleep(letterInterval);
+
+    				if (finishedScrambling) {
+    					resolve();
+    					break
+    				}
+    			}
+    		});
+    	});
+    	options.dispatch('done');
+    };
+
+    var scramble = /*#__PURE__*/Object.freeze({
+        __proto__: null,
+        mode: mode$1
+    });
+
+    /** @type {import(types').OnAnimationEnd} */
+    const onAnimationEnd = (element, callback) => {
+    	const observer = new MutationObserver(mutations => {
+    		mutations.forEach(mutation => {
+    			const elementAttributeChanged = mutation.type === 'attributes';
+    			const elementFinishedTyping = mutation.target.classList.contains('typing');
+    			if (elementAttributeChanged && elementFinishedTyping) callback();
+    		});
+    	});
+
+    	observer.observe(element, {
+    		attributes: true,
+    		childList: true,
+    		subtree: true
+    	});
+    };
+
+    const cleanChildText = elements =>
+    	elements.forEach(element => (element.currentNode.textContent = ''));
+
+    /** @type {import('types').TypewriterOptions} */
+    const mode = async (elements, options) => {
+    	if (options.cascade) {
+    		cleanChildText(elements);
+    	} else {
+    		const { getLongestTextElement } = await Promise.resolve().then(function () { return getLongestTextElement$1; });
+    		const lastElementToFinish = getLongestTextElement(elements);
+    		onAnimationEnd(lastElementToFinish, () => options.dispatch('done'));
+    	}
+    	for (const element of elements) {
+    		if (options.cascade) {
+    			await writeEffect(element, options);
+    			element.currentNode.classList.replace('typing', 'finished-typing');
+    		} else {
+    			writeEffect(element, options).then(() => {
+    				element.currentNode.classList.replace('typing', 'finished-typing');
+    			});
+    		}
+    	}
+
+    	options.cascade && options.dispatch('done');
+    };
+
+    var typewriter = /*#__PURE__*/Object.freeze({
+        __proto__: null,
+        mode: mode
+    });
+
+    /** @type {import(types').DescendingSortFunction} */
+    const descendingSortFunction = (firstElement, secondElement) =>
+    	secondElement.text.length - firstElement.text.length;
+
+    /** @type {import(types').GetLongestTextElement} */
+    const getLongestTextElement = elements => {
+    	const descendingTextLengthOrder = elements.sort(descendingSortFunction);
+    	const longestTextElement = descendingTextLengthOrder[0].currentNode;
+    	return longestTextElement
+    };
+
+    var getLongestTextElement$1 = /*#__PURE__*/Object.freeze({
+        __proto__: null,
+        getLongestTextElement: getLongestTextElement
+    });
+
+    return app;
+
+})();
 //# sourceMappingURL=bundle.js.map

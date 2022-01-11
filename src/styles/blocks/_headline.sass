@@ -1,0 +1,28 @@
+.headline
+  margin: 0 auto
+  display: block
+  padding: $space-unit*4 5rem
+  background-position: center center
+  background-size: cover
+  background-repeat: no-repeat
+  position: relative
+  +at-breakpoint('lte-lap-landscape')
+    padding: $space-unit*2 1rem
+  &__content
+    position: relative
+    z-index: 101
+  &__title
+    display: inline-block
+    font-size: 5.5rem
+  &__text
+    font-size: 2.2rem
+    display: inline-block
+    .typewriter-container
+      display: inline-block
+  &__cta
+    padding-top: 2rem
+    color: $theme_color
+    font-weight: bold
+    display: inline-block
+    &:hover
+      cursor: pointer

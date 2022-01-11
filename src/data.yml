@@ -14,9 +14,10 @@ pages:
   - name: Home
     path: /
     components:
-      - type: Hero 
-        title: DEDE Labs
-        subtitle: Driving Sustainable Territorial Transformation
+      - type: Headline 
+        title: Sustainable territories
+        text: Changing the world while changing your way of 
+        typewriter_html: <Typewriter loopRandom><span>living</span><span>working</span><span>travelling</span></Typewriter>
         cta:
           text: scroll down
           arrow: bottom
@@ -31,10 +32,6 @@ pages:
             size: 50
             color: "#60C971"
             zindex: 20
-          - top: 18
-            left: -9
-            size: 150
-            color: "#60C971"
           - top: 7
             left: 95
             size: 70
