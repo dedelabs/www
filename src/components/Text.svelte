@@ -1,7 +1,7 @@
 <script>
   export let title = "Sample title"
-  export let subtitle = "Sample subtitle"
-  export let content = "Sample content"
+  export let subtitle = ""
+  export let content = ""
   export let type = 'Text'
   export let shapes = 0
   export let anchor
