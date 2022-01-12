@@ -25,7 +25,7 @@
       <h1 class="{baseClass}__title">{title}</h1>
       <h3 class="{baseClass}__text">
         {text}
-        <Typewriter loopRandom interval={[100, 120, 160]} delay=500>{@html typewriter_html}</Typewriter>
+        <Typewriter loopRandom={1000} unwriteInterval={20} interval={[50, 70, 90]}>{@html typewriter_html}</Typewriter>
       </h3>
     </div>
     {#if cta}

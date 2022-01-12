@@ -1,5 +1,5 @@
 <script>
-  export let title = "Title for hero component"
+  export let title = ""
   export let overtitle = "overtitle"
   export let slides = []
   export let slider = true
