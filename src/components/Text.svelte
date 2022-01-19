@@ -1,5 +1,5 @@
 <script>
-  export let title = "Sample title"
+  export let title = ""
   export let subtitle = ""
   export let content = ""
   export let type = 'Text'
@@ -15,7 +15,9 @@
 
 <div class="wrapper" id="{HTMLanchor}">
   <div class="{baseClass}">
-    <h2 class="{baseClass}__title">{title}</h2>
+    {#if title}
+      <h2 class="{baseClass}__title">{title}</h2>
+    {/if}
     <h3 class="{baseClass}__subtitle">{subtitle}</h3>
     <div class="{baseClass}__content">
       <p>{@html content}</p>
