@@ -43,18 +43,16 @@ pages:
       - type: Spacer
         height: 100
       - type: Text
-        title: Vision
         anchor: vision
-        content: Our vision is to empower small villages and rural areas to become the place to be
+        subtitle: Our vision is to empower small villages and rural areas to become the place to be
         shapes: 2
       - type: Text
-        title: Why
         anchor: why
-        content: Our mission is to co-create an ecosystem that triggers a positive impact, accompanying each stage of territorial regeneration through education, responsible tourism, sustainable finance and technology.
+        subtitle: Our mission is to co-create an ecosystem that triggers a positive impact, accompanying each stage of territorial regeneration through education, responsible tourism, sustainable finance and technology.
         shapes: 2
       - type: Text
-        title: Who we are
         anchor: who-we-are
+        title: Who we are
         content: We are a network of professionals, corporates, educational and territorial entities with extensive knowledge in travel, education, communities, sustainability, economy, technology and more. We aim at being lifelong partners for public administrations, local stakeholders, enterprises and regenerated territories collaborating within a self-sustained ecosystem.
         shapes: 2
       - type: BlockWithImage
@@ -79,7 +77,7 @@ pages:
         imagePosition: left
         imagePath: solution/who-are-we.jpg
         title: Travel Artisans
-        description: Are you looking for a growing customer base, all-year-round income and a network of like-minded people?
+        description: Are you looking for a growing customer base, a season free income and a network of like-minded people?
         shapes: 
           - top: 60
             left: -10
@@ -115,6 +113,7 @@ pages:
       - type: Carousel
         overtitle: What we do
         anchor: what-we-do
+        slider: false
         slides:
           - image: <svg width="71" height="48" viewBox="0 0 71 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="24" r="17.5" transform="rotate(90 18 24)" fill="#60C971" style="mix-blend-mode:multiply"/><circle cx="18" cy="24" r="17.5" transform="rotate(90 18 24)" stroke="#60C971"/><ellipse cx="47" cy="24" rx="24" ry="24" transform="rotate(90 47 24)" fill="#646FFF" style="mix-blend-mode:multiply"/></svg>
             title: Prosperity

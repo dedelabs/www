@@ -29,7 +29,7 @@
       </h3>
     </div>
     {#if cta}
-      <div class="{baseClass}__cta" data-smoothscroll="#solution">
+      <div class="{baseClass}__cta" data-smoothscroll="#vision">
         {cta.text}
         {#if cta.arrow}
           <div class="arrow arrow--{cta.arrow}">-></div>
