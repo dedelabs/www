@@ -15,18 +15,18 @@
 
 <header class="wrapper header">
   <DedeLogo></DedeLogo>
-  <Hamburger bind:open type="emphatic" />
-  {#if open}
-    <div class="header__menu--mobile" transition:fly="{{ y: 200, duration: 500 }}" >
+  <!-- <Hamburger bind:open type="emphatic" /> -->
+  <!-- {#if open} -->
+    <!-- <div class="header__menu--mobile" transition:fly="{{ y: 200, duration: 500 }}" >
       <ul class="header__menu">
         <li class="header__menu__item"><span data-smoothscroll="#vision">Vision</span></li>
         <li class="header__menu__item"><span data-smoothscroll="#why">Why</span></li>
         <li class="header__menu__item"><span data-smoothscroll="#who-we-are">Who we are</span></li>
         <li class="header__menu__item"><span data-smoothscroll="#needs">Needs</span></li>
         <li class="header__menu__item"><span data-smoothscroll="#what-we-do">What we do</span></li>
-      </ul>
+      </ul> -->
       <!-- <a class="header__button header__button--mobile" href="##">Open call</a> -->
-    </div>
+    <!-- </div>
   {/if}
   <ul class="header__menu header__menu--desk">
     <li class="header__menu__item"><span data-smoothscroll="#vision">Vision</span></li>
@@ -34,6 +34,6 @@
     <li class="header__menu__item"><span data-smoothscroll="#who-we-are">Who we are</span></li>
     <li class="header__menu__item"><span data-smoothscroll="#needs">Needs</span></li>
     <li class="header__menu__item"><span data-smoothscroll="#what-we-do">What we do</span></li>
-  </ul>
+  </ul> -->
   <!-- <a class="header__button header__button--desk" href="##">Open call</a> -->
 </header>

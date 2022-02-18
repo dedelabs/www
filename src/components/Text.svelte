@@ -19,7 +19,7 @@
       <h2 class="{baseClass}__title">{title}</h2>
     {/if}
     <h3 class="{baseClass}__subtitle">{subtitle}</h3>
-    <div class="{baseClass}__content">
+    <div class="{baseClass}__content center">
       <p>{@html content}</p>
     </div>
   </div>

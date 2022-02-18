@@ -2,6 +2,7 @@
   export let imagePosition = "left"
   export let imagePath = "image.jpg"
   export let overtitle = ""
+  export let pretitle
   export let title = "Title for hero component"
   export let description = "Sample description"
   export let shapes = 2
@@ -16,13 +17,18 @@
   import Blobs from './Blobs.svelte'
 </script>
 
-<div class="wrapper" id="{HTMLanchor}">
+<div class="wrapper center" id="{HTMLanchor}">
+  {#if pretitle}
+    <div class="{baseClass}__pretitle h1 underline">
+      {pretitle}
+    </div>
+  {/if}
   <div class="{baseClass} {baseClass}--{imagePosition}">
-    <div class="{baseClass}__content">
+    <div class="{baseClass}__content center">
       {#if overtitle}
         <div class="{baseClass}__overtitle">{overtitle}</div>
       {/if}
-      <h2 class="{baseClass}__title">{title}</h2>
+      <h2 class="{baseClass}__title dede-blue">{title}</h2>
       <div class="{baseClass}__description">{description}</div>
     </div>
     <div class="{baseClass}__image" style="background-image: url('images/{imagePath}'); border-radius: {generateBlob(30, 70)}">

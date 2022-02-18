@@ -15,12 +15,9 @@ pages:
     path: /
     components:
       - type: Headline 
-        title: Sustainable Territories
+        title: Regenerative Territories
         text: Changing the world while changing your way of 
         typewriter_html: <Typewriter loopRandom><span>living</span><span>working</span><span>travelling</span></Typewriter>
-        cta:
-          text: scroll down
-          arrow: bottom
         shapes: 
           - top: 53
             left: 94
@@ -44,22 +41,52 @@ pages:
         height: 100
       - type: Text
         anchor: vision
-        subtitle: Our vision is to empower small villages and rural areas to become the place to be
-        shapes: 2
+        content: <span class="dede-green underline">Our vision</span> is to <span class="dede-blue">empower</span> small<br />villages and rural areas to<br />become <span class="dede-blue">the place to be</span>
+        shapes: 
+          - top: 80
+            left: 20
+            size: 50
+            color: "#6A72DC"
+            zindex: 10
+          - top: 5
+            left: 50
+            size: 50
+            color: "#60C971"
+            zindex: 20
       - type: Text
         anchor: why
-        subtitle: Our mission is to co-create an ecosystem that triggers a positive impact, accompanying each stage of territorial regeneration through education, responsible tourism, sustainable finance and technology.
-        shapes: 2
+        content: <span class="dede-green underline">Our mission</span> is to co-create an <span class="dede-blue">ecosystem</span> that triggers a <span class="dede-blue">positive impact</span>, accompanying each stage of territorial regeneration through<br /><span class="under-shadow">education, responsible tourism, sustainable finance & decentralised technology</span>
+        shapes: 
+          - top: 80
+            left: 5
+            size: 80
+            color: "#6A72DC"
+            zindex: 10
+          - top: 5
+            left: 90
+            size: 50
+            color: "#60C971"
+            zindex: 20
       - type: Text
         anchor: who-we-are
-        title: Who we are
-        content: We are a network of professionals, corporates, educational and territorial entities with extensive knowledge in travel, education, communities, sustainability, economy, technology and more. We aim at being lifelong partners for public administrations, local stakeholders, enterprises and regenerated territories collaborating within a self-sustained ecosystem.
-        shapes: 2
+        content: <span class="dede-green underline">We are</span> a <span class="dede-blue">network</span> of professionals, corporates, educational and territorial entities with <span class="dede-blue">extensive knowledge</span> in areas like <span class="under-shadow">travel, education, communities, sustainability, economy and technology</span>
+        shapes: 
+          - top: 80
+            left: 90
+            size: 100
+            color: "#6A72DC"
+            zindex: 10
+          - top: 5
+            left: 90
+            size: 40
+            color: "#60C971"
+            zindex: 20
       - type: BlockWithImage
         anchor: needs
         imagePosition: right
         imagePath: solution/purpose-driven.jpg
-        title: Regenerative Territories
+        pretitle: Built for you
+        title: Changing Territories
         description: Are you looking for active citizens, social entrepreneurs making a difference and responsible travelers?
         shapes:
           - top: 65
@@ -111,8 +138,8 @@ pages:
       - type: Spacer
         height: 50
       - type: Carousel
-        overtitle: What we do
-        anchor: what-we-do
+        overtitle: Our services
+        anchor: our-services
         slider: false
         slides:
           - image: <svg width="71" height="48" viewBox="0 0 71 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="24" r="17.5" transform="rotate(90 18 24)" fill="#60C971" style="mix-blend-mode:multiply"/><circle cx="18" cy="24" r="17.5" transform="rotate(90 18 24)" stroke="#60C971"/><ellipse cx="47" cy="24" rx="24" ry="24" transform="rotate(90 47 24)" fill="#646FFF" style="mix-blend-mode:multiply"/></svg>

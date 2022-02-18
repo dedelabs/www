@@ -6,8 +6,13 @@
   &__subtitle
     padding-top: 0.5em
   &__content
-    font-size: 1.2rem
-    line-height: 160%
+    font-size: 2.028rem
+    +at-breakpoint('eq-tab')
+      font-size: 2.969rem
+    +at-breakpoint('lap')
+      font-size: 3.2rem
+    line-height: 120%
     padding-top: 1em
+    +heading-font-family
     strong 
       backgroun-color: #6A72DC
