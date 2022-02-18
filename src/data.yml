@@ -37,11 +37,9 @@ pages:
             left: 20
             size: 100
             color: "#6A72DC"
-      - type: Spacer
-        height: 100
       - type: Text
         anchor: vision
-        content: <span class="dede-green underline">Our vision</span> is to <span class="dede-blue">empower</span> small<br />villages and rural areas to<br />become <span class="dede-blue">the place to be</span>
+        content: <span class="dede-green underline">Our vision</span> is to <span class="dede-blue">empower</span> small villages and rural areas to become <span class="dede-blue">the place to be</span>
         shapes: 
           - top: 80
             left: 20
@@ -53,9 +51,11 @@ pages:
             size: 50
             color: "#60C971"
             zindex: 20
+      - type: Spacer
+        height: 100
       - type: Text
         anchor: why
-        content: <span class="dede-green underline">Our mission</span> is to co-create an <span class="dede-blue">ecosystem</span> that triggers a <span class="dede-blue">positive impact</span>, accompanying each stage of territorial regeneration through<br /><span class="under-shadow">education, responsible tourism, sustainable finance & decentralised technology</span>
+        content: <span class="dede-green underline">Our mission</span> is to co-create an <span class="dede-blue">ecosystem</span> that triggers a <span class="dede-blue">positive impact</span>, accompanying each stage of territorial regeneration through <span class="under-shadow">education, responsible tourism, sustainable finance & decentralised technology</span>
         shapes: 
           - top: 80
             left: 5
@@ -67,6 +67,8 @@ pages:
             size: 50
             color: "#60C971"
             zindex: 20
+      - type: Spacer
+        height: 100
       - type: Text
         anchor: who-we-are
         content: <span class="dede-green underline">We are</span> a <span class="dede-blue">network</span> of professionals, corporates, educational and territorial entities with <span class="dede-blue">extensive knowledge</span> in areas like <span class="under-shadow">travel, education, communities, sustainability, economy and technology</span>
@@ -81,6 +83,8 @@ pages:
             size: 40
             color: "#60C971"
             zindex: 20
+      - type: Spacer
+        height: 200
       - type: BlockWithImage
         anchor: needs
         imagePosition: right
@@ -99,6 +103,8 @@ pages:
             size: 50
             color: "#6A72DC"
             zindex: 70
+      - type: Spacer
+        height: 50
       - type: BlockWithImage
         anchor: travel-artisans
         imagePosition: left
@@ -111,6 +117,8 @@ pages:
             size: 200
             color: "#6A72DC"
             zindex: 70
+      - type: Spacer
+        height: 20
       - type: BlockWithImage
         anchor: impact-contributors
         imagePosition: right
@@ -123,6 +131,8 @@ pages:
             size: 120
             color: "#60C971"
             zindex: 60
+      - type: Spacer
+        height: 20
       - type: BlockWithImage
         anchor: lifestyle-seekers
         imagePosition: left

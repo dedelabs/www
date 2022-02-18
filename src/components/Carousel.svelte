@@ -20,9 +20,10 @@
 
 <div class="wrapper" id="{HTMLanchor}">
   <div class="{baseClass}">
-    <div class="{baseClass}__overtitle h1 underline">
+    <div class="{baseClass}__overtitle h2 underline">
       {overtitle}
     </div>
+    <div class="Spacer" style="height: 50px"></div>
     {#if slider}
       <h3 class="{baseClass}__title">{@html title}</h3>
       <Swiper
@@ -39,7 +40,7 @@
         {#each slides as slide}
           <SwiperSlide class="{baseClass}__slide">
             <div class="{baseClass}__slide__image">{@html slide.image}</div>
-            <h2 class="{baseClass}__slide__title dede-green">{slide.title}</h2>
+            <h2 class="{baseClass}__slide__title dede-blue">{slide.title}</h2>
             <p class="{baseClass}__slide__description">{slide.description}</p>
           </SwiperSlide>
         {/each}
@@ -50,7 +51,7 @@
         {#each slides as slide}
           <div class="{baseClass}__slide">
             {@html slide.image}
-            <h2 class="{baseClass}__slide__title dede-green">{slide.title}</h2>
+            <h2 class="{baseClass}__slide__title dede-blue">{slide.title}</h2>
             <p class="{baseClass}__slide__description">{slide.description}</p>
           </div>
         {/each}

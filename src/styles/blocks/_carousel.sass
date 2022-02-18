@@ -4,7 +4,6 @@
   &__overtitle
     +lines-both
     color: $dede-green
-    letter-spacing: $overtitle_spacing
   &__title
     text-align: center
     padding-bottom: $space-unit*4
@@ -28,6 +27,11 @@
     &__title
       padding-top: 2rem
       padding-bottom: 1rem
+      font-size: 2.028rem
+      +at-breakpoint('eq-tab')
+        font-size: 2.969rem
+      +at-breakpoint('lap')
+        font-size: 3.3rem
     &__description
       font-size: 1.9rem
   &__next

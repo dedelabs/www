@@ -9,7 +9,6 @@ $radius: 5rem
   &__pretitle
     +lines-both
     color: $dede-green
-    letter-spacing: $overtitle_spacing
   &--left
     flex-direction: row-reverse
     .blockwithimage__content
@@ -34,11 +33,10 @@ $radius: 5rem
     padding: 1em
   &__description
     width: 100%
-    line-height: 170%
     font-size: 1.9rem
   &__image
     border-radius: $radius
-    height: 350px
+    height: 250px
     width: 80%
     margin: 1em
     +at-breakpoint('lap')
@@ -51,7 +49,12 @@ $radius: 5rem
     background-size: cover
     background-position: center center
   &__title
-    padding-bottom: 3rem
+    padding-bottom: 2rem
+    font-size: 2.028rem
+    +at-breakpoint('eq-tab')
+      font-size: 2.969rem
+    +at-breakpoint('lap')
+      font-size: 3.3rem
   &__overtitle
     font-weight: bold
     padding-left: 5rem
