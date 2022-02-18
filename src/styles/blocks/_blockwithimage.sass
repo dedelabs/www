@@ -6,6 +6,10 @@ $radius: 5rem
   display: flex
   +at-breakpoint('lte-tab')
     flex-wrap: wrap
+  &__pretitle
+    +lines-both
+    color: $dede-green
+    letter-spacing: $overtitle_spacing
   &--left
     flex-direction: row-reverse
     .blockwithimage__content
@@ -29,9 +33,9 @@ $radius: 5rem
   &__content
     padding: 1em
   &__description
-    width: 90%
+    width: 100%
     line-height: 170%
-    font-size: 1.2rem
+    font-size: 1.9rem
   &__image
     border-radius: $radius
     height: 350px
@@ -48,7 +52,6 @@ $radius: 5rem
     background-position: center center
   &__title
     padding-bottom: 3rem
-    color: $base_body_color
   &__overtitle
     font-weight: bold
     padding-left: 5rem
