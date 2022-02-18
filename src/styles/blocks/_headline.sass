@@ -13,10 +13,15 @@
     z-index: 101
   &__title
     display: inline-block
-    font-size: 5.5rem
+    font-size: 4.5rem
+    +at-breakpoint('lap')
+      font-size: 5.5rem
   &__text
     font-size: 2.2rem
     display: inline-block
+    min-height: 120px
+    +at-breakpoint('eq-tab')
+      min-height: auto
     .typewriter-container
       display: inline-block
   &__cta
