@@ -19,9 +19,10 @@
 
 <div class="wrapper center" id="{HTMLanchor}">
   {#if pretitle}
-    <div class="{baseClass}__pretitle h1 underline">
+    <div class="{baseClass}__pretitle h2 underline">
       {pretitle}
     </div>
+    <div class="Spacer" style="height: 50px"></div>
   {/if}
   <div class="{baseClass} {baseClass}--{imagePosition}">
     <div class="{baseClass}__content center">

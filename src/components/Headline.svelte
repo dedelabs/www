@@ -21,9 +21,9 @@
 
 <div class="wrapper">
   <div class="{baseClass}">
-    <div class="{baseClass}__content">
-      <h1 class="{baseClass}__title">{title}</h1>
-      <h3 class="{baseClass}__text">
+    <div class="{baseClass}__content center">
+      <h1 class="{baseClass}__title center">{title}</h1>
+      <h3 class="{baseClass}__text center">
         {text}
         <Typewriter loopRandom={1000} unwriteInterval={20} interval={[50, 70, 90]}>{@html typewriter_html}</Typewriter>
       </h3>
