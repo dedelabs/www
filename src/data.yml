@@ -154,8 +154,6 @@ pages:
           - image: <svg width="75" height="66" viewBox="0 0 75 66" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M44.3685 29.7318C46.6268 31.3254 46.6269 34.6746 44.3685 36.2682L14.8062 57.1288C12.1565 58.9986 8.5 57.1036 8.5 53.8606L8.5 12.1394C8.5 8.89638 12.1565 7.00138 14.8062 8.87115L44.3685 29.7318Z" fill="#646FFF" style="mix-blend-mode:multiply"/><circle cx="11" cy="55" r="11" transform="rotate(90 11 55)" fill="#60C971" style="mix-blend-mode:multiply"/><circle cx="11" cy="11" r="11" transform="rotate(90 11 11)" fill="#60C971" style="mix-blend-mode:multiply"/><path d="M30.6315 36.2682C28.3731 34.6746 28.3731 31.3254 30.6315 29.7318L60.1938 8.87115C62.8435 7.00138 66.5 8.89638 66.5 12.1394L66.5 53.8606C66.5 57.1036 62.8435 58.9986 60.1938 57.1288L30.6315 36.2682Z" fill="#646FFF" style="mix-blend-mode:multiply"/><circle cx="64" cy="11" r="11" transform="rotate(-90 64 11)" fill="#60C971" style="mix-blend-mode:multiply"/><circle cx="64" cy="55" r="11" transform="rotate(-90 64 55)" fill="#60C971" style="mix-blend-mode:multiply"/></svg>
             title: Identity
             description: We enhance local culture by supporting artisanship, food heritage, wellbeing and art activities in order to develop a sustainable territorial identity
-      - type: Spacer
-        height: 100
       # - type: Carousel
       #   overtitle: Issues
       #   anchor: issues
