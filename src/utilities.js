@@ -59,8 +59,11 @@ export let l = (text) => {
   } else {
     result = text[getDefaultLang()]
   }
-  if (result) return result
-  return text[0]
+  if (result === undefined){
+    return Object.entries(text)[0][1]
+  } else {
+    return result
+  }
 }
 
 export let getCookieValue = (name) => {

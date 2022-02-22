@@ -40,6 +40,7 @@ pages:
       - type: Text
         anchor: vision
         content: 
+          es: esp
           en: <span class="dede-green underline">Our vision</span> is to <span class="dede-blue">empower</span> small villages and rural areas to become <span class="dede-blue">the place to be</span>
           it: <span class="dede-green underline">La nostra visione</span> è <span class="dede-blue">abilitare la trasformazione</span> di borghi e aree rurali nei <span class="dede-blue">luoghi del futuro</span> 
         shapes: 
