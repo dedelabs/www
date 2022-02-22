@@ -49,3 +49,36 @@ export let swiperBreakpoints = {
     spaceBetween: 0,
   },
 }
+
+export let l = (text) => {
+  if (typeof text == "string") return text;
+  let selectedLang = getCookieValue('selectedLang');
+  let result = undefined;
+  if (selectedLang) {
+    result = text[selectedLang]
+  } else {
+    result = text[getDefaultLang()]
+  }
+  if (result === undefined){
+    return Object.entries(text)[0][1]
+  } else {
+    return result
+  }
+}
+
+export let getCookieValue = (name) => {
+  let result = document.cookie.match("(^|[^;]+)\s*" + name + "\s*=\s*([^;]+)")
+  if (result) {
+    let resultWithDomain = result.pop()
+    let resp = resultWithDomain.split(' ')[0]
+    return resp ? resp : 'it'
+  } else {
+    return 'it'
+  }
+}
+
+let getDefaultLang = () => {
+  let defaultLang = Object.entries(window.availableLanguages).filter((i) => { return i[1]['default']})[0]
+  if (defaultLang.length > 0) return defaultLang[0]
+  return 'it'
+}

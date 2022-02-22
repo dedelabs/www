@@ -10,7 +10,7 @@
 
   import Blobs from './Blobs.svelte'
   import { afterUpdate } from 'svelte'
-  import { smoothScroll } from '../utilities.js'
+  import { smoothScroll, l } from '../utilities.js'
 
   afterUpdate(() => {
     smoothScroll()
@@ -20,12 +20,12 @@
 <div class="wrapper">
   <div class="{baseClass}">
     <div class="{baseClass}__content">
-      <h1 class="{baseClass}__title">{title}</h1>
-      <h3 class="{baseClass}__subtitle">{subtitle}</h3>
+      <h1 class="{baseClass}__title">{l(title)}</h1>
+      <h3 class="{baseClass}__subtitle">{l(subtitle)}</h3>
     </div>
     {#if cta}
       <div class="{baseClass}__cta" data-smoothscroll="#solution">
-        {cta.text}
+        {l(cta.text)}
         {#if cta.arrow}
           <div class="arrow arrow--{cta.arrow}">-></div>
         {/if}

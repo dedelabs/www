@@ -1,11 +1,11 @@
 languages:
-  en:
-    name: English
-    label: en
-    default: true
   it:
     name: Italiano
     label: it
+    default: true
+  en:
+    name: English
+    label: en
     default: false
 colorPalette:
   - "#6A72DC"
@@ -39,7 +39,10 @@ pages:
             color: "#6A72DC"
       - type: Text
         anchor: vision
-        content: <span class="dede-green underline">Our vision</span> is to <span class="dede-blue">empower</span> small villages and rural areas to become <span class="dede-blue">the place to be</span>
+        content: 
+          es: esp
+          en: <span class="dede-green underline">Our vision</span> is to <span class="dede-blue">empower</span> small villages and rural areas to become <span class="dede-blue">the place to be</span>
+          it: <span class="dede-green underline">La nostra visione</span> è <span class="dede-blue">abilitare la trasformazione</span> di borghi e aree rurali nei <span class="dede-blue">luoghi del futuro</span> 
         shapes: 
           - top: 80
             left: 20
@@ -51,11 +54,18 @@ pages:
             size: 50
             color: "#60C971"
             zindex: 20
+          - top: 85
+            left: 70
+            size: 150
+            color: "#6A72DC"
+            zindex: 10
       - type: Spacer
         height: 100
       - type: Text
         anchor: why
-        content: <span class="dede-green underline">Our mission</span> is to co-create an <span class="dede-blue">ecosystem</span> that triggers a <span class="dede-blue">positive impact</span>, accompanying each stage of territorial regeneration through <span class="under-shadow">education, responsible tourism, sustainable finance & decentralised technology</span>
+        content:
+          en: <span class="dede-green underline">Our mission</span> is to co-create an <span class="dede-blue">ecosystem</span> that triggers a <span class="dede-blue">positive impact</span>, accompanying each stage of territorial regeneration through <span class="under-shadow">education, responsible tourism, sustainable finance & decentralised technology</span>
+          it: <span class="dede-green underline">La nostra mission</span> è la co-creazione di un <span class="dede-blue">ecosistema</span> che generi un <span class="dede-blue">impatto positivo</span>, accompagnando il territorio in ogni fase della sua rigenerazione attraverso <span class="under-shadow">la formazione, il turismo responsabile, la finanza sostenibile e la tecnologia decentralizzata</span>
         shapes: 
           - top: 80
             left: 5
@@ -67,11 +77,18 @@ pages:
             size: 50
             color: "#60C971"
             zindex: 20
+          - top: 90
+            left: 30
+            size: 150
+            color: "#60C971"
+            zindex: 10
       - type: Spacer
         height: 100
       - type: Text
         anchor: who-we-are
-        content: <span class="dede-green underline">We are</span> a <span class="dede-blue">network</span> of professionals, corporates, educational and territorial entities with <span class="dede-blue">extensive knowledge</span> in areas like <span class="under-shadow">travel, education, communities, sustainability, economy and technology</span>
+        content:
+          en: <span class="dede-green underline">We are</span> a <span class="dede-blue">network</span> of professionals, corporates, educational and territorial entities with <span class="dede-blue">extensive knowledge</span> in areas like <span class="under-shadow">travel, education, communities, sustainability, economy and technology</span>
+          it: <span class="dede-green underline">Siamo</span> una <span class="dede-blue">rete</span> di professionisti, imprese, enti formativi e territoriali con <span class="dede-blue">competenze trasversali</span> in <span class="under-shadow">turismo, sostenibilità, finanza, tecnologia e creazione di comunità</span>
         shapes: 
           - top: 80
             left: 90
@@ -83,15 +100,31 @@ pages:
             size: 40
             color: "#60C971"
             zindex: 20
+          - top: 90
+            left: 5
+            size: 200
+            color: "#60C971"
+            zindex: 10
+          - top: 90
+            left: 0
+            size: 75
+            color: "#6A72DC"
+            zindex: 20
       - type: Spacer
         height: 200
       - type: BlockWithImage
         anchor: needs
         imagePosition: right
         imagePath: solution/purpose-driven.jpg
-        pretitle: Built for you
-        title: Changing Territories
-        description: Are you looking for active citizens, social entrepreneurs making a difference and responsible travelers?
+        pretitle: 
+          en: Built for you
+          it: Pensato per te
+        title: 
+          en: Changing Territories
+          it: Territori in trasformazione
+        description: 
+          en: Are you looking for active citizens, social entrepreneurs making a difference and responsible travelers?
+          it: Desideri attrarre imprenditori sociali che facciano la differenza, viaggiatori responsabili e stimolare la cittadinanza attiva?
         shapes:
           - top: 65
             left: 57
@@ -109,8 +142,12 @@ pages:
         anchor: travel-artisans
         imagePosition: left
         imagePath: solution/who-are-we.jpg
-        title: Travel Artisans
-        description: Are you looking for a growing customer base, a season free income and a network of like-minded people?
+        title: 
+          en: Travel Artisans
+          it: Artigiani del viaggio 
+        description: 
+          en: Are you looking for a growing customer base, a season free income and a network of like-minded people?
+          it: Desideri aumentare e destagionalizzare i flussi, e far parte di una rete locale di imprenditori con cui crescere insieme? 
         shapes: 
           - top: 60
             left: -10
@@ -123,8 +160,12 @@ pages:
         anchor: impact-contributors
         imagePosition: right
         imagePath: solution/trust.jpg
-        title: Impact Contributors
-        description: Are you looking for transformative experiences, sustainable reputation and impact projects to support?
+        title: 
+          en: Impact Contributors
+          it: Sostenitori del cambiamento
+        description: 
+          en: Are you looking for transformative experiences, sustainable reputation and impact projects to support?
+          it: Desideri incrementare la reputazione della tua azienda, offrire esperienze trasformative al tuo team e contribuire a progetti sociali e sostenibili?
         shapes: 
           - top: 65
             left: 61
@@ -137,8 +178,12 @@ pages:
         anchor: lifestyle-seekers
         imagePosition: left
         imagePath: solution/target.jpg
-        title: Lifestyle Seekers
-        description: Are you looking for a better work-life balance, a deeper connection with nature and people and ways to generate a positive impact?
+        title: 
+          en: Lifestyle Seekers
+          it: Imprenditori del futuro
+        description: 
+          en: Are you looking for a better work-life balance, a deeper connection with nature and people and ways to generate a positive impact?
+          it: Desideri un miglior equilibrio tra lavoro e tempo libero, vivere a contatto con la natura e la comunità locale, e generare un impatto positivo?
         shapes: 
           - top: 60
             left: -10
@@ -148,22 +193,40 @@ pages:
       - type: Spacer
         height: 50
       - type: Carousel
-        overtitle: Our services
+        overtitle: 
+          en: Our services
+          it: Sostenibilità integrale
         anchor: our-services
         slider: false
         slides:
           - image: <svg width="71" height="48" viewBox="0 0 71 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="24" r="17.5" transform="rotate(90 18 24)" fill="#60C971" style="mix-blend-mode:multiply"/><circle cx="18" cy="24" r="17.5" transform="rotate(90 18 24)" stroke="#60C971"/><ellipse cx="47" cy="24" rx="24" ry="24" transform="rotate(90 47 24)" fill="#646FFF" style="mix-blend-mode:multiply"/></svg>
-            title: Prosperity
-            description: We support creative and innovative entrepreneurial project ideas by activating personalised training paths and community funds
+            title: 
+              en: Prosperity
+              it: Economica
+            description: 
+              en: We support creative and innovative entrepreneurial project ideas by activating personalised training paths and community funds
+              it: Supportiamo idee e progetti imprenditoriali creativi ed innovativi attraverso percorsi di formazione personalizzata e fondi economici di rigenerazione territoriale
           - image: <svg width="63" height="50" viewBox="0 0 63 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M60.3685 21.7325C62.6268 23.3261 62.6269 26.6754 60.3685 28.269L30.8062 49.1296C28.1565 50.9994 24.5 49.1044 24.5 45.8614L24.5 4.14014C24.5 0.897142 28.1565 -0.997856 30.8062 0.871914L60.3685 21.7325Z" fill="#646FFF" style="mix-blend-mode:multiply"/><path d="M36.3685 21.7325C38.6268 23.3261 38.6269 26.6753 36.3685 28.269L6.80623 49.1296C4.15652 50.9993 0.500001 49.1043 0.500001 45.8613L0.500003 4.14011C0.500003 0.897111 4.15652 -0.997887 6.80623 0.871884L36.3685 21.7325Z" fill="#60C971" style="mix-blend-mode:multiply"/></svg>
-            title: People
-            description: We empower community enterprises owned and operated by its active members where citizens, public, private entities openly and transparently govern the territory
+            title: 
+              en: People
+              it: Sociale
+            description: 
+              en: We empower community enterprises owned and operated by its active members where citizens, public, private entities openly and transparently govern the territory
+              it: Abilitiamo la nascita di imprese di comunità fondate e gestite da stakeholder locali che si occupino in modo trasparente della governance del territorio secondo i principi della co-partecipazione tra pubblico e privato, con l’obiettivo di attivare progetti ad impatto sociale
           - image: <svg width="63" height="51" viewBox="0 0 63 51" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.07108 20.9704C7.63318 19.4083 10.1658 19.4083 11.7279 20.9704L32.9411 42.1836L25.8701 49.2547C24.308 50.8168 21.7753 50.8168 20.2132 49.2547L1.82844 30.8699C0.266341 29.3078 0.266341 26.7752 1.82844 25.2131L6.07108 20.9704Z" fill="#60C971" style="mix-blend-mode:multiply"/><path d="M60.9842 8.48349C62.5463 10.0456 62.5463 12.5782 60.9842 14.1403L25.87 49.2546C24.3079 50.8167 21.7752 50.8167 20.2131 49.2546L10.3136 39.3551L48.2563 1.41242C49.8184 -0.149673 52.3511 -0.149673 53.9132 1.41242L60.9842 8.48349Z" fill="#646FFF" style="mix-blend-mode:multiply"/></svg>
-            title: Planet
-            description: We support the preservation of the environmental resources and the territorial biodiversity participating in the climate change fight
+            title: 
+              en: Planet
+              it: Ambientale
+            description: 
+              en: We support the preservation of the environmental resources and the territorial biodiversity participating in the climate change fight
+              it: Prendiamo parte alla lotta contro il cambiamento climatico promuovendo la preservazione della biodiversità e delle risorse ambientali locali
           - image: <svg width="75" height="66" viewBox="0 0 75 66" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M44.3685 29.7318C46.6268 31.3254 46.6269 34.6746 44.3685 36.2682L14.8062 57.1288C12.1565 58.9986 8.5 57.1036 8.5 53.8606L8.5 12.1394C8.5 8.89638 12.1565 7.00138 14.8062 8.87115L44.3685 29.7318Z" fill="#646FFF" style="mix-blend-mode:multiply"/><circle cx="11" cy="55" r="11" transform="rotate(90 11 55)" fill="#60C971" style="mix-blend-mode:multiply"/><circle cx="11" cy="11" r="11" transform="rotate(90 11 11)" fill="#60C971" style="mix-blend-mode:multiply"/><path d="M30.6315 36.2682C28.3731 34.6746 28.3731 31.3254 30.6315 29.7318L60.1938 8.87115C62.8435 7.00138 66.5 8.89638 66.5 12.1394L66.5 53.8606C66.5 57.1036 62.8435 58.9986 60.1938 57.1288L30.6315 36.2682Z" fill="#646FFF" style="mix-blend-mode:multiply"/><circle cx="64" cy="11" r="11" transform="rotate(-90 64 11)" fill="#60C971" style="mix-blend-mode:multiply"/><circle cx="64" cy="55" r="11" transform="rotate(-90 64 55)" fill="#60C971" style="mix-blend-mode:multiply"/></svg>
-            title: Identity
-            description: We enhance local culture by supporting artisanship, food heritage, wellbeing and art activities in order to develop a sustainable territorial identity
+            title: 
+              en: Identity
+              it: Culturale
+            description: 
+              en: We enhance local culture by supporting artisanship, food heritage, wellbeing and art activities in order to develop a sustainable territorial identity
+              it: Valorizziamo l’autenticità locale promuovendo l’artigianato, il patrimonio eno-gastronomico, il benessere, attività artistiche e culturali volte a custodire gli antichi saperi, e sviluppare un’identità innovativa e sostenibile del territorio
       # - type: Carousel
       #   overtitle: Issues
       #   anchor: issues

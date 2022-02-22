@@ -12,7 +12,7 @@
   import Typewriter from 'svelte-typewriter'
   import Blobs from './Blobs.svelte'
   import { afterUpdate } from 'svelte'
-  import { smoothScroll } from '../utilities.js'
+  import { smoothScroll, l } from '../utilities.js'
 
   afterUpdate(() => {
     smoothScroll()
@@ -22,15 +22,15 @@
 <div class="wrapper">
   <div class="{baseClass}">
     <div class="{baseClass}__content center">
-      <h1 class="{baseClass}__title center">{title}</h1>
+      <h1 class="{baseClass}__title center">{l(title)}</h1>
       <h3 class="{baseClass}__text center">
-        {text}
-        <Typewriter loopRandom={1000} unwriteInterval={20} interval={[50, 70, 90]}>{@html typewriter_html}</Typewriter>
+        {l(text)}
+        <Typewriter loopRandom={1000} unwriteInterval={20} interval={[50, 70, 90]}>{@html l(typewriter_html)}</Typewriter>
       </h3>
     </div>
     {#if cta}
       <div class="{baseClass}__cta" data-smoothscroll="#vision">
-        {cta.text}
+        {l(cta.text)}
         {#if cta.arrow}
           <div class="arrow arrow--{cta.arrow}">-></div>
         {/if}

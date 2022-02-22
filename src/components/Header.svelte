@@ -1,20 +1,33 @@
 <script>
   let open = false
+  export let languages
 
   import DedeLogo from './DedeLogo.svelte'
   import Hamburger from 'svelte-hamburgers'
   import { fly } from 'svelte/transition'
   import { afterUpdate } from 'svelte'
-  import { smoothScroll } from '../utilities.js'
+  import { smoothScroll, getCookieValue } from '../utilities.js'
   
   afterUpdate(() => {
     let buttons = smoothScroll()
     buttons.forEach((button) => { button.addEventListener('click', () => { open = false })})
   })
+
+  let setLanguage = (lang) => {
+    document.cookie = `selectedLang=${lang} domain=${window.location.host}`
+    window.location.reload()
+  }
+
+
 </script>
 
 <header class="wrapper header">
   <DedeLogo></DedeLogo>
+  <div class="language-switcher">
+    {#each Object.entries(languages) as language}
+      <span class="language-switcher__item {getCookieValue('selectedLang') == language[0] ? 'language-switcher__item--current' : '' }" on:click="{setLanguage(language[0])}">{language[1].name}</span>
+    {/each}
+  </div>
   <!-- <Hamburger bind:open type="emphatic" /> -->
   <!-- {#if open} -->
     <!-- <div class="header__menu--mobile" transition:fly="{{ y: 200, duration: 500 }}" >

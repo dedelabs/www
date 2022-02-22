@@ -10,17 +10,18 @@
   let HTMLanchor = anchor ? anchor : title
   let baseClass = type.toLowerCase()
 
+  import { l } from '../utilities.js'
   import Blobs from './Blobs.svelte'
 </script>
 
 <div class="wrapper" id="{HTMLanchor}">
   <div class="{baseClass}">
     {#if title}
-      <h2 class="{baseClass}__title">{title}</h2>
+      <h2 class="{baseClass}__title">{l(title)}</h2>
     {/if}
-    <h3 class="{baseClass}__subtitle">{subtitle}</h3>
+    <h3 class="{baseClass}__subtitle">{l(subtitle)}</h3>
     <div class="{baseClass}__content center">
-      <p>{@html content}</p>
+      <p>{@html l(content)}</p>
     </div>
   </div>
   <Blobs shapes={shapes} colors="{colors}"></Blobs>

@@ -14,14 +14,14 @@
 
   import { Navigation } from 'swiper'
   import { Swiper, SwiperSlide } from 'swiper/svelte'
-  import { swiperBreakpoints } from '../utilities.js'
+  import { swiperBreakpoints, l } from '../utilities.js'
   import Blobs from './Blobs.svelte'
 </script>
 
 <div class="wrapper" id="{HTMLanchor}">
   <div class="{baseClass}">
-    <div class="{baseClass}__overtitle">{overtitle}</div>
-    <h3 class="{baseClass}__title">{@html title}</h3>
+    <div class="{baseClass}__overtitle">{l(overtitle)}</div>
+    <h3 class="{baseClass}__title">{@html l(title)}</h3>
     {#if slider}
       <Swiper
         modules={[Navigation]}
@@ -38,9 +38,9 @@
           <SwiperSlide>
             <div class="{baseClass}__card">
               <div class="{baseClass}__card__title {card.secondLine ? '{baseClass}__card__title--with-subtitle' : ''}">
-                <strong>{@html card.firstLine}</strong><br />
+                <strong>{@html l(card.firstLine)}</strong><br />
                 {#if card.secondLine}
-                  <small>{@html card.secondLine}</small>
+                  <small>{@html l(card.secondLine)}</small>
                 {/if}
               </div>
               <div class="{baseClass}__card__image" style="background-image: url('images/{card.imagePath}')"></div>
@@ -54,9 +54,9 @@
         {#each cards as card}
           <div class="{baseClass}__card">
             <div class="{baseClass}__card__title {card.secondLine ? '{baseClass}__card__title--with-subtitle' : ''}">
-              <strong>{@html card.firstLine}</strong><br />
+              <strong>{@html l(card.firstLine)}</strong><br />
               {#if card.secondLine}
-                <small>{@html card.secondLine}</small>
+                <small>{@html l(card.secondLine)}</small>
               {/if}
             </div>
             <div class="{baseClass}__card__image" style="background-image: url('images/{card.imagePath}')"></div>

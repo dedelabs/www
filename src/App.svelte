@@ -28,14 +28,21 @@
 		"Text": Text,
 		"Title": Title
 	}
+
+	let getLanguages = (langs) => {
+		window.availableLanguages = langs;
+		return langs;
+	}
+
 	// Hardcoded before routing
 	$: components = data.pages.filter((p) => p.name == 'Home')[0].components;
 
 	$: colors = data.colorPalette;
+	$: languages = getLanguages(data.languages);
 </script>
 
 <main>
-	<Header></Header>
+	<Header languages="{data.languages}"></Header>
 	{#each components as component}
 		<svelte:component this={loadedComponents[component.type]} {...component} colors="{colors}" />
 	{/each}
