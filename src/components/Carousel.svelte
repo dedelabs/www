@@ -5,7 +5,6 @@
   export let slider = true
   export let type = 'Carousel'
   export let anchor
-  export let ll
   export let shapes = 0
   export let colors = ['red', 'yellow', 'blue']
 
@@ -22,11 +21,11 @@
 <div class="wrapper" id="{HTMLanchor}">
   <div class="{baseClass}">
     <div class="{baseClass}__overtitle h2 underline">
-      {l(overtitle, ll)}
+      {l(overtitle)}
     </div>
     <div class="Spacer" style="height: 50px"></div>
     {#if slider}
-      <h3 class="{baseClass}__title">{@html l(title, ll)}</h3>
+      <h3 class="{baseClass}__title">{@html l(title)}</h3>
       <Swiper
         modules={[Navigation]}
         loop="{true}"
@@ -41,8 +40,8 @@
         {#each slides as slide}
           <SwiperSlide class="{baseClass}__slide">
             <div class="{baseClass}__slide__image">{@html slide.image}</div>
-            <h2 class="{baseClass}__slide__title dede-blue">{l(slide.title, ll)}</h2>
-            <p class="{baseClass}__slide__description">{l(slide.description, ll)}</p>
+            <h2 class="{baseClass}__slide__title dede-blue">{l(slide.title)}</h2>
+            <p class="{baseClass}__slide__description">{l(slide.description)}</p>
           </SwiperSlide>
         {/each}
       </Swiper>
@@ -52,8 +51,8 @@
         {#each slides as slide}
           <div class="{baseClass}__slide">
             {@html slide.image}
-            <h2 class="{baseClass}__slide__title dede-blue">{l(slide.title, ll)}</h2>
-            <p class="{baseClass}__slide__description">{l(slide.description, ll)}</p>
+            <h2 class="{baseClass}__slide__title dede-blue">{l(slide.title)}</h2>
+            <p class="{baseClass}__slide__description">{l(slide.description)}</p>
           </div>
         {/each}
       </div>

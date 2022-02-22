@@ -50,7 +50,8 @@ export let swiperBreakpoints = {
   },
 }
 
-export let l = (text, languages) => {
+export let l = (text) => {
+  let languages = window.availableLanguages;
   if (typeof text == "string") return text;
   return text['en'];
 }

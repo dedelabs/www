@@ -4,7 +4,6 @@
   export let cards = []
   export let slider = false
   export let anchor
-  export let ll
   export let type = 'Cards'
   export let shapes = 0
   export let colors = ['red', 'yellow', 'blue']
@@ -21,8 +20,8 @@
 
 <div class="wrapper" id="{HTMLanchor}">
   <div class="{baseClass}">
-    <div class="{baseClass}__overtitle">{l(overtitle, ll)}</div>
-    <h3 class="{baseClass}__title">{l(title, ll)}</h3>
+    <div class="{baseClass}__overtitle">{l(overtitle)}</div>
+    <h3 class="{baseClass}__title">{l(title)}</h3>
     {#if slider}
       <Swiper
         modules={[Navigation]}
@@ -38,8 +37,8 @@
         {#each cards as card}
           <SwiperSlide>
             <div class="{baseClass}__card">
-              <h4 class="{baseClass}__card__title">{@html l(card.title, ll)}</h4>
-              {l(card.description, ll)}
+              <h4 class="{baseClass}__card__title">{@html l(card.title)}</h4>
+              {l(card.description)}
             </div>
           </SwiperSlide>
         {/each}
@@ -49,8 +48,8 @@
       <div class="{baseClass}__container">
         {#each cards as card}
           <div class="{baseClass}__card">
-            <h4 class="{baseClass}__card__title">{@html l(card.title, ll)}</h4>
-            {l(card.description, ll)}
+            <h4 class="{baseClass}__card__title">{@html l(card.title)}</h4>
+            {l(card.description)}
           </div>
         {/each}
       </div>

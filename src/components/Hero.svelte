@@ -5,7 +5,6 @@
   export let colors = ['red', 'yellow', 'blue']
   export let cta = false
   export let type = 'Hero'
-  export let ll
 
   let baseClass = type.toLowerCase()
 
@@ -21,12 +20,12 @@
 <div class="wrapper">
   <div class="{baseClass}">
     <div class="{baseClass}__content">
-      <h1 class="{baseClass}__title">{l(title, ll)}</h1>
-      <h3 class="{baseClass}__subtitle">{l(subtitle, ll)}</h3>
+      <h1 class="{baseClass}__title">{l(title)}</h1>
+      <h3 class="{baseClass}__subtitle">{l(subtitle)}</h3>
     </div>
     {#if cta}
       <div class="{baseClass}__cta" data-smoothscroll="#solution">
-        {l(cta.text, ll)}
+        {l(cta.text)}
         {#if cta.arrow}
           <div class="arrow arrow--{cta.arrow}">-></div>
         {/if}

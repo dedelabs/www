@@ -622,10 +622,7 @@ var app = (function () {
     			{
     				type: "Headline",
     				title: "Regenerative Territories",
-    				text: {
-    					en: "Changing the world while changing your way of",
-    					it: "Changing the world while changing your way of"
-    				},
+    				text: "Changing the world while changing your way of",
     				typewriter_html: "<Typewriter loopRandom><span>living</span><span>working</span><span>travelling</span></Typewriter>",
     				shapes: [
     					{
@@ -659,7 +656,10 @@ var app = (function () {
     			{
     				type: "Text",
     				anchor: "vision",
-    				content: "<span class=\"dede-green underline\">Our vision</span> is to <span class=\"dede-blue\">empower</span> small villages and rural areas to become <span class=\"dede-blue\">the place to be</span>",
+    				content: {
+    					en: "<span class=\"dede-green underline\">Our vision</span> is to <span class=\"dede-blue\">empower</span> small villages and rural areas to become <span class=\"dede-blue\">the place to be</span>",
+    					it: "<span class=\"dede-green underline\">La nostra visione</span> è <span class=\"dede-blue\">abilitare la trasformazione</span> di borghi e aree rurali nei <span class=\"dede-blue\">luoghi del futuro</span>"
+    				},
     				shapes: [
     					{
     						top: 80,
@@ -7195,7 +7195,7 @@ var app = (function () {
       },
     };
 
-    let l = (text, languages) => {
+    let l = (text) => {
       if (typeof text == "string") return text;
       return text['en'];
     };
@@ -7926,17 +7926,17 @@ var app = (function () {
 
     function get_each_context_1$3(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[12] = list[i];
+    	child_ctx[11] = list[i];
     	return child_ctx;
     }
 
     function get_each_context$4(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[12] = list[i];
+    	child_ctx[11] = list[i];
     	return child_ctx;
     }
 
-    // (53:4) {:else}
+    // (52:4) {:else}
     function create_else_block$3(ctx) {
     	let div;
     	let each_value_1 = /*cards*/ ctx[2];
@@ -7955,8 +7955,8 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[8] + "__container"));
-    			add_location(div, file$f, 53, 6, 1827);
+    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[7] + "__container"));
+    			add_location(div, file$f, 52, 6, 1795);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -7966,7 +7966,7 @@ var app = (function () {
     			}
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*baseClass, cards, l, ll*/ 276) {
+    			if (dirty & /*baseClass, cards, l*/ 132) {
     				each_value_1 = /*cards*/ ctx[2];
     				validate_each_argument(each_value_1);
     				let i;
@@ -8002,14 +8002,14 @@ var app = (function () {
     		block,
     		id: create_else_block$3.name,
     		type: "else",
-    		source: "(53:4) {:else}",
+    		source: "(52:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (26:4) {#if slider}
+    // (25:4) {#if slider}
     function create_if_block$8(ctx) {
     	let swiper;
     	let t0;
@@ -8021,8 +8021,8 @@ var app = (function () {
     			props: {
     				modules: [Navigation],
     				loop: true,
-    				navigation: /*navigation*/ ctx[9],
-    				class: "" + (/*baseClass*/ ctx[8] + "__container"),
+    				navigation: /*navigation*/ ctx[8],
+    				class: "" + (/*baseClass*/ ctx[7] + "__container"),
     				spaceBetween: 50,
     				slidesPerView: 3,
     				breakpoints: swiperBreakpoints,
@@ -8041,8 +8041,8 @@ var app = (function () {
     			t0 = space();
     			div = element("div");
     			t1 = text$1("Next ->");
-    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[8] + "__next"));
-    			add_location(div, file$f, 51, 6, 1764);
+    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[7] + "__next"));
+    			add_location(div, file$f, 50, 6, 1732);
     		},
     		m: function mount(target, anchor) {
     			mount_component(swiper, target, anchor);
@@ -8054,7 +8054,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const swiper_changes = {};
 
-    			if (dirty & /*$$scope, cards, ll*/ 131092) {
+    			if (dirty & /*$$scope, cards*/ 65540) {
     				swiper_changes.$$scope = { dirty, ctx };
     			}
 
@@ -8080,29 +8080,29 @@ var app = (function () {
     		block,
     		id: create_if_block$8.name,
     		type: "if",
-    		source: "(26:4) {#if slider}",
+    		source: "(25:4) {#if slider}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (59:14) {#if card.secondLine}
+    // (58:14) {#if card.secondLine}
     function create_if_block_2(ctx) {
     	let small;
-    	let raw_value = l(/*card*/ ctx[12].secondLine, /*ll*/ ctx[4]) + "";
+    	let raw_value = l(/*card*/ ctx[11].secondLine) + "";
 
     	const block = {
     		c: function create() {
     			small = element("small");
-    			add_location(small, file$f, 59, 16, 2173);
+    			add_location(small, file$f, 58, 16, 2137);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, small, anchor);
     			small.innerHTML = raw_value;
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*cards, ll*/ 20 && raw_value !== (raw_value = l(/*card*/ ctx[12].secondLine, /*ll*/ ctx[4]) + "")) small.innerHTML = raw_value;		},
+    			if (dirty & /*cards*/ 4 && raw_value !== (raw_value = l(/*card*/ ctx[11].secondLine) + "")) small.innerHTML = raw_value;		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(small);
     		}
@@ -8112,26 +8112,26 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(59:14) {#if card.secondLine}",
+    		source: "(58:14) {#if card.secondLine}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (55:8) {#each cards as card}
+    // (54:8) {#each cards as card}
     function create_each_block_1$3(ctx) {
     	let div2;
     	let div0;
     	let strong;
-    	let raw_value = l(/*card*/ ctx[12].firstLine, /*ll*/ ctx[4]) + "";
+    	let raw_value = l(/*card*/ ctx[11].firstLine) + "";
     	let br;
     	let t0;
     	let div0_class_value;
     	let t1;
     	let div1;
     	let t2;
-    	let if_block = /*card*/ ctx[12].secondLine && create_if_block_2(ctx);
+    	let if_block = /*card*/ ctx[11].secondLine && create_if_block_2(ctx);
 
     	const block = {
     		c: function create() {
@@ -8144,19 +8144,19 @@ var app = (function () {
     			t1 = space();
     			div1 = element("div");
     			t2 = space();
-    			add_location(strong, file$f, 57, 14, 2068);
-    			add_location(br, file$f, 57, 60, 2114);
+    			add_location(strong, file$f, 56, 14, 2036);
+    			add_location(br, file$f, 56, 56, 2078);
 
-    			attr_dev(div0, "class", div0_class_value = "" + (/*baseClass*/ ctx[8] + "__card__title " + (/*card*/ ctx[12].secondLine
+    			attr_dev(div0, "class", div0_class_value = "" + (/*baseClass*/ ctx[7] + "__card__title " + (/*card*/ ctx[11].secondLine
     			? '{baseClass}__card__title--with-subtitle'
     			: '')));
 
-    			add_location(div0, file$f, 56, 12, 1948);
-    			attr_dev(div1, "class", "" + (/*baseClass*/ ctx[8] + "__card__image"));
-    			set_style(div1, "background-image", "url('images/" + /*card*/ ctx[12].imagePath + "')");
-    			add_location(div1, file$f, 62, 12, 2270);
-    			attr_dev(div2, "class", "" + (/*baseClass*/ ctx[8] + "__card"));
-    			add_location(div2, file$f, 55, 10, 1904);
+    			add_location(div0, file$f, 55, 12, 1916);
+    			attr_dev(div1, "class", "" + (/*baseClass*/ ctx[7] + "__card__image"));
+    			set_style(div1, "background-image", "url('images/" + /*card*/ ctx[11].imagePath + "')");
+    			add_location(div1, file$f, 61, 12, 2230);
+    			attr_dev(div2, "class", "" + (/*baseClass*/ ctx[7] + "__card"));
+    			add_location(div2, file$f, 54, 10, 1872);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -8171,8 +8171,8 @@ var app = (function () {
     			append_dev(div2, t2);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*cards, ll*/ 20 && raw_value !== (raw_value = l(/*card*/ ctx[12].firstLine, /*ll*/ ctx[4]) + "")) strong.innerHTML = raw_value;
-    			if (/*card*/ ctx[12].secondLine) {
+    			if (dirty & /*cards*/ 4 && raw_value !== (raw_value = l(/*card*/ ctx[11].firstLine) + "")) strong.innerHTML = raw_value;
+    			if (/*card*/ ctx[11].secondLine) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
@@ -8185,14 +8185,14 @@ var app = (function () {
     				if_block = null;
     			}
 
-    			if (dirty & /*cards*/ 4 && div0_class_value !== (div0_class_value = "" + (/*baseClass*/ ctx[8] + "__card__title " + (/*card*/ ctx[12].secondLine
+    			if (dirty & /*cards*/ 4 && div0_class_value !== (div0_class_value = "" + (/*baseClass*/ ctx[7] + "__card__title " + (/*card*/ ctx[11].secondLine
     			? '{baseClass}__card__title--with-subtitle'
     			: '')))) {
     				attr_dev(div0, "class", div0_class_value);
     			}
 
     			if (dirty & /*cards*/ 4) {
-    				set_style(div1, "background-image", "url('images/" + /*card*/ ctx[12].imagePath + "')");
+    				set_style(div1, "background-image", "url('images/" + /*card*/ ctx[11].imagePath + "')");
     			}
     		},
     		d: function destroy(detaching) {
@@ -8205,29 +8205,29 @@ var app = (function () {
     		block,
     		id: create_each_block_1$3.name,
     		type: "each",
-    		source: "(55:8) {#each cards as card}",
+    		source: "(54:8) {#each cards as card}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (43:16) {#if card.secondLine}
+    // (42:16) {#if card.secondLine}
     function create_if_block_1$3(ctx) {
     	let small;
-    	let raw_value = l(/*card*/ ctx[12].secondLine, /*ll*/ ctx[4]) + "";
+    	let raw_value = l(/*card*/ ctx[11].secondLine) + "";
 
     	const block = {
     		c: function create() {
     			small = element("small");
-    			add_location(small, file$f, 43, 18, 1477);
+    			add_location(small, file$f, 42, 18, 1449);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, small, anchor);
     			small.innerHTML = raw_value;
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*cards, ll*/ 20 && raw_value !== (raw_value = l(/*card*/ ctx[12].secondLine, /*ll*/ ctx[4]) + "")) small.innerHTML = raw_value;		},
+    			if (dirty & /*cards*/ 4 && raw_value !== (raw_value = l(/*card*/ ctx[11].secondLine) + "")) small.innerHTML = raw_value;		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(small);
     		}
@@ -8237,26 +8237,26 @@ var app = (function () {
     		block,
     		id: create_if_block_1$3.name,
     		type: "if",
-    		source: "(43:16) {#if card.secondLine}",
+    		source: "(42:16) {#if card.secondLine}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (39:10) <SwiperSlide>
+    // (38:10) <SwiperSlide>
     function create_default_slot_1$3(ctx) {
     	let div2;
     	let div0;
     	let strong;
-    	let raw_value = l(/*card*/ ctx[12].firstLine, /*ll*/ ctx[4]) + "";
+    	let raw_value = l(/*card*/ ctx[11].firstLine) + "";
     	let br;
     	let t0;
     	let div0_class_value;
     	let t1;
     	let div1;
     	let t2;
-    	let if_block = /*card*/ ctx[12].secondLine && create_if_block_1$3(ctx);
+    	let if_block = /*card*/ ctx[11].secondLine && create_if_block_1$3(ctx);
 
     	const block = {
     		c: function create() {
@@ -8269,19 +8269,19 @@ var app = (function () {
     			t1 = space();
     			div1 = element("div");
     			t2 = space();
-    			add_location(strong, file$f, 41, 16, 1368);
-    			add_location(br, file$f, 41, 62, 1414);
+    			add_location(strong, file$f, 40, 16, 1344);
+    			add_location(br, file$f, 40, 58, 1386);
 
-    			attr_dev(div0, "class", div0_class_value = "" + (/*baseClass*/ ctx[8] + "__card__title " + (/*card*/ ctx[12].secondLine
+    			attr_dev(div0, "class", div0_class_value = "" + (/*baseClass*/ ctx[7] + "__card__title " + (/*card*/ ctx[11].secondLine
     			? '{baseClass}__card__title--with-subtitle'
     			: '')));
 
-    			add_location(div0, file$f, 40, 14, 1246);
-    			attr_dev(div1, "class", "" + (/*baseClass*/ ctx[8] + "__card__image"));
-    			set_style(div1, "background-image", "url('images/" + /*card*/ ctx[12].imagePath + "')");
-    			add_location(div1, file$f, 46, 14, 1580);
-    			attr_dev(div2, "class", "" + (/*baseClass*/ ctx[8] + "__card"));
-    			add_location(div2, file$f, 39, 12, 1200);
+    			add_location(div0, file$f, 39, 14, 1222);
+    			attr_dev(div1, "class", "" + (/*baseClass*/ ctx[7] + "__card__image"));
+    			set_style(div1, "background-image", "url('images/" + /*card*/ ctx[11].imagePath + "')");
+    			add_location(div1, file$f, 45, 14, 1548);
+    			attr_dev(div2, "class", "" + (/*baseClass*/ ctx[7] + "__card"));
+    			add_location(div2, file$f, 38, 12, 1176);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -8296,8 +8296,8 @@ var app = (function () {
     			insert_dev(target, t2, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*cards, ll*/ 20 && raw_value !== (raw_value = l(/*card*/ ctx[12].firstLine, /*ll*/ ctx[4]) + "")) strong.innerHTML = raw_value;
-    			if (/*card*/ ctx[12].secondLine) {
+    			if (dirty & /*cards*/ 4 && raw_value !== (raw_value = l(/*card*/ ctx[11].firstLine) + "")) strong.innerHTML = raw_value;
+    			if (/*card*/ ctx[11].secondLine) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
@@ -8310,14 +8310,14 @@ var app = (function () {
     				if_block = null;
     			}
 
-    			if (dirty & /*cards*/ 4 && div0_class_value !== (div0_class_value = "" + (/*baseClass*/ ctx[8] + "__card__title " + (/*card*/ ctx[12].secondLine
+    			if (dirty & /*cards*/ 4 && div0_class_value !== (div0_class_value = "" + (/*baseClass*/ ctx[7] + "__card__title " + (/*card*/ ctx[11].secondLine
     			? '{baseClass}__card__title--with-subtitle'
     			: '')))) {
     				attr_dev(div0, "class", div0_class_value);
     			}
 
     			if (dirty & /*cards*/ 4) {
-    				set_style(div1, "background-image", "url('images/" + /*card*/ ctx[12].imagePath + "')");
+    				set_style(div1, "background-image", "url('images/" + /*card*/ ctx[11].imagePath + "')");
     			}
     		},
     		d: function destroy(detaching) {
@@ -8331,14 +8331,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$3.name,
     		type: "slot",
-    		source: "(39:10) <SwiperSlide>",
+    		source: "(38:10) <SwiperSlide>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (38:8) {#each cards as card}
+    // (37:8) {#each cards as card}
     function create_each_block$4(ctx) {
     	let swiperslide;
     	let current;
@@ -8362,7 +8362,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const swiperslide_changes = {};
 
-    			if (dirty & /*$$scope, cards, ll*/ 131092) {
+    			if (dirty & /*$$scope, cards*/ 65540) {
     				swiperslide_changes.$$scope = { dirty, ctx };
     			}
 
@@ -8386,14 +8386,14 @@ var app = (function () {
     		block,
     		id: create_each_block$4.name,
     		type: "each",
-    		source: "(38:8) {#each cards as card}",
+    		source: "(37:8) {#each cards as card}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (27:6) <Swiper         modules={[Navigation]}         loop="{true}"         navigation={navigation}         class="{baseClass}__container"         spaceBetween={50}         slidesPerView={3}         breakpoints={swiperBreakpoints}         on:slideChange={() => {}}         on:swiper={(e) => {}}       >
+    // (26:6) <Swiper         modules={[Navigation]}         loop="{true}"         navigation={navigation}         class="{baseClass}__container"         spaceBetween={50}         slidesPerView={3}         breakpoints={swiperBreakpoints}         on:slideChange={() => {}}         on:swiper={(e) => {}}       >
     function create_default_slot$4(ctx) {
     	let each_1_anchor;
     	let current;
@@ -8426,7 +8426,7 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*baseClass, cards, l, ll*/ 276) {
+    			if (dirty & /*baseClass, cards, l*/ 132) {
     				each_value = /*cards*/ ctx[2];
     				validate_each_argument(each_value);
     				let i;
@@ -8482,7 +8482,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$4.name,
     		type: "slot",
-    		source: "(27:6) <Swiper         modules={[Navigation]}         loop=\\\"{true}\\\"         navigation={navigation}         class=\\\"{baseClass}__container\\\"         spaceBetween={50}         slidesPerView={3}         breakpoints={swiperBreakpoints}         on:slideChange={() => {}}         on:swiper={(e) => {}}       >",
+    		source: "(26:6) <Swiper         modules={[Navigation]}         loop=\\\"{true}\\\"         navigation={navigation}         class=\\\"{baseClass}__container\\\"         spaceBetween={50}         slidesPerView={3}         breakpoints={swiperBreakpoints}         on:slideChange={() => {}}         on:swiper={(e) => {}}       >",
     		ctx
     	});
 
@@ -8493,11 +8493,11 @@ var app = (function () {
     	let div2;
     	let div1;
     	let div0;
-    	let t0_value = l(/*overtitle*/ ctx[1], /*ll*/ ctx[4]) + "";
+    	let t0_value = l(/*overtitle*/ ctx[1]) + "";
     	let t0;
     	let t1;
     	let h3;
-    	let raw_value = l(/*title*/ ctx[0], /*ll*/ ctx[4]) + "";
+    	let raw_value = l(/*title*/ ctx[0]) + "";
     	let t2;
     	let current_block_type_index;
     	let if_block;
@@ -8517,8 +8517,8 @@ var app = (function () {
 
     	blobs = new Blobs({
     			props: {
-    				shapes: /*shapes*/ ctx[5],
-    				colors: /*colors*/ ctx[6]
+    				shapes: /*shapes*/ ctx[4],
+    				colors: /*colors*/ ctx[5]
     			},
     			$$inline: true
     		});
@@ -8535,15 +8535,15 @@ var app = (function () {
     			if_block.c();
     			t3 = space();
     			create_component(blobs.$$.fragment);
-    			attr_dev(div0, "class", "" + (/*baseClass*/ ctx[8] + "__overtitle"));
-    			add_location(div0, file$f, 23, 4, 693);
-    			attr_dev(h3, "class", "" + (/*baseClass*/ ctx[8] + "__title"));
-    			add_location(h3, file$f, 24, 4, 758);
-    			attr_dev(div1, "class", /*baseClass*/ ctx[8]);
-    			add_location(div1, file$f, 22, 2, 663);
+    			attr_dev(div0, "class", "" + (/*baseClass*/ ctx[7] + "__overtitle"));
+    			add_location(div0, file$f, 22, 4, 677);
+    			attr_dev(h3, "class", "" + (/*baseClass*/ ctx[7] + "__title"));
+    			add_location(h3, file$f, 23, 4, 738);
+    			attr_dev(div1, "class", /*baseClass*/ ctx[7]);
+    			add_location(div1, file$f, 21, 2, 647);
     			attr_dev(div2, "class", "wrapper");
-    			attr_dev(div2, "id", /*HTMLanchor*/ ctx[7]);
-    			add_location(div2, file$f, 21, 0, 621);
+    			attr_dev(div2, "id", /*HTMLanchor*/ ctx[6]);
+    			add_location(div2, file$f, 20, 0, 605);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -8563,8 +8563,8 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
-    			if ((!current || dirty & /*overtitle, ll*/ 18) && t0_value !== (t0_value = l(/*overtitle*/ ctx[1], /*ll*/ ctx[4]) + "")) set_data_dev(t0, t0_value);
-    			if ((!current || dirty & /*title, ll*/ 17) && raw_value !== (raw_value = l(/*title*/ ctx[0], /*ll*/ ctx[4]) + "")) h3.innerHTML = raw_value;			let previous_block_index = current_block_type_index;
+    			if ((!current || dirty & /*overtitle*/ 2) && t0_value !== (t0_value = l(/*overtitle*/ ctx[1]) + "")) set_data_dev(t0, t0_value);
+    			if ((!current || dirty & /*title*/ 1) && raw_value !== (raw_value = l(/*title*/ ctx[0]) + "")) h3.innerHTML = raw_value;			let previous_block_index = current_block_type_index;
     			current_block_type_index = select_block_type(ctx);
 
     			if (current_block_type_index === previous_block_index) {
@@ -8591,8 +8591,8 @@ var app = (function () {
     			}
 
     			const blobs_changes = {};
-    			if (dirty & /*shapes*/ 32) blobs_changes.shapes = /*shapes*/ ctx[5];
-    			if (dirty & /*colors*/ 64) blobs_changes.colors = /*colors*/ ctx[6];
+    			if (dirty & /*shapes*/ 16) blobs_changes.shapes = /*shapes*/ ctx[4];
+    			if (dirty & /*colors*/ 32) blobs_changes.colors = /*colors*/ ctx[5];
     			blobs.$set(blobs_changes);
     		},
     		i: function intro(local) {
@@ -8640,25 +8640,13 @@ var app = (function () {
     	let { cards = [] } = $$props;
     	let { slider = false } = $$props;
     	let { anchor } = $$props;
-    	let { ll } = $$props;
     	let { type = 'BgCards' } = $$props;
     	let { shapes = 0 } = $$props;
     	let { colors = ['red', 'yellow', 'blue'] } = $$props;
     	let HTMLanchor = anchor ? anchor : overtitle;
     	let baseClass = type.toLowerCase();
     	let navigation = { nextEl: `.${baseClass}__next` };
-
-    	const writable_props = [
-    		'title',
-    		'overtitle',
-    		'cards',
-    		'slider',
-    		'anchor',
-    		'll',
-    		'type',
-    		'shapes',
-    		'colors'
-    	];
+    	const writable_props = ['title', 'overtitle', 'cards', 'slider', 'anchor', 'type', 'shapes', 'colors'];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<BgCards> was created with unknown prop '${key}'`);
@@ -8669,11 +8657,10 @@ var app = (function () {
     		if ('overtitle' in $$props) $$invalidate(1, overtitle = $$props.overtitle);
     		if ('cards' in $$props) $$invalidate(2, cards = $$props.cards);
     		if ('slider' in $$props) $$invalidate(3, slider = $$props.slider);
-    		if ('anchor' in $$props) $$invalidate(10, anchor = $$props.anchor);
-    		if ('ll' in $$props) $$invalidate(4, ll = $$props.ll);
-    		if ('type' in $$props) $$invalidate(11, type = $$props.type);
-    		if ('shapes' in $$props) $$invalidate(5, shapes = $$props.shapes);
-    		if ('colors' in $$props) $$invalidate(6, colors = $$props.colors);
+    		if ('anchor' in $$props) $$invalidate(9, anchor = $$props.anchor);
+    		if ('type' in $$props) $$invalidate(10, type = $$props.type);
+    		if ('shapes' in $$props) $$invalidate(4, shapes = $$props.shapes);
+    		if ('colors' in $$props) $$invalidate(5, colors = $$props.colors);
     	};
 
     	$$self.$capture_state = () => ({
@@ -8682,7 +8669,6 @@ var app = (function () {
     		cards,
     		slider,
     		anchor,
-    		ll,
     		type,
     		shapes,
     		colors,
@@ -8702,14 +8688,13 @@ var app = (function () {
     		if ('overtitle' in $$props) $$invalidate(1, overtitle = $$props.overtitle);
     		if ('cards' in $$props) $$invalidate(2, cards = $$props.cards);
     		if ('slider' in $$props) $$invalidate(3, slider = $$props.slider);
-    		if ('anchor' in $$props) $$invalidate(10, anchor = $$props.anchor);
-    		if ('ll' in $$props) $$invalidate(4, ll = $$props.ll);
-    		if ('type' in $$props) $$invalidate(11, type = $$props.type);
-    		if ('shapes' in $$props) $$invalidate(5, shapes = $$props.shapes);
-    		if ('colors' in $$props) $$invalidate(6, colors = $$props.colors);
-    		if ('HTMLanchor' in $$props) $$invalidate(7, HTMLanchor = $$props.HTMLanchor);
-    		if ('baseClass' in $$props) $$invalidate(8, baseClass = $$props.baseClass);
-    		if ('navigation' in $$props) $$invalidate(9, navigation = $$props.navigation);
+    		if ('anchor' in $$props) $$invalidate(9, anchor = $$props.anchor);
+    		if ('type' in $$props) $$invalidate(10, type = $$props.type);
+    		if ('shapes' in $$props) $$invalidate(4, shapes = $$props.shapes);
+    		if ('colors' in $$props) $$invalidate(5, colors = $$props.colors);
+    		if ('HTMLanchor' in $$props) $$invalidate(6, HTMLanchor = $$props.HTMLanchor);
+    		if ('baseClass' in $$props) $$invalidate(7, baseClass = $$props.baseClass);
+    		if ('navigation' in $$props) $$invalidate(8, navigation = $$props.navigation);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -8721,7 +8706,6 @@ var app = (function () {
     		overtitle,
     		cards,
     		slider,
-    		ll,
     		shapes,
     		colors,
     		HTMLanchor,
@@ -8741,11 +8725,10 @@ var app = (function () {
     			overtitle: 1,
     			cards: 2,
     			slider: 3,
-    			anchor: 10,
-    			ll: 4,
-    			type: 11,
-    			shapes: 5,
-    			colors: 6
+    			anchor: 9,
+    			type: 10,
+    			shapes: 4,
+    			colors: 5
     		});
 
     		dispatch_dev("SvelteRegisterComponent", {
@@ -8758,12 +8741,8 @@ var app = (function () {
     		const { ctx } = this.$$;
     		const props = options.props || {};
 
-    		if (/*anchor*/ ctx[10] === undefined && !('anchor' in props)) {
+    		if (/*anchor*/ ctx[9] === undefined && !('anchor' in props)) {
     			console.warn("<BgCards> was created without expected prop 'anchor'");
-    		}
-
-    		if (/*ll*/ ctx[4] === undefined && !('ll' in props)) {
-    			console.warn("<BgCards> was created without expected prop 'll'");
     		}
     	}
 
@@ -8807,14 +8786,6 @@ var app = (function () {
     		throw new Error("<BgCards>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
-    	get ll() {
-    		throw new Error("<BgCards>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set ll(value) {
-    		throw new Error("<BgCards>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
     	get type() {
     		throw new Error("<BgCards>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
@@ -8843,10 +8814,10 @@ var app = (function () {
     /* src/components/BlockWithImage.svelte generated by Svelte v3.43.0 */
     const file$e = "src/components/BlockWithImage.svelte";
 
-    // (22:2) {#if pretitle}
+    // (21:2) {#if pretitle}
     function create_if_block_1$2(ctx) {
     	let div0;
-    	let t0_value = l(/*pretitle*/ ctx[3], /*ll*/ ctx[8]) + "";
+    	let t0_value = l(/*pretitle*/ ctx[3]) + "";
     	let t0;
     	let t1;
     	let div1;
@@ -8857,11 +8828,11 @@ var app = (function () {
     			t0 = text$1(t0_value);
     			t1 = space();
     			div1 = element("div");
-    			attr_dev(div0, "class", "" + (/*baseClass*/ ctx[10] + "__pretitle h2 underline"));
-    			add_location(div0, file$e, 22, 4, 632);
+    			attr_dev(div0, "class", "" + (/*baseClass*/ ctx[9] + "__pretitle h2 underline"));
+    			add_location(div0, file$e, 21, 4, 616);
     			attr_dev(div1, "class", "Spacer");
     			set_style(div1, "height", "50px");
-    			add_location(div1, file$e, 25, 4, 720);
+    			add_location(div1, file$e, 24, 4, 700);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div0, anchor);
@@ -8870,7 +8841,7 @@ var app = (function () {
     			insert_dev(target, div1, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*pretitle, ll*/ 264 && t0_value !== (t0_value = l(/*pretitle*/ ctx[3], /*ll*/ ctx[8]) + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*pretitle*/ 8 && t0_value !== (t0_value = l(/*pretitle*/ ctx[3]) + "")) set_data_dev(t0, t0_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div0);
@@ -8883,32 +8854,32 @@ var app = (function () {
     		block,
     		id: create_if_block_1$2.name,
     		type: "if",
-    		source: "(22:2) {#if pretitle}",
+    		source: "(21:2) {#if pretitle}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (30:6) {#if overtitle}
+    // (29:6) {#if overtitle}
     function create_if_block$7(ctx) {
     	let div;
-    	let t_value = l(/*overtitle*/ ctx[2], /*ll*/ ctx[8]) + "";
+    	let t_value = l(/*overtitle*/ ctx[2]) + "";
     	let t;
 
     	const block = {
     		c: function create() {
     			div = element("div");
     			t = text$1(t_value);
-    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[10] + "__overtitle"));
-    			add_location(div, file$e, 30, 8, 909);
+    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[9] + "__overtitle"));
+    			add_location(div, file$e, 29, 8, 889);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
     			append_dev(div, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*overtitle, ll*/ 260 && t_value !== (t_value = l(/*overtitle*/ ctx[2], /*ll*/ ctx[8]) + "")) set_data_dev(t, t_value);
+    			if (dirty & /*overtitle*/ 4 && t_value !== (t_value = l(/*overtitle*/ ctx[2]) + "")) set_data_dev(t, t_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
@@ -8919,7 +8890,7 @@ var app = (function () {
     		block,
     		id: create_if_block$7.name,
     		type: "if",
-    		source: "(30:6) {#if overtitle}",
+    		source: "(29:6) {#if overtitle}",
     		ctx
     	});
 
@@ -8933,11 +8904,11 @@ var app = (function () {
     	let div1;
     	let t1;
     	let h2;
-    	let t2_value = l(/*title*/ ctx[4], /*ll*/ ctx[8]) + "";
+    	let t2_value = l(/*title*/ ctx[4]) + "";
     	let t2;
     	let t3;
     	let div0;
-    	let t4_value = l(/*description*/ ctx[5], /*ll*/ ctx[8]) + "";
+    	let t4_value = l(/*description*/ ctx[5]) + "";
     	let t4;
     	let t5;
     	let div2;
@@ -8974,21 +8945,21 @@ var app = (function () {
     			div2 = element("div");
     			t6 = space();
     			create_component(blobs.$$.fragment);
-    			attr_dev(h2, "class", "" + (/*baseClass*/ ctx[10] + "__title dede-blue"));
-    			add_location(h2, file$e, 32, 6, 988);
-    			attr_dev(div0, "class", "" + (/*baseClass*/ ctx[10] + "__description"));
-    			add_location(div0, file$e, 33, 6, 1055);
-    			attr_dev(div1, "class", "" + (/*baseClass*/ ctx[10] + "__content center"));
-    			add_location(div1, file$e, 28, 4, 837);
-    			attr_dev(div2, "class", "" + (/*baseClass*/ ctx[10] + "__image"));
+    			attr_dev(h2, "class", "" + (/*baseClass*/ ctx[9] + "__title dede-blue"));
+    			add_location(h2, file$e, 31, 6, 964);
+    			attr_dev(div0, "class", "" + (/*baseClass*/ ctx[9] + "__description"));
+    			add_location(div0, file$e, 32, 6, 1027);
+    			attr_dev(div1, "class", "" + (/*baseClass*/ ctx[9] + "__content center"));
+    			add_location(div1, file$e, 27, 4, 817);
+    			attr_dev(div2, "class", "" + (/*baseClass*/ ctx[9] + "__image"));
     			set_style(div2, "background-image", "url('images/" + /*imagePath*/ ctx[1] + "')");
     			set_style(div2, "border-radius", generateBlob(30, 70));
-    			add_location(div2, file$e, 35, 4, 1135);
-    			attr_dev(div3, "class", div3_class_value = "" + (/*baseClass*/ ctx[10] + " " + /*baseClass*/ ctx[10] + "--" + /*imagePosition*/ ctx[0]));
-    			add_location(div3, file$e, 27, 2, 778);
+    			add_location(div2, file$e, 34, 4, 1103);
+    			attr_dev(div3, "class", div3_class_value = "" + (/*baseClass*/ ctx[9] + " " + /*baseClass*/ ctx[9] + "--" + /*imagePosition*/ ctx[0]));
+    			add_location(div3, file$e, 26, 2, 758);
     			attr_dev(div4, "class", "wrapper center");
-    			attr_dev(div4, "id", /*HTMLanchor*/ ctx[9]);
-    			add_location(div4, file$e, 20, 0, 564);
+    			attr_dev(div4, "id", /*HTMLanchor*/ ctx[8]);
+    			add_location(div4, file$e, 19, 0, 548);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -9039,14 +9010,14 @@ var app = (function () {
     				if_block1 = null;
     			}
 
-    			if ((!current || dirty & /*title, ll*/ 272) && t2_value !== (t2_value = l(/*title*/ ctx[4], /*ll*/ ctx[8]) + "")) set_data_dev(t2, t2_value);
-    			if ((!current || dirty & /*description, ll*/ 288) && t4_value !== (t4_value = l(/*description*/ ctx[5], /*ll*/ ctx[8]) + "")) set_data_dev(t4, t4_value);
+    			if ((!current || dirty & /*title*/ 16) && t2_value !== (t2_value = l(/*title*/ ctx[4]) + "")) set_data_dev(t2, t2_value);
+    			if ((!current || dirty & /*description*/ 32) && t4_value !== (t4_value = l(/*description*/ ctx[5]) + "")) set_data_dev(t4, t4_value);
 
     			if (!current || dirty & /*imagePath*/ 2) {
     				set_style(div2, "background-image", "url('images/" + /*imagePath*/ ctx[1] + "')");
     			}
 
-    			if (!current || dirty & /*imagePosition*/ 1 && div3_class_value !== (div3_class_value = "" + (/*baseClass*/ ctx[10] + " " + /*baseClass*/ ctx[10] + "--" + /*imagePosition*/ ctx[0]))) {
+    			if (!current || dirty & /*imagePosition*/ 1 && div3_class_value !== (div3_class_value = "" + (/*baseClass*/ ctx[9] + " " + /*baseClass*/ ctx[9] + "--" + /*imagePosition*/ ctx[0]))) {
     				attr_dev(div3, "class", div3_class_value);
     			}
 
@@ -9095,7 +9066,6 @@ var app = (function () {
     	let { shapes = 2 } = $$props;
     	let { colors = ['red', 'yellow', 'blue'] } = $$props;
     	let { anchor } = $$props;
-    	let { ll } = $$props;
     	let { type = 'BlockWithImage' } = $$props;
     	let HTMLanchor = anchor ? anchor : title;
     	let baseClass = type.toLowerCase();
@@ -9110,7 +9080,6 @@ var app = (function () {
     		'shapes',
     		'colors',
     		'anchor',
-    		'll',
     		'type'
     	];
 
@@ -9127,9 +9096,8 @@ var app = (function () {
     		if ('description' in $$props) $$invalidate(5, description = $$props.description);
     		if ('shapes' in $$props) $$invalidate(6, shapes = $$props.shapes);
     		if ('colors' in $$props) $$invalidate(7, colors = $$props.colors);
-    		if ('anchor' in $$props) $$invalidate(11, anchor = $$props.anchor);
-    		if ('ll' in $$props) $$invalidate(8, ll = $$props.ll);
-    		if ('type' in $$props) $$invalidate(12, type = $$props.type);
+    		if ('anchor' in $$props) $$invalidate(10, anchor = $$props.anchor);
+    		if ('type' in $$props) $$invalidate(11, type = $$props.type);
     	};
 
     	$$self.$capture_state = () => ({
@@ -9142,7 +9110,6 @@ var app = (function () {
     		shapes,
     		colors,
     		anchor,
-    		ll,
     		type,
     		HTMLanchor,
     		baseClass,
@@ -9161,11 +9128,10 @@ var app = (function () {
     		if ('description' in $$props) $$invalidate(5, description = $$props.description);
     		if ('shapes' in $$props) $$invalidate(6, shapes = $$props.shapes);
     		if ('colors' in $$props) $$invalidate(7, colors = $$props.colors);
-    		if ('anchor' in $$props) $$invalidate(11, anchor = $$props.anchor);
-    		if ('ll' in $$props) $$invalidate(8, ll = $$props.ll);
-    		if ('type' in $$props) $$invalidate(12, type = $$props.type);
-    		if ('HTMLanchor' in $$props) $$invalidate(9, HTMLanchor = $$props.HTMLanchor);
-    		if ('baseClass' in $$props) $$invalidate(10, baseClass = $$props.baseClass);
+    		if ('anchor' in $$props) $$invalidate(10, anchor = $$props.anchor);
+    		if ('type' in $$props) $$invalidate(11, type = $$props.type);
+    		if ('HTMLanchor' in $$props) $$invalidate(8, HTMLanchor = $$props.HTMLanchor);
+    		if ('baseClass' in $$props) $$invalidate(9, baseClass = $$props.baseClass);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -9181,7 +9147,6 @@ var app = (function () {
     		description,
     		shapes,
     		colors,
-    		ll,
     		HTMLanchor,
     		baseClass,
     		anchor,
@@ -9202,9 +9167,8 @@ var app = (function () {
     			description: 5,
     			shapes: 6,
     			colors: 7,
-    			anchor: 11,
-    			ll: 8,
-    			type: 12
+    			anchor: 10,
+    			type: 11
     		});
 
     		dispatch_dev("SvelteRegisterComponent", {
@@ -9221,12 +9185,8 @@ var app = (function () {
     			console.warn("<BlockWithImage> was created without expected prop 'pretitle'");
     		}
 
-    		if (/*anchor*/ ctx[11] === undefined && !('anchor' in props)) {
+    		if (/*anchor*/ ctx[10] === undefined && !('anchor' in props)) {
     			console.warn("<BlockWithImage> was created without expected prop 'anchor'");
-    		}
-
-    		if (/*ll*/ ctx[8] === undefined && !('ll' in props)) {
-    			console.warn("<BlockWithImage> was created without expected prop 'll'");
     		}
     	}
 
@@ -9302,14 +9262,6 @@ var app = (function () {
     		throw new Error("<BlockWithImage>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
-    	get ll() {
-    		throw new Error("<BlockWithImage>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set ll(value) {
-    		throw new Error("<BlockWithImage>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
     	get type() {
     		throw new Error("<BlockWithImage>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
@@ -9324,17 +9276,17 @@ var app = (function () {
 
     function get_each_context_1$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[12] = list[i];
+    	child_ctx[11] = list[i];
     	return child_ctx;
     }
 
     function get_each_context$3(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[12] = list[i];
+    	child_ctx[11] = list[i];
     	return child_ctx;
     }
 
-    // (51:4) {:else}
+    // (50:4) {:else}
     function create_else_block$2(ctx) {
     	let div;
     	let each_value_1 = /*bubbles*/ ctx[2];
@@ -9353,8 +9305,8 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[8] + "__bubbles"));
-    			add_location(div, file$d, 51, 6, 1791);
+    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[7] + "__bubbles"));
+    			add_location(div, file$d, 50, 6, 1763);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -9364,7 +9316,7 @@ var app = (function () {
     			}
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*baseClass, generateBlob, bubbles, l, ll*/ 276) {
+    			if (dirty & /*baseClass, generateBlob, bubbles, l*/ 132) {
     				each_value_1 = /*bubbles*/ ctx[2];
     				validate_each_argument(each_value_1);
     				let i;
@@ -9400,14 +9352,14 @@ var app = (function () {
     		block,
     		id: create_else_block$2.name,
     		type: "else",
-    		source: "(51:4) {:else}",
+    		source: "(50:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (27:4) {#if slider}
+    // (26:4) {#if slider}
     function create_if_block$6(ctx) {
     	let div0;
     	let swiper;
@@ -9420,7 +9372,7 @@ var app = (function () {
     			props: {
     				modules: [Navigation],
     				loop: true,
-    				navigation: /*navigation*/ ctx[9],
+    				navigation: /*navigation*/ ctx[8],
     				class: "" + (/*bubbles*/ ctx[2] + "__slides"),
     				spaceBetween: 50,
     				slidesPerView: 4,
@@ -9441,10 +9393,10 @@ var app = (function () {
     			t0 = space();
     			div1 = element("div");
     			t1 = text$1("Next ->");
-    			attr_dev(div0, "class", "" + (/*baseClass*/ ctx[8] + "__bubbles"));
-    			add_location(div0, file$d, 27, 6, 915);
-    			attr_dev(div1, "class", "" + (/*baseClass*/ ctx[8] + "__next"));
-    			add_location(div1, file$d, 49, 6, 1728);
+    			attr_dev(div0, "class", "" + (/*baseClass*/ ctx[7] + "__bubbles"));
+    			add_location(div0, file$d, 26, 6, 891);
+    			attr_dev(div1, "class", "" + (/*baseClass*/ ctx[7] + "__next"));
+    			add_location(div1, file$d, 48, 6, 1700);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div0, anchor);
@@ -9458,7 +9410,7 @@ var app = (function () {
     			const swiper_changes = {};
     			if (dirty & /*bubbles*/ 4) swiper_changes.class = "" + (/*bubbles*/ ctx[2] + "__slides");
 
-    			if (dirty & /*$$scope, bubbles, ll*/ 131092) {
+    			if (dirty & /*$$scope, bubbles*/ 65540) {
     				swiper_changes.$$scope = { dirty, ctx };
     			}
 
@@ -9485,19 +9437,19 @@ var app = (function () {
     		block,
     		id: create_if_block$6.name,
     		type: "if",
-    		source: "(27:4) {#if slider}",
+    		source: "(26:4) {#if slider}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (53:8) {#each bubbles as bubble}
+    // (52:8) {#each bubbles as bubble}
     function create_each_block_1$2(ctx) {
     	let div3;
     	let div2;
     	let div0;
-    	let t0_value = l(/*bubble*/ ctx[12].text, /*ll*/ ctx[4]) + "";
+    	let t0_value = l(/*bubble*/ ctx[11].text) + "";
     	let t0;
     	let t1;
     	let div1;
@@ -9512,17 +9464,17 @@ var app = (function () {
     			t1 = space();
     			div1 = element("div");
     			t2 = space();
-    			attr_dev(div0, "class", "" + (/*baseClass*/ ctx[8] + "__bubble__text"));
-    			set_style(div0, "color", /*bubble*/ ctx[12].color);
-    			add_location(div0, file$d, 55, 14, 1974);
-    			attr_dev(div1, "class", "" + (/*baseClass*/ ctx[8] + "__bubble__bg"));
+    			attr_dev(div0, "class", "" + (/*baseClass*/ ctx[7] + "__bubble__text"));
+    			set_style(div0, "color", /*bubble*/ ctx[11].color);
+    			add_location(div0, file$d, 54, 14, 1946);
+    			attr_dev(div1, "class", "" + (/*baseClass*/ ctx[7] + "__bubble__bg"));
     			set_style(div1, "border-radius", generateBlob());
-    			set_style(div1, "background-color", /*bubble*/ ctx[12].color);
-    			add_location(div1, file$d, 56, 14, 2084);
-    			attr_dev(div2, "class", "" + (/*baseClass*/ ctx[8] + "__bubble"));
-    			add_location(div2, file$d, 54, 12, 1926);
-    			attr_dev(div3, "class", "" + (/*baseClass*/ ctx[8] + "__bubble-container"));
-    			add_location(div3, file$d, 53, 10, 1870);
+    			set_style(div1, "background-color", /*bubble*/ ctx[11].color);
+    			add_location(div1, file$d, 55, 14, 2052);
+    			attr_dev(div2, "class", "" + (/*baseClass*/ ctx[7] + "__bubble"));
+    			add_location(div2, file$d, 53, 12, 1898);
+    			attr_dev(div3, "class", "" + (/*baseClass*/ ctx[7] + "__bubble-container"));
+    			add_location(div3, file$d, 52, 10, 1842);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div3, anchor);
@@ -9534,14 +9486,14 @@ var app = (function () {
     			append_dev(div3, t2);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*bubbles, ll*/ 20 && t0_value !== (t0_value = l(/*bubble*/ ctx[12].text, /*ll*/ ctx[4]) + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*bubbles*/ 4 && t0_value !== (t0_value = l(/*bubble*/ ctx[11].text) + "")) set_data_dev(t0, t0_value);
 
     			if (dirty & /*bubbles*/ 4) {
-    				set_style(div0, "color", /*bubble*/ ctx[12].color);
+    				set_style(div0, "color", /*bubble*/ ctx[11].color);
     			}
 
     			if (dirty & /*bubbles*/ 4) {
-    				set_style(div1, "background-color", /*bubble*/ ctx[12].color);
+    				set_style(div1, "background-color", /*bubble*/ ctx[11].color);
     			}
     		},
     		d: function destroy(detaching) {
@@ -9553,18 +9505,18 @@ var app = (function () {
     		block,
     		id: create_each_block_1$2.name,
     		type: "each",
-    		source: "(53:8) {#each bubbles as bubble}",
+    		source: "(52:8) {#each bubbles as bubble}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (41:12) <SwiperSlide>
+    // (40:12) <SwiperSlide>
     function create_default_slot_1$2(ctx) {
     	let div2;
     	let div0;
-    	let t0_value = l(/*bubble*/ ctx[12].text, /*ll*/ ctx[4]) + "";
+    	let t0_value = l(/*bubble*/ ctx[11].text) + "";
     	let t0;
     	let t1;
     	let div1;
@@ -9578,15 +9530,15 @@ var app = (function () {
     			t1 = space();
     			div1 = element("div");
     			t2 = space();
-    			attr_dev(div0, "class", "" + (/*baseClass*/ ctx[8] + "__bubble__text"));
-    			set_style(div0, "color", /*bubble*/ ctx[12].color);
-    			add_location(div0, file$d, 42, 16, 1395);
-    			attr_dev(div1, "class", "" + (/*baseClass*/ ctx[8] + "__bubble__bg"));
+    			attr_dev(div0, "class", "" + (/*baseClass*/ ctx[7] + "__bubble__text"));
+    			set_style(div0, "color", /*bubble*/ ctx[11].color);
+    			add_location(div0, file$d, 41, 16, 1371);
+    			attr_dev(div1, "class", "" + (/*baseClass*/ ctx[7] + "__bubble__bg"));
     			set_style(div1, "border-radius", generateBlob());
-    			set_style(div1, "background-color", /*bubble*/ ctx[12].color);
-    			add_location(div1, file$d, 43, 16, 1507);
-    			attr_dev(div2, "class", "" + (/*baseClass*/ ctx[8] + "__bubble"));
-    			add_location(div2, file$d, 41, 14, 1345);
+    			set_style(div1, "background-color", /*bubble*/ ctx[11].color);
+    			add_location(div1, file$d, 42, 16, 1479);
+    			attr_dev(div2, "class", "" + (/*baseClass*/ ctx[7] + "__bubble"));
+    			add_location(div2, file$d, 40, 14, 1321);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
@@ -9597,14 +9549,14 @@ var app = (function () {
     			insert_dev(target, t2, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*bubbles, ll*/ 20 && t0_value !== (t0_value = l(/*bubble*/ ctx[12].text, /*ll*/ ctx[4]) + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*bubbles*/ 4 && t0_value !== (t0_value = l(/*bubble*/ ctx[11].text) + "")) set_data_dev(t0, t0_value);
 
     			if (dirty & /*bubbles*/ 4) {
-    				set_style(div0, "color", /*bubble*/ ctx[12].color);
+    				set_style(div0, "color", /*bubble*/ ctx[11].color);
     			}
 
     			if (dirty & /*bubbles*/ 4) {
-    				set_style(div1, "background-color", /*bubble*/ ctx[12].color);
+    				set_style(div1, "background-color", /*bubble*/ ctx[11].color);
     			}
     		},
     		d: function destroy(detaching) {
@@ -9617,14 +9569,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$2.name,
     		type: "slot",
-    		source: "(41:12) <SwiperSlide>",
+    		source: "(40:12) <SwiperSlide>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (40:10) {#each bubbles as bubble}
+    // (39:10) {#each bubbles as bubble}
     function create_each_block$3(ctx) {
     	let swiperslide;
     	let current;
@@ -9648,7 +9600,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const swiperslide_changes = {};
 
-    			if (dirty & /*$$scope, bubbles, ll*/ 131092) {
+    			if (dirty & /*$$scope, bubbles*/ 65540) {
     				swiperslide_changes.$$scope = { dirty, ctx };
     			}
 
@@ -9672,14 +9624,14 @@ var app = (function () {
     		block,
     		id: create_each_block$3.name,
     		type: "each",
-    		source: "(40:10) {#each bubbles as bubble}",
+    		source: "(39:10) {#each bubbles as bubble}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (29:8) <Swiper           modules={[Navigation]}           loop="{true}"           navigation={navigation}           class="{bubbles}__slides"           spaceBetween={50}           slidesPerView={4}           breakpoints={swiperBreakpoints}           on:slideChange={() => {}}           on:swiper={(e) => {}}         >
+    // (28:8) <Swiper           modules={[Navigation]}           loop="{true}"           navigation={navigation}           class="{bubbles}__slides"           spaceBetween={50}           slidesPerView={4}           breakpoints={swiperBreakpoints}           on:slideChange={() => {}}           on:swiper={(e) => {}}         >
     function create_default_slot$3(ctx) {
     	let each_1_anchor;
     	let current;
@@ -9712,7 +9664,7 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*baseClass, generateBlob, bubbles, l, ll*/ 276) {
+    			if (dirty & /*baseClass, generateBlob, bubbles, l*/ 132) {
     				each_value = /*bubbles*/ ctx[2];
     				validate_each_argument(each_value);
     				let i;
@@ -9768,7 +9720,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$3.name,
     		type: "slot",
-    		source: "(29:8) <Swiper           modules={[Navigation]}           loop=\\\"{true}\\\"           navigation={navigation}           class=\\\"{bubbles}__slides\\\"           spaceBetween={50}           slidesPerView={4}           breakpoints={swiperBreakpoints}           on:slideChange={() => {}}           on:swiper={(e) => {}}         >",
+    		source: "(28:8) <Swiper           modules={[Navigation]}           loop=\\\"{true}\\\"           navigation={navigation}           class=\\\"{bubbles}__slides\\\"           spaceBetween={50}           slidesPerView={4}           breakpoints={swiperBreakpoints}           on:slideChange={() => {}}           on:swiper={(e) => {}}         >",
     		ctx
     	});
 
@@ -9779,11 +9731,11 @@ var app = (function () {
     	let div2;
     	let div1;
     	let div0;
-    	let t0_value = l(/*overtitle*/ ctx[0], /*ll*/ ctx[4]) + "";
+    	let t0_value = l(/*overtitle*/ ctx[0]) + "";
     	let t0;
     	let t1;
     	let h3;
-    	let raw_value = l(/*title*/ ctx[1], /*ll*/ ctx[4]) + "";
+    	let raw_value = l(/*title*/ ctx[1]) + "";
     	let t2;
     	let current_block_type_index;
     	let if_block;
@@ -9803,8 +9755,8 @@ var app = (function () {
 
     	blobs = new Blobs({
     			props: {
-    				shapes: /*shapes*/ ctx[5],
-    				colors: /*colors*/ ctx[6]
+    				shapes: /*shapes*/ ctx[4],
+    				colors: /*colors*/ ctx[5]
     			},
     			$$inline: true
     		});
@@ -9821,15 +9773,15 @@ var app = (function () {
     			if_block.c();
     			t3 = space();
     			create_component(blobs.$$.fragment);
-    			attr_dev(div0, "class", "" + (/*baseClass*/ ctx[8] + "__overtitle"));
-    			add_location(div0, file$d, 24, 4, 770);
-    			attr_dev(h3, "class", "" + (/*baseClass*/ ctx[8] + "__title"));
-    			add_location(h3, file$d, 25, 4, 835);
-    			attr_dev(div1, "class", /*baseClass*/ ctx[8]);
-    			add_location(div1, file$d, 23, 2, 740);
+    			attr_dev(div0, "class", "" + (/*baseClass*/ ctx[7] + "__overtitle"));
+    			add_location(div0, file$d, 23, 4, 754);
+    			attr_dev(h3, "class", "" + (/*baseClass*/ ctx[7] + "__title"));
+    			add_location(h3, file$d, 24, 4, 815);
+    			attr_dev(div1, "class", /*baseClass*/ ctx[7]);
+    			add_location(div1, file$d, 22, 2, 724);
     			attr_dev(div2, "class", "wrapper");
-    			attr_dev(div2, "id", /*HTMLanchor*/ ctx[7]);
-    			add_location(div2, file$d, 22, 0, 698);
+    			attr_dev(div2, "id", /*HTMLanchor*/ ctx[6]);
+    			add_location(div2, file$d, 21, 0, 682);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -9849,8 +9801,8 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
-    			if ((!current || dirty & /*overtitle, ll*/ 17) && t0_value !== (t0_value = l(/*overtitle*/ ctx[0], /*ll*/ ctx[4]) + "")) set_data_dev(t0, t0_value);
-    			if ((!current || dirty & /*title, ll*/ 18) && raw_value !== (raw_value = l(/*title*/ ctx[1], /*ll*/ ctx[4]) + "")) h3.innerHTML = raw_value;			let previous_block_index = current_block_type_index;
+    			if ((!current || dirty & /*overtitle*/ 1) && t0_value !== (t0_value = l(/*overtitle*/ ctx[0]) + "")) set_data_dev(t0, t0_value);
+    			if ((!current || dirty & /*title*/ 2) && raw_value !== (raw_value = l(/*title*/ ctx[1]) + "")) h3.innerHTML = raw_value;			let previous_block_index = current_block_type_index;
     			current_block_type_index = select_block_type(ctx);
 
     			if (current_block_type_index === previous_block_index) {
@@ -9877,8 +9829,8 @@ var app = (function () {
     			}
 
     			const blobs_changes = {};
-    			if (dirty & /*shapes*/ 32) blobs_changes.shapes = /*shapes*/ ctx[5];
-    			if (dirty & /*colors*/ 64) blobs_changes.colors = /*colors*/ ctx[6];
+    			if (dirty & /*shapes*/ 16) blobs_changes.shapes = /*shapes*/ ctx[4];
+    			if (dirty & /*colors*/ 32) blobs_changes.colors = /*colors*/ ctx[5];
     			blobs.$set(blobs_changes);
     		},
     		i: function intro(local) {
@@ -9926,7 +9878,6 @@ var app = (function () {
     	let { bubbles = ['first', 'second', 'third'] } = $$props;
     	let { slider = false } = $$props;
     	let { anchor } = $$props;
-    	let { ll } = $$props;
     	let { type = 'Bubbles' } = $$props;
     	let { shapes = 0 } = $$props;
     	let { colors = ['red', 'yellow', 'blue'] } = $$props;
@@ -9940,7 +9891,6 @@ var app = (function () {
     		'bubbles',
     		'slider',
     		'anchor',
-    		'll',
     		'type',
     		'shapes',
     		'colors'
@@ -9955,11 +9905,10 @@ var app = (function () {
     		if ('title' in $$props) $$invalidate(1, title = $$props.title);
     		if ('bubbles' in $$props) $$invalidate(2, bubbles = $$props.bubbles);
     		if ('slider' in $$props) $$invalidate(3, slider = $$props.slider);
-    		if ('anchor' in $$props) $$invalidate(10, anchor = $$props.anchor);
-    		if ('ll' in $$props) $$invalidate(4, ll = $$props.ll);
-    		if ('type' in $$props) $$invalidate(11, type = $$props.type);
-    		if ('shapes' in $$props) $$invalidate(5, shapes = $$props.shapes);
-    		if ('colors' in $$props) $$invalidate(6, colors = $$props.colors);
+    		if ('anchor' in $$props) $$invalidate(9, anchor = $$props.anchor);
+    		if ('type' in $$props) $$invalidate(10, type = $$props.type);
+    		if ('shapes' in $$props) $$invalidate(4, shapes = $$props.shapes);
+    		if ('colors' in $$props) $$invalidate(5, colors = $$props.colors);
     	};
 
     	$$self.$capture_state = () => ({
@@ -9968,7 +9917,6 @@ var app = (function () {
     		bubbles,
     		slider,
     		anchor,
-    		ll,
     		type,
     		shapes,
     		colors,
@@ -9989,14 +9937,13 @@ var app = (function () {
     		if ('title' in $$props) $$invalidate(1, title = $$props.title);
     		if ('bubbles' in $$props) $$invalidate(2, bubbles = $$props.bubbles);
     		if ('slider' in $$props) $$invalidate(3, slider = $$props.slider);
-    		if ('anchor' in $$props) $$invalidate(10, anchor = $$props.anchor);
-    		if ('ll' in $$props) $$invalidate(4, ll = $$props.ll);
-    		if ('type' in $$props) $$invalidate(11, type = $$props.type);
-    		if ('shapes' in $$props) $$invalidate(5, shapes = $$props.shapes);
-    		if ('colors' in $$props) $$invalidate(6, colors = $$props.colors);
-    		if ('HTMLanchor' in $$props) $$invalidate(7, HTMLanchor = $$props.HTMLanchor);
-    		if ('baseClass' in $$props) $$invalidate(8, baseClass = $$props.baseClass);
-    		if ('navigation' in $$props) $$invalidate(9, navigation = $$props.navigation);
+    		if ('anchor' in $$props) $$invalidate(9, anchor = $$props.anchor);
+    		if ('type' in $$props) $$invalidate(10, type = $$props.type);
+    		if ('shapes' in $$props) $$invalidate(4, shapes = $$props.shapes);
+    		if ('colors' in $$props) $$invalidate(5, colors = $$props.colors);
+    		if ('HTMLanchor' in $$props) $$invalidate(6, HTMLanchor = $$props.HTMLanchor);
+    		if ('baseClass' in $$props) $$invalidate(7, baseClass = $$props.baseClass);
+    		if ('navigation' in $$props) $$invalidate(8, navigation = $$props.navigation);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -10008,7 +9955,6 @@ var app = (function () {
     		title,
     		bubbles,
     		slider,
-    		ll,
     		shapes,
     		colors,
     		HTMLanchor,
@@ -10028,11 +9974,10 @@ var app = (function () {
     			title: 1,
     			bubbles: 2,
     			slider: 3,
-    			anchor: 10,
-    			ll: 4,
-    			type: 11,
-    			shapes: 5,
-    			colors: 6
+    			anchor: 9,
+    			type: 10,
+    			shapes: 4,
+    			colors: 5
     		});
 
     		dispatch_dev("SvelteRegisterComponent", {
@@ -10045,12 +9990,8 @@ var app = (function () {
     		const { ctx } = this.$$;
     		const props = options.props || {};
 
-    		if (/*anchor*/ ctx[10] === undefined && !('anchor' in props)) {
+    		if (/*anchor*/ ctx[9] === undefined && !('anchor' in props)) {
     			console.warn("<Bubbles> was created without expected prop 'anchor'");
-    		}
-
-    		if (/*ll*/ ctx[4] === undefined && !('ll' in props)) {
-    			console.warn("<Bubbles> was created without expected prop 'll'");
     		}
     	}
 
@@ -10094,14 +10035,6 @@ var app = (function () {
     		throw new Error("<Bubbles>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
-    	get ll() {
-    		throw new Error("<Bubbles>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set ll(value) {
-    		throw new Error("<Bubbles>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
     	get type() {
     		throw new Error("<Bubbles>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
@@ -10132,17 +10065,17 @@ var app = (function () {
 
     function get_each_context_1$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[12] = list[i];
+    	child_ctx[11] = list[i];
     	return child_ctx;
     }
 
     function get_each_context$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[12] = list[i];
+    	child_ctx[11] = list[i];
     	return child_ctx;
     }
 
-    // (48:4) {:else}
+    // (47:4) {:else}
     function create_else_block$1(ctx) {
     	let div;
     	let each_value_1 = /*cards*/ ctx[2];
@@ -10161,8 +10094,8 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[8] + "__container"));
-    			add_location(div, file$c, 48, 6, 1492);
+    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[7] + "__container"));
+    			add_location(div, file$c, 47, 6, 1460);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -10172,7 +10105,7 @@ var app = (function () {
     			}
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*baseClass, l, cards, ll*/ 276) {
+    			if (dirty & /*baseClass, l, cards*/ 132) {
     				each_value_1 = /*cards*/ ctx[2];
     				validate_each_argument(each_value_1);
     				let i;
@@ -10208,14 +10141,14 @@ var app = (function () {
     		block,
     		id: create_else_block$1.name,
     		type: "else",
-    		source: "(48:4) {:else}",
+    		source: "(47:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (26:4) {#if slider}
+    // (25:4) {#if slider}
     function create_if_block$5(ctx) {
     	let swiper;
     	let t0;
@@ -10227,8 +10160,8 @@ var app = (function () {
     			props: {
     				modules: [Navigation],
     				loop: true,
-    				navigation: /*navigation*/ ctx[9],
-    				class: "" + (/*baseClass*/ ctx[8] + "__container"),
+    				navigation: /*navigation*/ ctx[8],
+    				class: "" + (/*baseClass*/ ctx[7] + "__container"),
     				spaceBetween: 50,
     				slidesPerView: 3,
     				breakpoints: swiperBreakpoints,
@@ -10247,8 +10180,8 @@ var app = (function () {
     			t0 = space();
     			div = element("div");
     			t1 = text$1("Next ->");
-    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[8] + "__next"));
-    			add_location(div, file$c, 46, 6, 1429);
+    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[7] + "__next"));
+    			add_location(div, file$c, 45, 6, 1397);
     		},
     		m: function mount(target, anchor) {
     			mount_component(swiper, target, anchor);
@@ -10260,7 +10193,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const swiper_changes = {};
 
-    			if (dirty & /*$$scope, cards, ll*/ 131092) {
+    			if (dirty & /*$$scope, cards*/ 65540) {
     				swiper_changes.$$scope = { dirty, ctx };
     			}
 
@@ -10286,20 +10219,20 @@ var app = (function () {
     		block,
     		id: create_if_block$5.name,
     		type: "if",
-    		source: "(26:4) {#if slider}",
+    		source: "(25:4) {#if slider}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (50:8) {#each cards as card}
+    // (49:8) {#each cards as card}
     function create_each_block_1$1(ctx) {
     	let div;
     	let h4;
-    	let raw_value = l(/*card*/ ctx[12].title, /*ll*/ ctx[4]) + "";
+    	let raw_value = l(/*card*/ ctx[11].title) + "";
     	let t0;
-    	let t1_value = l(/*card*/ ctx[12].description, /*ll*/ ctx[4]) + "";
+    	let t1_value = l(/*card*/ ctx[11].description) + "";
     	let t1;
     	let t2;
 
@@ -10310,10 +10243,10 @@ var app = (function () {
     			t0 = space();
     			t1 = text$1(t1_value);
     			t2 = space();
-    			attr_dev(h4, "class", "" + (/*baseClass*/ ctx[8] + "__card__title"));
-    			add_location(h4, file$c, 51, 12, 1613);
-    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[8] + "__card"));
-    			add_location(div, file$c, 50, 10, 1569);
+    			attr_dev(h4, "class", "" + (/*baseClass*/ ctx[7] + "__card__title"));
+    			add_location(h4, file$c, 50, 12, 1581);
+    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[7] + "__card"));
+    			add_location(div, file$c, 49, 10, 1537);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -10324,7 +10257,7 @@ var app = (function () {
     			append_dev(div, t2);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*cards, ll*/ 20 && raw_value !== (raw_value = l(/*card*/ ctx[12].title, /*ll*/ ctx[4]) + "")) h4.innerHTML = raw_value;			if (dirty & /*cards, ll*/ 20 && t1_value !== (t1_value = l(/*card*/ ctx[12].description, /*ll*/ ctx[4]) + "")) set_data_dev(t1, t1_value);
+    			if (dirty & /*cards*/ 4 && raw_value !== (raw_value = l(/*card*/ ctx[11].title) + "")) h4.innerHTML = raw_value;			if (dirty & /*cards*/ 4 && t1_value !== (t1_value = l(/*card*/ ctx[11].description) + "")) set_data_dev(t1, t1_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
@@ -10335,20 +10268,20 @@ var app = (function () {
     		block,
     		id: create_each_block_1$1.name,
     		type: "each",
-    		source: "(50:8) {#each cards as card}",
+    		source: "(49:8) {#each cards as card}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (39:10) <SwiperSlide>
+    // (38:10) <SwiperSlide>
     function create_default_slot_1$1(ctx) {
     	let div;
     	let h4;
-    	let raw_value = l(/*card*/ ctx[12].title, /*ll*/ ctx[4]) + "";
+    	let raw_value = l(/*card*/ ctx[11].title) + "";
     	let t0;
-    	let t1_value = l(/*card*/ ctx[12].description, /*ll*/ ctx[4]) + "";
+    	let t1_value = l(/*card*/ ctx[11].description) + "";
     	let t1;
     	let t2;
 
@@ -10359,10 +10292,10 @@ var app = (function () {
     			t0 = space();
     			t1 = text$1(t1_value);
     			t2 = space();
-    			attr_dev(h4, "class", "" + (/*baseClass*/ ctx[8] + "__card__title"));
-    			add_location(h4, file$c, 40, 14, 1239);
-    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[8] + "__card"));
-    			add_location(div, file$c, 39, 12, 1193);
+    			attr_dev(h4, "class", "" + (/*baseClass*/ ctx[7] + "__card__title"));
+    			add_location(h4, file$c, 39, 14, 1215);
+    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[7] + "__card"));
+    			add_location(div, file$c, 38, 12, 1169);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -10373,7 +10306,7 @@ var app = (function () {
     			insert_dev(target, t2, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*cards, ll*/ 20 && raw_value !== (raw_value = l(/*card*/ ctx[12].title, /*ll*/ ctx[4]) + "")) h4.innerHTML = raw_value;			if (dirty & /*cards, ll*/ 20 && t1_value !== (t1_value = l(/*card*/ ctx[12].description, /*ll*/ ctx[4]) + "")) set_data_dev(t1, t1_value);
+    			if (dirty & /*cards*/ 4 && raw_value !== (raw_value = l(/*card*/ ctx[11].title) + "")) h4.innerHTML = raw_value;			if (dirty & /*cards*/ 4 && t1_value !== (t1_value = l(/*card*/ ctx[11].description) + "")) set_data_dev(t1, t1_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
@@ -10385,14 +10318,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$1.name,
     		type: "slot",
-    		source: "(39:10) <SwiperSlide>",
+    		source: "(38:10) <SwiperSlide>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (38:8) {#each cards as card}
+    // (37:8) {#each cards as card}
     function create_each_block$2(ctx) {
     	let swiperslide;
     	let current;
@@ -10416,7 +10349,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const swiperslide_changes = {};
 
-    			if (dirty & /*$$scope, cards, ll*/ 131092) {
+    			if (dirty & /*$$scope, cards*/ 65540) {
     				swiperslide_changes.$$scope = { dirty, ctx };
     			}
 
@@ -10440,14 +10373,14 @@ var app = (function () {
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(38:8) {#each cards as card}",
+    		source: "(37:8) {#each cards as card}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (27:6) <Swiper         modules={[Navigation]}         loop="{true}"         navigation={navigation}         class="{baseClass}__container"         spaceBetween={50}         slidesPerView={3}         breakpoints={swiperBreakpoints}         on:slideChange={() => {}}         on:swiper={(e) => {}}       >
+    // (26:6) <Swiper         modules={[Navigation]}         loop="{true}"         navigation={navigation}         class="{baseClass}__container"         spaceBetween={50}         slidesPerView={3}         breakpoints={swiperBreakpoints}         on:slideChange={() => {}}         on:swiper={(e) => {}}       >
     function create_default_slot$2(ctx) {
     	let each_1_anchor;
     	let current;
@@ -10480,7 +10413,7 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*baseClass, l, cards, ll*/ 276) {
+    			if (dirty & /*baseClass, l, cards*/ 132) {
     				each_value = /*cards*/ ctx[2];
     				validate_each_argument(each_value);
     				let i;
@@ -10536,7 +10469,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$2.name,
     		type: "slot",
-    		source: "(27:6) <Swiper         modules={[Navigation]}         loop=\\\"{true}\\\"         navigation={navigation}         class=\\\"{baseClass}__container\\\"         spaceBetween={50}         slidesPerView={3}         breakpoints={swiperBreakpoints}         on:slideChange={() => {}}         on:swiper={(e) => {}}       >",
+    		source: "(26:6) <Swiper         modules={[Navigation]}         loop=\\\"{true}\\\"         navigation={navigation}         class=\\\"{baseClass}__container\\\"         spaceBetween={50}         slidesPerView={3}         breakpoints={swiperBreakpoints}         on:slideChange={() => {}}         on:swiper={(e) => {}}       >",
     		ctx
     	});
 
@@ -10547,11 +10480,11 @@ var app = (function () {
     	let div2;
     	let div1;
     	let div0;
-    	let t0_value = l(/*overtitle*/ ctx[1], /*ll*/ ctx[4]) + "";
+    	let t0_value = l(/*overtitle*/ ctx[1]) + "";
     	let t0;
     	let t1;
     	let h3;
-    	let t2_value = l(/*title*/ ctx[0], /*ll*/ ctx[4]) + "";
+    	let t2_value = l(/*title*/ ctx[0]) + "";
     	let t2;
     	let t3;
     	let current_block_type_index;
@@ -10572,8 +10505,8 @@ var app = (function () {
 
     	blobs = new Blobs({
     			props: {
-    				shapes: /*shapes*/ ctx[5],
-    				colors: /*colors*/ ctx[6]
+    				shapes: /*shapes*/ ctx[4],
+    				colors: /*colors*/ ctx[5]
     			},
     			$$inline: true
     		});
@@ -10591,15 +10524,15 @@ var app = (function () {
     			if_block.c();
     			t4 = space();
     			create_component(blobs.$$.fragment);
-    			attr_dev(div0, "class", "" + (/*baseClass*/ ctx[8] + "__overtitle"));
-    			add_location(div0, file$c, 23, 4, 692);
-    			attr_dev(h3, "class", "" + (/*baseClass*/ ctx[8] + "__title"));
-    			add_location(h3, file$c, 24, 4, 757);
-    			attr_dev(div1, "class", /*baseClass*/ ctx[8]);
-    			add_location(div1, file$c, 22, 2, 662);
+    			attr_dev(div0, "class", "" + (/*baseClass*/ ctx[7] + "__overtitle"));
+    			add_location(div0, file$c, 22, 4, 676);
+    			attr_dev(h3, "class", "" + (/*baseClass*/ ctx[7] + "__title"));
+    			add_location(h3, file$c, 23, 4, 737);
+    			attr_dev(div1, "class", /*baseClass*/ ctx[7]);
+    			add_location(div1, file$c, 21, 2, 646);
     			attr_dev(div2, "class", "wrapper");
-    			attr_dev(div2, "id", /*HTMLanchor*/ ctx[7]);
-    			add_location(div2, file$c, 21, 0, 620);
+    			attr_dev(div2, "id", /*HTMLanchor*/ ctx[6]);
+    			add_location(div2, file$c, 20, 0, 604);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -10619,8 +10552,8 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
-    			if ((!current || dirty & /*overtitle, ll*/ 18) && t0_value !== (t0_value = l(/*overtitle*/ ctx[1], /*ll*/ ctx[4]) + "")) set_data_dev(t0, t0_value);
-    			if ((!current || dirty & /*title, ll*/ 17) && t2_value !== (t2_value = l(/*title*/ ctx[0], /*ll*/ ctx[4]) + "")) set_data_dev(t2, t2_value);
+    			if ((!current || dirty & /*overtitle*/ 2) && t0_value !== (t0_value = l(/*overtitle*/ ctx[1]) + "")) set_data_dev(t0, t0_value);
+    			if ((!current || dirty & /*title*/ 1) && t2_value !== (t2_value = l(/*title*/ ctx[0]) + "")) set_data_dev(t2, t2_value);
     			let previous_block_index = current_block_type_index;
     			current_block_type_index = select_block_type(ctx);
 
@@ -10648,8 +10581,8 @@ var app = (function () {
     			}
 
     			const blobs_changes = {};
-    			if (dirty & /*shapes*/ 32) blobs_changes.shapes = /*shapes*/ ctx[5];
-    			if (dirty & /*colors*/ 64) blobs_changes.colors = /*colors*/ ctx[6];
+    			if (dirty & /*shapes*/ 16) blobs_changes.shapes = /*shapes*/ ctx[4];
+    			if (dirty & /*colors*/ 32) blobs_changes.colors = /*colors*/ ctx[5];
     			blobs.$set(blobs_changes);
     		},
     		i: function intro(local) {
@@ -10697,25 +10630,13 @@ var app = (function () {
     	let { cards = [] } = $$props;
     	let { slider = false } = $$props;
     	let { anchor } = $$props;
-    	let { ll } = $$props;
     	let { type = 'Cards' } = $$props;
     	let { shapes = 0 } = $$props;
     	let { colors = ['red', 'yellow', 'blue'] } = $$props;
     	let HTMLanchor = anchor ? anchor : overtitle;
     	let baseClass = type.toLowerCase();
     	let navigation = { nextEl: `.${baseClass}__next` };
-
-    	const writable_props = [
-    		'title',
-    		'overtitle',
-    		'cards',
-    		'slider',
-    		'anchor',
-    		'll',
-    		'type',
-    		'shapes',
-    		'colors'
-    	];
+    	const writable_props = ['title', 'overtitle', 'cards', 'slider', 'anchor', 'type', 'shapes', 'colors'];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Cards> was created with unknown prop '${key}'`);
@@ -10726,11 +10647,10 @@ var app = (function () {
     		if ('overtitle' in $$props) $$invalidate(1, overtitle = $$props.overtitle);
     		if ('cards' in $$props) $$invalidate(2, cards = $$props.cards);
     		if ('slider' in $$props) $$invalidate(3, slider = $$props.slider);
-    		if ('anchor' in $$props) $$invalidate(10, anchor = $$props.anchor);
-    		if ('ll' in $$props) $$invalidate(4, ll = $$props.ll);
-    		if ('type' in $$props) $$invalidate(11, type = $$props.type);
-    		if ('shapes' in $$props) $$invalidate(5, shapes = $$props.shapes);
-    		if ('colors' in $$props) $$invalidate(6, colors = $$props.colors);
+    		if ('anchor' in $$props) $$invalidate(9, anchor = $$props.anchor);
+    		if ('type' in $$props) $$invalidate(10, type = $$props.type);
+    		if ('shapes' in $$props) $$invalidate(4, shapes = $$props.shapes);
+    		if ('colors' in $$props) $$invalidate(5, colors = $$props.colors);
     	};
 
     	$$self.$capture_state = () => ({
@@ -10739,7 +10659,6 @@ var app = (function () {
     		cards,
     		slider,
     		anchor,
-    		ll,
     		type,
     		shapes,
     		colors,
@@ -10759,14 +10678,13 @@ var app = (function () {
     		if ('overtitle' in $$props) $$invalidate(1, overtitle = $$props.overtitle);
     		if ('cards' in $$props) $$invalidate(2, cards = $$props.cards);
     		if ('slider' in $$props) $$invalidate(3, slider = $$props.slider);
-    		if ('anchor' in $$props) $$invalidate(10, anchor = $$props.anchor);
-    		if ('ll' in $$props) $$invalidate(4, ll = $$props.ll);
-    		if ('type' in $$props) $$invalidate(11, type = $$props.type);
-    		if ('shapes' in $$props) $$invalidate(5, shapes = $$props.shapes);
-    		if ('colors' in $$props) $$invalidate(6, colors = $$props.colors);
-    		if ('HTMLanchor' in $$props) $$invalidate(7, HTMLanchor = $$props.HTMLanchor);
-    		if ('baseClass' in $$props) $$invalidate(8, baseClass = $$props.baseClass);
-    		if ('navigation' in $$props) $$invalidate(9, navigation = $$props.navigation);
+    		if ('anchor' in $$props) $$invalidate(9, anchor = $$props.anchor);
+    		if ('type' in $$props) $$invalidate(10, type = $$props.type);
+    		if ('shapes' in $$props) $$invalidate(4, shapes = $$props.shapes);
+    		if ('colors' in $$props) $$invalidate(5, colors = $$props.colors);
+    		if ('HTMLanchor' in $$props) $$invalidate(6, HTMLanchor = $$props.HTMLanchor);
+    		if ('baseClass' in $$props) $$invalidate(7, baseClass = $$props.baseClass);
+    		if ('navigation' in $$props) $$invalidate(8, navigation = $$props.navigation);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -10778,7 +10696,6 @@ var app = (function () {
     		overtitle,
     		cards,
     		slider,
-    		ll,
     		shapes,
     		colors,
     		HTMLanchor,
@@ -10798,11 +10715,10 @@ var app = (function () {
     			overtitle: 1,
     			cards: 2,
     			slider: 3,
-    			anchor: 10,
-    			ll: 4,
-    			type: 11,
-    			shapes: 5,
-    			colors: 6
+    			anchor: 9,
+    			type: 10,
+    			shapes: 4,
+    			colors: 5
     		});
 
     		dispatch_dev("SvelteRegisterComponent", {
@@ -10815,12 +10731,8 @@ var app = (function () {
     		const { ctx } = this.$$;
     		const props = options.props || {};
 
-    		if (/*anchor*/ ctx[10] === undefined && !('anchor' in props)) {
+    		if (/*anchor*/ ctx[9] === undefined && !('anchor' in props)) {
     			console.warn("<Cards> was created without expected prop 'anchor'");
-    		}
-
-    		if (/*ll*/ ctx[4] === undefined && !('ll' in props)) {
-    			console.warn("<Cards> was created without expected prop 'll'");
     		}
     	}
 
@@ -10864,14 +10776,6 @@ var app = (function () {
     		throw new Error("<Cards>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
-    	get ll() {
-    		throw new Error("<Cards>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set ll(value) {
-    		throw new Error("<Cards>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
     	get type() {
     		throw new Error("<Cards>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
@@ -10902,17 +10806,17 @@ var app = (function () {
 
     function get_each_context_1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[12] = list[i];
+    	child_ctx[11] = list[i];
     	return child_ctx;
     }
 
     function get_each_context$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[12] = list[i];
+    	child_ctx[11] = list[i];
     	return child_ctx;
     }
 
-    // (50:4) {:else}
+    // (49:4) {:else}
     function create_else_block(ctx) {
     	let div;
     	let each_value_1 = /*slides*/ ctx[2];
@@ -10931,8 +10835,8 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[8] + "__slides " + /*baseClass*/ ctx[8] + "__slides--no-slider"));
-    			add_location(div, file$b, 50, 6, 1644);
+    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[7] + "__slides " + /*baseClass*/ ctx[7] + "__slides--no-slider"));
+    			add_location(div, file$b, 49, 6, 1612);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -10942,7 +10846,7 @@ var app = (function () {
     			}
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*baseClass, l, slides, ll*/ 276) {
+    			if (dirty & /*baseClass, l, slides*/ 132) {
     				each_value_1 = /*slides*/ ctx[2];
     				validate_each_argument(each_value_1);
     				let i;
@@ -10978,17 +10882,17 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(50:4) {:else}",
+    		source: "(49:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (28:4) {#if slider}
+    // (27:4) {#if slider}
     function create_if_block$4(ctx) {
     	let h3;
-    	let raw_value = l(/*title*/ ctx[0], /*ll*/ ctx[4]) + "";
+    	let raw_value = l(/*title*/ ctx[0]) + "";
     	let t0;
     	let swiper;
     	let t1;
@@ -11000,8 +10904,8 @@ var app = (function () {
     			props: {
     				modules: [Navigation],
     				loop: true,
-    				navigation: /*navigation*/ ctx[9],
-    				class: "" + (/*baseClass*/ ctx[8] + "__slides"),
+    				navigation: /*navigation*/ ctx[8],
+    				class: "" + (/*baseClass*/ ctx[7] + "__slides"),
     				spaceBetween: 50,
     				slidesPerView: 3,
     				breakpoints: swiperBreakpoints,
@@ -11022,10 +10926,10 @@ var app = (function () {
     			t1 = space();
     			div = element("div");
     			t2 = text$1("Next ->");
-    			attr_dev(h3, "class", "" + (/*baseClass*/ ctx[8] + "__title"));
-    			add_location(h3, file$b, 28, 6, 830);
-    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[8] + "__next"));
-    			add_location(div, file$b, 48, 6, 1581);
+    			attr_dev(h3, "class", "" + (/*baseClass*/ ctx[7] + "__title"));
+    			add_location(h3, file$b, 27, 6, 810);
+    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[7] + "__next"));
+    			add_location(div, file$b, 47, 6, 1549);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h3, anchor);
@@ -11038,9 +10942,9 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if ((!current || dirty & /*title, ll*/ 17) && raw_value !== (raw_value = l(/*title*/ ctx[0], /*ll*/ ctx[4]) + "")) h3.innerHTML = raw_value;			const swiper_changes = {};
+    			if ((!current || dirty & /*title*/ 1) && raw_value !== (raw_value = l(/*title*/ ctx[0]) + "")) h3.innerHTML = raw_value;			const swiper_changes = {};
 
-    			if (dirty & /*$$scope, slides, ll*/ 131092) {
+    			if (dirty & /*$$scope, slides*/ 65540) {
     				swiper_changes.$$scope = { dirty, ctx };
     			}
 
@@ -11068,25 +10972,25 @@ var app = (function () {
     		block,
     		id: create_if_block$4.name,
     		type: "if",
-    		source: "(28:4) {#if slider}",
+    		source: "(27:4) {#if slider}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (52:8) {#each slides as slide}
+    // (51:8) {#each slides as slide}
     function create_each_block_1(ctx) {
     	let div;
     	let html_tag;
-    	let raw_value = /*slide*/ ctx[12].image + "";
+    	let raw_value = /*slide*/ ctx[11].image + "";
     	let t0;
     	let h2;
-    	let t1_value = l(/*slide*/ ctx[12].title, /*ll*/ ctx[4]) + "";
+    	let t1_value = l(/*slide*/ ctx[11].title) + "";
     	let t1;
     	let t2;
     	let p;
-    	let t3_value = l(/*slide*/ ctx[12].description, /*ll*/ ctx[4]) + "";
+    	let t3_value = l(/*slide*/ ctx[11].description) + "";
     	let t3;
     	let t4;
 
@@ -11102,12 +11006,12 @@ var app = (function () {
     			t3 = text$1(t3_value);
     			t4 = space();
     			html_tag.a = t0;
-    			attr_dev(h2, "class", "" + (/*baseClass*/ ctx[8] + "__slide__title dede-blue"));
-    			add_location(h2, file$b, 54, 12, 1828);
-    			attr_dev(p, "class", "" + (/*baseClass*/ ctx[8] + "__slide__description"));
-    			add_location(p, file$b, 55, 12, 1914);
-    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[8] + "__slide"));
-    			add_location(div, file$b, 52, 10, 1751);
+    			attr_dev(h2, "class", "" + (/*baseClass*/ ctx[7] + "__slide__title dede-blue"));
+    			add_location(h2, file$b, 53, 12, 1796);
+    			attr_dev(p, "class", "" + (/*baseClass*/ ctx[7] + "__slide__description"));
+    			add_location(p, file$b, 54, 12, 1878);
+    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[7] + "__slide"));
+    			add_location(div, file$b, 51, 10, 1719);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -11121,9 +11025,9 @@ var app = (function () {
     			append_dev(div, t4);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*slides*/ 4 && raw_value !== (raw_value = /*slide*/ ctx[12].image + "")) html_tag.p(raw_value);
-    			if (dirty & /*slides, ll*/ 20 && t1_value !== (t1_value = l(/*slide*/ ctx[12].title, /*ll*/ ctx[4]) + "")) set_data_dev(t1, t1_value);
-    			if (dirty & /*slides, ll*/ 20 && t3_value !== (t3_value = l(/*slide*/ ctx[12].description, /*ll*/ ctx[4]) + "")) set_data_dev(t3, t3_value);
+    			if (dirty & /*slides*/ 4 && raw_value !== (raw_value = /*slide*/ ctx[11].image + "")) html_tag.p(raw_value);
+    			if (dirty & /*slides*/ 4 && t1_value !== (t1_value = l(/*slide*/ ctx[11].title) + "")) set_data_dev(t1, t1_value);
+    			if (dirty & /*slides*/ 4 && t3_value !== (t3_value = l(/*slide*/ ctx[11].description) + "")) set_data_dev(t3, t3_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
@@ -11134,24 +11038,24 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(52:8) {#each slides as slide}",
+    		source: "(51:8) {#each slides as slide}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (42:10) <SwiperSlide class="{baseClass}__slide">
+    // (41:10) <SwiperSlide class="{baseClass}__slide">
     function create_default_slot_1(ctx) {
     	let div;
-    	let raw_value = /*slide*/ ctx[12].image + "";
+    	let raw_value = /*slide*/ ctx[11].image + "";
     	let t0;
     	let h2;
-    	let t1_value = l(/*slide*/ ctx[12].title, /*ll*/ ctx[4]) + "";
+    	let t1_value = l(/*slide*/ ctx[11].title) + "";
     	let t1;
     	let t2;
     	let p;
-    	let t3_value = l(/*slide*/ ctx[12].description, /*ll*/ ctx[4]) + "";
+    	let t3_value = l(/*slide*/ ctx[11].description) + "";
     	let t3;
     	let t4;
 
@@ -11165,12 +11069,12 @@ var app = (function () {
     			p = element("p");
     			t3 = text$1(t3_value);
     			t4 = space();
-    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[8] + "__slide__image"));
-    			add_location(div, file$b, 42, 12, 1281);
-    			attr_dev(h2, "class", "" + (/*baseClass*/ ctx[8] + "__slide__title dede-blue"));
-    			add_location(h2, file$b, 43, 12, 1358);
-    			attr_dev(p, "class", "" + (/*baseClass*/ ctx[8] + "__slide__description"));
-    			add_location(p, file$b, 44, 12, 1444);
+    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[7] + "__slide__image"));
+    			add_location(div, file$b, 41, 12, 1257);
+    			attr_dev(h2, "class", "" + (/*baseClass*/ ctx[7] + "__slide__title dede-blue"));
+    			add_location(h2, file$b, 42, 12, 1334);
+    			attr_dev(p, "class", "" + (/*baseClass*/ ctx[7] + "__slide__description"));
+    			add_location(p, file$b, 43, 12, 1416);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -11184,8 +11088,8 @@ var app = (function () {
     			insert_dev(target, t4, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*slides*/ 4 && raw_value !== (raw_value = /*slide*/ ctx[12].image + "")) div.innerHTML = raw_value;			if (dirty & /*slides, ll*/ 20 && t1_value !== (t1_value = l(/*slide*/ ctx[12].title, /*ll*/ ctx[4]) + "")) set_data_dev(t1, t1_value);
-    			if (dirty & /*slides, ll*/ 20 && t3_value !== (t3_value = l(/*slide*/ ctx[12].description, /*ll*/ ctx[4]) + "")) set_data_dev(t3, t3_value);
+    			if (dirty & /*slides*/ 4 && raw_value !== (raw_value = /*slide*/ ctx[11].image + "")) div.innerHTML = raw_value;			if (dirty & /*slides*/ 4 && t1_value !== (t1_value = l(/*slide*/ ctx[11].title) + "")) set_data_dev(t1, t1_value);
+    			if (dirty & /*slides*/ 4 && t3_value !== (t3_value = l(/*slide*/ ctx[11].description) + "")) set_data_dev(t3, t3_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
@@ -11201,21 +11105,21 @@ var app = (function () {
     		block,
     		id: create_default_slot_1.name,
     		type: "slot",
-    		source: "(42:10) <SwiperSlide class=\\\"{baseClass}__slide\\\">",
+    		source: "(41:10) <SwiperSlide class=\\\"{baseClass}__slide\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (41:8) {#each slides as slide}
+    // (40:8) {#each slides as slide}
     function create_each_block$1(ctx) {
     	let swiperslide;
     	let current;
 
     	swiperslide = new Swiper_slide({
     			props: {
-    				class: "" + (/*baseClass*/ ctx[8] + "__slide"),
+    				class: "" + (/*baseClass*/ ctx[7] + "__slide"),
     				$$slots: { default: [create_default_slot_1] },
     				$$scope: { ctx }
     			},
@@ -11233,7 +11137,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const swiperslide_changes = {};
 
-    			if (dirty & /*$$scope, slides, ll*/ 131092) {
+    			if (dirty & /*$$scope, slides*/ 65540) {
     				swiperslide_changes.$$scope = { dirty, ctx };
     			}
 
@@ -11257,14 +11161,14 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(41:8) {#each slides as slide}",
+    		source: "(40:8) {#each slides as slide}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (30:6) <Swiper         modules={[Navigation]}         loop="{true}"         navigation={navigation}         class="{baseClass}__slides"         spaceBetween={50}         slidesPerView={3}         breakpoints={swiperBreakpoints}         on:slideChange={() => {}}         on:swiper={(e) => {}}       >
+    // (29:6) <Swiper         modules={[Navigation]}         loop="{true}"         navigation={navigation}         class="{baseClass}__slides"         spaceBetween={50}         slidesPerView={3}         breakpoints={swiperBreakpoints}         on:slideChange={() => {}}         on:swiper={(e) => {}}       >
     function create_default_slot$1(ctx) {
     	let each_1_anchor;
     	let current;
@@ -11297,7 +11201,7 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*baseClass, l, slides, ll*/ 276) {
+    			if (dirty & /*baseClass, l, slides*/ 132) {
     				each_value = /*slides*/ ctx[2];
     				validate_each_argument(each_value);
     				let i;
@@ -11353,7 +11257,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$1.name,
     		type: "slot",
-    		source: "(30:6) <Swiper         modules={[Navigation]}         loop=\\\"{true}\\\"         navigation={navigation}         class=\\\"{baseClass}__slides\\\"         spaceBetween={50}         slidesPerView={3}         breakpoints={swiperBreakpoints}         on:slideChange={() => {}}         on:swiper={(e) => {}}       >",
+    		source: "(29:6) <Swiper         modules={[Navigation]}         loop=\\\"{true}\\\"         navigation={navigation}         class=\\\"{baseClass}__slides\\\"         spaceBetween={50}         slidesPerView={3}         breakpoints={swiperBreakpoints}         on:slideChange={() => {}}         on:swiper={(e) => {}}       >",
     		ctx
     	});
 
@@ -11364,7 +11268,7 @@ var app = (function () {
     	let div3;
     	let div2;
     	let div0;
-    	let t0_value = l(/*overtitle*/ ctx[1], /*ll*/ ctx[4]) + "";
+    	let t0_value = l(/*overtitle*/ ctx[1]) + "";
     	let t0;
     	let t1;
     	let div1;
@@ -11387,8 +11291,8 @@ var app = (function () {
 
     	blobs = new Blobs({
     			props: {
-    				shapes: /*shapes*/ ctx[5],
-    				colors: /*colors*/ ctx[6]
+    				shapes: /*shapes*/ ctx[4],
+    				colors: /*colors*/ ctx[5]
     			},
     			$$inline: true
     		});
@@ -11405,16 +11309,16 @@ var app = (function () {
     			if_block.c();
     			t3 = space();
     			create_component(blobs.$$.fragment);
-    			attr_dev(div0, "class", "" + (/*baseClass*/ ctx[8] + "__overtitle h2 underline"));
-    			add_location(div0, file$b, 23, 4, 669);
+    			attr_dev(div0, "class", "" + (/*baseClass*/ ctx[7] + "__overtitle h2 underline"));
+    			add_location(div0, file$b, 22, 4, 653);
     			attr_dev(div1, "class", "Spacer");
     			set_style(div1, "height", "50px");
-    			add_location(div1, file$b, 26, 4, 759);
-    			attr_dev(div2, "class", /*baseClass*/ ctx[8]);
-    			add_location(div2, file$b, 22, 2, 639);
+    			add_location(div1, file$b, 25, 4, 739);
+    			attr_dev(div2, "class", /*baseClass*/ ctx[7]);
+    			add_location(div2, file$b, 21, 2, 623);
     			attr_dev(div3, "class", "wrapper");
-    			attr_dev(div3, "id", /*HTMLanchor*/ ctx[7]);
-    			add_location(div3, file$b, 21, 0, 597);
+    			attr_dev(div3, "id", /*HTMLanchor*/ ctx[6]);
+    			add_location(div3, file$b, 20, 0, 581);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -11433,7 +11337,7 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
-    			if ((!current || dirty & /*overtitle, ll*/ 18) && t0_value !== (t0_value = l(/*overtitle*/ ctx[1], /*ll*/ ctx[4]) + "")) set_data_dev(t0, t0_value);
+    			if ((!current || dirty & /*overtitle*/ 2) && t0_value !== (t0_value = l(/*overtitle*/ ctx[1]) + "")) set_data_dev(t0, t0_value);
     			let previous_block_index = current_block_type_index;
     			current_block_type_index = select_block_type(ctx);
 
@@ -11461,8 +11365,8 @@ var app = (function () {
     			}
 
     			const blobs_changes = {};
-    			if (dirty & /*shapes*/ 32) blobs_changes.shapes = /*shapes*/ ctx[5];
-    			if (dirty & /*colors*/ 64) blobs_changes.colors = /*colors*/ ctx[6];
+    			if (dirty & /*shapes*/ 16) blobs_changes.shapes = /*shapes*/ ctx[4];
+    			if (dirty & /*colors*/ 32) blobs_changes.colors = /*colors*/ ctx[5];
     			blobs.$set(blobs_changes);
     		},
     		i: function intro(local) {
@@ -11511,24 +11415,12 @@ var app = (function () {
     	let { slider = true } = $$props;
     	let { type = 'Carousel' } = $$props;
     	let { anchor } = $$props;
-    	let { ll } = $$props;
     	let { shapes = 0 } = $$props;
     	let { colors = ['red', 'yellow', 'blue'] } = $$props;
     	let HTMLanchor = anchor ? anchor : overtitle;
     	let baseClass = type.toLowerCase();
     	let navigation = { nextEl: `.${baseClass}__next` };
-
-    	const writable_props = [
-    		'title',
-    		'overtitle',
-    		'slides',
-    		'slider',
-    		'type',
-    		'anchor',
-    		'll',
-    		'shapes',
-    		'colors'
-    	];
+    	const writable_props = ['title', 'overtitle', 'slides', 'slider', 'type', 'anchor', 'shapes', 'colors'];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Carousel> was created with unknown prop '${key}'`);
@@ -11539,11 +11431,10 @@ var app = (function () {
     		if ('overtitle' in $$props) $$invalidate(1, overtitle = $$props.overtitle);
     		if ('slides' in $$props) $$invalidate(2, slides = $$props.slides);
     		if ('slider' in $$props) $$invalidate(3, slider = $$props.slider);
-    		if ('type' in $$props) $$invalidate(10, type = $$props.type);
-    		if ('anchor' in $$props) $$invalidate(11, anchor = $$props.anchor);
-    		if ('ll' in $$props) $$invalidate(4, ll = $$props.ll);
-    		if ('shapes' in $$props) $$invalidate(5, shapes = $$props.shapes);
-    		if ('colors' in $$props) $$invalidate(6, colors = $$props.colors);
+    		if ('type' in $$props) $$invalidate(9, type = $$props.type);
+    		if ('anchor' in $$props) $$invalidate(10, anchor = $$props.anchor);
+    		if ('shapes' in $$props) $$invalidate(4, shapes = $$props.shapes);
+    		if ('colors' in $$props) $$invalidate(5, colors = $$props.colors);
     	};
 
     	$$self.$capture_state = () => ({
@@ -11553,7 +11444,6 @@ var app = (function () {
     		slider,
     		type,
     		anchor,
-    		ll,
     		shapes,
     		colors,
     		HTMLanchor,
@@ -11572,14 +11462,13 @@ var app = (function () {
     		if ('overtitle' in $$props) $$invalidate(1, overtitle = $$props.overtitle);
     		if ('slides' in $$props) $$invalidate(2, slides = $$props.slides);
     		if ('slider' in $$props) $$invalidate(3, slider = $$props.slider);
-    		if ('type' in $$props) $$invalidate(10, type = $$props.type);
-    		if ('anchor' in $$props) $$invalidate(11, anchor = $$props.anchor);
-    		if ('ll' in $$props) $$invalidate(4, ll = $$props.ll);
-    		if ('shapes' in $$props) $$invalidate(5, shapes = $$props.shapes);
-    		if ('colors' in $$props) $$invalidate(6, colors = $$props.colors);
-    		if ('HTMLanchor' in $$props) $$invalidate(7, HTMLanchor = $$props.HTMLanchor);
-    		if ('baseClass' in $$props) $$invalidate(8, baseClass = $$props.baseClass);
-    		if ('navigation' in $$props) $$invalidate(9, navigation = $$props.navigation);
+    		if ('type' in $$props) $$invalidate(9, type = $$props.type);
+    		if ('anchor' in $$props) $$invalidate(10, anchor = $$props.anchor);
+    		if ('shapes' in $$props) $$invalidate(4, shapes = $$props.shapes);
+    		if ('colors' in $$props) $$invalidate(5, colors = $$props.colors);
+    		if ('HTMLanchor' in $$props) $$invalidate(6, HTMLanchor = $$props.HTMLanchor);
+    		if ('baseClass' in $$props) $$invalidate(7, baseClass = $$props.baseClass);
+    		if ('navigation' in $$props) $$invalidate(8, navigation = $$props.navigation);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -11591,7 +11480,6 @@ var app = (function () {
     		overtitle,
     		slides,
     		slider,
-    		ll,
     		shapes,
     		colors,
     		HTMLanchor,
@@ -11611,11 +11499,10 @@ var app = (function () {
     			overtitle: 1,
     			slides: 2,
     			slider: 3,
-    			type: 10,
-    			anchor: 11,
-    			ll: 4,
-    			shapes: 5,
-    			colors: 6
+    			type: 9,
+    			anchor: 10,
+    			shapes: 4,
+    			colors: 5
     		});
 
     		dispatch_dev("SvelteRegisterComponent", {
@@ -11628,12 +11515,8 @@ var app = (function () {
     		const { ctx } = this.$$;
     		const props = options.props || {};
 
-    		if (/*anchor*/ ctx[11] === undefined && !('anchor' in props)) {
+    		if (/*anchor*/ ctx[10] === undefined && !('anchor' in props)) {
     			console.warn("<Carousel> was created without expected prop 'anchor'");
-    		}
-
-    		if (/*ll*/ ctx[4] === undefined && !('ll' in props)) {
-    			console.warn("<Carousel> was created without expected prop 'll'");
     		}
     	}
 
@@ -11682,14 +11565,6 @@ var app = (function () {
     	}
 
     	set anchor(value) {
-    		throw new Error("<Carousel>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	get ll() {
-    		throw new Error("<Carousel>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set ll(value) {
     		throw new Error("<Carousel>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
@@ -12559,10 +12434,10 @@ var app = (function () {
     /* src/components/Headline.svelte generated by Svelte v3.43.0 */
     const file$5 = "src/components/Headline.svelte";
 
-    // (29:8) <Typewriter loopRandom={1000} unwriteInterval={20} interval={[50, 70, 90]}>
+    // (28:8) <Typewriter loopRandom={1000} unwriteInterval={20} interval={[50, 70, 90]}>
     function create_default_slot(ctx) {
     	let html_tag;
-    	let raw_value = l(/*typewriter_html*/ ctx[2], /*ll*/ ctx[6]) + "";
+    	let raw_value = l(/*typewriter_html*/ ctx[2]) + "";
     	let html_anchor;
 
     	const block = {
@@ -12576,7 +12451,7 @@ var app = (function () {
     			insert_dev(target, html_anchor, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*typewriter_html, ll*/ 68 && raw_value !== (raw_value = l(/*typewriter_html*/ ctx[2], /*ll*/ ctx[6]) + "")) html_tag.p(raw_value);
+    			if (dirty & /*typewriter_html*/ 4 && raw_value !== (raw_value = l(/*typewriter_html*/ ctx[2]) + "")) html_tag.p(raw_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(html_anchor);
@@ -12588,17 +12463,17 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(29:8) <Typewriter loopRandom={1000} unwriteInterval={20} interval={[50, 70, 90]}>",
+    		source: "(28:8) <Typewriter loopRandom={1000} unwriteInterval={20} interval={[50, 70, 90]}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (32:4) {#if cta}
+    // (31:4) {#if cta}
     function create_if_block$3(ctx) {
     	let div;
-    	let t0_value = l(/*cta*/ ctx[5].text, /*ll*/ ctx[6]) + "";
+    	let t0_value = l(/*cta*/ ctx[5].text) + "";
     	let t0;
     	let t1;
     	let if_block = /*cta*/ ctx[5].arrow && create_if_block_1$1(ctx);
@@ -12609,9 +12484,9 @@ var app = (function () {
     			t0 = text$1(t0_value);
     			t1 = space();
     			if (if_block) if_block.c();
-    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[7] + "__cta"));
+    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[6] + "__cta"));
     			attr_dev(div, "data-smoothscroll", "#vision");
-    			add_location(div, file$5, 32, 6, 966);
+    			add_location(div, file$5, 31, 6, 938);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -12620,7 +12495,7 @@ var app = (function () {
     			if (if_block) if_block.m(div, null);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*cta, ll*/ 96 && t0_value !== (t0_value = l(/*cta*/ ctx[5].text, /*ll*/ ctx[6]) + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*cta*/ 32 && t0_value !== (t0_value = l(/*cta*/ ctx[5].text) + "")) set_data_dev(t0, t0_value);
 
     			if (/*cta*/ ctx[5].arrow) {
     				if (if_block) {
@@ -12645,14 +12520,14 @@ var app = (function () {
     		block,
     		id: create_if_block$3.name,
     		type: "if",
-    		source: "(32:4) {#if cta}",
+    		source: "(31:4) {#if cta}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (35:8) {#if cta.arrow}
+    // (34:8) {#if cta.arrow}
     function create_if_block_1$1(ctx) {
     	let div;
     	let t;
@@ -12663,7 +12538,7 @@ var app = (function () {
     			div = element("div");
     			t = text$1("->");
     			attr_dev(div, "class", div_class_value = "arrow arrow--" + /*cta*/ ctx[5].arrow);
-    			add_location(div, file$5, 35, 10, 1085);
+    			add_location(div, file$5, 34, 10, 1053);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -12683,7 +12558,7 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(35:8) {#if cta.arrow}",
+    		source: "(34:8) {#if cta.arrow}",
     		ctx
     	});
 
@@ -12695,11 +12570,11 @@ var app = (function () {
     	let div1;
     	let div0;
     	let h1;
-    	let t0_value = l(/*title*/ ctx[0], /*ll*/ ctx[6]) + "";
+    	let t0_value = l(/*title*/ ctx[0]) + "";
     	let t0;
     	let t1;
     	let h3;
-    	let t2_value = l(/*text*/ ctx[1], /*ll*/ ctx[6]) + "";
+    	let t2_value = l(/*text*/ ctx[1]) + "";
     	let t2;
     	let t3;
     	let typewriter;
@@ -12745,16 +12620,16 @@ var app = (function () {
     			if (if_block) if_block.c();
     			t5 = space();
     			create_component(blobs.$$.fragment);
-    			attr_dev(h1, "class", "" + (/*baseClass*/ ctx[7] + "__title center"));
-    			add_location(h1, file$5, 25, 6, 672);
-    			attr_dev(h3, "class", "" + (/*baseClass*/ ctx[7] + "__text center"));
-    			add_location(h3, file$5, 26, 6, 736);
-    			attr_dev(div0, "class", "" + (/*baseClass*/ ctx[7] + "__content center"));
-    			add_location(div0, file$5, 24, 4, 624);
-    			attr_dev(div1, "class", /*baseClass*/ ctx[7]);
-    			add_location(div1, file$5, 23, 2, 594);
+    			attr_dev(h1, "class", "" + (/*baseClass*/ ctx[6] + "__title center"));
+    			add_location(h1, file$5, 24, 6, 656);
+    			attr_dev(h3, "class", "" + (/*baseClass*/ ctx[6] + "__text center"));
+    			add_location(h3, file$5, 25, 6, 716);
+    			attr_dev(div0, "class", "" + (/*baseClass*/ ctx[6] + "__content center"));
+    			add_location(div0, file$5, 23, 4, 608);
+    			attr_dev(div1, "class", /*baseClass*/ ctx[6]);
+    			add_location(div1, file$5, 22, 2, 578);
     			attr_dev(div2, "class", "wrapper");
-    			add_location(div2, file$5, 22, 0, 570);
+    			add_location(div2, file$5, 21, 0, 554);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -12777,11 +12652,11 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
-    			if ((!current || dirty & /*title, ll*/ 65) && t0_value !== (t0_value = l(/*title*/ ctx[0], /*ll*/ ctx[6]) + "")) set_data_dev(t0, t0_value);
-    			if ((!current || dirty & /*text, ll*/ 66) && t2_value !== (t2_value = l(/*text*/ ctx[1], /*ll*/ ctx[6]) + "")) set_data_dev(t2, t2_value);
+    			if ((!current || dirty & /*title*/ 1) && t0_value !== (t0_value = l(/*title*/ ctx[0]) + "")) set_data_dev(t0, t0_value);
+    			if ((!current || dirty & /*text*/ 2) && t2_value !== (t2_value = l(/*text*/ ctx[1]) + "")) set_data_dev(t2, t2_value);
     			const typewriter_changes = {};
 
-    			if (dirty & /*$$scope, typewriter_html, ll*/ 580) {
+    			if (dirty & /*$$scope, typewriter_html*/ 260) {
     				typewriter_changes.$$scope = { dirty, ctx };
     			}
 
@@ -12845,14 +12720,13 @@ var app = (function () {
     	let { colors = ['red', 'yellow', 'blue'] } = $$props;
     	let { cta = false } = $$props;
     	let { type = 'Headline' } = $$props;
-    	let { ll } = $$props;
     	let baseClass = type.toLowerCase();
 
     	afterUpdate(() => {
     		smoothScroll();
     	});
 
-    	const writable_props = ['title', 'text', 'typewriter_html', 'shapes', 'colors', 'cta', 'type', 'll'];
+    	const writable_props = ['title', 'text', 'typewriter_html', 'shapes', 'colors', 'cta', 'type'];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Headline> was created with unknown prop '${key}'`);
@@ -12865,8 +12739,7 @@ var app = (function () {
     		if ('shapes' in $$props) $$invalidate(3, shapes = $$props.shapes);
     		if ('colors' in $$props) $$invalidate(4, colors = $$props.colors);
     		if ('cta' in $$props) $$invalidate(5, cta = $$props.cta);
-    		if ('type' in $$props) $$invalidate(8, type = $$props.type);
-    		if ('ll' in $$props) $$invalidate(6, ll = $$props.ll);
+    		if ('type' in $$props) $$invalidate(7, type = $$props.type);
     	};
 
     	$$self.$capture_state = () => ({
@@ -12877,7 +12750,6 @@ var app = (function () {
     		colors,
     		cta,
     		type,
-    		ll,
     		baseClass,
     		Typewriter,
     		Blobs,
@@ -12893,16 +12765,15 @@ var app = (function () {
     		if ('shapes' in $$props) $$invalidate(3, shapes = $$props.shapes);
     		if ('colors' in $$props) $$invalidate(4, colors = $$props.colors);
     		if ('cta' in $$props) $$invalidate(5, cta = $$props.cta);
-    		if ('type' in $$props) $$invalidate(8, type = $$props.type);
-    		if ('ll' in $$props) $$invalidate(6, ll = $$props.ll);
-    		if ('baseClass' in $$props) $$invalidate(7, baseClass = $$props.baseClass);
+    		if ('type' in $$props) $$invalidate(7, type = $$props.type);
+    		if ('baseClass' in $$props) $$invalidate(6, baseClass = $$props.baseClass);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [title, text, typewriter_html, shapes, colors, cta, ll, baseClass, type];
+    	return [title, text, typewriter_html, shapes, colors, cta, baseClass, type];
     }
 
     class Headline extends SvelteComponentDev {
@@ -12916,8 +12787,7 @@ var app = (function () {
     			shapes: 3,
     			colors: 4,
     			cta: 5,
-    			type: 8,
-    			ll: 6
+    			type: 7
     		});
 
     		dispatch_dev("SvelteRegisterComponent", {
@@ -12926,13 +12796,6 @@ var app = (function () {
     			options,
     			id: create_fragment$5.name
     		});
-
-    		const { ctx } = this.$$;
-    		const props = options.props || {};
-
-    		if (/*ll*/ ctx[6] === undefined && !('ll' in props)) {
-    			console.warn("<Headline> was created without expected prop 'll'");
-    		}
     	}
 
     	get title() {
@@ -12990,23 +12853,15 @@ var app = (function () {
     	set type(value) {
     		throw new Error("<Headline>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
-
-    	get ll() {
-    		throw new Error("<Headline>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set ll(value) {
-    		throw new Error("<Headline>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
     }
 
     /* src/components/Hero.svelte generated by Svelte v3.43.0 */
     const file$4 = "src/components/Hero.svelte";
 
-    // (27:4) {#if cta}
+    // (26:4) {#if cta}
     function create_if_block$2(ctx) {
     	let div;
-    	let t0_value = l(/*cta*/ ctx[4].text, /*ll*/ ctx[5]) + "";
+    	let t0_value = l(/*cta*/ ctx[4].text) + "";
     	let t0;
     	let t1;
     	let if_block = /*cta*/ ctx[4].arrow && create_if_block_1(ctx);
@@ -13017,9 +12872,9 @@ var app = (function () {
     			t0 = text$1(t0_value);
     			t1 = space();
     			if (if_block) if_block.c();
-    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[6] + "__cta"));
+    			attr_dev(div, "class", "" + (/*baseClass*/ ctx[5] + "__cta"));
     			attr_dev(div, "data-smoothscroll", "#solution");
-    			add_location(div, file$4, 27, 6, 716);
+    			add_location(div, file$4, 26, 6, 692);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -13028,7 +12883,7 @@ var app = (function () {
     			if (if_block) if_block.m(div, null);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*cta, ll*/ 48 && t0_value !== (t0_value = l(/*cta*/ ctx[4].text, /*ll*/ ctx[5]) + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*cta*/ 16 && t0_value !== (t0_value = l(/*cta*/ ctx[4].text) + "")) set_data_dev(t0, t0_value);
 
     			if (/*cta*/ ctx[4].arrow) {
     				if (if_block) {
@@ -13053,14 +12908,14 @@ var app = (function () {
     		block,
     		id: create_if_block$2.name,
     		type: "if",
-    		source: "(27:4) {#if cta}",
+    		source: "(26:4) {#if cta}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (30:8) {#if cta.arrow}
+    // (29:8) {#if cta.arrow}
     function create_if_block_1(ctx) {
     	let div;
     	let t;
@@ -13071,7 +12926,7 @@ var app = (function () {
     			div = element("div");
     			t = text$1("->");
     			attr_dev(div, "class", div_class_value = "arrow arrow--" + /*cta*/ ctx[4].arrow);
-    			add_location(div, file$4, 30, 10, 837);
+    			add_location(div, file$4, 29, 10, 809);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -13091,7 +12946,7 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(30:8) {#if cta.arrow}",
+    		source: "(29:8) {#if cta.arrow}",
     		ctx
     	});
 
@@ -13103,11 +12958,11 @@ var app = (function () {
     	let div1;
     	let div0;
     	let h1;
-    	let t0_value = l(/*title*/ ctx[0], /*ll*/ ctx[5]) + "";
+    	let t0_value = l(/*title*/ ctx[0]) + "";
     	let t0;
     	let t1;
     	let h3;
-    	let t2_value = l(/*subtitle*/ ctx[1], /*ll*/ ctx[5]) + "";
+    	let t2_value = l(/*subtitle*/ ctx[1]) + "";
     	let t2;
     	let t3;
     	let t4;
@@ -13137,16 +12992,16 @@ var app = (function () {
     			if (if_block) if_block.c();
     			t4 = space();
     			create_component(blobs.$$.fragment);
-    			attr_dev(h1, "class", "" + (/*baseClass*/ ctx[6] + "__title"));
-    			add_location(h1, file$4, 23, 6, 571);
-    			attr_dev(h3, "class", "" + (/*baseClass*/ ctx[6] + "__subtitle"));
-    			add_location(h3, file$4, 24, 6, 628);
-    			attr_dev(div0, "class", "" + (/*baseClass*/ ctx[6] + "__content"));
-    			add_location(div0, file$4, 22, 4, 530);
-    			attr_dev(div1, "class", /*baseClass*/ ctx[6]);
-    			add_location(div1, file$4, 21, 2, 500);
+    			attr_dev(h1, "class", "" + (/*baseClass*/ ctx[5] + "__title"));
+    			add_location(h1, file$4, 22, 6, 555);
+    			attr_dev(h3, "class", "" + (/*baseClass*/ ctx[5] + "__subtitle"));
+    			add_location(h3, file$4, 23, 6, 608);
+    			attr_dev(div0, "class", "" + (/*baseClass*/ ctx[5] + "__content"));
+    			add_location(div0, file$4, 21, 4, 514);
+    			attr_dev(div1, "class", /*baseClass*/ ctx[5]);
+    			add_location(div1, file$4, 20, 2, 484);
     			attr_dev(div2, "class", "wrapper");
-    			add_location(div2, file$4, 20, 0, 476);
+    			add_location(div2, file$4, 19, 0, 460);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -13167,8 +13022,8 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
-    			if ((!current || dirty & /*title, ll*/ 33) && t0_value !== (t0_value = l(/*title*/ ctx[0], /*ll*/ ctx[5]) + "")) set_data_dev(t0, t0_value);
-    			if ((!current || dirty & /*subtitle, ll*/ 34) && t2_value !== (t2_value = l(/*subtitle*/ ctx[1], /*ll*/ ctx[5]) + "")) set_data_dev(t2, t2_value);
+    			if ((!current || dirty & /*title*/ 1) && t0_value !== (t0_value = l(/*title*/ ctx[0]) + "")) set_data_dev(t0, t0_value);
+    			if ((!current || dirty & /*subtitle*/ 2) && t2_value !== (t2_value = l(/*subtitle*/ ctx[1]) + "")) set_data_dev(t2, t2_value);
 
     			if (/*cta*/ ctx[4]) {
     				if (if_block) {
@@ -13224,14 +13079,13 @@ var app = (function () {
     	let { colors = ['red', 'yellow', 'blue'] } = $$props;
     	let { cta = false } = $$props;
     	let { type = 'Hero' } = $$props;
-    	let { ll } = $$props;
     	let baseClass = type.toLowerCase();
 
     	afterUpdate(() => {
     		smoothScroll();
     	});
 
-    	const writable_props = ['title', 'subtitle', 'shapes', 'colors', 'cta', 'type', 'll'];
+    	const writable_props = ['title', 'subtitle', 'shapes', 'colors', 'cta', 'type'];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Hero> was created with unknown prop '${key}'`);
@@ -13243,8 +13097,7 @@ var app = (function () {
     		if ('shapes' in $$props) $$invalidate(2, shapes = $$props.shapes);
     		if ('colors' in $$props) $$invalidate(3, colors = $$props.colors);
     		if ('cta' in $$props) $$invalidate(4, cta = $$props.cta);
-    		if ('type' in $$props) $$invalidate(7, type = $$props.type);
-    		if ('ll' in $$props) $$invalidate(5, ll = $$props.ll);
+    		if ('type' in $$props) $$invalidate(6, type = $$props.type);
     	};
 
     	$$self.$capture_state = () => ({
@@ -13254,7 +13107,6 @@ var app = (function () {
     		colors,
     		cta,
     		type,
-    		ll,
     		baseClass,
     		Blobs,
     		afterUpdate,
@@ -13268,16 +13120,15 @@ var app = (function () {
     		if ('shapes' in $$props) $$invalidate(2, shapes = $$props.shapes);
     		if ('colors' in $$props) $$invalidate(3, colors = $$props.colors);
     		if ('cta' in $$props) $$invalidate(4, cta = $$props.cta);
-    		if ('type' in $$props) $$invalidate(7, type = $$props.type);
-    		if ('ll' in $$props) $$invalidate(5, ll = $$props.ll);
-    		if ('baseClass' in $$props) $$invalidate(6, baseClass = $$props.baseClass);
+    		if ('type' in $$props) $$invalidate(6, type = $$props.type);
+    		if ('baseClass' in $$props) $$invalidate(5, baseClass = $$props.baseClass);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [title, subtitle, shapes, colors, cta, ll, baseClass, type];
+    	return [title, subtitle, shapes, colors, cta, baseClass, type];
     }
 
     class Hero extends SvelteComponentDev {
@@ -13290,8 +13141,7 @@ var app = (function () {
     			shapes: 2,
     			colors: 3,
     			cta: 4,
-    			type: 7,
-    			ll: 5
+    			type: 6
     		});
 
     		dispatch_dev("SvelteRegisterComponent", {
@@ -13300,13 +13150,6 @@ var app = (function () {
     			options,
     			id: create_fragment$4.name
     		});
-
-    		const { ctx } = this.$$;
-    		const props = options.props || {};
-
-    		if (/*ll*/ ctx[5] === undefined && !('ll' in props)) {
-    			console.warn("<Hero> was created without expected prop 'll'");
-    		}
     	}
 
     	get title() {
@@ -13354,14 +13197,6 @@ var app = (function () {
     	}
 
     	set type(value) {
-    		throw new Error("<Hero>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	get ll() {
-    		throw new Error("<Hero>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set ll(value) {
     		throw new Error("<Hero>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
@@ -13532,25 +13367,25 @@ var app = (function () {
     /* src/components/Text.svelte generated by Svelte v3.43.0 */
     const file$2 = "src/components/Text.svelte";
 
-    // (20:4) {#if title}
+    // (19:4) {#if title}
     function create_if_block$1(ctx) {
     	let h2;
-    	let t_value = l(/*title*/ ctx[0], /*ll*/ ctx[4]) + "";
+    	let t_value = l(/*title*/ ctx[0]) + "";
     	let t;
 
     	const block = {
     		c: function create() {
     			h2 = element("h2");
     			t = text$1(t_value);
-    			attr_dev(h2, "class", "" + (/*baseClass*/ ctx[7] + "__title"));
-    			add_location(h2, file$2, 20, 6, 479);
+    			attr_dev(h2, "class", "" + (/*baseClass*/ ctx[6] + "__title"));
+    			add_location(h2, file$2, 19, 6, 463);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h2, anchor);
     			append_dev(h2, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*title, ll*/ 17 && t_value !== (t_value = l(/*title*/ ctx[0], /*ll*/ ctx[4]) + "")) set_data_dev(t, t_value);
+    			if (dirty & /*title*/ 1 && t_value !== (t_value = l(/*title*/ ctx[0]) + "")) set_data_dev(t, t_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(h2);
@@ -13561,7 +13396,7 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(20:4) {#if title}",
+    		source: "(19:4) {#if title}",
     		ctx
     	});
 
@@ -13573,12 +13408,12 @@ var app = (function () {
     	let div1;
     	let t0;
     	let h3;
-    	let t1_value = l(/*subtitle*/ ctx[1], /*ll*/ ctx[4]) + "";
+    	let t1_value = l(/*subtitle*/ ctx[1]) + "";
     	let t1;
     	let t2;
     	let div0;
     	let p;
-    	let raw_value = l(/*content*/ ctx[2], /*ll*/ ctx[4]) + "";
+    	let raw_value = l(/*content*/ ctx[2]) + "";
     	let t3;
     	let blobs;
     	let current;
@@ -13587,7 +13422,7 @@ var app = (function () {
     	blobs = new Blobs({
     			props: {
     				shapes: /*shapes*/ ctx[3],
-    				colors: /*colors*/ ctx[5]
+    				colors: /*colors*/ ctx[4]
     			},
     			$$inline: true
     		});
@@ -13605,16 +13440,16 @@ var app = (function () {
     			p = element("p");
     			t3 = space();
     			create_component(blobs.$$.fragment);
-    			attr_dev(h3, "class", "" + (/*baseClass*/ ctx[7] + "__subtitle"));
-    			add_location(h3, file$2, 22, 4, 544);
-    			add_location(p, file$2, 24, 6, 653);
-    			attr_dev(div0, "class", "" + (/*baseClass*/ ctx[7] + "__content center"));
-    			add_location(div0, file$2, 23, 4, 605);
-    			attr_dev(div1, "class", /*baseClass*/ ctx[7]);
-    			add_location(div1, file$2, 18, 2, 431);
+    			attr_dev(h3, "class", "" + (/*baseClass*/ ctx[6] + "__subtitle"));
+    			add_location(h3, file$2, 21, 4, 524);
+    			add_location(p, file$2, 23, 6, 629);
+    			attr_dev(div0, "class", "" + (/*baseClass*/ ctx[6] + "__content center"));
+    			add_location(div0, file$2, 22, 4, 581);
+    			attr_dev(div1, "class", /*baseClass*/ ctx[6]);
+    			add_location(div1, file$2, 17, 2, 415);
     			attr_dev(div2, "class", "wrapper");
-    			attr_dev(div2, "id", /*HTMLanchor*/ ctx[6]);
-    			add_location(div2, file$2, 17, 0, 389);
+    			attr_dev(div2, "id", /*HTMLanchor*/ ctx[5]);
+    			add_location(div2, file$2, 16, 0, 373);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -13648,10 +13483,10 @@ var app = (function () {
     				if_block = null;
     			}
 
-    			if ((!current || dirty & /*subtitle, ll*/ 18) && t1_value !== (t1_value = l(/*subtitle*/ ctx[1], /*ll*/ ctx[4]) + "")) set_data_dev(t1, t1_value);
-    			if ((!current || dirty & /*content, ll*/ 20) && raw_value !== (raw_value = l(/*content*/ ctx[2], /*ll*/ ctx[4]) + "")) p.innerHTML = raw_value;			const blobs_changes = {};
+    			if ((!current || dirty & /*subtitle*/ 2) && t1_value !== (t1_value = l(/*subtitle*/ ctx[1]) + "")) set_data_dev(t1, t1_value);
+    			if ((!current || dirty & /*content*/ 4) && raw_value !== (raw_value = l(/*content*/ ctx[2]) + "")) p.innerHTML = raw_value;			const blobs_changes = {};
     			if (dirty & /*shapes*/ 8) blobs_changes.shapes = /*shapes*/ ctx[3];
-    			if (dirty & /*colors*/ 32) blobs_changes.colors = /*colors*/ ctx[5];
+    			if (dirty & /*colors*/ 16) blobs_changes.colors = /*colors*/ ctx[4];
     			blobs.$set(blobs_changes);
     		},
     		i: function intro(local) {
@@ -13690,11 +13525,10 @@ var app = (function () {
     	let { type = 'Text' } = $$props;
     	let { shapes = 0 } = $$props;
     	let { anchor } = $$props;
-    	let { ll } = $$props;
     	let { colors = ['red', 'yellow', 'blue'] } = $$props;
     	let HTMLanchor = anchor ? anchor : title;
     	let baseClass = type.toLowerCase();
-    	const writable_props = ['title', 'subtitle', 'content', 'type', 'shapes', 'anchor', 'll', 'colors'];
+    	const writable_props = ['title', 'subtitle', 'content', 'type', 'shapes', 'anchor', 'colors'];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Text> was created with unknown prop '${key}'`);
@@ -13704,11 +13538,10 @@ var app = (function () {
     		if ('title' in $$props) $$invalidate(0, title = $$props.title);
     		if ('subtitle' in $$props) $$invalidate(1, subtitle = $$props.subtitle);
     		if ('content' in $$props) $$invalidate(2, content = $$props.content);
-    		if ('type' in $$props) $$invalidate(8, type = $$props.type);
+    		if ('type' in $$props) $$invalidate(7, type = $$props.type);
     		if ('shapes' in $$props) $$invalidate(3, shapes = $$props.shapes);
-    		if ('anchor' in $$props) $$invalidate(9, anchor = $$props.anchor);
-    		if ('ll' in $$props) $$invalidate(4, ll = $$props.ll);
-    		if ('colors' in $$props) $$invalidate(5, colors = $$props.colors);
+    		if ('anchor' in $$props) $$invalidate(8, anchor = $$props.anchor);
+    		if ('colors' in $$props) $$invalidate(4, colors = $$props.colors);
     	};
 
     	$$self.$capture_state = () => ({
@@ -13718,7 +13551,6 @@ var app = (function () {
     		type,
     		shapes,
     		anchor,
-    		ll,
     		colors,
     		HTMLanchor,
     		baseClass,
@@ -13730,31 +13562,19 @@ var app = (function () {
     		if ('title' in $$props) $$invalidate(0, title = $$props.title);
     		if ('subtitle' in $$props) $$invalidate(1, subtitle = $$props.subtitle);
     		if ('content' in $$props) $$invalidate(2, content = $$props.content);
-    		if ('type' in $$props) $$invalidate(8, type = $$props.type);
+    		if ('type' in $$props) $$invalidate(7, type = $$props.type);
     		if ('shapes' in $$props) $$invalidate(3, shapes = $$props.shapes);
-    		if ('anchor' in $$props) $$invalidate(9, anchor = $$props.anchor);
-    		if ('ll' in $$props) $$invalidate(4, ll = $$props.ll);
-    		if ('colors' in $$props) $$invalidate(5, colors = $$props.colors);
-    		if ('HTMLanchor' in $$props) $$invalidate(6, HTMLanchor = $$props.HTMLanchor);
-    		if ('baseClass' in $$props) $$invalidate(7, baseClass = $$props.baseClass);
+    		if ('anchor' in $$props) $$invalidate(8, anchor = $$props.anchor);
+    		if ('colors' in $$props) $$invalidate(4, colors = $$props.colors);
+    		if ('HTMLanchor' in $$props) $$invalidate(5, HTMLanchor = $$props.HTMLanchor);
+    		if ('baseClass' in $$props) $$invalidate(6, baseClass = $$props.baseClass);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [
-    		title,
-    		subtitle,
-    		content,
-    		shapes,
-    		ll,
-    		colors,
-    		HTMLanchor,
-    		baseClass,
-    		type,
-    		anchor
-    	];
+    	return [title, subtitle, content, shapes, colors, HTMLanchor, baseClass, type, anchor];
     }
 
     class Text extends SvelteComponentDev {
@@ -13765,11 +13585,10 @@ var app = (function () {
     			title: 0,
     			subtitle: 1,
     			content: 2,
-    			type: 8,
+    			type: 7,
     			shapes: 3,
-    			anchor: 9,
-    			ll: 4,
-    			colors: 5
+    			anchor: 8,
+    			colors: 4
     		});
 
     		dispatch_dev("SvelteRegisterComponent", {
@@ -13782,12 +13601,8 @@ var app = (function () {
     		const { ctx } = this.$$;
     		const props = options.props || {};
 
-    		if (/*anchor*/ ctx[9] === undefined && !('anchor' in props)) {
+    		if (/*anchor*/ ctx[8] === undefined && !('anchor' in props)) {
     			console.warn("<Text> was created without expected prop 'anchor'");
-    		}
-
-    		if (/*ll*/ ctx[4] === undefined && !('ll' in props)) {
-    			console.warn("<Text> was created without expected prop 'll'");
     		}
     	}
 
@@ -13839,14 +13654,6 @@ var app = (function () {
     		throw new Error("<Text>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
-    	get ll() {
-    		throw new Error("<Text>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set ll(value) {
-    		throw new Error("<Text>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
     	get colors() {
     		throw new Error("<Text>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
@@ -13859,25 +13666,25 @@ var app = (function () {
     /* src/components/Title.svelte generated by Svelte v3.43.0 */
     const file$1 = "src/components/Title.svelte";
 
-    // (18:4) {#if subtitle}
+    // (17:4) {#if subtitle}
     function create_if_block(ctx) {
     	let h4;
-    	let t_value = l(/*subtitle*/ ctx[1], /*ll*/ ctx[3]) + "";
+    	let t_value = l(/*subtitle*/ ctx[1]) + "";
     	let t;
 
     	const block = {
     		c: function create() {
     			h4 = element("h4");
     			t = text$1(t_value);
-    			attr_dev(h4, "class", "" + (/*baseClass*/ ctx[5] + "__subtitle"));
-    			add_location(h4, file$1, 18, 6, 438);
+    			attr_dev(h4, "class", "" + (/*baseClass*/ ctx[4] + "__subtitle"));
+    			add_location(h4, file$1, 17, 6, 418);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h4, anchor);
     			append_dev(h4, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*subtitle, ll*/ 10 && t_value !== (t_value = l(/*subtitle*/ ctx[1], /*ll*/ ctx[3]) + "")) set_data_dev(t, t_value);
+    			if (dirty & /*subtitle*/ 2 && t_value !== (t_value = l(/*subtitle*/ ctx[1]) + "")) set_data_dev(t, t_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(h4);
@@ -13888,7 +13695,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(18:4) {#if subtitle}",
+    		source: "(17:4) {#if subtitle}",
     		ctx
     	});
 
@@ -13899,7 +13706,7 @@ var app = (function () {
     	let div1;
     	let div0;
     	let h2;
-    	let t0_value = l(/*title*/ ctx[0], /*ll*/ ctx[3]) + "";
+    	let t0_value = l(/*title*/ ctx[0]) + "";
     	let t0;
     	let t1;
     	let t2;
@@ -13910,7 +13717,7 @@ var app = (function () {
     	blobs = new Blobs({
     			props: {
     				shapes: /*shapes*/ ctx[2],
-    				colors: /*colors*/ ctx[4]
+    				colors: /*colors*/ ctx[3]
     			},
     			$$inline: true
     		});
@@ -13925,12 +13732,12 @@ var app = (function () {
     			if (if_block) if_block.c();
     			t2 = space();
     			create_component(blobs.$$.fragment);
-    			attr_dev(h2, "class", "" + (/*baseClass*/ ctx[5] + "__title"));
-    			add_location(h2, file$1, 16, 4, 362);
-    			attr_dev(div0, "class", /*baseClass*/ ctx[5]);
-    			add_location(div0, file$1, 15, 2, 332);
+    			attr_dev(h2, "class", "" + (/*baseClass*/ ctx[4] + "__title"));
+    			add_location(h2, file$1, 15, 4, 346);
+    			attr_dev(div0, "class", /*baseClass*/ ctx[4]);
+    			add_location(div0, file$1, 14, 2, 316);
     			attr_dev(div1, "class", "wrapper");
-    			add_location(div1, file$1, 14, 0, 308);
+    			add_location(div1, file$1, 13, 0, 292);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -13947,7 +13754,7 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
-    			if ((!current || dirty & /*title, ll*/ 9) && t0_value !== (t0_value = l(/*title*/ ctx[0], /*ll*/ ctx[3]) + "")) set_data_dev(t0, t0_value);
+    			if ((!current || dirty & /*title*/ 1) && t0_value !== (t0_value = l(/*title*/ ctx[0]) + "")) set_data_dev(t0, t0_value);
 
     			if (/*subtitle*/ ctx[1]) {
     				if (if_block) {
@@ -13964,7 +13771,7 @@ var app = (function () {
 
     			const blobs_changes = {};
     			if (dirty & /*shapes*/ 4) blobs_changes.shapes = /*shapes*/ ctx[2];
-    			if (dirty & /*colors*/ 16) blobs_changes.colors = /*colors*/ ctx[4];
+    			if (dirty & /*colors*/ 8) blobs_changes.colors = /*colors*/ ctx[3];
     			blobs.$set(blobs_changes);
     		},
     		i: function intro(local) {
@@ -14001,10 +13808,9 @@ var app = (function () {
     	let { subtitle } = $$props;
     	let { type = 'Title' } = $$props;
     	let { shapes = 0 } = $$props;
-    	let { ll } = $$props;
     	let { colors = ['red', 'yellow', 'blue'] } = $$props;
     	let baseClass = type.toLowerCase();
-    	const writable_props = ['title', 'subtitle', 'type', 'shapes', 'll', 'colors'];
+    	const writable_props = ['title', 'subtitle', 'type', 'shapes', 'colors'];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Title> was created with unknown prop '${key}'`);
@@ -14013,10 +13819,9 @@ var app = (function () {
     	$$self.$$set = $$props => {
     		if ('title' in $$props) $$invalidate(0, title = $$props.title);
     		if ('subtitle' in $$props) $$invalidate(1, subtitle = $$props.subtitle);
-    		if ('type' in $$props) $$invalidate(6, type = $$props.type);
+    		if ('type' in $$props) $$invalidate(5, type = $$props.type);
     		if ('shapes' in $$props) $$invalidate(2, shapes = $$props.shapes);
-    		if ('ll' in $$props) $$invalidate(3, ll = $$props.ll);
-    		if ('colors' in $$props) $$invalidate(4, colors = $$props.colors);
+    		if ('colors' in $$props) $$invalidate(3, colors = $$props.colors);
     	};
 
     	$$self.$capture_state = () => ({
@@ -14024,7 +13829,6 @@ var app = (function () {
     		subtitle,
     		type,
     		shapes,
-    		ll,
     		colors,
     		baseClass,
     		Blobs,
@@ -14034,18 +13838,17 @@ var app = (function () {
     	$$self.$inject_state = $$props => {
     		if ('title' in $$props) $$invalidate(0, title = $$props.title);
     		if ('subtitle' in $$props) $$invalidate(1, subtitle = $$props.subtitle);
-    		if ('type' in $$props) $$invalidate(6, type = $$props.type);
+    		if ('type' in $$props) $$invalidate(5, type = $$props.type);
     		if ('shapes' in $$props) $$invalidate(2, shapes = $$props.shapes);
-    		if ('ll' in $$props) $$invalidate(3, ll = $$props.ll);
-    		if ('colors' in $$props) $$invalidate(4, colors = $$props.colors);
-    		if ('baseClass' in $$props) $$invalidate(5, baseClass = $$props.baseClass);
+    		if ('colors' in $$props) $$invalidate(3, colors = $$props.colors);
+    		if ('baseClass' in $$props) $$invalidate(4, baseClass = $$props.baseClass);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [title, subtitle, shapes, ll, colors, baseClass, type];
+    	return [title, subtitle, shapes, colors, baseClass, type];
     }
 
     class Title extends SvelteComponentDev {
@@ -14055,10 +13858,9 @@ var app = (function () {
     		init(this, options, instance$1, create_fragment$1, safe_not_equal, {
     			title: 0,
     			subtitle: 1,
-    			type: 6,
+    			type: 5,
     			shapes: 2,
-    			ll: 3,
-    			colors: 4
+    			colors: 3
     		});
 
     		dispatch_dev("SvelteRegisterComponent", {
@@ -14073,10 +13875,6 @@ var app = (function () {
 
     		if (/*subtitle*/ ctx[1] === undefined && !('subtitle' in props)) {
     			console.warn("<Title> was created without expected prop 'subtitle'");
-    		}
-
-    		if (/*ll*/ ctx[3] === undefined && !('ll' in props)) {
-    			console.warn("<Title> was created without expected prop 'll'");
     		}
     	}
 
@@ -14112,14 +13910,6 @@ var app = (function () {
     		throw new Error("<Title>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
-    	get ll() {
-    		throw new Error("<Title>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set ll(value) {
-    		throw new Error("<Title>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
     	get colors() {
     		throw new Error("<Title>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
@@ -14134,23 +13924,17 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[4] = list[i];
+    	child_ctx[5] = list[i];
     	return child_ctx;
     }
 
-    // (40:1) {#each components as component}
+    // (46:1) {#each components as component}
     function create_each_block(ctx) {
     	let switch_instance;
     	let switch_instance_anchor;
     	let current;
-
-    	const switch_instance_spread_levels = [
-    		/*component*/ ctx[4],
-    		{ colors: /*colors*/ ctx[1] },
-    		{ ll: /*languages*/ ctx[0] }
-    	];
-
-    	var switch_value = /*loadedComponents*/ ctx[3][/*component*/ ctx[4].type];
+    	const switch_instance_spread_levels = [/*component*/ ctx[5], { colors: /*colors*/ ctx[0] }];
+    	var switch_value = /*loadedComponents*/ ctx[2][/*component*/ ctx[5].type];
 
     	function switch_props(ctx) {
     		let switch_instance_props = {};
@@ -14183,15 +13967,14 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			const switch_instance_changes = (dirty & /*components, colors, languages*/ 7)
+    			const switch_instance_changes = (dirty & /*components, colors*/ 3)
     			? get_spread_update(switch_instance_spread_levels, [
-    					dirty & /*components*/ 4 && get_spread_object(/*component*/ ctx[4]),
-    					dirty & /*colors*/ 2 && { colors: /*colors*/ ctx[1] },
-    					dirty & /*languages*/ 1 && { ll: /*languages*/ ctx[0] }
+    					dirty & /*components*/ 2 && get_spread_object(/*component*/ ctx[5]),
+    					dirty & /*colors*/ 1 && { colors: /*colors*/ ctx[0] }
     				])
     			: {};
 
-    			if (switch_value !== (switch_value = /*loadedComponents*/ ctx[3][/*component*/ ctx[4].type])) {
+    			if (switch_value !== (switch_value = /*loadedComponents*/ ctx[2][/*component*/ ctx[5].type])) {
     				if (switch_instance) {
     					group_outros();
     					const old_component = switch_instance;
@@ -14234,7 +14017,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(40:1) {#each components as component}",
+    		source: "(46:1) {#each components as component}",
     		ctx
     	});
 
@@ -14249,7 +14032,7 @@ var app = (function () {
     	let footer;
     	let current;
     	header = new Header({ $$inline: true });
-    	let each_value = /*components*/ ctx[2];
+    	let each_value = /*components*/ ctx[1];
     	validate_each_argument(each_value);
     	let each_blocks = [];
 
@@ -14275,7 +14058,7 @@ var app = (function () {
 
     			t1 = space();
     			create_component(footer.$$.fragment);
-    			add_location(main, file, 37, 0, 1126);
+    			add_location(main, file, 43, 0, 1231);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -14294,8 +14077,8 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*loadedComponents, components, colors, languages*/ 15) {
-    				each_value = /*components*/ ctx[2];
+    			if (dirty & /*loadedComponents, components, colors*/ 7) {
+    				each_value = /*components*/ ctx[1];
     				validate_each_argument(each_value);
     				let i;
 
@@ -14383,6 +14166,11 @@ var app = (function () {
     		Title
     	};
 
+    	let getLanguages = langs => {
+    		window.availableLanguages = langs;
+    		return langs;
+    	};
+
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
@@ -14404,26 +14192,28 @@ var app = (function () {
     		Text,
     		Title,
     		loadedComponents,
+    		getLanguages,
     		languages,
     		colors,
     		components
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ('loadedComponents' in $$props) $$invalidate(3, loadedComponents = $$props.loadedComponents);
-    		if ('languages' in $$props) $$invalidate(0, languages = $$props.languages);
-    		if ('colors' in $$props) $$invalidate(1, colors = $$props.colors);
-    		if ('components' in $$props) $$invalidate(2, components = $$props.components);
+    		if ('loadedComponents' in $$props) $$invalidate(2, loadedComponents = $$props.loadedComponents);
+    		if ('getLanguages' in $$props) $$invalidate(4, getLanguages = $$props.getLanguages);
+    		if ('languages' in $$props) languages = $$props.languages;
+    		if ('colors' in $$props) $$invalidate(0, colors = $$props.colors);
+    		if ('components' in $$props) $$invalidate(1, components = $$props.components);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	$$invalidate(2, components = data.pages.filter(p => p.name == 'Home')[0].components);
-    	$$invalidate(1, colors = data.colorPalette);
-    	$$invalidate(0, languages = data.languages);
-    	return [languages, colors, components, loadedComponents];
+    	$$invalidate(1, components = data.pages.filter(p => p.name == 'Home')[0].components);
+    	$$invalidate(0, colors = data.colorPalette);
+    	languages = getLanguages(data.languages);
+    	return [colors, components, loadedComponents];
     }
 
     class App extends SvelteComponentDev {

@@ -16,9 +16,7 @@ pages:
     components:
       - type: Headline 
         title: Regenerative Territories
-        text: 
-          en: Changing the world while changing your way of 
-          it: Changing the world while changing your way of 
+        text: Changing the world while changing your way of 
         typewriter_html: <Typewriter loopRandom><span>living</span><span>working</span><span>travelling</span></Typewriter>
         shapes: 
           - top: 53
@@ -41,7 +39,9 @@ pages:
             color: "#6A72DC"
       - type: Text
         anchor: vision
-        content: <span class="dede-green underline">Our vision</span> is to <span class="dede-blue">empower</span> small villages and rural areas to become <span class="dede-blue">the place to be</span>
+        content: 
+          en: <span class="dede-green underline">Our vision</span> is to <span class="dede-blue">empower</span> small villages and rural areas to become <span class="dede-blue">the place to be</span>
+          it: <span class="dede-green underline">La nostra visione</span> è <span class="dede-blue">abilitare la trasformazione</span> di borghi e aree rurali nei <span class="dede-blue">luoghi del futuro</span> 
         shapes: 
           - top: 80
             left: 20

@@ -6,7 +6,6 @@
   export let colors = ['red', 'yellow', 'blue']
   export let cta = false
   export let type = 'Headline'
-  export let ll
 
   let baseClass = type.toLowerCase()
 
@@ -23,15 +22,15 @@
 <div class="wrapper">
   <div class="{baseClass}">
     <div class="{baseClass}__content center">
-      <h1 class="{baseClass}__title center">{l(title, ll)}</h1>
+      <h1 class="{baseClass}__title center">{l(title)}</h1>
       <h3 class="{baseClass}__text center">
-        {l(text, ll)}
-        <Typewriter loopRandom={1000} unwriteInterval={20} interval={[50, 70, 90]}>{@html l(typewriter_html, ll)}</Typewriter>
+        {l(text)}
+        <Typewriter loopRandom={1000} unwriteInterval={20} interval={[50, 70, 90]}>{@html l(typewriter_html)}</Typewriter>
       </h3>
     </div>
     {#if cta}
       <div class="{baseClass}__cta" data-smoothscroll="#vision">
-        {l(cta.text, ll)}
+        {l(cta.text)}
         {#if cta.arrow}
           <div class="arrow arrow--{cta.arrow}">-></div>
         {/if}

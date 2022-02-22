@@ -4,7 +4,6 @@
   export let cards = []
   export let slider = false
   export let anchor
-  export let ll
   export let type = 'BgCards'
   export let shapes = 0
   export let colors = ['red', 'yellow', 'blue']
@@ -21,8 +20,8 @@
 
 <div class="wrapper" id="{HTMLanchor}">
   <div class="{baseClass}">
-    <div class="{baseClass}__overtitle">{l(overtitle, ll)}</div>
-    <h3 class="{baseClass}__title">{@html l(title, ll)}</h3>
+    <div class="{baseClass}__overtitle">{l(overtitle)}</div>
+    <h3 class="{baseClass}__title">{@html l(title)}</h3>
     {#if slider}
       <Swiper
         modules={[Navigation]}
@@ -39,9 +38,9 @@
           <SwiperSlide>
             <div class="{baseClass}__card">
               <div class="{baseClass}__card__title {card.secondLine ? '{baseClass}__card__title--with-subtitle' : ''}">
-                <strong>{@html l(card.firstLine, ll)}</strong><br />
+                <strong>{@html l(card.firstLine)}</strong><br />
                 {#if card.secondLine}
-                  <small>{@html l(card.secondLine, ll)}</small>
+                  <small>{@html l(card.secondLine)}</small>
                 {/if}
               </div>
               <div class="{baseClass}__card__image" style="background-image: url('images/{card.imagePath}')"></div>
@@ -55,9 +54,9 @@
         {#each cards as card}
           <div class="{baseClass}__card">
             <div class="{baseClass}__card__title {card.secondLine ? '{baseClass}__card__title--with-subtitle' : ''}">
-              <strong>{@html l(card.firstLine, ll)}</strong><br />
+              <strong>{@html l(card.firstLine)}</strong><br />
               {#if card.secondLine}
-                <small>{@html l(card.secondLine, ll)}</small>
+                <small>{@html l(card.secondLine)}</small>
               {/if}
             </div>
             <div class="{baseClass}__card__image" style="background-image: url('images/{card.imagePath}')"></div>
