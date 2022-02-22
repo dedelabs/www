@@ -50,7 +50,7 @@
       <div class="{baseClass}__slides {baseClass}__slides--no-slider">
         {#each slides as slide}
           <div class="{baseClass}__slide">
-            {@html slide.image}
+            <div class="{baseClass}__slide__image">{@html slide.image}</div>
             <h2 class="{baseClass}__slide__title dede-blue">{l(slide.title)}</h2>
             <p class="{baseClass}__slide__description">{l(slide.description)}</p>
           </div>
