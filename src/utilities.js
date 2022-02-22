@@ -49,3 +49,8 @@ export let swiperBreakpoints = {
     spaceBetween: 0,
   },
 }
+
+export let l = (text, languages) => {
+  if (typeof text == "string") return text;
+  return text['en'];
+}

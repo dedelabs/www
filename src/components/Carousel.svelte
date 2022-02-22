@@ -5,6 +5,7 @@
   export let slider = true
   export let type = 'Carousel'
   export let anchor
+  export let ll
   export let shapes = 0
   export let colors = ['red', 'yellow', 'blue']
 
@@ -14,18 +15,18 @@
 
   import { Navigation } from 'swiper'
   import { Swiper, SwiperSlide } from 'swiper/svelte'
-  import { swiperBreakpoints } from '../utilities.js'
+  import { swiperBreakpoints, l } from '../utilities.js'
   import Blobs from './Blobs.svelte'
 </script>
 
 <div class="wrapper" id="{HTMLanchor}">
   <div class="{baseClass}">
     <div class="{baseClass}__overtitle h2 underline">
-      {overtitle}
+      {l(overtitle, ll)}
     </div>
     <div class="Spacer" style="height: 50px"></div>
     {#if slider}
-      <h3 class="{baseClass}__title">{@html title}</h3>
+      <h3 class="{baseClass}__title">{@html l(title, ll)}</h3>
       <Swiper
         modules={[Navigation]}
         loop="{true}"
@@ -40,8 +41,8 @@
         {#each slides as slide}
           <SwiperSlide class="{baseClass}__slide">
             <div class="{baseClass}__slide__image">{@html slide.image}</div>
-            <h2 class="{baseClass}__slide__title dede-blue">{slide.title}</h2>
-            <p class="{baseClass}__slide__description">{slide.description}</p>
+            <h2 class="{baseClass}__slide__title dede-blue">{l(slide.title, ll)}</h2>
+            <p class="{baseClass}__slide__description">{l(slide.description, ll)}</p>
           </SwiperSlide>
         {/each}
       </Swiper>
@@ -51,8 +52,8 @@
         {#each slides as slide}
           <div class="{baseClass}__slide">
             {@html slide.image}
-            <h2 class="{baseClass}__slide__title dede-blue">{slide.title}</h2>
-            <p class="{baseClass}__slide__description">{slide.description}</p>
+            <h2 class="{baseClass}__slide__title dede-blue">{l(slide.title, ll)}</h2>
+            <p class="{baseClass}__slide__description">{l(slide.description, ll)}</p>
           </div>
         {/each}
       </div>

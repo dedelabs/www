@@ -32,12 +32,13 @@
 	$: components = data.pages.filter((p) => p.name == 'Home')[0].components;
 
 	$: colors = data.colorPalette;
+	$: languages = data.languages;
 </script>
 
 <main>
 	<Header></Header>
 	{#each components as component}
-		<svelte:component this={loadedComponents[component.type]} {...component} colors="{colors}" />
+		<svelte:component this={loadedComponents[component.type]} {...component} colors="{colors}" ll="{languages}" />
 	{/each}
 	<Footer></Footer>
 </main>

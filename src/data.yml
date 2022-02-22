@@ -16,7 +16,9 @@ pages:
     components:
       - type: Headline 
         title: Regenerative Territories
-        text: Changing the world while changing your way of 
+        text: 
+          en: Changing the world while changing your way of 
+          it: Changing the world while changing your way of 
         typewriter_html: <Typewriter loopRandom><span>living</span><span>working</span><span>travelling</span></Typewriter>
         shapes: 
           - top: 53
