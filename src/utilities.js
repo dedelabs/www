@@ -68,14 +68,14 @@ export let getCookieValue = (name) => {
   if (result) {
     let resultWithDomain = result.pop()
     let resp = resultWithDomain.split(' ')[0]
-    return resp ? resp : 'en'
+    return resp ? resp : 'it'
   } else {
-    return 'en'
+    return 'it'
   }
 }
 
 let getDefaultLang = () => {
   let defaultLang = Object.entries(window.availableLanguages).filter((i) => { return i[1]['default']})[0]
   if (defaultLang.length > 0) return defaultLang[0]
-  return 'en'
+  return 'it'
 }

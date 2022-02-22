@@ -2,11 +2,11 @@ languages:
   en:
     name: English
     label: en
-    default: true
+    default: false
   it:
     name: Italiano
     label: it
-    default: false
+    default: true
 colorPalette:
   - "#6A72DC"
   - "#60C971"
