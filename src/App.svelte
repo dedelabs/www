@@ -42,7 +42,7 @@
 </script>
 
 <main>
-	<Header></Header>
+	<Header languages="{data.languages}"></Header>
 	{#each components as component}
 		<svelte:component this={loadedComponents[component.type]} {...component} colors="{colors}" />
 	{/each}

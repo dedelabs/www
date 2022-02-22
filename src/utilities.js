@@ -51,7 +51,31 @@ export let swiperBreakpoints = {
 }
 
 export let l = (text) => {
-  let languages = window.availableLanguages;
   if (typeof text == "string") return text;
-  return text['it'];
+  let selectedLang = getCookieValue('selectedLang');
+  let result = undefined;
+  if (selectedLang) {
+    result = text[selectedLang]
+  } else {
+    result = text[getDefaultLang()]
+  }
+  if (result) return result
+  return text[0]
+}
+
+export let getCookieValue = (name) => {
+  let result = document.cookie.match("(^|[^;]+)\s*" + name + "\s*=\s*([^;]+)")
+  if (result) {
+    let resultWithDomain = result.pop()
+    let resp = resultWithDomain.split(' ')[0]
+    return resp ? resp : 'en'
+  } else {
+    return 'en'
+  }
+}
+
+let getDefaultLang = () => {
+  let defaultLang = Object.entries(window.availableLanguages).filter((i) => { return i[1]['default']})[0]
+  if (defaultLang.length > 0) return defaultLang[0]
+  return 'en'
 }
