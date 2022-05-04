@@ -1,4 +1,4 @@
-# DEDE Labs
+# REGENERATIVE Labs
 
 This is a site builder based on [Svelte](https://svelte.dev).
 
